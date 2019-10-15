@@ -23,13 +23,13 @@ export interface IAggregateQuery extends IPolygonQuery {
 }
 
 // CF : https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_prev
-export const previousClose = (
+export const stocksPreviousClose = (
   ticker: string,
   query?: IAggregateQuery
 ): Promise<IAggResponse> => get(`/v2/aggs/ticker/${ticker}/prev`, query);
 
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
-export const aggregates = (
+export const stocksAggregates = (
   ticker: string,
   multiplier: number,
   timespan: string,
@@ -43,7 +43,7 @@ export const aggregates = (
   );
 
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_grouped_locale_locale_market_market_date
-export const groupedDaily = (
+export const stocksGroupedDaily = (
   locale: string,
   market: string,
   date: string,

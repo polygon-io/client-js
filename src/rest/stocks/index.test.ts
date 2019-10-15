@@ -3,22 +3,22 @@ import * as chai from "chai";
 
 import * as request from "../transport/request";
 import {
-  aggregates,
   conditionMappings,
   dailyOpenClose,
   exchanges,
-  groupedDaily,
+  stocksGroupedDaily,
   lastQuoteForSymbol,
   lastTradeForSymbol,
-  previousClose,
+  stocksPreviousClose,
   snapshotAllTickers,
   snapshotGainersLosers,
   snapshotSingleTicker,
   v1HistoricQuotes,
   v1HistoricTrades,
-  v2HistoricTrades
+  v2HistoricTrades,
+  v2HistoricQuotes,
+  stocksAggregates
 } from ".";
-import { v2HistoricQuotes } from "./v2HistoricQuotes";
 
 describe("[REST] Stock / equities", () => {
   chai.should();
@@ -119,14 +119,14 @@ describe("[REST] Stock / equities", () => {
       .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/gainers");
   });
 
-  it("previousClose call /v2/aggs/ticker/{ticker}/prev", async () => {
-    await previousClose("AAPL");
+  it("stocksPreviousClose call /v2/aggs/ticker/{ticker}/prev", async () => {
+    await stocksPreviousClose("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/AAPL/prev");
   });
 
-  it("aggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
-    await aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
+  it("stocksAggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
+    await stocksAggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -135,8 +135,8 @@ describe("[REST] Stock / equities", () => {
       );
   });
 
-  it("groupedDaily call /v2/aggs/grouped/locale/{locale}/market/{market}/{date}", async () => {
-    await groupedDaily("US", "STOCKS", "2019-02-01");
+  it("stocksGroupedDaily call /v2/aggs/grouped/locale/{locale}/market/{market}/{date}", async () => {
+    await stocksGroupedDaily("US", "STOCKS", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
