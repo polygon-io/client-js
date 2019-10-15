@@ -11,7 +11,8 @@ import {
   markets,
   locales,
   stockSplits,
-  stockDividends
+  stockDividends,
+  stockFinancials
 } from ".";
 
 describe("[REST] reference", () => {
@@ -75,5 +76,13 @@ describe("[REST] reference", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v2/reference/dividends/AAPL");
+  });
+
+  it("stockFinancials call /v2/reference/financials/{symbol}", async () => {
+    await stockFinancials("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/reference/financials/AAPL");
   });
 });

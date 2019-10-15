@@ -6,3 +6,4 @@ export * from "./market";
 export * from "./locales";
 export * from "./stockSplits";
 export * from "./stockDividends";
+export * from "./stockFinancials";
