@@ -7,3 +7,4 @@ export * from "./lastTradeForSymbol";
 export * from "./lastQuoteForSymbol";
 export * from "./dailyOpenClose";
 export * from "./conditionMappings";
+export * from "./snapshots";

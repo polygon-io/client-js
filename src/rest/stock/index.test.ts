@@ -8,6 +8,9 @@ import {
   exchanges,
   lastQuoteForSymbol,
   lastTradeForSymbol,
+  snapshotAllTickers,
+  snapshotGainersLosers,
+  snapshotSingleTicker,
   v1HistoricQuotes,
   v1HistoricTrades,
   v2HistoricTrades
@@ -87,5 +90,29 @@ describe("[REST] Stock / equities", () => {
     await conditionMappings();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/meta/conditions/trades");
+  });
+
+  it("snapshotAllTickers call /v2/snapshot/locale/us/markets/stocks/tickers", async () => {
+    await snapshotAllTickers();
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/tickers");
+  });
+
+  it("snapshotSingleTicker call /v2/snapshot/locale/us/markets/stocks/tickers/{ticker}", async () => {
+    await snapshotSingleTicker("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/tickers/AAPL");
+  });
+
+  it("snapshotGainersLosers call /v2/snapshot/locale/us/markets/stocks/{direction}", async () => {
+    await snapshotGainersLosers();
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/gainers");
   });
 });
