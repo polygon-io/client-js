@@ -8,3 +8,4 @@ export * from "./stockSplits";
 export * from "./stockDividends";
 export * from "./stockFinancials";
 export * from "./marketStatus";
+export * from "./marketHolidays";

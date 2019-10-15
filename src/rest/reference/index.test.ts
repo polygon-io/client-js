@@ -13,7 +13,8 @@ import {
   stockSplits,
   stockDividends,
   stockFinancials,
-  marketStatus
+  marketStatus,
+  marketHolydays
 } from ".";
 
 describe("[REST] reference", () => {
@@ -91,5 +92,11 @@ describe("[REST] reference", () => {
     await marketStatus();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/now");
+  });
+
+  it("marketHolydays call /v1/marketstatus/upcoming", async () => {
+    await marketHolydays();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/upcoming");
   });
 });
