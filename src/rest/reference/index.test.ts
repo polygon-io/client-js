@@ -3,7 +3,14 @@ import * as chai from "chai";
 
 import * as request from "../transport/request";
 
-import { tickers, tickerTypes, tickerDetails, tickerNews, markets } from ".";
+import {
+  tickers,
+  tickerTypes,
+  tickerDetails,
+  tickerNews,
+  markets,
+  locales
+} from ".";
 
 describe("[REST] reference", () => {
   chai.should();
@@ -46,5 +53,11 @@ describe("[REST] reference", () => {
     await markets();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/reference/markets");
+  });
+
+  it("locales call /v2/reference/locales", async () => {
+    await locales();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/locales");
   });
 });
