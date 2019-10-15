@@ -8,6 +8,7 @@ import {
   v1HistoricTrades,
   v2HistoricTrades
 } from ".";
+import { v2HistoricQuotes } from "./v2HistoricQuotes";
 
 describe("[REST] Stock / equities", () => {
   chai.should();
@@ -48,5 +49,13 @@ describe("[REST] Stock / equities", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/historic/quotes/AAPL/2018-2-2");
+  });
+
+  it("v2HistoricQuotes call /v2/ticks/stocks/nbbo/{ticker}/{date}", async () => {
+    await v2HistoricQuotes("AAPL", "2018-2-2");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/ticks/stocks/nbbo/AAPL/2018-2-2");
   });
 });
