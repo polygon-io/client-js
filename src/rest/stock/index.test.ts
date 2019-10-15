@@ -4,6 +4,7 @@ import * as chai from "chai";
 import * as request from "../transport/request";
 import {
   exchanges,
+  lastTradeForSymbol,
   v1HistoricQuotes,
   v1HistoricTrades,
   v2HistoricTrades
@@ -57,5 +58,11 @@ describe("[REST] Stock / equities", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v2/ticks/stocks/nbbo/AAPL/2018-2-2");
+  });
+
+  it("lastTradeForSymbol call /v1/last/stocks/{symbol}", async () => {
+    await lastTradeForSymbol("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/last/stocks/AAPL");
   });
 });
