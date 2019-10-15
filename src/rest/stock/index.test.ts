@@ -3,6 +3,7 @@ import * as chai from "chai";
 
 import * as request from "../transport/request";
 import {
+  conditionMappings,
   dailyOpenClose,
   exchanges,
   lastQuoteForSymbol,
@@ -80,5 +81,11 @@ describe("[REST] Stock / equities", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/open-close/AAPL/2018-2-2");
+  });
+
+  it("conditionMappings call /v1/meta/conditions/{ticktype}", async () => {
+    await conditionMappings();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/meta/conditions/trades");
   });
 });
