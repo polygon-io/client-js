@@ -5,3 +5,4 @@ export * from "./v1HistoricQuotes";
 export * from "./v1HistoricQuotes";
 export * from "./lastTradeForSymbol";
 export * from "./lastQuoteForSymbol";
+export * from "./dailyOpenClose";

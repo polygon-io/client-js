@@ -3,6 +3,7 @@ import * as chai from "chai";
 
 import * as request from "../transport/request";
 import {
+  dailyOpenClose,
   exchanges,
   lastQuoteForSymbol,
   lastTradeForSymbol,
@@ -71,5 +72,13 @@ describe("[REST] Stock / equities", () => {
     await lastQuoteForSymbol("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/last_quote/stocks/AAPL");
+  });
+
+  it("dailyOpenClose call /v1/open-close/{symbol}/{date}", async () => {
+    await dailyOpenClose("AAPL", "2018-2-2");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v1/open-close/AAPL/2018-2-2");
   });
 });
