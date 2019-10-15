@@ -33,6 +33,6 @@ describe("[REST] reference", () => {
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
-      .args[0].should.eql("/v1/meta/symbols/APPL/company");
+      .args[0].should.eql("/v1/meta/symbols/AAPL/company");
   });
 });
