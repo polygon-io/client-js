@@ -1,6 +1,6 @@
 {
   "name": "polygon.io",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Node JS client for polygon.io api",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
