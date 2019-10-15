@@ -13,7 +13,17 @@ export interface ITickersQuery extends IPolygonQuery {
 }
 
 export interface ITickers {
-  [key: string]: any;
+  ticker: string;
+  name: string;
+  market: string;
+  locale: string;
+  currency: string;
+  active: string;
+  primaryExch: string;
+  type: string;
+  codes: { [key: string]: string };
+  updated: string;
+  url: string;
 }
 
 export const tickers = async (query?: ITickersQuery): Promise<ITickers[]> => {
