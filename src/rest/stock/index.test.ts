@@ -2,7 +2,7 @@ import * as sinon from "sinon";
 import * as chai from "chai";
 
 import * as request from "../transport/request";
-import { exchanges, v1HistoricTrades } from ".";
+import { exchanges, v1HistoricTrades, v2HistoricTrades } from ".";
 
 describe("[REST] Stock / equities", () => {
   chai.should();
@@ -21,11 +21,19 @@ describe("[REST] Stock / equities", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v1/meta/exchanges");
   });
 
-  it("exchanges call /v1/historic/trades/{symbol}/{date}", async () => {
+  it("v1HistoricTrades call /v1/historic/trades/{symbol}/{date}", async () => {
     await v1HistoricTrades("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/historic/trades/AAPL/2018-2-2");
+  });
+
+  it("v2HistoricTrades call /v2/ticks/stocks/trades/{ticker}/{date}", async () => {
+    await v2HistoricTrades("AAPL", "2018-2-2");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/ticks/stocks/trades/AAPL/2018-2-2");
   });
 });
