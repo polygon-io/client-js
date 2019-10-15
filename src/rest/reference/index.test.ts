@@ -29,8 +29,10 @@ describe("[REST] reference", () => {
   });
 
   it("tickerDetails call /v1/meta/symbols/{symbol}/company", async () => {
-    await tickerDetails('AAPL');
+    await tickerDetails("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/meta/symbols/APPL/company");
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v1/meta/symbols/APPL/company");
   });
 });
