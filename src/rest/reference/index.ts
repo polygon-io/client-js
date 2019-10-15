@@ -5,3 +5,4 @@ export * from "./tickerNews";
 export * from "./market";
 export * from "./locales";
 export * from "./stockSplits";
+export * from "./stockDividends";

@@ -10,7 +10,8 @@ import {
   tickerNews,
   markets,
   locales,
-  stockSplits
+  stockSplits,
+  stockDividends
 } from ".";
 
 describe("[REST] reference", () => {
@@ -62,9 +63,17 @@ describe("[REST] reference", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v2/reference/locales");
   });
 
-  it("stockSplits cal /v2/reference/splits/{symbol}", async () => {
+  it("stockSplits call /v2/reference/splits/{symbol}", async () => {
     await stockSplits("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/reference/splits/AAPL");
+  });
+
+  it("stockDividends call /v2/reference/dividends/{symbol}", async () => {
+    await stockDividends("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/reference/dividends/AAPL");
   });
 });
