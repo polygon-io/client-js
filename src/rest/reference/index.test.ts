@@ -9,7 +9,8 @@ import {
   tickerDetails,
   tickerNews,
   markets,
-  locales
+  locales,
+  stockSplits
 } from ".";
 
 describe("[REST] reference", () => {
@@ -59,5 +60,11 @@ describe("[REST] reference", () => {
     await locales();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/reference/locales");
+  });
+
+  it("stockSplits cal /v2/reference/splits/{symbol}", async () => {
+    await stockSplits("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/splits/AAPL");
   });
 });
