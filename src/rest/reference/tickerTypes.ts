@@ -1,3 +1,4 @@
+// CF: https://polygon.io/docs/#!/Reference/get_v2_reference_types
 import { get } from "../transport/request";
 
 export interface ITickerTypes {

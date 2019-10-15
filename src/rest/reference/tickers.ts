@@ -1,3 +1,4 @@
+// CF: https://polygon.io/docs/#!/Reference/get_v2_reference_tickers
 import { get, IPolygonQuery } from "../transport/request";
 
 export interface ITickersQuery extends IPolygonQuery {
