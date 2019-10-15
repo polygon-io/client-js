@@ -1,0 +1,10 @@
+# project artifcats
+lib
+
+# node specific
+node_modules
+
+# IDE files
+.idea
+.vscode
+*.swp
