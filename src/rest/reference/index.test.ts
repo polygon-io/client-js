@@ -3,7 +3,7 @@ import * as chai from "chai";
 
 import * as request from "../transport/request";
 
-import { tickers, tickerTypes, tickerDetails } from ".";
+import { tickers, tickerTypes, tickerDetails, tickerNews } from ".";
 
 describe("[REST] reference", () => {
   chai.should();
@@ -34,5 +34,11 @@ describe("[REST] reference", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/meta/symbols/AAPL/company");
+  });
+
+  it("tickerDetails call /v1/meta/symbols/{symbol}/news", async () => {
+    await tickerNews("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/meta/symbols/AAPL/news");
   });
 });

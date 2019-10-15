@@ -26,5 +26,5 @@ export interface ITickerDetails {
   updated?: string;
 }
 
-export const tickerDetails = (symbol: string): Promise<any> =>
+export const tickerDetails = (symbol: string): Promise<ITickerDetails> =>
   get(`/v1/meta/symbols/${symbol}/company`);
