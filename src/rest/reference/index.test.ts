@@ -12,7 +12,8 @@ import {
   locales,
   stockSplits,
   stockDividends,
-  stockFinancials
+  stockFinancials,
+  marketStatus
 } from ".";
 
 describe("[REST] reference", () => {
@@ -84,5 +85,11 @@ describe("[REST] reference", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v2/reference/financials/AAPL");
+  });
+
+  it("marketStatus call /v1/marketstatus/now", async () => {
+    await marketStatus();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/now");
   });
 });
