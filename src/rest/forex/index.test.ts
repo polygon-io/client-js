@@ -5,6 +5,8 @@ import {
   forexAggregates,
   forexGroupedDaily,
   forexPreviousClose,
+  forexSnapshotAllTickers,
+  forexSnapshotGainersLosers,
   historicForexTicks,
   lastQuoteForCurrencyPair,
   realTimeCurrencyConversion
@@ -68,5 +70,21 @@ describe("[REST] Forex / Currencies", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/last_quote/currencies/USD/AUD");
+  });
+
+  it("forexSnapshotAllTickers call /v2/snapshot/locale/global/markets/forex/tickers", async () => {
+    await forexSnapshotAllTickers();
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/global/markets/forex/tickers");
+  });
+
+  it("forexSnapshotGainersLosers call /v2/snapshot/locale/global/markets/forex/{direction}", async () => {
+    await forexSnapshotGainersLosers();
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/global/markets/forex/gainers");
   });
 });
