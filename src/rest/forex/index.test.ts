@@ -1,7 +1,12 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
 import * as request from "../transport/request";
-import { forexAggregates, forexGroupedDaily, forexPreviousClose } from ".";
+import {
+  forexAggregates,
+  forexGroupedDaily,
+  forexPreviousClose,
+  historicForexTicks
+} from ".";
 
 describe("[REST] Forex / Currencies", () => {
   chai.should();
@@ -36,5 +41,13 @@ describe("[REST] Forex / Currencies", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v2/aggs/grouped/locale/US/market/FX/2019-02-01");
+  });
+
+  it("historicForexTick call /v1/historic/forex/{from}/{to}/{date}", async () => {
+    await historicForexTicks("AUD", "USD", "2019-02-01", { limit: 100 });
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v1/historic/forex/AUD/USD/2019-02-01");
   });
 });
