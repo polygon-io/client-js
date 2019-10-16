@@ -58,9 +58,30 @@ exchanges().then(/* you success handler */);
 
 ### [Websocket](https://polygon.io/sockets)
 
+You can get preauthenticated [websocket clients](https://www.npmjs.com/package/ws) for the 3 topics.
+
+```typescript
+import { init, websockets } from "polygon.io";
+
+init({ apiKey: "XXXX" });
+
+const stocksWS = websockets.getStocksWebsocket();
+
+stocksWs.on("message", raw => {
+  const message = JSON.parse(raw);
+  switch (message.ev) {
+    case "T":
+      // your trade message handler
+      break;
+  }
+});
+
+stocksWS.send({ action: "subscribe", params: "T.MSFT" });
+```
+
 ### [documentation](https://bassochette.github.io/polygon.io/index.html)
 
-- Generate the documentation
+- Generate the package documentation
 
 ```bash
 npm run generate-documentation
