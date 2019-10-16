@@ -28,4 +28,32 @@ init({
 
 ### [REST API](https://polygon.io/docs/#getting-started)
 
+Their is three way to use the functions:
+
+- import all the rest submodule
+
+```typescript
+import { rest } from "polygon.io";
+
+rest.forex.forexPreviousClose().then(/* your success handler */);
+```
+
+- import a specific submodule
+
+```typescript
+import { reference } from "polygon.io";
+
+reference.tickers.then(/* your success handler */);
+```
+
+- import single function
+
+```typescript
+import { init, exchanges } from "polygon.io";
+
+init({ apiKey: "XXXX" });
+
+exchanges().then(/* you success handler */);
+```
+
 ### [Websocket](https://polygon.io/sockets)
