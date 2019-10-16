@@ -6,6 +6,7 @@ import {
   forexGroupedDaily,
   forexPreviousClose,
   historicForexTicks,
+  lastQuoteForCurrencyPair,
   realTimeCurrencyConversion
 } from ".";
 
@@ -59,5 +60,13 @@ describe("[REST] Forex / Currencies", () => {
     });
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/conversion/AUD/USD");
+  });
+
+  it("lastQuoteForCurrencyPair call /v1/last_quote/currencies/{from}/{to}", async () => {
+    await lastQuoteForCurrencyPair("USD", "AUD");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v1/last_quote/currencies/USD/AUD");
   });
 });
