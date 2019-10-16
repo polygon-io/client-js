@@ -10,7 +10,9 @@ import {
   cryptoGroupedDaily,
   cryptoPreviousClose,
   cryptoSnapshotAllTickers,
+  cryptoSnapshotGainersLosers,
   cryptoSnapshotSingleTicker,
+  cryptoSnapshotSingleTickerFullBook,
   historicCryptoTrades,
   lastTradeForCryptoPair
 } from ".";
@@ -95,6 +97,24 @@ describe("[REST] Crypto", () => {
       .getCalls()[0]
       .args[0].should.eql(
         "/v2/snapshot/locale/global/markets/crypto/tickers/X:BTCUSD"
+      );
+  });
+
+  it("cryptoSnapshotGainersLosers call /v2/snapshot/locale/global/markets/crypto/{direction}", async () => {
+    await cryptoSnapshotGainersLosers();
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/global/markets/crypto/gainers");
+  });
+
+  it("cryptoSnapshotSingleTickerFullBook call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book", async () => {
+    await cryptoSnapshotSingleTickerFullBook("BTCUSD");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql(
+        "/v2/snapshot/locale/global/markets/crypto/tickers/BTCUSD/book"
       );
   });
 });
