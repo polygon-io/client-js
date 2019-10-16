@@ -28,6 +28,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.12",
     "@types/sinon": "^7.5.0",
+    "@types/ws": "^6.0.3",
     "chai": "^4.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
@@ -50,6 +51,7 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^8.1.0"
+    "dotenv": "^8.1.0",
+    "ws": "^7.1.2"
   }
 }
