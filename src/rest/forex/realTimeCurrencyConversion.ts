@@ -6,7 +6,7 @@ export interface IRealTimeConversionQuery extends IPolygonQuery {
   amount: number;
   precision: number;
 }
-export interface ILastTrade {
+export interface ILastTradeForex {
   price: number;
   exchange: number;
   timestamp: number;
@@ -17,7 +17,7 @@ export interface IRealTimeConversion {
   to: string;
   initialAmount: number;
   converted: number;
-  lastTrade: ILastTrade;
+  lastTrade: ILastTradeForex;
   symbol?: string;
 }
 
