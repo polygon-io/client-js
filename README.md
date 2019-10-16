@@ -57,3 +57,9 @@ exchanges().then(/* you success handler */);
 ```
 
 ### [Websocket](https://polygon.io/sockets)
+
+### Generate documentation
+
+```bash
+npm run generate-documentation
+```
