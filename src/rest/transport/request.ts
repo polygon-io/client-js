@@ -13,6 +13,12 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
 
 export const get = (path: string, query?: IPolygonQuery): Promise<any> =>
   new Promise((resolve, reject) => {
+    if (!configs.apiKey) {
+      throw new Error(
+        "API KEY not configured... either set the POLYGON_API_KEY env variable or use the init(apiKey: string) function"
+      );
+    }
+
     const authenticatedQuery: IPolygonQueryWithCredentials = {
       ...query,
       apiKey: configs.apiKey
