@@ -5,7 +5,8 @@ import {
   forexAggregates,
   forexGroupedDaily,
   forexPreviousClose,
-  historicForexTicks
+  historicForexTicks,
+  realTimeCurrencyConversion
 } from ".";
 
 describe("[REST] Forex / Currencies", () => {
@@ -49,5 +50,14 @@ describe("[REST] Forex / Currencies", () => {
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/historic/forex/AUD/USD/2019-02-01");
+  });
+
+  it("realTimeCurrencyConversion call /v1/conversion/{from}/{to}", async () => {
+    await realTimeCurrencyConversion("AUD", "USD", {
+      amount: 100,
+      precision: 2
+    });
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/conversion/AUD/USD");
   });
 });
