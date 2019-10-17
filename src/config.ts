@@ -2,11 +2,11 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export interface IPolygonConfig {
-  apiKey: string;
+  apiKey: string | boolean;
 }
 
 export const configs: IPolygonConfig = {
-  apiKey: process.env.POLYGON_APIKEY || "invalid api key"
+  apiKey: process.env.POLYGON_API_KEY || false
 };
 
 export const init = (localConfig: IPolygonConfig) => {

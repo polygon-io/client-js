@@ -8,7 +8,7 @@ export interface IPolygonQuery {
 }
 
 export interface IPolygonQueryWithCredentials extends IPolygonQuery {
-  apiKey: string;
+  apiKey: string | boolean;
 }
 
 export const get = (path: string, query?: IPolygonQuery): Promise<any> =>
@@ -28,7 +28,7 @@ export const get = (path: string, query?: IPolygonQuery): Promise<any> =>
       protocol: "https:",
       method: "GET",
       host: "api.polygon.io",
-      path: path + querystring.encode(authenticatedQuery)
+      path: path + "?" + querystring.encode(authenticatedQuery)
     };
 
     const request = https.request(options, (response: any) => {
