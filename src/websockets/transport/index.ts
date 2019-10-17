@@ -10,7 +10,7 @@ export const getWsClient = (url: string): WebSocket => {
   }
   const ws = new WebSocket(url);
   ws.on("open", () => {
-    ws.send({ action: "auth", params: configs.apiKey });
+    ws.send(JSON.stringify({ action: "auth", params: configs.apiKey }));
   });
 
   return ws;
