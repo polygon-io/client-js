@@ -1,9 +1,12 @@
 // CF: https://polygon.io/docs/#!/Crypto/get_v1_historic_crypto_from_to_date
-
-import { ICryptoTickJson } from "./dailyOpenClose";
 import { get, IPolygonQuery } from "../transport/request";
+import {
+  formatICryptoTickJsonRaw,
+  ICryptoTickJsonFormatted,
+  ICryptoTickJsonRaw
+} from "./ICryptoTickJson";
 
-export interface IHistoricCryptoTrade {
+export interface IHistoricCryptoTradeRaw {
   day: string;
   map: {
     c: string;
@@ -15,19 +18,43 @@ export interface IHistoricCryptoTrade {
   msLatency: number;
   status: string;
   symbol: string;
-  ticks: ICryptoTickJson[];
+  ticks: ICryptoTickJsonRaw[];
 }
-
+export interface IHistoricCryptoTradeFormatted {
+  day: string;
+  map: {
+    c: string;
+    p: string;
+    s: string;
+    x: string;
+    t: string;
+  };
+  msLatency: number;
+  status: string;
+  symbol: string;
+  ticks: ICryptoTickJsonFormatted[];
+}
 export interface IHistoricCryptoTradeQuery extends IPolygonQuery {
   offset?: number;
   limit: number;
 }
 
-// todo: remap
-export const historicCryptoTrades = (
+export const historicCryptoTrades = async (
   from: string,
   to: string,
   date: string,
   query: IHistoricCryptoTradeQuery = { limit: 100 }
-): Promise<IHistoricCryptoTrade> =>
-  get(`/v1/historic/crypto/${from}/${to}/${date}`, query);
+): Promise<IHistoricCryptoTradeFormatted> => {
+  const raw: IHistoricCryptoTradeRaw = await get(
+    `/v1/historic/crypto/${from}/${to}/${date}`,
+    query
+  );
+  return {
+    day: raw.day,
+    map: raw.map,
+    msLatency: raw.msLatency,
+    status: raw.status,
+    symbol: raw.symbol,
+    ticks: raw.ticks.map(formatICryptoTickJsonRaw)
+  };
+};

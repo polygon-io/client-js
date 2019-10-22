@@ -22,7 +22,7 @@ describe("[REST] Crypto", () => {
   let requestStub;
   const sandbox = sinon.createSandbox();
   beforeEach(() => {
-    requestStub = sandbox.stub(request, "get");
+    requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
   afterEach(() => {
     sandbox.restore();
@@ -75,6 +75,12 @@ describe("[REST] Crypto", () => {
   });
 
   it("historicCryptoTrade call /v1/historic/crypto/{from}/{to}/{date}", async () => {
+    sandbox.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        ticks: []
+      })
+    );
     await historicCryptoTrades("BTC", "USD", "2019-01-01");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -83,6 +89,7 @@ describe("[REST] Crypto", () => {
   });
 
   it("cryptoSnapshotAllTickers call /v2/snapshot/locale/global/markets/crypto/tickers", async () => {
+    // TODO: test update
     await cryptoSnapshotAllTickers();
     requestStub.callCount.should.eql(1);
     requestStub
@@ -91,6 +98,7 @@ describe("[REST] Crypto", () => {
   });
 
   it("cryptoSnapshotSingleTicker call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}", async () => {
+    // TODO: test update
     await cryptoSnapshotSingleTicker("X:BTCUSD");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -101,6 +109,7 @@ describe("[REST] Crypto", () => {
   });
 
   it("cryptoSnapshotGainersLosers call /v2/snapshot/locale/global/markets/crypto/{direction}", async () => {
+    // TODO: test update
     await cryptoSnapshotGainersLosers();
     requestStub.callCount.should.eql(1);
     requestStub
@@ -109,6 +118,7 @@ describe("[REST] Crypto", () => {
   });
 
   it("cryptoSnapshotSingleTickerFullBook call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book", async () => {
+    // TODO: test update
     await cryptoSnapshotSingleTickerFullBook("BTCUSD");
     requestStub.callCount.should.eql(1);
     requestStub
