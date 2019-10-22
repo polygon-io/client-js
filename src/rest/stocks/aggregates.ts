@@ -22,12 +22,14 @@ export interface IAggregateQuery extends IPolygonQuery {
   adjusted?: boolean;
 }
 
+// TODO: remap
 // CF : https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_prev
 export const stocksPreviousClose = (
   ticker: string,
   query?: IAggregateQuery
 ): Promise<IAggResponse> => get(`/v2/aggs/ticker/${ticker}/prev`, query);
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
 export const stocksAggregates = (
   ticker: string,
@@ -42,6 +44,7 @@ export const stocksAggregates = (
     query
   );
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_grouped_locale_locale_market_market_date
 export const stocksGroupedDaily = (
   locale: string,

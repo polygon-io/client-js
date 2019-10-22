@@ -22,6 +22,8 @@ export interface IHistoricCryptoTradeQuery extends IPolygonQuery {
   offset?: number;
   limit: number;
 }
+
+// todo: remap
 export const historicCryptoTrades = (
   from: string,
   to: string,

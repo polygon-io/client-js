@@ -28,6 +28,7 @@ export interface IV2HistoricTradesResult {
   ticks: ITradeV2[];
 }
 
+// TODO: remap
 export const v2HistoricTrades = (
   symbol: string,
   date: string,

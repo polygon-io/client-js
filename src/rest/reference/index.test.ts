@@ -22,7 +22,7 @@ describe("[REST] reference", () => {
   let requestStub;
   const sandbox = sinon.createSandbox();
   beforeEach(() => {
-    requestStub = sandbox.stub(request, "get");
+    requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
   afterEach(() => {
     sandbox.restore();

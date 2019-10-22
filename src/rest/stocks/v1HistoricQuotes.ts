@@ -33,6 +33,7 @@ export interface IV1HistoricQuotesResult {
   ticks: IQuoteV1[];
 }
 
+// TODO: remap
 export const v1HistoricQuotes = (
   symbol: string,
   date: string,

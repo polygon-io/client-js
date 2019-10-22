@@ -10,4 +10,5 @@ export interface IExchange {
   tape: string;
 }
 
+// TODO: remap
 export const exchanges = (): Promise<IExchange[]> => get(`/v1/meta/exchanges`);

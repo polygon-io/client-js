@@ -33,6 +33,7 @@ export interface IV1HistoricTradesResult {
   ticks: ITradeV1[];
 }
 
+// TODO: remap
 export const v1HistoricTrades = (
   symbol: string,
   date: string,

@@ -26,6 +26,7 @@ export interface IHistoricForexTicksQuery extends IPolygonQuery {
   limit: number;
 }
 
+// TODO: remap
 export const historicForexTicks = async (
   from: string,
   to: string,

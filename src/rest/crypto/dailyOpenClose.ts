@@ -17,6 +17,7 @@ export interface ICryptoDailyOpenClose {
   closingTrades?: ICryptoTickJson[];
 }
 
+// TODO: remap
 export const cryptoDailyOpenClose = (
   from: string,
   to: string,

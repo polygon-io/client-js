@@ -31,6 +31,7 @@ export interface IV2HistoricQuotesResult {
   results?: IQuoteV2[];
 }
 
+// TODO: remap
 export const v2HistoricQuotes = (
   symbol: string,
   date: string,

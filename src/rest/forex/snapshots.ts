@@ -24,11 +24,13 @@ export interface IForexSnapshotAllTickersResponse {
   tickers: IForexSnapshotTicker[];
 }
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_snapshot_locale_global_markets_forex_tickers
 export const forexSnapshotAllTickers = async (): Promise<
   IForexSnapshotAllTickersResponse
 > => get(`/v2/snapshot/locale/global/markets/forex/tickers`);
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_snapshot_locale_global_markets_forex_direction
 export const forexSnapshotGainersLosers = async (
   direction: string = "gainers"

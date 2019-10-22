@@ -28,21 +28,28 @@ export interface ICryptoSnapshotSingleTicker {
 }
 
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
-export const cryptoSnapshotAllTickers = (): Promise<
+export const cryptoSnapshotAllTickers = async (): Promise<
   ICryptoSnapshotAllTickers
-> => get(`/v2/snapshot/locale/global/markets/crypto/tickers`);
+> => {
+  return get(`/v2/snapshot/locale/global/markets/crypto/tickers`);
+  // TODO remap
+};
 
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
-export const cryptoSnapshotSingleTicker = (
+export const cryptoSnapshotSingleTicker = async (
   ticker: string
-): Promise<ICryptoSnapshotSingleTicker> =>
-  get(`/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}`);
+): Promise<ICryptoSnapshotSingleTicker> => {
+  return get(`/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}`);
+  // todo remap
+};
 
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_direction
-export const cryptoSnapshotGainersLosers = (
+export const cryptoSnapshotGainersLosers = async (
   direction: string = "gainers"
-): Promise<ICryptoSnapshotAllTickers> =>
-  get(`/v2/snapshot/locale/global/markets/crypto/${direction}`);
+): Promise<ICryptoSnapshotAllTickers> => {
+  return get(`/v2/snapshot/locale/global/markets/crypto/${direction}`);
+  // todo remap
+};
 
 export interface ICryptoSnapshotBookItem {
   p: number;
@@ -65,5 +72,9 @@ export interface ICryptoSingleTickerFullBook {
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers_ticker_book
 export const cryptoSnapshotSingleTickerFullBook = async (
   ticker: string
-): Promise<any> =>
-  get(`/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}/book`);
+): Promise<any> => {
+  return get(
+    `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}/book`
+  );
+  // TODO: remap
+};

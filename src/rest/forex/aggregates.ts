@@ -1,12 +1,14 @@
 import { get } from "../transport/request";
 import { IAggregateQuery, IAggResponse } from "../stocks";
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_ticker_ticker_prev
 export const forexPreviousClose = (
   ticker: string,
   query?: IAggregateQuery
 ): Promise<IAggResponse> => get(`/v2/aggs/ticker/${ticker}/prev`, query);
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
 export const forexAggregates = (
   ticker: string,
@@ -21,6 +23,7 @@ export const forexAggregates = (
     query
   );
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_grouped_locale_locale_market_market_date
 export const forexGroupedDaily = (
   locale: string,

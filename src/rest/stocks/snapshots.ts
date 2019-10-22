@@ -27,6 +27,7 @@ export interface IStocksSnapshotTicker {
   updated: number;
 }
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers
 export interface ISnapshotAllTickersResult {
   status: string;
@@ -35,6 +36,7 @@ export interface ISnapshotAllTickersResult {
 export const snapshotAllTickers = (): Promise<ISnapshotAllTickersResult> =>
   get(`/v2/snapshot/locale/us/markets/stocks/tickers`);
 
+// TODO: remap
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers_ticker
 export interface ISnapshotSingleTickerResult {
   status: string;
@@ -50,6 +52,7 @@ export interface ISnapshotGainersLosersResult {
   status: string;
   tickers: IStocksSnapshotTicker[];
 }
+// TODO: remap
 export const snapshotGainersLosers = (
   direction: string = "gainers"
 ): Promise<ISnapshotGainersLosersResult> =>
