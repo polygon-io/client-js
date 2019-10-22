@@ -103,7 +103,6 @@ describe("[REST] Crypto", () => {
   });
 
   it("cryptoSnapshotSingleTicker call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}", async () => {
-    // TODO: test update
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
