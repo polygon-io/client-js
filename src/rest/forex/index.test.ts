@@ -24,12 +24,24 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexPreviousClose call /v2/aggs/ticker/{ticker}/prev", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
     await forexPreviousClose("EURCHF");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/EURCHF/prev");
   });
 
   it("forexAggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
     await forexAggregates("EURCHF", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -40,6 +52,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexGroupedDaily call /v2/aggs/grouped/locale/{locale}/market/{market}/{date}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
     await forexGroupedDaily("US", "FX", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub

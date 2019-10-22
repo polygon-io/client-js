@@ -1,34 +1,43 @@
 import { get } from "../transport/request";
-import { IAggregateQuery, IAggResponse } from "../stocks";
+import {
+  formatIAggResponseRaw,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "../stocks";
 
-// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_ticker_ticker_prev
-export const forexPreviousClose = (
+export const forexPreviousClose = async (
   ticker: string,
   query?: IAggregateQuery
-): Promise<IAggResponse> => get(`/v2/aggs/ticker/${ticker}/prev`, query);
+): Promise<IAggResponseFormatted> =>
+  formatIAggResponseRaw(await get(`/v2/aggs/ticker/${ticker}/prev`, query));
 
-// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
-export const forexAggregates = (
+export const forexAggregates = async (
   ticker: string,
   multiplier: number,
   timespan: string,
   from: string,
   to: string,
   query?: IAggregateQuery
-): Promise<IAggResponse> =>
-  get(
-    `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
-    query
+): Promise<IAggResponseFormatted> =>
+  formatIAggResponseRaw(
+    await get(
+      `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
+      query
+    )
   );
 
-// TODO: remap
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_grouped_locale_locale_market_market_date
-export const forexGroupedDaily = (
+export const forexGroupedDaily = async (
   locale: string,
   market: string = "FX",
   date: string,
   query?: IAggregateQuery
-): Promise<IAggResponse> =>
-  get(`/v2/aggs/grouped/locale/${locale}/market/${market}/${date}`, query);
+): Promise<IAggResponseFormatted> =>
+  formatIAggResponseRaw(
+    await get(
+      `/v2/aggs/grouped/locale/${locale}/market/${market}/${date}`,
+      query
+    )
+  );
