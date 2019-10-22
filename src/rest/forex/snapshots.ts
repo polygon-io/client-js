@@ -1,4 +1,4 @@
-import { IV1Forex } from "./historicForexTicks";
+import { IV1ForexRaw } from "./historicForexTicks";
 import { get } from "../transport/request";
 
 export interface IForexSnapshotAgg {
@@ -11,7 +11,7 @@ export interface IForexSnapshotAgg {
 export interface IForexSnapshotTicker {
   ticker: string;
   day: IForexSnapshotAgg;
-  lastTrade: IV1Forex;
+  lastTrade: IV1ForexRaw;
   min: IForexSnapshotAgg;
   prevDay: IForexSnapshotAgg;
   todaysChange: number;

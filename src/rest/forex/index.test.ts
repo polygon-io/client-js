@@ -17,7 +17,7 @@ describe("[REST] Forex / Currencies", () => {
   let requestStub;
   const sandbox = sinon.createSandbox();
   beforeEach(() => {
-    requestStub = sandbox.stub(request, "get");
+    requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
   afterEach(() => {
     sandbox.restore();
@@ -66,6 +66,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("historicForexTick call /v1/historic/forex/{from}/{to}/{date}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        ticks: []
+      })
+    );
     await historicForexTicks("AUD", "USD", "2019-02-01", { limit: 100 });
     requestStub.callCount.should.eql(1);
     requestStub
