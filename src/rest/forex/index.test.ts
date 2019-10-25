@@ -97,6 +97,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexSnapshotAllTickers call /v2/snapshot/locale/global/markets/forex/tickers", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        tickers: []
+      })
+    );
     await forexSnapshotAllTickers();
     requestStub.callCount.should.eql(1);
     requestStub
@@ -105,6 +111,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexSnapshotGainersLosers call /v2/snapshot/locale/global/markets/forex/{direction}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        tickers: []
+      })
+    );
     await forexSnapshotGainersLosers();
     requestStub.callCount.should.eql(1);
     requestStub

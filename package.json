@@ -6,6 +6,7 @@
   "types": "lib/main.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register '**/*.test.ts'",
+    "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
     "build": "tsc",
     "generate-doc": "typedoc"

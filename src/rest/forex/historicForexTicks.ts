@@ -15,7 +15,7 @@ export interface IV1ForexFormatted {
   t: number;
   timestamp: number;
 }
-const formatIV1ForexRaw = (raw: IV1ForexRaw): IV1ForexFormatted => ({
+export const formatIV1ForexRaw = (raw: IV1ForexRaw): IV1ForexFormatted => ({
   ...raw,
   ask: raw.a,
   bid: raw.b,
