@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v1_meta_exchanges
 import { get } from "../transport/request";
 
-export interface IExchange {
+export interface IExchangeRaw {
   id: number;
   type: string;
   market: string;
@@ -9,6 +9,19 @@ export interface IExchange {
   name: string;
   tape: string;
 }
+export interface IExchangeFormatted {
+  id: number;
+  type: string;
+  market: string;
+  mic: string;
+  marketIdentifierCode: string;
+  name: string;
+  tape: string;
+}
+const formatIExchangeRaw = (raw: IExchangeRaw): IExchangeFormatted => ({
+  ...raw,
+  marketIdentifierCode: raw.mic
+});
 
-// TODO: remap
-export const exchanges = (): Promise<IExchange[]> => get(`/v1/meta/exchanges`);
+export const exchanges = async (): Promise<IExchangeFormatted[]> =>
+  (await get(`/v1/meta/exchanges`)).map(formatIExchangeRaw);

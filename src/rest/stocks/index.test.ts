@@ -25,19 +25,25 @@ describe("[REST] Stock / equities", () => {
   let requestStub;
   const sandbox = sinon.createSandbox();
   beforeEach(() => {
-    requestStub = sandbox.stub(request, "get");
+    requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
   afterEach(() => {
     sandbox.restore();
   });
 
   it("exchanges call /v1/meta/exchanges", async () => {
+    sandbox.restore();
+    requestStub = sandbox.stub(request, "get").returns(Promise.resolve([]));
     await exchanges();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/meta/exchanges");
   });
 
   it("v1HistoricTrades call /v1/historic/trades/{symbol}/{date}", async () => {
+    sandbox.restore();
+    requestStub = sandbox
+      .stub(request, "get")
+      .returns(Promise.resolve({ ticks: [] }));
     await v1HistoricTrades("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -54,6 +60,10 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("v1HistoricQuotes call /v1/historic/quotes/{symbol}/{date}", async () => {
+    sandbox.restore();
+    requestStub = sandbox
+      .stub(request, "get")
+      .returns(Promise.resolve({ ticks: [] }));
     await v1HistoricQuotes("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub

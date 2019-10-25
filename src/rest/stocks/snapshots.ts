@@ -1,5 +1,5 @@
 import { get } from "../transport/request";
-import { ITradeV1 } from "./v1HistoricTrades";
+import { ITradeV1Raw } from "./v1HistoricTrades";
 
 export interface IStocksSnapshotAgg {
   c: number;
@@ -18,7 +18,7 @@ export interface IStocksSnapshotQuote {
 export interface IStocksSnapshotTicker {
   ticker: string;
   day: IStocksSnapshotAgg;
-  lastTrade: ITradeV1;
+  lastTrade: ITradeV1Raw;
   lastQuote: IStocksSnapshotQuote;
   min: IStocksSnapshotAgg;
   prevDay: IStocksSnapshotAgg;
