@@ -1,11 +1,12 @@
 {
   "name": "polygon.io",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Node JS client for polygon.io api",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register '**/*.test.ts'",
+    "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
     "build": "tsc",
     "generate-doc": "typedoc"

@@ -17,19 +17,31 @@ describe("[REST] Forex / Currencies", () => {
   let requestStub;
   const sandbox = sinon.createSandbox();
   beforeEach(() => {
-    requestStub = sandbox.stub(request, "get");
+    requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
   afterEach(() => {
     sandbox.restore();
   });
 
   it("forexPreviousClose call /v2/aggs/ticker/{ticker}/prev", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
     await forexPreviousClose("EURCHF");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/EURCHF/prev");
   });
 
   it("forexAggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
     await forexAggregates("EURCHF", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -40,6 +52,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexGroupedDaily call /v2/aggs/grouped/locale/{locale}/market/{market}/{date}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
     await forexGroupedDaily("US", "FX", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -48,6 +66,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("historicForexTick call /v1/historic/forex/{from}/{to}/{date}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        ticks: []
+      })
+    );
     await historicForexTicks("AUD", "USD", "2019-02-01", { limit: 100 });
     requestStub.callCount.should.eql(1);
     requestStub
@@ -73,6 +97,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexSnapshotAllTickers call /v2/snapshot/locale/global/markets/forex/tickers", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        tickers: []
+      })
+    );
     await forexSnapshotAllTickers();
     requestStub.callCount.should.eql(1);
     requestStub
@@ -81,6 +111,12 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("forexSnapshotGainersLosers call /v2/snapshot/locale/global/markets/forex/{direction}", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        tickers: []
+      })
+    );
     await forexSnapshotGainersLosers();
     requestStub.callCount.should.eql(1);
     requestStub
