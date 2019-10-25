@@ -1,59 +1,161 @@
 import { get } from "../transport/request";
-import { ITradeV1Raw } from "./v1HistoricTrades";
+import {
+  formatITradeV1Raw,
+  ITradeV1Raw,
+  ITradeV1Formatted
+} from "./v1HistoricTrades";
 
-export interface IStocksSnapshotAgg {
+export interface IStocksSnapshotAggRaw {
   c: number;
   h: number;
   l: number;
   o: number;
   v: number;
 }
-export interface IStocksSnapshotQuote {
+export interface IStocksSnapshotAggFormatted {
+  c: number;
+  close: number;
+  h: number;
+  high: number;
+  l: number;
+  low: number;
+  o: number;
+  open: number;
+  v: number;
+  volume: number;
+}
+export const formatIStocksSnapshotAggRaw = (
+  raw: IStocksSnapshotAggRaw
+): IStocksSnapshotAggFormatted => ({
+  ...raw,
+  close: raw.c,
+  high: raw.h,
+  low: raw.l,
+  open: raw.o,
+  volume: raw.v
+});
+
+export interface IStocksSnapshotQuoteRaw {
   p: number;
   s: number;
   P: number;
   S: number;
   t: number;
 }
-export interface IStocksSnapshotTicker {
+export interface IStocksSnapshotQuoteFormatted {
+  p: number;
+  bidPrice: number;
+  s: number;
+  bidSize: number;
+  P: number;
+  askPrice: number;
+  S: number;
+  askSize: number;
+  t: number;
+  lastUpdateTimestam: number;
+}
+export const formatIStocksSnapshotQuoteRaw = (
+  raw: IStocksSnapshotQuoteRaw
+): IStocksSnapshotQuoteFormatted => ({
+  ...raw,
+  bidPrice: raw.p,
+  bidSize: raw.s,
+  askPrice: raw.P,
+  askSize: raw.S,
+  lastUpdateTimestam: raw.t
+});
+
+export interface IStocksSnapshotTickerRaw {
   ticker: string;
-  day: IStocksSnapshotAgg;
+  day: IStocksSnapshotAggRaw;
   lastTrade: ITradeV1Raw;
-  lastQuote: IStocksSnapshotQuote;
-  min: IStocksSnapshotAgg;
-  prevDay: IStocksSnapshotAgg;
+  lastQuote: IStocksSnapshotQuoteRaw;
+  min: IStocksSnapshotAggRaw;
+  prevDay: IStocksSnapshotAggRaw;
   todaysChange: number;
   todaysChangePerc: number;
   updated: number;
 }
+export interface IStocksSnapshotTickerFormatted {
+  ticker: string;
+  day: IStocksSnapshotAggFormatted;
+  lastTrade: ITradeV1Formatted;
+  lastQuote: IStocksSnapshotQuoteFormatted;
+  min: IStocksSnapshotAggFormatted;
+  prevDay: IStocksSnapshotAggFormatted;
+  todaysChange: number;
+  todaysChangePerc: number;
+  updated: number;
+}
+export const formatIStocksSnapshotTickerRaw = (
+  raw: IStocksSnapshotTickerRaw
+): IStocksSnapshotTickerFormatted => ({
+  ...raw,
+  day: formatIStocksSnapshotAggRaw(raw.day),
+  lastTrade: formatITradeV1Raw(raw.lastTrade),
+  lastQuote: formatIStocksSnapshotQuoteRaw(raw.lastQuote),
+  min: formatIStocksSnapshotAggRaw(raw.min),
+  prevDay: formatIStocksSnapshotAggRaw(raw.prevDay)
+});
 
-// TODO: remap
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers
-export interface ISnapshotAllTickersResult {
+export interface ISnapshotAllTickersResultRaw {
   status: string;
-  tickers: IStocksSnapshotTicker[];
+  tickers: IStocksSnapshotTickerRaw[];
 }
-export const snapshotAllTickers = (): Promise<ISnapshotAllTickersResult> =>
-  get(`/v2/snapshot/locale/us/markets/stocks/tickers`);
+export interface ISnapshotAllTickersResultFormatted {
+  status: string;
+  tickers: IStocksSnapshotTickerFormatted[];
+}
+const formatISnapshotAllTickersResultRaw = (
+  raw: ISnapshotAllTickersResultRaw
+): ISnapshotAllTickersResultFormatted => ({
+  ...raw,
+  tickers: raw.tickers.map(formatIStocksSnapshotTickerRaw)
+});
 
-// TODO: remap
+export const snapshotAllTickers = async (): Promise<
+  ISnapshotAllTickersResultFormatted
+> =>
+  formatISnapshotAllTickersResultRaw(
+    await get(`/v2/snapshot/locale/us/markets/stocks/tickers`)
+  );
+
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers_ticker
-export interface ISnapshotSingleTickerResult {
+export interface ISnapshotSingleTickerResultRaw {
   status: string;
-  ticker: IStocksSnapshotTicker;
+  ticker: IStocksSnapshotTickerRaw;
 }
-export const snapshotSingleTicker = (
+export interface ISnapshotSingleTickerResultFormatted {
+  status: string;
+  ticker: IStocksSnapshotTickerFormatted;
+}
+const formatISnapshotSingleTickerResultRaw = (
+  raw: ISnapshotSingleTickerResultRaw
+): ISnapshotSingleTickerResultFormatted => ({
+  ...raw,
+  ticker: formatIStocksSnapshotTickerRaw(raw.ticker)
+});
+
+export const snapshotSingleTicker = async (
   ticker: string
-): Promise<ISnapshotSingleTickerResult> =>
-  get(`/v2/snapshot/locale/us/markets/stocks/tickers/${ticker}`);
+): Promise<ISnapshotSingleTickerResultFormatted> =>
+  formatISnapshotSingleTickerResultRaw(
+    await get(`/v2/snapshot/locale/us/markets/stocks/tickers/${ticker}`)
+  );
 
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers_ticker
-export interface ISnapshotGainersLosersResult {
+export interface ISnapshotGainersLosersResultRaw {
   status: string;
-  tickers: IStocksSnapshotTicker[];
+  tickers: IStocksSnapshotTickerRaw[];
 }
-// TODO: remap
-export const snapshotGainersLosers = (
+export interface ISnapshotGainersLosersResultFormatted {
+  status: string;
+  tickers: IStocksSnapshotTickerFormatted[];
+}
+export const snapshotGainersLosers = async (
   direction: string = "gainers"
-): Promise<ISnapshotGainersLosersResult> =>
-  get(`/v2/snapshot/locale/us/markets/stocks/${direction}`);
+): Promise<ISnapshotGainersLosersResultFormatted> =>
+  formatISnapshotAllTickersResultRaw(
+    await get(`/v2/snapshot/locale/us/markets/stocks/${direction}`)
+  );

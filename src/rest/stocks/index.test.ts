@@ -25,7 +25,9 @@ describe("[REST] Stock / equities", () => {
   let requestStub;
   const sandbox = sinon.createSandbox();
   beforeEach(() => {
-    requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
+    requestStub = sandbox
+      .stub(request, "get")
+      .returns(Promise.resolve({ ticks: [], results: [], tickers: [] }));
   });
   afterEach(() => {
     sandbox.restore();
@@ -114,6 +116,18 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("snapshotSingleTicker call /v2/snapshot/locale/us/markets/stocks/tickers/{ticker}", async () => {
+    sandbox.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        ticker: {
+          day: {},
+          lastTrade: {},
+          lastQuote: {},
+          min: {},
+          prevDay: {}
+        }
+      })
+    );
     await snapshotSingleTicker("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub
