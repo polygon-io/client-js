@@ -19,5 +19,5 @@ export interface IMarketStatus {
   };
 }
 
-export const marketStatus = async (): Promise<IMarketStatus> =>
-  get("/v1/marketstatus/now");
+export const marketStatus = async (apiKey: string): Promise<IMarketStatus> =>
+  get("/v1/marketstatus/now", apiKey);

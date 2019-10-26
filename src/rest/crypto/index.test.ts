@@ -2,25 +2,13 @@ import * as sinon from "sinon";
 import * as chai from "chai";
 
 import * as request from "../transport/request";
-
-import {
-  cryptoAggregates,
-  cryptoDailyOpenClose,
-  cryptoExhanges,
-  cryptoGroupedDaily,
-  cryptoPreviousClose,
-  cryptoSnapshotAllTickers,
-  cryptoSnapshotGainersLosers,
-  cryptoSnapshotSingleTicker,
-  cryptoSnapshotSingleTickerFullBook,
-  historicCryptoTrades,
-  lastTradeForCryptoPair
-} from ".";
+import { cryptoClient } from "./index";
 
 describe("[REST] Crypto", () => {
   chai.should();
   let requestStub;
   const sandbox = sinon.createSandbox();
+  const crypto = cryptoClient("invalid");
   beforeEach(() => {
     requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
@@ -35,7 +23,7 @@ describe("[REST] Crypto", () => {
         results: []
       })
     );
-    await cryptoPreviousClose("BTC");
+    await crypto.previousClose("BTC");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/BTC/prev");
   });
@@ -47,7 +35,7 @@ describe("[REST] Crypto", () => {
         results: []
       })
     );
-    await cryptoAggregates("BTC", 1, "day", "2019-01-01", "2019-02-01");
+    await crypto.aggregates("BTC", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -63,7 +51,7 @@ describe("[REST] Crypto", () => {
         results: []
       })
     );
-    await cryptoGroupedDaily("US", "CRYPTO", "2019-02-01");
+    await crypto.groupedDaily("US", "CRYPTO", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -73,19 +61,19 @@ describe("[REST] Crypto", () => {
   });
 
   it("cryptoExchanges call /v1/meta/crypto-exchanges", async () => {
-    await cryptoExhanges();
+    await crypto.exchanges();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/meta/crypto-exchanges");
   });
 
   it("lastTradeForCryptoPair call /v1/last/crypto/{from}/{to}", async () => {
-    await lastTradeForCryptoPair("BTC", "ETH");
+    await crypto.lastTradeForPair("BTC", "ETH");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/last/crypto/BTC/ETH");
   });
 
   it("cryptoDailyOpenClose call /v1/open-close/crypto/{from}/{to}/{date}", async () => {
-    await cryptoDailyOpenClose("BTC", "USD", "2019-01-01");
+    await crypto.dailyOpenClose("BTC", "USD", "2019-01-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -99,7 +87,7 @@ describe("[REST] Crypto", () => {
         ticks: []
       })
     );
-    await historicCryptoTrades("BTC", "USD", "2019-01-01");
+    await crypto.historicTrades("BTC", "USD", "2019-01-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -113,7 +101,7 @@ describe("[REST] Crypto", () => {
         tickers: []
       })
     );
-    await cryptoSnapshotAllTickers();
+    await crypto.snapshotAllTickers();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -133,7 +121,7 @@ describe("[REST] Crypto", () => {
         }
       })
     );
-    await cryptoSnapshotSingleTicker("X:BTCUSD");
+    await crypto.snapshotSingleTicker("X:BTCUSD");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -149,7 +137,7 @@ describe("[REST] Crypto", () => {
         tickers: []
       })
     );
-    await cryptoSnapshotGainersLosers();
+    await crypto.snapshotGainersLosers();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -163,7 +151,7 @@ describe("[REST] Crypto", () => {
         data: {}
       })
     );
-    await cryptoSnapshotSingleTickerFullBook("BTCUSD");
+    await crypto.snapshotSingleTickerFullBook("BTCUSD");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]

@@ -40,6 +40,7 @@ export interface IHistoricCryptoTradeQuery extends IPolygonQuery {
 }
 
 export const historicCryptoTrades = async (
+  apiKey: string,
   from: string,
   to: string,
   date: string,
@@ -47,6 +48,7 @@ export const historicCryptoTrades = async (
 ): Promise<IHistoricCryptoTradeFormatted> => {
   const raw: IHistoricCryptoTradeRaw = await get(
     `/v1/historic/crypto/${from}/${to}/${date}`,
+    apiKey,
     query
   );
   return {

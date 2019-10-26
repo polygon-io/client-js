@@ -87,10 +87,11 @@ export const formatIV1HistoricTradesResultRaw = (
 });
 
 export const v1HistoricTrades = async (
+  apiKey: string,
   symbol: string,
   date: string,
   query?: IV1HistoricTradesQuery
 ): Promise<IV1HistoricTradesResultFormatted> =>
   formatIV1HistoricTradesResultRaw(
-    await get(`/v1/historic/trades/${symbol}/${date}`, query)
+    await get(`/v1/historic/trades/${symbol}/${date}`, apiKey, query)
   );

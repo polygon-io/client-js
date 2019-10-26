@@ -23,5 +23,7 @@ const formatIExchangeRaw = (raw: IExchangeRaw): IExchangeFormatted => ({
   marketIdentifierCode: raw.mic
 });
 
-export const exchanges = async (): Promise<IExchangeFormatted[]> =>
-  (await get(`/v1/meta/exchanges`)).map(formatIExchangeRaw);
+export const exchanges = async (
+  apiKey: string
+): Promise<IExchangeFormatted[]> =>
+  (await get(`/v1/meta/exchanges`, apiKey)).map(formatIExchangeRaw);

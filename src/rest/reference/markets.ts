@@ -11,5 +11,5 @@ export interface IMarketResponse {
   results?: IMarket[];
 }
 
-export const markets = async (): Promise<IMarketResponse> =>
-  get("/v2/reference/markets");
+export const markets = async (apiKey: string): Promise<IMarketResponse> =>
+  get("/v2/reference/markets", apiKey);

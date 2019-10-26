@@ -1,9 +1,9 @@
 import * as chai from "chai";
-
-import * as rest from ".";
+import { restClient } from "./index";
 
 describe("[EXPORT] rest endpoints", () => {
   chai.should();
+  const rest = restClient("invalid");
   it("> reference", () => {
     rest.should.be.an("object");
     rest.reference.should.be.an("object");

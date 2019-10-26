@@ -1,9 +1,12 @@
-export { init, IPolygonConfig } from "./config";
-
 export * from "./rest";
-import * as REST from "./rest";
-export const rest = REST;
-
 export * from "./websockets";
-import * as ws from "./websockets";
-export const websockets = ws;
+
+import restClient from "./rest";
+import websocketClient from "./websockets";
+
+export const polygonClient = (apiKey: string) => ({
+  rest: restClient(apiKey),
+  websockers: websocketClient(apiKey)
+});
+
+export default polygonClient;

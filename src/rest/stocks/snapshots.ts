@@ -114,11 +114,11 @@ const formatISnapshotAllTickersResultRaw = (
   tickers: raw.tickers.map(formatIStocksSnapshotTickerRaw)
 });
 
-export const snapshotAllTickers = async (): Promise<
-  ISnapshotAllTickersResultFormatted
-> =>
+export const snapshotAllTickers = async (
+  apiKey: string
+): Promise<ISnapshotAllTickersResultFormatted> =>
   formatISnapshotAllTickersResultRaw(
-    await get(`/v2/snapshot/locale/us/markets/stocks/tickers`)
+    await get(`/v2/snapshot/locale/us/markets/stocks/tickers`, apiKey)
   );
 
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers_ticker
@@ -138,10 +138,11 @@ const formatISnapshotSingleTickerResultRaw = (
 });
 
 export const snapshotSingleTicker = async (
+  apiKey: string,
   ticker: string
 ): Promise<ISnapshotSingleTickerResultFormatted> =>
   formatISnapshotSingleTickerResultRaw(
-    await get(`/v2/snapshot/locale/us/markets/stocks/tickers/${ticker}`)
+    await get(`/v2/snapshot/locale/us/markets/stocks/tickers/${ticker}`, apiKey)
   );
 
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_snapshot_locale_us_markets_stocks_tickers_ticker
@@ -154,8 +155,9 @@ export interface ISnapshotGainersLosersResultFormatted {
   tickers: IStocksSnapshotTickerFormatted[];
 }
 export const snapshotGainersLosers = async (
+  apiKey: string,
   direction: string = "gainers"
 ): Promise<ISnapshotGainersLosersResultFormatted> =>
   formatISnapshotAllTickersResultRaw(
-    await get(`/v2/snapshot/locale/us/markets/stocks/${direction}`)
+    await get(`/v2/snapshot/locale/us/markets/stocks/${direction}`, apiKey)
   );

@@ -81,10 +81,11 @@ export const formatIV2HistoricTradeResultRaw = (
 });
 
 export const v2HistoricTrades = async (
+  apiKey: string,
   symbol: string,
   date: string,
   query?: IV2HistoricTradesQuery
 ): Promise<IV2HistoricTradesResultFormatted> =>
   formatIV2HistoricTradeResultRaw(
-    await get(`/v2/ticks/stocks/trades/${symbol}/${date}`, query)
+    await get(`/v2/ticks/stocks/trades/${symbol}/${date}`, apiKey, query)
   );
