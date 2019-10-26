@@ -2,28 +2,13 @@ import * as sinon from "sinon";
 import * as chai from "chai";
 
 import * as request from "../transport/request";
-import {
-  conditionMappings,
-  dailyOpenClose,
-  exchanges,
-  stocksGroupedDaily,
-  lastQuoteForSymbol,
-  lastTradeForSymbol,
-  stocksPreviousClose,
-  snapshotAllTickers,
-  snapshotGainersLosers,
-  snapshotSingleTicker,
-  v1HistoricQuotes,
-  v1HistoricTrades,
-  v2HistoricTrades,
-  v2HistoricQuotes,
-  stocksAggregates
-} from ".";
+import { stocksClient } from "./index";
 
 describe("[REST] Stock / equities", () => {
   chai.should();
   let requestStub;
   const sandbox = sinon.createSandbox();
+  const stocks = stocksClient("invalid");
   beforeEach(() => {
     requestStub = sandbox
       .stub(request, "get")
@@ -36,7 +21,7 @@ describe("[REST] Stock / equities", () => {
   it("exchanges call /v1/meta/exchanges", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(Promise.resolve([]));
-    await exchanges();
+    await stocks.exchanges();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/meta/exchanges");
   });
@@ -46,7 +31,7 @@ describe("[REST] Stock / equities", () => {
     requestStub = sandbox
       .stub(request, "get")
       .returns(Promise.resolve({ ticks: [] }));
-    await v1HistoricTrades("AAPL", "2018-2-2");
+    await stocks.v1HistoricTrades("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -54,7 +39,7 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("v2HistoricTrades call /v2/ticks/stocks/trades/{ticker}/{date}", async () => {
-    await v2HistoricTrades("AAPL", "2018-2-2");
+    await stocks.v2HistoricTrades("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -66,7 +51,7 @@ describe("[REST] Stock / equities", () => {
     requestStub = sandbox
       .stub(request, "get")
       .returns(Promise.resolve({ ticks: [] }));
-    await v1HistoricQuotes("AAPL", "2018-2-2");
+    await stocks.v1HistoricQuotes("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -74,7 +59,7 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("v2HistoricQuotes call /v2/ticks/stocks/nbbo/{ticker}/{date}", async () => {
-    await v2HistoricQuotes("AAPL", "2018-2-2");
+    await stocks.v2HistoricQuotes("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -82,19 +67,19 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("lastTradeForSymbol call /v1/last/stocks/{symbol}", async () => {
-    await lastTradeForSymbol("AAPL");
+    await stocks.lastTradeForSymbol("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/last/stocks/AAPL");
   });
 
   it("lastQuoteForSymbol call /v1/last_quote/stocks/{symbol}", async () => {
-    await lastQuoteForSymbol("AAPL");
+    await stocks.lastQuoteForSymbol("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/last_quote/stocks/AAPL");
   });
 
   it("dailyOpenClose call /v1/open-close/{symbol}/{date}", async () => {
-    await dailyOpenClose("AAPL", "2018-2-2");
+    await stocks.dailyOpenClose("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -102,13 +87,13 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("conditionMappings call /v1/meta/conditions/{ticktype}", async () => {
-    await conditionMappings();
+    await stocks.conditionMappings();
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/meta/conditions/trades");
   });
 
   it("snapshotAllTickers call /v2/snapshot/locale/us/markets/stocks/tickers", async () => {
-    await snapshotAllTickers();
+    await stocks.snapshotAllTickers();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -128,7 +113,7 @@ describe("[REST] Stock / equities", () => {
         }
       })
     );
-    await snapshotSingleTicker("AAPL");
+    await stocks.snapshotSingleTicker("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -136,7 +121,7 @@ describe("[REST] Stock / equities", () => {
   });
 
   it("snapshotGainersLosers call /v2/snapshot/locale/us/markets/stocks/{direction}", async () => {
-    await snapshotGainersLosers();
+    await stocks.snapshotGainersLosers();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -150,7 +135,7 @@ describe("[REST] Stock / equities", () => {
         results: []
       })
     );
-    await stocksPreviousClose("AAPL");
+    await stocks.previousClose("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/AAPL/prev");
   });
@@ -162,7 +147,7 @@ describe("[REST] Stock / equities", () => {
         results: []
       })
     );
-    await stocksAggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
+    await stocks.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -178,7 +163,7 @@ describe("[REST] Stock / equities", () => {
         results: []
       })
     );
-    await stocksGroupedDaily("US", "STOCKS", "2019-02-01");
+    await stocks.groupedDaily("US", "STOCKS", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]

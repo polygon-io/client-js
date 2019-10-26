@@ -1,21 +1,13 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
 import * as request from "../transport/request";
-import {
-  forexAggregates,
-  forexGroupedDaily,
-  forexPreviousClose,
-  forexSnapshotAllTickers,
-  forexSnapshotGainersLosers,
-  historicForexTicks,
-  lastQuoteForCurrencyPair,
-  realTimeCurrencyConversion
-} from ".";
+import { forexClient } from "./index";
 
 describe("[REST] Forex / Currencies", () => {
   chai.should();
   let requestStub;
   const sandbox = sinon.createSandbox();
+  const fx = forexClient("fakeApiKey");
   beforeEach(() => {
     requestStub = sandbox.stub(request, "get").returns(Promise.resolve({}));
   });
@@ -30,7 +22,7 @@ describe("[REST] Forex / Currencies", () => {
         results: []
       })
     );
-    await forexPreviousClose("EURCHF");
+    await fx.previousClose("EURCHF");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/EURCHF/prev");
   });
@@ -42,7 +34,7 @@ describe("[REST] Forex / Currencies", () => {
         results: []
       })
     );
-    await forexAggregates("EURCHF", 1, "day", "2019-01-01", "2019-02-01");
+    await fx.aggregates("EURCHF", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -58,7 +50,7 @@ describe("[REST] Forex / Currencies", () => {
         results: []
       })
     );
-    await forexGroupedDaily("US", "FX", "2019-02-01");
+    await fx.groupedDaily("US", "FX", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -72,7 +64,7 @@ describe("[REST] Forex / Currencies", () => {
         ticks: []
       })
     );
-    await historicForexTicks("AUD", "USD", "2019-02-01", { limit: 100 });
+    await fx.historicTicks("AUD", "USD", "2019-02-01", { limit: 100 });
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -80,7 +72,7 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("realTimeCurrencyConversion call /v1/conversion/{from}/{to}", async () => {
-    await realTimeCurrencyConversion("AUD", "USD", {
+    await fx.realTimeCurrencyConversion("AUD", "USD", {
       amount: 100,
       precision: 2
     });
@@ -89,7 +81,7 @@ describe("[REST] Forex / Currencies", () => {
   });
 
   it("lastQuoteForCurrencyPair call /v1/last_quote/currencies/{from}/{to}", async () => {
-    await lastQuoteForCurrencyPair("USD", "AUD");
+    await fx.lastQuoteForCurrencyPair("USD", "AUD");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -103,7 +95,7 @@ describe("[REST] Forex / Currencies", () => {
         tickers: []
       })
     );
-    await forexSnapshotAllTickers();
+    await fx.snapshotAllTickers();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -117,7 +109,7 @@ describe("[REST] Forex / Currencies", () => {
         tickers: []
       })
     );
-    await forexSnapshotGainersLosers();
+    await fx.snapshotGainersLosers();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]

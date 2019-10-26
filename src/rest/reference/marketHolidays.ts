@@ -10,5 +10,6 @@ export interface IMarketHolyday {
   close?: string;
 }
 
-export const marketHolydays = async (): Promise<IMarketHolyday[]> =>
-  get("/v1/marketstatus/upcoming");
+export const marketHolydays = async (
+  apiKey: string
+): Promise<IMarketHolyday[]> => get("/v1/marketstatus/upcoming", apiKey);

@@ -16,5 +16,7 @@ export interface ILastQuoteResult {
   last: ILastQuote;
 }
 
-export const lastQuoteForSymbol = (symbol: string): Promise<ILastQuoteResult> =>
-  get(`/v1/last_quote/stocks/${symbol}`);
+export const lastQuoteForSymbol = (
+  apiKey: string,
+  symbol: string
+): Promise<ILastQuoteResult> => get(`/v1/last_quote/stocks/${symbol}`, apiKey);

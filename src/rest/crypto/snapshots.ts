@@ -86,11 +86,12 @@ export interface ICryptoSnapshotSingleTickerFormatted {
   ticker: ICryptoSnapshotTickerFormatted;
 }
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
-export const cryptoSnapshotAllTickers = async (): Promise<
-  ICryptoSnapshotAllTickersFormatted
-> => {
+export const cryptoSnapshotAllTickers = async (
+  apiKey: string
+): Promise<ICryptoSnapshotAllTickersFormatted> => {
   const raw: ICryptoSnapshotAllTickersRaw = await get(
-    `/v2/snapshot/locale/global/markets/crypto/tickers`
+    `/v2/snapshot/locale/global/markets/crypto/tickers`,
+    apiKey
   );
   return {
     status: raw.status,
@@ -100,10 +101,12 @@ export const cryptoSnapshotAllTickers = async (): Promise<
 
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
 export const cryptoSnapshotSingleTicker = async (
+  apiKey: string,
   ticker: string
 ): Promise<ICryptoSnapshotSingleTickerFormatted> => {
   const raw: ICryptoSnapshotSingleTickerRaw = await get(
-    `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}`
+    `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}`,
+    apiKey
   );
   return {
     status: raw.status,
@@ -113,10 +116,12 @@ export const cryptoSnapshotSingleTicker = async (
 
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_direction
 export const cryptoSnapshotGainersLosers = async (
+  apiKey: string,
   direction: string = "gainers"
 ): Promise<ICryptoSnapshotAllTickersFormatted> => {
   const raw: ICryptoSnapshotAllTickersRaw = await get(
-    `/v2/snapshot/locale/global/markets/crypto/${direction}`
+    `/v2/snapshot/locale/global/markets/crypto/${direction}`,
+    apiKey
   );
   return {
     status: raw.status,
@@ -191,10 +196,12 @@ const formatICryptoSingleTickerFullBookRaw = (
 
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers_ticker_book
 export const cryptoSnapshotSingleTickerFullBook = async (
+  apiKey: string,
   ticker: string
 ): Promise<ICryptoSingleTickerFullBookFormatted> => {
   const raw: ICryptoSingleTickerFullBookRaw = await get(
-    `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}/book`
+    `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}/book`,
+    apiKey
   );
   return formatICryptoSingleTickerFullBookRaw(raw);
 };

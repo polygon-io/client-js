@@ -1,15 +1,20 @@
-export * from "./reference";
-import * as ref from "./reference";
-export const reference = ref;
-
-export * from "./stocks";
-import * as equities from "./stocks";
-export const stocks = equities;
-
-export * from "./forex";
-import * as fx from "./forex";
-export const forex = fx;
-
+import { cryptoClient } from "./crypto";
 export * from "./crypto";
-import * as cryptocurrencies from "./crypto";
-export const crypto = cryptocurrencies;
+
+import { forexClient } from "./forex";
+export * from "./forex";
+
+import { stocksClient } from "./stocks";
+export * from "./stocks";
+
+import { referenceClient } from "./reference";
+export * from "./reference";
+
+export const restClient = apiKey => ({
+  crypto: cryptoClient(apiKey),
+  forex: forexClient(apiKey),
+  stocks: stocksClient(apiKey),
+  reference: referenceClient(apiKey)
+});
+
+export default restClient;

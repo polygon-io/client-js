@@ -20,6 +20,7 @@ export interface IDailyOpenClose {
 }
 
 export const dailyOpenClose = async (
+  apiKey: string,
   symbol: string,
   date: string
-): Promise<IDailyOpenClose> => get(`/v1/open-close/${symbol}/${date}`);
+): Promise<IDailyOpenClose> => get(`/v1/open-close/${symbol}/${date}`, apiKey);

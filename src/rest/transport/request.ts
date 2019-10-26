@@ -1,8 +1,6 @@
 import * as https from "https";
 import * as querystring from "querystring";
 
-import { configs } from "../../config";
-
 export interface IPolygonQuery {
   [key: string]: string | number | boolean;
 }
@@ -11,17 +9,21 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;
 }
 
-export const get = (path: string, query?: IPolygonQuery): Promise<any> =>
+export const auth = (apiKey, func) => (...args) => func(apiKey, ...args);
+
+export const get = (
+  path: string,
+  apiKey: string = "invalid",
+  query?: IPolygonQuery
+): Promise<any> =>
   new Promise((resolve, reject) => {
-    if (!configs.apiKey) {
-      throw new Error(
-        "API KEY not configured... either set the POLYGON_API_KEY env variable or use the init(apiKey: string) function"
-      );
+    if (!apiKey) {
+      throw new Error("API KEY not configured...");
     }
 
     const authenticatedQuery: IPolygonQueryWithCredentials = {
       ...query,
-      apiKey: configs.apiKey
+      apiKey
     };
 
     const options = {

@@ -13,47 +13,40 @@ npm install --save polygon.io
 
 ### Authentication
 
-- setup you api key in the en variable `POLYGON_API_KEY` (dotenv supported)
-- call the init method before using any client calls
+- call the desired client with your api key to initialize it
 
 ```typescript
-import { init } from "polygon.io";
-
-init({
-  apiKey: "your apiKey"
-});
+import { polygonClient, restClient, websocketClient } from "polygon.io";
+const rest = restClient("API KEY");
 
 // you can use the api now
+
+rest.forex
+  .previousClose()
+  .then(/* your success handler */)
+  .catch(/* your error handler*/);
 ```
 
 ### [REST API](https://polygon.io/docs/#getting-started)
 
-Their is three way to use the functions:
-
 - import all the rest submodule
 
 ```typescript
-import { rest } from "polygon.io";
+import { restClient } from "polygon.io";
 
-rest.forex.forexPreviousClose().then(/* your success handler */);
+const rest = restClient("api key");
+
+rest.forex.previousClose().then(/* your success handler */);
 ```
 
 - import a specific submodule
 
 ```typescript
-import { reference } from "polygon.io";
+import { referenceClient } from "polygon.io";
+
+const reference = referenceClient("api key");
 
 reference.tickers.then(/* your success handler */);
-```
-
-- import single function
-
-```typescript
-import { init, exchanges } from "polygon.io";
-
-init({ apiKey: "XXXX" });
-
-exchanges().then(/* you success handler */);
 ```
 
 ### [Websocket](https://polygon.io/sockets)
@@ -61,11 +54,9 @@ exchanges().then(/* you success handler */);
 You can get preauthenticated [websocket clients](https://www.npmjs.com/package/ws) for the 3 topics.
 
 ```typescript
-import { init, websockets } from "polygon.io";
+import { websocketClient } from "polygon.io";
 
-init({ apiKey: "XXXX" });
-
-const stocksWS = websockets.getStocksWebsocket();
+const stocksWS = websocketClient("api key").getStocksWebsocket();
 
 stocksWs.on("message", raw => {
   const message = JSON.parse(raw);
