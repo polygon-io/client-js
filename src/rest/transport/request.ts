@@ -18,9 +18,7 @@ export const get = (
 ): Promise<any> =>
   new Promise((resolve, reject) => {
     if (!apiKey) {
-      throw new Error(
-        "API KEY not configured... either set the POLYGON_API_KEY env variable or use the init(apiKey: string) function"
-      );
+      throw new Error("API KEY not configured...");
     }
 
     const authenticatedQuery: IPolygonQueryWithCredentials = {
