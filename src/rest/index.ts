@@ -1,16 +1,20 @@
-import { cryptoClient } from "./crypto";
+import { cryptoClient, ICryptoClient } from "./crypto";
+import { forexClient, IForexClient } from "./forex";
+import { referenceClient, IReferenceClient } from "./reference";
+import { stocksClient, IStocksClient } from "./stocks";
 export * from "./crypto";
-
-import { forexClient } from "./forex";
 export * from "./forex";
-
-import { stocksClient } from "./stocks";
+export * from "./reference";
 export * from "./stocks";
 
-import { referenceClient } from "./reference";
-export * from "./reference";
+export interface IRestClient {
+  crypto: ICryptoClient;
+  forex: IForexClient;
+  stocks: IStocksClient;
+  reference: IReferenceClient;
+}
 
-export const restClient = apiKey => ({
+export const restClient = (apiKey): IRestClient => ({
   crypto: cryptoClient(apiKey),
   forex: forexClient(apiKey),
   stocks: stocksClient(apiKey),

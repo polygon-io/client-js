@@ -1,6 +1,6 @@
 // Forex QUOTE:
+import { w3cwebsocket as Websocket } from "websocket";
 import { getWsClient } from "../transport";
-import * as WebSocket from "ws";
 
 export interface IQuoteForexEvent {
   ev: string; // Event Type
@@ -23,5 +23,5 @@ export interface IAggegateForexEvent {
   s: number; // Tick Start Timestamp
 }
 
-export const getForexWebsocket = (apiKey: string): WebSocket =>
+export const getForexWebsocket = (apiKey: string): Websocket =>
   getWsClient("wss://socket.polygon.io/forex", apiKey);

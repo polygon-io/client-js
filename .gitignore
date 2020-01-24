@@ -1,6 +1,6 @@
 # project artifcats
-lib
 docs
+lib
 
 # node specific
 node_modules
