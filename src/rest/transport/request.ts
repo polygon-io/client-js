@@ -1,5 +1,5 @@
 import fetch from "cross-fetch";
-import { encode } from "querystring";
+import { stringify } from "query-string";
 
 export interface IPolygonQuery {
   [key: string]: string | number | boolean | undefined;
@@ -25,7 +25,9 @@ export const get = async (
     apiKey
   };
 
-  const url = `https://api.polygon.io${path}?${encode(authenticatedQuery)}`;
+  const queryString = stringify(authenticatedQuery, { encode: true });
+
+  const url = `https://api.polygon.io${path}?${queryString}`;
 
   const response = await fetch(url);
 

@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "cross-fetch": "^3.0.4",
-    "querystring": "^0.2.0",
+    "query-string": "^6.10.1",
     "websocket": "^1.0.31"
   }
 }
