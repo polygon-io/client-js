@@ -6,7 +6,7 @@ import websocketClient from "./websockets";
 
 export const polygonClient = (apiKey: string) => ({
   rest: restClient(apiKey),
-  websockers: websocketClient(apiKey)
+  websockets: websocketClient(apiKey)
 });
 
 export default polygonClient;
