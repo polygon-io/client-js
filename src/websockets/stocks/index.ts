@@ -1,6 +1,6 @@
 // Stocks TRADE:
 import { getWsClient } from "../transport";
-import * as WebSocket from "ws";
+import { w3cwebsocket as Websocket } from "websocket";
 
 export interface ITradeStockEvent {
   ev: string; // Event Type
@@ -45,5 +45,5 @@ export interface IAggregateStockEvent {
   e: number; // Tick End Timestamp ( Unix MS )
 }
 
-export const getStocksWebsocket = (apiKey: string): WebSocket =>
+export const getStocksWebsocket = (apiKey: string): Websocket =>
   getWsClient("wss://socket.polygon.io/stocks", apiKey);
