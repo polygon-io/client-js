@@ -75,5 +75,5 @@ stocksWS.send({ action: "subscribe", params: "T.MSFT" });
 - Generate the package documentation
 
 ```bash
-npm run generate-documentation
+npm run generate-doc
 ```
