@@ -13,17 +13,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bassochette/polygon.io.git"
+    "url": "git+https://github.com/polygon-io/client-js.git"
   },
   "keywords": [
     "polygon.io"
   ],
-  "author": "Julien Prugne <julien@webeleon.dev>",
+  "contributors": [
+    {
+      "name": "Julien Prugne",
+      "email": "julien@webeleon.dev"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bassochette/polygon.io/issues"
+    "url": "https://github.com/polygon-io/client-js/issues"
   },
-  "homepage": "https://github.com/bassochette/polygon.io#readme",
+  "homepage": "https://github.com/polygon-io/client-js#readme",
   "devDependencies": {
     "@types/chai": "^4.2.3",
     "@types/mocha": "^5.2.7",
