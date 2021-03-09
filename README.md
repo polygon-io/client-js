@@ -58,7 +58,7 @@ import { websocketClient } from "polygon.io";
 
 const stocksWS = websocketClient("api key").getStocksWebsocket();
 
-stocksWs.on("message", raw => {
+stocksWs.onmessage = raw => {
   const message = JSON.parse(raw);
   switch (message.ev) {
     case "T":
