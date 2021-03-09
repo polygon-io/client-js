@@ -1,17 +1,56 @@
 import { auth } from "../transport/request";
-import { locales } from "./locales";
-import { markets } from "./markets";
-import { marketHolydays } from "./marketHolidays";
-import { marketStatus } from "./marketStatus";
-import { stockDividends } from "./stockDividends";
-import { stockFinancials } from "./stockFinancials";
-import { stockSplits } from "./stockSplits";
-import { tickerDetails } from "./tickerDetails";
-import { tickerNews } from "./tickerNews";
-import { tickers } from "./tickers";
-import { tickerTypes } from "./tickerTypes";
+import { ILocalesResponse, locales } from "./locales";
+import { IMarketHolyday, marketHolydays } from "./marketHolidays";
+import { IMarketResponse, markets } from "./markets";
+import { IMarketStatus, marketStatus } from "./marketStatus";
+import { IStockDividendsResults, stockDividends } from "./stockDividends";
+import {
+  IStockFinancialQuery,
+  IStockFinancialResults,
+  stockFinancials
+} from "./stockFinancials";
+import { IStockSplitsResults, stockSplits } from "./stockSplits";
+import { ITickerDetailsFormatted, tickerDetails } from "./tickerDetails";
+import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews";
+import { ITickers, ITickersQuery, tickers } from "./tickers";
+import { ITickerTypes, tickerTypes } from "./tickerTypes";
 
-export const referenceClient = apiKey => ({
+export { ILocalesResponse } from "./locales";
+export { IMarketHolyday } from "./marketHolidays";
+export { IMarketResponse } from "./markets";
+export { IMarketStatus } from "./marketStatus";
+export { IStockDividendsResults } from "./stockDividends";
+export {
+  IStockFinancialQuery,
+  IStockFinancialResults
+} from "./stockFinancials";
+export { IStockSplitsResults } from "./stockSplits";
+export { ITickerDetailsFormatted } from "./tickerDetails";
+export { ITickerNews, ITickerNewsQuery } from "./tickerNews";
+export { ITickers, ITickersQuery } from "./tickers";
+export { ITickerTypes } from "./tickerTypes";
+
+export interface IReferenceClient {
+  locales: () => Promise<ILocalesResponse>;
+  markets: () => Promise<IMarketResponse>;
+  marketHolydays: () => Promise<IMarketHolyday[]>;
+  marketStatus: () => Promise<IMarketStatus>;
+  stockDividends: (symbol: string) => Promise<IStockDividendsResults>;
+  stockFinancials: (
+    symbol: string,
+    query?: IStockFinancialQuery
+  ) => Promise<IStockFinancialResults[]>;
+  stockSplits: (symbol: string) => Promise<IStockSplitsResults>;
+  tickerDetails: (symbol: string) => Promise<ITickerDetailsFormatted>;
+  tickerNews: (
+    symbol: string,
+    query?: ITickerNewsQuery
+  ) => Promise<ITickerNews[]>;
+  tickers: (query?: ITickersQuery) => Promise<ITickers[]>;
+  tickerTypes: () => Promise<ITickerTypes>;
+}
+
+export const referenceClient = (apiKey: string): IReferenceClient => ({
   locales: auth(apiKey, locales),
   markets: auth(apiKey, markets),
   marketHolydays: auth(apiKey, marketHolydays),

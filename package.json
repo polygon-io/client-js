@@ -1,6 +1,6 @@
 {
   "name": "polygon.io",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "description": "Node JS client for polygon.io api",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
@@ -13,23 +13,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bassochette/polygon.io.git"
+    "url": "git+https://github.com/polygon-io/client-js.git"
   },
   "keywords": [
     "polygon.io"
   ],
-  "author": "Julien Prugne <julien@webeleon.dev>",
+  "contributors": [
+    {
+      "name": "Julien Prugne",
+      "email": "julien@webeleon.dev"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bassochette/polygon.io/issues"
+    "url": "https://github.com/polygon-io/client-js/issues"
   },
-  "homepage": "https://github.com/bassochette/polygon.io#readme",
+  "homepage": "https://github.com/polygon-io/client-js#readme",
   "devDependencies": {
     "@types/chai": "^4.2.3",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.12",
     "@types/sinon": "^7.5.0",
+
     "@types/websocket": "^1.0.0",
+
     "chai": "^4.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
@@ -52,8 +59,10 @@
     ]
   },
   "dependencies": {
+
     "cross-fetch": "^3.0.4",
     "query-string": "^6.10.1",
     "websocket": "^1.0.31"
+
   }
 }
