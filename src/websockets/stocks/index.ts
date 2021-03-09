@@ -41,6 +41,7 @@ export interface IAggregateStockEvent {
   h: number; // Tick High Price
   l: number; // Tick Low Price
   a: number; // Tick Average / VWAP Price
+  z: number; // Tick Average Trade Size
   s: number; // Tick Start Timestamp ( Unix MS )
   e: number; // Tick End Timestamp ( Unix MS )
 }
