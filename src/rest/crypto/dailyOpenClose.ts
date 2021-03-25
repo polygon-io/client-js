@@ -10,11 +10,14 @@ export const cryptoDailyOpenClose = async (
   apiKey: string,
   from: string,
   to: string,
-  date: string
+  date: string,
+  apiBase?: string
 ): Promise<ICryptoDailyOpenCloseFormatted> => {
   const raw: ICryptoDailyOpenCloseRaw = await get(
     `/v1/open-close/crypto/${from}/${to}/${date}`,
-    apiKey
+    apiKey,
+    undefined,
+    apiBase
   );
   const data: ICryptoDailyOpenCloseFormatted = {
     symbol: raw.symbol,

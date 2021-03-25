@@ -10,5 +10,5 @@ export interface ICryptoExchanges {
   url: string;
 }
 
-export const cryptoExchanges = (apiKey: string): Promise<ICryptoExchanges[]> =>
-  get(`/v1/meta/crypto-exchanges`, apiKey);
+export const cryptoExchanges = (apiKey: string, apiBase?: string): Promise<ICryptoExchanges[]> =>
+  get(`/v1/meta/crypto-exchanges`, apiKey, undefined, apiBase);

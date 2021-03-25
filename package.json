@@ -1,6 +1,6 @@
 {
   "name": "polygon.io",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Node JS client for polygon.io api",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
@@ -30,22 +30,20 @@
   },
   "homepage": "https://github.com/polygon-io/client-js#readme",
   "devDependencies": {
-    "@types/chai": "^4.2.3",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.12",
-    "@types/sinon": "^7.5.0",
-
-    "@types/websocket": "^1.0.0",
-
-    "chai": "^4.2.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
-    "mocha": "^6.2.1",
-    "prettier": "1.18.2",
-    "sinon": "^7.5.0",
-    "ts-node": "^8.4.1",
-    "typedoc": "^0.15.0",
-    "typescript": "^3.6.4"
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.35",
+    "@types/sinon": "^9.0.11",
+    "@types/websocket": "^1.0.2",
+    "chai": "^4.3.4",
+    "husky": "^5.2.0",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.3.2",
+    "prettier": "^2.2.1",
+    "sinon": "^10.0.0",
+    "ts-node": "^9.1.1",
+    "typedoc": "^0.20.33",
+    "typescript": "^4.2.3"
   },
   "husky": {
     "hooks": {
@@ -59,10 +57,8 @@
     ]
   },
   "dependencies": {
-
-    "cross-fetch": "^3.0.4",
-    "query-string": "^6.10.1",
-    "websocket": "^1.0.31"
-
+    "cross-fetch": "^3.1.2",
+    "query-string": "^7.0.0",
+    "websocket": "^1.0.33"
   }
 }

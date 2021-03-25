@@ -23,5 +23,5 @@ export interface IAggegateForexEvent {
   s: number; // Tick Start Timestamp
 }
 
-export const getForexWebsocket = (apiKey: string): Websocket =>
-  getWsClient("wss://socket.polygon.io/forex", apiKey);
+export const getForexWebsocket = (apiKey: string, apiBase?: string): Websocket =>
+  getWsClient(`${apiBase}/forex`, apiKey);

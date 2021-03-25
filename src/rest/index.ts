@@ -14,11 +14,11 @@ export interface IRestClient {
   reference: IReferenceClient;
 }
 
-export const restClient = (apiKey): IRestClient => ({
-  crypto: cryptoClient(apiKey),
-  forex: forexClient(apiKey),
-  stocks: stocksClient(apiKey),
-  reference: referenceClient(apiKey)
+export const restClient = (apiKey, apiBase?: string): IRestClient => ({
+  crypto: cryptoClient(apiKey, apiBase),
+  forex: forexClient(apiKey, apiBase),
+  stocks: stocksClient(apiKey, apiBase),
+  reference: referenceClient(apiKey, apiBase)
 });
 
 export default restClient;

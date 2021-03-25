@@ -63,8 +63,9 @@ export const historicForexTicks = async (
   from: string,
   to: string,
   date: string,
-  query: IHistoricForexTicksQuery
+  query: IHistoricForexTicksQuery,
+  apiBase?: string
 ): Promise<IHistoricForexTicksFormatted> =>
   formatIHistoricForexTicksRaw(
-    await get(`/v1/historic/forex/${from}/${to}/${date}`, apiKey, query)
+    await get(`/v1/historic/forex/${from}/${to}/${date}`, apiKey, query, apiBase)
   );

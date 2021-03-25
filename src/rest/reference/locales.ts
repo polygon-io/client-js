@@ -11,5 +11,5 @@ export interface ILocalesResponse {
   results?: ILocales[];
 }
 
-export const locales = async (apiKeys: string): Promise<ILocalesResponse> =>
-  get("/v2/reference/locales", apiKeys);
+export const locales = async (apiKeys: string, apiBase?: string): Promise<ILocalesResponse> =>
+  get("/v2/reference/locales", apiKeys, undefined, apiBase);

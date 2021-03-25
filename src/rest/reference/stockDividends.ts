@@ -20,6 +20,7 @@ export interface IStockDividendsResults {
 
 export const stockDividends = async (
   apiKey: string,
-  symbol: string
+  symbol: string,
+  apiBase?: string
 ): Promise<IStockDividendsResults> =>
-  get(`/v2/reference/dividends/${symbol}`, apiKey);
+  get(`/v2/reference/dividends/${symbol}`, apiKey, undefined, apiBase);

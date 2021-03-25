@@ -7,6 +7,7 @@ export interface IConditionMappings {
 
 export const conditionMappings = async (
   apiKeys: string,
-  ticktype: string = "trades"
+  ticktype: string = "trades",
+  apiBase?: string
 ): Promise<IConditionMappings> =>
-  get(`/v1/meta/conditions/${ticktype}`, apiKeys);
+  get(`/v1/meta/conditions/${ticktype}`, apiKeys, undefined, apiBase);
