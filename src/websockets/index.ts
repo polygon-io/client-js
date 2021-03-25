@@ -1,5 +1,4 @@
 import { auth } from "../rest/transport/request";
-import * as WebSocket from "ws";
 
 import { getCryptoWebsocket } from "./crypto";
 import { getForexWebsocket } from "./forex";
@@ -15,10 +14,10 @@ export interface IWebsocketClient {
   stocks: () => WebSocket;
 }
 
-export const websocketClient = (apiKey: string): IWebsocketClient => ({
-  crypto: auth(apiKey, getCryptoWebsocket),
-  forex: auth(apiKey, getForexWebsocket),
-  stocks: auth(apiKey, getStocksWebsocket)
+export const websocketClient = (apiKey: string, apiBase?: string): IWebsocketClient => ({
+  crypto: auth(apiKey, getCryptoWebsocket, apiBase),
+  forex: auth(apiKey, getForexWebsocket, apiBase),
+  stocks: auth(apiKey, getStocksWebsocket, apiBase)
 });
 
 export default websocketClient;

@@ -44,12 +44,14 @@ export const historicCryptoTrades = async (
   from: string,
   to: string,
   date: string,
-  query: IHistoricCryptoTradeQuery = { limit: 100 }
+  query: IHistoricCryptoTradeQuery = { limit: 100 },
+  apiBase?: string
 ): Promise<IHistoricCryptoTradeFormatted> => {
   const raw: IHistoricCryptoTradeRaw = await get(
     `/v1/historic/crypto/${from}/${to}/${date}`,
     apiKey,
-    query
+    query,
+    apiBase
   );
   return {
     day: raw.day,

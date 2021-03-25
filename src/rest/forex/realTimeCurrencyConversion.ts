@@ -25,6 +25,7 @@ export const realTimeCurrencyConversion = (
   apiKey: string,
   from: string,
   to: string,
-  query: IRealTimeConversionQuery
+  query: IRealTimeConversionQuery,
+  apiBase?: string
 ): Promise<IRealTimeConversion> =>
-  get(`/v1/conversion/${from}/${to}`, apiKey, query);
+  get(`/v1/conversion/${from}/${to}`, apiKey, query, apiBase);

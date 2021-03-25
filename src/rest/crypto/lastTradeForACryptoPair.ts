@@ -23,6 +23,7 @@ export interface ILastTradeForACryptoPair {
 export const lastTradeForCryptoPair = (
   apiKey: string,
   from: string,
-  to: string
+  to: string,
+  apiBase?: string
 ): Promise<ILastTradeForACryptoPair> =>
-  get(`/v1/last/crypto/${from}/${to}`, apiKey);
+  get(`/v1/last/crypto/${from}/${to}`, apiKey, undefined, apiBase);

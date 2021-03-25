@@ -24,6 +24,7 @@ const formatIExchangeRaw = (raw: IExchangeRaw): IExchangeFormatted => ({
 });
 
 export const exchanges = async (
-  apiKey: string
+  apiKey: string,
+  apiBase?: string
 ): Promise<IExchangeFormatted[]> =>
-  (await get(`/v1/meta/exchanges`, apiKey)).map(formatIExchangeRaw);
+  (await get(`/v1/meta/exchanges`, apiKey, undefined, apiBase)).map(formatIExchangeRaw);

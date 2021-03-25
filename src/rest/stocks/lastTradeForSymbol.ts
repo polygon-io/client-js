@@ -21,5 +21,6 @@ export interface ILastTradeResult {
 
 export const lastTradeForSymbol = (
   apiKey: string,
-  symbol: string
-): Promise<ILastTradeResult> => get(`/v1/last/stocks/${symbol}`, apiKey);
+  symbol: string,
+  apiBase?: string
+): Promise<ILastTradeResult> => get(`/v1/last/stocks/${symbol}`, apiKey, undefined, apiBase);

@@ -6,5 +6,5 @@ export interface ITickerTypes {
   results?: any;
 }
 
-export const tickerTypes = async (apiKeys: string): Promise<ITickerTypes> =>
-  get("/v2/reference/types", apiKeys);
+export const tickerTypes = async (apiKeys: string, apiBase?: string): Promise<ITickerTypes> =>
+  get("/v2/reference/types", apiKeys, undefined, apiBase);

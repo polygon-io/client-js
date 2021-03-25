@@ -9,12 +9,13 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;
 }
 
-export const auth = (apiKey, func) => (...args) => func(apiKey, ...args);
+export const auth = (apiKey, func: Function, apiBase: string) => (...args) => func(apiKey, ...args, apiBase);
 
 export const get = async (
   path: string,
   apiKey: string = "invalid",
-  query?: IPolygonQuery
+  query?: IPolygonQuery,
+  apiBase?: string
 ): Promise<any> => {
   if (!apiKey) {
     throw new Error("API KEY not configured...");
@@ -27,7 +28,7 @@ export const get = async (
 
   const queryString = stringify(authenticatedQuery, { encode: true });
 
-  const url = `https://api.polygon.io${path}?${queryString}`;
+  const url = `${apiBase}${path}?${queryString}`;
 
   const response = await fetch(url);
 

@@ -121,24 +121,24 @@ export interface IStocksClient {
   ) => Promise<IAggResponseFormatted>;
 }
 
-export const stocksClient = (apiKey: string): IStocksClient => ({
-  conditionMappings: auth(apiKey, conditionMappings),
-  dailyOpenClose: auth(apiKey, dailyOpenClose),
-  exchanges: auth(apiKey, exchanges),
-  lastQuoteForSymbol: auth(apiKey, lastQuoteForSymbol),
-  lastTradeForSymbol: auth(apiKey, lastTradeForSymbol),
-  v1HistoricQuotes: auth(apiKey, v1HistoricQuotes),
-  v1HistoricTrades: auth(apiKey, v1HistoricTrades),
-  v2HistoricQuotes: auth(apiKey, v2HistoricQuotes),
-  v2HistoricTrades: auth(apiKey, v2HistoricTrades),
+export const stocksClient = (apiKey: string, apiBase?: string): IStocksClient => ({
+  conditionMappings: auth(apiKey, conditionMappings, apiBase),
+  dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
+  exchanges: auth(apiKey, exchanges, apiBase),
+  lastQuoteForSymbol: auth(apiKey, lastQuoteForSymbol, apiBase),
+  lastTradeForSymbol: auth(apiKey, lastTradeForSymbol, apiBase),
+  v1HistoricQuotes: auth(apiKey, v1HistoricQuotes, apiBase),
+  v1HistoricTrades: auth(apiKey, v1HistoricTrades, apiBase),
+  v2HistoricQuotes: auth(apiKey, v2HistoricQuotes, apiBase),
+  v2HistoricTrades: auth(apiKey, v2HistoricTrades, apiBase),
   // snapshot
-  snapshotAllTickers: auth(apiKey, snapshotAllTickers),
-  snapshotSingleTicker: auth(apiKey, snapshotSingleTicker),
-  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers),
+  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
+  snapshotSingleTicker: auth(apiKey, snapshotSingleTicker, apiBase),
+  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
   // aggregates
-  previousClose: auth(apiKey, stocksPreviousClose),
-  aggregates: auth(apiKey, stocksAggregates),
-  groupedDaily: auth(apiKey, stocksGroupedDaily)
+  previousClose: auth(apiKey, stocksPreviousClose, apiBase),
+  aggregates: auth(apiKey, stocksAggregates, apiBase),
+  groupedDaily: auth(apiKey, stocksGroupedDaily, apiBase)
 });
 
 export default stocksClient;

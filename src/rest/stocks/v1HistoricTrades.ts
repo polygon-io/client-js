@@ -90,8 +90,9 @@ export const v1HistoricTrades = async (
   apiKey: string,
   symbol: string,
   date: string,
-  query?: IV1HistoricTradesQuery
+  query?: IV1HistoricTradesQuery,
+  apiBase?: string
 ): Promise<IV1HistoricTradesResultFormatted> =>
   formatIV1HistoricTradesResultRaw(
-    await get(`/v1/historic/trades/${symbol}/${date}`, apiKey, query)
+    await get(`/v1/historic/trades/${symbol}/${date}`, apiKey, query, apiBase)
   );

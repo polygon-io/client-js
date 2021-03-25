@@ -97,8 +97,9 @@ export const v2HistoricQuotes = async (
   apiKey: string,
   symbol: string,
   date: string,
-  query?: IV2HistoricQuotesQuery
+  query?: IV2HistoricQuotesQuery,
+  apiBase?: string
 ): Promise<IV2HistoricQuotesResultFormatted> =>
   formatIV2HistoricQuotesResultRaw(
-    await get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, query)
+    await get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, query, apiBase)
   );

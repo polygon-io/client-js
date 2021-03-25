@@ -53,11 +53,14 @@ export interface ITickerDetailsFormatted {
 
 export const tickerDetails = async (
   apiKey: string,
-  symbol: string
+  symbol: string,
+  apiBase?: string
 ): Promise<ITickerDetailsFormatted> => {
   const raw: ITickerDetailsRaw = await get(
     `/v1/meta/symbols/${symbol}/company`,
-    apiKey
+    apiKey,
+    undefined,
+    apiBase
   );
 
   const formatted: ITickerDetailsFormatted = { ...raw };

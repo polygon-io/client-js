@@ -87,11 +87,14 @@ export interface ICryptoSnapshotSingleTickerFormatted {
 }
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
 export const cryptoSnapshotAllTickers = async (
-  apiKey: string
+  apiKey: string,
+  apiBase?: string
 ): Promise<ICryptoSnapshotAllTickersFormatted> => {
   const raw: ICryptoSnapshotAllTickersRaw = await get(
     `/v2/snapshot/locale/global/markets/crypto/tickers`,
-    apiKey
+    apiKey,
+    undefined,
+    apiBase
   );
   return {
     status: raw.status,
@@ -102,11 +105,14 @@ export const cryptoSnapshotAllTickers = async (
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
 export const cryptoSnapshotSingleTicker = async (
   apiKey: string,
-  ticker: string
+  ticker: string,
+  apiBase?: string
 ): Promise<ICryptoSnapshotSingleTickerFormatted> => {
   const raw: ICryptoSnapshotSingleTickerRaw = await get(
     `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}`,
-    apiKey
+    apiKey,
+    undefined,
+    apiBase
   );
   return {
     status: raw.status,
@@ -117,11 +123,14 @@ export const cryptoSnapshotSingleTicker = async (
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_direction
 export const cryptoSnapshotGainersLosers = async (
   apiKey: string,
-  direction: string = "gainers"
+  direction: string = "gainers",
+  apiBase?: string
 ): Promise<ICryptoSnapshotAllTickersFormatted> => {
   const raw: ICryptoSnapshotAllTickersRaw = await get(
     `/v2/snapshot/locale/global/markets/crypto/${direction}`,
-    apiKey
+    apiKey,
+    undefined,
+    apiBase
   );
   return {
     status: raw.status,
@@ -197,11 +206,14 @@ const formatICryptoSingleTickerFullBookRaw = (
 // CF: https://polygon.io/docs/#!/Crypto/get_v2_snapshot_locale_global_markets_crypto_tickers_ticker_book
 export const cryptoSnapshotSingleTickerFullBook = async (
   apiKey: string,
-  ticker: string
+  ticker: string,
+  apiBase?: string
 ): Promise<ICryptoSingleTickerFullBookFormatted> => {
   const raw: ICryptoSingleTickerFullBookRaw = await get(
     `/v2/snapshot/locale/global/markets/crypto/tickers/${ticker}/book`,
-    apiKey
+    apiKey,
+    undefined,
+    apiBase
   );
   return formatICryptoSingleTickerFullBookRaw(raw);
 };

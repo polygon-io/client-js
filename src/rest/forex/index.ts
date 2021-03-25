@@ -79,17 +79,17 @@ export interface IForexClient {
   ) => Promise<IForexSnapshotAllTickersResponseFormatted>;
 }
 
-export const forexClient = (apiKey: string): IForexClient => ({
-  lastQuoteForCurrencyPair: auth(apiKey, lastQuoteForCurrencyPair),
-  historicTicks: auth(apiKey, historicForexTicks),
-  realTimeCurrencyConversion: auth(apiKey, realTimeCurrencyConversion),
+export const forexClient = (apiKey: string, apiBase?: string): IForexClient => ({
+  lastQuoteForCurrencyPair: auth(apiKey, lastQuoteForCurrencyPair, apiBase),
+  historicTicks: auth(apiKey, historicForexTicks, apiBase),
+  realTimeCurrencyConversion: auth(apiKey, realTimeCurrencyConversion, apiBase),
   // aggregates
-  previousClose: auth(apiKey, forexPreviousClose),
-  aggregates: auth(apiKey, forexAggregates),
-  groupedDaily: auth(apiKey, forexGroupedDaily),
+  previousClose: auth(apiKey, forexPreviousClose, apiBase),
+  aggregates: auth(apiKey, forexAggregates, apiBase),
+  groupedDaily: auth(apiKey, forexGroupedDaily, apiBase),
   // snapshots
-  snapshotAllTickers: auth(apiKey, forexSnapshotAllTickers),
-  snapshotGainersLosers: auth(apiKey, forexSnapshotGainersLosers)
+  snapshotAllTickers: auth(apiKey, forexSnapshotAllTickers, apiBase),
+  snapshotGainersLosers: auth(apiKey, forexSnapshotGainersLosers, apiBase)
 });
 
 export default forexClient;

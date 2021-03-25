@@ -88,23 +88,24 @@ export interface ICryptoClient {
   ) => Promise<IAggResponseFormatted>;
 }
 
-export const cryptoClient = (apiKey): ICryptoClient => ({
-  dailyOpenClose: auth(apiKey, cryptoDailyOpenClose),
-  exchanges: auth(apiKey, cryptoExchanges),
-  lastTradeForPair: auth(apiKey, lastTradeForCryptoPair),
-  historicTrades: auth(apiKey, historicCryptoTrades),
+export const cryptoClient = (apiKey, apiBase?: string): ICryptoClient => ({
+  dailyOpenClose: auth(apiKey, cryptoDailyOpenClose, apiBase),
+  exchanges: auth(apiKey, cryptoExchanges, apiBase),
+  lastTradeForPair: auth(apiKey, lastTradeForCryptoPair, apiBase),
+  historicTrades: auth(apiKey, historicCryptoTrades, apiBase),
   // snapshots
-  snapshotSingleTicker: auth(apiKey, cryptoSnapshotSingleTicker),
-  snapshotAllTickers: auth(apiKey, cryptoSnapshotAllTickers),
-  snapshotGainersLosers: auth(apiKey, cryptoSnapshotGainersLosers),
+  snapshotSingleTicker: auth(apiKey, cryptoSnapshotSingleTicker, apiBase),
+  snapshotAllTickers: auth(apiKey, cryptoSnapshotAllTickers, apiBase),
+  snapshotGainersLosers: auth(apiKey, cryptoSnapshotGainersLosers, apiBase),
   snapshotSingleTickerFullBook: auth(
     apiKey,
-    cryptoSnapshotSingleTickerFullBook
+    cryptoSnapshotSingleTickerFullBook,
+    apiBase
   ),
   // aggregates
-  previousClose: auth(apiKey, cryptoPreviousClose),
-  aggregates: auth(apiKey, cryptoAggregates),
-  groupedDaily: auth(apiKey, cryptoGroupedDaily)
+  previousClose: auth(apiKey, cryptoPreviousClose, apiBase),
+  aggregates: auth(apiKey, cryptoAggregates, apiBase),
+  groupedDaily: auth(apiKey, cryptoGroupedDaily, apiBase)
 });
 
 export default cryptoClient;

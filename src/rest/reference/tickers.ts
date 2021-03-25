@@ -28,8 +28,9 @@ export interface ITickers {
 
 export const tickers = async (
   apiKey: string,
-  query?: ITickersQuery
+  query?: ITickersQuery,
+  apiBase?: string
 ): Promise<ITickers[]> => {
   const path: string = "/v2/reference/tickers";
-  return get(path, apiKey, query);
+  return get(path, apiKey, query, apiBase);
 };

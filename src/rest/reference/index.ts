@@ -50,18 +50,18 @@ export interface IReferenceClient {
   tickerTypes: () => Promise<ITickerTypes>;
 }
 
-export const referenceClient = (apiKey: string): IReferenceClient => ({
-  locales: auth(apiKey, locales),
-  markets: auth(apiKey, markets),
-  marketHolydays: auth(apiKey, marketHolydays),
-  marketStatus: auth(apiKey, marketStatus),
-  stockDividends: auth(apiKey, stockDividends),
-  stockFinancials: auth(apiKey, stockFinancials),
-  stockSplits: auth(apiKey, stockSplits),
-  tickerDetails: auth(apiKey, tickerDetails),
-  tickerNews: auth(apiKey, tickerNews),
-  tickers: auth(apiKey, tickers),
-  tickerTypes: auth(apiKey, tickerTypes)
+export const referenceClient = (apiKey: string, apiBase?: string): IReferenceClient => ({
+  locales: auth(apiKey, locales, apiBase),
+  markets: auth(apiKey, markets, apiBase),
+  marketHolydays: auth(apiKey, marketHolydays, apiBase),
+  marketStatus: auth(apiKey, marketStatus, apiBase),
+  stockDividends: auth(apiKey, stockDividends, apiBase),
+  stockFinancials: auth(apiKey, stockFinancials, apiBase),
+  stockSplits: auth(apiKey, stockSplits, apiBase),
+  tickerDetails: auth(apiKey, tickerDetails, apiBase),
+  tickerNews: auth(apiKey, tickerNews, apiBase),
+  tickers: auth(apiKey, tickers, apiBase),
+  tickerTypes: auth(apiKey, tickerTypes, apiBase)
 });
 
 export default referenceClient;

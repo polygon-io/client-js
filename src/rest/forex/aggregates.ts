@@ -9,10 +9,11 @@ import {
 export const forexPreviousClose = async (
   apiKey: string,
   ticker: string,
-  query?: IAggregateQuery
+  query?: IAggregateQuery,
+  apiBase?: string
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
-    await get(`/v2/aggs/ticker/${ticker}/prev`, apiKey, query)
+    await get(`/v2/aggs/ticker/${ticker}/prev`, apiKey, query, apiBase)
   );
 
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
@@ -23,13 +24,15 @@ export const forexAggregates = async (
   timespan: string,
   from: string,
   to: string,
-  query?: IAggregateQuery
+  query?: IAggregateQuery,
+  apiBase?: string
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
     await get(
       `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
       apiKey,
-      query
+      query,
+      apiBase
     )
   );
 
@@ -39,12 +42,14 @@ export const forexGroupedDaily = async (
   locale: string,
   market: string = "FX",
   date: string,
-  query?: IAggregateQuery
+  query?: IAggregateQuery,
+  apiBase?: string
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
     await get(
       `/v2/aggs/grouped/locale/${locale}/market/${market}/${date}`,
       apiKey,
-      query
+      query,
+      apiBase
     )
   );
