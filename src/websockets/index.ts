@@ -14,7 +14,7 @@ export interface IWebsocketClient {
   stocks: () => WebSocket;
 }
 
-export const websocketClient = (apiKey: string, apiBase?: string): IWebsocketClient => ({
+export const websocketClient = (apiKey: string, apiBase = "wss://socket.polygon.io"): IWebsocketClient => ({
   crypto: auth(apiKey, getCryptoWebsocket, apiBase),
   forex: auth(apiKey, getForexWebsocket, apiBase),
   stocks: auth(apiKey, getStocksWebsocket, apiBase)
