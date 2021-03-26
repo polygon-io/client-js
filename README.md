@@ -1,12 +1,11 @@
 # [polygon.io](https://polygon.io)
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![CircleCI](https://circleci.com/gh/bassochette/polygon.io.svg?style=svg)](https://circleci.com/gh/bassochette/polygon.io)
 
 ## Install
 
 ```bash
-npm install --save polygon.io
+npm install --save @polygon.io/client-js
 ```
 
 ## usage
@@ -16,7 +15,7 @@ npm install --save polygon.io
 - call the desired client with your api key to initialize it
 
 ```typescript
-import { polygonClient, restClient, websocketClient } from "polygon.io";
+import { polygonClient, restClient, websocketClient } from "@polygon.io/client-js";
 const rest = restClient("API KEY");
 
 // you can use the api now
@@ -32,7 +31,7 @@ rest.forex
 - import all the rest submodule
 
 ```typescript
-import { restClient } from "polygon.io";
+import { restClient } from "@polygon.io/client-js";
 
 const rest = restClient("api key");
 
@@ -42,7 +41,7 @@ rest.forex.previousClose().then(/* your success handler */);
 - import a specific submodule
 
 ```typescript
-import { referenceClient } from "polygon.io";
+import { referenceClient } from "@polygon.io/client-js";
 
 const reference = referenceClient("api key");
 
@@ -51,10 +50,10 @@ reference.tickers.then(/* your success handler */);
 
 ### [Websocket](https://polygon.io/sockets)
 
-You can get preauthenticated [websocket clients](https://www.npmjs.com/package/ws) for the 3 topics.
+You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
 
 ```typescript
-import { websocketClient } from "polygon.io";
+import { websocketClient } from "@polygon.io/client-js";
 
 const stocksWS = websocketClient("api key").getStocksWebsocket();
 

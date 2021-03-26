@@ -1,7 +1,7 @@
 {
-  "name": "polygon.io",
+  "name": "@polygon.io/client-js",
   "version": "2.1.0",
-  "description": "Node JS client for polygon.io api",
+  "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
   "scripts": {
@@ -16,12 +16,19 @@
     "url": "git+https://github.com/polygon-io/client-js.git"
   },
   "keywords": [
-    "polygon.io"
+    "polygon.io",
+    "stock api",
+    "forex api",
+    "crypto api"
   ],
   "contributors": [
     {
       "name": "Julien Prugne",
       "email": "julien@webeleon.dev"
+    },
+    {
+      "name": "Katie Adams",
+      "email": "katie@polygon.io"
     }
   ],
   "license": "MIT",
