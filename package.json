@@ -1,6 +1,6 @@
 {
   "name": "@polygon.io/client-js",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
