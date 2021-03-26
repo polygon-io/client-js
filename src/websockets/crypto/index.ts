@@ -70,5 +70,5 @@ export interface ILevel2CryptoEvent {
   r: number; // Tick Received @ Polygon Timestamp
 }
 
-export const getCryptoWebsocket = (apiKey: string, apiBase?: string): Websocket =>
+export const getCryptoWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
   getWsClient(`${apiBase}/crypto`, apiKey);

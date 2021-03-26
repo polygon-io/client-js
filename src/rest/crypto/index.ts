@@ -88,7 +88,7 @@ export interface ICryptoClient {
   ) => Promise<IAggResponseFormatted>;
 }
 
-export const cryptoClient = (apiKey, apiBase?: string): ICryptoClient => ({
+export const cryptoClient = (apiKey, apiBase = "https://api.polygon.io"): ICryptoClient => ({
   dailyOpenClose: auth(apiKey, cryptoDailyOpenClose, apiBase),
   exchanges: auth(apiKey, cryptoExchanges, apiBase),
   lastTradeForPair: auth(apiKey, lastTradeForCryptoPair, apiBase),

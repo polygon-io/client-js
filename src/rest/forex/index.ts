@@ -79,7 +79,7 @@ export interface IForexClient {
   ) => Promise<IForexSnapshotAllTickersResponseFormatted>;
 }
 
-export const forexClient = (apiKey: string, apiBase?: string): IForexClient => ({
+export const forexClient = (apiKey: string, apiBase = "https://api.polygon.io"): IForexClient => ({
   lastQuoteForCurrencyPair: auth(apiKey, lastQuoteForCurrencyPair, apiBase),
   historicTicks: auth(apiKey, historicForexTicks, apiBase),
   realTimeCurrencyConversion: auth(apiKey, realTimeCurrencyConversion, apiBase),

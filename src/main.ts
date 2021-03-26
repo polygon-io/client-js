@@ -9,7 +9,7 @@ export interface IPolygonClient {
   websockets: IWebsocketClient;
 }
 
-export const polygonClient = (apiKey: string, restApiBase = "https://api.polygon.io", websocketApiBase = "wss://socket.polygon.io"): IPolygonClient => ({
+export const polygonClient = (apiKey: string, restApiBase?: string, websocketApiBase?: string): IPolygonClient => ({
   rest: restClient(apiKey, restApiBase),
   websockets: websocketClient(apiKey, websocketApiBase)
 });
