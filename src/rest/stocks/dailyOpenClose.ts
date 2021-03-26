@@ -21,7 +21,7 @@ export interface IDailyOpenClose {
 
 export const dailyOpenClose = async (
   apiKey: string,
+  apiBase: string,
   symbol: string,
-  date: string,
-  apiBase?: string
-): Promise<IDailyOpenClose> => get(`/v1/open-close/${symbol}/${date}`, apiKey, undefined, apiBase);
+  date: string
+): Promise<IDailyOpenClose> => get(`/v1/open-close/${symbol}/${date}`, apiKey, apiBase);

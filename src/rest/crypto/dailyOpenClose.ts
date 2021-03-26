@@ -8,15 +8,14 @@ import {
 // CF: https://polygon.io/docs/#!/Crypto/get_v1_open_close_crypto_from_to_date
 export const cryptoDailyOpenClose = async (
   apiKey: string,
+  apiBase: string,
   from: string,
   to: string,
-  date: string,
-  apiBase?: string
+  date: string
 ): Promise<ICryptoDailyOpenCloseFormatted> => {
   const raw: ICryptoDailyOpenCloseRaw = await get(
     `/v1/open-close/crypto/${from}/${to}/${date}`,
     apiKey,
-    undefined,
     apiBase
   );
   const data: ICryptoDailyOpenCloseFormatted = {

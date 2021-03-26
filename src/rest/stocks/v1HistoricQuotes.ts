@@ -88,11 +88,11 @@ export const formatIV1HistoricQuotesResultRaw = (
 
 export const v1HistoricQuotes = async (
   apiKey: string,
+  apiBase: string,
   symbol: string,
   date: string,
-  query?: IV1HistoricQuotesQuery,
-  apiBase?: string
+  query?: IV1HistoricQuotesQuery
 ): Promise<IV1HistoricQuotesResultFormatted> =>
   formatIV1HistoricQuotesResultRaw(
-    await get(`/v1/historic/quotes/${symbol}/${date}`, apiKey, query, apiBase)
+    await get(`/v1/historic/quotes/${symbol}/${date}`, apiKey, apiBase, query)
   );

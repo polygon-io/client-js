@@ -19,7 +19,7 @@ export interface IStockSplitsResults {
 
 export const stockSplits = async (
   apiKey: string,
-  symbol: string,
-  apiBase?: string
+  apiBase: string,
+  symbol: string
 ): Promise<IStockSplitsResults> =>
-  get(`/v2/reference/splits/${symbol}`, apiKey, undefined, apiBase);
+  get(`/v2/reference/splits/${symbol}`, apiKey, apiBase);

@@ -16,8 +16,8 @@ export interface ILastQuoteForCurrencyPair {
 
 export const lastQuoteForCurrencyPair = (
   apiKey: string,
+  apiBase: string,
   from: string,
-  to: string,
-  apiBase?: string
+  to: string
 ): Promise<ILastQuoteForCurrencyPair> =>
-  get(`/v1/last_quote/currencies/${from}/${to}`, apiKey, undefined, apiBase);
+  get(`/v1/last_quote/currencies/${from}/${to}`, apiKey, apiBase);

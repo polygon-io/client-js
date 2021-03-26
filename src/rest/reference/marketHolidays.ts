@@ -12,5 +12,5 @@ export interface IMarketHolyday {
 
 export const marketHolydays = async (
   apiKey: string,
-  apiBase?: string
-): Promise<IMarketHolyday[]> => get("/v1/marketstatus/upcoming", apiKey, undefined, apiBase);
+  apiBase: string
+): Promise<IMarketHolyday[]> => get("/v1/marketstatus/upcoming", apiKey, apiBase);

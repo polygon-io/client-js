@@ -18,8 +18,8 @@ export interface ITickerNews {
 
 export const tickerNews = (
   apiKey: string,
+  apiBase: string,
   symbol: string,
-  query?: ITickerNewsQuery,
-  apiBase?: string
+  query?: ITickerNewsQuery
 ): Promise<ITickerNews[]> =>
-  get(`/v1/meta/symbols/${symbol}/news`, apiKey, query, apiBase);
+  get(`/v1/meta/symbols/${symbol}/news`, apiKey, apiBase, query);

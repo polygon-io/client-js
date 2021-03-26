@@ -128,8 +128,8 @@ export interface IStockFinancialResults {
 
 export const stockFinancials = async (
   apiKey: string,
+  apiBase: string,
   symbol: string,
-  query?: IStockFinancialQuery,
-  apiBase?: string
+  query?: IStockFinancialQuery
 ): Promise<IStockFinancialResults[]> =>
-  get(`/v2/reference/financials/${symbol}`, apiKey, query, apiBase);
+  get(`/v2/reference/financials/${symbol}`, apiKey, apiBase, query);
