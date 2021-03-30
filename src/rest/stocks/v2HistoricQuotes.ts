@@ -95,11 +95,11 @@ const formatIV2HistoricQuotesResultRaw = (
 
 export const v2HistoricQuotes = async (
   apiKey: string,
+  apiBase: string,
   symbol: string,
   date: string,
-  query?: IV2HistoricQuotesQuery,
-  apiBase?: string
+  query?: IV2HistoricQuotesQuery
 ): Promise<IV2HistoricQuotesResultFormatted> =>
   formatIV2HistoricQuotesResultRaw(
-    await get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, query, apiBase)
+    await get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, apiBase, query)
   );

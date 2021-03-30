@@ -50,7 +50,7 @@ export interface IReferenceClient {
   tickerTypes: () => Promise<ITickerTypes>;
 }
 
-export const referenceClient = (apiKey: string, apiBase?: string): IReferenceClient => ({
+export const referenceClient = (apiKey: string, apiBase = "https://api.polygon.io"): IReferenceClient => ({
   locales: auth(apiKey, locales, apiBase),
   markets: auth(apiKey, markets, apiBase),
   marketHolydays: auth(apiKey, marketHolydays, apiBase),

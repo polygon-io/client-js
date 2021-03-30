@@ -46,5 +46,5 @@ export interface IAggregateStockEvent {
   e: number; // Tick End Timestamp ( Unix MS )
 }
 
-export const getStocksWebsocket = (apiKey: string, apiBase?: string): Websocket =>
+export const getStocksWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
   getWsClient(`${apiBase}/stocks`, apiKey);

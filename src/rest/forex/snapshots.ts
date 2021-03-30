@@ -82,18 +82,18 @@ const formatIForexSnapshotAllTickersResponseRaw = (
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_snapshot_locale_global_markets_forex_tickers
 export const forexSnapshotAllTickers = async (
   apiKey: string,
-  apiBase?: string
+  apiBase: string
 ): Promise<IForexSnapshotAllTickersResponseFormatted> =>
   formatIForexSnapshotAllTickersResponseRaw(
-    await get(`/v2/snapshot/locale/global/markets/forex/tickers`, apiKey, undefined, apiBase)
+    await get(`/v2/snapshot/locale/global/markets/forex/tickers`, apiKey, apiBase)
   );
 
 // CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_snapshot_locale_global_markets_forex_direction
 export const forexSnapshotGainersLosers = async (
   apiKey: string,
-  direction: string = "gainers",
-  apiBase?: string
+  apiBase: string,
+  direction: string = "gainers"
 ): Promise<IForexSnapshotAllTickersResponseFormatted> =>
   formatIForexSnapshotAllTickersResponseRaw(
-    await get(`/v2/snapshot/locale/global/markets/forex/${direction}`, apiKey, undefined, apiBase)
+    await get(`/v2/snapshot/locale/global/markets/forex/${direction}`, apiKey, apiBase)
   );

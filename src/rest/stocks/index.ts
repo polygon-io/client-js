@@ -121,7 +121,7 @@ export interface IStocksClient {
   ) => Promise<IAggResponseFormatted>;
 }
 
-export const stocksClient = (apiKey: string, apiBase?: string): IStocksClient => ({
+export const stocksClient = (apiKey: string, apiBase = "https://api.polygon.io"): IStocksClient => ({
   conditionMappings: auth(apiKey, conditionMappings, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   exchanges: auth(apiKey, exchanges, apiBase),

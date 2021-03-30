@@ -60,12 +60,12 @@ export interface IHistoricForexTicksQuery extends IPolygonQuery {
 
 export const historicForexTicks = async (
   apiKey: string,
+  apiBase: string,
   from: string,
   to: string,
   date: string,
-  query: IHistoricForexTicksQuery,
-  apiBase?: string
+  query: IHistoricForexTicksQuery
 ): Promise<IHistoricForexTicksFormatted> =>
   formatIHistoricForexTicksRaw(
-    await get(`/v1/historic/forex/${from}/${to}/${date}`, apiKey, query, apiBase)
+    await get(`/v1/historic/forex/${from}/${to}/${date}`, apiKey, apiBase, query)
   );
