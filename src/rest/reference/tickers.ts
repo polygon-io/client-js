@@ -12,7 +12,15 @@ export interface ITickersQuery extends IPolygonQuery {
   active?: boolean;
 }
 
-export interface ITickers {
+export interface PageResult<T> {
+  page: number;
+  perPage: number;
+  count: number;
+  status: string;
+  tickers: T[]
+}
+
+export interface ITicker {
   ticker: string;
   name: string;
   market: string;
@@ -30,7 +38,7 @@ export const tickers = async (
   apiKey: string,
   apiBase: string,
   query?: ITickersQuery
-): Promise<ITickers[]> => {
+): Promise<PageResult<ITicker>> => {
   const path: string = "/v2/reference/tickers";
   return get(path, apiKey, apiBase, query);
 };
