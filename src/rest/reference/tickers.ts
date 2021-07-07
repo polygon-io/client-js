@@ -31,6 +31,6 @@ export const tickers = async (
   apiBase: string,
   query?: ITickersQuery
 ): Promise<ITickers[]> => {
-  const path: string = "/v2/reference/tickers";
+  const path: string = "/v3/reference/tickers";
   return get(path, apiKey, apiBase, query);
 };
