@@ -42,10 +42,7 @@ export interface IReferenceClient {
   ) => Promise<IStockFinancialResults[]>;
   stockSplits: (symbol: string) => Promise<IStockSplitsResults>;
   tickerDetails: (symbol: string) => Promise<ITickerDetailsFormatted>;
-  tickerNews: (
-    symbol: string,
-    query?: ITickerNewsQuery
-  ) => Promise<ITickerNews[]>;
+  tickerNews: (query?: ITickerNewsQuery) => Promise<ITickerNews[]>;
   tickers: (query?: ITickersQuery) => Promise<ITickers[]>;
   tickerTypes: () => Promise<ITickerTypes>;
 }

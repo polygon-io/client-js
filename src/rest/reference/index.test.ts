@@ -38,9 +38,11 @@ describe("[REST] reference", () => {
   });
 
   it("tickerNews call /v1/meta/symbols/{symbol}/news", async () => {
-    await ref.tickerNews("AAPL");
+    await ref.tickerNews({ ticker: 'AAPL'});
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/meta/symbols/AAPL/news");
+    console.log(requestStub.getCalls()[0].args)
+    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/news");
+    requestStub.getCalls()[0].args[3].should.eql({ ticker: 'AAPL'});
   });
 
   it("markets call /v2/reference/markets", async () => {
