@@ -20,7 +20,7 @@ describe("[REST] reference", () => {
   it("tickers call /v2/reference/tickers", async () => {
     await ref.tickers();
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/tickers");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/tickers");
   });
 
   it("tickerTypes call /v2/reference/types", async () => {
