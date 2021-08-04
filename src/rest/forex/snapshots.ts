@@ -34,7 +34,7 @@ const formatIForexSnapshotAggRaw = (
 export interface IForexSnapshotTickerRaw {
   ticker: string;
   day: IForexSnapshotAggRaw;
-  lastTrade: IV1ForexRaw;
+  lastQuote: IV1ForexRaw;
   min: IForexSnapshotAggRaw;
   prevDay: IForexSnapshotAggRaw;
   todaysChange: number;
@@ -44,7 +44,7 @@ export interface IForexSnapshotTickerRaw {
 export interface IForexSnapshotTickerFormatted {
   ticker: string;
   day: IForexSnapshotAggRaw;
-  lastTrade: IV1ForexRaw;
+  lastQuote: IV1ForexRaw;
   min: IForexSnapshotAggRaw;
   prevDay: IForexSnapshotAggRaw;
   todaysChange: number;
@@ -59,7 +59,7 @@ const formatIForexSnapshotRaw = (
   todaysChangePerc: raw.todaysChangePerc,
   updated: raw.updated,
   day: formatIForexSnapshotAggRaw(raw.day),
-  lastTrade: formatIV1ForexRaw(raw.lastTrade),
+  lastQuote: formatIV1ForexRaw(raw.lastQuote),
   min: formatIForexSnapshotAggRaw(raw.min),
   prevDay: formatIForexSnapshotAggRaw(raw.prevDay)
 });
