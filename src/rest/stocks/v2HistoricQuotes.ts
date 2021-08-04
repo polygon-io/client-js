@@ -66,7 +66,7 @@ export const formatIQuoteV2Raw = (raw: IQuoteV2Raw): IQuoteV2Formatted => ({
   bidPrice: raw.p,
   bidExchangeId: raw.x,
   bidSize: raw.s,
-  askPrice: raw.p,
+  askPrice: raw.P,
   askExchangeId: raw.X,
   askSize: raw.S,
   tapeWhereTradeOccured: raw.z
