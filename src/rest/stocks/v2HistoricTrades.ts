@@ -64,7 +64,7 @@ export interface IV2HistoricTradesResultRaw {
   db_latency?: number;
   success: boolean;
   ticker: string;
-  ticks: ITradeV2Raw[];
+  results: ITradeV2Raw[];
 }
 export interface IV2HistoricTradesResultFormatted {
   results_count?: number;
@@ -77,7 +77,7 @@ export const formatIV2HistoricTradeResultRaw = (
   raw: IV2HistoricTradesResultRaw
 ): IV2HistoricTradesResultFormatted => ({
   ...raw,
-  ticks: raw.ticks.map(formatITradeV2Raw)
+  ticks: raw.results.map(formatITradeV2Raw)
 });
 
 export const v2HistoricTrades = async (

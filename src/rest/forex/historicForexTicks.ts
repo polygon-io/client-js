@@ -6,6 +6,7 @@ export interface IV1ForexRaw {
   a: number;
   b: number;
   t: number;
+  x: number;
 }
 export interface IV1ForexFormatted {
   a: number;
@@ -14,12 +15,15 @@ export interface IV1ForexFormatted {
   bid: number;
   t: number;
   timestamp: number;
+  x: number;
+  exchange: number;
 }
 export const formatIV1ForexRaw = (raw: IV1ForexRaw): IV1ForexFormatted => ({
   ...raw,
   ask: raw.a,
   bid: raw.b,
-  timestamp: raw.t
+  timestamp: raw.t,
+  exchange: raw.x,
 });
 
 export interface IHistoricForexTicksRaw {
@@ -28,6 +32,7 @@ export interface IHistoricForexTicksRaw {
     a: string;
     b: string;
     t: string;
+    x: string;
   };
   msLatency: number;
   status: string;
@@ -40,6 +45,7 @@ export interface IHistoricForexTicksFormatted {
     a: string;
     b: string;
     t: string;
+    x: string;
   };
   msLatency: number;
   status: string;
