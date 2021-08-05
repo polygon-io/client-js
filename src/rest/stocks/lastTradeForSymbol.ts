@@ -23,4 +23,4 @@ export const lastTradeForSymbol = (
   apiKey: string,
   apiBase: string,
   symbol: string
-): Promise<ILastTradeResult> => get(`/v1/last/stocks/${symbol}`, apiKey, apiBase);
+): Promise<ILastTradeResult> => get(`/v2/last/trade/${symbol}`, apiKey, apiBase);

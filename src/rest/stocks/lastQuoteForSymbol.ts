@@ -20,4 +20,4 @@ export const lastQuoteForSymbol = (
   apiKey: string,
   apiBase: string,
   symbol: string
-): Promise<ILastQuoteResult> => get(`/v1/last_quote/stocks/${symbol}`, apiKey, apiBase);
+): Promise<ILastQuoteResult> => get(`/v2/last/nbbo/${symbol}`, apiKey, apiBase);

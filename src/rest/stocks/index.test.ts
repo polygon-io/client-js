@@ -69,13 +69,13 @@ describe("[REST] Stock / equities", () => {
   it("lastTradeForSymbol call /v1/last/stocks/{symbol}", async () => {
     await stocks.lastTradeForSymbol("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/last/stocks/AAPL");
+    requestStub.getCalls()[0].args[0].should.eql("/v2/last/trade/AAPL");
   });
 
   it("lastQuoteForSymbol call /v1/last_quote/stocks/{symbol}", async () => {
     await stocks.lastQuoteForSymbol("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/last_quote/stocks/AAPL");
+    requestStub.getCalls()[0].args[0].should.eql("/v2/last/nbbo/AAPL");
   });
 
   it("dailyOpenClose call /v1/open-close/{symbol}/{date}", async () => {
