@@ -74,5 +74,5 @@ stocksWS.send({ action: "subscribe", params: "T.MSFT" });
 - Generate the package documentation
 
 ```bash
-npm run generate-doc
+cd node_modules/@polygon.io/client-js && npm run generate-doc
 ```
