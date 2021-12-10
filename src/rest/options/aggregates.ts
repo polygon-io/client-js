@@ -1,4 +1,4 @@
-// CF: https://polygon.io/docs/crypto/get_v2_aggs_ticker__cryptoTicker__range__multiplier___timespan___from___to
+// CF: https://polygon.io/docs/options/get_v2_aggs_ticker__optionsTicker__range__multiplier___timespan___from___to
 
 import { get } from "../transport/request";
 import { IAggsQuery, IAggs } from '../stocks/aggregates';

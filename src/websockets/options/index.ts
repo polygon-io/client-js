@@ -1,8 +1,8 @@
 import { getWsClient } from "../transport";
 import { w3cwebsocket as Websocket } from "websocket";
 
-// Stocks Aggregate:
-export interface IAggregateStockEvent {
+// Options Aggregate:
+export interface IAggregateOptionsEvent {
   ev: string; // Event Type ( A = Second Agg, AM = Minute Agg )
   sym: string; // Symbol Ticker
   v: number; // Tick Volume
@@ -19,32 +19,15 @@ export interface IAggregateStockEvent {
   e: number; // Tick End Timestamp ( Unix MS )
 }
 
-export interface ITradeStockEvent {
+export interface ITradeOptionsEvent {
   ev: string; // Event Type
   sym: string; // Symbol Ticker
   x: string; // Exchange ID
-  i: number; // Trade ID
-  z: number; // Tape ( 1=A 2=B 3=C)
   p: number; // Price
   s: number; // Trade Size
   c: number[]; // Trade Conditions
   t: number; // Trade Timestamp ( Unix MS )
 }
 
-// Stocks QUOTE:
-export interface IQuoteStockEvent {
-  ev: string; // Event Type
-  sym: string; // Symbol Ticker
-  bx: string; // Bix Exchange ID
-  bp: number; // Bid Price
-  bs: number; // Bid Size
-  ax: string; // Ask Exchange ID
-  ap: number; // Ask Price
-  as: number; // Ask Size
-  c: number; // Quote Condition
-  t: number; // Quote Timestamp ( Unix MS )
-	z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
-}
-
-export const getStocksWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
-  getWsClient(`${apiBase}/stocks`, apiKey);
+export const getOptionsWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
+  getWsClient(`${apiBase}/options`, apiKey);

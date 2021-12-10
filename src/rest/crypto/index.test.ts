@@ -16,19 +16,7 @@ describe("[REST] Crypto", () => {
     sandbox.restore();
   });
 
-  it("cryptoPreviousClose call /v2/aggs/ticker/{ticker}/prev", async () => {
-    requestStub.restore();
-    requestStub = sandbox.stub(request, "get").returns(
-      Promise.resolve({
-        results: []
-      })
-    );
-    await crypto.previousClose("BTC");
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/BTC/prev");
-  });
-
-  it("cryptoAggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
+	it("aggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
@@ -44,43 +32,43 @@ describe("[REST] Crypto", () => {
       );
   });
 
-  it("cryptoGroupedDaily call /v2/aggs/grouped/locale/{locale}/market/{market}/{date}", async () => {
+	it("aggregates grouped daily call /v2/aggs/grouped/locale/global/market/market/{date}", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
         results: []
       })
     );
-    await crypto.groupedDaily("US", "CRYPTO", "2019-02-01");
+    await crypto.aggregatesGroupedDaily("2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql(
-        "/v2/aggs/grouped/locale/US/market/CRYPTO/2019-02-01"
+        "/v2/aggs/grouped/locale/global/market/crypto/2019-02-01"
       );
   });
 
-  it("cryptoExchanges call /v1/meta/crypto-exchanges", async () => {
-    await crypto.exchanges();
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/meta/crypto-exchanges");
-  });
-
-  it("lastTradeForCryptoPair call /v1/last/crypto/{from}/{to}", async () => {
-    await crypto.lastTradeForPair("BTC", "ETH");
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/last/crypto/BTC/ETH");
-  });
-
-  it("cryptoDailyOpenClose call /v1/open-close/crypto/{from}/{to}/{date}", async () => {
+	it("daily open close call /v1/open-close/crypto/{from}/{to}/{date}", async () => {
     await crypto.dailyOpenClose("BTC", "USD", "2019-01-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/open-close/crypto/BTC/USD/2019-01-01");
   });
+	
+  it("previous close call /v2/aggs/ticker/{ticker}/prev", async () => {
+    requestStub.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        results: []
+      })
+    );
+    await crypto.previousClose("BTC");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/BTC/prev");
+  });
 
-  it("historicCryptoTrade call /v1/historic/crypto/{from}/{to}/{date}", async () => {
+	it("historic trades call /v1/historic/crypto/{from}/{to}/{date}", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
@@ -94,7 +82,13 @@ describe("[REST] Crypto", () => {
       .args[0].should.eql("/v1/historic/crypto/BTC/USD/2019-01-01");
   });
 
-  it("cryptoSnapshotAllTickers call /v2/snapshot/locale/global/markets/crypto/tickers", async () => {
+	it("last trade call /v1/last/crypto/{from}/{to}", async () => {
+    await crypto.lastTrade("BTC", "ETH");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/last/crypto/BTC/ETH");
+  });
+
+  it("snapshot - all tickers call /v2/snapshot/locale/global/markets/crypto/tickers", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
@@ -108,7 +102,21 @@ describe("[REST] Crypto", () => {
       .args[0].should.eql("/v2/snapshot/locale/global/markets/crypto/tickers");
   });
 
-  it("cryptoSnapshotSingleTicker call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}", async () => {
+	it("snapshot - gainers / losers call /v2/snapshot/locale/global/markets/crypto/{direction}", async () => {
+    sandbox.restore();
+    requestStub = sandbox.stub(request, "get").returns(
+      Promise.resolve({
+        tickers: []
+      })
+    );
+    await crypto.snapshotGainersLosers("gainers");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/snapshot/locale/global/markets/crypto/gainers");
+  });
+
+  it("snapshot - ticker call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
@@ -121,7 +129,7 @@ describe("[REST] Crypto", () => {
         }
       })
     );
-    await crypto.snapshotSingleTicker("X:BTCUSD");
+    await crypto.snapshotTicker("X:BTCUSD");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -130,28 +138,14 @@ describe("[REST] Crypto", () => {
       );
   });
 
-  it("cryptoSnapshotGainersLosers call /v2/snapshot/locale/global/markets/crypto/{direction}", async () => {
-    sandbox.restore();
-    requestStub = sandbox.stub(request, "get").returns(
-      Promise.resolve({
-        tickers: []
-      })
-    );
-    await crypto.snapshotGainersLosers();
-    requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v2/snapshot/locale/global/markets/crypto/gainers");
-  });
-
-  it("cryptoSnapshotSingleTickerFullBook call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book", async () => {
+  it("snapshot - full book l2 call /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
         data: {}
       })
     );
-    await crypto.snapshotSingleTickerFullBook("BTCUSD");
+    await crypto.snapshotTickerFullBookL2("BTCUSD");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]

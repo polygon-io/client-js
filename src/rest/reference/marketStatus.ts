@@ -1,23 +1,24 @@
-// CF: https://polygon.io/docs/#!/Reference/get_v1_marketstatus_now
+// CF: https://polygon.io/docs/stocks/get_v1_marketstatus_now
 
 import { get } from "../transport/request";
 
-export type MarketStatus = "open" | "closed";
-export type MarketStatusExtended = "open" | "closed" | "extended-hours";
-
 export interface IMarketStatus {
-  market: MarketStatusExtended;
-  serverTime: string;
-  exchanges: {
-    nyse: MarketStatusExtended;
-    nasdaq: MarketStatusExtended;
-    otc: MarketStatusExtended;
+	afterhours?: boolean;
+	currencies?: {
+		fx?: string;
+		crypto?: string;
+	};
+	earlyhours?: boolean;
+  exchanges?: {
+    nyse?: string;
+    nasdaq?: string;
+    otc?: string;
   };
-  currencies?: {
-    fx: MarketStatus;
-    crypto: MarketStatus;
-  };
+  market?: string;
+  serverTime?: string;
 }
 
-export const marketStatus = async (apiKey: string, apiBase: string): Promise<IMarketStatus> =>
-  get("/v1/marketstatus/now", apiKey, apiBase);
+export const marketStatus = async (
+	apiKey: string, 
+	apiBase: string
+): Promise<IMarketStatus> => get("/v1/marketstatus/now", apiKey, apiBase);

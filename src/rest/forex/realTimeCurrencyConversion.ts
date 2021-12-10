@@ -1,31 +1,32 @@
-// CF: https://polygon.io/docs/#!/Forex--Currencies/get_v1_conversion_from_to
+// CF: https://polygon.io/docs/forex/get_v1_conversion__from___to
 
 import { get, IPolygonQuery } from "../transport/request";
 
-export interface IRealTimeConversionQuery extends IPolygonQuery {
-  amount: number;
-  precision: number;
+export interface IRealTimeCurrencyConversionQuery extends IPolygonQuery {
+  amount?: number;
+  precision?: number;
 }
-export interface ILastTradeForex {
-  price: number;
-  exchange: number;
-  timestamp: number;
-}
-export interface IRealTimeConversion {
-  status: string;
-  from: string;
-  to: string;
-  initialAmount: number;
-  converted: number;
-  lastTrade: ILastTradeForex;
+
+export interface IRealTimeCurrencyConversion {
+  status?: string;
+  from?: string;
+  to?: string;
+  initialAmount?: number;
+  converted?: number;
+  lastTrade?: {
+		ask?: number;
+		bid?: number;
+		exchange?: number;
+		timestamp?: number;
+	}
   symbol?: string;
 }
 
-export const realTimeCurrencyConversion = (
+export const realTimeCurrencyConversion = async (
   apiKey: string,
   apiBase: string,
   from: string,
   to: string,
-  query: IRealTimeConversionQuery
-): Promise<IRealTimeConversion> =>
+  query?: IRealTimeCurrencyConversionQuery
+): Promise<IRealTimeCurrencyConversion> =>
   get(`/v1/conversion/${from}/${to}`, apiKey, apiBase, query);

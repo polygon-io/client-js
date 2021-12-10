@@ -1,36 +1,62 @@
-// CF: https://polygon.io/docs/#!/Reference/get_v2_reference_tickers
+// CF: https://polygon.io/docs/stocks/get_v3_reference_tickers
+
 import { get, IPolygonQuery } from "../transport/request";
 
+export type TickerTypes = "CS" | "ADRC" | "ADRP" | "ADRR" | "UNIT" | "RIGHT" | "PFD" | "FUND" | "SP" | "WARRENT" | "INDEX" | "ETF" | "ETN";
+export type MarketType = "stocks" | "crypto" | "fx";
+export type Order = "asc" | "desc";
+
 export interface ITickersQuery extends IPolygonQuery {
+	ticker?: string | {
+		lt?: string;
+		lte?: string;
+		gt?: string;
+		gte?: string;
+	};
+  type?: TickerTypes;
+  market?: MarketType;
+	exchange?: string;
+	cusip?: string;
+	cik?: string;
+	date?: string;
+	search?: string;
+	active?: "true" | "false"; 
   sort?: string;
-  type?: string;
-  market?: string;
-  locale?: string;
-  search?: string;
-  perpage?: number;
-  page?: number;
-  active?: boolean;
+	order?: Order;
+  limit?: number;
+	cursor?: string;
+}
+
+export interface ITickersResults {
+	ticker: string;
+	name: string;
+	market: string;
+	locale: string;
+	primary_exchange: string;
+	type: string;
+	active: boolean;
+	currency_symbol?: string;
+	currency_name?: string;
+	base_currency_symbol?: string;
+	base_currency_name?: string;
+	cik?: string;
+	composite_figi?: string;
+	share_class_fig?: string;
+	last_updated_utc?: string;
+	deslisted_utc?: string;
 }
 
 export interface ITickers {
-  ticker: string;
-  name: string;
-  market: string;
-  locale: string;
-  currency: string;
-  active: string;
-  primaryExch: string;
-  type: string;
-  codes: { [key: string]: string };
-  updated: string;
-  url: string;
+	status: string,
+	request_id: string,
+	count: number,
+	previous_url?: string;
+	next_url?: string,
+	results: ITickersResults[]
 }
 
 export const tickers = async (
   apiKey: string,
   apiBase: string,
   query?: ITickersQuery
-): Promise<ITickers[]> => {
-  const path: string = "/v3/reference/tickers";
-  return get(path, apiKey, apiBase, query);
-};
+): Promise<ITickers> => get("/v3/reference/tickers", apiKey, apiBase, query);
