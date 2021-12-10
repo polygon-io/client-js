@@ -1,6 +1,7 @@
 # project artifcats
 lib
 docs
+.DS_Store
 
 # node specific
 node_modules
