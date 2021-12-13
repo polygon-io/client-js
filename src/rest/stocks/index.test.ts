@@ -22,7 +22,7 @@ describe("[REST] Stocks", () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        results: []
+        results: [],
       })
     );
     await stocks.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
@@ -34,11 +34,11 @@ describe("[REST] Stocks", () => {
       );
   });
 
-	it("aggregatesGroupedDaily call /v2/aggs/grouped/locale/us/market/stocks/{date}", async () => {
+  it("aggregatesGroupedDaily call /v2/aggs/grouped/locale/us/market/stocks/{date}", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        results: []
+        results: [],
       })
     );
     await stocks.aggregatesGroupedDaily("2019-02-01");
@@ -50,45 +50,39 @@ describe("[REST] Stocks", () => {
       );
   });
 
-	it("dailyOpenClose call /v1/open-close/{symbol}/{date}", async () => {
+  it("dailyOpenClose call /v1/open-close/{symbol}/{date}", async () => {
     await stocks.dailyOpenClose("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/open-close/AAPL/2018-2-2");
   });
-	
-	it("last quote call /v2/last/nbbo/{stocksTicker}", async () => {
-		await stocks.lastQuote("AAPL");
-		requestStub.callCount.should.eql(1);
-		requestStub
-			.getCalls()[0]
-			.args[0].should.eql("/v2/last/nbbo/AAPL");
-	});
 
-	it("last trade call /v2/last/trade/{stocksTicker}", async () => {
-		await stocks.lastTrade("AAPL");
-		requestStub.callCount.should.eql(1);
-		requestStub
-			.getCalls()[0]
-			.args[0].should.eql("/v2/last/trade/AAPL");
-	});
+  it("last quote call /v2/last/nbbo/{stocksTicker}", async () => {
+    await stocks.lastQuote("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/last/nbbo/AAPL");
+  });
 
-	it("previous close call /v2/aggs/ticker/{stocksTicker}/prev", async () => {
-		await stocks.previousClose("AAPL");
-		requestStub.callCount.should.eql(1);
-		requestStub
-			.getCalls()[0]
-			.args[0].should.eql("/v2/aggs/ticker/AAPL/prev");
-	});
+  it("last trade call /v2/last/trade/{stocksTicker}", async () => {
+    await stocks.lastTrade("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/last/trade/AAPL");
+  });
 
-	it("quotes call /v2/ticks/stocks/nbbo/{ticker}/{date}", async () => {
-		await stocks.quotes("AAPL", "2019-02-01");
-		requestStub.callCount.should.eql(1);
-		requestStub
-			.getCalls()[0]
-			.args[0].should.eql("/v2/ticks/stocks/nbbo/AAPL/2019-02-01");
-	});
+  it("previous close call /v2/aggs/ticker/{stocksTicker}/prev", async () => {
+    await stocks.previousClose("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/AAPL/prev");
+  });
+
+  it("quotes call /v2/ticks/stocks/nbbo/{ticker}/{date}", async () => {
+    await stocks.quotes("AAPL", "2019-02-01");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v2/ticks/stocks/nbbo/AAPL/2019-02-01");
+  });
 
   it("snapshot - all tickers call /v2/snapshot/locale/us/markets/stocks/tickers", async () => {
     await stocks.snapshotAllTickers();
@@ -98,8 +92,8 @@ describe("[REST] Stocks", () => {
       .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/tickers");
   });
 
-	it("snapshot - gainers / losers call /v2/snapshot/locale/us/markets/stocks/{direction}", async () => {
-    await stocks.snapshotGainersLosers('gainers');
+  it("snapshot - gainers / losers call /v2/snapshot/locale/us/markets/stocks/{direction}", async () => {
+    await stocks.snapshotGainersLosers("gainers");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -115,8 +109,8 @@ describe("[REST] Stocks", () => {
           lastTrade: {},
           lastQuote: {},
           min: {},
-          prevDay: {}
-        }
+          prevDay: {},
+        },
       })
     );
     await stocks.snapshotTicker("AAPL");
@@ -126,11 +120,11 @@ describe("[REST] Stocks", () => {
       .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/tickers/AAPL");
   });
 
-	it("trades call /v2/ticks/stocks/trades/{ticker}/{date}", async () => {
-		await stocks.trades("AAPL", "2019-02-01");
+  it("trades call /v2/ticks/stocks/trades/{ticker}/{date}", async () => {
+    await stocks.trades("AAPL", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v2/ticks/stocks/trades/AAPL/2019-02-01");
-	});
+  });
 });

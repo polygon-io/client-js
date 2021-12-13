@@ -4,14 +4,14 @@ import { get } from "../transport/request";
 
 export interface IForexLastQuote {
   status?: string;
-	request_id?: string;
+  request_id?: string;
   symbol?: string;
   last?: {
-		ask?: number;
-		bid?: number;
-		exchange?: number;
-		timestamp?: number;
-	}
+    ask?: number;
+    bid?: number;
+    exchange?: number;
+    timestamp?: number;
+  };
 }
 
 export const lastQuote = (

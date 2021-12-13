@@ -11,7 +11,7 @@ export interface IAggegateForexEvent {
   l: number; // Low Price
   v: number; // Volume ( Quotes during this duration )
   s: number; // Start time ( Unix MS )
-	e: number; // End time ( Unix MS )
+  e: number; // End time ( Unix MS )
 }
 
 export interface IQuoteForexEvent {
@@ -23,5 +23,7 @@ export interface IQuoteForexEvent {
   t: number; // Quote Timestamp ( Unix MS )
 }
 
-export const getForexWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
-  getWsClient(`${apiBase}/forex`, apiKey);
+export const getForexWebsocket = (
+  apiKey: string,
+  apiBase = "wss://socket.polygon.io"
+): Websocket => getWsClient(`${apiBase}/forex`, apiKey);

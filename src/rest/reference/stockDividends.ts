@@ -3,11 +3,11 @@
 import { get } from "../transport/request";
 
 export interface IStockDividend {
-	amount?: number;
+  amount?: number;
   exDate?: string;
   paymentDate?: string;
   recordDate?: string;
-	ticker?: string;
+  ticker?: string;
 }
 
 export interface IStockDividendsResults {

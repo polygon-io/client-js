@@ -14,11 +14,11 @@ export interface IRealTimeCurrencyConversion {
   initialAmount?: number;
   converted?: number;
   lastTrade?: {
-		ask?: number;
-		bid?: number;
-		exchange?: number;
-		timestamp?: number;
-	}
+    ask?: number;
+    bid?: number;
+    exchange?: number;
+    timestamp?: number;
+  };
   symbol?: string;
 }
 

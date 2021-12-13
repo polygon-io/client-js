@@ -13,7 +13,7 @@ export interface IRestClient {
   crypto: ICryptoClient;
   forex: IForexClient;
   reference: IReferenceClient;
-	options: IOptionsClient;
+  options: IOptionsClient;
   stocks: IStocksClient;
 }
 
@@ -22,7 +22,7 @@ export const restClient = (apiKey, apiBase?: string): IRestClient => ({
   forex: forexClient(apiKey, apiBase),
   reference: referenceClient(apiKey, apiBase),
   options: optionsClient(apiKey, apiBase),
-  stocks: stocksClient(apiKey, apiBase)
+  stocks: stocksClient(apiKey, apiBase),
 });
 
 export default restClient;

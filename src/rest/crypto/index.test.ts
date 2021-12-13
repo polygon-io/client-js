@@ -16,11 +16,11 @@ describe("[REST] Crypto", () => {
     sandbox.restore();
   });
 
-	it("aggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
+  it("aggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        results: []
+        results: [],
       })
     );
     await crypto.aggregates("BTC", 1, "day", "2019-01-01", "2019-02-01");
@@ -32,11 +32,11 @@ describe("[REST] Crypto", () => {
       );
   });
 
-	it("aggregates grouped daily call /v2/aggs/grouped/locale/global/market/market/{date}", async () => {
+  it("aggregates grouped daily call /v2/aggs/grouped/locale/global/market/market/{date}", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        results: []
+        results: [],
       })
     );
     await crypto.aggregatesGroupedDaily("2019-02-01");
@@ -48,19 +48,19 @@ describe("[REST] Crypto", () => {
       );
   });
 
-	it("daily open close call /v1/open-close/crypto/{from}/{to}/{date}", async () => {
+  it("daily open close call /v1/open-close/crypto/{from}/{to}/{date}", async () => {
     await crypto.dailyOpenClose("BTC", "USD", "2019-01-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/open-close/crypto/BTC/USD/2019-01-01");
   });
-	
+
   it("previous close call /v2/aggs/ticker/{ticker}/prev", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        results: []
+        results: [],
       })
     );
     await crypto.previousClose("BTC");
@@ -68,11 +68,11 @@ describe("[REST] Crypto", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/BTC/prev");
   });
 
-	it("historic trades call /v1/historic/crypto/{from}/{to}/{date}", async () => {
+  it("historic trades call /v1/historic/crypto/{from}/{to}/{date}", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        ticks: []
+        ticks: [],
       })
     );
     await crypto.historicTrades("BTC", "USD", "2019-01-01");
@@ -82,7 +82,7 @@ describe("[REST] Crypto", () => {
       .args[0].should.eql("/v1/historic/crypto/BTC/USD/2019-01-01");
   });
 
-	it("last trade call /v1/last/crypto/{from}/{to}", async () => {
+  it("last trade call /v1/last/crypto/{from}/{to}", async () => {
     await crypto.lastTrade("BTC", "ETH");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v1/last/crypto/BTC/ETH");
@@ -92,7 +92,7 @@ describe("[REST] Crypto", () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        tickers: []
+        tickers: [],
       })
     );
     await crypto.snapshotAllTickers();
@@ -102,11 +102,11 @@ describe("[REST] Crypto", () => {
       .args[0].should.eql("/v2/snapshot/locale/global/markets/crypto/tickers");
   });
 
-	it("snapshot - gainers / losers call /v2/snapshot/locale/global/markets/crypto/{direction}", async () => {
+  it("snapshot - gainers / losers call /v2/snapshot/locale/global/markets/crypto/{direction}", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        tickers: []
+        tickers: [],
       })
     );
     await crypto.snapshotGainersLosers("gainers");
@@ -125,8 +125,8 @@ describe("[REST] Crypto", () => {
           day: {},
           lastTrade: {},
           min: {},
-          prevDay: {}
-        }
+          prevDay: {},
+        },
       })
     );
     await crypto.snapshotTicker("X:BTCUSD");
@@ -142,7 +142,7 @@ describe("[REST] Crypto", () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
-        data: {}
+        data: {},
       })
     );
     await crypto.snapshotTickerFullBookL2("BTCUSD");

@@ -1,12 +1,12 @@
 // CF: https://polygon.io/docs/stocks/get_v2_ticks_stocks_nbbo__ticker___date
 
 import { get } from "../transport/request";
-import { ITradeInfo } from './trades';
+import { ITradeInfo } from "./trades";
 
 export interface ILastQuote {
-	request_id?: string;
-	status?: string;
-	results?: ITradeInfo[];
+  request_id?: string;
+  status?: string;
+  results?: ITradeInfo[];
 }
 
 export const lastQuote = async (

@@ -9,7 +9,10 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;
 }
 
-export const auth = (apiKey, func: Function, apiBase: string) => (...args) => func(apiKey, apiBase, ...args);
+export const auth =
+  (apiKey, func: Function, apiBase: string) =>
+  (...args) =>
+    func(apiKey, apiBase, ...args);
 
 export const get = async (
   path: string,
@@ -23,7 +26,7 @@ export const get = async (
 
   const authenticatedQuery: IPolygonQueryWithCredentials = {
     ...query,
-    apiKey
+    apiKey,
   };
 
   const queryString = stringify(authenticatedQuery, { encode: true });

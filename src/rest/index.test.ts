@@ -4,11 +4,11 @@ import { restClient } from "./index";
 describe("[EXPORT] REST Endpoints", () => {
   chai.should();
   const rest = restClient("invalid");
-	it("> crypto", () => {
-		rest.should.be.an("object");
+  it("> crypto", () => {
+    rest.should.be.an("object");
     rest.crypto.should.be.an("object");
   });
-	it("> forex", () => {
+  it("> forex", () => {
     rest.forex.should.be.an("object");
   });
   it("> reference", () => {

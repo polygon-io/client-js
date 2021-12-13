@@ -43,8 +43,10 @@ export interface IQuoteStockEvent {
   as: number; // Ask Size
   c: number; // Quote Condition
   t: number; // Quote Timestamp ( Unix MS )
-	z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
+  z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
 }
 
-export const getStocksWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
-  getWsClient(`${apiBase}/stocks`, apiKey);
+export const getStocksWebsocket = (
+  apiKey: string,
+  apiBase = "wss://socket.polygon.io"
+): Websocket => getWsClient(`${apiBase}/stocks`, apiKey);

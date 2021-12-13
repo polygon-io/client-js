@@ -29,5 +29,7 @@ export interface ITradeOptionsEvent {
   t: number; // Trade Timestamp ( Unix MS )
 }
 
-export const getOptionsWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
-  getWsClient(`${apiBase}/options`, apiKey);
+export const getOptionsWebsocket = (
+  apiKey: string,
+  apiBase = "wss://socket.polygon.io"
+): Websocket => getWsClient(`${apiBase}/options`, apiKey);

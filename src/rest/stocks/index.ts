@@ -1,27 +1,53 @@
 import { auth } from "../transport/request";
 
-import { IAggsQuery, IAggs, aggregates } from './aggregates';
-import { IAggsGroupedDailyQuery, IAggsGroupedDaily, aggregatesGroupedDaily } from './aggregatesGroupedDaily';
-import { IDailyOpenCloseQuery, IDailyOpenClose, dailyOpenClose } from "./dailyOpenClose";
-import { IAggsPreviousCloseQuery, IAggsPreviousClose, previousClose } from './previousClose';
+import { IAggsQuery, IAggs, aggregates } from "./aggregates";
+import {
+  IAggsGroupedDailyQuery,
+  IAggsGroupedDaily,
+  aggregatesGroupedDaily,
+} from "./aggregatesGroupedDaily";
+import {
+  IDailyOpenCloseQuery,
+  IDailyOpenClose,
+  dailyOpenClose,
+} from "./dailyOpenClose";
+import {
+  IAggsPreviousCloseQuery,
+  IAggsPreviousClose,
+  previousClose,
+} from "./previousClose";
 import { ILastQuote, lastQuote } from "./lastQuote";
 import { ILastTrade, lastTrade } from "./lastTrade";
-import { ISnapshotAllTickersQuery,  ISnapshotTickers, ISnapshot, snapshotAllTickers, snapshotGainersLosers, snapshotTicker} from './snapshots';
-import { IQuotes, quotes } from './quotes';
-import { ITradesQuotesQuery, ITrades, trades } from './trades'
+import {
+  ISnapshotAllTickersQuery,
+  ISnapshotTickers,
+  ISnapshot,
+  snapshotAllTickers,
+  snapshotGainersLosers,
+  snapshotTicker,
+} from "./snapshots";
+import { IQuotes, quotes } from "./quotes";
+import { ITradesQuotesQuery, ITrades, trades } from "./trades";
 
-export { IAggsQuery, IAggs } from './aggregates';
-export { IAggsGroupedDailyQuery, IAggsGroupedDaily } from './aggregatesGroupedDaily';
+export { IAggsQuery, IAggs } from "./aggregates";
+export {
+  IAggsGroupedDailyQuery,
+  IAggsGroupedDaily,
+} from "./aggregatesGroupedDaily";
 export { IDailyOpenCloseQuery, IDailyOpenClose } from "./dailyOpenClose";
-export { IAggsPreviousCloseQuery, IAggsPreviousClose } from './previousClose';
+export { IAggsPreviousCloseQuery, IAggsPreviousClose } from "./previousClose";
 export { ILastQuote } from "./lastQuote";
 export { ILastTrade } from "./lastTrade";
-export { ISnapshotAllTickersQuery,  ISnapshotTickers, ISnapshot} from './snapshots';
-export { IQuotes } from './quotes';
-export { ITradesQuotesQuery, ITrades } from './trades'
+export {
+  ISnapshotAllTickersQuery,
+  ISnapshotTickers,
+  ISnapshot,
+} from "./snapshots";
+export { IQuotes } from "./quotes";
+export { ITradesQuotesQuery, ITrades } from "./trades";
 
 export interface IStocksClient {
-	aggregates: (
+  aggregates: (
     ticker: string,
     multiplier: number,
     timespan: string,
@@ -33,54 +59,51 @@ export interface IStocksClient {
     date: string,
     query?: IAggsGroupedDailyQuery
   ) => Promise<IAggsGroupedDaily>;
-	dailyOpenClose: (
-		symbol: string,
-		date: string,
-		query?: IDailyOpenCloseQuery
-	) => Promise<IDailyOpenClose>;
-	lastQuote: (
-		symbol: string
-	) => Promise<ILastQuote>;
-	lastTrade: (
-		symbol: string
-	) => Promise<ILastTrade>;
-	previousClose: (
+  dailyOpenClose: (
+    symbol: string,
+    date: string,
+    query?: IDailyOpenCloseQuery
+  ) => Promise<IDailyOpenClose>;
+  lastQuote: (symbol: string) => Promise<ILastQuote>;
+  lastTrade: (symbol: string) => Promise<ILastTrade>;
+  previousClose: (
     ticker: string,
     query?: IAggsPreviousCloseQuery
   ) => Promise<IAggsPreviousClose>;
-	quotes: (
-		symbol: string,
-		date: string,
-		query?: ITradesQuotesQuery
-	) => Promise<IQuotes>
-	snapshotAllTickers: (
-		query?: ISnapshotAllTickersQuery
-	) => Promise<ISnapshotTickers>;
-	snapshotGainersLosers: (
-		direction:  "gainers" | "losers"
-	) => Promise<ISnapshotTickers>;
-	snapshotTicker: (
-		symbol: string
-	) => Promise<ISnapshot>;
-	trades: (
-		symbol: string,
-		date: string,
-		query?: ITradesQuotesQuery
-	) => Promise<ITrades>
+  quotes: (
+    symbol: string,
+    date: string,
+    query?: ITradesQuotesQuery
+  ) => Promise<IQuotes>;
+  snapshotAllTickers: (
+    query?: ISnapshotAllTickersQuery
+  ) => Promise<ISnapshotTickers>;
+  snapshotGainersLosers: (
+    direction: "gainers" | "losers"
+  ) => Promise<ISnapshotTickers>;
+  snapshotTicker: (symbol: string) => Promise<ISnapshot>;
+  trades: (
+    symbol: string,
+    date: string,
+    query?: ITradesQuotesQuery
+  ) => Promise<ITrades>;
 }
 
-export const stocksClient = (apiKey: string, apiBase = "https://api.polygon.io"): IStocksClient => ({
+export const stocksClient = (
+  apiKey: string,
+  apiBase = "https://api.polygon.io"
+): IStocksClient => ({
   aggregates: auth(apiKey, aggregates, apiBase),
-	aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
+  aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
-	lastQuote: auth(apiKey, lastQuote, apiBase),
-	lastTrade: auth(apiKey, lastTrade, apiBase),
-	previousClose: auth(apiKey, previousClose, apiBase),
-	quotes: auth(apiKey, quotes, apiBase),
-	snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
-	snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
-	snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
-	trades: auth(apiKey, trades, apiBase)
+  lastQuote: auth(apiKey, lastQuote, apiBase),
+  lastTrade: auth(apiKey, lastTrade, apiBase),
+  previousClose: auth(apiKey, previousClose, apiBase),
+  quotes: auth(apiKey, quotes, apiBase),
+  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
+  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
+  snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
+  trades: auth(apiKey, trades, apiBase),
 });
 
 export default stocksClient;

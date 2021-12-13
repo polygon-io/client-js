@@ -3,12 +3,12 @@
 import { get } from "../transport/request";
 
 export interface IMarketStatus {
-	afterhours?: boolean;
-	currencies?: {
-		fx?: string;
-		crypto?: string;
-	};
-	earlyhours?: boolean;
+  afterhours?: boolean;
+  currencies?: {
+    fx?: string;
+    crypto?: string;
+  };
+  earlyhours?: boolean;
   exchanges?: {
     nyse?: string;
     nasdaq?: string;
@@ -19,6 +19,6 @@ export interface IMarketStatus {
 }
 
 export const marketStatus = async (
-	apiKey: string, 
-	apiBase: string
+  apiKey: string,
+  apiBase: string
 ): Promise<IMarketStatus> => get("/v1/marketstatus/now", apiKey, apiBase);

@@ -8,16 +8,16 @@ export interface IHistoricTicksQuery extends IPolygonQuery {
 }
 
 export interface ITick {
-	ap?: number;
-	bp?: number;
-	t?: number;
-	x?: number;
+  ap?: number;
+  bp?: number;
+  t?: number;
+  x?: number;
 }
 
 export interface IHistoricTicks {
   day?: string;
   map?: {
-    [key: string]: string
+    [key: string]: string;
   };
   msLatency?: number;
   pair?: string;
@@ -32,4 +32,5 @@ export const historicTicks = async (
   to: string,
   date: string,
   query?: IHistoricTicksQuery
-): Promise<IHistoricTicks> => get(`/v1/historic/forex/${from}/${to}/${date}`, apiKey, apiBase, query);
+): Promise<IHistoricTicks> =>
+  get(`/v1/historic/forex/${from}/${to}/${date}`, apiKey, apiBase, query);

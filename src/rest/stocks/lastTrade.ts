@@ -1,10 +1,10 @@
 // CF: https://polygon.io/docs/stocks/get_v2_last_trade__stocksTicker
 
 import { get } from "../transport/request";
-import { ITradeInfo } from './trades';
+import { ITradeInfo } from "./trades";
 
 export interface ILastTrade {
-	request_id?: string;
+  request_id?: string;
   status: string;
   results?: ITradeInfo[];
 }

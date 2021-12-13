@@ -6,26 +6,27 @@ export type AssetClassType = "stocks" | "options" | "crypto" | "fx";
 export type LocaleType = "us" | "global";
 
 export interface ITickerTypesQuery extends IPolygonQuery {
-	asset_class?: AssetClassType;
-	locale?: LocaleType
+  asset_class?: AssetClassType;
+  locale?: LocaleType;
 }
 
 export interface ITickerTypesResults {
-	asset_class: AssetClassType;
-	code: string;
-	description: string;
-	locale: LocaleType
+  asset_class: AssetClassType;
+  code: string;
+  description: string;
+  locale: LocaleType;
 }
 
 export interface ITickerTypes {
-	status: string;
-	request_id: string;
-	count?: number;
-	results?: ITickerTypesResults[];
+  status: string;
+  request_id: string;
+  count?: number;
+  results?: ITickerTypesResults[];
 }
 
 export const tickerTypes = async (
-	apiKeys: string, 
-	apiBase: string, 
-	query?: ITickerTypesQuery
-): Promise<ITickerTypes> => get("/v3/reference/tickers/types", apiKeys, apiBase, query);
+  apiKeys: string,
+  apiBase: string,
+  query?: ITickerTypesQuery
+): Promise<ITickerTypes> =>
+  get("/v3/reference/tickers/types", apiKeys, apiBase, query);

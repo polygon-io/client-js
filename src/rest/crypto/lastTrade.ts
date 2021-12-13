@@ -4,15 +4,15 @@ import { get } from "../transport/request";
 
 export interface ICryptoLastTrade {
   status?: string;
-	request_id?: string;
+  request_id?: string;
   symbol?: string;
   last?: {
-		conditions?: number[];
-		exchange?: number;
-		price?: number;
-		size?: number;
-		timestamp?: number;
-	}
+    conditions?: number[];
+    exchange?: number;
+    price?: number;
+    size?: number;
+    timestamp?: number;
+  };
 }
 
 export const lastTrade = async (
@@ -20,4 +20,5 @@ export const lastTrade = async (
   apiBase: string,
   from: string,
   to: string
-): Promise<ICryptoLastTrade> => get(`/v1/last/crypto/${from}/${to}`, apiKey, apiBase);
+): Promise<ICryptoLastTrade> =>
+  get(`/v1/last/crypto/${from}/${to}`, apiKey, apiBase);
