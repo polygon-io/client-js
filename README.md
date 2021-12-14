@@ -21,12 +21,12 @@ const rest = restClient("API KEY");
 // you can use the api now
 
 rest.forex
-  .previousClose()
+  .previousClose("C:EURUSD")
   .then(/* your success handler */)
   .catch(/* your error handler*/);
 ```
 
-### [REST API](https://polygon.io/docs/#getting-started)
+### [REST API](https://polygon.io/docs/stocks/getting-started)
 
 - import all the rest submodule
 
@@ -35,7 +35,7 @@ import { restClient } from "@polygon.io/client-js";
 
 const rest = restClient("api key");
 
-rest.forex.previousClose().then(/* your success handler */);
+rest.forex.previousClose("C:EURUSD").then(/* your success handler */);
 ```
 
 - import a specific submodule
@@ -48,7 +48,7 @@ const reference = referenceClient("api key");
 reference.tickers.then(/* your success handler */);
 ```
 
-### [Websocket](https://polygon.io/sockets)
+### [Websocket](https://polygon.io/docs/stocks/ws_getting-started)
 
 You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
 
@@ -69,7 +69,7 @@ stocksWs.onmessage = raw => {
 stocksWS.send({ action: "subscribe", params: "T.MSFT" });
 ```
 
-### [documentation](https://bassochette.github.io/polygon.io/index.html)
+### documentation
 
 - Generate the package documentation
 
