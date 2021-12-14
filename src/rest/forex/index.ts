@@ -1,95 +1,97 @@
 import { auth } from "../transport/request";
 
+import { IAggsQuery, IAggs } from "../stocks/aggregates";
 import {
-  lastQuoteForCurrencyPair,
-  ILastQuoteForCurrencyPair
-} from "./lastQuoteForCurrencyPair";
+  IAggsGroupedDaily,
+  IAggsGroupedDailyQuery,
+} from "../stocks/aggregatesGroupedDaily";
 import {
-  historicForexTicks,
-  IHistoricForexTicksQuery,
-  IHistoricForexTicksFormatted
-} from "./historicForexTicks";
+  IAggsPreviousCloseQuery,
+  IAggsPreviousClose,
+} from "../stocks/previousClose";
+import { aggregates } from "./aggregates";
+import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
+import { IConversionQuery, IConversion, conversion } from "./conversion";
 import {
-  forexAggregates,
-  forexGroupedDaily,
-  forexPreviousClose
-} from "./aggregates";
+  IHistoricTicksQuery,
+  IHistoricTicks,
+  historicTicks,
+} from "./historicTicks";
+import { IForexLastQuote, lastQuote } from "./lastQuote";
+import { previousClose } from "./previousClose";
 import {
-  forexSnapshotAllTickers,
-  forexSnapshotGainersLosers,
-  IForexSnapshotAllTickersResponseFormatted
+  IForexSnapshotAllTickersQuery,
+  IForexSnapshotTickers,
+  IForexSnapshot,
+  snapshotAllTickers,
+  snapshotGainersLosers,
+  snapshotTicker,
 } from "./snapshots";
-import {
-  realTimeCurrencyConversion,
-  IRealTimeConversionQuery,
-  IRealTimeConversion
-} from "./realTimeCurrencyConversion";
 
-import { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
-
-export { ILastQuoteForCurrencyPair } from "./lastQuoteForCurrencyPair";
+export { IConversionQuery, IConversion } from "./conversion";
+export { IHistoricTicksQuery, IHistoricTicks } from "./historicTicks";
+export { IForexLastQuote } from "./lastQuote";
 export {
-  IHistoricForexTicksQuery,
-  IHistoricForexTicksFormatted
-} from "./historicForexTicks";
-export {
-  IRealTimeConversionQuery,
-  IRealTimeConversion
+  IRealTimeCurrencyConversionQuery,
+  IRealTimeCurrencyConversion,
 } from "./realTimeCurrencyConversion";
-export { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
-export { IForexSnapshotAllTickersResponseFormatted } from "./snapshots";
+export {
+  IForexSnapshotAllTickersQuery,
+  IForexSnapshotTickers,
+  IForexSnapshot,
+} from "./snapshots";
 
 export interface IForexClient {
-  lastQuoteForCurrencyPair: (
-    from: string,
-    to: string
-  ) => Promise<ILastQuoteForCurrencyPair>;
-  historicTicks: (
-    from: string,
-    to: string,
-    date: string,
-    query: IHistoricForexTicksQuery
-  ) => Promise<IHistoricForexTicksFormatted>;
-  realTimeCurrencyConversion: (
-    from: string,
-    to: string,
-    query: IRealTimeConversionQuery
-  ) => Promise<IRealTimeConversion>;
-  previousClose: (
-    ticker: string,
-    query?: IAggregateQuery
-  ) => Promise<IAggResponseFormatted>;
   aggregates: (
     ticker: string,
     multiplier: number,
     timespan: string,
     from: string,
     to: string,
-    query?: IAggregateQuery
-  ) => Promise<IAggResponseFormatted>;
-  groupedDaily: (
-    locale: string,
-    market: string,
+    query?: IAggsQuery
+  ) => Promise<IAggs>;
+  aggregatesGroupedDaily: (
     date: string,
-    query?: IAggregateQuery
-  ) => Promise<IAggResponseFormatted>;
-  snapshotAllTickers: () => Promise<IForexSnapshotAllTickersResponseFormatted>;
+    query?: IAggsGroupedDailyQuery
+  ) => Promise<IAggsGroupedDaily>;
+  conversion: (
+    from: string,
+    to: string,
+    query?: IConversionQuery
+  ) => Promise<IConversion>;
+  historicTicks: (
+    from: string,
+    to: string,
+    date: string,
+    query?: IHistoricTicksQuery
+  ) => Promise<IHistoricTicks>;
+  lastQuote: (from: string, to: string) => Promise<IForexLastQuote>;
+  previousClose: (
+    symbol: string,
+    query?: IAggsPreviousCloseQuery
+  ) => Promise<IAggsPreviousClose>;
+  snapshotAllTickers: (
+    query?: IForexSnapshotAllTickersQuery
+  ) => Promise<IForexSnapshotTickers>;
   snapshotGainersLosers: (
-    direction?: string
-  ) => Promise<IForexSnapshotAllTickersResponseFormatted>;
+    direction: "gainers" | "losers"
+  ) => Promise<IForexSnapshotTickers>;
+  snapshotTicker: (symbol: string) => Promise<IForexSnapshot>;
 }
 
-export const forexClient = (apiKey: string, apiBase = "https://api.polygon.io"): IForexClient => ({
-  lastQuoteForCurrencyPair: auth(apiKey, lastQuoteForCurrencyPair, apiBase),
-  historicTicks: auth(apiKey, historicForexTicks, apiBase),
-  realTimeCurrencyConversion: auth(apiKey, realTimeCurrencyConversion, apiBase),
-  // aggregates
-  previousClose: auth(apiKey, forexPreviousClose, apiBase),
-  aggregates: auth(apiKey, forexAggregates, apiBase),
-  groupedDaily: auth(apiKey, forexGroupedDaily, apiBase),
-  // snapshots
-  snapshotAllTickers: auth(apiKey, forexSnapshotAllTickers, apiBase),
-  snapshotGainersLosers: auth(apiKey, forexSnapshotGainersLosers, apiBase)
+export const forexClient = (
+  apiKey: string,
+  apiBase = "https://api.polygon.io"
+): IForexClient => ({
+  aggregates: auth(apiKey, aggregates, apiBase),
+  aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
+  conversion: auth(apiKey, conversion, apiBase),
+  historicTicks: auth(apiKey, historicTicks, apiBase),
+  lastQuote: auth(apiKey, lastQuote, apiBase),
+  previousClose: auth(apiKey, previousClose, apiBase),
+  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
+  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
+  snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
 });
 
 export default forexClient;

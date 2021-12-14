@@ -1,10 +1,32 @@
-// CF: https://polygon.io/docs/#!/Reference/get_v2_reference_types
-import { get } from "../transport/request";
+// CF: https://polygon.io/docs/stocks/get_v3_reference_tickers_types
 
-export interface ITickerTypes {
-  status?: string;
-  results?: any;
+import { get, IPolygonQuery } from "../transport/request";
+
+export type AssetClassType = "stocks" | "options" | "crypto" | "fx";
+export type LocaleType = "us" | "global";
+
+export interface ITickerTypesQuery extends IPolygonQuery {
+  asset_class?: AssetClassType;
+  locale?: LocaleType;
 }
 
-export const tickerTypes = async (apiKeys: string, apiBase: string): Promise<ITickerTypes> =>
-  get("/v2/reference/types", apiKeys, apiBase);
+export interface ITickerTypesResults {
+  asset_class: AssetClassType;
+  code: string;
+  description: string;
+  locale: LocaleType;
+}
+
+export interface ITickerTypes {
+  status: string;
+  request_id: string;
+  count?: number;
+  results?: ITickerTypesResults[];
+}
+
+export const tickerTypes = async (
+  apiKeys: string,
+  apiBase: string,
+  query?: ITickerTypesQuery
+): Promise<ITickerTypes> =>
+  get("/v3/reference/tickers/types", apiKeys, apiBase, query);

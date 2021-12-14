@@ -1,85 +1,36 @@
+// CF: https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksTicker__range__multiplier___timespan___from___to
+
 import { get, IPolygonQuery } from "../transport/request";
 
-export interface IAggV2Raw {
+export interface IAggsResults {
   T?: string;
-  v: number;
-  o: number;
-  c: number;
-  h: number;
-  l: number;
-  t?: number;
+  c?: number;
+  h?: number;
+  l?: number;
   n?: number;
-}
-export interface IAggV2Formatted {
-  T?: string;
-  tickerSymbol?: string;
-  v: number;
-  volume: number;
-  o: number;
-  open: number;
-  c: number;
-  close: number;
-  h: number;
-  high: number;
-  l: number;
-  low: number;
+  o?: number;
   t?: number;
-  timestamp?: number;
-  n?: number;
-  numberOfItems?: number;
+  v?: number;
+  vw?: number;
 }
-const formatIAggv2Raw = (raw: IAggV2Raw): IAggV2Formatted => ({
-  ...raw,
-  tickerSymbol: raw.T,
-  volume: raw.v,
-  open: raw.o,
-  close: raw.c,
-  high: raw.h,
-  low: raw.l,
-  timestamp: raw.t,
-  numberOfItems: raw.n
-});
 
-export interface IAggResponseRaw {
+export interface IAggsQuery extends IPolygonQuery {
+  adjusted?: "true" | "false";
+  sort?: "asc" | "desc";
+  limit?: number;
+}
+
+export interface IAggs {
   ticker: string;
-  status: string;
   adjusted: boolean;
-  queryCount?: number;
-  resultsCount?: number;
-  results: IAggV2Raw[];
-}
-export interface IAggResponseFormatted {
-  ticker: string;
+  queryCount: number;
+  request_id: number;
+  resultsCount: number;
   status: string;
-  adjusted: boolean;
-  queryCount?: number;
-  resultsCount?: number;
-  results: IAggV2Formatted[];
-}
-export const formatIAggResponseRaw = (
-  raw: IAggResponseRaw
-): IAggResponseFormatted => ({
-  ...raw,
-  results: raw.results.map(formatIAggv2Raw)
-});
-
-export interface IAggregateQuery extends IPolygonQuery {
-  adjusted?: boolean;
+  results: IAggsResults[];
 }
 
-// CF : https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_prev
-export const stocksPreviousClose = async (
-  apiKey: string,
-  apiBase: string,
-  ticker: string,
-  query?: IAggregateQuery
-): Promise<IAggResponseFormatted> =>
-  formatIAggResponseRaw(
-    await get(`/v2/aggs/ticker/${ticker}/prev`, apiKey, apiBase, query)
-  );
-
-// CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
-export const stocksAggregates = async (
+export const aggregates = async (
   apikey: string,
   apiBase: string,
   ticker: string,
@@ -87,31 +38,11 @@ export const stocksAggregates = async (
   timespan: string,
   from: string,
   to: string,
-  query?: IAggregateQuery
-): Promise<IAggResponseFormatted> =>
-  formatIAggResponseRaw(
-    await get(
-      `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
-      apikey,
-      apiBase,
-      query
-    )
-  );
-
-// CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_grouped_locale_locale_market_market_date
-export const stocksGroupedDaily = async (
-  apiKey: string,
-  apiBase: string,
-  locale: string,
-  market: string,
-  date: string,
-  query?: IAggregateQuery
-): Promise<IAggResponseFormatted> =>
-  formatIAggResponseRaw(
-    await get(
-      `/v2/aggs/grouped/locale/${locale}/market/${market}/${date}`,
-      apiKey,
-      apiBase,
-      query
-    )
+  query?: IAggsQuery
+): Promise<IAggs> =>
+  get(
+    `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
+    apikey,
+    apiBase,
+    query
   );

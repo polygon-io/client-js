@@ -1,111 +1,108 @@
 import { auth } from "../transport/request";
-import { cryptoDailyOpenClose } from "./dailyOpenClose";
-import { cryptoExchanges, ICryptoExchanges } from "./cryptoExchanges";
-import {
-  lastTradeForCryptoPair,
-  ILastTradeForACryptoPair
-} from "./lastTradeForACryptoPair";
-import {
-  cryptoSnapshotAllTickers,
-  cryptoSnapshotGainersLosers,
-  cryptoSnapshotSingleTicker,
-  cryptoSnapshotSingleTickerFullBook,
-  ICryptoSnapshotSingleTickerFormatted,
-  ICryptoSnapshotAllTickersFormatted,
-  ICryptoSingleTickerFullBookFormatted
-} from "./snapshots";
-import {
-  cryptoAggregates,
-  cryptoGroupedDaily,
-  cryptoPreviousClose
-} from "./aggregates";
-import {
-  historicCryptoTrades,
-  IHistoricCryptoTradeQuery,
-  IHistoricCryptoTradeFormatted
-} from "./historicCryptoTrades";
-import { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
-import { ICryptoDailyOpenCloseFormatted } from "./ICryptoTickJson";
 
-export { ICryptoExchanges } from "./cryptoExchanges";
-export { ILastTradeForACryptoPair } from "./lastTradeForACryptoPair";
-export {
-  ICryptoSnapshotSingleTickerFormatted,
-  ICryptoSnapshotAllTickersFormatted,
-  ICryptoSingleTickerFullBookFormatted
+import { IAggsQuery, IAggs } from "../stocks/aggregates";
+import {
+  IAggsGroupedDaily,
+  IAggsGroupedDailyQuery,
+} from "../stocks/aggregatesGroupedDaily";
+import {
+  IAggsPreviousCloseQuery,
+  IAggsPreviousClose,
+} from "../stocks/previousClose";
+import { aggregates } from "./aggregates";
+import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
+import {
+  ICryptoDailyOpenCloseQuery,
+  ICryptoDailyOpenClose,
+  dailyOpenClose,
+} from "./dailyOpenClose";
+import {
+  IHistoricTradeQuery,
+  IHistoricTrade,
+  historicTrades,
+} from "./historicTrades";
+import { ICryptoLastTrade, lastTrade } from "./lastTrade";
+import { previousClose } from "./previousClose";
+import {
+  ICryptoSnapshotAllTickersQuery,
+  ICryptoSnapshotTickers,
+  ICryptoSnapshot,
+  ICryptoSnapshotFullBookL2,
+  snapshotAllTickers,
+  snapshotGainersLosers,
+  snapshotTicker,
+  snapshotTickerFullBookL2,
 } from "./snapshots";
-export { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
+
 export {
-  IHistoricCryptoTradeQuery,
-  IHistoricCryptoTradeFormatted
-} from "./historicCryptoTrades";
-export { ICryptoDailyOpenCloseFormatted } from "./ICryptoTickJson";
+  ICryptoDailyOpenCloseQuery,
+  ICryptoDailyOpenClose,
+} from "./dailyOpenClose";
+export { IHistoricTradeQuery, IHistoricTrade } from "./historicTrades";
+export { ICryptoLastTrade } from "./lastTrade";
+export {
+  ICryptoSnapshotAllTickersQuery,
+  ICryptoSnapshotTickers,
+  ICryptoSnapshot,
+  ICryptoSnapshotFullBookL2,
+} from "./snapshots";
 
 export interface ICryptoClient {
-  dailyOpenClose: (
-    from: string,
-    to: string,
-    date: string
-  ) => Promise<ICryptoDailyOpenCloseFormatted>;
-  exchanges: () => Promise<ICryptoExchanges[]>;
-  lastTradeForPair: (
-    from: string,
-    to: string
-  ) => Promise<ILastTradeForACryptoPair>;
-  historicTrades: (
-    from: string,
-    to: string,
-    date: string,
-    query?: IHistoricCryptoTradeQuery
-  ) => Promise<IHistoricCryptoTradeFormatted>;
-  snapshotSingleTicker: (
-    ticker: string
-  ) => Promise<ICryptoSnapshotSingleTickerFormatted>;
-  snapshotAllTickers: () => Promise<ICryptoSnapshotAllTickersFormatted>;
-  snapshotGainersLosers: (
-    direction?: string
-  ) => Promise<ICryptoSnapshotAllTickersFormatted>;
-  snapshotSingleTickerFullBook: (
-    ticker: string
-  ) => Promise<ICryptoSingleTickerFullBookFormatted>;
-  previousClose: (
-    ticker: string,
-    query?: IAggregateQuery
-  ) => Promise<IAggResponseFormatted>;
   aggregates: (
     ticker: string,
     multiplier: number,
     timespan: string,
     from: string,
     to: string,
-    query?: IAggregateQuery
-  ) => Promise<IAggResponseFormatted>;
-  groupedDaily: (
-    locale: string,
-    market: string,
+    query?: IAggsQuery
+  ) => Promise<IAggs>;
+  aggregatesGroupedDaily: (
     date: string,
-    query?: IAggregateQuery
-  ) => Promise<IAggResponseFormatted>;
+    query?: IAggsGroupedDailyQuery
+  ) => Promise<IAggsGroupedDaily>;
+  dailyOpenClose: (
+    from: string,
+    to: string,
+    date: string,
+    query?: ICryptoDailyOpenCloseQuery
+  ) => Promise<ICryptoDailyOpenClose>;
+  historicTrades: (
+    from: string,
+    to: string,
+    date: string,
+    query?: IHistoricTradeQuery
+  ) => Promise<IHistoricTrade>;
+  lastTrade: (from: string, to: string) => Promise<ICryptoLastTrade>;
+  previousClose: (
+    symbol: string,
+    query?: IAggsPreviousCloseQuery
+  ) => Promise<IAggsPreviousClose>;
+  snapshotAllTickers: (
+    query?: ICryptoSnapshotAllTickersQuery
+  ) => Promise<ICryptoSnapshotTickers>;
+  snapshotGainersLosers: (
+    direction: "gainers" | "losers"
+  ) => Promise<ICryptoSnapshotTickers>;
+  snapshotTicker: (symbol: string) => Promise<ICryptoSnapshot>;
+  snapshotTickerFullBookL2: (
+    symbol: string
+  ) => Promise<ICryptoSnapshotFullBookL2>;
 }
 
-export const cryptoClient = (apiKey, apiBase = "https://api.polygon.io"): ICryptoClient => ({
-  dailyOpenClose: auth(apiKey, cryptoDailyOpenClose, apiBase),
-  exchanges: auth(apiKey, cryptoExchanges, apiBase),
-  lastTradeForPair: auth(apiKey, lastTradeForCryptoPair, apiBase),
-  historicTrades: auth(apiKey, historicCryptoTrades, apiBase),
-  // snapshots
-  snapshotSingleTicker: auth(apiKey, cryptoSnapshotSingleTicker, apiBase),
-  snapshotAllTickers: auth(apiKey, cryptoSnapshotAllTickers, apiBase),
-  snapshotGainersLosers: auth(apiKey, cryptoSnapshotGainersLosers, apiBase),
-  snapshotSingleTickerFullBook: auth(
-    apiKey,
-    cryptoSnapshotSingleTickerFullBook,
-    apiBase
-  ),
-  // aggregates
-  previousClose: auth(apiKey, cryptoPreviousClose, apiBase),
-  aggregates: auth(apiKey, cryptoAggregates, apiBase),
-  groupedDaily: auth(apiKey, cryptoGroupedDaily, apiBase)
+export const cryptoClient = (
+  apiKey,
+  apiBase = "https://api.polygon.io"
+): ICryptoClient => ({
+  aggregates: auth(apiKey, aggregates, apiBase),
+  aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
+  dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
+  lastTrade: auth(apiKey, lastTrade, apiBase),
+  historicTrades: auth(apiKey, historicTrades, apiBase),
+  previousClose: auth(apiKey, previousClose, apiBase),
+  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
+  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
+  snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
+  snapshotTickerFullBookL2: auth(apiKey, snapshotTickerFullBookL2, apiBase),
 });
 
 export default cryptoClient;

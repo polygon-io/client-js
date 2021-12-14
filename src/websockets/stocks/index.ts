@@ -1,6 +1,23 @@
-// Stocks TRADE:
 import { getWsClient } from "../transport";
 import { w3cwebsocket as Websocket } from "websocket";
+
+// Stocks Aggregate:
+export interface IAggregateStockEvent {
+  ev: string; // Event Type ( A = Second Agg, AM = Minute Agg )
+  sym: string; // Symbol Ticker
+  v: number; // Tick Volume
+  av: number; // Accumulated Volume ( Today )
+  op: number; // Todays official opening price
+  vw: number; // VWAP (Volume Weighted Average Price)
+  o: number; // Tick Open Price
+  c: number; // Tick Close Price
+  h: number; // Tick High Price
+  l: number; // Tick Low Price
+  a: number; // Tick Average / VWAP Price
+  z: number; // Tick Average Trade Size
+  s: number; // Tick Start Timestamp ( Unix MS )
+  e: number; // Tick End Timestamp ( Unix MS )
+}
 
 export interface ITradeStockEvent {
   ev: string; // Event Type
@@ -26,25 +43,10 @@ export interface IQuoteStockEvent {
   as: number; // Ask Size
   c: number; // Quote Condition
   t: number; // Quote Timestamp ( Unix MS )
+  z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
 }
 
-// Stocks Aggregate:
-export interface IAggregateStockEvent {
-  ev: string; // Event Type ( A = Second Agg, AM = Minute Agg )
-  sym: string; // Symbol Ticker
-  v: number; // Tick Volume
-  av: number; // Accumulated Volume ( Today )
-  op: number; // Todays official opening price
-  vw: number; // VWAP (Volume Weighted Average Price)
-  o: number; // Tick Open Price
-  c: number; // Tick Close Price
-  h: number; // Tick High Price
-  l: number; // Tick Low Price
-  a: number; // Tick Average / VWAP Price
-  z: number; // Tick Average Trade Size
-  s: number; // Tick Start Timestamp ( Unix MS )
-  e: number; // Tick End Timestamp ( Unix MS )
-}
-
-export const getStocksWebsocket = (apiKey: string, apiBase =  "wss://socket.polygon.io"): Websocket =>
-  getWsClient(`${apiBase}/stocks`, apiKey);
+export const getStocksWebsocket = (
+  apiKey: string,
+  apiBase = "wss://socket.polygon.io"
+): Websocket => getWsClient(`${apiBase}/stocks`, apiKey);

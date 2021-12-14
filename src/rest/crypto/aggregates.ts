@@ -1,55 +1,21 @@
+// CF: https://polygon.io/docs/crypto/get_v2_aggs_ticker__cryptoTicker__range__multiplier___timespan___from___to
+
 import { get } from "../transport/request";
-import {
-  formatIAggResponseRaw,
-  IAggregateQuery,
-  IAggResponseFormatted
-} from "../stocks/aggregates";
+import { IAggsQuery, IAggs } from "../stocks/aggregates";
 
-// CF: https://polygon.io/docs/#!/Crypto/get_v2_aggs_ticker_ticker_prev
-export const cryptoPreviousClose = async (
-  apiKey: string,
-  apiBase: string,
-  ticker: string,
-  query?: IAggregateQuery
-): Promise<IAggResponseFormatted> =>
-  formatIAggResponseRaw(
-    await get(`/v2/aggs/ticker/${ticker}/prev`, apiKey, apiBase, query)
-  );
-
-// CF: https://polygon.io/docs/#!/Crypto/get_v2_aggs_ticker_ticker_range_multiplier_timespan_from_to
-export const cryptoAggregates = async (
-  apiKey: string,
+export const aggregates = async (
+  apikey: string,
   apiBase: string,
   ticker: string,
   multiplier: number,
   timespan: string,
   from: string,
   to: string,
-  query?: IAggregateQuery
-): Promise<IAggResponseFormatted> =>
-  formatIAggResponseRaw(
-    await get(
-      `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
-      apiKey,
-      apiBase,
-      query
-    )
-  );
-
-// CF: https://polygon.io/docs/#!/Crypto/get_v2_aggs_grouped_locale_locale_market_market_date
-export const cryptoGroupedDaily = async (
-  apiKey: string,
-  apiBase: string,
-  locale: string,
-  market: string = "CRYPTO",
-  date: string,
-  query?: IAggregateQuery
-): Promise<IAggResponseFormatted> =>
-  formatIAggResponseRaw(
-    await get(
-      `/v2/aggs/grouped/locale/${locale}/market/${market}/${date}`,
-      apiKey,
-      apiBase,
-      query
-    )
+  query?: IAggsQuery
+): Promise<IAggs> =>
+  get(
+    `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
+    apikey,
+    apiBase,
+    query
   );
