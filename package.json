@@ -9,7 +9,7 @@
     "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
     "build": "tsc",
-    "generate-doc": "typedoc"
+    "generate-doc": "typedoc src/main.ts"
   },
   "repository": {
     "type": "git",
