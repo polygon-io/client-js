@@ -45,7 +45,7 @@ import { referenceClient } from "@polygon.io/client-js";
 
 const reference = referenceClient("api key");
 
-reference.tickers.then(/* your success handler */);
+reference.tickers().then(/* your success handler */);
 ```
 
 ### [Websocket](https://polygon.io/docs/stocks/ws_getting-started)
