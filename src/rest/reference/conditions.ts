@@ -22,9 +22,9 @@ export interface IConditionsResults {
   legacy?: boolean;
   name: string;
   sip_mapping: {
-    CTA: string;
-    OPRA: string;
-    UTP: string;
+    CTA?: string;
+    OPRA?: string;
+    UTP?: string;
   };
   type: string;
   update_rules?: {

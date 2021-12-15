@@ -21,13 +21,13 @@ export interface IAggsQuery extends IPolygonQuery {
 }
 
 export interface IAggs {
-  ticker: string;
-  adjusted: boolean;
-  queryCount: number;
-  request_id: number;
-  resultsCount: number;
-  status: string;
-  results: IAggsResults[];
+  ticker?: string;
+  adjusted?: boolean;
+  queryCount?: number;
+  request_id?: number;
+  resultsCount?: number;
+  status?: string;
+  results?: IAggsResults[];
 }
 
 export const aggregates = async (

@@ -8,14 +8,14 @@ export interface IAggsPreviousCloseQuery extends IPolygonQuery {
 }
 
 export interface IAggsPreviousClose {
-  ticker: string;
-  adjusted: boolean;
-  queryCount: number;
-  request_id: string;
-  resultsCount: number;
-  status: string;
-  count: number;
-  results: IAggsResults[];
+  ticker?: string;
+  adjusted?: boolean;
+  queryCount?: number;
+  request_id?: string;
+  resultsCount?: number;
+  status?: string;
+  count?: number;
+  results?: IAggsResults[];
 }
 
 export const previousClose = async (
