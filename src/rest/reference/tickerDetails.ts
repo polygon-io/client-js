@@ -1,69 +1,40 @@
-// CF: https://polygon.io/docs/#!/Reference/get_v1_meta_symbols_symbol_company
+// CF: https://polygon.io/docs/stocks/get_v1_meta_symbols__stocksTicker__company
+
 import { get } from "../transport/request";
 
-export interface ITickerDetailsRaw {
-  logo?: string;
-  exchange: string;
-  name: string;
-  symbol: string;
-  listdate?: string;
-  cik?: string;
+export interface ITickerDetails {
+  active?: boolean;
   bloomberg?: string;
+  cik?: string;
+  country?: string;
+  description?: string;
+  employees?: number;
+  exchange?: string;
+  exchangeSymbol?: string;
   figi?: string;
+  hq_address?: string;
+  hq_country?: string;
+  hq_state?: string;
+  industry?: string;
   lei?: string;
-  sic?: number;
-  country?: string;
-  industry?: string;
-  sector?: string;
-  marketcap?: number;
-  employees?: number;
-  phone?: string;
-  ceo?: string;
-  url?: string;
-  description?: string;
-  similar?: string[];
-  tags?: string[];
-  updated?: string;
-}
-
-export interface ITickerDetailsFormatted {
-  logo?: string;
-  exchange: string;
-  name: string;
-  symbol: string;
   listdate?: string;
-  cik?: string;
-  bloomberg?: string;
-  figi?: string;
-  legalEntityIdentifier?: string;
-  standardIndustryClassification?: number;
-  country?: string;
-  industry?: string;
-  sector?: string;
+  logo?: string;
   marketcap?: number;
-  employees?: number;
+  name?: string;
   phone?: string;
-  ceo?: string;
-  url?: string;
-  description?: string;
+  sector?: string;
+  sic?: number;
   similar?: string[];
+  symbol?: string;
   tags?: string[];
+  type?: string;
   updated?: string;
+  url?: string;
 }
 
 export const tickerDetails = async (
   apiKey: string,
   apiBase: string,
   symbol: string
-): Promise<ITickerDetailsFormatted> => {
-  const raw: ITickerDetailsRaw = await get(
-    `/v1/meta/symbols/${symbol}/company`,
-    apiKey,
-    apiBase
-  );
-
-  const formatted: ITickerDetailsFormatted = { ...raw };
-  formatted.legalEntityIdentifier = raw.lei;
-  formatted.standardIndustryClassification = raw.sic;
-  return formatted;
-};
+): Promise<ITickerDetails> =>
+  get(`/v1/meta/symbols/${symbol}/company`, apiKey, apiBase);

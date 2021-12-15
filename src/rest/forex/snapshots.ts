@@ -1,99 +1,93 @@
-import { formatIV1ForexRaw, IV1ForexRaw } from "./historicForexTicks";
-import { get } from "../transport/request";
+import { get, IPolygonQuery } from "../transport/request";
 
-export interface IForexSnapshotAggRaw {
-  c: number;
-  h: number;
-  l: number;
-  o: number;
-  v: number;
+export interface SnapshotDay {
+  c?: number;
+  h?: number;
+  l?: number;
+  o?: number;
+  v?: number;
 }
-export interface IForexSnapshotAggFormatted {
-  c: number;
-  close: number;
-  h: number;
-  high: number;
-  l: number;
-  low: number;
-  o: number;
-  open: number;
-  v: number;
-  volume: number;
-}
-const formatIForexSnapshotAggRaw = (
-  raw: IForexSnapshotAggRaw
-): IForexSnapshotAggFormatted => ({
-  ...raw,
-  close: raw.c,
-  high: raw.h,
-  low: raw.l,
-  open: raw.o,
-  volume: raw.v
-});
 
-export interface IForexSnapshotTickerRaw {
-  ticker: string;
-  day: IForexSnapshotAggRaw;
-  lastQuote: IV1ForexRaw;
-  min: IForexSnapshotAggRaw;
-  prevDay: IForexSnapshotAggRaw;
-  todaysChange: number;
-  todaysChangePerc: number;
-  updated: number;
+export interface SnapshotLastQuote {
+  a?: number;
+  b?: number;
+  t?: number;
+  x?: number;
 }
-export interface IForexSnapshotTickerFormatted {
-  ticker: string;
-  day: IForexSnapshotAggRaw;
-  lastQuote: IV1ForexRaw;
-  min: IForexSnapshotAggRaw;
-  prevDay: IForexSnapshotAggRaw;
-  todaysChange: number;
-  todaysChangePerc: number;
-  updated: number;
-}
-const formatIForexSnapshotRaw = (
-  raw: IForexSnapshotTickerRaw
-): IForexSnapshotTickerFormatted => ({
-  ticker: raw.ticker,
-  todaysChange: raw.todaysChange,
-  todaysChangePerc: raw.todaysChangePerc,
-  updated: raw.updated,
-  day: formatIForexSnapshotAggRaw(raw.day),
-  lastQuote: formatIV1ForexRaw(raw.lastQuote),
-  min: formatIForexSnapshotAggRaw(raw.min),
-  prevDay: formatIForexSnapshotAggRaw(raw.prevDay)
-});
 
-export interface IForexSnapshotAllTickersResponseRaw {
-  status: string;
-  tickers: IForexSnapshotTickerRaw[];
+export interface SnapshotMin {
+  c?: number;
+  h?: number;
+  l?: number;
+  o?: number;
+  v?: number;
 }
-export interface IForexSnapshotAllTickersResponseFormatted {
-  status: string;
-  tickers: IForexSnapshotTickerFormatted[];
+
+export interface SnapshotPrevDay {
+  c?: number;
+  h?: number;
+  l?: number;
+  o?: number;
+  v?: number;
+  vw?: number;
 }
-const formatIForexSnapshotAllTickersResponseRaw = (
-  raw: IForexSnapshotAllTickersResponseRaw
-): IForexSnapshotAllTickersResponseFormatted => ({
-  status: raw.status,
-  tickers: raw.tickers.map(formatIForexSnapshotRaw)
-});
 
-// CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_snapshot_locale_global_markets_forex_tickers
-export const forexSnapshotAllTickers = async (
-  apiKey: string,
-  apiBase: string
-): Promise<IForexSnapshotAllTickersResponseFormatted> =>
-  formatIForexSnapshotAllTickersResponseRaw(
-    await get(`/v2/snapshot/locale/global/markets/forex/tickers`, apiKey, apiBase)
-  );
+export interface SnapshotInfo {
+  day?: SnapshotDay;
+  lastQuote?: SnapshotLastQuote;
+  min?: SnapshotMin;
+  prevDay?: SnapshotPrevDay;
+  ticker?: string;
+  todaysChange?: number;
+  todayChangePerc?: number;
+  updated?: number;
+}
 
-// CF: https://polygon.io/docs/#!/Forex--Currencies/get_v2_snapshot_locale_global_markets_forex_direction
-export const forexSnapshotGainersLosers = async (
+export interface IForexSnapshotAllTickersQuery extends IPolygonQuery {
+  tickers?: string;
+}
+
+export interface IForexSnapshotTickers {
+  count?: number;
+  status?: string;
+  tickers?: SnapshotInfo[];
+}
+
+export interface IForexSnapshot {
+  status?: string;
+  request_id?: string;
+  ticker?: SnapshotInfo;
+}
+
+// CF: https://polygon.io/docs/forex/get_v2_snapshot_locale_global_markets_forex_tickers
+export const snapshotAllTickers = async (
   apiKey: string,
   apiBase: string,
-  direction: string = "gainers"
-): Promise<IForexSnapshotAllTickersResponseFormatted> =>
-  formatIForexSnapshotAllTickersResponseRaw(
-    await get(`/v2/snapshot/locale/global/markets/forex/${direction}`, apiKey, apiBase)
+  query?: IForexSnapshotAllTickersQuery
+): Promise<IForexSnapshotTickers> =>
+  get(
+    `/v2/snapshot/locale/global/markets/forex/tickers`,
+    apiKey,
+    apiBase,
+    query
+  );
+
+// CF: https://polygon.io/docs/forex/get_v2_snapshot_locale_global_markets_forex__direction
+export const snapshotGainersLosers = async (
+  apiKey: string,
+  apiBase: string,
+  direction: "gainers" | "losers"
+): Promise<IForexSnapshotTickers> =>
+  get(`/v2/snapshot/locale/global/markets/forex/${direction}`, apiKey, apiBase);
+
+// CF: https://polygon.io/docs/forex/get_v2_snapshot_locale_global_markets_forex_tickers__ticker
+export const snapshotTicker = async (
+  apiKey: string,
+  apiBase: string,
+  symbol: string
+): Promise<IForexSnapshot> =>
+  get(
+    `/v2/snapshot/locale/global/markets/forex/tickers/${symbol}`,
+    apiKey,
+    apiBase
   );

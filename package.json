@@ -1,6 +1,6 @@
 {
   "name": "@polygon.io/client-js",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
@@ -18,6 +18,7 @@
   "keywords": [
     "polygon.io",
     "stock api",
+		"options api",
     "forex api",
     "crypto api"
   ],
@@ -29,6 +30,10 @@
     {
       "name": "Katie Adams",
       "email": "katie@polygon.io"
+    },
+    {
+      "name": "Andrew Bailey",
+      "email": "andrew.bailey@polygon.io"
     }
   ],
   "license": "MIT",
@@ -36,21 +41,26 @@
     "url": "https://github.com/polygon-io/client-js/issues"
   },
   "homepage": "https://github.com/polygon-io/client-js#readme",
+	"dependencies": {
+    "cross-fetch": "^3.1.4",
+    "query-string": "^7.0.1",
+    "websocket": "^1.0.34"
+  },
   "devDependencies": {
-    "@types/chai": "^4.2.15",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^14.14.35",
-    "@types/sinon": "^9.0.11",
-    "@types/websocket": "^1.0.2",
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.11",
+    "@types/sinon": "^10.0.6",
+    "@types/websocket": "^1.0.4",
     "chai": "^4.3.4",
-    "husky": "^5.2.0",
-    "lint-staged": "^10.5.4",
-    "mocha": "^8.3.2",
-    "prettier": "^2.2.1",
-    "sinon": "^10.0.0",
-    "ts-node": "^9.1.1",
-    "typedoc": "^0.20.33",
-    "typescript": "^4.2.3"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "mocha": "^9.1.3",
+    "prettier": "^2.5.1",
+    "sinon": "^12.0.1",
+    "ts-node": "^10.4.0",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.2"
   },
   "husky": {
     "hooks": {
@@ -63,9 +73,8 @@
       "git add"
     ]
   },
-  "dependencies": {
-    "cross-fetch": "^3.1.2",
-    "query-string": "^7.0.0",
-    "websocket": "^1.0.33"
-  }
+	"workspaces": [
+		"./lib/*",
+		"./sandbox"
+	]
 }

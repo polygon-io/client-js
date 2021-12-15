@@ -5,7 +5,7 @@ import * as request from "../transport/request";
 
 import { referenceClient } from "./index";
 
-describe("[REST] reference", () => {
+describe("[REST] Reference", () => {
   chai.should();
   let requestStub;
   const sandbox = sinon.createSandbox();
@@ -17,52 +17,39 @@ describe("[REST] reference", () => {
     sandbox.restore();
   });
 
-  it("tickers call /v2/reference/tickers", async () => {
-    await ref.tickers();
+  it("conditions call /v3/reference/conditions", async () => {
+    await ref.conditions();
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/tickers");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/conditions");
   });
 
-  it("tickerTypes call /v2/reference/types", async () => {
-    await ref.tickerTypes();
+  it("exchanges call /v3/reference/exchanges", async () => {
+    await ref.exchanges();
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/types");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/exchanges");
   });
 
-  it("tickerDetails call /v1/meta/symbols/{symbol}/company", async () => {
-    await ref.tickerDetails("AAPL");
+  it("market holidays call /v1/marketstatus/upcoming", async () => {
+    await ref.marketHolidays();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/upcoming");
+  });
+
+  it("market status call /v1/marketstatus/now", async () => {
+    await ref.marketStatus();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/now");
+  });
+
+  it("options contracts call /v3/reference/options/contracts", async () => {
+    await ref.optionsContracts();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
-      .args[0].should.eql("/v1/meta/symbols/AAPL/company");
+      .args[0].should.eql("/v3/reference/options/contracts");
   });
 
-  it("tickerNews call /v1/meta/symbols/{symbol}/news", async () => {
-    await ref.tickerNews({ ticker: 'AAPL'});
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/news");
-    requestStub.getCalls()[0].args[3].should.eql({ ticker: 'AAPL'});
-  });
-
-  it("markets call /v2/reference/markets", async () => {
-    await ref.markets();
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/markets");
-  });
-
-  it("locales call /v2/reference/locales", async () => {
-    await ref.locales();
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/locales");
-  });
-
-  it("stockSplits call /v2/reference/splits/{symbol}", async () => {
-    await ref.stockSplits("AAPL");
-    requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/splits/AAPL");
-  });
-
-  it("stockDividends call /v2/reference/dividends/{symbol}", async () => {
+  it("stock dividends call /v2/reference/dividends/{stocksTicker}", async () => {
     await ref.stockDividends("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub
@@ -70,23 +57,35 @@ describe("[REST] reference", () => {
       .args[0].should.eql("/v2/reference/dividends/AAPL");
   });
 
-  it("stockFinancials call /v2/reference/financials/{symbol}", async () => {
-    await ref.stockFinancials("AAPL");
+  it("stock splits call /v2/reference/splits/{stocksTicker}", async () => {
+    await ref.stockSplits("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/splits/AAPL");
+  });
+
+  it("ticker details call /v1/meta/symbols/{symbol}/company", async () => {
+    await ref.tickerDetails("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
-      .args[0].should.eql("/v2/reference/financials/AAPL");
+      .args[0].should.eql("/v1/meta/symbols/AAPL/company");
   });
 
-  it("marketStatus call /v1/marketstatus/now", async () => {
-    await ref.marketStatus();
+  it("ticker news call /v2/reference/news", async () => {
+    await ref.tickerNews();
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/now");
+    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/news");
   });
 
-  it("marketHolydays call /v1/marketstatus/upcoming", async () => {
-    await ref.marketHolydays();
+  it("tickers call /v2/reference/tickers", async () => {
+    await ref.tickers();
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/upcoming");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/tickers");
+  });
+
+  it("ticker types call /v3/reference/tickers/types", async () => {
+    await ref.tickerTypes();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/tickers/types");
   });
 });

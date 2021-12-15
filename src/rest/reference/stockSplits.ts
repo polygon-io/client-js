@@ -1,15 +1,15 @@
-// CF: https://polygon.io/docs/#!/Reference/get_v2_reference_splits_symbol
+// CF: https://polygon.io/docs/stocks/get_v2_reference_splits__stocksTicker
+
 import { get } from "../transport/request";
 
 export interface IStockSplit {
-  ticker: string;
-  exDate: string;
-  paymentDate: string;
-  recordDate?: string;
   declaredDate?: string;
-  ratio: number;
-  tofactor: number;
-  forfactor: number;
+  exDate?: string;
+  forfactor?: number;
+  paymentDate?: string;
+  ratio?: number;
+  ticker?: string;
+  tofactor?: number;
 }
 export interface IStockSplitsResults {
   status?: string;

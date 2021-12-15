@@ -9,9 +9,13 @@ export interface IPolygonClient {
   websockets: IWebsocketClient;
 }
 
-export const polygonClient = (apiKey: string, restApiBase?: string, websocketApiBase?: string): IPolygonClient => ({
+export const polygonClient = (
+  apiKey: string,
+  restApiBase?: string,
+  websocketApiBase?: string
+): IPolygonClient => ({
   rest: restClient(apiKey, restApiBase),
-  websockets: websocketClient(apiKey, websocketApiBase)
+  websockets: websocketClient(apiKey, websocketApiBase),
 });
 
 export default polygonClient;
