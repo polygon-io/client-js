@@ -9,7 +9,7 @@
     "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
     "build": "tsc",
-    "generate-doc": "typedoc @polygon.io"
+    "generate-doc": "typedoc src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "keywords": [
     "polygon.io",
     "stock api",
-		"options api",
+    "options api",
     "forex api",
     "crypto api"
   ],
