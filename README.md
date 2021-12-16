@@ -55,12 +55,18 @@ You can get preauthenticated [websocket clients](https://www.npmjs.com/package/w
 ```typescript
 import { websocketClient } from "@polygon.io/client-js";
 
-const stocksWS = websocketClient("api key").getStocksWebsocket();
+const stocksWS = websocketClient("api key").stocks();
 
-stocksWS.onmessage = raw => {
-  const message = JSON.parse(raw);
+stocksWS.onmessage = ({data}) => {
+  const [message] = JSON.parse(data);
+
+  stocksWS.send('{"action":"subscribe", "params":"AM.MSFT,A.MSFT"}');
+
   switch (message.ev) {
-    case "T":
+    case "AM":
+      // your trade message handler
+      break;
+    case "A":
       // your trade message handler
       break;
   }
