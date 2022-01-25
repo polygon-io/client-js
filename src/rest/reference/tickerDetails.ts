@@ -1,40 +1,47 @@
-// CF: https://polygon.io/docs/stocks/get_v1_meta_symbols__stocksTicker__company
+// CF: https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker
 
 import { get } from "../transport/request";
 
 export interface ITickerDetails {
-  active?: boolean;
-  bloomberg?: string;
-  cik?: string;
-  country?: string;
-  description?: string;
-  employees?: number;
-  exchange?: string;
-  exchangeSymbol?: string;
-  figi?: string;
-  hq_address?: string;
-  hq_country?: string;
-  hq_state?: string;
-  industry?: string;
-  lei?: string;
-  listdate?: string;
-  logo?: string;
-  marketcap?: number;
-  name?: string;
-  phone?: string;
-  sector?: string;
-  sic?: number;
-  similar?: string[];
-  symbol?: string;
-  tags?: string[];
-  type?: string;
-  updated?: string;
-  url?: string;
-}
+	request_id?: string;
+	results?: {
+	 active?: boolean;
+	 address?: {
+		address1?: string;
+		city?: string;
+		state?: string;
+	 },
+	 branding?: {
+		icon_url?: string;
+		logo_url?:string;
+	 },
+	 cik?: number;
+	 composite_figi?: string;
+	 currency_name?: string;
+	 description?: string;
+	 homepage_url?: string;
+	 list_date?: string;
+	 locale?: string;
+	 market?: string;
+	 market_cap?: number;
+	 name?: string;
+	 phone_number?: string;
+	 primary_exchange?: string;
+	 share_class_figi?: string;
+	 share_class_shares_outstanding?: number;
+	 sic_code?: number;
+	 sic_description?: string;
+	 ticker?: string;
+	 total_employees?: number;
+	 type?: string;
+	 weighted_shares_outstanding?: number;
+	},
+	status?: string;
+ }
 
 export const tickerDetails = async (
   apiKey: string,
   apiBase: string,
   symbol: string
 ): Promise<ITickerDetails> =>
-  get(`/v1/meta/symbols/${symbol}/company`, apiKey, apiBase);
+  get(`/v3/reference/tickers/${symbol}`, apiKey, apiBase);
