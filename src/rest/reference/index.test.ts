@@ -63,12 +63,12 @@ describe("[REST] Reference", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v2/reference/splits/AAPL");
   });
 
-  it("ticker details call /v1/meta/symbols/{symbol}/company", async () => {
+  it("ticker details call /v3/reference/tickers/{ticker}", async () => {
     await ref.tickerDetails("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
-      .args[0].should.eql("/v1/meta/symbols/AAPL/company");
+      .args[0].should.eql("/v3/reference/tickers/AAPL");
   });
 
   it("ticker news call /v2/reference/news", async () => {
