@@ -16,7 +16,7 @@ export const auth =
 
 export const get = async (
   path: string,
-  apiKey: string = "invalid",
+  apiKey: string,
   apiBase: string,
   query?: IPolygonQuery
 ): Promise<any> => {
