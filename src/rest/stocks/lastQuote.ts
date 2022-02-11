@@ -1,4 +1,4 @@
-// CF: https://polygon.io/docs/stocks/get_v2_ticks_stocks_nbbo__ticker___date
+// CF: https://polygon.io/docs/stocks/get_v2_last_nbbo__stocksticker
 
 import { get } from "../transport/request";
 import { ITradeInfo } from "./trades";
