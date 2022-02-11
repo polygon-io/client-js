@@ -6,7 +6,7 @@ import { ITradeInfo } from "./trades";
 export interface ILastQuote {
   request_id?: string;
   status?: string;
-  results?: ITradeInfo[];
+  results?: ITradeInfo;
 }
 
 export const lastQuote = async (
