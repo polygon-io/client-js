@@ -56,7 +56,7 @@ class Polygon extends EventEmitter {
 	}
 	onMessage( data ){
 		data = JSON.parse( data )
-		data.map(( msg ) => {
+		data.forEach(( msg ) => {
 			if( msg.ev === 'status' ){
 				console.log('Status Update:', msg.message)
 			}
