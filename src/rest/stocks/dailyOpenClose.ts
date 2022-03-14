@@ -1,4 +1,4 @@
-// CF: https://polygon.io/docs/stocks/get_v1_open-close__stocksTicker___date
+// CF: https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date
 
 import { get, IPolygonQuery } from "../transport/request";
 
@@ -7,10 +7,10 @@ export interface IDailyOpenCloseQuery extends IPolygonQuery {
 }
 
 export interface IDailyOpenClose {
-  afterhours?: number;
+  afterHours?: number;
   close?: number;
   from?: string;
-  hight?: number;
+  high?: number;
   low?: number;
   open?: number;
   preMarket?: number;
