@@ -1,6 +1,6 @@
 {
   "name": "@polygon.io/client-js",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
@@ -41,7 +41,7 @@
     "url": "https://github.com/polygon-io/client-js/issues"
   },
   "homepage": "https://github.com/polygon-io/client-js#readme",
-	"dependencies": {
+  "dependencies": {
     "cross-fetch": "^3.1.4",
     "query-string": "^7.0.1",
     "websocket": "^1.0.34"
@@ -73,8 +73,8 @@
       "git add"
     ]
   },
-	"workspaces": [
-		"./lib/*",
-		"./sandbox"
-	]
+  "workspaces": [
+    "./lib/*",
+    "./sandbox"
+  ]
 }
