@@ -17,6 +17,25 @@ export interface IStockSplitsResults {
   results?: IStockSplit[];
 }
 
+interface ISSockSplitV3 {
+  execution_date: string;
+  split_from: number;
+  split_to: number;
+  ticker: string;
+}
+interface IStockSplitsResultsV3 {
+  request_id: string;
+  results: ISSockSplitV3[];
+  status: string;
+}
+
+export const stockSplitsV3 = async (
+  apiKey: string,
+  apiBase: string,
+  symbol: string
+): Promise<IStockSplitsResultsV3> =>
+  get(`/v3/reference/splits/${symbol}`, apiKey, apiBase);
+
 export const stockSplits = async (
   apiKey: string,
   apiBase: string,
