@@ -71,8 +71,7 @@ export interface IStocksClient {
     query?: IAggsPreviousCloseQuery
   ) => Promise<IAggsPreviousClose>;
   quotes: (
-    symbol: string,
-    date: string,
+    stockTicker: string,
     query?: ITradesQuotesQuery
   ) => Promise<IQuotes>;
   snapshotAllTickers: (
@@ -83,8 +82,7 @@ export interface IStocksClient {
   ) => Promise<ISnapshotTickers>;
   snapshotTicker: (symbol: string) => Promise<ISnapshot>;
   trades: (
-    symbol: string,
-    date: string,
+    stockTicker: string,
     query?: ITradesQuotesQuery
   ) => Promise<ITrades>;
 }
