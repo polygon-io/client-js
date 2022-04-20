@@ -68,18 +68,18 @@ describe("[REST] Crypto", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/BTC/prev");
   });
 
-  it("historic trades call /v1/historic/crypto/{from}/{to}/{date}", async () => {
+  it("trades call /v3/trades/{cryptoTicker}", async () => {
     sandbox.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
         ticks: [],
       })
     );
-    await crypto.historicTrades("BTC", "USD", "2019-01-01");
+    await crypto.trades("X:BTC-USD");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
-      .args[0].should.eql("/v1/historic/crypto/BTC/USD/2019-01-01");
+      .args[0].should.eql("/v3/trades/X:BTC-USD");
   });
 
   it("last trade call /v1/last/crypto/{from}/{to}", async () => {

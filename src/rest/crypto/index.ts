@@ -17,10 +17,10 @@ import {
   dailyOpenClose,
 } from "./dailyOpenClose";
 import {
-  IHistoricTradeQuery,
-  IHistoricTrade,
-  historicTrades,
-} from "./historicTrades";
+  ICryptoTradeQuery,
+  ICryptoTrade,
+  trades,
+} from "./trades";
 import { ICryptoLastTrade, lastTrade } from "./lastTrade";
 import { previousClose } from "./previousClose";
 import {
@@ -38,7 +38,7 @@ export {
   ICryptoDailyOpenCloseQuery,
   ICryptoDailyOpenClose,
 } from "./dailyOpenClose";
-export { IHistoricTradeQuery, IHistoricTrade } from "./historicTrades";
+export { ICryptoTradeQuery, ICryptoTrade } from "./trades";
 export { ICryptoLastTrade } from "./lastTrade";
 export {
   ICryptoSnapshotAllTickersQuery,
@@ -66,12 +66,10 @@ export interface ICryptoClient {
     date: string,
     query?: ICryptoDailyOpenCloseQuery
   ) => Promise<ICryptoDailyOpenClose>;
-  historicTrades: (
-    from: string,
-    to: string,
-    date: string,
-    query?: IHistoricTradeQuery
-  ) => Promise<IHistoricTrade>;
+  trades: (
+    cryptoTicker: string,
+    query?: ICryptoTradeQuery
+  ) => Promise<ICryptoTrade>;
   lastTrade: (from: string, to: string) => Promise<ICryptoLastTrade>;
   previousClose: (
     symbol: string,
@@ -97,7 +95,7 @@ export const cryptoClient = (
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),
-  historicTrades: auth(apiKey, historicTrades, apiBase),
+  trades: auth(apiKey, trades, apiBase),
   previousClose: auth(apiKey, previousClose, apiBase),
   snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
   snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
