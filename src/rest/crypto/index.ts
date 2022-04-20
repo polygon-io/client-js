@@ -9,6 +9,7 @@ import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
 } from "../stocks/previousClose";
+import { ITradesQuotesQuery } from '../stocks/trades';
 import { aggregates } from "./aggregates";
 import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
 import {
@@ -16,11 +17,7 @@ import {
   ICryptoDailyOpenClose,
   dailyOpenClose,
 } from "./dailyOpenClose";
-import {
-  ICryptoTradeQuery,
-  ICryptoTrade,
-  trades,
-} from "./trades";
+import { ICryptoTrade, trades } from "./trades";
 import { ICryptoLastTrade, lastTrade } from "./lastTrade";
 import { previousClose } from "./previousClose";
 import {
@@ -38,7 +35,7 @@ export {
   ICryptoDailyOpenCloseQuery,
   ICryptoDailyOpenClose,
 } from "./dailyOpenClose";
-export { ICryptoTradeQuery, ICryptoTrade } from "./trades";
+export { ICryptoTrade } from "./trades";
 export { ICryptoLastTrade } from "./lastTrade";
 export {
   ICryptoSnapshotAllTickersQuery,
@@ -68,7 +65,7 @@ export interface ICryptoClient {
   ) => Promise<ICryptoDailyOpenClose>;
   trades: (
     cryptoTicker: string,
-    query?: ICryptoTradeQuery
+    query?: ITradesQuotesQuery
   ) => Promise<ICryptoTrade>;
   lastTrade: (from: string, to: string) => Promise<ICryptoLastTrade>;
   previousClose: (

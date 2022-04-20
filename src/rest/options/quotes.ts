@@ -1,27 +1,28 @@
-// CF: https://polygon.io/docs/forex/get_v1_historic_forex__from___to___date
-
 import { get } from "../transport/request";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
-export interface IForexQuotesInfo {
+export interface IOptionQuotesInfo {
   ask_exchange: number;
   ask_price: number;
+  ask_size: number;
   bid_exchange: number;
   bid_price: number;
-  participant_timestamp: number;
+  bid_size: number;
+  sequence_number: number;
+  sip_timestamp: number;
 }
 
-export interface IForexQuotes {
+export interface IOptionQuotes {
   next_url?: string;
   request_id?: string;
-  results?: IForexQuotesInfo[];
+  results?: IOptionQuotesInfo[];
   status?: string;
 }
 
 export const quotes = async (
   apiKey: string,
   apiBase: string,
-  fxTicker: string,
+  optionsTicker: string,
   query?: ITradesQuotesQuery
-): Promise<IForexQuotes> =>
-  get(`/v3/quotes/${fxTicker}`, apiKey, apiBase, query);
+): Promise<IOptionQuotes> =>
+  get(`/v3/quotes/${optionsTicker}`, apiKey, apiBase, query);

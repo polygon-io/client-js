@@ -8,7 +8,7 @@ describe("[REST] Options", () => {
   chai.should();
   let requestStub;
   const sandbox = sinon.createSandbox();
-  const stocks = optionsClient("invalid");
+  const options = optionsClient("invalid");
   beforeEach(() => {
     requestStub = sandbox
       .stub(request, "get")
@@ -25,7 +25,7 @@ describe("[REST] Options", () => {
         results: [],
       })
     );
-    await stocks.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
+    await options.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
@@ -35,27 +35,43 @@ describe("[REST] Options", () => {
   });
 
   it("daily open close call /v1/open-close/{symbol}/{date}", async () => {
-    await stocks.dailyOpenClose("AAPL", "2018-2-2");
+    await options.dailyOpenClose("AAPL", "2018-2-2");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
       .args[0].should.eql("/v1/open-close/AAPL/2018-2-2");
   });
 
-  it("previous close call /v2/aggs/ticker/{stocksTicker}/prev", async () => {
-    await stocks.previousClose("AAPL");
+  it("previous close call /v2/aggs/ticker/{optionsTicker}/prev", async () => {
+    await options.previousClose("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/AAPL/prev");
   });
 
-  it("last trade call /v2/last/trade/{stocksTicker}", async () => {
-    await stocks.lastTrade("AAPL");
+  it("trades call /v3/trades/{optionsTicker}", async () => {
+    await options.trades("O:TSLA210903C00700000");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v3/trades/O:TSLA210903C00700000");
+  });
+
+  it("last trade call /v2/last/trade/{optionsTicker}", async () => {
+    await options.lastTrade("AAPL");
     requestStub.callCount.should.eql(1);
     requestStub.getCalls()[0].args[0].should.eql("/v2/last/trade/AAPL");
   });
 
+  it("quotes call /v3/quotes/{optionsTicker}  ", async () => {
+    await options.quotes("O:SPY241220P00720000");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v3/quotes/O:SPY241220P00720000");
+  });
+
   it("snapshot - option contract call /v3/snapshot/options/{underlyingAsset}/{optionContract}", async () => {
-    await stocks.snapshotOptionContract("AAPL", "O:AAPL230616C00150000");
+    await options.snapshotOptionContract("AAPL", "O:AAPL230616C00150000");
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]

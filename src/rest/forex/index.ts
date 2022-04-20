@@ -9,14 +9,11 @@ import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
 } from "../stocks/previousClose";
+import { ITradesQuotesQuery } from "../stocks/trades";
 import { aggregates } from "./aggregates";
 import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
 import { IConversionQuery, IConversion, conversion } from "./conversion";
-import {
-  IForexQuotesQuery,
-  IForexQuotes,
-  quotes,
-} from "./quotes";
+import { IForexQuotes, quotes } from "./quotes";
 import { IForexLastQuote, lastQuote } from "./lastQuote";
 import { previousClose } from "./previousClose";
 import {
@@ -29,7 +26,7 @@ import {
 } from "./snapshots";
 
 export { IConversionQuery, IConversion } from "./conversion";
-export { IForexQuotesQuery, IForexQuotes } from "./quotes";
+export { IForexQuotes } from "./quotes";
 export { IForexLastQuote } from "./lastQuote";
 export {
   IRealTimeCurrencyConversionQuery,
@@ -61,7 +58,7 @@ export interface IForexClient {
   ) => Promise<IConversion>;
   quotes: (
     fxTicker: string,
-    query?: IForexQuotesQuery
+    query?: ITradesQuotesQuery
   ) => Promise<IForexQuotes>;
   lastQuote: (from: string, to: string) => Promise<IForexLastQuote>;
   previousClose: (

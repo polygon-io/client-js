@@ -1,6 +1,7 @@
 // CF: https://polygon.io/docs/crypto/get_v1_historic_crypto__from___to___date
 
-import { get, IPolygonQuery } from "../transport/request";
+import { get } from "../transport/request";
+import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface ICryptoTradeInfo {
   conditions: number[];
@@ -9,20 +10,6 @@ export interface ICryptoTradeInfo {
   participant_timestamp: number;
   price: number;
   size: number;
-}
-
-export interface ICryptoTradeQuery extends IPolygonQuery {
-  timestamp?: 
-  | string
-  | {
-      lt?: string;
-      lte?: string;
-      gt?: string;
-      gte?: string;
-    };
-  order?: "asc" | "desc";
-  limit?: number;
-  sort?: "timestamp";
 }
 
 export interface ICryptoTrade {
@@ -36,6 +23,6 @@ export const trades = async (
   apiKey: string,
   apiBase: string,
   cryptoTicker: string,
-  query?: ICryptoTradeQuery
+  query?: ITradesQuotesQuery
 ): Promise<ICryptoTrade> =>
   get(`/v3/trades/${cryptoTicker}`, apiKey, apiBase, query);
