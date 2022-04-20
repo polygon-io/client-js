@@ -49,18 +49,18 @@ describe("[REST] Reference", () => {
       .args[0].should.eql("/v3/reference/options/contracts");
   });
 
-  it("stock dividends call /v2/reference/dividends/{stocksTicker}", async () => {
-    await ref.stockDividends("AAPL");
+  it("stock dividends call /v3/reference/dividends", async () => {
+    await ref.dividends();
     requestStub.callCount.should.eql(1);
     requestStub
       .getCalls()[0]
-      .args[0].should.eql("/v2/reference/dividends/AAPL");
+      .args[0].should.eql("/v3/reference/dividends");
   });
 
-  it("stock splits call /v2/reference/splits/{stocksTicker}", async () => {
-    await ref.stockSplits("AAPL");
+  it("stock splits call /v3/reference/splits", async () => {
+    await ref.stockSplits();
     requestStub.callCount.should.eql(1);
-    requestStub.getCalls()[0].args[0].should.eql("/v2/reference/splits/AAPL");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/reference/splits");
   });
 
   it("ticker details call /v3/reference/tickers/{ticker}", async () => {
