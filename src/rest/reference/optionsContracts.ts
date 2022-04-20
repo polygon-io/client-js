@@ -24,7 +24,7 @@ export interface IOptionsContractsResults {
   contract_type?: string;
   correction?: string;
   exercise_style?: string;
-  experation_date?: string;
+  expiration_date?: string;
   primary_exchange?: string;
   shares_per_contract?: number;
   strike_price?: number;

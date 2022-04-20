@@ -1,3 +1,5 @@
+// CF: https://polygon.io/docs/options/get_v3_trades__optionsticker
+
 import { get } from "../transport/request";
 import { ITradesQuotesQuery } from "../stocks/trades";
 

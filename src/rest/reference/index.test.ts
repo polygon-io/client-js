@@ -41,6 +41,14 @@ describe("[REST] Reference", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v1/marketstatus/now");
   });
 
+  it("options contract call /v3/reference/options/contracts/{options_ticker}", async () => {
+    await ref.optionsContract("O:EVRI240119C00002500");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v3/reference/options/contracts/O:EVRI240119C00002500");
+  });
+
   it("options contracts call /v3/reference/options/contracts", async () => {
     await ref.optionsContracts();
     requestStub.callCount.should.eql(1);

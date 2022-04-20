@@ -4,6 +4,11 @@ import { IConditionsQuery, IConditions, conditions } from "./conditions";
 import { IExchangesQuery, IExchanges, exchanges } from "./exchanges";
 import { IMarketHoliday, marketHolidays } from "./marketHolidays";
 import { IMarketStatus, marketStatus } from "./marketStatus";
+import { 
+  IOptionsContractQuery, 
+  IOptionsContract, 
+  optionsContract 
+} from './optionsContract';
 import {
   IOptionsContractsQuery,
   IOptionsContracts,
@@ -32,6 +37,10 @@ export interface IReferenceClient {
   exchanges: (query?: IExchangesQuery) => Promise<IExchanges>;
   marketHolidays: () => Promise<IMarketHoliday[]>;
   marketStatus: () => Promise<IMarketStatus>;
+  optionsContract: (
+    optionsTicker: string,
+    query?: IOptionsContractQuery
+  ) => Promise<IOptionsContract>;
   optionsContracts: (
     query?: IOptionsContractsQuery
   ) => Promise<IOptionsContracts>;
@@ -51,6 +60,7 @@ export const referenceClient = (
   exchanges: auth(apiKey, exchanges, apiBase),
   marketHolidays: auth(apiKey, marketHolidays, apiBase),
   marketStatus: auth(apiKey, marketStatus, apiBase),
+  optionsContract: auth(apiKey, optionsContract, apiBase),
   optionsContracts: auth(apiKey, optionsContracts, apiBase),
   dividends: auth(apiKey, stockDividends, apiBase),
   stockSplits: auth(apiKey, stockSplits, apiBase),
