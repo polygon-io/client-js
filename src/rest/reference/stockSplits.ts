@@ -3,10 +3,10 @@
 import { get, IPolygonQuery } from "../transport/request";
 
 export interface IStockSplit {
-  execution_date: string;
+  execution_date?: string;
   split_from: number;
   split_to: number;
-  ticker: string;
+  ticker?: string;
 }
 
 export interface IStockSplitsResults {

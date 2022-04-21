@@ -71,6 +71,12 @@ describe("[REST] Reference", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v3/reference/splits");
   });
 
+  it("stock financials call /vX/reference/financials", async () => {
+    await ref.stockFinancials();
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/vX/reference/financials");
+  });
+
   it("ticker details call /v3/reference/tickers/{ticker}", async () => {
     await ref.tickerDetails("AAPL");
     requestStub.callCount.should.eql(1);

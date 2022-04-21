@@ -16,6 +16,7 @@ import {
 } from "./optionsContracts";
 import { IDividendsResults, stockDividends } from "./dividends";
 import { IStockSplitsResults, stockSplits } from "./stockSplits";
+import { IStockFinancialResults, stockFinancials } from "./stockFinancials";
 import { ITickerDetails, tickerDetails } from "./tickerDetails";
 import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews";
 import { ITickers, ITickersQuery, tickers } from "./tickers";
@@ -27,6 +28,7 @@ export { IMarketHoliday } from "./marketHolidays";
 export { IMarketStatus } from "./marketStatus";
 export { IDividendsResults } from "./dividends";
 export { IStockSplitsResults } from "./stockSplits";
+export { IStockFinancialResults } from "./stockFinancials";
 export { ITickerDetails } from "./tickerDetails";
 export { ITickerNews, ITickerNewsQuery } from "./tickerNews";
 export { ITickers, ITickersQuery } from "./tickers";
@@ -46,6 +48,7 @@ export interface IReferenceClient {
   ) => Promise<IOptionsContracts>;
   dividends: () => Promise<IDividendsResults>;
   stockSplits: () => Promise<IStockSplitsResults>;
+  stockFinancials: () => Promise<IStockFinancialResults>;
   tickerDetails: (symbol: string) => Promise<ITickerDetails>;
   tickerNews: (query?: ITickerNewsQuery) => Promise<ITickerNews>;
   tickers: (query?: ITickersQuery) => Promise<ITickers>;
@@ -64,6 +67,7 @@ export const referenceClient = (
   optionsContracts: auth(apiKey, optionsContracts, apiBase),
   dividends: auth(apiKey, stockDividends, apiBase),
   stockSplits: auth(apiKey, stockSplits, apiBase),
+  stockFinancials: auth(apiKey, stockFinancials, apiBase),
   tickerDetails: auth(apiKey, tickerDetails, apiBase),
   tickerNews: auth(apiKey, tickerNews, apiBase),
   tickers: auth(apiKey, tickers, apiBase),
