@@ -3,27 +3,27 @@
 import { get, IPolygonQuery } from "../transport/request";
 
 export interface IOptionsContractQuery extends IPolygonQuery {
-    as_of?: string;
+  as_of?: string;
 }
 
 export interface IAdditionalUnderlyings {
-    amount: number;
-    type: string;
-    underlying: string;
+  amount: number;
+  type: string;
+  underlying: string;
 }
 
 export interface IOptionsContractResults {
-    additional_underlyings: IAdditionalUnderlyings[]; 
-    cfi?: string;
-    contract_type?: string;
-    correction?: string;
-    exercise_style?: string;
-    expiration_date?: string;
-    primary_exchange?: string;
-    shares_per_contract?: number;
-    strike_price?: number;
-    ticker?: string;
-    underlying_ticker?: string;
+  additional_underlyings: IAdditionalUnderlyings[];
+  cfi?: string;
+  contract_type?: string;
+  correction?: string;
+  exercise_style?: string;
+  expiration_date?: string;
+  primary_exchange?: string;
+  shares_per_contract?: number;
+  strike_price?: number;
+  ticker?: string;
+  underlying_ticker?: string;
 }
 
 export interface IOptionsContract {
@@ -38,4 +38,9 @@ export const optionsContract = (
   optionsTicker: string,
   query?: IOptionsContractQuery
 ): Promise<IOptionsContract> =>
-  get(`/v3/reference/options/contracts/${optionsTicker}`, apiKey, apiBase, query);
+  get(
+    `/v3/reference/options/contracts/${optionsTicker}`,
+    apiKey,
+    apiBase,
+    query
+  );

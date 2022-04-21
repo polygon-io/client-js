@@ -4,11 +4,11 @@ import { IConditionsQuery, IConditions, conditions } from "./conditions";
 import { IExchangesQuery, IExchanges, exchanges } from "./exchanges";
 import { IMarketHoliday, marketHolidays } from "./marketHolidays";
 import { IMarketStatus, marketStatus } from "./marketStatus";
-import { 
-  IOptionsContractQuery, 
-  IOptionsContract, 
-  optionsContract 
-} from './optionsContract';
+import {
+  IOptionsContractQuery,
+  IOptionsContract,
+  optionsContract,
+} from "./optionsContract";
 import {
   IOptionsContractsQuery,
   IOptionsContracts,

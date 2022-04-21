@@ -25,7 +25,7 @@ export interface IStockSplitsQuery extends IPolygonQuery {
         gt?: string;
         gte?: string;
       };
-  execution_data?: 
+  execution_data?:
     | string
     | {
         lt?: string;
@@ -36,7 +36,7 @@ export interface IStockSplitsQuery extends IPolygonQuery {
   reverse_split?: "true" | "false";
   order?: "asc" | "desc";
   limit?: number;
-  sort?: "ticker" | "execution_date"
+  sort?: "ticker" | "execution_date";
 }
 
 export const stockSplits = async (

@@ -15,7 +15,7 @@ export interface IQuotesInfo {
   participant_timestamp: number;
   sequence_number: number;
   sip_timestamp: number;
-  tape: number; 
+  tape: number;
   trf_timestamp: number;
 }
 
@@ -31,5 +31,4 @@ export const quotes = async (
   apiBase: string,
   stockTicker: string,
   query?: ITradesQuotesQuery
-): Promise<IQuotes> =>
-  get(`/v3/quotes/${stockTicker}`, apiKey, apiBase, query);
+): Promise<IQuotes> => get(`/v3/quotes/${stockTicker}`, apiKey, apiBase, query);

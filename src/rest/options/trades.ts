@@ -4,13 +4,13 @@ import { get } from "../transport/request";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface IOptionTradesInfo {
-    conditions: number[];
-    correction: number;
-    exchange: number;
-    participant_timestamp: number;
-    price: number;
-    sip_timestamp: number;
-    size: number;
+  conditions: number[];
+  correction: number;
+  exchange: number;
+  participant_timestamp: number;
+  price: number;
+  sip_timestamp: number;
+  size: number;
 }
 
 export interface IOptionTrades {

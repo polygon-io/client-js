@@ -9,7 +9,7 @@ import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
 } from "../stocks/previousClose";
-import { ITradesQuotesQuery } from '../stocks/trades';
+import { ITradesQuotesQuery } from "../stocks/trades";
 import { aggregates } from "./aggregates";
 import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
 import {

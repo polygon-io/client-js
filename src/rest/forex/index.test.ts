@@ -68,9 +68,7 @@ describe("[REST] Forex / Currencies", () => {
     );
     await fx.quotes("C:EUR-USD");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v3/quotes/C:EUR-USD");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/quotes/C:EUR-USD");
   });
 
   it("last quote call /v1/last_quote/currencies/{from}/{to}", async () => {

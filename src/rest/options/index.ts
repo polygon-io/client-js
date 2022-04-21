@@ -5,7 +5,7 @@ import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
 } from "../stocks/previousClose";
-import { ITradesQuotesQuery } from '../stocks/trades';
+import { ITradesQuotesQuery } from "../stocks/trades";
 import { aggregates } from "./aggregates";
 import {
   IOptionsDailyOpenCloseQuery,
@@ -15,16 +15,16 @@ import {
 import { previousClose } from "./previousClose";
 import { IOptionTrades, trades } from "./trades";
 import { IOptionsLastTrade, lastTrade } from "./lastTrade";
-import { IOptionQuotes, quotes } from './quotes';
+import { IOptionQuotes, quotes } from "./quotes";
 import { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
 
 export {
   IOptionsDailyOpenCloseQuery,
   IOptionsDailyOpenClose,
 } from "./dailyOpenClose";
-export { IOptionTrades } from './trades';
+export { IOptionTrades } from "./trades";
 export { IOptionsLastTrade } from "./lastTrade";
-export { IOptionQuotes } from './quotes';
+export { IOptionQuotes } from "./quotes";
 export { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
 
 export interface IOptionsClient {

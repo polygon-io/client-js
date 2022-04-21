@@ -79,9 +79,7 @@ describe("[REST] Stocks", () => {
   it("quotes call /v3/quotes/{stockTicker}  ", async () => {
     await stocks.quotes("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v3/quotes/AAPL");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/quotes/AAPL");
   });
 
   it("snapshot - all tickers call /v2/snapshot/locale/us/markets/stocks/tickers", async () => {
@@ -123,8 +121,6 @@ describe("[REST] Stocks", () => {
   it("trades call /v3/trades/{stockTicker}", async () => {
     await stocks.trades("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v3/trades/AAPL");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/trades/AAPL");
   });
 });

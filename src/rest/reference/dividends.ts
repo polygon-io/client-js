@@ -29,7 +29,7 @@ export interface IDividendsQuery extends IPolygonQuery {
         gt?: string;
         gte?: string;
       };
-  ex_dividend_date?: 
+  ex_dividend_date?:
     | string
     | {
         lt?: string;
@@ -37,7 +37,7 @@ export interface IDividendsQuery extends IPolygonQuery {
         gt?: string;
         gte?: string;
       };
-  record_date?: 
+  record_date?:
     | string
     | {
         lt?: string;
@@ -45,7 +45,7 @@ export interface IDividendsQuery extends IPolygonQuery {
         gt?: string;
         gte?: string;
       };
-  declaration_date?: 
+  declaration_date?:
     | string
     | {
         lt?: string;
@@ -53,7 +53,7 @@ export interface IDividendsQuery extends IPolygonQuery {
         gt?: string;
         gte?: string;
       };
-  pay_date?: 
+  pay_date?:
     | string
     | {
         lt?: string;
@@ -62,7 +62,7 @@ export interface IDividendsQuery extends IPolygonQuery {
         gte?: string;
       };
   frequency?: 0 | 1 | 2 | 4 | 12;
-  cash_amount?: 
+  cash_amount?:
     | number
     | {
         lt?: number;
@@ -73,7 +73,13 @@ export interface IDividendsQuery extends IPolygonQuery {
   dividend_type?: "CD" | "SC" | "LT" | "ST";
   order?: "asc" | "desc";
   limit?: number;
-  sort?: "ex_dividend_date" | "pay_date" | "declaration_date" | "record_date" | "cash_amount" | "ticker";
+  sort?:
+    | "ex_dividend_date"
+    | "pay_date"
+    | "declaration_date"
+    | "record_date"
+    | "cash_amount"
+    | "ticker";
 }
 
 export const stockDividends = async (

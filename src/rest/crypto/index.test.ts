@@ -77,9 +77,7 @@ describe("[REST] Crypto", () => {
     );
     await crypto.trades("X:BTC-USD");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v3/trades/X:BTC-USD");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/trades/X:BTC-USD");
   });
 
   it("last trade call /v1/last/crypto/{from}/{to}", async () => {

@@ -18,14 +18,14 @@ export interface ITradeInfo {
 }
 
 export interface ITradesQuotesQuery extends IPolygonQuery {
-  timestamp?: 
-  | string
-  | {
-      lt?: string;
-      lte?: string;
-      gt?: string;
-      gte?: string;
-    };
+  timestamp?:
+    | string
+    | {
+        lt?: string;
+        lte?: string;
+        gt?: string;
+        gte?: string;
+      };
   order?: "asc" | "desc";
   limit?: number;
   sort?: "timestamp";
@@ -43,5 +43,4 @@ export const trades = async (
   apiBase: string,
   stockTicker: string,
   query?: ITradesQuotesQuery
-): Promise<ITrades> =>
-  get(`/v3/trades/${stockTicker}`, apiKey, apiBase, query);
+): Promise<ITrades> => get(`/v3/trades/${stockTicker}`, apiKey, apiBase, query);
