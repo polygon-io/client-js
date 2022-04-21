@@ -9,14 +9,11 @@ import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
 } from "../stocks/previousClose";
+import { ITradesQuotesQuery } from "../stocks/trades";
 import { aggregates } from "./aggregates";
 import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
 import { IConversionQuery, IConversion, conversion } from "./conversion";
-import {
-  IHistoricTicksQuery,
-  IHistoricTicks,
-  historicTicks,
-} from "./historicTicks";
+import { IForexQuotes, quotes } from "./quotes";
 import { IForexLastQuote, lastQuote } from "./lastQuote";
 import { previousClose } from "./previousClose";
 import {
@@ -29,7 +26,7 @@ import {
 } from "./snapshots";
 
 export { IConversionQuery, IConversion } from "./conversion";
-export { IHistoricTicksQuery, IHistoricTicks } from "./historicTicks";
+export { IForexQuotes } from "./quotes";
 export { IForexLastQuote } from "./lastQuote";
 export {
   IRealTimeCurrencyConversionQuery,
@@ -59,12 +56,10 @@ export interface IForexClient {
     to: string,
     query?: IConversionQuery
   ) => Promise<IConversion>;
-  historicTicks: (
-    from: string,
-    to: string,
-    date: string,
-    query?: IHistoricTicksQuery
-  ) => Promise<IHistoricTicks>;
+  quotes: (
+    fxTicker: string,
+    query?: ITradesQuotesQuery
+  ) => Promise<IForexQuotes>;
   lastQuote: (from: string, to: string) => Promise<IForexLastQuote>;
   previousClose: (
     symbol: string,
@@ -86,7 +81,7 @@ export const forexClient = (
   aggregates: auth(apiKey, aggregates, apiBase),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
   conversion: auth(apiKey, conversion, apiBase),
-  historicTicks: auth(apiKey, historicTicks, apiBase),
+  quotes: auth(apiKey, quotes, apiBase),
   lastQuote: auth(apiKey, lastQuote, apiBase),
   previousClose: auth(apiKey, previousClose, apiBase),
   snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),

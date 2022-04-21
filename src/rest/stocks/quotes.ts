@@ -1,21 +1,34 @@
 // CF: https://polygon.io/docs/stocks/get_v2_ticks_stocks_nbbo__ticker___date
 
 import { get } from "../transport/request";
-import { ITradesQuotesQuery, ITradeInfo } from "./trades";
+import { ITradesQuotesQuery } from "./trades";
+
+export interface IQuotesInfo {
+  ask_exchange: number;
+  ask_price: number;
+  ask_size: number;
+  bid_exchange: number;
+  bid_price: number;
+  bid_size: number;
+  conditions: number[];
+  indicators: number[];
+  participant_timestamp: number;
+  sequence_number: number;
+  sip_timestamp: number;
+  tape: number;
+  trf_timestamp: number;
+}
 
 export interface IQuotes {
-  db_latency?: number;
-  results_count?: number;
-  success?: boolean;
-  ticker?: string;
-  results?: ITradeInfo[];
+  next_url?: string;
+  request_id?: string;
+  results?: IQuotesInfo[];
+  status?: string;
 }
 
 export const quotes = async (
   apiKey: string,
   apiBase: string,
-  symbol: string,
-  date: string,
+  stockTicker: string,
   query?: ITradesQuotesQuery
-): Promise<IQuotes> =>
-  get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, apiBase, query);
+): Promise<IQuotes> => get(`/v3/quotes/${stockTicker}`, apiKey, apiBase, query);

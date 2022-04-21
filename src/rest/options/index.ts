@@ -5,6 +5,7 @@ import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
 } from "../stocks/previousClose";
+import { ITradesQuotesQuery } from "../stocks/trades";
 import { aggregates } from "./aggregates";
 import {
   IOptionsDailyOpenCloseQuery,
@@ -12,14 +13,18 @@ import {
   dailyOpenClose,
 } from "./dailyOpenClose";
 import { previousClose } from "./previousClose";
+import { IOptionTrades, trades } from "./trades";
 import { IOptionsLastTrade, lastTrade } from "./lastTrade";
+import { IOptionQuotes, quotes } from "./quotes";
 import { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
 
 export {
   IOptionsDailyOpenCloseQuery,
   IOptionsDailyOpenClose,
 } from "./dailyOpenClose";
+export { IOptionTrades } from "./trades";
 export { IOptionsLastTrade } from "./lastTrade";
+export { IOptionQuotes } from "./quotes";
 export { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
 
 export interface IOptionsClient {
@@ -40,7 +45,15 @@ export interface IOptionsClient {
     symbol: string,
     query?: IAggsPreviousCloseQuery
   ) => Promise<IAggsPreviousClose>;
+  trades: (
+    optionsTicker: string,
+    query?: ITradesQuotesQuery
+  ) => Promise<IOptionTrades>;
   lastTrade: (symbol: string) => Promise<IOptionsLastTrade>;
+  quotes: (
+    optionsTicker: string,
+    query?: ITradesQuotesQuery
+  ) => Promise<IOptionQuotes>;
   snapshotOptionContract: (
     underlyingAsset: string,
     optionContract: string
@@ -54,7 +67,9 @@ export const optionsClient = (
   aggregates: auth(apiKey, aggregates, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   previousClose: auth(apiKey, previousClose, apiBase),
+  trades: auth(apiKey, trades, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),
+  quotes: auth(apiKey, quotes, apiBase),
   snapshotOptionContract: auth(apiKey, snapshotOptionContract, apiBase),
 });
 

@@ -1,12 +1,12 @@
 // CF: https://polygon.io/docs/options/get_v2_last_trade__optionsTicker
 
 import { get } from "../transport/request";
-import { ITradeInfo } from "../stocks/trades";
+import { ILastTradeInfo } from "../stocks/lastTrade";
 
 export interface IOptionsLastTrade {
   request_id?: string;
   status?: string;
-  results?: ITradeInfo;
+  results?: ILastTradeInfo;
 }
 
 export const lastTrade = async (

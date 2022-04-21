@@ -1,46 +1,46 @@
-// CF: https://polygon.io/docs/stocks/get_v2_ticks_stocks_trades__ticker___date
+// CF: https://polygon.io/docs/stocks/get_v3_trades__stockticker
 
 import { get, IPolygonQuery } from "../transport/request";
 
 export interface ITradeInfo {
-  T?: string;
-  f?: string;
-  q?: string;
-  t?: string;
-  y?: string;
-  P?: number;
-  S?: number;
-  X?: number;
-  c?: number[];
-  e?: number;
-  i?: string;
-  p?: number;
-  r?: number;
-  s?: number;
-  x?: number;
-  z?: number;
+  conditions: number[];
+  correction: number;
+  exchange: number;
+  id: string;
+  participant_timestamp: number;
+  price: number;
+  sequence_number: number;
+  sip_timestamp: number;
+  size: number;
+  tape: number;
+  trf_id: number;
+  trf_timestamp: number;
 }
 
 export interface ITradesQuotesQuery extends IPolygonQuery {
-  timestamp?: number;
-  timestampLimit?: number;
-  reverse?: "true" | "false";
+  timestamp?:
+    | string
+    | {
+        lt?: string;
+        lte?: string;
+        gt?: string;
+        gte?: string;
+      };
+  order?: "asc" | "desc";
   limit?: number;
+  sort?: "timestamp";
 }
 
 export interface ITrades {
-  db_latency?: number;
-  results_count?: number;
-  success?: boolean;
-  ticker?: string;
+  next_url: string;
+  request_id?: string;
   results?: ITradeInfo[];
+  success?: string;
 }
 
 export const trades = async (
   apiKey: string,
   apiBase: string,
-  symbol: string,
-  date: string,
+  stockTicker: string,
   query?: ITradesQuotesQuery
-): Promise<ITrades> =>
-  get(`/v2/ticks/stocks/trades/${symbol}/${date}`, apiKey, apiBase, query);
+): Promise<ITrades> => get(`/v3/trades/${stockTicker}`, apiKey, apiBase, query);

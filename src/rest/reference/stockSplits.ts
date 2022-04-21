@@ -1,25 +1,47 @@
 // CF: https://polygon.io/docs/stocks/get_v2_reference_splits__stocksTicker
 
-import { get } from "../transport/request";
+import { get, IPolygonQuery } from "../transport/request";
 
 export interface IStockSplit {
-  declaredDate?: string;
-  exDate?: string;
-  forfactor?: number;
-  paymentDate?: string;
-  ratio?: number;
+  execution_date?: string;
+  split_from: number;
+  split_to: number;
   ticker?: string;
-  tofactor?: number;
 }
+
 export interface IStockSplitsResults {
-  status?: string;
-  count?: number;
+  next_url?: string;
+  request_id?: string;
   results?: IStockSplit[];
+  status?: string;
+}
+
+export interface IStockSplitsQuery extends IPolygonQuery {
+  ticker?:
+    | string
+    | {
+        lt?: string;
+        lte?: string;
+        gt?: string;
+        gte?: string;
+      };
+  execution_data?:
+    | string
+    | {
+        lt?: string;
+        lte?: string;
+        gt?: string;
+        gte?: string;
+      };
+  reverse_split?: "true" | "false";
+  order?: "asc" | "desc";
+  limit?: number;
+  sort?: "ticker" | "execution_date";
 }
 
 export const stockSplits = async (
   apiKey: string,
   apiBase: string,
-  symbol: string
+  query?: IStockSplitsQuery
 ): Promise<IStockSplitsResults> =>
-  get(`/v2/reference/splits/${symbol}`, apiKey, apiBase);
+  get(`/v3/reference/splits`, apiKey, apiBase, query);

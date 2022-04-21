@@ -76,12 +76,10 @@ describe("[REST] Stocks", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/AAPL/prev");
   });
 
-  it("quotes call /v2/ticks/stocks/nbbo/{ticker}/{date}", async () => {
-    await stocks.quotes("AAPL", "2019-02-01");
+  it("quotes call /v3/quotes/{stockTicker}  ", async () => {
+    await stocks.quotes("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v2/ticks/stocks/nbbo/AAPL/2019-02-01");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/quotes/AAPL");
   });
 
   it("snapshot - all tickers call /v2/snapshot/locale/us/markets/stocks/tickers", async () => {
@@ -120,11 +118,9 @@ describe("[REST] Stocks", () => {
       .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/tickers/AAPL");
   });
 
-  it("trades call /v2/ticks/stocks/trades/{ticker}/{date}", async () => {
-    await stocks.trades("AAPL", "2019-02-01");
+  it("trades call /v3/trades/{stockTicker}", async () => {
+    await stocks.trades("AAPL");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v2/ticks/stocks/trades/AAPL/2019-02-01");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/trades/AAPL");
   });
 });

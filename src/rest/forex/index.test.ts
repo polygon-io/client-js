@@ -59,18 +59,16 @@ describe("[REST] Forex / Currencies", () => {
     requestStub.getCalls()[0].args[0].should.eql("/v2/aggs/ticker/EURCHF/prev");
   });
 
-  it("historic tick call /v1/historic/forex/{from}/{to}/{date}", async () => {
+  it("quotes call /v3/quotes/{fxTicker}", async () => {
     requestStub.restore();
     requestStub = sandbox.stub(request, "get").returns(
       Promise.resolve({
         ticks: [],
       })
     );
-    await fx.historicTicks("AUD", "USD", "2019-02-01");
+    await fx.quotes("C:EUR-USD");
     requestStub.callCount.should.eql(1);
-    requestStub
-      .getCalls()[0]
-      .args[0].should.eql("/v1/historic/forex/AUD/USD/2019-02-01");
+    requestStub.getCalls()[0].args[0].should.eql("/v3/quotes/C:EUR-USD");
   });
 
   it("last quote call /v1/last_quote/currencies/{from}/{to}", async () => {
