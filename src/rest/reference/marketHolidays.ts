@@ -5,6 +5,7 @@ import { get } from "../transport/request";
 export interface IMarketHoliday {
   close?: string;
   date?: string;
+	exchange?: string;
   name?: string;
   open?: string;
   status?: string;
