@@ -21,55 +21,37 @@ export interface IDividendsResults {
 }
 
 export interface IDividendsQuery extends IPolygonQuery {
-  ticker?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
-  ex_dividend_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
-  record_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
-  declaration_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
-  pay_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  ticker?: string;
+  "ticker.lt"?: string;
+  "ticker.lte"?: string;
+  "ticker.gt"?: string;
+  "ticker.gte"?: string;
+  ex_dividend_date?: string;
+  "ex_dividend_date.lt"?: string;
+  "ex_dividend_date.lte"?: string;
+  "ex_dividend_date.gt"?: string;
+  "ex_dividend_date.gte"?: string;
+  record_date?: string;
+  "record_date.lt"?: string;
+  "record_date.lte"?: string;
+  "record_date.gt"?: string;
+  "record_date.gte"?: string;
+  declaration_date?: string;
+  "declaration_date.lt"?: string;
+  "declaration_date.lte"?: string;
+  "declaration_date.gt"?: string;
+  "declaration_date.gte"?: string;
+  pay_date?: string;
+  "pay_date.lt"?: string;
+  "pay_date.lte"?: string;
+  "pay_date.gt"?: string;
+  "pay_date.gte"?: string;
   frequency?: 0 | 1 | 2 | 4 | 12;
-  cash_amount?:
-    | number
-    | {
-        lt?: number;
-        lte?: number;
-        gt?: number;
-        gte?: number;
-      };
+	cash_amount?: string;
+  "cash_amount.lt"?: string;
+  "cash_amount.lte"?: string;
+  "cash_amount.gt"?: string;
+  "cash_amount.gte"?: string;
   dividend_type?: "CD" | "SC" | "LT" | "ST";
   order?: "asc" | "desc";
   limit?: number;

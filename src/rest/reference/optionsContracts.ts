@@ -6,14 +6,11 @@ export interface IOptionsContractsQuery extends IPolygonQuery {
   ticker?: string;
   underlying_ticker?: string;
   contract_type?: string;
-  expiration_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  expiration_date?: string;
+  "expiration_date.lt"?: string;
+  "expiration_date.lte"?: string;
+  "expiration_date.gt"?: string;
+  "expiration_date.gte"?: string;
   order?: "asc" | "desc";
   limit?: number;
   sort?: string;

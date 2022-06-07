@@ -40,40 +40,28 @@ export interface IStockFinancialResults {
 }
 
 export interface IStockFinancialQuery extends IPolygonQuery {
-  ticker?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  ticker?: string;
+  "ticker.lt"?: string;
+  "ticker.lte"?: string;
+  "ticker.gt"?: string;
+  "ticker.gte"?: string;
   cik?: string;
-  company_name?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  company_name?: string;
+  "company_name.lt"?: string;
+  "company_name.lte"?: string;
+  "company_name.gt"?: string;
+  "company_name.gte"?: string;
   sic?: string;
-  filling_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
-  period_of_report_date?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  filling_date?: string;
+  "filling_date.lt"?: string;
+  "filling_date.lte"?: string;
+  "filling_date.gt"?: string;
+  "filling_date.gte"?: string;
+  period_of_report_date?: string;
+  "period_of_report_date.lt"?: string;
+  "period_of_report_date.lte"?: string;
+  "period_of_report_date.gt"?: string;
+  "period_of_report_date.gte"?: string;
   timeframe?: "annual" | "quarterly";
   included_sources?: "true" | "false";
   order?: "asc" | "desc";

@@ -5,9 +5,10 @@ import { get } from "../transport/request";
 export interface IMarketHoliday {
   close?: string;
   date?: string;
+	exchange?: string;
   name?: string;
   open?: string;
-  staus?: string;
+  status?: string;
 }
 
 export const marketHolidays = async (

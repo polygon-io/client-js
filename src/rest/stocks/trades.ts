@@ -18,14 +18,11 @@ export interface ITradeInfo {
 }
 
 export interface ITradesQuotesQuery extends IPolygonQuery {
-  timestamp?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  timeframe?: string;
+  "timeframe.lt"?: string;
+  "timeframe.lte"?: string;
+  "timeframe.gt"?: string;
+  "timeframe.gte"?: string;
   order?: "asc" | "desc";
   limit?: number;
   sort?: "timestamp";
