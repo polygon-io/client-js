@@ -7,7 +7,7 @@ export interface IMarketHoliday {
   date?: string;
   name?: string;
   open?: string;
-  staus?: string;
+  status?: string;
 }
 
 export const marketHolidays = async (
