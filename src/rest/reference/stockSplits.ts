@@ -17,22 +17,16 @@ export interface IStockSplitsResults {
 }
 
 export interface IStockSplitsQuery extends IPolygonQuery {
-  ticker?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
-  execution_data?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  ticker?: string;
+  "ticker.lt"?: string;
+  "ticker.lte"?: string;
+  "ticker.gt"?: string;
+  "ticker.gte"?: string;
+  execution_data?: string;
+  "execution_data.lt"?: string;
+  "execution_data.lte"?: string;
+  "execution_data.gt"?: string;
+  "execution_data.gte"?: string;
   reverse_split?: "true" | "false";
   order?: "asc" | "desc";
   limit?: number;

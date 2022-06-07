@@ -11,14 +11,11 @@ export type Publisher = {
 };
 
 export interface ITickerNewsQuery extends IPolygonQuery {
-  ticker?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  ticker?: string;
+  "ticker.lt"?: string;
+  "ticker.lte"?: string;
+  "ticker.gt"?: string;
+  "ticker.gte"?: string;
   published_utc?: string;
   order?: Order;
   limit?: number;

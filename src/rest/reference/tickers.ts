@@ -20,14 +20,11 @@ export type MarketType = "stocks" | "crypto" | "fx";
 export type Order = "asc" | "desc";
 
 export interface ITickersQuery extends IPolygonQuery {
-  ticker?:
-    | string
-    | {
-        lt?: string;
-        lte?: string;
-        gt?: string;
-        gte?: string;
-      };
+  ticker?: string;
+  "ticker.lt"?: string;
+  "ticker.lte"?: string;
+  "ticker.gt"?: string;
+  "ticker.gte"?: string;
   type?: TickerTypes;
   market?: MarketType;
   exchange?: string;
