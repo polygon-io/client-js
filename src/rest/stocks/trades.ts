@@ -32,7 +32,7 @@ export interface ITrades {
   next_url: string;
   request_id?: string;
   results?: ITradeInfo[];
-  success?: string;
+  status?: string;
 }
 
 export const trades = async (
