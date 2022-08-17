@@ -28,7 +28,7 @@ export interface IOptionsContractResults {
 
 export interface IOptionsContract {
   request_id?: string;
-  results?: IOptionsContractResults[];
+  results?: IOptionsContractResults;
   status?: string;
 }
 
