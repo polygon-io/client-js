@@ -43,7 +43,7 @@ export interface SnapshotInfo {
   prevDay?: SnapshotPrevDay;
   ticker?: string;
   todaysChange?: number;
-  todayChangePerc?: number;
+  todaysChangePerc?: number;
   updated?: number;
 }
 
