@@ -22,11 +22,11 @@ export interface IStockSplitsQuery extends IPolygonQuery {
   "ticker.lte"?: string;
   "ticker.gt"?: string;
   "ticker.gte"?: string;
-  execution_data?: string;
-  "execution_data.lt"?: string;
-  "execution_data.lte"?: string;
-  "execution_data.gt"?: string;
-  "execution_data.gte"?: string;
+  execution_date?: string;
+  "execution_date.lt"?: string;
+  "execution_date.lte"?: string;
+  "execution_date.gt"?: string;
+  "execution_date.gte"?: string;
   reverse_split?: "true" | "false";
   order?: "asc" | "desc";
   limit?: number;
