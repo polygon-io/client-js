@@ -14,9 +14,9 @@ import {
   IOptionsContracts,
   optionsContracts,
 } from "./optionsContracts";
-import { IDividendsResults, stockDividends } from "./dividends";
-import { IStockSplitsResults, stockSplits } from "./stockSplits";
-import { IStockFinancialResults, stockFinancials } from "./stockFinancials";
+import { IDividendsResults, IDividendsQuery, stockDividends } from "./dividends";
+import { IStockSplitsResults, IStockSplitsQuery, stockSplits } from "./stockSplits";
+import { IStockFinancialResults, IStockFinancialQuery, stockFinancials } from "./stockFinancials";
 import { ITickerDetails, tickerDetails } from "./tickerDetails";
 import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews";
 import { ITickers, ITickersQuery, tickers } from "./tickers";
@@ -46,9 +46,9 @@ export interface IReferenceClient {
   optionsContracts: (
     query?: IOptionsContractsQuery
   ) => Promise<IOptionsContracts>;
-  dividends: () => Promise<IDividendsResults>;
-  stockSplits: () => Promise<IStockSplitsResults>;
-  stockFinancials: () => Promise<IStockFinancialResults>;
+  dividends: (query?: IDividendsQuery) => Promise<IDividendsResults>;
+  stockSplits: (query?: IStockSplitsQuery) => Promise<IStockSplitsResults>;
+  stockFinancials: (query?: IStockFinancialQuery) => Promise<IStockFinancialResults>;
   tickerDetails: (symbol: string) => Promise<ITickerDetails>;
   tickerNews: (query?: ITickerNewsQuery) => Promise<ITickerNews>;
   tickers: (query?: ITickersQuery) => Promise<ITickers>;
