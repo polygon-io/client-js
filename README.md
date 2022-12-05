@@ -48,6 +48,33 @@ const reference = referenceClient("api key");
 reference.tickers().then(/* your success handler */);
 ```
 
+### [Launchpad Rest API](https://polygon.io/docs/stocks/launchpad/getting-started)
+
+- import all the rest submodule or a specific submodule
+
+```typescript
+// The entire rest submodule
+import { restClient } from "@polygon.io/client-js";
+// A specific submodule, in this instance the reference client
+import { referenceClient } from "@polygon.io/client-js";
+
+// Headers required to use the Launchpad product.
+const edgeHeaders = {
+  // X-Polygon-Edge-ID is a required Launchpad header. It identifies the Edge User requesting data.
+  'X-Polygon-Edge-ID': sampleEdgeID,
+  // X-Polygon-Edge-IP-Address is a required Launchpad header. It denotes the originating IP Address of the Edge User requesting data.
+  'X-Polygon-Edge-IP-Address': 192.0.2.1,
+  // X-Polygon-Edge-User-Agent is an optional Launchpad header. It denotes the originating UserAgent of the Edge User requesting data.
+  'X-Polygon-Edge-User-Agent': useragent
+}
+
+const rest = restClient("api key", _, edgeHeaders);
+rest.forex.previousClose("C:EURUSD").then(/* your success handler */);
+
+const reference = referenceClient("api key", _, edgeHeaders);
+reference.tickers().then(/* your success handler */);
+```
+
 ### [Websocket](https://polygon.io/docs/stocks/ws_getting-started)
 
 You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
