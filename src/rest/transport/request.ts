@@ -18,7 +18,7 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
 export const auth =
   (apiKey, func: Function, apiBase: string, headers?: IPolygonEdgeHeaders) =>
   (...args) =>
-    func(apiKey, apiBase, { ...args , headers });
+    func(apiKey, apiBase, ...args, headers);
 
 export const get = async (
   path: string,
