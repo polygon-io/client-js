@@ -1,4 +1,4 @@
-import { auth } from "../transport/request";
+import { auth, IPolygonEdgeHeaders } from "../transport/request";
 
 import { IAggsQuery, IAggs } from "../stocks/aggregates";
 import {
@@ -45,7 +45,8 @@ export interface IForexClient {
     timespan: string,
     from: string,
     to: string,
-    query?: IAggsQuery
+    query?: IAggsQuery,
+    headers?: IPolygonEdgeHeaders
   ) => Promise<IAggs>;
   aggregatesGroupedDaily: (
     date: string,
@@ -76,9 +77,10 @@ export interface IForexClient {
 
 export const forexClient = (
   apiKey: string,
-  apiBase = "https://api.polygon.io"
+  apiBase = "https://api.polygon.io",
+  headers?: IPolygonEdgeHeaders
 ): IForexClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase),
+  aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
   conversion: auth(apiKey, conversion, apiBase),
   quotes: auth(apiKey, quotes, apiBase),

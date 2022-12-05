@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v1_marketstatus_upcoming
 
-import { get } from "../transport/request";
+import { get, IPolygonEdgeHeaders } from "../transport/request";
 
 export interface IMarketHoliday {
   close?: string;
@@ -13,6 +13,7 @@ export interface IMarketHoliday {
 
 export const marketHolidays = async (
   apiKey: string,
-  apiBase: string
+  apiBase: string,
+  headers?: IPolygonEdgeHeaders
 ): Promise<IMarketHoliday[]> =>
-  get("/v1/marketstatus/upcoming", apiKey, apiBase);
+  get("/v1/marketstatus/upcoming", apiKey, apiBase, {}, headers);

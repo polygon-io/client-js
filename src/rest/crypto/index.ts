@@ -1,4 +1,4 @@
-import { auth } from "../transport/request";
+import { auth, IPolygonEdgeHeaders } from "../transport/request";
 
 import { IAggsQuery, IAggs } from "../stocks/aggregates";
 import {
@@ -51,7 +51,8 @@ export interface ICryptoClient {
     timespan: string,
     from: string,
     to: string,
-    query?: IAggsQuery
+    query?: IAggsQuery,
+    headers?: IPolygonEdgeHeaders
   ) => Promise<IAggs>;
   aggregatesGroupedDaily: (
     date: string,
@@ -86,9 +87,10 @@ export interface ICryptoClient {
 
 export const cryptoClient = (
   apiKey,
-  apiBase = "https://api.polygon.io"
+  apiBase = "https://api.polygon.io",
+  headers?: IPolygonEdgeHeaders
 ): ICryptoClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase),
+  aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),

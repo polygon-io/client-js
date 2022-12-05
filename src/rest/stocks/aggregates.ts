@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksTicker__range__multiplier___timespan___from___to
 
-import { get, IPolygonQuery } from "../transport/request";
+import { get, IPolygonQuery, IPolygonEdgeHeaders } from "../transport/request";
 
 export interface IAggsResults {
   T?: string;
@@ -38,11 +38,14 @@ export const aggregates = async (
   timespan: string,
   from: string,
   to: string,
-  query?: IAggsQuery
+  query?: IAggsQuery,
+  headers?: IPolygonEdgeHeaders
+  
 ): Promise<IAggs> =>
   get(
     `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
     apikey,
     apiBase,
-    query
+    query,
+    headers
   );
