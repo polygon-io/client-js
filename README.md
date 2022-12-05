@@ -48,7 +48,7 @@ const reference = referenceClient("api key");
 reference.tickers().then(/* your success handler */);
 ```
 
-### [Launchpad Rest API](https://polygon.io/docs/stocks/launchpad/getting-started)
+### [Launchpad REST API](https://polygon.io/docs/stocks/launchpad/getting-started)
 
 - import all the rest submodule or a specific submodule
 
