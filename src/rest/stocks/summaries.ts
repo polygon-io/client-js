@@ -1,4 +1,4 @@
-// CF: https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksTicker__range__multiplier___timespan___from___to
+// CF: 
 
 import { get, IPolygonQuery } from "../transport/request";
 
@@ -53,7 +53,7 @@ export interface ISummaries {
   results?: ISummariesResults[];
 }
 
-export const aggregates = async (
+export const summaries = async (
   apikey: string,
   apiBase: string,
   query?: ISummariesQuery
