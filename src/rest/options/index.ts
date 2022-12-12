@@ -17,6 +17,8 @@ import { IOptionTrades, trades } from "./trades";
 import { IOptionsLastTrade, lastTrade } from "./lastTrade";
 import { IOptionQuotes, quotes } from "./quotes";
 import { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries";
+import { summaries } from "./summaries";
 
 export {
   IOptionsDailyOpenCloseQuery,
@@ -36,6 +38,7 @@ export interface IOptionsClient {
     to: string,
     query?: IAggsQuery
   ) => Promise<IAggs>;
+  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
@@ -65,6 +68,7 @@ export const optionsClient = (
   apiBase = "https://api.polygon.io"
 ): IOptionsClient => ({
   aggregates: auth(apiKey, aggregates, apiBase),
+  summaries: auth(apiKey, summaries, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   previousClose: auth(apiKey, previousClose, apiBase),
   trades: auth(apiKey, trades, apiBase),
