@@ -20,7 +20,7 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
 export const auth =
   (apiKey, func: Function, apiBase: string, headers?: IHeaders) =>
   (...args) =>
-    func(apiKey, apiBase, ...args, headers);
+    func(apiKey, apiBase, ...args, headers = {});
 
 export const get = async (
   path: string,
@@ -43,7 +43,7 @@ export const get = async (
   const url = `${apiBase}${path}?${queryString}`;
 
   const response = await fetch(url, {
-    headers: headers || {}
+    headers
   });
 
   if (response.status >= 400) {
