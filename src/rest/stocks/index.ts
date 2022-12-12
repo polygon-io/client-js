@@ -61,7 +61,7 @@ export interface IStocksClient {
     date: string,
     query?: IAggsGroupedDailyQuery
   ) => Promise<IAggsGroupedDaily>;
-  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, headers?: IPolygonEdgeHeaders) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
@@ -91,7 +91,7 @@ export const stocksClient = (
 ): IStocksClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
-  summaries: auth(apiKey, summaries, apiBase),
+  summaries: auth(apiKey, summaries, apiBase, headers),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   lastQuote: auth(apiKey, lastQuote, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),

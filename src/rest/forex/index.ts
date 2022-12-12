@@ -54,7 +54,7 @@ export interface IForexClient {
     date: string,
     query?: IAggsGroupedDailyQuery
   ) => Promise<IAggsGroupedDaily>;
-  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, headers?: IPolygonEdgeHeaders) => Promise<ISummaries>;
   conversion: (
     from: string,
     to: string,
@@ -85,7 +85,7 @@ export const forexClient = (
 ): IForexClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
-  summaries: auth(apiKey, summaries, apiBase),
+  summaries: auth(apiKey, summaries, apiBase, headers),
   conversion: auth(apiKey, conversion, apiBase),
   quotes: auth(apiKey, quotes, apiBase),
   lastQuote: auth(apiKey, lastQuote, apiBase),

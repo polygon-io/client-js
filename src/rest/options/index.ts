@@ -39,7 +39,7 @@ export interface IOptionsClient {
     query?: IAggsQuery,
     headers?: IPolygonEdgeHeaders
   ) => Promise<IAggs>;
-  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, headers?: IPolygonEdgeHeaders) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
@@ -70,7 +70,7 @@ export const optionsClient = (
   headers?: IPolygonEdgeHeaders
 ): IOptionsClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
-  summaries: auth(apiKey, summaries, apiBase),
+  summaries: auth(apiKey, summaries, apiBase, headers),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   previousClose: auth(apiKey, previousClose, apiBase),
   trades: auth(apiKey, trades, apiBase),
