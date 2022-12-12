@@ -28,6 +28,7 @@ import {
 } from "./snapshots";
 import { IQuotes, quotes } from "./quotes";
 import { ITradesQuotesQuery, ITrades, trades } from "./trades";
+import { ISummaries, ISummariesQuery, summaries } from "./summaries";
 
 export { IAggsQuery, IAggs } from "./aggregates";
 export {
@@ -60,6 +61,7 @@ export interface IStocksClient {
     date: string,
     query?: IAggsGroupedDailyQuery
   ) => Promise<IAggsGroupedDaily>;
+  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
@@ -89,6 +91,7 @@ export const stocksClient = (
 ): IStocksClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
+  summaries: auth(apiKey, summaries, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   lastQuote: auth(apiKey, lastQuote, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),

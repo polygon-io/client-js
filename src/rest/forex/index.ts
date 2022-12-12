@@ -24,6 +24,8 @@ import {
   snapshotGainersLosers,
   snapshotTicker,
 } from "./snapshots";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries";
+import { summaries } from "./summaries";
 
 export { IConversionQuery, IConversion } from "./conversion";
 export { IForexQuotes } from "./quotes";
@@ -52,6 +54,7 @@ export interface IForexClient {
     date: string,
     query?: IAggsGroupedDailyQuery
   ) => Promise<IAggsGroupedDaily>;
+  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
   conversion: (
     from: string,
     to: string,
@@ -82,6 +85,7 @@ export const forexClient = (
 ): IForexClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
+  summaries: auth(apiKey, summaries, apiBase),
   conversion: auth(apiKey, conversion, apiBase),
   quotes: auth(apiKey, quotes, apiBase),
   lastQuote: auth(apiKey, lastQuote, apiBase),

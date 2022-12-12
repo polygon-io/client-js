@@ -30,6 +30,8 @@ import {
   snapshotTicker,
   snapshotTickerFullBookL2,
 } from "./snapshots";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries";
+import { summaries } from "./summaries";
 
 export {
   ICryptoDailyOpenCloseQuery,
@@ -58,6 +60,7 @@ export interface ICryptoClient {
     date: string,
     query?: IAggsGroupedDailyQuery
   ) => Promise<IAggsGroupedDaily>;
+  summaries: (query?: ISummariesQuery) => Promise<ISummaries>;
   dailyOpenClose: (
     from: string,
     to: string,
@@ -92,6 +95,7 @@ export const cryptoClient = (
 ): ICryptoClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
   aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
+  summaries: auth(apiKey, summaries, apiBase),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),
   trades: auth(apiKey, trades, apiBase),
