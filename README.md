@@ -48,6 +48,8 @@ const reference = referenceClient("api key");
 reference.tickers().then(/* your success handler */);
 ```
 
+#### [For Launchpad Examples and Usage, see Polygon Launchpad Examples](examples/rest/launchpad/README.md)
+
 ### [Websocket](https://polygon.io/docs/stocks/ws_getting-started)
 
 You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v1_marketstatus_now
 
-import { get } from "../transport/request";
+import { get, IHeaders } from "../transport/request";
 
 export interface IMarketStatus {
   afterhours?: boolean;
@@ -20,5 +20,6 @@ export interface IMarketStatus {
 
 export const marketStatus = async (
   apiKey: string,
-  apiBase: string
-): Promise<IMarketStatus> => get("/v1/marketstatus/now", apiKey, apiBase);
+  apiBase: string,
+  headers?: IHeaders
+): Promise<IMarketStatus> => get("/v1/marketstatus/now", apiKey, apiBase, {}, headers);
