@@ -41,7 +41,7 @@ export const get = async (
   const url = `${apiBase}${path}?${queryString}`;
 
   const response = await fetch(url, {
-    headers
+    headers: headers || {}
   });
 
   if (response.status >= 400) {
