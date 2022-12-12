@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_reference_news
 
-import { get, IPolygonQuery, IPolygonEdgeHeaders } from "../transport/request";
+import { get, IPolygonQuery, IHeaders } from "../transport/request";
 import { Order } from "./tickers";
 
 export type Publisher = {
@@ -49,5 +49,5 @@ export const tickerNews = async (
   apiKey: string,
   apiBase: string,
   query?: ITickerNewsQuery,
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): Promise<ITickerNews> => get(`/v2/reference/news`, apiKey, apiBase, query, headers);

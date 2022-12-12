@@ -1,4 +1,4 @@
-import { auth, IPolygonEdgeHeaders } from "../transport/request";
+import { auth, IHeaders } from "../transport/request";
 
 import { IAggsQuery, IAggs } from "../stocks/aggregates";
 import {
@@ -37,9 +37,9 @@ export interface IOptionsClient {
     from: string,
     to: string,
     query?: IAggsQuery,
-    headers?: IPolygonEdgeHeaders
+    headers?: IHeaders
   ) => Promise<IAggs>;
-  summaries: (query?: ISummariesQuery, headers?: IPolygonEdgeHeaders) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, headers?: IHeaders) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
@@ -67,7 +67,7 @@ export interface IOptionsClient {
 export const optionsClient = (
   apiKey: string,
   apiBase = "https://api.polygon.io",
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): IOptionsClient => ({
   aggregates: auth(apiKey, aggregates, apiBase, headers),
   summaries: auth(apiKey, summaries, apiBase, headers),

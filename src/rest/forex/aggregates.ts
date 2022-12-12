@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v2_aggs_ticker__forexTicker__range__multiplier___timespan___from___to
 
-import { get, IPolygonEdgeHeaders } from "../transport/request";
+import { get, IHeaders } from "../transport/request";
 import { IAggsQuery, IAggs } from "../stocks/aggregates";
 
 export const aggregates = async (
@@ -12,7 +12,7 @@ export const aggregates = async (
   from: string,
   to: string,
   query?: IAggsQuery,
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): Promise<IAggs> =>
   get(
     `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,

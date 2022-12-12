@@ -3,7 +3,7 @@ import { forexClient, IForexClient } from "./forex";
 import { referenceClient, IReferenceClient } from "./reference";
 import { optionsClient, IOptionsClient } from "./options";
 import { stocksClient, IStocksClient } from "./stocks";
-import { IPolygonEdgeHeaders } from "./transport/request";
+import { IHeaders } from "./transport/request";
 export * from "./crypto";
 export * from "./forex";
 export * from "./reference";
@@ -18,7 +18,7 @@ export interface IRestClient {
   stocks: IStocksClient;
 }
 
-export const restClient = (apiKey, apiBase?: string, headers?: IPolygonEdgeHeaders): IRestClient => ({
+export const restClient = (apiKey, apiBase?: string, headers?: IHeaders): IRestClient => ({
   crypto: cryptoClient(apiKey, apiBase, headers),
   forex: forexClient(apiKey, apiBase, headers),
   reference: referenceClient(apiKey, apiBase, headers),

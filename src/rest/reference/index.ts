@@ -1,4 +1,4 @@
-import { auth, IPolygonEdgeHeaders } from "../transport/request";
+import { auth, IHeaders } from "../transport/request";
 
 import { IConditionsQuery, IConditions, conditions } from "./conditions";
 import { IExchangesQuery, IExchanges, exchanges } from "./exchanges";
@@ -35,32 +35,32 @@ export { ITickers, ITickersQuery } from "./tickers";
 export { ITickerTypes, ITickerTypesQuery } from "./tickerTypes";
 
 export interface IReferenceClient {
-  conditions: (query?: IConditionsQuery, headers?: IPolygonEdgeHeaders) => Promise<IConditions>;
-  exchanges: (query?: IExchangesQuery, headers?: IPolygonEdgeHeaders) => Promise<IExchanges>;
-  marketHolidays: (headers?: IPolygonEdgeHeaders) => Promise<IMarketHoliday[]>;
-  marketStatus: (headers?: IPolygonEdgeHeaders) => Promise<IMarketStatus>;
+  conditions: (query?: IConditionsQuery, headers?: IHeaders) => Promise<IConditions>;
+  exchanges: (query?: IExchangesQuery, headers?: IHeaders) => Promise<IExchanges>;
+  marketHolidays: (headers?: IHeaders) => Promise<IMarketHoliday[]>;
+  marketStatus: (headers?: IHeaders) => Promise<IMarketStatus>;
   optionsContract: (
     optionsTicker: string,
     query?: IOptionsContractQuery,
-    headers?: IPolygonEdgeHeaders
+    headers?: IHeaders
   ) => Promise<IOptionsContract>;
   optionsContracts: (
     query?: IOptionsContractsQuery, 
-    headers?: IPolygonEdgeHeaders
+    headers?: IHeaders
   ) => Promise<IOptionsContracts>;
-  dividends: (query?: IDividendsQuery, headers?: IPolygonEdgeHeaders) => Promise<IDividendsResults>;
-  stockSplits: (query?: IStockSplitsQuery, headers?: IPolygonEdgeHeaders) => Promise<IStockSplitsResults>;
-  stockFinancials: (query?: IStockFinancialQuery, headers?: IPolygonEdgeHeaders) => Promise<IStockFinancialResults>;
-  tickerDetails: (symbol: string, headers?: IPolygonEdgeHeaders) => Promise<ITickerDetails>;
-  tickerNews: (query?: ITickerNewsQuery, headers?: IPolygonEdgeHeaders) => Promise<ITickerNews>;
-  tickers: (query?: ITickersQuery, headers?: IPolygonEdgeHeaders) => Promise<ITickers>;
-  tickerTypes: (query?: ITickerTypesQuery, headers?: IPolygonEdgeHeaders) => Promise<ITickerTypes>;
+  dividends: (query?: IDividendsQuery, headers?: IHeaders) => Promise<IDividendsResults>;
+  stockSplits: (query?: IStockSplitsQuery, headers?: IHeaders) => Promise<IStockSplitsResults>;
+  stockFinancials: (query?: IStockFinancialQuery, headers?: IHeaders) => Promise<IStockFinancialResults>;
+  tickerDetails: (symbol: string, headers?: IHeaders) => Promise<ITickerDetails>;
+  tickerNews: (query?: ITickerNewsQuery, headers?: IHeaders) => Promise<ITickerNews>;
+  tickers: (query?: ITickersQuery, headers?: IHeaders) => Promise<ITickers>;
+  tickerTypes: (query?: ITickerTypesQuery, headers?: IHeaders) => Promise<ITickerTypes>;
 }
 
 export const referenceClient = (
   apiKey: string,
   apiBase = "https://api.polygon.io",
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): IReferenceClient => ({
   conditions: auth(apiKey, conditions, apiBase, headers),
   exchanges: auth(apiKey, exchanges, apiBase, headers),

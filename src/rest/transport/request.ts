@@ -11,12 +11,14 @@ export interface IPolygonEdgeHeaders extends Record<string, string> {
    'X-Polygon-Edge-User-Agent'?: string;
 }
 
+export type IHeaders = IPolygonEdgeHeaders | Record<string, string>
+
 export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;
 }
 
 export const auth =
-  (apiKey, func: Function, apiBase: string, headers?: IPolygonEdgeHeaders) =>
+  (apiKey, func: Function, apiBase: string, headers?: IHeaders) =>
   (...args) =>
     func(apiKey, apiBase, ...args, headers);
 
@@ -25,7 +27,7 @@ export const get = async (
   apiKey: string,
   apiBase: string,
   query?: IPolygonQuery,
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): Promise<any> => {
   if (!apiKey) {
     throw new Error("API KEY not configured...");

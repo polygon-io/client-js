@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_reference_splits__stocksTicker
 
-import { get, IPolygonQuery, IPolygonEdgeHeaders } from "../transport/request";
+import { get, IPolygonQuery, IHeaders } from "../transport/request";
 
 export interface IStockSplit {
   execution_date?: string;
@@ -37,6 +37,6 @@ export const stockSplits = async (
   apiKey: string,
   apiBase: string,
   query?: IStockSplitsQuery,
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): Promise<IStockSplitsResults> =>
   get(`/v3/reference/splits`, apiKey, apiBase, query, headers);

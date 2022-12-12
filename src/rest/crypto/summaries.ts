@@ -1,13 +1,13 @@
 // CF: https://polygon.io/docs/crypto/launchpad/get_v1_summaries
 
-import { get, IPolygonEdgeHeaders } from "../transport/request";
+import { get, IHeaders } from "../transport/request";
 import { ISummaries, ISummariesQuery } from "../stocks/summaries";
 
 export const summaries = async (
   apikey: string,
   apiBase: string,
   query?: ISummariesQuery,
-  headers?: IPolygonEdgeHeaders
+  headers?: IHeaders
 ): Promise<ISummaries> =>
   get(
     `/v1/summaries`,
