@@ -72,7 +72,6 @@ export interface IOptionsSnapshotContract {
 export interface IOptionsSnapshotChain {
   status?: string;
   request_id?: string;
-  previous_url?: string;
   next_url?: string;
   results?: SnapshotInfo[];
 }
@@ -86,7 +85,7 @@ export interface IOptionsChainQuery extends IPolygonQuery {
   "expiration_date.gte"?: string;
   order?: "asc" | "desc";
   limit?: number;
-  sort?: string;
+  sort?: "ticker" | "expiration_date" | "strike_price";
   strike_price?: number;
   "strike_price.lt"?: number;
   "strike_price.lte"?: number;
