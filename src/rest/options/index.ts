@@ -16,7 +16,13 @@ import { previousClose } from "./previousClose";
 import { IOptionTrades, trades } from "./trades";
 import { IOptionsLastTrade, lastTrade } from "./lastTrade";
 import { IOptionQuotes, quotes } from "./quotes";
-import { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
+import {
+  IOptionsSnapshotContract,
+  IOptionsSnapshotChain,
+  IOptionsChainQuery,
+  snapshotOptionContract,
+  snapshotOptionChain
+} from "./snapshots";
 import { ISummaries, ISummariesQuery } from "../stocks/summaries";
 import { summaries } from "./summaries";
 
@@ -27,7 +33,13 @@ export {
 export { IOptionTrades } from "./trades";
 export { IOptionsLastTrade } from "./lastTrade";
 export { IOptionQuotes } from "./quotes";
-export { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
+export {
+  IOptionsSnapshotContract,
+  IOptionsSnapshotChain,
+  IOptionsChainQuery,
+  snapshotOptionContract,
+  snapshotOptionChain,
+} from "./snapshots";
 
 export interface IOptionsClient {
   aggregates: (
@@ -62,6 +74,10 @@ export interface IOptionsClient {
     underlyingAsset: string,
     optionContract: string
   ) => Promise<IOptionsSnapshotContract>;
+  snapshotOptionChain: (
+    underlyingAsset: string,
+    query?: IOptionsChainQuery
+  ) => Promise<IOptionsSnapshotChain>;
 }
 
 export const optionsClient = (
@@ -77,6 +93,7 @@ export const optionsClient = (
   lastTrade: auth(apiKey, lastTrade, apiBase),
   quotes: auth(apiKey, quotes, apiBase),
   snapshotOptionContract: auth(apiKey, snapshotOptionContract, apiBase),
+  snapshotOptionChain: auth(apiKey, snapshotOptionChain, apiBase),
 });
 
 export default optionsClient;

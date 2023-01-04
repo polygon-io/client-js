@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_snapshot_options__underlyingAsset___optionContract
 
-import { get } from "../transport/request";
+import { get, IPolygonQuery } from "../transport/request";
 
 export interface SnapshotDay {
   change?: number;
@@ -67,6 +67,41 @@ export interface IOptionsSnapshotContract {
   next_url?: string;
   results?: SnapshotInfo;
 }
+
+// CF: https://polygon.io/docs/options/get_v3_snapshot_options__underlyingasset
+export interface IOptionsSnapshotChain {
+  status?: string;
+  request_id?: string;
+  previous_url?: string;
+  next_url?: string;
+  results?: SnapshotInfo[];
+}
+
+export interface IOptionsChainQuery extends IPolygonQuery {
+  contract_type?: string;
+  expiration_date?: string;
+  "expiration_date.lt"?: string;
+  "expiration_date.lte"?: string;
+  "expiration_date.gt"?: string;
+  "expiration_date.gte"?: string;
+  order?: "asc" | "desc";
+  limit?: number;
+  sort?: string;
+  strike_price?: number;
+}
+
+export const snapshotOptionChain = async (
+  apiKey: string,
+  apiBase: string,
+  underlyingAsset: string,
+  query?: IOptionsChainQuery
+): Promise<IOptionsSnapshotChain> =>
+  get(
+    `/v3/snapshot/options/${underlyingAsset}`,
+    apiKey,
+    apiBase,
+    query
+  );
 
 export const snapshotOptionContract = async (
   apiKey: string,
