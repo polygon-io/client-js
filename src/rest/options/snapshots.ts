@@ -78,7 +78,7 @@ export interface IOptionsSnapshotChain {
 }
 
 export interface IOptionsChainQuery extends IPolygonQuery {
-  contract_type?: string;
+  contract_type?: "call" | "put";
   expiration_date?: string;
   "expiration_date.lt"?: string;
   "expiration_date.lte"?: string;
@@ -88,6 +88,10 @@ export interface IOptionsChainQuery extends IPolygonQuery {
   limit?: number;
   sort?: string;
   strike_price?: number;
+  "strike_price.lt"?: number;
+  "strike_price.lte"?: number;
+  "strike_price.gt"?: number;
+  "strike_price.gte"?: number;
 }
 
 export const snapshotOptionChain = async (
