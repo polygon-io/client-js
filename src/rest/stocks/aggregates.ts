@@ -36,11 +36,10 @@ export const aggregates = async (
   ticker: string,
   multiplier: number,
   timespan: string,
-  from: string,
-  to: string,
+  from: string | number,
+  to: string | number,
   query?: IAggsQuery,
   headers?: IHeaders
-  
 ): Promise<IAggs> =>
   get(
     `/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}`,
