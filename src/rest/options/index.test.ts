@@ -77,4 +77,12 @@ describe("[REST] Options", () => {
       .getCalls()[0]
       .args[0].should.eql("/v3/snapshot/options/AAPL/O:AAPL230616C00150000");
   });
+
+  it("snapshots - option chain /v3/snapshot/options/{underlyingAsset}", async () => {
+    await options.snapshotOptionChain("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub
+      .getCalls()[0]
+      .args[0].should.eql("/v3/snapshot/options/AAPL");
+  });
 });
