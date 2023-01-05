@@ -5,20 +5,29 @@ export interface IPolygonQuery {
   [key: string]: string | number | boolean | undefined;
 }
 
+export interface IPolygonEdgeHeaders extends Record<string, string> {
+   'X-Polygon-Edge-ID': string;
+   'X-Polygon-Edge-IP-Address': string;
+   'X-Polygon-Edge-User-Agent'?: string;
+}
+
+export type IHeaders = IPolygonEdgeHeaders | Record<string, string>
+
 export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;
 }
 
 export const auth =
-  (apiKey, func: Function, apiBase: string) =>
+  (apiKey, func: Function, apiBase: string, headers?: IHeaders) =>
   (...args) =>
-    func(apiKey, apiBase, ...args);
+    func(apiKey, apiBase, ...args, headers = {});
 
 export const get = async (
   path: string,
   apiKey: string,
   apiBase: string,
-  query?: IPolygonQuery
+  query?: IPolygonQuery,
+  headers?: IHeaders
 ): Promise<any> => {
   if (!apiKey) {
     throw new Error("API KEY not configured...");
@@ -33,7 +42,9 @@ export const get = async (
 
   const url = `${apiBase}${path}?${queryString}`;
 
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers
+  });
 
   if (response.status >= 400) {
     const message = await response.text();

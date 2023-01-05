@@ -1,4 +1,4 @@
-import { auth } from "../transport/request";
+import { auth, IHeaders } from "../transport/request";
 
 import { IAggsQuery, IAggs } from "../stocks/aggregates";
 import {
@@ -16,7 +16,15 @@ import { previousClose } from "./previousClose";
 import { IOptionTrades, trades } from "./trades";
 import { IOptionsLastTrade, lastTrade } from "./lastTrade";
 import { IOptionQuotes, quotes } from "./quotes";
-import { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
+import {
+  IOptionsSnapshotContract,
+  IOptionsSnapshotChain,
+  IOptionsChainQuery,
+  snapshotOptionContract,
+  snapshotOptionChain
+} from "./snapshots";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries";
+import { summaries } from "./summaries";
 
 export {
   IOptionsDailyOpenCloseQuery,
@@ -25,7 +33,13 @@ export {
 export { IOptionTrades } from "./trades";
 export { IOptionsLastTrade } from "./lastTrade";
 export { IOptionQuotes } from "./quotes";
-export { IOptionsSnapshotContract, snapshotOptionContract } from "./snapshots";
+export {
+  IOptionsSnapshotContract,
+  IOptionsSnapshotChain,
+  IOptionsChainQuery,
+  snapshotOptionContract,
+  snapshotOptionChain,
+} from "./snapshots";
 
 export interface IOptionsClient {
   aggregates: (
@@ -34,8 +48,10 @@ export interface IOptionsClient {
     timespan: string,
     from: string,
     to: string,
-    query?: IAggsQuery
+    query?: IAggsQuery,
+    headers?: IHeaders
   ) => Promise<IAggs>;
+  summaries: (query?: ISummariesQuery, headers?: IHeaders) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
@@ -58,19 +74,26 @@ export interface IOptionsClient {
     underlyingAsset: string,
     optionContract: string
   ) => Promise<IOptionsSnapshotContract>;
+  snapshotOptionChain: (
+    underlyingAsset: string,
+    query?: IOptionsChainQuery
+  ) => Promise<IOptionsSnapshotChain>;
 }
 
 export const optionsClient = (
   apiKey: string,
-  apiBase = "https://api.polygon.io"
+  apiBase = "https://api.polygon.io",
+  headers?: IHeaders
 ): IOptionsClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase),
+  aggregates: auth(apiKey, aggregates, apiBase, headers),
+  summaries: auth(apiKey, summaries, apiBase, headers),
   dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
   previousClose: auth(apiKey, previousClose, apiBase),
   trades: auth(apiKey, trades, apiBase),
   lastTrade: auth(apiKey, lastTrade, apiBase),
   quotes: auth(apiKey, quotes, apiBase),
   snapshotOptionContract: auth(apiKey, snapshotOptionContract, apiBase),
+  snapshotOptionChain: auth(apiKey, snapshotOptionChain, apiBase),
 });
 
 export default optionsClient;
