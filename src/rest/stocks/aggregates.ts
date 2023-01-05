@@ -38,7 +38,7 @@ export const aggregates = async (
   timespan: string,
   from: string | number,
   to: string | number,
-  query?: IAggsQuery
+  query?: IAggsQuery,
   headers?: IHeaders
 ): Promise<IAggs> =>
   get(
