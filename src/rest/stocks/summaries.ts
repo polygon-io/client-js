@@ -27,7 +27,7 @@ export interface ISession {
     late_trading_change_percent: number;
     low: number;
     open: number;
-    pervious_close: number;
+    previous_close: number;
     volume: number;
 
 }
