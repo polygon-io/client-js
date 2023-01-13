@@ -32,6 +32,11 @@ import {
 } from "./snapshots";
 import { ISummaries, ISummariesQuery } from "../stocks/summaries";
 import { summaries } from "./summaries";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma";
+import { ISma, sma } from "./sma";
+import { IEma, ema } from "./ema";
+import { IMacd, macd } from "./macd";
+import { IRsi, rsi } from "./rsi";
 
 export {
   ICryptoDailyOpenCloseQuery,
@@ -45,6 +50,11 @@ export {
   ICryptoSnapshot,
   ICryptoSnapshotFullBookL2,
 } from "./snapshots";
+export { ISummariesQuery, ISummaries } from '../stocks/summaries';
+export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma';
+export { IEma } from '../stocks/ema';
+export { IMacd } from '../stocks/macd';
+export { IRsi } from '../stocks/rsi';
 
 export interface ICryptoClient {
   aggregates: (
@@ -86,6 +96,10 @@ export interface ICryptoClient {
   snapshotTickerFullBookL2: (
     symbol: string
   ) => Promise<ICryptoSnapshotFullBookL2>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
 }
 
 export const cryptoClient = (
@@ -104,6 +118,10 @@ export const cryptoClient = (
   snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
   snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
   snapshotTickerFullBookL2: auth(apiKey, snapshotTickerFullBookL2, apiBase),
+  sma: auth(apiKey, sma, apiBase), 
+  ema: auth(apiKey, ema, apiBase), 
+  macd: auth(apiKey, macd, apiBase), 
+  rsi: auth(apiKey, rsi, apiBase)
 });
 
 export default cryptoClient;

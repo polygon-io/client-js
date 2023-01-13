@@ -151,4 +151,28 @@ describe("[REST] Crypto", () => {
         "/v2/snapshot/locale/global/markets/crypto/tickers/BTCUSD/book"
       );
   });
+
+  it("sma call /v1/indicators/sma/{cryptoTicker}", async () => {
+    await crypto.sma("X:BTC-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/sma/X:BTC-USD");
+  });
+
+  it("ema call /v1/indicators/ema/{cryptoTicker}", async () => {
+    await crypto.ema("X:BTC-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/ema/X:BTC-USD");
+  });
+
+  it("macd call /v1/indicators/macd/{cryptoTicker}", async () => {
+    await crypto.macd("X:BTC-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/macd/X:BTC-USD");
+  });
+
+  it("rsi call /v1/indicators/rsi/{cryptoTicker}", async () => {
+    await crypto.rsi("X:BTC-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/rsi/X:BTC-USD");
+  });
 });

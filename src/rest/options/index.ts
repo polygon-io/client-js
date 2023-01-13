@@ -25,6 +25,11 @@ import {
 } from "./snapshots";
 import { ISummaries, ISummariesQuery } from "../stocks/summaries";
 import { summaries } from "./summaries";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma";
+import { ISma, sma } from "./sma";
+import { IEma, ema } from "./ema";
+import { IMacd, macd } from "./macd";
+import { IRsi, rsi } from "./rsi";
 
 export {
   IOptionsDailyOpenCloseQuery,
@@ -40,6 +45,11 @@ export {
   snapshotOptionContract,
   snapshotOptionChain,
 } from "./snapshots";
+export { ISummariesQuery, ISummaries } from '../stocks/summaries';
+export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma';
+export { IEma } from '../stocks/ema';
+export { IMacd } from '../stocks/macd';
+export { IRsi } from '../stocks/rsi';
 
 export interface IOptionsClient {
   aggregates: (
@@ -78,6 +88,10 @@ export interface IOptionsClient {
     underlyingAsset: string,
     query?: IOptionsChainQuery
   ) => Promise<IOptionsSnapshotChain>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
 }
 
 export const optionsClient = (
@@ -94,6 +108,10 @@ export const optionsClient = (
   quotes: auth(apiKey, quotes, apiBase),
   snapshotOptionContract: auth(apiKey, snapshotOptionContract, apiBase),
   snapshotOptionChain: auth(apiKey, snapshotOptionChain, apiBase),
+  sma: auth(apiKey, sma, apiBase), 
+  ema: auth(apiKey, ema, apiBase), 
+  macd: auth(apiKey, macd, apiBase), 
+  rsi: auth(apiKey, rsi, apiBase)
 });
 
 export default optionsClient;

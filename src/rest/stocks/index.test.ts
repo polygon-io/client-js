@@ -118,6 +118,30 @@ describe("[REST] Stocks", () => {
       .args[0].should.eql("/v2/snapshot/locale/us/markets/stocks/tickers/AAPL");
   });
 
+  it("sma call /v1/indicators/sma/{stockTicker}", async () => {
+    await stocks.sma("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/sma/AAPL");
+  });
+
+  it("ema call /v1/indicators/ema/{stockTicker}", async () => {
+    await stocks.ema("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/ema/AAPL");
+  });
+
+  it("macd call /v1/indicators/macd/{stockTicker}", async () => {
+    await stocks.macd("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/macd/AAPL");
+  });
+
+  it("rsi call /v1/indicators/rsi/{stockTicker}", async () => {
+    await stocks.rsi("AAPL");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/rsi/AAPL");
+  });
+
   it("trades call /v3/trades/{stockTicker}", async () => {
     await stocks.trades("AAPL");
     requestStub.callCount.should.eql(1);

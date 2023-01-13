@@ -134,4 +134,29 @@ describe("[REST] Forex / Currencies", () => {
         "/v2/snapshot/locale/global/markets/forex/tickers/AAPL"
       );
   });
+
+  it("sma call /v1/indicators/sma/{fxTicker}", async () => {
+    await fx.sma("C:EUR-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/sma/C:EUR-USD");
+  });
+
+  it("ema call /v1/indicators/ema/{fxTicker}", async () => {
+    await fx.ema("C:EUR-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/ema/C:EUR-USD");
+  });
+
+  it("macd call /v1/indicators/macd/{fxTicker}", async () => {
+    await fx.macd("C:EUR-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/macd/C:EUR-USD");
+  });
+
+  it("rsi call /v1/indicators/rsi/{fxTicker}", async () => {
+    await fx.rsi("C:EUR-USD");
+    requestStub.callCount.should.eql(1);
+    requestStub.getCalls()[0].args[0].should.eql("/v1/indicators/rsi/C:EUR-USD");
+  });
+
 });
