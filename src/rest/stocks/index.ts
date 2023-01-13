@@ -29,6 +29,10 @@ import {
 import { IQuotes, quotes } from "./quotes";
 import { ITradesQuotesQuery, ITrades, trades } from "./trades";
 import { ISummaries, ISummariesQuery, summaries } from "./summaries";
+import { ISma, ITechnicalIndicatorsQuery, sma } from "./sma";
+import { IEma, ema } from "./ema";
+import { IMacd, macd } from "./macd";
+import { IRsi, rsi } from "./rsi";
 
 export { IAggsQuery, IAggs } from "./aggregates";
 export {
@@ -46,6 +50,11 @@ export {
 } from "./snapshots";
 export { IQuotes } from "./quotes";
 export { ITradesQuotesQuery, ITrades } from "./trades";
+export { ISummariesQuery, ISummaries } from './summaries';
+export { ISma, ITechnicalIndicatorsQuery } from './sma';
+export { IEma } from './ema';
+export { IMacd } from './macd';
+export { IRsi } from './rsi';
 
 export interface IStocksClient {
   aggregates: (
@@ -81,6 +90,10 @@ export interface IStocksClient {
     direction: "gainers" | "losers"
   ) => Promise<ISnapshotTickers>;
   snapshotTicker: (symbol: string) => Promise<ISnapshot>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
   trades: (stockTicker: string, query?: ITradesQuotesQuery) => Promise<ITrades>;
 }
 
@@ -100,6 +113,10 @@ export const stocksClient = (
   snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
   snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
   snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
+  sma: auth(apiKey, sma, apiBase), 
+  ema: auth(apiKey, ema, apiBase), 
+  macd: auth(apiKey, macd, apiBase), 
+  rsi: auth(apiKey, rsi, apiBase), 
   trades: auth(apiKey, trades, apiBase),
 });
 
