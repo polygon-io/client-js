@@ -1,6 +1,6 @@
 # project artifcats
 lib
-docs
+sandbox
 .DS_Store
 
 # node specific

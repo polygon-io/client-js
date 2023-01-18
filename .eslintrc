@@ -1,0 +1,111 @@
+{
+	"root": true,
+	"plugins": [
+		"react",
+		"react-hooks",
+		"@typescript-eslint",
+		"prettier"
+	],
+	"extends": [
+		"plugin:json/recommended-with-comments",
+		"plugin:react-hooks/recommended",
+		"airbnb-base",
+		"airbnb-typescript/base",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": ["./tsconfig.json"]
+	},
+	"rules": {
+		// Disabled
+		"no-shadow": 0,
+		"no-unused-variable": 0,
+		"no-unused-vars": 0,
+		"no-use-before-define": 0,
+		"react/react-in-jsx-scope": 0,
+		"no-tabs": 0,
+		"comma-dangle": 0,
+		"object-curly-newline": 0,
+		"no-unused-expressions": [
+			0,
+			{
+				"allowShortCircuit": true,
+				"allowTernary": true,
+				"allowTaggedTemplates": true
+			}
+		],
+		"no-underscore-dangle": 0,
+		"react/prop-types": 0,
+		"react/jsx-indent": 0,
+		"react/jsx-indent-props": 0,
+
+		// Warnings
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+		"no-mixed-spaces-and-tabs": 1,
+		"react/jsx-props-no-spreading": 1,
+		"react/forbid-prop-types": 1,
+		"import/no-extraneous-dependencies": 1,
+		"camelcase": [
+			1,
+			{
+				"properties": "never",
+				"ignoreDestructuring": true,
+				"ignoreImports": true,
+				"ignoreGlobals": true
+			}
+		],
+		"no-param-reassign": 1,
+		"no-plusplus": 1,
+		"react/jsx-no-bind": 1,
+		"react/no-array-index-key": 1,
+		"no-restricted-globals": 1,
+		"react-hooks/exhaustive-deps": 1,
+
+		// Errors
+		"@typescript-eslint/no-unused-vars": 2,
+		"@typescript-eslint/no-unused-expressions": ["error", { "allowTernary": true, "allowShortCircuit": true }],
+		"@typescript-eslint/no-use-before-define": 2,
+		"@typescript-eslint/no-shadow": 2,
+		"no-trailing-spaces": [2, { "ignoreComments": true }],
+		"no-multi-spaces": 2,
+		"react-hooks/rules-of-hooks": 2,
+		"prettier/prettier": [
+			2,
+			{
+				"useTabs": true,
+				"semi": true,
+				"singleQuote": true,
+				"trailingComma": "none",
+				"bracketSpacing": true,
+				"printWidth": 80,
+				"proseWrap": "preserve",
+				"htmlWhitespaceSensitivity": "strict"
+			}
+		]
+	},
+	"settings":{
+		"import/resolver": {
+			 "typescript": {
+					"project": ["./tsconfig.json"]
+			 }
+		}
+	},
+	"globals": {
+		"console": "readonly",
+		"process": "readonly",
+		"fetch": "readonly",
+		"Promise": "readonly",
+		"window": "readonly",
+		"setInterval": "readonly",
+		"clearInterval": "readonly",
+		"document": "readonly",
+		"localStorage": "readonly",
+		"test": "readonly",
+		"describe": "readonly",
+		"expect": "readonly",
+		"afterEach": "readonly",
+		"beforeEach": "readonly",
+		"atob": "readonly"
+	}
+}
