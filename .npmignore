@@ -2,4 +2,5 @@
 /websocket_example*
 /.circleci*
 /sandbox*
+/scripts*
 tsconfig.json

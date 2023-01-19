@@ -1,12 +1,13 @@
 {
   "name": "@polygon.io/client-js",
   "version": "0.0.1-beta",
+	"private": true,
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
   "scripts": {
     "test": "mocha --require ts-node/register '**/*.test.ts'",
     "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
-    "build": "lerna run build",
+    "build": "./scripts/build.sh",
     "generate-doc": "typedoc src/main.ts",
     "dev": "npm run build && cd sandbox && npm run dev"
   },
@@ -21,7 +22,6 @@
     "chai": "^4.3.4",
     "cross-fetch": "^3.1.4",
     "husky": "^7.0.4",
-    "lerna": "^4.0.0",
     "lint-staged": "^12.1.2",
     "mocha": "^9.1.3",
     "prettier": "^2.5.1",
@@ -32,7 +32,7 @@
     "websocket": "^1.0.34"
   },
   "workspaces": [
-    "./sandbox",
-    "./lib/*"
+		"./packages/*",
+    "./sandbox"
   ]
 }
