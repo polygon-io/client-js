@@ -1,51 +1,14 @@
 {
   "name": "@polygon.io/client-js",
-  "version": "6.2.0",
+  "version": "0.0.1-beta",
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
-	"main": "lib/main.js",
-  "types": "lib/main.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register '**/*.test.ts'",
     "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
-    "build": "./scripts/build.sh",
+    "build": "lerna run build",
     "generate-doc": "typedoc src/main.ts",
-		"dev": "npm run build && cd sandbox && npm run dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/polygon-io/client-js.git"
-  },
-  "keywords": [
-    "polygon.io",
-    "stock api",
-    "options api",
-    "forex api",
-    "crypto api"
-  ],
-  "contributors": [
-    {
-      "name": "Julien Prugne",
-      "email": "julien@webeleon.dev"
-    },
-    {
-      "name": "Katie Adams",
-      "email": "katie@polygon.io"
-    },
-    {
-      "name": "Andrew Bailey",
-      "email": "andrew.bailey@polygon.io"
-    }
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/polygon-io/client-js/issues"
-  },
-  "homepage": "https://github.com/polygon-io/client-js#readme",
-  "dependencies": {
-    "cross-fetch": "^3.1.4",
-    "query-string": "^7.0.1",
-    "websocket": "^1.0.34"
+    "dev": "npm run build && cd sandbox && npm run dev"
   },
   "devDependencies": {
     "@types/chai": "^4.2.22",
@@ -53,31 +16,23 @@
     "@types/node": "^16.11.11",
     "@types/sinon": "^10.0.6",
     "@types/websocket": "^1.0.4",
-		"@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "chai": "^4.3.4",
+    "cross-fetch": "^3.1.4",
     "husky": "^7.0.4",
-		"lerna": "^4.0.0",
+    "lerna": "^4.0.0",
     "lint-staged": "^12.1.2",
     "mocha": "^9.1.3",
     "prettier": "^2.5.1",
+    "query-string": "^7.0.1",
     "sinon": "^12.0.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.9.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "typescript": "^4.9.4",
+    "websocket": "^1.0.34"
   },
   "workspaces": [
-		"./sandbox",
-		"./lib"
+    "./sandbox",
+    "./lib/*"
   ]
 }
