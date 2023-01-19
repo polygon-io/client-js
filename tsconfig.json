@@ -29,7 +29,7 @@
 
     /* Modules */
     "module": "es2022",                                /* Specify what module code is generated. */
-    "rootDir": "./packages/client-js/src",                                  /* Specify the root folder within your source files. */
+    "rootDir": "src",                                  /* Specify the root folder within your source files. */
     "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
@@ -103,16 +103,15 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "packages/**/*.d.ts",
-    "packages/**/*.ts",
-    "packages/**/*.tsx",
-    "packages/**/*.js",
-    "packages/**/*.jsx",
-    "packages/**/*.json" 
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.json" 
   ],
   "exclude": [
-    "node_modules",
-		"./src/tsconfig.json"
+    "node_modules"
    ]
 }
 
