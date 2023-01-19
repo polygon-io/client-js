@@ -1,15 +1,11 @@
 {
-  "name": "@polygon.io/client-js-a",
+  "name": "@polygon.io/client-js",
   "version": "6.2.0",
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
-	"main": "lib/index.js",
-  "types": "lib/index.d.ts",
-	"files": [
-		"lib",
-		"!lib/**/*.test.js"
-	],
+	"main": "lib/main.js",
+  "types": "lib/main.d.ts",
   "scripts": {
-    "build": "./scripts/build.sh",
+    "build": "rm -rf ./lib && ./node_modules/.bin/tsc",
 		"test": "echo No tests added"
   },
   "repository": {
@@ -66,7 +62,7 @@
     "typescript": "^4.9.4"
   },
   "workspaces": [
-		"./packages/*",
+		"./lib/*",
     "./sandbox"
   ]
 }
