@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker
 
-import { get, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
 
 export interface ITickerDetails {
   request_id?: string;
@@ -40,9 +40,9 @@ export interface ITickerDetails {
 }
 
 export const tickerDetails = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   symbol: string,
-  headers?: IHeaders
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<ITickerDetails> =>
-  get(`/v3/reference/tickers/${symbol}`, apiKey, apiBase, {},  headers);
+  get(`/v3/reference/tickers/${symbol}`, query, options);

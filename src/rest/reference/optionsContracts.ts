@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_reference_options_contracts
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
 
 export interface IOptionsContractsQuery extends IPolygonQuery {
   ticker?: string;
@@ -38,9 +38,8 @@ export interface IOptionsContracts {
 }
 
 export const optionsContracts = (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   query?: IOptionsContractsQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<IOptionsContracts> =>
-  get("/v3/reference/options/contracts", apiKey, apiBase, query, headers);
+  get("/v3/reference/options/contracts", query, options);

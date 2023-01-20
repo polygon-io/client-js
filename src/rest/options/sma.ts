@@ -1,13 +1,13 @@
 // CF: https://polygon.io/docs/options/get_v1_indicators_sma__optionsticker
 
 import { ISma, ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 
 export { ISma } from '../stocks/sma';
 
 export const sma = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<ISma> => get(`/v1/indicators/sma/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<ISma> => get(`/v1/indicators/sma/${symbol}`, query, options);

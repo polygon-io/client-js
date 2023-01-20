@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_last_nbbo__stocksticker
 
-import { get } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
 import { ILastTradeInfo } from "./lastTrade";
 
 export interface ILastQuote {
@@ -10,7 +10,8 @@ export interface ILastQuote {
 }
 
 export const lastQuote = async (
-  apiKey: string,
-  apiBase: string,
-  symbol: string
-): Promise<ILastQuote> => get(`/v2/last/nbbo/${symbol}`, apiKey, apiBase);
+  get: IGet,
+  symbol: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
+): Promise<ILastQuote> => get(`/v2/last/nbbo/${symbol}`, query, options);

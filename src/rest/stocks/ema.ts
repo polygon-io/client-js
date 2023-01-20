@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v1_indicators_ema__stockticker
 
 import { IUnderyling, IValue, ITechnicalIndicatorsQuery } from "./sma";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 
 export interface IEmaResults {
     underlying?: IUnderyling;
@@ -16,8 +16,8 @@ export interface IEma {
 };
 
 export const ema = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<IEma> => get(`/v1/indicators/ema/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<IEma> => get(`/v1/indicators/ema/${symbol}`, query, options);

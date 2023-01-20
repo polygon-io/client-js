@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v1_historic_crypto__from___to___date
 
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface ICryptoTradeInfo {
@@ -20,9 +20,9 @@ export interface ICryptoTrade {
 }
 
 export const trades = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   cryptoTicker: string,
-  query?: ITradesQuotesQuery
+  query?: ITradesQuotesQuery,
+  options?: IRequestOptions
 ): Promise<ICryptoTrade> =>
-  get(`/v3/trades/${cryptoTicker}`, apiKey, apiBase, query);
+  get(`/v3/trades/${cryptoTicker}`, query, options);

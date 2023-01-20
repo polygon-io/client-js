@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v1_indicators_macd__stockticker
 
 import { IUnderyling, IValue, ITechnicalIndicatorsQuery } from "./sma";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 
 export interface IRsiResults {
     underlying?: IUnderyling;
@@ -16,8 +16,8 @@ export interface IRsi {
 };
 
 export const rsi = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<IRsi> => get(`/v1/indicators/rsi/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<IRsi> => get(`/v1/indicators/rsi/${symbol}`, query, options);

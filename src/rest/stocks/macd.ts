@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v1_indicators_macd__stockticker
 
 import { IUnderyling, IValue, ITechnicalIndicatorsQuery } from "./sma";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 
 export interface IMacdResults {
     underlying?: IUnderyling;
@@ -16,8 +16,8 @@ export interface IMacd {
 };
 
 export const macd = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<IMacd> => get(`/v1/indicators/macd/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<IMacd> => get(`/v1/indicators/macd/${symbol}`, query, options);

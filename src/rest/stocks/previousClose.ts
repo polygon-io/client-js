@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksTicker__prev
 
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
 import { IAggsResults } from "./aggregates";
 
 export interface IAggsPreviousCloseQuery extends IPolygonQuery {
@@ -19,9 +19,9 @@ export interface IAggsPreviousClose {
 }
 
 export const previousClose = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   symbol: string,
-  query?: IAggsPreviousCloseQuery
+  query?: IAggsPreviousCloseQuery,
+  options?: IRequestOptions
 ): Promise<IAggsPreviousClose> =>
-  get(`/v2/aggs/ticker/${symbol}/prev`, apiKey, apiBase, query);
+  get(`/v2/aggs/ticker/${symbol}/prev`, query, options);

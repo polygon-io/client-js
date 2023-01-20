@@ -3,7 +3,7 @@ import { forexClient, IForexClient } from "./forex";
 import { referenceClient, IReferenceClient } from "./reference";
 import { optionsClient, IOptionsClient } from "./options";
 import { stocksClient, IStocksClient } from "./stocks";
-import { IHeaders } from "./transport/request";
+import { IRequestOptions } from "./transport/request";
 export * from "./crypto";
 export * from "./forex";
 export * from "./reference";
@@ -18,12 +18,12 @@ export interface IRestClient {
   stocks: IStocksClient;
 }
 
-export const restClient = (apiKey, apiBase?: string, headers?: IHeaders): IRestClient => ({
-  crypto: cryptoClient(apiKey, apiBase, headers),
-  forex: forexClient(apiKey, apiBase, headers),
-  reference: referenceClient(apiKey, apiBase, headers),
-  options: optionsClient(apiKey, apiBase, headers),
-  stocks: stocksClient(apiKey, apiBase, headers),
+export const restClient = (apiKey, apiBase?: string, options?: IRequestOptions): IRestClient => ({
+  crypto: cryptoClient(apiKey, apiBase, options),
+  forex: forexClient(apiKey, apiBase, options),
+  reference: referenceClient(apiKey, apiBase, options),
+  options: optionsClient(apiKey, apiBase, options),
+  stocks: stocksClient(apiKey, apiBase, options),
 });
 
 export default restClient;

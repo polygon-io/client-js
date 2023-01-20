@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date
 
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
 
 export interface IDailyOpenCloseQuery extends IPolygonQuery {
   adjusted?: "true" | "false";
@@ -20,10 +20,10 @@ export interface IDailyOpenClose {
 }
 
 export const dailyOpenClose = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   symbol: string,
   date: string,
-  query?: IDailyOpenCloseQuery
+  query?: IDailyOpenCloseQuery,
+  options?: IRequestOptions
 ): Promise<IDailyOpenClose> =>
-  get(`/v1/open-close/${symbol}/${date}`, apiKey, apiBase, query);
+  get(`/v1/open-close/${symbol}/${date}`, query, options);

@@ -2,13 +2,13 @@
 
 import { ITechnicalIndicatorsQuery } from "../stocks/sma";
 import { IMacd } from "../stocks/macd";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 
 export { IMacd } from '../stocks/macd';
 
 export const macd = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<IMacd> => get(`/v1/indicators/macd/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<IMacd> => get(`/v1/indicators/macd/${symbol}`, query, options);

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v3_reference_conditions
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
 
 export interface IConditionsQuery extends IPolygonQuery {
   asset_class?: "stocks" | "options" | "crypto" | "fx";
@@ -51,9 +51,8 @@ export interface IConditions {
 }
 
 export const conditions = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   query?: IConditionsQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<IConditions> =>
-  get("/v3/reference/conditions", apiKey, apiBase, query, headers);
+  get("/v3/reference/conditions", query, options);

@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v1_indicators_sma__stockticker
 
 import { IAggsResults } from "./aggregates";
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
 
 export interface IValue {
     histogram?: number;
@@ -46,8 +46,8 @@ export interface ISma {
 };
 
 export const sma = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<ISma> => get(`/v1/indicators/sma/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<ISma> => get(`/v1/indicators/sma/${symbol}`, query, options);

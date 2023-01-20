@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_aggs_grouped_locale_us_market_stocks__date
 
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
 import { IAggsResults } from "./aggregates";
 
 export interface IAggsGroupedDailyQuery extends IPolygonQuery {
@@ -16,14 +16,13 @@ export interface IAggsGroupedDaily {
 }
 
 export const aggregatesGroupedDaily = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   date: string,
-  query?: IAggsGroupedDailyQuery
+  query?: IAggsGroupedDailyQuery,
+  options?: IRequestOptions
 ): Promise<IAggsGroupedDaily> =>
   get(
     `/v2/aggs/grouped/locale/us/market/stocks/${date}`,
-    apiKey,
-    apiBase,
-    query
+    query,
+    options
   );

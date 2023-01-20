@@ -1,5 +1,4 @@
-import { auth, IHeaders } from "../transport/request";
-
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request";
 import { IAggsQuery, IAggs } from "../stocks/aggregates";
 import {
   IAggsPreviousCloseQuery,
@@ -59,59 +58,70 @@ export interface IOptionsClient {
     from: string,
     to: string,
     query?: IAggsQuery,
-    headers?: IHeaders
+    options?: IRequestOptions
   ) => Promise<IAggs>;
-  summaries: (query?: ISummariesQuery, headers?: IHeaders) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, options?: IRequestOptions) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
-    query?: IOptionsDailyOpenCloseQuery
+    query?: IOptionsDailyOpenCloseQuery,
+    options?: IRequestOptions
   ) => Promise<IOptionsDailyOpenClose>;
   previousClose: (
     symbol: string,
-    query?: IAggsPreviousCloseQuery
+    query?: IAggsPreviousCloseQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsPreviousClose>;
   trades: (
     optionsTicker: string,
-    query?: ITradesQuotesQuery
+    query?: ITradesQuotesQuery,
+    options?: IRequestOptions
   ) => Promise<IOptionTrades>;
-  lastTrade: (symbol: string) => Promise<IOptionsLastTrade>;
+  lastTrade: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<IOptionsLastTrade>;
   quotes: (
     optionsTicker: string,
-    query?: ITradesQuotesQuery
+    query?: ITradesQuotesQuery,
+    options?: IRequestOptions
   ) => Promise<IOptionQuotes>;
   snapshotOptionContract: (
     underlyingAsset: string,
-    optionContract: string
+    optionContract: string,
+    query?: IPolygonQuery,
+    options?: IRequestOptions
   ) => Promise<IOptionsSnapshotContract>;
   snapshotOptionChain: (
     underlyingAsset: string,
-    query?: IOptionsChainQuery
+    query?: IOptionsChainQuery,
+    options?: IRequestOptions
   ) => Promise<IOptionsSnapshotChain>;
-  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
-  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
-  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
-  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
 }
 
 export const optionsClient = (
   apiKey: string,
   apiBase = "https://api.polygon.io",
-  headers?: IHeaders
-): IOptionsClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase, headers),
-  summaries: auth(apiKey, summaries, apiBase, headers),
-  dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
-  previousClose: auth(apiKey, previousClose, apiBase),
-  trades: auth(apiKey, trades, apiBase),
-  lastTrade: auth(apiKey, lastTrade, apiBase),
-  quotes: auth(apiKey, quotes, apiBase),
-  snapshotOptionContract: auth(apiKey, snapshotOptionContract, apiBase),
-  snapshotOptionChain: auth(apiKey, snapshotOptionChain, apiBase),
-  sma: auth(apiKey, sma, apiBase), 
-  ema: auth(apiKey, ema, apiBase), 
-  macd: auth(apiKey, macd, apiBase), 
-  rsi: auth(apiKey, rsi, apiBase)
-});
+  options?: IRequestOptions
+): IOptionsClient => {
+  const get = getWithGlobals(apiKey, apiBase, options)
+  
+  return ({
+    aggregates: (...args) => aggregates(get, ...args),
+    summaries: (...args) => summaries(get, ...args),
+    dailyOpenClose: (...args) => dailyOpenClose(get, ...args),
+    previousClose: (...args) => previousClose(get, ...args),
+    trades: (...args) => trades(get, ...args),
+    lastTrade: (...args) => lastTrade(get, ...args),
+    quotes: (...args) => quotes(get, ...args),
+    snapshotOptionContract: (...args) => snapshotOptionContract(get, ...args),
+    snapshotOptionChain: (...args) => snapshotOptionChain(get, ...args),
+    sma: (...args) => sma(get, ...args),
+    ema: (...args) => ema(get, ...args),
+    macd: (...args) => macd(get, ...args),
+    rsi: (...args) => rsi(get, ...args)
+  })
+};
 
 export default optionsClient;

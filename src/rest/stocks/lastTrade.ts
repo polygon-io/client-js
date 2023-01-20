@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_last_trade__stocksTicker
 
-import { get } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
 
 export interface ILastTradeInfo {
   T?: string;
@@ -28,7 +28,8 @@ export interface ILastTrade {
 }
 
 export const lastTrade = async (
-  apiKey: string,
-  apiBase: string,
-  symbol: string
-): Promise<ILastTrade> => get(`/v2/last/trade/${symbol}`, apiKey, apiBase);
+  get: IGet,
+  symbol: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
+): Promise<ILastTrade> => get(`/v2/last/trade/${symbol}`, query, options);

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_snapshot_options__underlyingAsset___optionContract
 
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
 
 export interface SnapshotDay {
   change?: number;
@@ -94,26 +94,22 @@ export interface IOptionsChainQuery extends IPolygonQuery {
 }
 
 export const snapshotOptionChain = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   underlyingAsset: string,
-  query?: IOptionsChainQuery
+  query?: IOptionsChainQuery,
+  options?: IRequestOptions
 ): Promise<IOptionsSnapshotChain> =>
-  get(
-    `/v3/snapshot/options/${underlyingAsset}`,
-    apiKey,
-    apiBase,
-    query
-  );
+  get(`/v3/snapshot/options/${underlyingAsset}`, query, options);
 
 export const snapshotOptionContract = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   underlyingAsset: string,
-  optionContract: string
+  optionContract: string,
+  query?: IOptionsChainQuery,
+  options?: IRequestOptions
 ): Promise<IOptionsSnapshotContract> =>
   get(
     `/v3/snapshot/options/${underlyingAsset}/${optionContract}`,
-    apiKey,
-    apiBase
+    query,
+    options
   );

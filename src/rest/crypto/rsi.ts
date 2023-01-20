@@ -2,13 +2,13 @@
 
 import { ITechnicalIndicatorsQuery } from "../stocks/sma";
 import { IRsi } from "../stocks/rsi";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request";
 
 export { IRsi } from '../stocks/rsi';
 
 export const rsi = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<IRsi> => get(`/v1/indicators/rsi/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<IRsi> => get(`/v1/indicators/rsi/${symbol}`, query, options);
