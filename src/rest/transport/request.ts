@@ -13,14 +13,10 @@ export interface IPolygonEdgeHeaders extends Record<string, string> {
 
 export type IHeaders = IPolygonEdgeHeaders | Record<string, string>
 
-export interface IPolygonQueryWithCredentials extends IPolygonQuery {
-  apiKey: string | boolean;
-}
-
 export const auth =
-  (apiKey, func: Function, apiBase: string, headers?: IHeaders) =>
-  (...args) =>
-    func(apiKey, apiBase, ...args, headers = {});
+  (apiKey, func: Function, apiBase: string, headers: IHeaders  = {}) =>
+  (args: any = {}) =>
+    func(apiKey, apiBase, args, headers);
 
 export const get = async (
   path: string,
@@ -33,17 +29,14 @@ export const get = async (
     throw new Error("API KEY not configured...");
   }
 
-  const authenticatedQuery: IPolygonQueryWithCredentials = {
-    ...query,
-    apiKey,
-  };
-
-  const queryString = stringify(authenticatedQuery, { encode: true });
+  const queryString = stringify(query, { encode: true });
 
   const url = `${apiBase}${path}?${queryString}`;
 
+	const authHeaders = {...headers, "Authorization": `Bearer ${apiKey}`}
+
   const response = await fetch(url, {
-    headers
+    headers: authHeaders
   });
 
   if (response.status >= 400) {
