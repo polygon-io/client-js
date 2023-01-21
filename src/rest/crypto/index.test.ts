@@ -191,6 +191,20 @@ describe("[REST] Crypto", () => {
     await crypto.rsi("X:BTC-USD", mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[0].indexOf(mocks.base).should.eql(0);
-    fetchStub.getCalls()[0].args[0].indexOf(`apiKey=${mocks.key}`).should.be.gt(-1);
+    fetchStub.getCalls()[0].args[1].headers.Authorization.should.eql(`Bearer ${mocks.key}`);
+  });
+
+  it("global options are applied if query is not passed in", async () => {
+    await crypto.rsi("X:BTC-USD");
+    fetchStub.callCount.should.eql(1);
+    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.globalOptions.referrer);
+    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
+  });
+
+  it("all options are applied if query is undefined", async () => {
+    await crypto.rsi("X:BTC-USD", undefined, mocks.overrideOptions);
+    fetchStub.callCount.should.eql(1);
+    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
+    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 });

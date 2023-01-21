@@ -46,6 +46,7 @@ import { referenceClient } from "@polygon.io/client-js";
 const reference = referenceClient("API KEY");
 
 reference.tickers().then(/* your success handler */);
+reference.conditions({ asset_class: 'stocks', data_type: 'trades', sort: 'id' }).then(/* your success handler */)
 ```
 
 

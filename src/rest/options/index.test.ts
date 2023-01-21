@@ -153,6 +153,20 @@ describe("[REST] Options", () => {
     await options.rsi("O:AAPL230616C00150000", mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[0].indexOf(mocks.base).should.eql(0);
-    fetchStub.getCalls()[0].args[0].indexOf(`apiKey=${mocks.key}`).should.be.gt(-1);
+    fetchStub.getCalls()[0].args[1].headers.Authorization.should.eql(`Bearer ${mocks.key}`);
+  });
+
+  it("global options are applied if query is not passed in", async () => {
+    await options.rsi("O:AAPL230616C00150000");
+    fetchStub.callCount.should.eql(1);
+    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.globalOptions.referrer);
+    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
+  });
+
+  it("all options are applied if query is undefined", async () => {
+    await options.rsi("O:AAPL230616C00150000", undefined, mocks.overrideOptions);
+    fetchStub.callCount.should.eql(1);
+    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
+    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 });

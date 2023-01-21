@@ -32,18 +32,15 @@ export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {})
     throw new Error("API KEY not configured...");
   }
 
-  const authenticatedQuery: IPolygonQueryWithCredentials = {
-    ...query,
-    apiKey,
-  };
-
-  const queryString = stringify(authenticatedQuery, { encode: true });
-
+  const queryString = stringify(query, { encode: true });
   const url = `${apiBase}${path}?${queryString}`;
-
   const response = await fetch(url, {
     ...globalOptions,
-    ...options
+    ...options,
+    headers: {
+      ...(options.headers || globalOptions.headers || {}),
+      "Authorization": `Bearer ${apiKey}`
+    }
   });
 
   if (response.status >= 400) {

@@ -8,7 +8,7 @@
     "test": "mocha --require ts-node/register '**/*.test.ts'",
     "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
     "format": "prettier --write '**/*.ts'",
-    "build": "tsc",
+    "build": "rm -rf ./lib && ./node_modules/.bin/tsc",
     "generate-doc": "typedoc src/main.ts"
   },
   "repository": {
