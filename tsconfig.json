@@ -2,8 +2,9 @@
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "./src/**/*.test.ts"],
   "compilerOptions": {
-    "target": "es2015" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
-    "module": "commonjs" /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */,
+    "target": "es2021" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
+    "module": "es2022" /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */,
+    "moduleResolution": "node",
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     "outDir": "lib" /* Redirect output structure to the directory. */,
     "typeRoots": [

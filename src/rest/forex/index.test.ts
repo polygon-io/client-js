@@ -1,7 +1,7 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
-import { forexClient } from "./index";
-import * as fetch from "cross-fetch";
+import { forexClient, IForexClient } from "./index";
+import fetchModule from '../transport/fetch';
 
 describe("[REST] Forex / Currencies", () => {
   chai.should();
@@ -20,12 +20,12 @@ describe("[REST] Forex / Currencies", () => {
     }
   };
   let fetchStub;
-  let fx;
+  let fx: IForexClient;
   const sandbox = sinon.createSandbox();
   const getPath = (url) => url.slice(mocks.base.length, url.indexOf('?'));
   const setStub = (returnVal, status = 200) => {
     fetchStub?.restore();
-    fetchStub = sandbox.stub(fetch, "default").returns(
+    fetchStub = sandbox.stub(fetchModule, 'fetch').returns(
       Promise.resolve({ json: () => Promise.resolve(returnVal), status } as Response)
     );
     fx = forexClient(mocks.key, mocks.base, mocks.globalOptions);

@@ -1,8 +1,8 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
 
-import * as fetch from "cross-fetch";
-import { optionsClient } from "./index";
+import fetchModule from '../transport/fetch';
+import { IOptionsClient, optionsClient } from "./index";
 
 describe("[REST] Options", () => {
   chai.should();
@@ -21,12 +21,12 @@ describe("[REST] Options", () => {
     }
   };
   let fetchStub;
-  let options;
+  let options: IOptionsClient;
   const sandbox = sinon.createSandbox();
   const getPath = (url) => url.slice(mocks.base.length, url.indexOf('?'));
   const setStub = (returnVal, status = 200) => {
     fetchStub?.restore();
-    fetchStub = sandbox.stub(fetch, "default").returns(
+    fetchStub = sandbox.stub(fetchModule, 'fetch').returns(
       Promise.resolve({ json: () => Promise.resolve(returnVal), status } as Response)
     );
     options = optionsClient(mocks.key, mocks.base, mocks.globalOptions);

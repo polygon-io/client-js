@@ -1,8 +1,8 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
-import * as fetch from "cross-fetch";
+import fetchModule from '../transport/fetch';
 
-import { referenceClient } from "./index";
+import { IReferenceClient, referenceClient } from "./index";
 
 describe("[REST] Reference", () => {
   chai.should();
@@ -21,12 +21,12 @@ describe("[REST] Reference", () => {
     }
   };
   let fetchStub;
-  let ref;
+  let ref: IReferenceClient;
   const sandbox = sinon.createSandbox();
   const getPath = (url) => url.slice(mocks.base.length, url.indexOf('?'));
   const setStub = (returnVal, status = 200) => {
     fetchStub?.restore();
-    fetchStub = sandbox.stub(fetch, "default").returns(
+    fetchStub = sandbox.stub(fetchModule, 'fetch').returns(
       Promise.resolve({ json: () => Promise.resolve(returnVal), status } as Response)
     );
     ref = referenceClient(mocks.key, mocks.base, mocks.globalOptions);

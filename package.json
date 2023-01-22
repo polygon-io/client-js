@@ -4,9 +4,10 @@
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "mocha --require ts-node/register '**/*.test.ts'",
-    "test:watch": "mocha --require ts-node/register --watch '**/*.test.ts'",
+    "test": "mocha",
+    "test:watch": "mocha --watch",
     "format": "prettier --write '**/*.ts'",
     "build": "rm -rf ./lib && ./node_modules/.bin/tsc",
     "generate-doc": "typedoc src/main.ts"
