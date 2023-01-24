@@ -79,6 +79,6 @@
     "./sandbox"
   ],
   "engines": {
-    "node": ">16"
+    "node": ">=16"
   }
 }
