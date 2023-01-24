@@ -77,5 +77,8 @@
   "workspaces": [
     "./lib/*",
     "./sandbox"
-  ]
+  ],
+  "engines": {
+    "node": ">16"
+  }
 }
