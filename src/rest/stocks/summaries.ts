@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/launchpad/get_v1_summaries
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IBranding {
     icon_url: string;

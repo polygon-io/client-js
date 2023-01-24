@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_snapshot_options__underlyingAsset___optionContract
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface SnapshotDay {
   change?: number;

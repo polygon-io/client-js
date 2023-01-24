@@ -1,6 +1,6 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
-import { forexClient, IForexClient } from "./index";
+import { forexClient, IForexClient } from "./index.js";
 import fetchModule from '../transport/fetch';
 
 describe("[REST] Forex / Currencies", () => {

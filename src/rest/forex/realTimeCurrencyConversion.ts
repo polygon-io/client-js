@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v1_conversion__from___to
 
-import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
 
 export interface IRealTimeCurrencyConversionQuery extends IPolygonQuery {
   amount?: number;

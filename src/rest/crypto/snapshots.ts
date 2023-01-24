@@ -1,4 +1,4 @@
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface SnapshotDay {
   c?: number;

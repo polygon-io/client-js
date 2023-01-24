@@ -5,6 +5,7 @@
     "target": "es2021" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
     "module": "es2022" /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     "outDir": "lib" /* Redirect output structure to the directory. */,
     "typeRoots": [

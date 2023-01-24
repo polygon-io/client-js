@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v2_aggs_grouped_locale_global_market_fx__date
 
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import {
   IAggsGroupedDaily,
   IAggsGroupedDailyQuery,

@@ -1,38 +1,38 @@
-import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IConditionsQuery, IConditions, conditions } from "./conditions";
-import { IExchangesQuery, IExchanges, exchanges } from "./exchanges";
-import { IMarketHoliday, marketHolidays } from "./marketHolidays";
-import { IMarketStatus, marketStatus } from "./marketStatus";
+import { IConditionsQuery, IConditions, conditions } from "./conditions.js";
+import { IExchangesQuery, IExchanges, exchanges } from "./exchanges.js";
+import { IMarketHoliday, marketHolidays } from "./marketHolidays.js";
+import { IMarketStatus, marketStatus } from "./marketStatus.js";
 import {
   IOptionsContractQuery,
   IOptionsContract,
   optionsContract,
-} from "./optionsContract";
+} from "./optionsContract.js";
 import {
   IOptionsContractsQuery,
   IOptionsContracts,
   optionsContracts,
-} from "./optionsContracts";
-import { IDividendsResults, IDividendsQuery, stockDividends } from "./dividends";
-import { IStockSplitsResults, IStockSplitsQuery, stockSplits } from "./stockSplits";
-import { IStockFinancialResults, IStockFinancialQuery, stockFinancials } from "./stockFinancials";
-import { ITickerDetails, tickerDetails } from "./tickerDetails";
-import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews";
-import { ITickers, ITickersQuery, tickers } from "./tickers";
-import { ITickerTypes, ITickerTypesQuery, tickerTypes } from "./tickerTypes";
+} from "./optionsContracts.js";
+import { IDividendsResults, IDividendsQuery, stockDividends } from "./dividends.js";
+import { IStockSplitsResults, IStockSplitsQuery, stockSplits } from "./stockSplits.js";
+import { IStockFinancialResults, IStockFinancialQuery, stockFinancials } from "./stockFinancials.js";
+import { ITickerDetails, tickerDetails } from "./tickerDetails.js";
+import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews.js";
+import { ITickers, ITickersQuery, tickers } from "./tickers.js";
+import { ITickerTypes, ITickerTypesQuery, tickerTypes } from "./tickerTypes.js";
 
-export { IConditions } from "./conditions";
-export { IExchanges } from "./exchanges";
-export { IMarketHoliday } from "./marketHolidays";
-export { IMarketStatus } from "./marketStatus";
-export { IDividendsResults } from "./dividends";
-export { IStockSplitsResults } from "./stockSplits";
-export { IStockFinancialResults } from "./stockFinancials";
-export { ITickerDetails } from "./tickerDetails";
-export { ITickerNews, ITickerNewsQuery } from "./tickerNews";
-export { ITickers, ITickersQuery } from "./tickers";
-export { ITickerTypes, ITickerTypesQuery } from "./tickerTypes";
+export { IConditions } from "./conditions.js";
+export { IExchanges } from "./exchanges.js";
+export { IMarketHoliday } from "./marketHolidays.js";
+export { IMarketStatus } from "./marketStatus.js";
+export { IDividendsResults } from "./dividends.js";
+export { IStockSplitsResults } from "./stockSplits.js";
+export { IStockFinancialResults } from "./stockFinancials.js";
+export { ITickerDetails } from "./tickerDetails.js";
+export { ITickerNews, ITickerNewsQuery } from "./tickerNews.js";
+export { ITickers, ITickersQuery } from "./tickers.js";
+export { ITickerTypes, ITickerTypesQuery } from "./tickerTypes.js";
 
 export interface IReferenceClient {
   conditions: (query?: IConditionsQuery, options?: IRequestOptions) => Promise<IConditions>;

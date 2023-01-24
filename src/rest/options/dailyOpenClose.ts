@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v1_open-close__optionsTicker___date
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IOptionsDailyOpenCloseQuery extends IPolygonQuery {
   adjusted?: "true" | "false";

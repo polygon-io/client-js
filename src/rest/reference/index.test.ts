@@ -2,7 +2,7 @@ import * as sinon from "sinon";
 import * as chai from "chai";
 import fetchModule from '../transport/fetch';
 
-import { IReferenceClient, referenceClient } from "./index";
+import { IReferenceClient, referenceClient } from "./index.js";
 
 describe("[REST] Reference", () => {
   chai.should();

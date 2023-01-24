@@ -1,6 +1,6 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
-import { cryptoClient, ICryptoClient } from "./index";
+import { cryptoClient, ICryptoClient } from "./index.js";
 import fetchModule from '../transport/fetch';
 
 describe("[REST] Crypto", () => {

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v1_open-close_crypto__from___to___date
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 import { ITick } from "./ITickJson";
 
 export interface ICryptoDailyOpenCloseQuery extends IPolygonQuery {

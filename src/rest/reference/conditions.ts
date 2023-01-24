@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v3_reference_conditions
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IConditionsQuery extends IPolygonQuery {
   asset_class?: "stocks" | "options" | "crypto" | "fx";

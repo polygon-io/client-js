@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_reference_news
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 import { Order } from "./tickers";
 
 export type Publisher = {

@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/crypto/get_v1_indicators_sma__cryptoticker
 
 import { ISma, ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export { ISma } from '../stocks/sma';
 

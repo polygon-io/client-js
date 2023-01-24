@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date
 
-import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
 
 export interface IDailyOpenCloseQuery extends IPolygonQuery {
   adjusted?: "true" | "false";

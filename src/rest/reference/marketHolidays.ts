@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v1_marketstatus_upcoming
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IMarketHoliday {
   close?: string;

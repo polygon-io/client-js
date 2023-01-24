@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v1_last_quote_currencies__from___to
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IForexLastQuote {
   status?: string;

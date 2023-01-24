@@ -1,5 +1,5 @@
-import { getWsClient } from "../transport";
-import { w3cwebsocket as Websocket } from "websocket";
+import { getWsClient } from "../transport/index.js";
+import * as websocket from "websocket";
 
 // Forex Aggregate:
 export interface IAggegateForexEvent {
@@ -26,4 +26,4 @@ export interface IQuoteForexEvent {
 export const getForexWebsocket = (
   apiKey: string,
   apiBase = "wss://socket.polygon.io"
-): Websocket => getWsClient(`${apiBase}/forex`, apiKey);
+): websocket.w3cwebsocket => getWsClient(`${apiBase}/forex`, apiKey);

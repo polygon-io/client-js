@@ -2,7 +2,7 @@ import * as sinon from "sinon";
 import * as chai from "chai";
 
 import fetchModule from '../transport/fetch';
-import { IOptionsClient, optionsClient } from "./index";
+import { IOptionsClient, optionsClient } from "./index.js";
 
 describe("[REST] Options", () => {
   chai.should();

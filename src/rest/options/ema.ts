@@ -2,7 +2,7 @@
 
 import { ITechnicalIndicatorsQuery } from "../stocks/sma";
 import { IEma } from "../stocks/ema";
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export { IEma } from '../stocks/ema';
 

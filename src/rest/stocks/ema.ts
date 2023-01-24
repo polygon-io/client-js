@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v1_indicators_ema__stockticker
 
 import { IUnderyling, IValue, ITechnicalIndicatorsQuery } from "./sma";
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export interface IEmaResults {
     underlying?: IUnderyling;

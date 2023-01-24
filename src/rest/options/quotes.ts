@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_quotes__optionsticker
 
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface IOptionQuotesInfo {

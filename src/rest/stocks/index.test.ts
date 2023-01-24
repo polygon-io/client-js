@@ -2,7 +2,7 @@ import * as sinon from "sinon";
 import * as chai from "chai";
 import fetchModule from '../transport/fetch';
 
-import { IStocksClient, stocksClient } from "./index";
+import { IStocksClient, stocksClient } from "./index.js";
 
 describe("[REST] Stocks", () => {
   chai.should();

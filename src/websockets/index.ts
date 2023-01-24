@@ -1,18 +1,18 @@
-import { w3cwebsocket as Websocket } from "websocket";
-import { getCryptoWebsocket } from "./crypto";
-import { getForexWebsocket } from "./forex";
-import { getOptionsWebsocket } from "./options";
-import { getStocksWebsocket } from "./stocks";
+import * as websocket from "websocket";
+import { getCryptoWebsocket } from "./crypto/index.js";
+import { getForexWebsocket } from "./forex/index.js";
+import { getOptionsWebsocket } from "./options/index.js";
+import { getStocksWebsocket } from "./stocks/index.js";
 
-export * from "./forex";
-export * from "./stocks";
-export * from "./crypto";
+export * from "./forex/index.js";
+export * from "./stocks/index.js";
+export * from "./crypto/index.js";
 
 export interface IWebsocketClient {
-  crypto: () => Websocket;
-  forex: () => Websocket;
-  options: () => Websocket;
-  stocks: () => Websocket;
+  crypto: () => websocket.w3cwebsocket;
+  forex: () => websocket.w3cwebsocket;
+  options: () => websocket.w3cwebsocket;
+  stocks: () => websocket.w3cwebsocket;
 }
 
 export const websocketClient = (

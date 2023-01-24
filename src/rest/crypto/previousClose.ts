@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v2_aggs_ticker__cryptoTicker__prev
 
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,

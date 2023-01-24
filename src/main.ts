@@ -1,8 +1,8 @@
-export * from "./rest";
-export * from "./websockets";
+export * from "./rest/index.js";
+export * from "./websockets/index.js";
 
-import restClient, { IRestClient } from "./rest";
-import websocketClient, { IWebsocketClient } from "./websockets";
+import restClient, { IRestClient } from "./rest/index.js";
+import websocketClient, { IWebsocketClient } from "./websockets/index.js";
 
 export interface IPolygonClient {
   rest: IRestClient;

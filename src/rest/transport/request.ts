@@ -1,4 +1,4 @@
-import fetchModule from './fetch';
+import fetchModule from './fetch.js';
 import { stringify } from "query-string";
 
 export interface IPolygonQuery {

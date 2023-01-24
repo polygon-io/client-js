@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v1_marketstatus_now
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IMarketStatus {
   afterhours?: boolean;
