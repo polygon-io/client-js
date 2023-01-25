@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v1_historic_crypto__from___to___date
 
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface ICryptoTradeInfo {

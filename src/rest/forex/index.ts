@@ -1,21 +1,21 @@
-import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IAggsQuery, IAggs } from "../stocks/aggregates";
+import { IAggsQuery, IAggs } from "../stocks/aggregates.js";
 import {
   IAggsGroupedDaily,
   IAggsGroupedDailyQuery,
-} from "../stocks/aggregatesGroupedDaily";
+} from "../stocks/aggregatesGroupedDaily.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
-} from "../stocks/previousClose";
-import { ITradesQuotesQuery } from "../stocks/trades";
-import { aggregates } from "./aggregates";
-import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
-import { IConversionQuery, IConversion, conversion } from "./conversion";
-import { IForexQuotes, quotes } from "./quotes";
-import { IForexLastQuote, lastQuote } from "./lastQuote";
-import { previousClose } from "./previousClose";
+} from "../stocks/previousClose.js";
+import { ITradesQuotesQuery } from "../stocks/trades.js";
+import { aggregates } from "./aggregates.js";
+import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily.js";
+import { IConversionQuery, IConversion, conversion } from "./conversion.js";
+import { IForexQuotes, quotes } from "./quotes.js";
+import { IForexLastQuote, lastQuote } from "./lastQuote.js";
+import { previousClose } from "./previousClose.js";
 import {
   IForexSnapshotAllTickersQuery,
   IForexSnapshotTickers,
@@ -23,32 +23,32 @@ import {
   snapshotAllTickers,
   snapshotGainersLosers,
   snapshotTicker,
-} from "./snapshots";
-import { ISummaries, ISummariesQuery } from "../stocks/summaries";
-import { summaries } from "./summaries";
-import { ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { ISma, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries.js";
+import { summaries } from "./summaries.js";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma.js";
+import { ISma, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
-export { IConversionQuery, IConversion } from "./conversion";
-export { IForexQuotes } from "./quotes";
-export { IForexLastQuote } from "./lastQuote";
+export { IConversionQuery, IConversion } from "./conversion.js";
+export { IForexQuotes } from "./quotes.js";
+export { IForexLastQuote } from "./lastQuote.js";
 export {
   IRealTimeCurrencyConversionQuery,
   IRealTimeCurrencyConversion,
-} from "./realTimeCurrencyConversion";
+} from "./realTimeCurrencyConversion.js";
 export {
   IForexSnapshotAllTickersQuery,
   IForexSnapshotTickers,
   IForexSnapshot,
-} from "./snapshots";
-export { ISummariesQuery, ISummaries } from '../stocks/summaries';
-export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma';
-export { IEma } from '../stocks/ema';
-export { IMacd } from '../stocks/macd';
-export { IRsi } from '../stocks/rsi';
+} from "./snapshots.js";
+export { ISummariesQuery, ISummaries } from '../stocks/summaries.js';
+export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma.js';
+export { IEma } from '../stocks/ema.js';
+export { IMacd } from '../stocks/macd.js';
+export { IRsi } from '../stocks/rsi.js';
 
 export interface IForexClient {
   aggregates: (

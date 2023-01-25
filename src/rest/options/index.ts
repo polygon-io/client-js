@@ -1,54 +1,54 @@
-import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request";
-import { IAggsQuery, IAggs } from "../stocks/aggregates";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
+import { IAggsQuery, IAggs } from "../stocks/aggregates.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
-} from "../stocks/previousClose";
-import { ITradesQuotesQuery } from "../stocks/trades";
-import { aggregates } from "./aggregates";
+} from "../stocks/previousClose.js";
+import { ITradesQuotesQuery } from "../stocks/trades.js";
+import { aggregates } from "./aggregates.js";
 import {
   IOptionsDailyOpenCloseQuery,
   IOptionsDailyOpenClose,
   dailyOpenClose,
-} from "./dailyOpenClose";
-import { previousClose } from "./previousClose";
-import { IOptionTrades, trades } from "./trades";
-import { IOptionsLastTrade, lastTrade } from "./lastTrade";
-import { IOptionQuotes, quotes } from "./quotes";
+} from "./dailyOpenClose.js";
+import { previousClose } from "./previousClose.js";
+import { IOptionTrades, trades } from "./trades.js";
+import { IOptionsLastTrade, lastTrade } from "./lastTrade.js";
+import { IOptionQuotes, quotes } from "./quotes.js";
 import {
   IOptionsSnapshotContract,
   IOptionsSnapshotChain,
   IOptionsChainQuery,
   snapshotOptionContract,
   snapshotOptionChain
-} from "./snapshots";
-import { ISummaries, ISummariesQuery } from "../stocks/summaries";
-import { summaries } from "./summaries";
-import { ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { ISma, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries.js";
+import { summaries } from "./summaries.js";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma.js";
+import { ISma, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
 export {
   IOptionsDailyOpenCloseQuery,
   IOptionsDailyOpenClose,
-} from "./dailyOpenClose";
-export { IOptionTrades } from "./trades";
-export { IOptionsLastTrade } from "./lastTrade";
-export { IOptionQuotes } from "./quotes";
+} from "./dailyOpenClose.js";
+export { IOptionTrades } from "./trades.js";
+export { IOptionsLastTrade } from "./lastTrade.js";
+export { IOptionQuotes } from "./quotes.js";
 export {
   IOptionsSnapshotContract,
   IOptionsSnapshotChain,
   IOptionsChainQuery,
   snapshotOptionContract,
   snapshotOptionChain,
-} from "./snapshots";
-export { ISummariesQuery, ISummaries } from '../stocks/summaries';
-export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma';
-export { IEma } from '../stocks/ema';
-export { IMacd } from '../stocks/macd';
-export { IRsi } from '../stocks/rsi';
+} from "./snapshots.js";
+export { ISummariesQuery, ISummaries } from '../stocks/summaries.js';
+export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma.js';
+export { IEma } from '../stocks/ema.js';
+export { IMacd } from '../stocks/macd.js';
+export { IRsi } from '../stocks/rsi.js';
 
 export interface IOptionsClient {
   aggregates: (

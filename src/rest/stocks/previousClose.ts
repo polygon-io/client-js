@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksTicker__prev
 
-import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
-import { IAggsResults } from "./aggregates";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
+import { IAggsResults } from "./aggregates.js";
 
 export interface IAggsPreviousCloseQuery extends IPolygonQuery {
   adjusted?: "true" | "false";

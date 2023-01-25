@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/forex/get_v1_indicators_sma__fxticker
 
 import { ISma, ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export { ISma } from '../stocks/sma';
 

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v3_trades__stockticker
 
-import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
 
 export interface ITradeInfo {
   conditions: number[];

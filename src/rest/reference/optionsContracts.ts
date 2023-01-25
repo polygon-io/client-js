@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_reference_options_contracts
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IOptionsContractsQuery extends IPolygonQuery {
   ticker?: string;

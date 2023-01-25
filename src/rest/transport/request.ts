@@ -1,4 +1,4 @@
-import fetch from "cross-fetch";
+import fetchModule from './fetch.js';
 import { stringify } from "query-string";
 
 export interface IPolygonQuery {
@@ -34,7 +34,7 @@ export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {})
 
   const queryString = stringify(query, { encode: true });
   const url = `${apiBase}${path}?${queryString}`;
-  const response = await fetch(url, {
+  const response = await fetchModule.fetch(url, {
     ...globalOptions,
     ...options,
     headers: {

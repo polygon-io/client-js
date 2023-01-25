@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v2_aggs_grouped_locale_global_market_crypto__date
 
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import {
   IAggsGroupedDaily,
   IAggsGroupedDailyQuery,

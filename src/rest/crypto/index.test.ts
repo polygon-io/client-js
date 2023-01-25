@@ -1,7 +1,7 @@
 import * as sinon from "sinon";
 import * as chai from "chai";
-import { cryptoClient, ICryptoClient } from "./index";
-import * as fetch from "cross-fetch";
+import { cryptoClient, ICryptoClient } from "./index.js";
+import fetchModule from '../transport/fetch';
 
 describe("[REST] Crypto", () => {
   chai.should();
@@ -25,7 +25,7 @@ describe("[REST] Crypto", () => {
   const getPath = (url) => url.slice(mocks.base.length, url.indexOf('?'));
   const setStub = (returnVal, status = 200) => {
     fetchStub?.restore();
-    fetchStub = sandbox.stub(fetch, "default").returns(
+    fetchStub = sandbox.stub(fetchModule, 'fetch').returns(
       Promise.resolve({ json: () => Promise.resolve(returnVal), status } as Response)
     );
     crypto = cryptoClient(mocks.key, mocks.base, mocks.globalOptions);

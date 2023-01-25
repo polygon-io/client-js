@@ -1,7 +1,7 @@
 // CF: https://polygon.io/docs/stocks/get_v1_indicators_sma__stockticker
 
-import { IAggsResults } from "./aggregates";
-import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request";
+import { IAggsResults } from "./aggregates.js";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
 
 export interface IValue {
     histogram?: number;

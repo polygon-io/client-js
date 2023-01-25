@@ -2,7 +2,7 @@
 
 import { ITechnicalIndicatorsQuery } from "../stocks/sma";
 import { IRsi } from "../stocks/rsi";
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export { IRsi } from '../stocks/rsi';
 

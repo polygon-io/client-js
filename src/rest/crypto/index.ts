@@ -1,25 +1,25 @@
-import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IAggsQuery, IAggs } from "../stocks/aggregates";
+import { IAggsQuery, IAggs } from "../stocks/aggregates.js";
 import {
   IAggsGroupedDaily,
   IAggsGroupedDailyQuery,
-} from "../stocks/aggregatesGroupedDaily";
+} from "../stocks/aggregatesGroupedDaily.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
-} from "../stocks/previousClose";
-import { ITradesQuotesQuery } from "../stocks/trades";
-import { aggregates } from "./aggregates";
-import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
+} from "../stocks/previousClose.js";
+import { ITradesQuotesQuery } from "../stocks/trades.js";
+import { aggregates } from "./aggregates.js";
+import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily.js";
 import {
   ICryptoDailyOpenCloseQuery,
   ICryptoDailyOpenClose,
   dailyOpenClose,
-} from "./dailyOpenClose";
-import { ICryptoTrade, trades } from "./trades";
-import { ICryptoLastTrade, lastTrade } from "./lastTrade";
-import { previousClose } from "./previousClose";
+} from "./dailyOpenClose.js";
+import { ICryptoTrade, trades } from "./trades.js";
+import { ICryptoLastTrade, lastTrade } from "./lastTrade.js";
+import { previousClose } from "./previousClose.js";
 import {
   ICryptoSnapshotAllTickersQuery,
   ICryptoSnapshotTickers,
@@ -29,14 +29,14 @@ import {
   snapshotGainersLosers,
   snapshotTicker,
   snapshotTickerFullBookL2,
-} from "./snapshots";
-import { ISummaries, ISummariesQuery } from "../stocks/summaries";
-import { summaries } from "./summaries";
-import { ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { ISma, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries.js";
+import { summaries } from "./summaries.js";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma.js";
+import { ISma, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
 export {
   ICryptoDailyOpenCloseQuery,

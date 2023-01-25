@@ -1,23 +1,23 @@
-import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IAggsQuery, IAggs, aggregates } from "./aggregates";
+import { IAggsQuery, IAggs, aggregates } from "./aggregates.js";
 import {
   IAggsGroupedDailyQuery,
   IAggsGroupedDaily,
   aggregatesGroupedDaily,
-} from "./aggregatesGroupedDaily";
+} from "./aggregatesGroupedDaily.js";
 import {
   IDailyOpenCloseQuery,
   IDailyOpenClose,
   dailyOpenClose,
-} from "./dailyOpenClose";
+} from "./dailyOpenClose.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
   previousClose,
-} from "./previousClose";
-import { ILastQuote, lastQuote } from "./lastQuote";
-import { ILastTrade, lastTrade } from "./lastTrade";
+} from "./previousClose.js";
+import { ILastQuote, lastQuote } from "./lastQuote.js";
+import { ILastTrade, lastTrade } from "./lastTrade.js";
 import {
   ISnapshotAllTickersQuery,
   ISnapshotTickers,
@@ -25,36 +25,36 @@ import {
   snapshotAllTickers,
   snapshotGainersLosers,
   snapshotTicker,
-} from "./snapshots";
-import { IQuotes, quotes } from "./quotes";
-import { ITradesQuotesQuery, ITrades, trades } from "./trades";
-import { ISummaries, ISummariesQuery, summaries } from "./summaries";
-import { ISma, ITechnicalIndicatorsQuery, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { IQuotes, quotes } from "./quotes.js";
+import { ITradesQuotesQuery, ITrades, trades } from "./trades.js";
+import { ISummaries, ISummariesQuery, summaries } from "./summaries.js";
+import { ISma, ITechnicalIndicatorsQuery, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
-export { IAggsQuery, IAggs } from "./aggregates";
+export { IAggsQuery, IAggs } from "./aggregates.js";
 export {
   IAggsGroupedDailyQuery,
   IAggsGroupedDaily,
-} from "./aggregatesGroupedDaily";
-export { IDailyOpenCloseQuery, IDailyOpenClose } from "./dailyOpenClose";
-export { IAggsPreviousCloseQuery, IAggsPreviousClose } from "./previousClose";
-export { ILastQuote } from "./lastQuote";
-export { ILastTrade } from "./lastTrade";
+} from "./aggregatesGroupedDaily.js";
+export { IDailyOpenCloseQuery, IDailyOpenClose } from "./dailyOpenClose.js";
+export { IAggsPreviousCloseQuery, IAggsPreviousClose } from "./previousClose.js";
+export { ILastQuote } from "./lastQuote.js";
+export { ILastTrade } from "./lastTrade.js";
 export {
   ISnapshotAllTickersQuery,
   ISnapshotTickers,
   ISnapshot,
-} from "./snapshots";
-export { IQuotes } from "./quotes";
-export { ITradesQuotesQuery, ITrades } from "./trades";
-export { ISummariesQuery, ISummaries } from './summaries';
-export { ISma, ITechnicalIndicatorsQuery } from './sma';
-export { IEma } from './ema';
-export { IMacd } from './macd';
-export { IRsi } from './rsi';
+} from "./snapshots.js";
+export { IQuotes } from "./quotes.js";
+export { ITradesQuotesQuery, ITrades } from "./trades.js";
+export { ISummariesQuery, ISummaries } from './summaries.js';
+export { ISma, ITechnicalIndicatorsQuery } from './sma.js';
+export { IEma } from './ema.js';
+export { IMacd } from './macd.js';
+export { IRsi } from './rsi.js';
 
 export interface IStocksClient {
   aggregates: (

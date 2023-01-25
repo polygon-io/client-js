@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v1_last_crypto__from___to
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface ICryptoLastTrade {
   status?: string;

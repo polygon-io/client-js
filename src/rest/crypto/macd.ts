@@ -2,7 +2,7 @@
 
 import { ITechnicalIndicatorsQuery } from "../stocks/sma";
 import { IMacd } from "../stocks/macd";
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export { IMacd } from '../stocks/macd';
 

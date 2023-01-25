@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/launchpad/get_v1_summaries
 
-import { IGet, IRequestOptions } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ISummaries, ISummariesQuery } from "../stocks/summaries";
 
 export const summaries = async (

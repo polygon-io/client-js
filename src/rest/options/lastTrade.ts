@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v2_last_trade__optionsTicker
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 import { ILastTradeInfo } from "../stocks/lastTrade";
 
 export interface IOptionsLastTrade {

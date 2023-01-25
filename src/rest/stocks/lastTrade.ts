@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_last_trade__stocksTicker
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface ILastTradeInfo {
   T?: string;

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_last_nbbo__stocksticker
 
-import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 import { ILastTradeInfo } from "./lastTrade";
 
 export interface ILastQuote {

@@ -1,5 +1,5 @@
-import { getWsClient } from "../transport";
-import { w3cwebsocket as Websocket } from "websocket";
+import { getWsClient } from "../transport/index.js";
+import * as websocket from "websocket";
 
 // Options Aggregate:
 export interface IAggregateOptionsEvent {
@@ -32,4 +32,4 @@ export interface ITradeOptionsEvent {
 export const getOptionsWebsocket = (
   apiKey: string,
   apiBase = "wss://socket.polygon.io"
-): Websocket => getWsClient(`${apiBase}/options`, apiKey);
+): websocket.w3cwebsocket => getWsClient(`${apiBase}/options`, apiKey);
