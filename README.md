@@ -2,6 +2,10 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+## Upgrading to Version 7
+
+See the [Release Notes](./CHANGELOG.md) for instructions on upgrading to Version 7.
+
 ## Install
 
 ```bash
@@ -28,12 +32,12 @@ rest.forex
 
 ### [REST API](https://polygon.io/docs/stocks/getting-started)
 
-- import all the rest submodule
+- import the rest submodule
 
 ```typescript
 import { restClient } from "@polygon.io/client-js";
 
-const rest = restClient("api key");
+const rest = restClient("API KEY");
 
 rest.forex.previousClose("C:EURUSD").then(/* your success handler */);
 ```
@@ -43,10 +47,12 @@ rest.forex.previousClose("C:EURUSD").then(/* your success handler */);
 ```typescript
 import { referenceClient } from "@polygon.io/client-js";
 
-const reference = referenceClient("api key");
+const reference = referenceClient("API KEY");
 
 reference.tickers().then(/* your success handler */);
+reference.conditions({ asset_class: 'stocks', data_type: 'trades', sort: 'id' }).then(/* your success handler */)
 ```
+
 
 #### [For Launchpad Examples and Usage, see Polygon Launchpad Examples](examples/rest/launchpad/README.md)
 
@@ -57,7 +63,7 @@ You can get preauthenticated [websocket clients](https://www.npmjs.com/package/w
 ```typescript
 import { websocketClient } from "@polygon.io/client-js";
 
-const stocksWS = websocketClient("api key").stocks();
+const stocksWS = websocketClient("API KEY").stocks();
 
 stocksWS.onmessage = ({data}) => {
   const [message] = JSON.parse(data);

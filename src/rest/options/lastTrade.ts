@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v2_last_trade__optionsTicker
 
-import { get } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 import { ILastTradeInfo } from "../stocks/lastTrade";
 
 export interface IOptionsLastTrade {
@@ -10,8 +10,9 @@ export interface IOptionsLastTrade {
 }
 
 export const lastTrade = async (
-  apiKey: string,
-  apiBase: string,
-  symbol: string
+  get: IGet,
+  symbol: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<IOptionsLastTrade> =>
-  get(`/v2/last/trade/${symbol}`, apiKey, apiBase);
+  get(`/v2/last/trade/${symbol}`, query, options);

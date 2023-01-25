@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v1_conversion__from___to
 
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
 
 export interface IRealTimeCurrencyConversionQuery extends IPolygonQuery {
   amount?: number;
@@ -23,10 +23,10 @@ export interface IRealTimeCurrencyConversion {
 }
 
 export const realTimeCurrencyConversion = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   from: string,
   to: string,
-  query?: IRealTimeCurrencyConversionQuery
+  query?: IRealTimeCurrencyConversionQuery,
+  options?: IRequestOptions
 ): Promise<IRealTimeCurrencyConversion> =>
-  get(`/v1/conversion/${from}/${to}`, apiKey, apiBase, query);
+  get(`/v1/conversion/${from}/${to}`, query, options);

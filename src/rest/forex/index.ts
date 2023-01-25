@@ -1,21 +1,21 @@
-import { auth, IHeaders } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IAggsQuery, IAggs } from "../stocks/aggregates";
+import { IAggsQuery, IAggs } from "../stocks/aggregates.js";
 import {
   IAggsGroupedDaily,
   IAggsGroupedDailyQuery,
-} from "../stocks/aggregatesGroupedDaily";
+} from "../stocks/aggregatesGroupedDaily.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
-} from "../stocks/previousClose";
-import { ITradesQuotesQuery } from "../stocks/trades";
-import { aggregates } from "./aggregates";
-import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
-import { IConversionQuery, IConversion, conversion } from "./conversion";
-import { IForexQuotes, quotes } from "./quotes";
-import { IForexLastQuote, lastQuote } from "./lastQuote";
-import { previousClose } from "./previousClose";
+} from "../stocks/previousClose.js";
+import { ITradesQuotesQuery } from "../stocks/trades.js";
+import { aggregates } from "./aggregates.js";
+import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily.js";
+import { IConversionQuery, IConversion, conversion } from "./conversion.js";
+import { IForexQuotes, quotes } from "./quotes.js";
+import { IForexLastQuote, lastQuote } from "./lastQuote.js";
+import { previousClose } from "./previousClose.js";
 import {
   IForexSnapshotAllTickersQuery,
   IForexSnapshotTickers,
@@ -23,32 +23,32 @@ import {
   snapshotAllTickers,
   snapshotGainersLosers,
   snapshotTicker,
-} from "./snapshots";
-import { ISummaries, ISummariesQuery } from "../stocks/summaries";
-import { summaries } from "./summaries";
-import { ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { ISma, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries.js";
+import { summaries } from "./summaries.js";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma.js";
+import { ISma, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
-export { IConversionQuery, IConversion } from "./conversion";
-export { IForexQuotes } from "./quotes";
-export { IForexLastQuote } from "./lastQuote";
+export { IConversionQuery, IConversion } from "./conversion.js";
+export { IForexQuotes } from "./quotes.js";
+export { IForexLastQuote } from "./lastQuote.js";
 export {
   IRealTimeCurrencyConversionQuery,
   IRealTimeCurrencyConversion,
-} from "./realTimeCurrencyConversion";
+} from "./realTimeCurrencyConversion.js";
 export {
   IForexSnapshotAllTickersQuery,
   IForexSnapshotTickers,
   IForexSnapshot,
-} from "./snapshots";
-export { ISummariesQuery, ISummaries } from '../stocks/summaries';
-export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma';
-export { IEma } from '../stocks/ema';
-export { IMacd } from '../stocks/macd';
-export { IRsi } from '../stocks/rsi';
+} from "./snapshots.js";
+export { ISummariesQuery, ISummaries } from '../stocks/summaries.js';
+export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma.js';
+export { IEma } from '../stocks/ema.js';
+export { IMacd } from '../stocks/macd.js';
+export { IRsi } from '../stocks/rsi.js';
 
 export interface IForexClient {
   aggregates: (
@@ -58,59 +58,70 @@ export interface IForexClient {
     from: string,
     to: string,
     query?: IAggsQuery,
-    headers?: IHeaders
+    options?: IRequestOptions
   ) => Promise<IAggs>;
   aggregatesGroupedDaily: (
     date: string,
-    query?: IAggsGroupedDailyQuery
+    query?: IAggsGroupedDailyQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsGroupedDaily>;
-  summaries: (query?: ISummariesQuery, headers?: IHeaders) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, options?: IRequestOptions) => Promise<ISummaries>;
   conversion: (
     from: string,
     to: string,
-    query?: IConversionQuery
+    query?: IConversionQuery,
+    options?: IRequestOptions
   ) => Promise<IConversion>;
   quotes: (
     fxTicker: string,
-    query?: ITradesQuotesQuery
+    query?: ITradesQuotesQuery,
+    options?: IRequestOptions
   ) => Promise<IForexQuotes>;
-  lastQuote: (from: string, to: string) => Promise<IForexLastQuote>;
+  lastQuote: (from: string, to: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<IForexLastQuote>;
   previousClose: (
     symbol: string,
-    query?: IAggsPreviousCloseQuery
+    query?: IAggsPreviousCloseQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsPreviousClose>;
   snapshotAllTickers: (
-    query?: IForexSnapshotAllTickersQuery
+    query?: IForexSnapshotAllTickersQuery,
+    options?: IRequestOptions
   ) => Promise<IForexSnapshotTickers>;
   snapshotGainersLosers: (
-    direction: "gainers" | "losers"
+    direction: "gainers" | "losers",
+    query?: IPolygonQuery,
+    options?: IRequestOptions
   ) => Promise<IForexSnapshotTickers>;
-  snapshotTicker: (symbol: string) => Promise<IForexSnapshot>;
-  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
-  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
-  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
-  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
+  snapshotTicker: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<IForexSnapshot>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
 }
 
 export const forexClient = (
   apiKey: string,
   apiBase = "https://api.polygon.io",
-  headers?: IHeaders
-): IForexClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase, headers),
-  aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
-  summaries: auth(apiKey, summaries, apiBase, headers),
-  conversion: auth(apiKey, conversion, apiBase),
-  quotes: auth(apiKey, quotes, apiBase),
-  lastQuote: auth(apiKey, lastQuote, apiBase),
-  previousClose: auth(apiKey, previousClose, apiBase),
-  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
-  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
-  snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
-  sma: auth(apiKey, sma, apiBase), 
-  ema: auth(apiKey, ema, apiBase), 
-  macd: auth(apiKey, macd, apiBase), 
-  rsi: auth(apiKey, rsi, apiBase)
-});
+  options?: IRequestOptions
+): IForexClient => {
+  const get = getWithGlobals(apiKey, apiBase, options);
+    
+  return ({
+    aggregates: (...args) => aggregates(get, ...args),
+    aggregatesGroupedDaily: (...args) => aggregatesGroupedDaily(get, ...args),
+    summaries: (...args) => summaries(get, ...args),
+    conversion: (...args) => conversion(get, ...args),
+    quotes: (...args) => quotes(get, ...args),
+    lastQuote: (...args) => lastQuote(get, ...args),
+    previousClose: (...args) => previousClose(get, ...args),
+    snapshotAllTickers: (...args) => snapshotAllTickers(get, ...args),
+    snapshotGainersLosers: (...args) => snapshotGainersLosers(get, ...args),
+    snapshotTicker: (...args) => snapshotTicker(get, ...args),
+    sma: (...args) => sma(get, ...args),
+    ema: (...args) => ema(get, ...args),
+    macd: (...args) => macd(get, ...args),
+    rsi: (...args) => rsi(get, ...args)
+  })
+};
 
 export default forexClient;

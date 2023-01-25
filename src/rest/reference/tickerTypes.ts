@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v3_reference_tickers_types
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export type AssetClassType = "stocks" | "options" | "crypto" | "fx";
 export type LocaleType = "us" | "global";
@@ -25,9 +25,8 @@ export interface ITickerTypes {
 }
 
 export const tickerTypes = async (
-  apiKeys: string,
-  apiBase: string,
+  get: IGet,
   query?: ITickerTypesQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<ITickerTypes> =>
-  get("/v3/reference/tickers/types", apiKeys, apiBase, query, headers);
+  get("/v3/reference/tickers/types", query, options);

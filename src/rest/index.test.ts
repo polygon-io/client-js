@@ -1,5 +1,5 @@
 import * as chai from "chai";
-import { restClient } from "./index";
+import { restClient } from "./index.js";
 
 describe("[EXPORT] REST Endpoints", () => {
   chai.should();

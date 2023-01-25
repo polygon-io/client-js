@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v3_reference_exchanges
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IExchangesQuery extends IPolygonQuery {
   asset_class?: "stocks" | "options" | "crypto" | "fx";
@@ -28,9 +28,8 @@ export interface IExchanges {
 }
 
 export const exchanges = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   query?: IExchangesQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<IExchanges> =>
-  get("/v3/reference/exchanges", apiKey, apiBase, query, headers);
+  get("/v3/reference/exchanges", query, options);

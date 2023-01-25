@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v3_quotes__optionsticker
 
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface IOptionQuotesInfo {
@@ -22,9 +22,9 @@ export interface IOptionQuotes {
 }
 
 export const quotes = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   optionsTicker: string,
-  query?: ITradesQuotesQuery
+  query?: ITradesQuotesQuery,
+  options?: IRequestOptions
 ): Promise<IOptionQuotes> =>
-  get(`/v3/quotes/${optionsTicker}`, apiKey, apiBase, query);
+  get(`/v3/quotes/${optionsTicker}`, query, options);

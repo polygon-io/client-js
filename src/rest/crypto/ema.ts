@@ -2,13 +2,13 @@
 
 import { ITechnicalIndicatorsQuery } from "../stocks/sma";
 import { IEma } from "../stocks/ema";
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 
 export { IEma } from '../stocks/ema';
 
 export const ema = async (
-    apiKey: string,
-    apiBase: string,
+    get: IGet,
     symbol: string,
     query?: ITechnicalIndicatorsQuery,
-): Promise<IEma> => get(`/v1/indicators/ema/${symbol}`, apiKey, apiBase, query);
+    options?: IRequestOptions
+): Promise<IEma> => get(`/v1/indicators/ema/${symbol}`, query, options);

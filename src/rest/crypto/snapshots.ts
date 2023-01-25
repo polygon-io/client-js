@@ -1,4 +1,4 @@
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface SnapshotDay {
   c?: number;
@@ -84,49 +84,51 @@ export interface ICryptoSnapshotFullBookL2 {
 
 // CF: https://polygon.io/docs/crypto/get_v2_snapshot_locale_global_markets_crypto_tickers
 export const snapshotAllTickers = (
-  apiKey: string,
-  apiBase: string,
-  query?: ICryptoSnapshotAllTickersQuery
+  get: IGet,
+  query?: ICryptoSnapshotAllTickersQuery,
+  options?: IRequestOptions
 ): Promise<ICryptoSnapshotTickers> =>
   get(
     `/v2/snapshot/locale/global/markets/crypto/tickers`,
-    apiKey,
-    apiBase,
-    query
+    query,
+    options
   );
 
 // CF: https://polygon.io/docs/crypto/get_v2_snapshot_locale_global_markets_crypto__direction
 export const snapshotGainersLosers = (
-  apiKey: string,
-  apiBase: string,
-  direction: "gainers" | "losers"
+  get: IGet,
+  direction: "gainers" | "losers",
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<ICryptoSnapshotTickers> =>
   get(
     `/v2/snapshot/locale/global/markets/crypto/${direction}`,
-    apiKey,
-    apiBase
+    query,
+    options
   );
 
 // CF: https://polygon.io/docs/crypto/get_v2_snapshot_locale_global_markets_crypto_tickers__ticker
 export const snapshotTicker = (
-  apiKey: string,
-  apiBase: string,
-  symbol: string
+  get: IGet,
+  symbol: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<ICryptoSnapshot> =>
   get(
     `/v2/snapshot/locale/global/markets/crypto/tickers/${symbol}`,
-    apiKey,
-    apiBase
+    query,
+    options
   );
 
 // CF: https://polygon.io/docs/crypto/get_v2_snapshot_locale_global_markets_crypto_tickers__ticker__book
 export const snapshotTickerFullBookL2 = (
-  apiKey: string,
-  apiBase: string,
-  symbol: string
+  get: IGet,
+  symbol: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<ICryptoSnapshotFullBookL2> =>
   get(
     `/v2/snapshot/locale/global/markets/crypto/tickers/${symbol}/book`,
-    apiKey,
-    apiBase
+    query,
+    options
   );

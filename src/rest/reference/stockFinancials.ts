@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_vx_reference_financials
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface ITableInfo {
   formula?: string;
@@ -70,9 +70,8 @@ export interface IStockFinancialQuery extends IPolygonQuery {
 }
 
 export const stockFinancials = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   query?: IStockFinancialQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<IStockFinancialResults> =>
-  get(`/vX/reference/financials`, apiKey, apiBase, query, headers);
+  get(`/vX/reference/financials`, query, options);

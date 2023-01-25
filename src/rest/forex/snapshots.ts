@@ -1,4 +1,4 @@
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IRequestOptions, IPolygonQuery } from "../transport/request.js";
 
 export interface SnapshotDay {
   c?: number;
@@ -61,33 +61,34 @@ export interface IForexSnapshot {
 
 // CF: https://polygon.io/docs/forex/get_v2_snapshot_locale_global_markets_forex_tickers
 export const snapshotAllTickers = async (
-  apiKey: string,
-  apiBase: string,
-  query?: IForexSnapshotAllTickersQuery
+  get: IGet,
+  query?: IForexSnapshotAllTickersQuery,
+  options?: IRequestOptions
 ): Promise<IForexSnapshotTickers> =>
   get(
     `/v2/snapshot/locale/global/markets/forex/tickers`,
-    apiKey,
-    apiBase,
-    query
+    query,
+    options
   );
 
 // CF: https://polygon.io/docs/forex/get_v2_snapshot_locale_global_markets_forex__direction
 export const snapshotGainersLosers = async (
-  apiKey: string,
-  apiBase: string,
-  direction: "gainers" | "losers"
+  get: IGet,
+  direction: "gainers" | "losers",
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<IForexSnapshotTickers> =>
-  get(`/v2/snapshot/locale/global/markets/forex/${direction}`, apiKey, apiBase);
+  get(`/v2/snapshot/locale/global/markets/forex/${direction}`, query, options);
 
 // CF: https://polygon.io/docs/forex/get_v2_snapshot_locale_global_markets_forex_tickers__ticker
 export const snapshotTicker = async (
-  apiKey: string,
-  apiBase: string,
-  symbol: string
+  get: IGet,
+  symbol: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<IForexSnapshot> =>
   get(
     `/v2/snapshot/locale/global/markets/forex/tickers/${symbol}`,
-    apiKey,
-    apiBase
+    query,
+    options
   );

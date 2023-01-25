@@ -1,18 +1,15 @@
 // CF: https://polygon.io/docs/forex/launchpad/get_v1_summaries
 
-import { get, IHeaders } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ISummaries, ISummariesQuery } from "../stocks/summaries";
 
 export const summaries = async (
-  apikey: string,
-  apiBase: string,
+  get: IGet,
   query?: ISummariesQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<ISummaries> =>
   get(
     `/v1/summaries`,
-    apikey,
-    apiBase,
     query,
-    headers
+    options
   );

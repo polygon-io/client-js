@@ -1,11 +1,10 @@
-import { w3cwebsocket as Websocket } from "websocket";
+import websocket from "websocket";
 
-export const getWsClient = (url: string, apiKey: string): Websocket => {
+export const getWsClient = (url: string, apiKey: string): websocket.w3cwebsocket => {
   if (!apiKey) {
     throw new Error("api key not provided.");
   }
-
-  const ws = new Websocket(url);
+  const ws = new websocket.w3cwebsocket(url);
 
   ws.onopen = () => {
     ws.send(JSON.stringify({ action: "auth", params: apiKey }));

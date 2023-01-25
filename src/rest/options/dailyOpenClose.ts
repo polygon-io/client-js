@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/options/get_v1_open-close__optionsTicker___date
 
-import { get, IPolygonQuery } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IOptionsDailyOpenCloseQuery extends IPolygonQuery {
   adjusted?: "true" | "false";
@@ -20,10 +20,10 @@ export interface IOptionsDailyOpenClose {
 }
 
 export const dailyOpenClose = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   symbol: string,
   date: string,
-  query?: IOptionsDailyOpenCloseQuery
+  query?: IOptionsDailyOpenCloseQuery,
+  options?: IRequestOptions
 ): Promise<IOptionsDailyOpenClose> =>
-  get(`/v1/open-close/${symbol}/${date}`, apiKey, apiBase, query);
+  get(`/v1/open-close/${symbol}/${date}`, query, options);

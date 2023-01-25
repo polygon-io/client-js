@@ -1,29 +1,28 @@
-import { auth } from "../rest/transport/request";
+import * as websocket from "websocket";
+import { getCryptoWebsocket } from "./crypto/index.js";
+import { getForexWebsocket } from "./forex/index.js";
+import { getOptionsWebsocket } from "./options/index.js";
+import { getStocksWebsocket } from "./stocks/index.js";
 
-import { getCryptoWebsocket } from "./crypto";
-import { getForexWebsocket } from "./forex";
-import { getOptionsWebsocket } from "./options";
-import { getStocksWebsocket } from "./stocks";
-
-export * from "./forex";
-export * from "./stocks";
-export * from "./crypto";
+export * from "./forex/index.js";
+export * from "./stocks/index.js";
+export * from "./crypto/index.js";
 
 export interface IWebsocketClient {
-  crypto: () => WebSocket;
-  forex: () => WebSocket;
-  options: () => WebSocket;
-  stocks: () => WebSocket;
+  crypto: () => websocket.w3cwebsocket;
+  forex: () => websocket.w3cwebsocket;
+  options: () => websocket.w3cwebsocket;
+  stocks: () => websocket.w3cwebsocket;
 }
 
 export const websocketClient = (
   apiKey: string,
   apiBase?: string
 ): IWebsocketClient => ({
-  crypto: auth(apiKey, getCryptoWebsocket, apiBase),
-  forex: auth(apiKey, getForexWebsocket, apiBase),
-  options: auth(apiKey, getOptionsWebsocket, apiBase),
-  stocks: auth(apiKey, getStocksWebsocket, apiBase),
+  crypto: () => getCryptoWebsocket(apiKey, apiBase),
+  forex: () => getForexWebsocket(apiKey, apiBase),
+  options: () => getOptionsWebsocket(apiKey, apiBase),
+  stocks: () => getStocksWebsocket(apiKey, apiBase),
 });
 
 export default websocketClient;

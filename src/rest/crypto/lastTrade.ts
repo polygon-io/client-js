@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/crypto/get_v1_last_crypto__from___to
 
-import { get } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface ICryptoLastTrade {
   status?: string;
@@ -16,9 +16,10 @@ export interface ICryptoLastTrade {
 }
 
 export const lastTrade = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   from: string,
-  to: string
+  to: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<ICryptoLastTrade> =>
-  get(`/v1/last/crypto/${from}/${to}`, apiKey, apiBase);
+  get(`/v1/last/crypto/${from}/${to}`, query, options);

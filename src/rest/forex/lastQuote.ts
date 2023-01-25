@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v1_last_quote_currencies__from___to
 
-import { get } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IForexLastQuote {
   status?: string;
@@ -15,9 +15,10 @@ export interface IForexLastQuote {
 }
 
 export const lastQuote = (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   from: string,
-  to: string
+  to: string,
+  query?: IPolygonQuery,
+  options?: IRequestOptions
 ): Promise<IForexLastQuote> =>
-  get(`/v1/last_quote/currencies/${from}/${to}`, apiKey, apiBase);
+  get(`/v1/last_quote/currencies/${from}/${to}`, query, options);

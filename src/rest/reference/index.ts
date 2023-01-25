@@ -1,80 +1,83 @@
-import { auth, IHeaders } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IConditionsQuery, IConditions, conditions } from "./conditions";
-import { IExchangesQuery, IExchanges, exchanges } from "./exchanges";
-import { IMarketHoliday, marketHolidays } from "./marketHolidays";
-import { IMarketStatus, marketStatus } from "./marketStatus";
+import { IConditionsQuery, IConditions, conditions } from "./conditions.js";
+import { IExchangesQuery, IExchanges, exchanges } from "./exchanges.js";
+import { IMarketHoliday, marketHolidays } from "./marketHolidays.js";
+import { IMarketStatus, marketStatus } from "./marketStatus.js";
 import {
   IOptionsContractQuery,
   IOptionsContract,
   optionsContract,
-} from "./optionsContract";
+} from "./optionsContract.js";
 import {
   IOptionsContractsQuery,
   IOptionsContracts,
   optionsContracts,
-} from "./optionsContracts";
-import { IDividendsResults, IDividendsQuery, stockDividends } from "./dividends";
-import { IStockSplitsResults, IStockSplitsQuery, stockSplits } from "./stockSplits";
-import { IStockFinancialResults, IStockFinancialQuery, stockFinancials } from "./stockFinancials";
-import { ITickerDetails, tickerDetails } from "./tickerDetails";
-import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews";
-import { ITickers, ITickersQuery, tickers } from "./tickers";
-import { ITickerTypes, ITickerTypesQuery, tickerTypes } from "./tickerTypes";
+} from "./optionsContracts.js";
+import { IDividendsResults, IDividendsQuery, stockDividends } from "./dividends.js";
+import { IStockSplitsResults, IStockSplitsQuery, stockSplits } from "./stockSplits.js";
+import { IStockFinancialResults, IStockFinancialQuery, stockFinancials } from "./stockFinancials.js";
+import { ITickerDetails, tickerDetails } from "./tickerDetails.js";
+import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews.js";
+import { ITickers, ITickersQuery, tickers } from "./tickers.js";
+import { ITickerTypes, ITickerTypesQuery, tickerTypes } from "./tickerTypes.js";
 
-export { IConditions } from "./conditions";
-export { IExchanges } from "./exchanges";
-export { IMarketHoliday } from "./marketHolidays";
-export { IMarketStatus } from "./marketStatus";
-export { IDividendsResults } from "./dividends";
-export { IStockSplitsResults } from "./stockSplits";
-export { IStockFinancialResults } from "./stockFinancials";
-export { ITickerDetails } from "./tickerDetails";
-export { ITickerNews, ITickerNewsQuery } from "./tickerNews";
-export { ITickers, ITickersQuery } from "./tickers";
-export { ITickerTypes, ITickerTypesQuery } from "./tickerTypes";
+export { IConditions } from "./conditions.js";
+export { IExchanges } from "./exchanges.js";
+export { IMarketHoliday } from "./marketHolidays.js";
+export { IMarketStatus } from "./marketStatus.js";
+export { IDividendsResults } from "./dividends.js";
+export { IStockSplitsResults } from "./stockSplits.js";
+export { IStockFinancialResults } from "./stockFinancials.js";
+export { ITickerDetails } from "./tickerDetails.js";
+export { ITickerNews, ITickerNewsQuery } from "./tickerNews.js";
+export { ITickers, ITickersQuery } from "./tickers.js";
+export { ITickerTypes, ITickerTypesQuery } from "./tickerTypes.js";
 
 export interface IReferenceClient {
-  conditions: (query?: IConditionsQuery, headers?: IHeaders) => Promise<IConditions>;
-  exchanges: (query?: IExchangesQuery, headers?: IHeaders) => Promise<IExchanges>;
-  marketHolidays: (headers?: IHeaders) => Promise<IMarketHoliday[]>;
-  marketStatus: (headers?: IHeaders) => Promise<IMarketStatus>;
+  conditions: (query?: IConditionsQuery, options?: IRequestOptions) => Promise<IConditions>;
+  exchanges: (query?: IExchangesQuery, options?: IRequestOptions) => Promise<IExchanges>;
+  marketHolidays: (query?: IPolygonQuery, options?: IRequestOptions) => Promise<IMarketHoliday[]>;
+  marketStatus: (query?: IPolygonQuery, options?: IRequestOptions) => Promise<IMarketStatus>;
   optionsContract: (
     optionsTicker: string,
     query?: IOptionsContractQuery,
-    headers?: IHeaders
+    options?: IRequestOptions
   ) => Promise<IOptionsContract>;
   optionsContracts: (
     query?: IOptionsContractsQuery, 
-    headers?: IHeaders
+    options?: IRequestOptions
   ) => Promise<IOptionsContracts>;
-  dividends: (query?: IDividendsQuery, headers?: IHeaders) => Promise<IDividendsResults>;
-  stockSplits: (query?: IStockSplitsQuery, headers?: IHeaders) => Promise<IStockSplitsResults>;
-  stockFinancials: (query?: IStockFinancialQuery, headers?: IHeaders) => Promise<IStockFinancialResults>;
-  tickerDetails: (symbol: string, headers?: IHeaders) => Promise<ITickerDetails>;
-  tickerNews: (query?: ITickerNewsQuery, headers?: IHeaders) => Promise<ITickerNews>;
-  tickers: (query?: ITickersQuery, headers?: IHeaders) => Promise<ITickers>;
-  tickerTypes: (query?: ITickerTypesQuery, headers?: IHeaders) => Promise<ITickerTypes>;
+  dividends: (query?: IDividendsQuery, options?: IRequestOptions) => Promise<IDividendsResults>;
+  stockSplits: (query?: IStockSplitsQuery, options?: IRequestOptions) => Promise<IStockSplitsResults>;
+  stockFinancials: (query?: IStockFinancialQuery, options?: IRequestOptions) => Promise<IStockFinancialResults>;
+  tickerDetails: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<ITickerDetails>;
+  tickerNews: (query?: ITickerNewsQuery, options?: IRequestOptions) => Promise<ITickerNews>;
+  tickers: (query?: ITickersQuery, options?: IRequestOptions) => Promise<ITickers>;
+  tickerTypes: (query?: ITickerTypesQuery, options?: IRequestOptions) => Promise<ITickerTypes>;
 }
 
 export const referenceClient = (
   apiKey: string,
   apiBase = "https://api.polygon.io",
-  headers?: IHeaders
-): IReferenceClient => ({
-  conditions: auth(apiKey, conditions, apiBase, headers),
-  exchanges: auth(apiKey, exchanges, apiBase, headers),
-  marketHolidays: auth(apiKey, marketHolidays, apiBase, headers),
-  marketStatus: auth(apiKey, marketStatus, apiBase, headers),
-  optionsContract: auth(apiKey, optionsContract, apiBase, headers),
-  optionsContracts: auth(apiKey, optionsContracts, apiBase, headers),
-  dividends: auth(apiKey, stockDividends, apiBase, headers),
-  stockSplits: auth(apiKey, stockSplits, apiBase, headers),
-  stockFinancials: auth(apiKey, stockFinancials, apiBase, headers),
-  tickerDetails: auth(apiKey, tickerDetails, apiBase, headers),
-  tickerNews: auth(apiKey, tickerNews, apiBase, headers),
-  tickers: auth(apiKey, tickers, apiBase, headers),
-  tickerTypes: auth(apiKey, tickerTypes, apiBase, headers),
-});
-
+  options?: IRequestOptions
+): IReferenceClient => {
+const get = getWithGlobals(apiKey, apiBase, options);
+    
+  return ({
+    conditions: (...args) => conditions(get, ...args),
+    exchanges: (...args) => exchanges(get, ...args),
+    marketHolidays: (...args) => marketHolidays(get, ...args),
+    marketStatus: (...args) => marketStatus(get, ...args),
+    optionsContract: (...args) => optionsContract(get, ...args),
+    optionsContracts: (...args) => optionsContracts(get, ...args),
+    dividends: (...args) => stockDividends(get, ...args),
+    stockSplits: (...args) => stockSplits(get, ...args),
+    stockFinancials: (...args) => stockFinancials(get, ...args),
+    tickerDetails: (...args) => tickerDetails(get, ...args),
+    tickerNews: (...args) => tickerNews(get, ...args),
+    tickers: (...args) => tickers(get, ...args),
+    tickerTypes: (...args) => tickerTypes(get, ...args),
+  });
+}
 export default referenceClient;

@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_ticks_stocks_nbbo__ticker___date
 
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ITradesQuotesQuery } from "./trades";
 
 export interface IQuotesInfo {
@@ -27,8 +27,8 @@ export interface IQuotes {
 }
 
 export const quotes = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   stockTicker: string,
-  query?: ITradesQuotesQuery
-): Promise<IQuotes> => get(`/v3/quotes/${stockTicker}`, apiKey, apiBase, query);
+  query?: ITradesQuotesQuery,
+  options?: IRequestOptions
+): Promise<IQuotes> => get(`/v3/quotes/${stockTicker}`, query, options);

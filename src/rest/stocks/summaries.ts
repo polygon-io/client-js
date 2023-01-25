@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/launchpad/get_v1_summaries
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IBranding {
     icon_url: string;
@@ -54,15 +54,12 @@ export interface ISummaries {
 }
 
 export const summaries = async (
-  apikey: string,
-  apiBase: string,
+  get: IGet,
   query?: ISummariesQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<ISummaries> =>
   get(
     `/v1/summaries`,
-    apikey,
-    apiBase,
     query,
-    headers
+    options
   );

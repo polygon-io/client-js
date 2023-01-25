@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/stocks/get_v2_reference_dividends__stocksTicker
 
-import { get, IPolygonQuery, IHeaders } from "../transport/request";
+import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
 export interface IDividend {
   cash_amount: number;
@@ -65,9 +65,8 @@ export interface IDividendsQuery extends IPolygonQuery {
 }
 
 export const stockDividends = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   query?: IDividendsQuery,
-  headers?: IHeaders
+  options?: IRequestOptions
 ): Promise<IDividendsResults> =>
-  get(`/v3/reference/dividends`, apiKey, apiBase, query, headers);
+  get(`/v3/reference/dividends`, query, options);

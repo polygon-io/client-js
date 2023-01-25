@@ -1,6 +1,6 @@
 // CF: https://polygon.io/docs/forex/get_v1_historic_forex__from___to___date
 
-import { get } from "../transport/request";
+import { IGet, IRequestOptions } from "../transport/request.js";
 import { ITradesQuotesQuery } from "../stocks/trades";
 
 export interface IForexQuotesInfo {
@@ -19,9 +19,9 @@ export interface IForexQuotes {
 }
 
 export const quotes = async (
-  apiKey: string,
-  apiBase: string,
+  get: IGet,
   fxTicker: string,
-  query?: ITradesQuotesQuery
+  query?: ITradesQuotesQuery,
+  options?: IRequestOptions
 ): Promise<IForexQuotes> =>
-  get(`/v3/quotes/${fxTicker}`, apiKey, apiBase, query);
+  get(`/v3/quotes/${fxTicker}`, query, options);

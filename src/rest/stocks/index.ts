@@ -1,23 +1,23 @@
-import { auth, IHeaders } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IAggsQuery, IAggs, aggregates } from "./aggregates";
+import { IAggsQuery, IAggs, aggregates } from "./aggregates.js";
 import {
   IAggsGroupedDailyQuery,
   IAggsGroupedDaily,
   aggregatesGroupedDaily,
-} from "./aggregatesGroupedDaily";
+} from "./aggregatesGroupedDaily.js";
 import {
   IDailyOpenCloseQuery,
   IDailyOpenClose,
   dailyOpenClose,
-} from "./dailyOpenClose";
+} from "./dailyOpenClose.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
   previousClose,
-} from "./previousClose";
-import { ILastQuote, lastQuote } from "./lastQuote";
-import { ILastTrade, lastTrade } from "./lastTrade";
+} from "./previousClose.js";
+import { ILastQuote, lastQuote } from "./lastQuote.js";
+import { ILastTrade, lastTrade } from "./lastTrade.js";
 import {
   ISnapshotAllTickersQuery,
   ISnapshotTickers,
@@ -25,36 +25,36 @@ import {
   snapshotAllTickers,
   snapshotGainersLosers,
   snapshotTicker,
-} from "./snapshots";
-import { IQuotes, quotes } from "./quotes";
-import { ITradesQuotesQuery, ITrades, trades } from "./trades";
-import { ISummaries, ISummariesQuery, summaries } from "./summaries";
-import { ISma, ITechnicalIndicatorsQuery, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { IQuotes, quotes } from "./quotes.js";
+import { ITradesQuotesQuery, ITrades, trades } from "./trades.js";
+import { ISummaries, ISummariesQuery, summaries } from "./summaries.js";
+import { ISma, ITechnicalIndicatorsQuery, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
-export { IAggsQuery, IAggs } from "./aggregates";
+export { IAggsQuery, IAggs } from "./aggregates.js";
 export {
   IAggsGroupedDailyQuery,
   IAggsGroupedDaily,
-} from "./aggregatesGroupedDaily";
-export { IDailyOpenCloseQuery, IDailyOpenClose } from "./dailyOpenClose";
-export { IAggsPreviousCloseQuery, IAggsPreviousClose } from "./previousClose";
-export { ILastQuote } from "./lastQuote";
-export { ILastTrade } from "./lastTrade";
+} from "./aggregatesGroupedDaily.js";
+export { IDailyOpenCloseQuery, IDailyOpenClose } from "./dailyOpenClose.js";
+export { IAggsPreviousCloseQuery, IAggsPreviousClose } from "./previousClose.js";
+export { ILastQuote } from "./lastQuote.js";
+export { ILastTrade } from "./lastTrade.js";
 export {
   ISnapshotAllTickersQuery,
   ISnapshotTickers,
   ISnapshot,
-} from "./snapshots";
-export { IQuotes } from "./quotes";
-export { ITradesQuotesQuery, ITrades } from "./trades";
-export { ISummariesQuery, ISummaries } from './summaries';
-export { ISma, ITechnicalIndicatorsQuery } from './sma';
-export { IEma } from './ema';
-export { IMacd } from './macd';
-export { IRsi } from './rsi';
+} from "./snapshots.js";
+export { IQuotes } from "./quotes.js";
+export { ITradesQuotesQuery, ITrades } from "./trades.js";
+export { ISummariesQuery, ISummaries } from './summaries.js';
+export { ISma, ITechnicalIndicatorsQuery } from './sma.js';
+export { IEma } from './ema.js';
+export { IMacd } from './macd.js';
+export { IRsi } from './rsi.js';
 
 export interface IStocksClient {
   aggregates: (
@@ -64,60 +64,70 @@ export interface IStocksClient {
     from: string,
     to: string,
     query?: IAggsQuery,
-    headers?: IHeaders
+    options?: IRequestOptions
   ) => Promise<IAggs>;
   aggregatesGroupedDaily: (
     date: string,
-    query?: IAggsGroupedDailyQuery
+    query?: IAggsGroupedDailyQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsGroupedDaily>;
-  summaries: (query?: ISummariesQuery, headers?: IHeaders) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, options?: IRequestOptions) => Promise<ISummaries>;
   dailyOpenClose: (
     symbol: string,
     date: string,
-    query?: IDailyOpenCloseQuery
+    query?: IDailyOpenCloseQuery,
+    options?: IRequestOptions
   ) => Promise<IDailyOpenClose>;
-  lastQuote: (symbol: string) => Promise<ILastQuote>;
-  lastTrade: (symbol: string) => Promise<ILastTrade>;
+  lastQuote: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<ILastQuote>;
+  lastTrade: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<ILastTrade>;
   previousClose: (
     ticker: string,
-    query?: IAggsPreviousCloseQuery
+    query?: IAggsPreviousCloseQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsPreviousClose>;
-  quotes: (stockTicker: string, query?: ITradesQuotesQuery) => Promise<IQuotes>;
+  quotes: (stockTicker: string, query?: ITradesQuotesQuery, options?: IRequestOptions) => Promise<IQuotes>;
   snapshotAllTickers: (
-    query?: ISnapshotAllTickersQuery
+    query?: ISnapshotAllTickersQuery,
+    options?: IRequestOptions
   ) => Promise<ISnapshotTickers>;
   snapshotGainersLosers: (
-    direction: "gainers" | "losers"
+    direction: "gainers" | "losers",
+    query?: IPolygonQuery,
+    options?: IRequestOptions
   ) => Promise<ISnapshotTickers>;
-  snapshotTicker: (symbol: string) => Promise<ISnapshot>;
-  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
-  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
-  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
-  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
-  trades: (stockTicker: string, query?: ITradesQuotesQuery) => Promise<ITrades>;
+  snapshotTicker: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<ISnapshot>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
+  trades: (stockTicker: string, query?: ITradesQuotesQuery, options?: IRequestOptions) => Promise<ITrades>;
 }
 
 export const stocksClient = (
   apiKey: string,
   apiBase = "https://api.polygon.io",
-  headers?: IHeaders
-): IStocksClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase, headers),
-  aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
-  summaries: auth(apiKey, summaries, apiBase, headers),
-  dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
-  lastQuote: auth(apiKey, lastQuote, apiBase),
-  lastTrade: auth(apiKey, lastTrade, apiBase),
-  previousClose: auth(apiKey, previousClose, apiBase),
-  quotes: auth(apiKey, quotes, apiBase),
-  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
-  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
-  snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
-  sma: auth(apiKey, sma, apiBase), 
-  ema: auth(apiKey, ema, apiBase), 
-  macd: auth(apiKey, macd, apiBase), 
-  rsi: auth(apiKey, rsi, apiBase), 
-  trades: auth(apiKey, trades, apiBase),
-});
+  options?: IRequestOptions
+): IStocksClient => {
+  const get = getWithGlobals(apiKey, apiBase, options);
+    
+  return ({
+    aggregates: (...args) => aggregates(get, ...args),
+    aggregatesGroupedDaily: (...args) => aggregatesGroupedDaily(get, ...args),
+    summaries: (...args) => summaries(get, ...args),
+    dailyOpenClose: (...args) => dailyOpenClose(get, ...args),
+    lastQuote: (...args) => lastQuote(get, ...args),
+    lastTrade: (...args) => lastTrade(get, ...args),
+    previousClose: (...args) => previousClose(get, ...args),
+    quotes: (...args) => quotes(get, ...args),
+    snapshotAllTickers: (...args) => snapshotAllTickers(get, ...args),
+    snapshotGainersLosers: (...args) => snapshotGainersLosers(get, ...args),
+    snapshotTicker: (...args) => snapshotTicker(get, ...args),
+    sma: (...args) => sma(get, ...args),
+    ema: (...args) => ema(get, ...args),
+    macd: (...args) => macd(get, ...args),
+    rsi: (...args) => rsi(get, ...args),
+    trades: (...args) => trades(get, ...args)
+  })
+}
 
 export default stocksClient;

@@ -1,25 +1,25 @@
-import { auth, IHeaders } from "../transport/request";
+import { getWithGlobals, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
-import { IAggsQuery, IAggs } from "../stocks/aggregates";
+import { IAggsQuery, IAggs } from "../stocks/aggregates.js";
 import {
   IAggsGroupedDaily,
   IAggsGroupedDailyQuery,
-} from "../stocks/aggregatesGroupedDaily";
+} from "../stocks/aggregatesGroupedDaily.js";
 import {
   IAggsPreviousCloseQuery,
   IAggsPreviousClose,
-} from "../stocks/previousClose";
-import { ITradesQuotesQuery } from "../stocks/trades";
-import { aggregates } from "./aggregates";
-import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily";
+} from "../stocks/previousClose.js";
+import { ITradesQuotesQuery } from "../stocks/trades.js";
+import { aggregates } from "./aggregates.js";
+import { aggregatesGroupedDaily } from "./aggregatesGroupedDaily.js";
 import {
   ICryptoDailyOpenCloseQuery,
   ICryptoDailyOpenClose,
   dailyOpenClose,
-} from "./dailyOpenClose";
-import { ICryptoTrade, trades } from "./trades";
-import { ICryptoLastTrade, lastTrade } from "./lastTrade";
-import { previousClose } from "./previousClose";
+} from "./dailyOpenClose.js";
+import { ICryptoTrade, trades } from "./trades.js";
+import { ICryptoLastTrade, lastTrade } from "./lastTrade.js";
+import { previousClose } from "./previousClose.js";
 import {
   ICryptoSnapshotAllTickersQuery,
   ICryptoSnapshotTickers,
@@ -29,14 +29,14 @@ import {
   snapshotGainersLosers,
   snapshotTicker,
   snapshotTickerFullBookL2,
-} from "./snapshots";
-import { ISummaries, ISummariesQuery } from "../stocks/summaries";
-import { summaries } from "./summaries";
-import { ITechnicalIndicatorsQuery } from "../stocks/sma";
-import { ISma, sma } from "./sma";
-import { IEma, ema } from "./ema";
-import { IMacd, macd } from "./macd";
-import { IRsi, rsi } from "./rsi";
+} from "./snapshots.js";
+import { ISummaries, ISummariesQuery } from "../stocks/summaries.js";
+import { summaries } from "./summaries.js";
+import { ITechnicalIndicatorsQuery } from "../stocks/sma.js";
+import { ISma, sma } from "./sma.js";
+import { IEma, ema } from "./ema.js";
+import { IMacd, macd } from "./macd.js";
+import { IRsi, rsi } from "./rsi.js";
 
 export {
   ICryptoDailyOpenCloseQuery,
@@ -64,64 +64,74 @@ export interface ICryptoClient {
     from: string,
     to: string,
     query?: IAggsQuery,
-    headers?: IHeaders
+    options?: IRequestOptions
   ) => Promise<IAggs>;
   aggregatesGroupedDaily: (
     date: string,
-    query?: IAggsGroupedDailyQuery
+    query?: IAggsGroupedDailyQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsGroupedDaily>;
-  summaries: (query?: ISummariesQuery, headers?: IHeaders) => Promise<ISummaries>;
+  summaries: (query?: ISummariesQuery, options?: IRequestOptions) => Promise<ISummaries>;
   dailyOpenClose: (
     from: string,
     to: string,
     date: string,
-    query?: ICryptoDailyOpenCloseQuery
+    query?: ICryptoDailyOpenCloseQuery,
+    options?: IRequestOptions
   ) => Promise<ICryptoDailyOpenClose>;
   trades: (
     cryptoTicker: string,
-    query?: ITradesQuotesQuery
+    query?: ITradesQuotesQuery,
+    options?: IRequestOptions
   ) => Promise<ICryptoTrade>;
-  lastTrade: (from: string, to: string) => Promise<ICryptoLastTrade>;
+  lastTrade: (from: string, to: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<ICryptoLastTrade>;
   previousClose: (
     symbol: string,
-    query?: IAggsPreviousCloseQuery
+    query?: IAggsPreviousCloseQuery,
+    options?: IRequestOptions
   ) => Promise<IAggsPreviousClose>;
   snapshotAllTickers: (
-    query?: ICryptoSnapshotAllTickersQuery
+    query?: ICryptoSnapshotAllTickersQuery,
+    options?: IRequestOptions
   ) => Promise<ICryptoSnapshotTickers>;
   snapshotGainersLosers: (
-    direction: "gainers" | "losers"
+    direction: "gainers" | "losers",
+    query?: IPolygonQuery,
+    options?: IRequestOptions
   ) => Promise<ICryptoSnapshotTickers>;
-  snapshotTicker: (symbol: string) => Promise<ICryptoSnapshot>;
+  snapshotTicker: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<ICryptoSnapshot>;
   snapshotTickerFullBookL2: (
-    symbol: string
+    symbol: string, query?: IPolygonQuery, options?: IRequestOptions
   ) => Promise<ICryptoSnapshotFullBookL2>;
-  sma: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<ISma>;
-  ema: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IEma>;
-  macd: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IMacd>;
-  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery) => Promise<IRsi>;
+  sma: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<ISma>;
+  ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
+  macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
+  rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
 }
 
 export const cryptoClient = (
   apiKey,
   apiBase = "https://api.polygon.io",
-  headers?: IHeaders
-): ICryptoClient => ({
-  aggregates: auth(apiKey, aggregates, apiBase, headers),
-  aggregatesGroupedDaily: auth(apiKey, aggregatesGroupedDaily, apiBase),
-  summaries: auth(apiKey, summaries, apiBase, headers),
-  dailyOpenClose: auth(apiKey, dailyOpenClose, apiBase),
-  lastTrade: auth(apiKey, lastTrade, apiBase),
-  trades: auth(apiKey, trades, apiBase),
-  previousClose: auth(apiKey, previousClose, apiBase),
-  snapshotAllTickers: auth(apiKey, snapshotAllTickers, apiBase),
-  snapshotGainersLosers: auth(apiKey, snapshotGainersLosers, apiBase),
-  snapshotTicker: auth(apiKey, snapshotTicker, apiBase),
-  snapshotTickerFullBookL2: auth(apiKey, snapshotTickerFullBookL2, apiBase),
-  sma: auth(apiKey, sma, apiBase), 
-  ema: auth(apiKey, ema, apiBase), 
-  macd: auth(apiKey, macd, apiBase), 
-  rsi: auth(apiKey, rsi, apiBase)
-});
-
+  options?: IRequestOptions
+): ICryptoClient => {
+  const get = getWithGlobals(apiKey, apiBase, options)
+  
+  return ({
+    aggregates: (...args) => aggregates(get, ...args),
+    aggregatesGroupedDaily: (...args) => aggregatesGroupedDaily(get, ...args),
+    summaries: (...args) => summaries(get, ...args),
+    dailyOpenClose: (...args) => dailyOpenClose(get, ...args),
+    lastTrade: (...args) => lastTrade(get, ...args),
+    trades: (...args) => trades(get, ...args),
+    previousClose: (...args) => previousClose(get, ...args),
+    snapshotAllTickers: (...args) => snapshotAllTickers(get, ...args),
+    snapshotGainersLosers: (...args) => snapshotGainersLosers(get, ...args),
+    snapshotTicker: (...args) => snapshotTicker(get, ...args),
+    snapshotTickerFullBookL2: (...args) => snapshotTickerFullBookL2(get, ...args),
+    sma: (...args) => sma(get, ...args),
+    ema: (...args) => ema(get, ...args),
+    macd: (...args) => macd(get, ...args),
+    rsi: (...args) => rsi(get, ...args)
+  });
+}
 export default cryptoClient;
