@@ -2,6 +2,10 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+## Upgrading to Version 7
+
+See the [Release Notes](./CHANGELOG.md) for instructions on upgrading to Version 7.
+
 ## Install
 
 ```bash
