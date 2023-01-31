@@ -1,3 +1,9 @@
+## [7.0.1](https://github.com/polygon-io/client-js/v7.0.0...v7.0.1) (2023-02-01)
+
+### Bug Fixes
+* Add ticker_root, postal_code, and round_lot attributes to the Ticker Details response types
+
+
 ## [7.0.0](https://github.com/polygon-io/client-js/v6.2.0...v7.0.0) (2023-01-25)
 
 > Description
