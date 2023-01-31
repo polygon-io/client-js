@@ -10,6 +10,7 @@ export interface ITickerDetails {
       address1?: string;
       city?: string;
       state?: string;
+      postal_code?: string;
     };
     branding?: {
       icon_url?: string;
@@ -27,11 +28,13 @@ export interface ITickerDetails {
     name?: string;
     phone_number?: string;
     primary_exchange?: string;
+    round_lot?: number;
     share_class_figi?: string;
     share_class_shares_outstanding?: number;
     sic_code?: number;
     sic_description?: string;
     ticker?: string;
+    ticker_root?: string;
     total_employees?: number;
     type?: string;
     weighted_shares_outstanding?: number;
