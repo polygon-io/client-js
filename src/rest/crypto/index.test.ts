@@ -213,7 +213,7 @@ describe("[REST] Crypto", () => {
     fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
     crypto = cryptoClient(mocks.key, mocks.base, mocks.globalOptions);
     return crypto.summaries({ 'ticker.any_of': "X:BTCUSD,X:USDBTC" })
-        .then(function() { throw new Error('function should throw error'); })
-        .catch(function(e) { chai.expect(e).to.be.an.instanceof (Error); })
+      .then(() => { throw new Error('function should throw error'); })
+      .catch((e) => { chai.expect(e).to.be.an.instanceof (Error); })
   });
 });

@@ -175,7 +175,7 @@ describe("[REST] Options", () => {
     fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
     options = optionsClient(mocks.key, mocks.base, mocks.globalOptions);
     return options.summaries({ 'ticker.any_of': "O:Ticker1,O:Ticker2" })
-        .then(function() { throw new Error('function should throw error'); })
-        .catch(function(e) { chai.expect(e).to.be.an.instanceof (Error); })
+      .then(() => { throw new Error('function should throw error'); })
+      .catch((e) => { chai.expect(e).to.be.an.instanceof (Error); })
   });
 });
