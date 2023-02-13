@@ -34,23 +34,27 @@ export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {})
 
   const queryString = stringify(query, { encode: true });
   const url = `${apiBase}${path}?${queryString}`;
-  const response = await fetchModule.fetch(url, {
-    ...globalOptions,
-    ...options,
-    headers: {
-      ...(options.headers || globalOptions.headers || {}),
-      "Authorization": `Bearer ${apiKey}`
+  try {
+    const response = await fetchModule.fetch(url, {
+      ...globalOptions,
+      ...options,
+      headers: {
+        ...(options.headers || globalOptions.headers || {}),
+        "Authorization": `Bearer ${apiKey}`
+      }
+    });
+
+    if (response.status >= 400) {
+      const message = await response.text();
+      throw new Error(message);
     }
-  });
 
-  if (response.status >= 400) {
-    const message = await response.text();
-    throw new Error(message);
+    if (response?.headers?.get('content-type') === 'text/csv') {
+      return response.text();
+    }
+
+    return response.json();
+  } catch (e) {
+    throw new Error(e);
   }
-
-  if (response?.headers?.get('content-type') === 'text/csv') {
-    return response.text();
-  }
-
-  return response.json();
 };

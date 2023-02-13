@@ -196,4 +196,13 @@ describe("[REST] Forex / Currencies", () => {
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
+  it("properly handles promise rejections", async () => {
+    fetchStub?.restore();
+    fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
+    fx = forexClient(mocks.key, mocks.base, mocks.globalOptions);
+    return fx.summaries({ 'ticker.any_of': "C:USDEUR,C:EURAUD" })
+        .then(function() { throw new Error('function should throw error'); })
+        .catch(function(e) { chai.expect(e).to.be.an.instanceof (Error); })
+  });
+
 });

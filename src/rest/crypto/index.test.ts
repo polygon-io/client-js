@@ -207,4 +207,13 @@ describe("[REST] Crypto", () => {
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
+
+  it("properly handles promise rejections", async () => {
+    fetchStub?.restore();
+    fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
+    crypto = cryptoClient(mocks.key, mocks.base, mocks.globalOptions);
+    return crypto.summaries({ 'ticker.any_of': "X:BTCUSD,X:USDBTC" })
+        .then(function() { throw new Error('function should throw error'); })
+        .catch(function(e) { chai.expect(e).to.be.an.instanceof (Error); })
+  });
 });
