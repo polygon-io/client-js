@@ -1,3 +1,13 @@
+## [7.0.2](https://github.com/polygon-io/client-js/v7.0.1...v7.0.2) (2023-02-15)
+
+### Bug Fixes
+* Wrap fetch call in try/catch and bubble up network errors
+
+## [6.2.1](https://github.com/polygon-io/client-js/v6.2.0...v6.2.1) (2023-02-15)
+
+### Bug Fixes
+* Wrap fetch call in try/catch and bubble up network errors
+
 ## [7.0.1](https://github.com/polygon-io/client-js/v7.0.0...v7.0.1) (2023-02-01)
 
 ### Bug Fixes
