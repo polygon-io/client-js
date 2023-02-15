@@ -41,15 +41,18 @@ export const get = async (
   const queryString = stringify(authenticatedQuery, { encode: true });
 
   const url = `${apiBase}${path}?${queryString}`;
+  try {
+    const response = await fetch(url, {
+      headers
+    });
 
-  const response = await fetch(url, {
-    headers
-  });
+    if (response.status >= 400) {
+      const message = await response.text();
+      throw new Error(message);
+    }
 
-  if (response.status >= 400) {
-    const message = await response.text();
-    throw new Error(message);
+    return response.json();
+  } catch (e) {
+    throw new Error(e);
   }
-
-  return response.json();
 };
