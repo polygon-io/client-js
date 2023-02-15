@@ -208,4 +208,13 @@ describe("[REST] Stocks", () => {
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
+
+  it("properly handles promise rejections", async () => {
+    fetchStub?.restore();
+    fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
+    stocks = stocksClient(mocks.key, mocks.base, mocks.globalOptions);
+    return stocks.summaries({ 'ticker.any_of': "AAPL,TSLA" })
+        .then(() => { throw new Error('function should throw error'); })
+        .catch((e) => { chai.expect(e).to.be.an.instanceof (Error); })
+  });
 });
