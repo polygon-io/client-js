@@ -1,3 +1,8 @@
+## [7.0.3](https://github.com/polygon-io/client-js/v7.0.2...v7.0.3) (2023-02-21)
+
+### Bug Fixes
+* Fix grouped daily forex url
+
 ## [7.0.2](https://github.com/polygon-io/client-js/v7.0.1...v7.0.2) (2023-02-15)
 
 ### Bug Fixes
