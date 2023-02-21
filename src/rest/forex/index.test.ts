@@ -54,7 +54,7 @@ describe("[REST] Forex / Currencies", () => {
     await fx.aggregatesGroupedDaily("2019-02-01", mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     getPath(fetchStub.getCalls()[0].args[0]).should.eql(
-      "/v2/aggs/grouped/locale/global/market/forex/2019-02-01"
+      "/v2/aggs/grouped/locale/global/market/fx/2019-02-01"
     );
     fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
