@@ -13,7 +13,7 @@ export const aggregatesGroupedDaily = async (
   options?: IRequestOptions
 ): Promise<IAggsGroupedDaily> =>
   get(
-    `/v2/aggs/grouped/locale/global/market/forex/${date}`,
+    `/v2/aggs/grouped/locale/global/market/fx/${date}`,
     query,
     options
   );
