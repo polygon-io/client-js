@@ -2,6 +2,18 @@
 
 import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 
+export interface IIndicesGroups {
+  s_and_p?: string;
+  societe_generale?: string;
+  msci?: string;
+  ftse_russell?: string;
+  mstar?: string;
+  mstarc?: string;
+  cccy?: string;
+  nasdaq?: string;
+  dow_jones?: string;
+}
+
 export interface IMarketStatus {
   afterhours?: boolean;
   currencies?: {
@@ -14,6 +26,7 @@ export interface IMarketStatus {
     nasdaq?: string;
     otc?: string;
   };
+  indicesGroups?: IIndicesGroups;
   market?: string;
   serverTime?: string;
 }

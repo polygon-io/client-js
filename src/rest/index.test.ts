@@ -20,4 +20,7 @@ describe("[EXPORT] REST Endpoints", () => {
   it("> stocks", () => {
     rest.stocks.should.be.an("object");
   });
+  it("> indices", () => {
+    rest.indices.should.be.an("object");
+  });
 });
