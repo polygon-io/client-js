@@ -46,7 +46,7 @@ export interface IQuoteStockEvent {
   z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
 }
 
-export const getStocksWebsocket = (
+export const getIndicesWebsocket = (
   apiKey: string,
   apiBase = "wss://socket.polygon.io"
 ): websocket.w3cwebsocket => getWsClient(`${apiBase}/indices`, apiKey);
