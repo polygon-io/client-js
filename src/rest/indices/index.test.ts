@@ -70,12 +70,21 @@ describe("[REST] Indices", () => {
 
   it("snapshot index call /v3/indices", async () => {
     setStub({
-      ticker: {
-        day: {},
-        lastTrade: {},
-        lastQuote: {},
-        min: {},
-        prevDay: {},
+      index: {
+        market_status: "open",
+        name: "open",
+        session: {
+          change: -50.01,
+          change_percent: -1.45,
+          close: 3822.39,
+          high: 3834.41,
+          low: 38217.11,
+          open: 3827.38,
+          previous_close: 3812.19
+        },
+        ticker: "I:SPX",
+        type: "Indices",
+        value: 3822.39
       },
     });
     await indices.snapshotTicker("I:SPX", mocks.query, mocks.overrideOptions);

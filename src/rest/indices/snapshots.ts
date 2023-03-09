@@ -24,7 +24,7 @@ export interface IIndexSnapshotInfo {
 export interface IIndexSnapshot {
   status?: string;
   request_id?: string;
-  results?: IIndexSnapshotInfo;
+  index?: IIndexSnapshotInfo;
 }
 
   // CF: https://polygon.io/docs/indices/get_v3_snapshot
