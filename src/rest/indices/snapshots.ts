@@ -1,4 +1,4 @@
-// CF: https://polygon.io/docs/options/get_v3_snapshot_options__underlyingAsset___optionContract
+// CF: https://polygon.io/docs/indices/get_v3_snapshot
 
 import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 

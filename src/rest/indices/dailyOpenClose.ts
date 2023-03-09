@@ -1,4 +1,4 @@
-// CF: https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date
+// CF: https://polygon.io/docs/indices/get_v1_open-close__stocksticker___date
 
 import { IDailyOpenClose, IDailyOpenCloseQuery } from "../stocks/dailyOpenClose.js";
 import { IGet, IRequestOptions } from "../transport/request.js";
