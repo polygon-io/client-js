@@ -68,22 +68,22 @@ describe("[REST] Indices", () => {
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
-  it("snapshot ticker call /v3/indices", async () => {
-    // setStub({
-    //   ticker: {
-    //     day: {},
-    //     lastTrade: {},
-    //     lastQuote: {},
-    //     min: {},
-    //     prevDay: {},
-    //   },
-    // });
-    // await indices.snapshotTicker("AAPL", mocks.query, mocks.overrideOptions);
-    // fetchStub.callCount.should.eql(1);
-    // getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v2/snapshot/locale/us/markets/stocks/tickers/AAPL");
-    // fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
-    // fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
-    // fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
+  it("snapshot index call /v3/indices", async () => {
+    setStub({
+      ticker: {
+        day: {},
+        lastTrade: {},
+        lastQuote: {},
+        min: {},
+        prevDay: {},
+      },
+    });
+    await indices.snapshotIndex(mocks.query, mocks.overrideOptions);
+    fetchStub.callCount.should.eql(1);
+    getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v3/snapshot/indices");
+    fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
+    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
+    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
   it("sma call /v1/indicators/sma/{indexTicker}", async () => {
@@ -122,31 +122,22 @@ describe("[REST] Indices", () => {
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
-  it("trades call /v3/trades/{indexTicker}", async () => {
-    await indices.snapshotTicker("AAPL", mocks.query, mocks.overrideOptions);
-    fetchStub.callCount.should.eql(1);
-    getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v3/trades/AAPL");
-    fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
-    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
-    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
-  });
-
   it("apiKey and apiBase are passed", async () => {
-    await indices.snapshotTicker("AAPL", mocks.query, mocks.overrideOptions);
+    await indices.snapshotIndex(mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[0].indexOf(mocks.base).should.eql(0);
     fetchStub.getCalls()[0].args[1].headers.Authorization.should.eql(`Bearer ${mocks.key}`);
   });
   
   it("global options are applied if query is not passed in", async () => {
-    await indices.snapshotTicker("AAPL");
+    await indices.snapshotIndex();
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.globalOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
   it("all options are applied if query is undefined", async () => {
-    await indices.snapshotTicker("AAPL", undefined, mocks.overrideOptions);
+    await indices.snapshotIndex(undefined, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
@@ -156,7 +147,7 @@ describe("[REST] Indices", () => {
     fetchStub?.restore();
     fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
     indices = indicesClient(mocks.key, mocks.base, mocks.globalOptions);
-    return indices.snapshotTicker("AAPL")
+    return indices.snapshotIndex()
         .then(() => { throw new Error('function should throw error'); })
         .catch((e) => { chai.expect(e).to.be.an.instanceof (Error); })
   });
