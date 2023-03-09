@@ -63,7 +63,7 @@ export interface IIndicesClient {
     query?: IAggsPreviousCloseQuery,
     options?: IRequestOptions
   ) => Promise<IAggsPreviousClose>;
-  snapshotTicker: (query?: IPolygonQuery, options?: IRequestOptions) => Promise<IIndexSnapshot>;
+  snapshotTicker: (symbol: string, query?: IPolygonQuery, options?: IRequestOptions) => Promise<IIndexSnapshot>;
   sma: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<ISma>;
   ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
   macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;

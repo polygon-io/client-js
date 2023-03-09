@@ -30,11 +30,12 @@ export interface IIndexSnapshot {
   // CF: https://polygon.io/docs/indices/get_v3_snapshot
 export const snapshotTicker = async (
   get: IGet,
+  symbol: string,
   query?: IPolygonQuery,
   options?: IRequestOptions
 ): Promise<IIndexSnapshot> =>
   get(
-    `/v3/snapshot/indices`,
+    `/v3/snapshot/indices/${symbol}`,
     query,
     options
   );
