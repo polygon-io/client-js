@@ -28,7 +28,7 @@ export interface IIndexSnapshot {
 }
 
   // CF: https://polygon.io/docs/indices/get_v3_snapshot
-export const snapshotIndex = async (
+export const snapshotTicker = async (
   get: IGet,
   query?: IPolygonQuery,
   options?: IRequestOptions

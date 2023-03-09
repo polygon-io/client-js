@@ -78,7 +78,7 @@ describe("[REST] Indices", () => {
         prevDay: {},
       },
     });
-    await indices.snapshotIndex(mocks.query, mocks.overrideOptions);
+    await indices.snapshotTicker(mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v3/snapshot/indices");
     fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
@@ -123,21 +123,21 @@ describe("[REST] Indices", () => {
   });
 
   it("apiKey and apiBase are passed", async () => {
-    await indices.snapshotIndex(mocks.query, mocks.overrideOptions);
+    await indices.snapshotTicker(mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[0].indexOf(mocks.base).should.eql(0);
     fetchStub.getCalls()[0].args[1].headers.Authorization.should.eql(`Bearer ${mocks.key}`);
   });
   
   it("global options are applied if query is not passed in", async () => {
-    await indices.snapshotIndex();
+    await indices.snapshotTicker();
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.globalOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
   it("all options are applied if query is undefined", async () => {
-    await indices.snapshotIndex(undefined, mocks.overrideOptions);
+    await indices.snapshotTicker(undefined, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
@@ -147,7 +147,7 @@ describe("[REST] Indices", () => {
     fetchStub?.restore();
     fetchStub = sandbox.stub(fetchModule, 'fetch').rejects('Error Message')
     indices = indicesClient(mocks.key, mocks.base, mocks.globalOptions);
-    return indices.snapshotIndex()
+    return indices.snapshotTicker()
         .then(() => { throw new Error('function should throw error'); })
         .catch((e) => { chai.expect(e).to.be.an.instanceof (Error); })
   });

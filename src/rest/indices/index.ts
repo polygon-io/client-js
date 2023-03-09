@@ -13,7 +13,7 @@ import {
 } from "../stocks/previousClose.js";
 import {
   IIndexSnapshot,
-  snapshotIndex
+  snapshotTicker
 } from "../indices/snapshots.js";
 import { ISma, ITechnicalIndicatorsQuery, sma } from "../stocks/sma.js";
 import { IEma, ema } from "../stocks/ema.js";
@@ -63,7 +63,7 @@ export interface IIndicesClient {
     query?: IAggsPreviousCloseQuery,
     options?: IRequestOptions
   ) => Promise<IAggsPreviousClose>;
-  snapshotIndex: (query?: IPolygonQuery, options?: IRequestOptions) => Promise<IIndexSnapshot>;
+  snapshotTicker: (query?: IPolygonQuery, options?: IRequestOptions) => Promise<IIndexSnapshot>;
   sma: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<ISma>;
   ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
   macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
@@ -81,7 +81,7 @@ export const indicesClient = (
     aggregates: (...args) => aggregates(get, ...args),
     dailyOpenClose: (...args) => dailyOpenClose(get, ...args),
     previousClose: (...args) => previousClose(get, ...args),
-    snapshotIndex: (...args) => snapshotIndex(get, ...args),
+    snapshotTicker: (...args) => snapshotTicker(get, ...args),
     sma: (...args) => sma(get, ...args),
     ema: (...args) => ema(get, ...args),
     macd: (...args) => macd(get, ...args),
