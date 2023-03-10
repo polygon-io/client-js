@@ -27,7 +27,7 @@ export interface IIndexSnapshot {
   index?: IIndexSnapshotInfo;
 }
 
-  // CF: https://polygon.io/docs/indices/get_v3_snapshot
+// CF: https://polygon.io/docs/indices/get_v3_snapshot
 export const snapshotTicker = async (
   get: IGet,
   symbol: string,
