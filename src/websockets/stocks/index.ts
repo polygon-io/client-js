@@ -1,5 +1,5 @@
 import { getWsClient } from "../transport/index.js";
-import * as websocket from "websocket";
+import { WebSocket } from 'ws'
 
 // Stocks Aggregate:
 export interface IAggregateStockEvent {
@@ -49,4 +49,4 @@ export interface IQuoteStockEvent {
 export const getStocksWebsocket = (
   apiKey: string,
   apiBase = "wss://socket.polygon.io"
-): websocket.w3cwebsocket => getWsClient(`${apiBase}/stocks`, apiKey);
+): WebSocket => getWsClient(`${apiBase}/stocks`, apiKey);

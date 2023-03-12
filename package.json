@@ -45,7 +45,7 @@
   "dependencies": {
     "cross-fetch": "^3.1.4",
     "query-string": "^7.0.1",
-    "websocket": "^1.0.34"
+    "ws": "^8.13.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.22",
@@ -53,6 +53,7 @@
     "@types/node": "^16.11.11",
     "@types/sinon": "^10.0.6",
     "@types/websocket": "^1.0.4",
+    "@types/ws": "^8.5.4",
     "chai": "^4.3.4",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",

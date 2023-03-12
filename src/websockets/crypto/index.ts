@@ -1,4 +1,4 @@
-import * as websocket from "websocket";
+import { WebSocket } from 'ws'
 import { getWsClient } from "../transport/index.js";
 
 // Crypto AGGREGATE:
@@ -54,4 +54,4 @@ export interface ILevel2CryptoEvent {
 export const getCryptoWebsocket = (
   apiKey: string,
   apiBase = "wss://socket.polygon.io"
-): websocket.w3cwebsocket => getWsClient(`${apiBase}/crypto`, apiKey);
+): WebSocket => getWsClient(`${apiBase}/crypto`, apiKey);

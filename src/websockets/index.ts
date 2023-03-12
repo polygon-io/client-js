@@ -1,4 +1,4 @@
-import * as websocket from "websocket";
+import { WebSocket } from 'ws'
 import { getCryptoWebsocket } from "./crypto/index.js";
 import { getForexWebsocket } from "./forex/index.js";
 import { getOptionsWebsocket } from "./options/index.js";
@@ -9,10 +9,10 @@ export * from "./stocks/index.js";
 export * from "./crypto/index.js";
 
 export interface IWebsocketClient {
-  crypto: () => websocket.w3cwebsocket;
-  forex: () => websocket.w3cwebsocket;
-  options: () => websocket.w3cwebsocket;
-  stocks: () => websocket.w3cwebsocket;
+  crypto: () => WebSocket;
+  forex: () => WebSocket;
+  options: () => WebSocket;
+  stocks: () => WebSocket;
 }
 
 export const websocketClient = (
