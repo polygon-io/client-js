@@ -1,3 +1,7 @@
+## [7.1.0](https://github.com/polygon-io/client-js/compare/v7.0.3...v7.1.0) (2023-03-13)
+### New Feature
+* Indices
+
 ## [7.0.3](https://github.com/polygon-io/client-js/v7.0.2...v7.0.3) (2023-02-21)
 
 ### Bug Fixes
