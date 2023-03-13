@@ -89,7 +89,7 @@ describe("[REST] Indices", () => {
     });
     await indices.snapshotTicker(mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
-    getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v3/snapshot/indices/I:SPX");
+    getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v3/snapshot/indices/");
     fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
