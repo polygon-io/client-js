@@ -38,6 +38,7 @@ export interface ITickerDetails {
     total_employees?: number;
     type?: string;
     weighted_shares_outstanding?: number;
+    source_feed?: string;
   };
   status?: string;
 }

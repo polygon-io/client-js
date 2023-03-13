@@ -47,6 +47,7 @@ export interface SnapshotUnderlyingAsset {
   price?: number;
   ticker?: string;
   timeframe?: string;
+  value?: number;
 }
 
 export interface SnapshotInfo {
