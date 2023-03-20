@@ -27,7 +27,7 @@ export interface IStocksFinancial {
   fiscal_period: string;
   fiscal_year: string;
   source_filing_file_url: string;
-  source_filling_url: string;
+  source_filing_url: string;
   start_date: string;
 }
 
@@ -52,11 +52,11 @@ export interface IStockFinancialQuery extends IPolygonQuery {
   "company_name.gt"?: string;
   "company_name.gte"?: string;
   sic?: string;
-  filling_date?: string;
-  "filling_date.lt"?: string;
-  "filling_date.lte"?: string;
-  "filling_date.gt"?: string;
-  "filling_date.gte"?: string;
+  filing_date?: string;
+  "filing_date.lt"?: string;
+  "filing_date.lte"?: string;
+  "filing_date.gt"?: string;
+  "filing_date.gte"?: string;
   period_of_report_date?: string;
   "period_of_report_date.lt"?: string;
   "period_of_report_date.lte"?: string;
@@ -66,7 +66,7 @@ export interface IStockFinancialQuery extends IPolygonQuery {
   included_sources?: "true" | "false";
   order?: "asc" | "desc";
   limit?: number;
-  sort?: "filling_date" | "period_of_report_date";
+  sort?: "filing_date" | "period_of_report_date";
 }
 
 export const stockFinancials = async (
