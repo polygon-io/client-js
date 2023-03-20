@@ -1,3 +1,9 @@
+## [7.1.1](https://github.com/polygon-io/client-js/v7.0.1...v7.1.1) (2023-03-20)
+
+### Bug Fixes
+* Fix misspelled filling_url to filing_url
+* Preserve JSON errors returned from the server
+
 ## [7.1.0](https://github.com/polygon-io/client-js/compare/v7.0.3...v7.1.0) (2023-03-13)
 ### New Feature
 * Indices
