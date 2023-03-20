@@ -22,6 +22,18 @@ export const auth =
   (...args) =>
     func(apiKey, apiBase, ...args, headers = {});
 
+export type IStructuredError = InstanceType<typeof StructuredError>;
+
+class StructuredError extends Error {
+  status: string;
+  request_id: string;
+  constructor(message: string, status: string = '', requestId: string = '') {
+      super(message);
+      this.status = status;
+      this.request_id = requestId;
+  }
+}
+
 export const get = async (
   path: string,
   apiKey: string,
@@ -47,12 +59,21 @@ export const get = async (
     });
 
     if (response.status >= 400) {
-      const message = await response.text();
-      throw new Error(message);
+      const rawMessage = await response.text();
+      let error;
+      try {
+        // first try parsing JSON from the response
+        const json = JSON.parse(rawMessage);
+        error = new StructuredError(json.message, json.status, json.request_id);
+      } catch (e) {
+        // default to sending a string error message
+        error = new Error(rawMessage);
+      }
+      throw error;
     }
 
     return response.json();
   } catch (e) {
-    throw new Error(e);
+    throw e;
   }
 };
