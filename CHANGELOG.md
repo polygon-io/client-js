@@ -1,3 +1,7 @@
+## [7.2.0](https://github.com/polygon-io/client-js/compare/v7.1.1...v7.2.0) (2023-04-07)
+### New Feature
+* Support Dual Module Formats so that this package can be used with CommonJS 
+
 ## [7.1.1](https://github.com/polygon-io/client-js/v7.0.1...v7.1.1) (2023-03-20)
 
 ### Bug Fixes
