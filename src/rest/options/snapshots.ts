@@ -41,7 +41,7 @@ export interface SnapshotLastQuote {
   timeframe?: number;
 }
 
-export type SnapshotLastTrade = {
+export interface SnapshotLastTrade {
   conditions: number[];
   exchange: number;
   price: number;
