@@ -1,15 +1,19 @@
 {
   "name": "@polygon.io/client-js",
-  "version": "7.1.1",
+  "version": "7.2.0",
   "description": "Isomorphic Javascript client for Polygon.io Stocks, Forex, and Crypto APIs",
-  "main": "lib/main.js",
-  "types": "lib/main.d.ts",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "type": "module",
+  "exports": {
+    "import": "./dist/main.js",
+    "require": "./dist/main.cjs"
+  },
   "scripts": {
     "test": "mocha",
     "test:watch": "mocha --watch",
     "format": "prettier --write '**/*.ts'",
-    "build": "rm -rf ./lib && ./node_modules/.bin/tsc",
+    "build": "rm -rf ./dist && tsup src/main.ts --dts --format cjs,esm --minify",
     "generate-doc": "typedoc src/main.ts"
   },
   "repository": {
@@ -60,6 +64,7 @@
     "prettier": "^2.5.1",
     "sinon": "^12.0.1",
     "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
     "typedoc": "^0.22.10",
     "typescript": "^4.5.2"
   },
@@ -75,7 +80,7 @@
     ]
   },
   "workspaces": [
-    "./lib/*",
+    "./dist/*",
     "./sandbox"
   ],
   "engines": {
