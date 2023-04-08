@@ -42,12 +42,12 @@ export interface SnapshotLastQuote {
 }
 
 export type SnapshotLastTrade = {
-  conditions: number[]
-  exchange: number
-  price: number
-  sip_timestamp: number
-  size: number
-  timeframe: string
+  conditions: number[];
+  exchange: number;
+  price: number;
+  sip_timestamp: number;
+  size: number;
+  timeframe: string;
 }
 
 export interface SnapshotUnderlyingAsset {
