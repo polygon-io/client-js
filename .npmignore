@@ -2,3 +2,7 @@
 /websocket_example*
 /.circleci*
 tsconfig.json
+/examples
+CHANGELOG.md
+README.md
+.mocharc
