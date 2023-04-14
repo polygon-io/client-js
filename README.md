@@ -1,68 +1,78 @@
-# [polygon.io](https://polygon.io)
+# Polygon JS Client
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## Upgrading to Version 7
+The official JS client library for the [Polygon](https://polygon.io/) REST and WebSocket API. Explore the [REST API](https://polygon.io/docs/stocks/getting-started) documentation and over 100+ example [code snippets](./examples/).
 
-See the [Release Notes](./CHANGELOG.md) for instructions on upgrading to Version 7.
+Please see the [Release Notes](./CHANGELOG.md) for instructions on upgrading. Also, to generate the package documentation please run `npm run generate-doc`.
 
-## Install
+## Getting the client
+
+To get started, you'll need to install the client library:
 
 ```bash
 npm install --save @polygon.io/client-js
 ```
 
-## usage
+Next, create a new client with your [API key](https://polygon.io/dashboard/signup).
 
-### Authentication
-
-- call the desired client with your api key to initialize it
-
-```typescript
-import { polygonClient, restClient, websocketClient } from "@polygon.io/client-js";
+```javascript
+const { restClient } = require('@polygon.io/client-js');
 const rest = restClient("API KEY");
-
-// you can use the api now
-
-rest.forex
-  .previousClose("C:EURUSD")
-  .then(/* your success handler */)
-  .catch(/* your error handler*/);
 ```
 
-### [REST API](https://polygon.io/docs/stocks/getting-started)
+## Using the client
 
-- import the rest submodule
+After creating the client, making calls to the Polygon API is easy. For example, here's how to get ticker details:
 
-```typescript
-import { restClient } from "@polygon.io/client-js";
-
-const rest = restClient("API KEY");
-
-rest.forex.previousClose("C:EURUSD").then(/* your success handler */);
+```javascript
+rest.reference.tickerDetails("AAPL").then((data) => {
+	console.log(data);
+}).catch(e => {
+	console.error('An error happened:', e);
+});
 ```
 
-- import a specific submodule
+Or, maybe you want to get the last trades or quotes for a ticker:
 
-```typescript
-import { referenceClient } from "@polygon.io/client-js";
+```javascript
+// last trade
+rest.stocks.lastTrade("AAPL").then((data) => {
+	console.log(data);
+}).catch(e => {
+	console.error('An error happened:', e);
+});
 
-const reference = referenceClient("API KEY");
-
-reference.tickers().then(/* your success handler */);
-reference.conditions({ asset_class: 'stocks', data_type: 'trades', sort: 'id' }).then(/* your success handler */)
+// last quote (NBBO)
+rest.stocks.lastQuote("AAPL").then((data) => {
+	console.log(data);
+}).catch(e => {
+	console.error('An error happened:', e);
+});
 ```
 
+Finally, maybe you want a market-wide snapshot of all tickers:
 
-#### [For Launchpad Examples and Usage, see Polygon Launchpad Examples](examples/rest/launchpad/README.md)
+```javascript
+rest.stocks.snapshotAllTickers().then((data) => {
+	console.log(data);
+}).catch(e => {
+	console.error('An error happened:', e);
+});
+```
 
-### [Websocket](https://polygon.io/docs/stocks/ws_getting-started)
+See [full examples](./examples/rest/) for more details on how to use this client effectively.
 
-You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
+## Launchpad Usage
 
-```typescript
+Users of the Launchpad product will need to pass in certain headers in order to make API requests. Example can be found [here](./examples/rest/launchpad/README.md).
+
+## WebSocket Client
+
+Import the [Websocket](https://polygon.io/docs/stocks/ws_getting-started) client and models packages to get started. You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
+
+```javascript
 import { websocketClient } from "@polygon.io/client-js";
-
 const stocksWS = websocketClient("API KEY").stocks();
 
 stocksWS.onmessage = ({data}) => {
@@ -82,11 +92,8 @@ stocksWS.onmessage = ({data}) => {
 
 stocksWS.send({ action: "subscribe", params: "T.MSFT" });
 ```
+See [full examples](./examples/websocket/) for more details on how to use this client effectively.
 
-### documentation
+## Contributing
 
-- Generate the package documentation
-
-```bash
-npm run generate-doc
-```
+If you found a bug or have an idea for a new feature, please first discuss it with us by [submitting a new issue](https://github.com/polygon-io/client-js/issues/new/choose). We will respond to issues within at most 3 weeks. We're also open to volunteers if you want to submit a PR for any open issues but please discuss it with us beforehand. PRs that aren't linked to an existing issue or discussed with us ahead of time will generally be declined. If you have more general feedback or want to discuss using this client with other users, feel free to reach out on our [Slack channel](https://polygon-io.slack.com/archives/C03FCSBSAFL).
