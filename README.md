@@ -2,9 +2,7 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-The official JS client library for the [Polygon](https://polygon.io/) REST and WebSocket API. Explore the [REST API](https://polygon.io/docs/stocks/getting-started) documentation and over 100+ example [code snippets](./examples/).
-
-Please see the [Release Notes](./CHANGELOG.md) for instructions on upgrading. Also, to generate the package documentation please run `npm run generate-doc`.
+The official JS client library for the [Polygon](https://polygon.io/) REST and WebSocket API. Explore the [REST API](https://polygon.io/docs/stocks/getting-started) documentation and many example [code snippets](./examples/). Please see the [Release Notes](./CHANGELOG.md) for instructions on upgrading. To generate the package documentation please run `npm run generate-doc`.
 
 ## Getting the client
 
@@ -23,10 +21,10 @@ const rest = restClient("API KEY");
 
 ## Using the client
 
-After creating the client, making calls to the Polygon API is easy. For example, here's how to get ticker details:
+After creating the client, making calls to the Polygon API is easy. For example, here's how to get aggregates (bars):
 
 ```javascript
-rest.reference.tickerDetails("AAPL").then((data) => {
+rest.stocks.aggregates("AAPL", 1, "day", "2023-01-01", "2023-04-14").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
