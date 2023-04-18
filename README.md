@@ -2,7 +2,9 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-The official JS client library for the [Polygon](https://polygon.io/) REST and WebSocket API. Explore the [REST API](https://polygon.io/docs/stocks/getting-started) documentation and many example [code snippets](./examples/). Please see the [Release Notes](./CHANGELOG.md) for instructions on upgrading. To generate the package documentation please run `npm run generate-doc`.
+Welcome to the official JS client library for the [Polygon](https://polygon.io/) REST and WebSocket API. To get started, please see the [Getting Started](https://polygon.io/docs/stocks/getting-started) section in our documentation, view the [examples](./examples/) directory for code snippets, or the [blog post](https://polygon.io/blog/javascript-stock-market-data/) with video tutorials to learn more. To generate the package documentation please run `npm run generate-doc`.
+
+For upgrade instructions please see the [Release Notes](./CHANGELOG.md).
 
 ## Getting the client
 
