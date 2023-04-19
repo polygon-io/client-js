@@ -41,6 +41,15 @@ export interface SnapshotLastQuote {
   timeframe?: number;
 }
 
+export interface SnapshotLastTrade {
+  conditions?: number[];
+  exchange?: number;
+  price?: number;
+  sip_timestamp?: number;
+  size?: number;
+  timeframe?: string;
+}
+
 export interface SnapshotUnderlyingAsset {
   change_to_break_even?: number;
   last_updated?: number;
@@ -57,6 +66,7 @@ export interface SnapshotInfo {
   greeks?: SnapshotGreeks;
   implied_volatility?: number;
   last_quote?: SnapshotLastQuote;
+  last_trade?: SnapshotLastTrade;
   open_interest?: number;
   underlying_asset?: SnapshotUnderlyingAsset;
 }
