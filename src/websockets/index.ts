@@ -1,7 +1,7 @@
 import * as websocket from "websocket";
 import { getCryptoWebsocket } from "./crypto/index.js";
 import { getForexWebsocket } from "./forex/index.js";
-import { getIndicesWebsocket } from "./indices/index.js"
+import { getIndicesWebsocket } from "./indices/index.js";
 import { getOptionsWebsocket } from "./options/index.js";
 import { getStocksWebsocket } from "./stocks/index.js";
 
@@ -9,6 +9,7 @@ export * from "./forex/index.js";
 export * from "./indices/index.js";
 export * from "./stocks/index.js";
 export * from "./crypto/index.js";
+export * from "./options/index.js";
 
 export interface IWebsocketClient {
   crypto: () => websocket.w3cwebsocket;
