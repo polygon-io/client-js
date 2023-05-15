@@ -1,3 +1,17 @@
+## [7.2.3](https://github.com/polygon-io/client-js/compare/v7.2.2...v7.2.3) (2023-05-15)
+### Bug Fixes
+* Fix typing issue with optional headers Launchpad Typescript definitions
+* Export types from requests file
+* Make Launchpad Headers optional to support metered product
+
+## [7.2.2](https://github.com/polygon-io/client-js/compare/v7.2.1...v7.2.2) (2023-04-19)
+### Bug Fixes
+* Remove examples and unneccesary files from npm package
+
+## [7.2.1](https://github.com/polygon-io/client-js/compare/v7.2.0...v7.2.1) (2023-04-12)
+### Bug Fixes
+* Update snapshot response type to reflect recent additions
+
 ## [7.2.0](https://github.com/polygon-io/client-js/compare/v7.1.1...v7.2.0) (2023-04-07)
 ### New Feature
 * Support Dual Module Formats so that this package can be used with CommonJS 
