@@ -5,15 +5,15 @@ export interface IPolygonQuery {
   [key: string]: string | number | boolean | undefined;
 }
 
-export interface IPolygonEdgeHeaders extends Record<string, string> {
-   'X-Polygon-Edge-ID': string;
-   'X-Polygon-Edge-IP-Address': string;
+export interface IPolygonEdgeHeaders extends Partial<Record<string, string>> {
+   'X-Polygon-Edge-ID'?: string;
+   'X-Polygon-Edge-IP-Address'?: string;
    'X-Polygon-Edge-User-Agent'?: string;
 }
 
-export type IHeaders = IPolygonEdgeHeaders | Record<string, string>
+export type IHeaders = IPolygonEdgeHeaders | HeadersInit
 
-export interface IRequestInit extends RequestInit {
+export interface IRequestInit extends Omit<RequestInit, 'headers'> {
   headers?: IHeaders
 }
 
