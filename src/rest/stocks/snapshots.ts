@@ -43,6 +43,8 @@ export interface SnapshotPrevDay {
   o?: number;
   v?: number;
   vw?: number;
+  t?: number;
+  n?: number;
 }
 
 export interface SnapshotInfo {
