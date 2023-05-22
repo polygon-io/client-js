@@ -21,6 +21,8 @@ export interface SnapshotMin {
   l?: number;
   o?: number;
   v?: number;
+  t?: number;
+  n?: number;
 }
 
 export interface SnapshotPrevDay {
