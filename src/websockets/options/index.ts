@@ -27,7 +27,21 @@ export interface ITradeOptionsEvent {
   s: number; // Trade Size
   c: number[]; // Trade Conditions
   t: number; // Trade Timestamp ( Unix MS )
+  q: number; // Sequence Number ( The sequence in which events ocurred )
 }
+
+export type IQuoteOptionsEvent = {
+  ev: string; // Event Type
+  sym: string; // Symbol Ticker
+  bx: number; // Bid Exchange ID
+  ax: number; // Ask Exchange ID
+  bp: number; // Bid Price
+  ap: number; // Ask Price
+  bs: number; // Bid Size
+  as: number; // Ask size
+  t: number; // Quote Timestamp ( Unix MS )
+  q: number; // Sequence Number ( The sequence in which events ocurred )
+};
 
 export const getOptionsWebsocket = (
   apiKey: string,
