@@ -1,9 +1,7 @@
-//const { restClient } = require('@polygon.io/client-js');
-import { restClient } from '@polygon.io/client-js';
+const { restClient } = require('@polygon.io/client-js');
+const rest = restClient("API KEY", "https://api.polygon.io");
 
-const rest = restClient("RBJ0Ht1tFlIvWS8whTB6R6CAEl0bY5fT", "https://api.polygon.io");
-
-// https://polygon.io/docs/indices/get_v3_snapshot_indices
+// https://polygon.io/docs/stocks/get_v3_snapshot
 rest.reference.universalSnapshot({ "ticker.any_of": "NCLH,O:SPY250321C00380000,C:EURUSD,X:BTCUSD,I:SPX" }).then((data) => {
 	console.log(data);
 }).catch(e => {
