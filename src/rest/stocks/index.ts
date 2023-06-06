@@ -33,6 +33,7 @@ import { ISma, ITechnicalIndicatorsQuery, sma } from "./sma.js";
 import { IEma, ema } from "./ema.js";
 import { IMacd, macd } from "./macd.js";
 import { IRsi, rsi } from "./rsi.js";
+import { IUniversalSnapshot, IUniversalSnapshotQuery, universalSnapshot } from "../universal/universalSnapshot.js";
 
 export { IAggsQuery, IAggs } from "./aggregates.js";
 export {
@@ -55,6 +56,7 @@ export { ISma, ITechnicalIndicatorsQuery } from './sma.js';
 export { IEma } from './ema.js';
 export { IMacd } from './macd.js';
 export { IRsi } from './rsi.js';
+export { IUniversalSnapshot, IUniversalSnapshotQuery } from "../universal/universalSnapshot.js";
 
 export interface IStocksClient {
   aggregates: (
@@ -101,6 +103,7 @@ export interface IStocksClient {
   macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
   rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
   trades: (stockTicker: string, query?: ITradesQuotesQuery, options?: IRequestOptions) => Promise<ITrades>;
+  universalSnapshot: (query?: IUniversalSnapshotQuery, options?: IRequestOptions) => Promise<IUniversalSnapshot>;
 }
 
 export const stocksClient = (
@@ -126,7 +129,8 @@ export const stocksClient = (
     ema: (...args) => ema(get, ...args),
     macd: (...args) => macd(get, ...args),
     rsi: (...args) => rsi(get, ...args),
-    trades: (...args) => trades(get, ...args)
+    trades: (...args) => trades(get, ...args),
+    universalSnapshot: (...args) => universalSnapshot(get, ...args)
   })
 }
 

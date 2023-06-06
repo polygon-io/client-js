@@ -21,7 +21,6 @@ import { ITickerDetails, tickerDetails } from "./tickerDetails.js";
 import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews.js";
 import { ITickers, ITickersQuery, tickers } from "./tickers.js";
 import { ITickerTypes, ITickerTypesQuery, tickerTypes } from "./tickerTypes.js";
-import { IUniversalSnapshot, IUniversalSnapshotQuery, universalSnapshot } from "./universalSnapshot.js";
 
 export { IConditions } from "./conditions.js";
 export { IExchanges } from "./exchanges.js";
@@ -34,7 +33,6 @@ export { ITickerDetails } from "./tickerDetails.js";
 export { ITickerNews, ITickerNewsQuery } from "./tickerNews.js";
 export { ITickers, ITickersQuery } from "./tickers.js";
 export { ITickerTypes, ITickerTypesQuery } from "./tickerTypes.js";
-export { IUniversalSnapshot, IUniversalSnapshotQuery } from "./universalSnapshot.js";
 
 export interface IReferenceClient {
   conditions: (query?: IConditionsQuery, options?: IRequestOptions) => Promise<IConditions>;
@@ -57,7 +55,6 @@ export interface IReferenceClient {
   tickerNews: (query?: ITickerNewsQuery, options?: IRequestOptions) => Promise<ITickerNews>;
   tickers: (query?: ITickersQuery, options?: IRequestOptions) => Promise<ITickers>;
   tickerTypes: (query?: ITickerTypesQuery, options?: IRequestOptions) => Promise<ITickerTypes>;
-  universalSnapshot: (query?: IUniversalSnapshotQuery, options?: IRequestOptions) => Promise<IUniversalSnapshot>;
 }
 
 export const referenceClient = (
@@ -80,8 +77,7 @@ const get = getWithGlobals(apiKey, apiBase, options);
     tickerDetails: (...args) => tickerDetails(get, ...args),
     tickerNews: (...args) => tickerNews(get, ...args),
     tickers: (...args) => tickers(get, ...args),
-    tickerTypes: (...args) => tickerTypes(get, ...args),
-    universalSnapshot: (...args) => universalSnapshot(get, ...args),
+    tickerTypes: (...args) => tickerTypes(get, ...args)
   });
 }
 export default referenceClient;

@@ -139,6 +139,16 @@ describe("[REST] Forex / Currencies", () => {
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
   });
 
+  it("snapshot - universal snapshot /v3/snapshot", async () => {
+    const query = {'ticker.any_of': 'NCLH,O:SPY250321C00380000,C:EURUSD,X:BTCUSD,I:SPX'}
+    await fx.universalSnapshot(query, mocks.overrideOptions);
+    fetchStub.callCount.should.eql(1);
+    getPath(fetchStub.getCalls()[0].args[0]).should.eql("/v3/snapshot");
+    fetchStub.getCalls()[0].args[0].indexOf('ticker.any_of').should.be.gt(-1);
+    fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
+    fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);
+  });
+
   it("sma call /v1/indicators/sma/{fxTicker}", async () => {
     await fx.sma("C:EUR-USD", mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
