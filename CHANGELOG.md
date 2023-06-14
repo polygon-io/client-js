@@ -1,3 +1,9 @@
+## [7.2.4](https://github.com/polygon-io/client-js/compare/v7.2.3...v7.2.4) (2023-06-14)
+### Bug Fixes
+* Update snapshot min to support n and t by @justinpolygon in https://github.com/polygon-io/client-js/pull/160
+* Exports and Updates Options WebSocket Event Types by @WilliamConnatser in https://github.com/polygon-io/client-js/pull/156
+* Universal snapshot by @timetraveler328 in https://github.com/polygon-io/client-js/pull/162
+
 ## [7.2.3](https://github.com/polygon-io/client-js/compare/v7.2.2...v7.2.3) (2023-05-15)
 ### Bug Fixes
 * Fix typing issue with optional headers Launchpad Typescript definitions
