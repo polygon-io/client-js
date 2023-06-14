@@ -37,6 +37,7 @@ import { ISma, sma } from "./sma.js";
 import { IEma, ema } from "./ema.js";
 import { IMacd, macd } from "./macd.js";
 import { IRsi, rsi } from "./rsi.js";
+import { IUniversalSnapshot, IUniversalSnapshotQuery, universalSnapshot } from "../universal/universalSnapshot.js";
 
 export {
   ICryptoDailyOpenCloseQuery,
@@ -55,6 +56,7 @@ export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma';
 export { IEma } from '../stocks/ema';
 export { IMacd } from '../stocks/macd';
 export { IRsi } from '../stocks/rsi';
+export { IUniversalSnapshot, IUniversalSnapshotQuery } from "../universal/universalSnapshot.js";
 
 export interface ICryptoClient {
   aggregates: (
@@ -107,6 +109,7 @@ export interface ICryptoClient {
   ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
   macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
   rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
+  universalSnapshot: (query?: IUniversalSnapshotQuery, options?: IRequestOptions) => Promise<IUniversalSnapshot>;
 }
 
 export const cryptoClient = (
@@ -131,7 +134,8 @@ export const cryptoClient = (
     sma: (...args) => sma(get, ...args),
     ema: (...args) => ema(get, ...args),
     macd: (...args) => macd(get, ...args),
-    rsi: (...args) => rsi(get, ...args)
+    rsi: (...args) => rsi(get, ...args),
+    universalSnapshot: (...args) => universalSnapshot(get, ...args)
   });
 }
 export default cryptoClient;

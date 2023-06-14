@@ -29,6 +29,7 @@ import { ISma, sma } from "./sma.js";
 import { IEma, ema } from "./ema.js";
 import { IMacd, macd } from "./macd.js";
 import { IRsi, rsi } from "./rsi.js";
+import { IUniversalSnapshot, IUniversalSnapshotQuery, universalSnapshot } from "../universal/universalSnapshot.js";
 
 export {
   IOptionsDailyOpenCloseQuery,
@@ -49,6 +50,7 @@ export { ISma, ITechnicalIndicatorsQuery } from '../stocks/sma.js';
 export { IEma } from '../stocks/ema.js';
 export { IMacd } from '../stocks/macd.js';
 export { IRsi } from '../stocks/rsi.js';
+export { IUniversalSnapshot, IUniversalSnapshotQuery } from "../universal/universalSnapshot.js";
 
 export interface IOptionsClient {
   aggregates: (
@@ -98,6 +100,7 @@ export interface IOptionsClient {
   ema: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IEma>;
   macd: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IMacd>;
   rsi: (symbol: string, query?: ITechnicalIndicatorsQuery, options?: IRequestOptions) => Promise<IRsi>;
+  universalSnapshot: (query?: IUniversalSnapshotQuery, options?: IRequestOptions) => Promise<IUniversalSnapshot>;
 }
 
 export const optionsClient = (
@@ -120,7 +123,8 @@ export const optionsClient = (
     sma: (...args) => sma(get, ...args),
     ema: (...args) => ema(get, ...args),
     macd: (...args) => macd(get, ...args),
-    rsi: (...args) => rsi(get, ...args)
+    rsi: (...args) => rsi(get, ...args),
+    universalSnapshot: (...args) => universalSnapshot(get, ...args)
   })
 };
 

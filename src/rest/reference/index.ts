@@ -77,7 +77,7 @@ const get = getWithGlobals(apiKey, apiBase, options);
     tickerDetails: (...args) => tickerDetails(get, ...args),
     tickerNews: (...args) => tickerNews(get, ...args),
     tickers: (...args) => tickers(get, ...args),
-    tickerTypes: (...args) => tickerTypes(get, ...args),
+    tickerTypes: (...args) => tickerTypes(get, ...args)
   });
 }
 export default referenceClient;
