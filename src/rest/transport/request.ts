@@ -24,7 +24,7 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
 }
 
 export type IGet = (path: string, query: IPolygonQuery, options: IRequestOptions) => Promise<any>;
-export type ICurriedGet = (apiKey: string, apiBase: string, globalOptions?: IRequestOptions) => IGet;
+export type ICurriedGet = (apiKey: string, apiBase: string, globalOptions?: IRequestOptions & { trace?: boolean }) => IGet;
 export type IStructuredError = InstanceType<typeof StructuredError>;
 
 class StructuredError extends Error {
@@ -37,44 +37,80 @@ class StructuredError extends Error {
   }
 }
 
-export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {}): IGet => 
-  async ( path, query = {}, options = {} ): Promise<any> => {
-  if (!apiKey) {
-    throw new Error("API KEY not configured...");
-  }
+export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {}): IGet =>
+  async (path, query = {}, options = {}): Promise<any> => {
+    if(!apiKey) {
+      throw new Error("API KEY not configured...");
+    }
 
-  const queryString = stringify(query, { encode: true });
-  const url = `${apiBase}${path}?${queryString}`;
-  try {
-    const response = await fetchModule.fetch(url, {
-      ...globalOptions,
-      ...options,
-      headers: {
+    const fetchPage = async (path, query = {}, options: IRequestOptions = {}, allData = []): Promise<any> => {
+      const queryString = stringify(query, {
+        encode: true
+      });
+      const url = `${apiBase}${path}${queryString ? '?' + queryString : ''}`;
+      const headers = {
         ...(options.headers || globalOptions.headers || {}),
         "Authorization": `Bearer ${apiKey}`
       }
-    });
 
-    if (response.status >= 400) {
-      const rawMessage = await response.text();
-      let error;
-      try {
-        // first try parsing JSON from the response
-        const json = JSON.parse(rawMessage);
-        error = new StructuredError(json.message, json.status, json.request_id);
-      } catch (e) {
-        // default to sending a string error message
-        error = new Error(rawMessage);
+      if(globalOptions.trace) {
+        console.log("Request URL: ", url);
+
+        // make a copy of headers so as not to modify the original
+        const printHeaders = {
+          ...headers
+        };
+        if('Authorization' in printHeaders) {
+          printHeaders['Authorization'] = printHeaders['Authorization'].replace(apiKey, 'REDACTED');
+        }
+
+        console.log("Request Headers: ", printHeaders);
       }
-      throw error;
-    }
 
-    if (response?.headers?.get('content-type') === 'text/csv') {
-      return response.text();
-    }
+      try {
+        const response = await fetchModule.fetch(url, {
+          ...globalOptions,
+          ...options,
+          headers: headers
+        });
 
-    return response.json();
-  } catch (e) {
-    throw e;
-  }
-};
+        if(globalOptions.trace) {
+          console.log("Response Headers: ", response.headers);
+        }
+
+        if(response.status >= 400) {
+          const rawMessage = await response.text();
+          let error;
+          try {
+            // first try parsing JSON from the response
+            const json = JSON.parse(rawMessage);
+            error = new StructuredError(json.message, json.status, json.request_id);
+          } catch (e) {
+            // default to sending a string error message
+            error = new Error(rawMessage);
+          }
+          throw error;
+        }
+
+        if(response?.headers?.get('content-type') === 'text/csv') {
+          return response.text();
+        }
+
+        const json = await response.json();
+        const newData = allData.concat(json.results);
+
+        // check if there is a next page and fetch it recursively
+        if(json.next_url) {
+          const nextPath = json.next_url.replace(apiBase, "");
+          return fetchPage(nextPath, {}, options, newData);
+        } else {
+          return newData;
+        }
+
+      } catch (e) {
+        throw e;
+      }
+    };
+
+    return fetchPage(path, query, options);
+  };
