@@ -24,7 +24,13 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
 }
 
 export type IGet = (path: string, query: IPolygonQuery, options: IRequestOptions) => Promise<any>;
-export type ICurriedGet = (apiKey: string, apiBase: string, globalOptions?: IRequestOptions & { trace?: boolean }) => IGet;
+
+export interface IGlobalOptions extends IRequestOptions {
+  trace?: boolean;
+  paginationEnabled?: boolean;
+}
+
+export type ICurriedGet = (apiKey: string, apiBase: string, globalOptions?: IGlobalOptions) => IGet;
 export type IStructuredError = InstanceType<typeof StructuredError>;
 
 class StructuredError extends Error {
@@ -99,8 +105,8 @@ export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {})
         const json = await response.json();
         const newData = allData.concat(json.results);
 
-        // check if there is a next page and fetch it recursively
-        if(json.next_url) {
+        // check if there is a next page, pagination is enabled, and fetch it recursively
+        if(globalOptions.paginationEnabled && json.next_url) {
           const nextPath = json.next_url.replace(apiBase, "");
           return fetchPage(nextPath, {}, options, newData);
         } else {
