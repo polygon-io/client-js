@@ -27,7 +27,7 @@ export type IGet = (path: string, query: IPolygonQuery, options: IRequestOptions
 
 export interface IGlobalOptions extends IRequestOptions {
   trace?: boolean;
-  paginationEnabled?: boolean;
+  pagination?: boolean;
 }
 
 export type ICurriedGet = (apiKey: string, apiBase: string, globalOptions?: IGlobalOptions) => IGet;
@@ -106,7 +106,7 @@ export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {})
         const newData = allData.concat(json.results);
 
         // check if there is a next page, pagination is enabled, and fetch it recursively
-        if(globalOptions.paginationEnabled && json.next_url) {
+        if(globalOptions.pagination && json.next_url) {
           const nextPath = json.next_url.replace(apiBase, "");
           return fetchPage(nextPath, {}, options, newData);
         } else {
