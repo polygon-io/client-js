@@ -11,6 +11,7 @@ export * from "./reference/index.js";
 export * from "./options/index.js";
 export * from "./stocks/index.js";
 export * from "./indices/index.js";
+export * from "./universal/universalSnapshot.js";
 export * from "./transport/request.js"; // ensure types are exported
 
 export interface IRestClient {
