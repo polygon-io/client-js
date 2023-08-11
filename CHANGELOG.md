@@ -1,3 +1,9 @@
+## [7.2.6](https://github.com/polygon-io/client-js/compare/v7.2.5...v7.2.6) (2023-08-11)
+### Bug Fixes
+* Export universal snapshot types
+* Add next_url to Aggregates enpdoints response types
+* Update examples to use import syntax instead of require
+
 ## [7.2.4](https://github.com/polygon-io/client-js/compare/v7.2.3...v7.2.4) (2023-06-14)
 ### Bug Fixes
 * Update snapshot min to support n and t
