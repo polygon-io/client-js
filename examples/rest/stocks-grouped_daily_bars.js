@@ -1,5 +1,5 @@
-const { restClient } = require('@polygon.io/client-js');
-const rest = restClient("API KEY", "https://api.polygon.io");
+import { restClient } from '@polygon.io/client-js';
+const rest = restClient(process.env.POLY_API_KEY);
 
 // https://polygon.io/docs/stocks/get_v2_aggs_grouped_locale_us_market_stocks__date
 rest.stocks.aggregatesGroupedDaily("2023-03-31").then((data) => {

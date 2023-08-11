@@ -18,9 +18,9 @@ const edgeHeaders = {
   'X-Polygon-Edge-User-Agent': useragent
 }
 
-const rest = restClient("API KEY", "https://api.polygon.io");
+const rest = restClient(process.env.POLY_API_KEY);
 rest.forex.previousClose("C:EURUSD", {}, { headers: edgeHeaders }).then(/* your success handler */);
 
-const reference = referenceClient("API KEY", "https://api.polygon.io");
+const reference = referenceClient(process.env.POLY_API_KEY);
 reference.tickers({}, { headers: edgeHeaders }).then(/* your success handler */);
 ```

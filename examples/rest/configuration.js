@@ -1,10 +1,10 @@
-const { restClient } = require('@polygon.io/client-js');
+import { restClient } from '@polygon.io/client-js';
 
 // You can pass global options to fetch to add headers or configure requests
 const globalFetchOptions = {
 	method: 'HEAD'
 }
-const rest = restClient("API KEY", "https://api.polygon.io", globalFetchOptions);
+const rest = restClient(process.env.POLY_API_KEY, "https://api.polygon.io", globalFetchOptions);
 
 // You can also pass options to each individual call, each key will override keys from the options also set globally
 

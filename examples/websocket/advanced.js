@@ -1,7 +1,8 @@
 
-const lodash = require('lodash')
-const WebSocket = require('ws')
-const EventEmitter = require('events').EventEmitter
+import lodash from 'lodash';
+import WebSocket from 'ws';
+import { EventEmitter } from 'events';
+
 const APIKEY = process.env.POLY_API_KEY || 'YOUR_API_KEY'
 
 

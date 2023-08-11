@@ -17,8 +17,8 @@ npm install --save @polygon.io/client-js
 Next, create a new client with your [API key](https://polygon.io/dashboard/signup).
 
 ```javascript
-const { restClient } = require('@polygon.io/client-js');
-const rest = restClient("API KEY");
+import { restClient } from '@polygon.io/client-js';
+const rest = restClient(process.env.POLY_API_KEY);
 ```
 
 ## Using the client
@@ -61,7 +61,8 @@ rest.stocks.snapshotAllTickers().then((data) => {
 });
 ```
 
-See [full examples](./examples/rest/) for more details on how to use this client effectively.
+See [full examples](./examples/rest/) for more details on how to use this client effectively. 
+To run these examples from the command line, first check out this project and run ```npm i``` in the root directory to install dependencies, then run ```POLY_API_KEY=yourAPIKey node examples/rest/crypto-aggregates_bars.js```, replacing yourAPIKey with your Polygon API Key. 
 
 ## Launchpad Usage
 
@@ -73,7 +74,7 @@ Import the [Websocket](https://polygon.io/docs/stocks/ws_getting-started) client
 
 ```javascript
 import { websocketClient } from "@polygon.io/client-js";
-const stocksWS = websocketClient("API KEY").stocks();
+const stocksWS = websocketClient(process.env.POLY_API_KEY).stocks();
 
 stocksWS.onmessage = ({data}) => {
   const [message] = JSON.parse(data);
