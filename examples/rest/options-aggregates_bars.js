@@ -1,5 +1,5 @@
-const { restClient } = require('@polygon.io/client-js');
-const rest = restClient("API KEY", "https://api.polygon.io");
+import { restClient } from '@polygon.io/client-js';
+const rest = restClient(process.env.POLY_API_KEY);
 
 // https://polygon.io/docs/options/get_v2_aggs_ticker__optionsticker__range__multiplier___timespan___from___to
 rest.options.aggregates("O:SPY251219C00650000", 1, "day", "2023-01-09", "2023-01-09").then((data) => {

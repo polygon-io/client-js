@@ -1,4 +1,5 @@
-const WebSocket = require('ws')
+import WebSocket from 'ws';
+
 const APIKEY = process.env.POLY_API_KEY || 'YOUR_API_KEY'
 
 // Connection Type:

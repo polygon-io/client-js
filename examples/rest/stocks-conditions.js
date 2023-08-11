@@ -1,5 +1,5 @@
-const { restClient } = require('@polygon.io/client-js');
-const rest = restClient("API KEY", "https://api.polygon.io");
+import { restClient } from '@polygon.io/client-js';
+const rest = restClient(process.env.POLY_API_KEY);
 
 // https://polygon.io/docs/stocks/get_v3_reference_conditions
 rest.reference.conditions({ asset_class: "stocks", limit: 1000 }).then((data) => {
