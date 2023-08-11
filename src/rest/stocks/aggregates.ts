@@ -28,6 +28,7 @@ export interface IAggs {
   resultsCount?: number;
   status?: string;
   results?: IAggsResults[];
+  next_url?: string;
 }
 
 export const aggregates = async (
