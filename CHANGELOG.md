@@ -1,3 +1,8 @@
+## [7.3.0](https://github.com/polygon-io/client-js/compare/v7.2.6...v7.3.0) (2023-08-11)
+### New Feature
+* Update README with pagination and trace modes
+* Added request tracing and API pagination support
+
 ## [7.2.6](https://github.com/polygon-io/client-js/compare/v7.2.5...v7.2.6) (2023-08-11)
 ### Bug Fixes
 * Export universal snapshot types
