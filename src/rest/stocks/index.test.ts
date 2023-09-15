@@ -38,13 +38,20 @@ describe("[REST] Stocks", () => {
     sandbox.restore();
   });
 
+  it("should have appropriate results", async () => {
+    setStub({ results: [{ o: 1}] });
+    const response = await stocks.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01", mocks.query, mocks.overrideOptions);
+    response.results![0].t?.should.eql(1);
+  });
+
   it("aggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
-    setStub({ results: [] });
-    await stocks.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01", mocks.query, mocks.overrideOptions);
+    setStub({ results: [{ o: 1}] });
+    const response = await stocks.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01", mocks.query, mocks.overrideOptions);
     fetchStub.callCount.should.eql(1);
     getPath(fetchStub.getCalls()[0].args[0]).should.eql(
       "/v2/aggs/ticker/AAPL/range/1/day/2019-01-01/2019-02-01"
     );
+    response.results?.[0].o?.should.eql(1);
     fetchStub.getCalls()[0].args[0].indexOf(mocks.query.query1).should.be.gt(-1);
     fetchStub.getCalls()[0].args[1].referrer.should.eql(mocks.overrideOptions.referrer);
     fetchStub.getCalls()[0].args[1].headers.header1.should.eql(mocks.globalOptions.headers.header1);

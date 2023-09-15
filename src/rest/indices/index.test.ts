@@ -38,6 +38,12 @@ describe("[REST] Indices", () => {
     sandbox.restore();
   });
 
+  it("should have appropriate results", async () => {
+    setStub({ results: [{ o: 1}] });
+    const response = await indices.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01", mocks.query, mocks.overrideOptions);
+    response.results![0].t?.should.eql(1);
+  });
+
   it("aggregates call /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}", async () => {
     setStub({ results: [] });
     await indices.aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01", mocks.query, mocks.overrideOptions);
