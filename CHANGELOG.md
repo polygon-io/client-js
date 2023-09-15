@@ -1,4 +1,11 @@
-## [7.3.0](https://github.com/polygon-io/client-js/compare/v7.2.6...v7.3.0) (2023-08-11)
+## [7.3.1](https://github.com/polygon-io/client-js/compare/v7.3.0...v7.3.1) (2023-09-15)
+### Bug Fixes
+* Fix unintended change to top level response object that returned results array instead of results object
+
+### Other Changes
+* Improved test coverage for response object
+
+## [7.3.0](https://github.com/polygon-io/client-js/compare/v7.2.6...v7.3.0) (2023-09-11)
 ### New Feature
 * Update README with pagination and trace modes
 * Added request tracing and API pagination support
