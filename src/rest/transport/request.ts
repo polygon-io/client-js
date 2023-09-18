@@ -103,14 +103,18 @@ export const getWithGlobals: ICurriedGet = (apiKey, apiBase, globalOptions = {})
         }
 
         const json = await response.json();
-        const newData = allData.concat(json.results);
+        const newData = json.results instanceof Array ? allData.concat(json.results) : allData;
 
-        // check if there is a next page, pagination is enabled, and fetch it recursively
-        if(globalOptions.pagination && json.next_url) {
+        if(globalOptions?.pagination && json.next_url) {
+          // check if there is a next page, pagination is enabled, and fetch it recursively
           const nextPath = json.next_url.replace(apiBase, "");
           return fetchPage(nextPath, {}, options, newData);
+        } else if (globalOptions?.pagination) {
+          // check if there is a next page, pagination is enabled, and fetch it recursively
+          return { ...json, results: newData, count: newData.length, next_url: null }
         } else {
-          return newData;
+          // just return the response
+          return json;
         }
 
       } catch (e) {
