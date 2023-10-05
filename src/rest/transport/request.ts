@@ -17,7 +17,12 @@ export interface IRequestInit extends Omit<RequestInit, 'headers'> {
   headers?: IHeaders
 }
 
-export type IRequestOptions = IRequestInit;
+export interface IGlobalOptions extends IRequestInit {
+  trace?: boolean;
+  pagination?: boolean;
+}
+
+export type IRequestOptions = IGlobalOptions;
 
 export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;
@@ -25,10 +30,7 @@ export interface IPolygonQueryWithCredentials extends IPolygonQuery {
 
 export type IGet = (path: string, query: IPolygonQuery, options: IRequestOptions) => Promise<any>;
 
-export interface IGlobalOptions extends IRequestOptions {
-  trace?: boolean;
-  pagination?: boolean;
-}
+
 
 export type ICurriedGet = (apiKey: string, apiBase: string, globalOptions?: IGlobalOptions) => IGet;
 export type IStructuredError = InstanceType<typeof StructuredError>;
