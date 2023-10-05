@@ -1,3 +1,7 @@
+## [7.3.2](https://github.com/polygon-io/client-js/compare/v7.3.1...v7.3.2) (2023-10-05)
+### Bug Fixes
+* Rearrange request config types so they inherit global options for pagination and trace
+
 ## [7.3.1](https://github.com/polygon-io/client-js/compare/v7.3.0...v7.3.1) (2023-09-15)
 ### Bug Fixes
 * Fix unintended change to top level response object that returned results array instead of results object
