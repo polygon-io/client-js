@@ -1,6 +1,6 @@
 /* 
-		This example uses the ws (https://github.com/websockets/ws) library to connect to the delayed stocks polygon 
-		websocket to subscribe to minute ohlc values for the ticker AAPL.
+	This example uses the ws (https://github.com/websockets/ws) library to connect to the delayed stocks polygon 
+	websocket to subscribe to minute ohlc values for the ticker AAPL.
 */
 
 import WebSocket from 'ws';

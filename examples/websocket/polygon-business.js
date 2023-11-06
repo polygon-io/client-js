@@ -1,8 +1,8 @@
 import { websocketClient } from "@polygon.io/client-js";
 
 /* 
-		This example uses polygon client-js library to connect to the polygon stocks for business 
-		websocket to subscribe to the fair market value channel for the ticker AAPL.
+	This example uses polygon client-js library to connect to the polygon stocks for business 
+	websocket to subscribe to the fair market value channel for the ticker AAPL.
 */
 
 // create a websocket client using the polygon client-js library

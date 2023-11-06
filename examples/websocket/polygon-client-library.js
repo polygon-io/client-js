@@ -1,6 +1,6 @@
 /* 
-		This example uses polygon client-js library to connect to the  delayed stocks polygon 
-		websocket to subscribe to minute ohlc values for the ticker AAPL.
+	This example uses polygon client-js library to connect to the  delayed stocks polygon 
+	websocket to subscribe to minute ohlc values for the ticker AAPL.
 */
 
 import { websocketClient } from "@polygon.io/client-js";
