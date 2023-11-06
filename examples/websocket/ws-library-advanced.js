@@ -7,8 +7,8 @@ const APIKEY = process.env.POLY_API_KEY || 'YOUR_API_KEY'
 
 
 /*
-	This example is similar to the basic example provided, however 
-	in addition it offers reconnection logic, as well as an easier 
+	This example also uses the ws (https://github.com/websockets/ws) library to connect to a websocket, 
+	adding reconnection logic, as well as an easier 
 	way to process each type of messages. We can use the `subscribe`
 	method at any time to subscribe to more channels..
  */
