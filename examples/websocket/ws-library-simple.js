@@ -1,3 +1,8 @@
+/* 
+		This example uses the ws (https://github.com/websockets/ws) library to connect to the delayed stocks polygon 
+		websocket to subscribe to minute ohlc values for the ticker AAPL.
+*/
+
 import WebSocket from 'ws';
 
 const APIKEY = process.env.POLY_API_KEY || 'YOUR_API_KEY'
@@ -16,8 +21,8 @@ ws.on('open', () => {
 	//ws.send(`{"action":"subscribe","params":"C.AUD/USD,C.USD/EUR,C.USD/JPY"}`)
 
 	// aggregates
-	//ws.send(`{"action":"subscribe","params":"AM.*"}`) // min
-	ws.send(`{"action":"subscribe","params":"A.*"}`) // sec
+	ws.send(`{"action":"subscribe","params":"AM.*"}`) // min
+	// ws.send(`{"action":"subscribe","params":"A.*"}`) // sec
 
 	// trades
 	//ws.send(`{"action":"subscribe","params":"T.*"}`)
