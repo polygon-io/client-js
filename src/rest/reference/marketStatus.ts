@@ -5,6 +5,7 @@ import { IGet, IPolygonQuery, IRequestOptions } from "../transport/request.js";
 export interface IIndicesGroups {
   s_and_p?: string;
   societe_generale?: string;
+  cgi?: string;
   msci?: string;
   ftse_russell?: string;
   mstar?: string;
