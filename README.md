@@ -11,7 +11,7 @@ For upgrade instructions please see the [Release Notes](./CHANGELOG.md).
 To get started, you'll need to install the client library:
 
 ```bash
-npm install --save @polygon.io/client-js
+npm install --save `@polygon.io/client-js`
 ```
 
 Next, create a new client with your [API key](https://polygon.io/dashboard/signup).
