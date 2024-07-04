@@ -62,7 +62,7 @@ export interface IStockFinancialQuery extends IPolygonQuery {
   "period_of_report_date.lte"?: string;
   "period_of_report_date.gt"?: string;
   "period_of_report_date.gte"?: string;
-  timeframe?: "annual" | "quarterly";
+  timeframe?: "annual" | "quarterly" | "ttm";
   included_sources?: "true" | "false";
   order?: "asc" | "desc";
   limit?: number;
