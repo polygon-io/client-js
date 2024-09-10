@@ -21,8 +21,10 @@ export interface UniversalSnapshotLastQuote {
   timeframe?: string;
   ask?: number;
   ask_size?: number;
+  ask_exchange?: number,
   bid?: number;
   bid_size?: number;
+  bid_exchange?: number;
   midpoint?: number;
   exchange?: number;
 }
