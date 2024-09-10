@@ -79,6 +79,7 @@ export interface UniversalSnapshotInfo {
   underlying_asset?: UniversalSnapshotUnderlyingAsset;
   value?: number;
   break_even_price?: number;
+  fmv?: number;
 }
 
 export interface IUniversalSnapshotQuery extends IPolygonQuery {
