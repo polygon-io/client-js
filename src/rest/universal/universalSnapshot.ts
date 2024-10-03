@@ -21,8 +21,10 @@ export interface UniversalSnapshotLastQuote {
   timeframe?: string;
   ask?: number;
   ask_size?: number;
+  ask_exchange?: number,
   bid?: number;
   bid_size?: number;
+  bid_exchange?: number;
   midpoint?: number;
   exchange?: number;
 }
@@ -77,6 +79,7 @@ export interface UniversalSnapshotInfo {
   underlying_asset?: UniversalSnapshotUnderlyingAsset;
   value?: number;
   break_even_price?: number;
+  fmv?: number;
 }
 
 export interface IUniversalSnapshotQuery extends IPolygonQuery {
