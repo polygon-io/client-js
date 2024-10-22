@@ -5,6 +5,8 @@ export interface UniversalSnapshotSession {
   change_percent?: number;
   early_trading_change?: number;
   early_trading_change_percent?: number;
+  regular_trading_change?: number;
+  regular_trading_change_percent?: number;
   late_trading_change?: number;
   late_trading_change_percent?: number;
   close?: number;
