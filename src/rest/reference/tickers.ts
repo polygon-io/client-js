@@ -16,7 +16,7 @@ export type TickerTypes =
   | "INDEX"
   | "ETF"
   | "ETN";
-export type MarketType = "stocks" | "crypto" | "fx";
+export type MarketType = "stocks" | "crypto" | "fx" | "otc" | "indices";
 export type Order = "asc" | "desc";
 
 export interface ITickersQuery extends IPolygonQuery {
@@ -42,7 +42,7 @@ export interface ITickersQuery extends IPolygonQuery {
 export interface ITickersResults {
   ticker: string;
   name: string;
-  market: string;
+  market: MarketType;
   locale: string;
   primary_exchange: string;
   type: string;
