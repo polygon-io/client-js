@@ -16,7 +16,7 @@ export interface IIndicesGroups {
 }
 
 export interface IMarketStatus {
-  afterhours?: boolean;
+  afterHours?: boolean;
   currencies?: {
     fx?: string;
     crypto?: string;
