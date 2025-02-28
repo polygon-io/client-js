@@ -4,12 +4,14 @@ import { getForexWebsocket } from "./forex/index.js";
 import { getIndicesWebsocket } from "./indices/index.js";
 import { getOptionsWebsocket } from "./options/index.js";
 import { getStocksWebsocket } from "./stocks/index.js";
+import { getFuturesWebsocket } from "./futures/index.js";
 
 export * from "./forex/index.js";
 export * from "./indices/index.js";
 export * from "./stocks/index.js";
 export * from "./crypto/index.js";
 export * from "./options/index.js";
+export * from "./futures/index.js";
 
 export interface IWebsocketClient {
   crypto: () => websocket.w3cwebsocket;
@@ -17,6 +19,7 @@ export interface IWebsocketClient {
   indices: () => websocket.w3cwebsocket;
   options: () => websocket.w3cwebsocket;
   stocks: () => websocket.w3cwebsocket;
+  futures: () => websocket.w3cwebsocket;
 }
 
 export const websocketClient = (
@@ -28,6 +31,7 @@ export const websocketClient = (
   indices: () => getIndicesWebsocket(apiKey, apiBase),
   options: () => getOptionsWebsocket(apiKey, apiBase),
   stocks: () => getStocksWebsocket(apiKey, apiBase),
+  futures: () => getFuturesWebsocket(apiKey, apiBase),
 });
 
 export default websocketClient;
