@@ -17,7 +17,7 @@ export interface SnapshotDay {
 
 export interface SnapshotDetails {
   contract_type?: string;
-  exercise_styled?: string;
+  exercise_style?: string;
   expiration_date?: string;
   shares_per_contract?: number;
   strike_price?: number;
