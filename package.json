@@ -48,11 +48,13 @@
   },
   "homepage": "https://github.com/polygon-io/client-js#readme",
   "dependencies": {
+    "axios": "^1.8.4",
     "cross-fetch": "^3.1.4",
     "query-string": "^7.0.1",
     "websocket": "^1.0.34"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.18.4",
     "@types/chai": "^4.2.22",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.11",
