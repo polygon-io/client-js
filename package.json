@@ -14,7 +14,8 @@
     "test": "mocha",
     "test:watch": "mocha --watch",
     "format": "prettier --write '**/*.ts'",
-    "build": "rm -rf ./dist && tsup src/main.ts --dts --format cjs,esm --minify",
+    "generate": "sh ./scripts/generate.sh",
+    "build": "rm -rf ./dist && tsup src/main.ts --dts --format esm --minify",
     "generate-doc": "typedoc src/main.ts"
   },
   "repository": {
@@ -67,6 +68,7 @@
     "lodash": "^4.17.21",
     "mocha": "^9.1.3",
     "prettier": "^2.5.1",
+    "semantic-release": "^24.2.3",
     "sinon": "^12.0.1",
     "ts-node": "^10.9.1",
     "tsup": "^6.7.0",
