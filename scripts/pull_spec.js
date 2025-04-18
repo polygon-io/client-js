@@ -27,7 +27,7 @@ const main = async () => {
     const cleanedSpec = { ...spec, paths: Object.fromEntries(Object.entries(spec.paths).filter(
         ([,{ "x-polygon-draft": xPolygonDraft }]) => {
             return !xPolygonDraft;
-        }) 
+        }).map(([paths,item]) => ([paths,{ ...item, get: { ...item.get, tags: [ "default" ] }}])) 
     )};
     saveSpec(cleanedSpec, specFilename);
     console.log(`Spec saved to ${specFilename}`);

@@ -5452,7 +5452,7 @@
         },
         "summary": "earnings_v1 API",
         "tags": [
-          "reference:earnings_v1"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -5717,7 +5717,7 @@
         },
         "summary": "news_v1 API",
         "tags": [
-          "reference:news_v1"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -6194,7 +6194,7 @@
         },
         "summary": "ratings_v1 API",
         "tags": [
-          "reference:ratings_v1"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -6517,7 +6517,7 @@
         },
         "summary": "finra_short_interest_v1 API",
         "tags": [
-          "reference:finra_short_interest_v1"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -6892,7 +6892,7 @@
         },
         "summary": "finra_short_volume_v1 API",
         "tags": [
-          "reference:finra_short_volume_v1"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -7090,7 +7090,7 @@
         },
         "summary": "Real-time Currency Conversion",
         "tags": [
-          "fx:conversion"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "NBBO data",
@@ -7286,7 +7286,7 @@
         },
         "summary": "Historic Crypto Trades",
         "tags": [
-          "crypto:trades"
+          "default"
         ],
         "x-polygon-deprecation": {
           "date": 1654056060000,
@@ -7481,7 +7481,7 @@
         },
         "summary": "Historic Forex Ticks",
         "tags": [
-          "fx:trades"
+          "default"
         ],
         "x-polygon-deprecation": {
           "date": 1654056060000,
@@ -7795,7 +7795,7 @@
         },
         "summary": "Exponential Moving Average (EMA)",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -8113,7 +8113,7 @@
         },
         "summary": "Exponential Moving Average (EMA)",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -8425,7 +8425,7 @@
         },
         "summary": "Exponential Moving Average (EMA)",
         "tags": [
-          "indices:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -8744,7 +8744,7 @@
         },
         "summary": "Exponential Moving Average (EMA)",
         "tags": [
-          "options:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -9062,7 +9062,7 @@
         },
         "summary": "Exponential Moving Average (EMA)",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -9413,7 +9413,7 @@
         },
         "summary": "Moving Average Convergence/Divergence (MACD)",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -9775,7 +9775,7 @@
         },
         "summary": "Moving Average Convergence/Divergence (MACD)",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -10131,7 +10131,7 @@
         },
         "summary": "Moving Average Convergence/Divergence (MACD)",
         "tags": [
-          "indices:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -10494,7 +10494,7 @@
         },
         "summary": "Moving Average Convergence/Divergence (MACD)",
         "tags": [
-          "options:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -10856,7 +10856,7 @@
         },
         "summary": "Moving Average Convergence/Divergence (MACD)",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -11163,7 +11163,7 @@
         },
         "summary": "Relative Strength Index (RSI)",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -11481,7 +11481,7 @@
         },
         "summary": "Relative Strength Index (RSI)",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -11793,7 +11793,7 @@
         },
         "summary": "Relative Strength Index (RSI)",
         "tags": [
-          "indices:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -12112,7 +12112,7 @@
         },
         "summary": "Relative Strength Index (RSI)",
         "tags": [
-          "options:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -12430,7 +12430,7 @@
         },
         "summary": "Relative Strength Index (RSI)",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -12759,7 +12759,7 @@
         },
         "summary": "Simple Moving Average (SMA)",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -13099,7 +13099,7 @@
         },
         "summary": "Simple Moving Average (SMA)",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -13411,7 +13411,7 @@
         },
         "summary": "Simple Moving Average (SMA)",
         "tags": [
-          "indices:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -13752,7 +13752,7 @@
         },
         "summary": "Simple Moving Average (SMA)",
         "tags": [
-          "options:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -14092,7 +14092,7 @@
         },
         "summary": "Simple Moving Average (SMA)",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -14235,7 +14235,7 @@
         },
         "summary": "Last Trade for a Crypto Pair",
         "tags": [
-          "crypto:last:trade"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Trade data",
@@ -14363,7 +14363,7 @@
         },
         "summary": "Last Quote for a Currency Pair",
         "tags": [
-          "fx:last:quote"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "NBBO data",
@@ -14519,7 +14519,7 @@
         },
         "summary": "Market Status",
         "tags": [
-          "reference:stocks:market"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -14613,7 +14613,7 @@
         },
         "summary": "Market Holidays",
         "tags": [
-          "reference:stocks:market"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -14868,7 +14868,7 @@
         },
         "summary": "Daily Open/Close",
         "tags": [
-          "crypto:open-close"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -14992,7 +14992,7 @@
         },
         "summary": "Daily Open/Close",
         "tags": [
-          "stocks:open-close"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -15138,7 +15138,7 @@
         },
         "summary": "Daily Open/Close",
         "tags": [
-          "options:open-close"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -15283,7 +15283,7 @@
         },
         "summary": "Daily Open/Close",
         "tags": [
-          "stocks:open-close"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -15396,7 +15396,7 @@
         },
         "summary": "Related Companies",
         "tags": [
-          "reference:related:companies"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -15783,7 +15783,10 @@
         "x-polygon-entitlement-market-type": {
           "description": "Stocks data",
           "name": "stocks"
-        }
+        },
+        "tags": [
+          "default"
+        ]
       }
     },
     "/v2/aggs/grouped/locale/global/market/crypto/{date}": {
@@ -15976,7 +15979,7 @@
         },
         "summary": "Grouped Daily (Bars)",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -16178,7 +16181,7 @@
         },
         "summary": "Grouped Daily (Bars)",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -16392,7 +16395,7 @@
         },
         "summary": "Grouped Daily (Bars)",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -16581,7 +16584,7 @@
         },
         "summary": "Previous Close",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -16846,7 +16849,7 @@
         },
         "summary": "Aggregates (Bars)",
         "tags": [
-          "crypto:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -17036,7 +17039,7 @@
         },
         "summary": "Previous Close",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -17291,7 +17294,7 @@
         },
         "summary": "Aggregates (Bars)",
         "tags": [
-          "fx:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -17443,7 +17446,7 @@
         },
         "summary": "Previous Close",
         "tags": [
-          "indices:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -17673,7 +17676,7 @@
         },
         "summary": "Aggregates (Bars)",
         "tags": [
-          "indices:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-allowed-limited-tickers": true,
         "x-polygon-entitlement-data-type": {
@@ -17859,7 +17862,7 @@
         },
         "summary": "Previous Close",
         "tags": [
-          "options:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -18125,7 +18128,7 @@
         },
         "summary": "Aggregates (Bars)",
         "tags": [
-          "options:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -18309,7 +18312,7 @@
         },
         "summary": "Previous Close",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -18588,7 +18591,7 @@
         },
         "summary": "Aggregates (Bars)",
         "tags": [
-          "stocks:aggregates"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Aggregate data",
@@ -18763,7 +18766,7 @@
         },
         "summary": "Last Quote",
         "tags": [
-          "stocks:last:quote"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -18940,7 +18943,7 @@
         },
         "summary": "Last Trade",
         "tags": [
-          "options:last:trade"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -19120,7 +19123,7 @@
         },
         "summary": "Last Trade",
         "tags": [
-          "stocks:last:trade"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -19536,7 +19539,7 @@
         },
         "summary": "Ticker News",
         "tags": [
-          "reference:news"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -19890,7 +19893,7 @@
         },
         "summary": "All Tickers",
         "tags": [
-          "crypto:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -20249,7 +20252,7 @@
         },
         "summary": "Ticker",
         "tags": [
-          "crypto:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -20437,7 +20440,7 @@
         },
         "summary": "Ticker Full Book (L2)",
         "tags": [
-          "crypto:snapshot"
+          "default"
         ],
         "x-polygon-deprecation": {
           "date": 1719838800000
@@ -20787,7 +20790,7 @@
         },
         "summary": "Gainers/Losers",
         "tags": [
-          "crypto:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -21100,7 +21103,7 @@
         },
         "summary": "All Tickers",
         "tags": [
-          "fx:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -21421,7 +21424,7 @@
         },
         "summary": "Ticker",
         "tags": [
-          "fx:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -21739,7 +21742,7 @@
         },
         "summary": "Gainers/Losers",
         "tags": [
-          "fx:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -22155,7 +22158,7 @@
         },
         "summary": "All Tickers",
         "tags": [
-          "stocks:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -22565,7 +22568,7 @@
         },
         "summary": "Ticker",
         "tags": [
-          "stocks:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -22978,7 +22981,7 @@
         },
         "summary": "Gainers/Losers",
         "tags": [
-          "stocks:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -23298,7 +23301,7 @@
         },
         "summary": "Quotes (NBBO)",
         "tags": [
-          "stocks:quotes"
+          "default"
         ],
         "x-polygon-deprecation": {
           "date": 1654056060000,
@@ -23604,7 +23607,7 @@
         },
         "summary": "Trades",
         "tags": [
-          "stocks:trades"
+          "default"
         ],
         "x-polygon-deprecation": {
           "date": 1654056060000,
@@ -23818,7 +23821,7 @@
         },
         "summary": "Quotes (BBO)",
         "tags": [
-          "fx:quotes"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "NBBO data",
@@ -24072,7 +24075,7 @@
         },
         "summary": "Quotes",
         "tags": [
-          "options:quotes"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "NBBO data",
@@ -24380,7 +24383,7 @@
         },
         "summary": "Quotes (NBBO)",
         "tags": [
-          "stocks:quotes"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "NBBO data",
@@ -25135,7 +25138,7 @@
         },
         "summary": "Conditions",
         "tags": [
-          "reference:conditions"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -25663,7 +25666,7 @@
         },
         "summary": "Dividends v3",
         "tags": [
-          "reference:dividends"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -25908,7 +25911,7 @@
         },
         "summary": "Exchanges",
         "tags": [
-          "reference:exchanges"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -26289,7 +26292,7 @@
         },
         "summary": "Options Contracts",
         "tags": [
-          "reference:options:contracts:list"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -26475,7 +26478,7 @@
         },
         "summary": "Options Contract",
         "tags": [
-          "reference:options:contract"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -26723,7 +26726,7 @@
         },
         "summary": "Stock Splits v3",
         "tags": [
-          "reference:stocks"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -27090,7 +27093,7 @@
         },
         "summary": "Tickers",
         "tags": [
-          "reference:tickers:list"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -27310,7 +27313,7 @@
         },
         "summary": "Ticker Types",
         "tags": [
-          "reference:tickers:types"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -27593,7 +27596,7 @@
         },
         "summary": "Ticker Details v3",
         "tags": [
-          "reference:tickers:get"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -28340,7 +28343,10 @@
               "ticker"
             ]
           }
-        }
+        },
+        "tags": [
+          "default"
+        ]
       }
     },
     "/v3/snapshot/indices": {
@@ -28613,7 +28619,7 @@
         },
         "summary": "Indices Snapshot",
         "tags": [
-          "indices:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -29273,7 +29279,7 @@
         },
         "summary": "Options Chain",
         "tags": [
-          "options:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -29808,7 +29814,7 @@
         },
         "summary": "Option Contract",
         "tags": [
-          "options:snapshot"
+          "default"
         ],
         "x-polygon-entitlement-allowed-timeframes": [
           {
@@ -30046,7 +30052,7 @@
         },
         "summary": "Trades",
         "tags": [
-          "crypto:trades"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Trade data",
@@ -30305,7 +30311,7 @@
         },
         "summary": "Trades",
         "tags": [
-          "options:trades"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Trade data",
@@ -30601,7 +30607,7 @@
         },
         "summary": "Trades",
         "tags": [
-          "stocks:trades"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Trade data",
@@ -31312,7 +31318,7 @@
         },
         "summary": "Stock Financials vX",
         "tags": [
-          "reference:stocks"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -31682,7 +31688,7 @@
         },
         "summary": "IPOs",
         "tags": [
-          "reference:stocks:ipos"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",
@@ -31848,7 +31854,7 @@
         },
         "summary": "Ticker Events",
         "tags": [
-          "reference:tickers:get"
+          "default"
         ],
         "x-polygon-entitlement-data-type": {
           "description": "Reference data",

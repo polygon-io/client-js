@@ -1,5 +1,5 @@
 echo "Regenerating account client"
-CLIENT_DIRECTORY="../src/generated-rest"
+CLIENT_DIRECTORY="./src/rest"
 
 echo "Deleting contents of $CLIENT_DIRECTORY"
 

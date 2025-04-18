@@ -15,8 +15,8 @@
     "test:watch": "mocha --watch",
     "format": "prettier --write '**/*.ts'",
     "generate": "sh ./scripts/generate.sh",
-    "build": "rm -rf ./dist && tsup src/main.ts --dts --format esm --minify",
-    "get-spec": "node ./scripts/pull_spec.js",
+    "pull-spec": "node ./scripts/pull_spec.js",
+    "build": "rm -rf ./dist && npm run pull-spec && npm run generate && tsup src/main.ts --dts --format esm --minify",
     "generate-doc": "typedoc src/main.ts"
   },
   "repository": {
