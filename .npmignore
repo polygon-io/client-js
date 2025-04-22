@@ -4,4 +4,6 @@
 /.circleci*
 tsconfig.json
 /examples
+/scripts
 .mocharc.json
+/.github
