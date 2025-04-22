@@ -1,4 +1,3 @@
-export * from "./rest/index.js";
 export * from "./websockets/index.js";
 
 import axios from 'axios';
@@ -10,11 +9,12 @@ export interface IPolygonClient {
   websockets: IWebsocketClient;
 }
 
-const restClient = (apikey: string, restApiBase: string): DefaultApi => {
+export const restClient = (apikey: string, restApiBase?: string): DefaultApi => {
   // This function creates a generated REST client using the DefaultApi from the generated REST code
   // Note: This does not include any custom interceptors or configurations
   const config = new Configuration({ apiKey: apikey });
   const SERVICE_BASE_URL = 'https://api.polygon.io'; // Fallback to default if not set
+  axios.interceptors.response.use((response) => response?.data);
   return new DefaultApi(config, restApiBase || SERVICE_BASE_URL, axios);
 }
 

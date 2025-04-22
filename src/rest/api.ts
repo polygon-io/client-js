@@ -849,10 +849,10 @@ export interface CryptoExchangeInner {
 export interface CryptoGroupedResults {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>}
      * @memberof CryptoGroupedResults
      */
-    'results'?: Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -886,10 +886,10 @@ export interface CryptoHistoricTrades {
     'symbol': string;
     /**
      * 
-     * @type {Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>}
+     * @type {Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>}
      * @memberof CryptoHistoricTrades
      */
-    'ticks': Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>;
+    'ticks': Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>;
 }
 /**
  * 
@@ -1042,10 +1042,10 @@ export interface CryptoOpenClose {
     'close': number;
     /**
      * An array of results containing the requested data.
-     * @type {Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>}
+     * @type {Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>}
      * @memberof CryptoOpenClose
      */
-    'closingTrades': Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>;
+    'closingTrades': Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>;
     /**
      * The date requested.
      * @type {string}
@@ -1066,10 +1066,10 @@ export interface CryptoOpenClose {
     'open': number;
     /**
      * An array of results containing the requested data.
-     * @type {Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>}
+     * @type {Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>}
      * @memberof CryptoOpenClose
      */
-    'openTrades': Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>;
+    'openTrades': Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>;
     /**
      * The symbol pair that was evaluated from the request.
      * @type {string}
@@ -1240,10 +1240,10 @@ export interface CryptoSnapshotMinute {
 export interface CryptoSnapshotTicker {
     /**
      * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker}
+     * @type {GetCryptoSnapshotTicker200ResponseAllOfTicker}
      * @memberof CryptoSnapshotTicker
      */
-    'ticker'?: V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker;
+    'ticker'?: GetCryptoSnapshotTicker200ResponseAllOfTicker;
 }
 /**
  * 
@@ -1253,10 +1253,10 @@ export interface CryptoSnapshotTicker {
 export interface CryptoSnapshotTickerFullBook {
     /**
      * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData}
+     * @type {DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData}
      * @memberof CryptoSnapshotTickerFullBook
      */
-    'data'?: V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData;
+    'data'?: DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData;
 }
 /**
  * 
@@ -1266,10 +1266,10 @@ export interface CryptoSnapshotTickerFullBook {
 export interface CryptoSnapshotTickers {
     /**
      * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner>}
+     * @type {Array<GetCryptoSnapshotTickers200ResponseAllOfTickersInner>}
      * @memberof CryptoSnapshotTickers
      */
-    'tickers'?: Array<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner>;
+    'tickers'?: Array<GetCryptoSnapshotTickers200ResponseAllOfTickersInner>;
 }
 /**
  * 
@@ -1313,6 +1313,491 @@ export interface CryptoTick {
      * @memberof CryptoTick
      */
     'x': number;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetCryptoSnapshotTickerBook200Response
+ */
+export interface DeprecatedGetCryptoSnapshotTickerBook200Response {
+    /**
+     * 
+     * @type {DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200Response
+     */
+    'data'?: DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+ */
+export interface DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData {
+    /**
+     * The combined total number of asks in the book.
+     * @type {number}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'askCount': number;
+    /**
+     * 
+     * @type {Array<DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner>}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'asks': Array<DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner>;
+    /**
+     * The combined total number of bids in the book.
+     * @type {number}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'bidCount': number;
+    /**
+     * 
+     * @type {Array<DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner>}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'bids': Array<DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner>;
+    /**
+     * The difference between the best bid and the best ask price across exchanges.
+     * @type {number}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'spread': number;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'ticker': string;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfData
+     */
+    'updated': number;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner
+ */
+export interface DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner {
+    /**
+     * The price of this book level.
+     * @type {number}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner
+     */
+    'p': number;
+    /**
+     * A map of the exchange ID to number of shares at this price level. <br /> <br /> **Example:** <br /> `{   \"p\": 16302.94,   \"x\": {     \"1\": 0.02859424,     \"6\": 0.023455   } }` <br /> <br /> In this example, exchange ID 1 has 0.02859424 shares available at $16,302.94, and exchange ID 6 has 0.023455 shares at the same price level. 
+     * @type {object}
+     * @memberof DeprecatedGetCryptoSnapshotTickerBook200ResponseAllOfDataAsksInner
+     */
+    'x': object;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricCryptoTrades200Response
+ */
+export interface DeprecatedGetHistoricCryptoTrades200Response {
+    /**
+     * The date that was evaluated from the request.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricCryptoTrades200Response
+     */
+    'day': string;
+    /**
+     * A map for shortened result keys.
+     * @type {object}
+     * @memberof DeprecatedGetHistoricCryptoTrades200Response
+     */
+    'map': object;
+    /**
+     * The milliseconds of latency for the query results.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricCryptoTrades200Response
+     */
+    'msLatency': number;
+    /**
+     * The symbol pair that was evaluated from the request.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricCryptoTrades200Response
+     */
+    'symbol': string;
+    /**
+     * 
+     * @type {Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>}
+     * @memberof DeprecatedGetHistoricCryptoTrades200Response
+     */
+    'ticks': Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+ */
+export interface DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner {
+    /**
+     * A list of condition codes. 
+     * @type {Array<number>}
+     * @memberof DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+     */
+    'c': Array<number>;
+    /**
+     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
+     * @type {string}
+     * @memberof DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+     */
+    'i': string;
+    /**
+     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+     */
+    'p': number;
+    /**
+     * The size of a trade (also known as volume). 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+     */
+    's': number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+     */
+    't': number;
+    /**
+     * The exchange that this crypto trade happened on.   See <a href=\"https://polygon.io/docs/crypto/get_v3_reference_exchanges\">Exchanges</a> for a mapping of exchanges to IDs. 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner
+     */
+    'x': number;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricForexQuotes200Response
+ */
+export interface DeprecatedGetHistoricForexQuotes200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricForexQuotes200Response
+     */
+    'status': string;
+    /**
+     * The date that was evaluated from the request.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricForexQuotes200Response
+     */
+    'day': string;
+    /**
+     * A map for shortened result keys.
+     * @type {object}
+     * @memberof DeprecatedGetHistoricForexQuotes200Response
+     */
+    'map': object;
+    /**
+     * The milliseconds of latency for the query results.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricForexQuotes200Response
+     */
+    'msLatency': number;
+    /**
+     * The currency pair that was evaluated from the request.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricForexQuotes200Response
+     */
+    'pair': string;
+    /**
+     * 
+     * @type {Array<DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner>}
+     * @memberof DeprecatedGetHistoricForexQuotes200Response
+     */
+    'ticks': Array<DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner>;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner
+ */
+export interface DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner {
+    /**
+     * The ask price.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner
+     */
+    'a': number;
+    /**
+     * The bid price.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner
+     */
+    'b': number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner
+     */
+    't': number;
+    /**
+     * The exchange ID. See <a href=\"https://polygon.io/docs/forex/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner
+     */
+    'x': number;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricStocksQuotes200Response
+ */
+export interface DeprecatedGetHistoricStocksQuotes200Response {
+    /**
+     * Latency in milliseconds for the query results from the database.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200Response
+     */
+    'db_latency'?: number;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200Response
+     */
+    'results_count'?: number;
+    /**
+     * Whether or not this query was executed successfully.
+     * @type {boolean}
+     * @memberof DeprecatedGetHistoricStocksQuotes200Response
+     */
+    'success'?: boolean;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricStocksQuotes200Response
+     */
+    'ticker'?: string;
+    /**
+     * 
+     * @type {Array<DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner>}
+     * @memberof DeprecatedGetHistoricStocksQuotes200Response
+     */
+    'results'?: Array<DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+ */
+export interface DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'T': string;
+    /**
+     * The nanosecond accuracy TRF(Trade Reporting Facility) Unix Timestamp. This is the timestamp of when the trade reporting facility received this message.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'f': number;
+    /**
+     * The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11). 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'q': number;
+    /**
+     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The nanosecond accuracy Participant/Exchange Unix Timestamp. This is the timestamp of when the quote was actually generated at the exchange.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'y': number;
+    /**
+     * The ask price.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'P': number;
+    /**
+     * The ask size. This represents the number of round lot orders at the given ask price. The normal round lot size is 100 shares. An ask size of 2 means there are 200 shares available to purchase at the given ask price.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'S': number;
+    /**
+     * The ask exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'X': number;
+    /**
+     * A list of condition codes. 
+     * @type {Array<number>}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'c': Array<number>;
+    /**
+     * The indicators. For more information, see our glossary of [Conditions and Indicators](https://polygon.io/glossary/us/stocks/conditions-indicators). 
+     * @type {Array<number>}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'i': Array<number>;
+    /**
+     * The bid price.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'p': number;
+    /**
+     * The bid size. This represents the number of round lot orders at the given bid price. The normal round lot size is 100 shares. A bid size of 2 means there are 200 shares for purchase at the given bid price.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    's': number;
+    /**
+     * The bid exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'x': number;
+    /**
+     * There are 3 tapes which define which exchange the ticker is listed on. These are integers in our objects which represent the letter of the alphabet. Eg: 1 = A, 2 = B, 3 = C. * Tape A is NYSE listed securities * Tape B is NYSE ARCA / NYSE American * Tape C is NASDAQ 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner
+     */
+    'z': number;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricStocksTrades200Response
+ */
+export interface DeprecatedGetHistoricStocksTrades200Response {
+    /**
+     * Latency in milliseconds for the query results from the database.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200Response
+     */
+    'db_latency'?: number;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200Response
+     */
+    'results_count'?: number;
+    /**
+     * Whether or not this query was executed successfully.
+     * @type {boolean}
+     * @memberof DeprecatedGetHistoricStocksTrades200Response
+     */
+    'success'?: boolean;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricStocksTrades200Response
+     */
+    'ticker'?: string;
+    /**
+     * 
+     * @type {Array<DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner>}
+     * @memberof DeprecatedGetHistoricStocksTrades200Response
+     */
+    'results'?: Array<DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+ */
+export interface DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'T': string;
+    /**
+     * The nanosecond accuracy TRF(Trade Reporting Facility) Unix Timestamp. This is the timestamp of when the trade reporting facility received this message.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'f': number;
+    /**
+     * The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11). 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'q': number;
+    /**
+     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The nanosecond accuracy Participant/Exchange Unix Timestamp. This is the timestamp of when the quote was actually generated at the exchange.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'y': number;
+    /**
+     * A list of condition codes. 
+     * @type {Array<number>}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'c': Array<number>;
+    /**
+     * The trade correction indicator. 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'e': number;
+    /**
+     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
+     * @type {string}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'i': string;
+    /**
+     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'p': number;
+    /**
+     * The ID for the Trade Reporting Facility where the trade took place. 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'r': number;
+    /**
+     * The size of a trade (also known as volume). 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    's': number;
+    /**
+     * The exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'x': number;
+    /**
+     * There are 3 tapes which define which exchange the ticker is listed on. These are integers in our objects which represent the letter of the alphabet. Eg: 1 = A, 2 = B, 3 = C. * Tape A is NYSE listed securities * Tape B is NYSE ARCA / NYSE American * Tape C is NASDAQ 
+     * @type {number}
+     * @memberof DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner
+     */
+    'z': number;
 }
 /**
  * 
@@ -2259,10 +2744,10 @@ export interface ForexConversionLast {
 export interface ForexGroupedResults {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>}
      * @memberof ForexGroupedResults
      */
-    'results'?: Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -2296,10 +2781,10 @@ export interface ForexHistoricTrades {
     'pair': string;
     /**
      * 
-     * @type {Array<V1HistoricForexFromToDateGet200ResponseAllOfTicksInner>}
+     * @type {Array<DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner>}
      * @memberof ForexHistoricTrades
      */
-    'ticks': Array<V1HistoricForexFromToDateGet200ResponseAllOfTicksInner>;
+    'ticks': Array<DeprecatedGetHistoricForexQuotes200ResponseAllOfTicksInner>;
 }
 /**
  * 
@@ -2328,10 +2813,10 @@ export interface ForexPairLastQuote {
 export interface ForexPreviousClose {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetPreviousForexAggregates200ResponseAllOfResultsInner>}
      * @memberof ForexPreviousClose
      */
-    'results'?: Array<V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetPreviousForexAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -2415,10 +2900,10 @@ export interface ForexSnapshotPrevDay {
 export interface ForexSnapshotTicker {
     /**
      * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker}
+     * @type {GetForexSnapshotTicker200ResponseAllOfTicker}
      * @memberof ForexSnapshotTicker
      */
-    'ticker'?: V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker;
+    'ticker'?: GetForexSnapshotTicker200ResponseAllOfTicker;
 }
 /**
  * 
@@ -2428,10 +2913,10 @@ export interface ForexSnapshotTicker {
 export interface ForexSnapshotTickers {
     /**
      * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner>}
+     * @type {Array<GetForexSnapshotTickers200ResponseAllOfTickersInner>}
      * @memberof ForexSnapshotTickers
      */
-    'tickers'?: Array<V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner>;
+    'tickers'?: Array<GetForexSnapshotTickers200ResponseAllOfTickersInner>;
 }
 /**
  * 
@@ -2441,10 +2926,526 @@ export interface ForexSnapshotTickers {
 export interface ForexTickerResults {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetCryptoAggregates200ResponseAllOfResultsInner>}
      * @memberof ForexTickerResults
      */
-    'results'?: Array<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetCryptoAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoAggregates200Response
+ */
+export interface GetCryptoAggregates200Response {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'ticker': string;
+    /**
+     * Whether or not this response was adjusted for splits.
+     * @type {boolean}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'adjusted': boolean;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetCryptoAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetCryptoAggregates200Response
+     */
+    'results'?: Array<GetCryptoAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoAggregates200ResponseAllOfResultsInner
+ */
+export interface GetCryptoAggregates200ResponseAllOfResultsInner {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'n'?: number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'o': number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'vw'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoOpenClose200Response
+ */
+export interface GetCryptoOpenClose200Response {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'close': number;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'closingTrades': Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>;
+    /**
+     * The date requested.
+     * @type {string}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'day': string;
+    /**
+     * Whether or not the timestamps are in UTC timezone.
+     * @type {boolean}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'isUTC': boolean;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'open': number;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'openTrades': Array<DeprecatedGetHistoricCryptoTrades200ResponseAllOfTicksInner>;
+    /**
+     * The symbol pair that was evaluated from the request.
+     * @type {string}
+     * @memberof GetCryptoOpenClose200Response
+     */
+    'symbol': string;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoSnapshotDirection200Response
+ */
+export interface GetCryptoSnapshotDirection200Response {
+    /**
+     * An array of snapshot data for the specified tickers.
+     * @type {Array<GetCryptoSnapshotTickers200ResponseAllOfTickersInner>}
+     * @memberof GetCryptoSnapshotDirection200Response
+     */
+    'tickers'?: Array<GetCryptoSnapshotTickers200ResponseAllOfTickersInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoSnapshotTicker200Response
+ */
+export interface GetCryptoSnapshotTicker200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetCryptoSnapshotTicker200Response
+     */
+    'status': string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetCryptoSnapshotTicker200Response
+     */
+    'request_id': string;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTicker200ResponseAllOfTicker}
+     * @memberof GetCryptoSnapshotTicker200Response
+     */
+    'ticker'?: GetCryptoSnapshotTicker200ResponseAllOfTicker;
+}
+/**
+ * Contains the requested snapshot data for the specified ticker.
+ * @export
+ * @interface GetCryptoSnapshotTicker200ResponseAllOfTicker
+ */
+export interface GetCryptoSnapshotTicker200ResponseAllOfTicker {
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'day': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay;
+    /**
+     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'fmv'?: number;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'lastTrade': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'min': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'prevDay': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'ticker': string;
+    /**
+     * The value of the change from the previous day.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'todaysChange': number;
+    /**
+     * The percentage change since the previous day.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'todaysChangePerc': number;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTicker200ResponseAllOfTicker
+     */
+    'updated': number;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoSnapshotTickers200Response
+ */
+export interface GetCryptoSnapshotTickers200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetCryptoSnapshotTickers200Response
+     */
+    'status': string;
+    /**
+     * An array of snapshot data for the specified tickers.
+     * @type {Array<GetCryptoSnapshotTickers200ResponseAllOfTickersInner>}
+     * @memberof GetCryptoSnapshotTickers200Response
+     */
+    'tickers'?: Array<GetCryptoSnapshotTickers200ResponseAllOfTickersInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+ */
+export interface GetCryptoSnapshotTickers200ResponseAllOfTickersInner {
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'day': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay;
+    /**
+     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'fmv'?: number;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'lastTrade': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'min': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'prevDay': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'ticker': string;
+    /**
+     * The value of the change from the previous day.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'todaysChange': number;
+    /**
+     * The percentage change since the previous day.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'todaysChangePerc': number;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'updated': number;
+}
+/**
+ * The most recent daily bar for this ticker.
+ * @export
+ * @interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+ */
+export interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'l': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'o': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'vw': number;
+}
+/**
+ * The most recent trade for this ticker.
+ * @export
+ * @interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+ */
+export interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade {
+    /**
+     * The trade conditions.
+     * @type {Array<number>}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'c': Array<number>;
+    /**
+     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
+     * @type {string}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'i': string;
+    /**
+     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'p': number;
+    /**
+     * The size (volume) of the trade.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    's': number;
+    /**
+     * The millisecond accuracy timestamp. This is the timestamp of when the trade was generated at the exchange.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    't': number;
+    /**
+     * The exchange that this crypto trade happened on.   See <a href=\"https://polygon.io/docs/crypto/get_v3_reference_exchanges\">Exchanges</a> for a mapping of exchanges to IDs. 
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'x': number;
+}
+/**
+ * The most recent minute bar for this ticker.
+ * @export
+ * @interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+ */
+export interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'n': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'o': number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'vw': number;
+}
+/**
+ * The previous day\'s bar for this ticker.
+ * @export
+ * @interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+ */
+export interface GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'l': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'o': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'vw': number;
 }
 /**
  * 
@@ -2533,6 +3534,564 @@ export interface GetEvents200ResponseResultsEventsInnerOneOfTickerChange {
      * @memberof GetEvents200ResponseResultsEventsInnerOneOfTickerChange
      */
     'ticker'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetForexSnapshotTicker200Response
+ */
+export interface GetForexSnapshotTicker200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetForexSnapshotTicker200Response
+     */
+    'status': string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetForexSnapshotTicker200Response
+     */
+    'request_id': string;
+    /**
+     * 
+     * @type {GetForexSnapshotTicker200ResponseAllOfTicker}
+     * @memberof GetForexSnapshotTicker200Response
+     */
+    'ticker'?: GetForexSnapshotTicker200ResponseAllOfTicker;
+}
+/**
+ * Contains the requested snapshot data for the specified ticker.
+ * @export
+ * @interface GetForexSnapshotTicker200ResponseAllOfTicker
+ */
+export interface GetForexSnapshotTicker200ResponseAllOfTicker {
+    /**
+     * 
+     * @type {GetForexSnapshotTickers200ResponseAllOfTickersInnerDay}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'day': GetForexSnapshotTickers200ResponseAllOfTickersInnerDay;
+    /**
+     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
+     * @type {number}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'fmv'?: number;
+    /**
+     * 
+     * @type {GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'lastQuote': GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote;
+    /**
+     * 
+     * @type {GetForexSnapshotTickers200ResponseAllOfTickersInnerMin}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'min': GetForexSnapshotTickers200ResponseAllOfTickersInnerMin;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'prevDay': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'ticker': string;
+    /**
+     * The value of the change from the previous day.
+     * @type {number}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'todaysChange': number;
+    /**
+     * The percentage change since the previous day.
+     * @type {number}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'todaysChangePerc': number;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof GetForexSnapshotTicker200ResponseAllOfTicker
+     */
+    'updated': number;
+}
+/**
+ * 
+ * @export
+ * @interface GetForexSnapshotTickers200Response
+ */
+export interface GetForexSnapshotTickers200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetForexSnapshotTickers200Response
+     */
+    'status': string;
+    /**
+     * An array of snapshot data for the specified tickers.
+     * @type {Array<GetForexSnapshotTickers200ResponseAllOfTickersInner>}
+     * @memberof GetForexSnapshotTickers200Response
+     */
+    'tickers'?: Array<GetForexSnapshotTickers200ResponseAllOfTickersInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetForexSnapshotTickers200ResponseAllOfTickersInner
+ */
+export interface GetForexSnapshotTickers200ResponseAllOfTickersInner {
+    /**
+     * 
+     * @type {GetForexSnapshotTickers200ResponseAllOfTickersInnerDay}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'day': GetForexSnapshotTickers200ResponseAllOfTickersInnerDay;
+    /**
+     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'fmv'?: number;
+    /**
+     * 
+     * @type {GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'lastQuote': GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote;
+    /**
+     * 
+     * @type {GetForexSnapshotTickers200ResponseAllOfTickersInnerMin}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'min': GetForexSnapshotTickers200ResponseAllOfTickersInnerMin;
+    /**
+     * 
+     * @type {GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'prevDay': GetCryptoSnapshotTickers200ResponseAllOfTickersInnerPrevDay;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'ticker': string;
+    /**
+     * The value of the change from the previous day.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'todaysChange': number;
+    /**
+     * The percentage change since the previous day.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'todaysChangePerc': number;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'updated': number;
+}
+/**
+ * The most recent daily bar for this ticker.
+ * @export
+ * @interface GetForexSnapshotTickers200ResponseAllOfTickersInnerDay
+ */
+export interface GetForexSnapshotTickers200ResponseAllOfTickersInnerDay {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'l': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'o': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'v': number;
+}
+/**
+ * The most recent quote for this ticker.
+ * @export
+ * @interface GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+ */
+export interface GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote {
+    /**
+     * The ask price.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    'a': number;
+    /**
+     * The bid price.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    'b': number;
+    /**
+     * The millisecond accuracy timestamp of the quote.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    't': number;
+    /**
+     * The exchange ID on which this quote happened.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    'x': number;
+}
+/**
+ * The most recent minute bar for this ticker.
+ * @export
+ * @interface GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+ */
+export interface GetForexSnapshotTickers200ResponseAllOfTickersInnerMin {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'c'?: number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'h'?: number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'l'?: number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'n'?: number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'o'?: number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    't'?: number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'v'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetGroupedCryptoAggregates200Response
+ */
+export interface GetGroupedCryptoAggregates200Response {
+    /**
+     * Whether or not this response was adjusted for splits.
+     * @type {boolean}
+     * @memberof GetGroupedCryptoAggregates200Response
+     */
+    'adjusted': boolean;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetGroupedCryptoAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetGroupedCryptoAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetGroupedCryptoAggregates200Response
+     */
+    'results'?: Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+ */
+export interface GetGroupedCryptoAggregates200ResponseAllOfResultsInner {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'T': string;
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'n'?: number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'o': number;
+    /**
+     * The Unix millisecond timestamp for the end of the aggregate window.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetGroupedCryptoAggregates200ResponseAllOfResultsInner
+     */
+    'vw'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetGroupedStocksAggregates200Response
+ */
+export interface GetGroupedStocksAggregates200Response {
+    /**
+     * Whether or not this response was adjusted for splits.
+     * @type {boolean}
+     * @memberof GetGroupedStocksAggregates200Response
+     */
+    'adjusted': boolean;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetGroupedStocksAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetGroupedStocksAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetGroupedStocksAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetGroupedStocksAggregates200Response
+     */
+    'results'?: Array<GetGroupedStocksAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetGroupedStocksAggregates200ResponseAllOfResultsInner
+ */
+export interface GetGroupedStocksAggregates200ResponseAllOfResultsInner {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'T': string;
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'n'?: number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'o': number;
+    /**
+     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
+     * @type {boolean}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'otc'?: boolean;
+    /**
+     * The Unix millisecond timestamp for the end of the aggregate window.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetGroupedStocksAggregates200ResponseAllOfResultsInner
+     */
+    'vw'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetIndicesOpenClose200Response
+ */
+export interface GetIndicesOpenClose200Response {
+    /**
+     * The close value of the ticker symbol in after hours trading.
+     * @type {number}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'afterHours'?: number;
+    /**
+     * The close value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'close': number;
+    /**
+     * The requested date.
+     * @type {string}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'from': string;
+    /**
+     * The highest value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'high': number;
+    /**
+     * The lowest value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'low': number;
+    /**
+     * The open value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'open': number;
+    /**
+     * The open value of the ticker symbol in pre-market trading.
+     * @type {number}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'preMarket'?: number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'status': string;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetIndicesOpenClose200Response
+     */
+    'symbol': string;
 }
 /**
  * 
@@ -2765,6 +4324,318 @@ export interface GetOptionsContract200Response {
 /**
  * 
  * @export
+ * @interface GetOptionsOpenClose200Response
+ */
+export interface GetOptionsOpenClose200Response {
+    /**
+     * The close price of the ticker symbol in after hours trading.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'afterHours'?: number;
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'close': number;
+    /**
+     * The requested date.
+     * @type {string}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'from': string;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'high': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'low': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'open': number;
+    /**
+     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
+     * @type {boolean}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'otc'?: boolean;
+    /**
+     * The open price of the ticker symbol in pre-market trading.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'preMarket'?: number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'status': string;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'symbol': string;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetOptionsOpenClose200Response
+     */
+    'volume': number;
+}
+/**
+ * 
+ * @export
+ * @interface GetPreviousCryptoAggregates200Response
+ */
+export interface GetPreviousCryptoAggregates200Response {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'ticker': string;
+    /**
+     * Whether or not this response was adjusted for splits.
+     * @type {boolean}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'adjusted': boolean;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetPreviousCryptoAggregates200Response
+     */
+    'results'?: Array<GetGroupedCryptoAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetPreviousForexAggregates200Response
+ */
+export interface GetPreviousForexAggregates200Response {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'ticker': string;
+    /**
+     * Whether or not this response was adjusted for splits.
+     * @type {boolean}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'adjusted': boolean;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetPreviousForexAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetPreviousForexAggregates200Response
+     */
+    'results'?: Array<GetPreviousForexAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetPreviousForexAggregates200ResponseAllOfResultsInner
+ */
+export interface GetPreviousForexAggregates200ResponseAllOfResultsInner {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'T': string;
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'n'?: number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'o': number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetPreviousForexAggregates200ResponseAllOfResultsInner
+     */
+    'vw'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetPreviousIndicesAggregates200Response
+ */
+export interface GetPreviousIndicesAggregates200Response {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetPreviousIndicesAggregates200Response
+     */
+    'ticker': string;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetPreviousIndicesAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetPreviousIndicesAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetPreviousIndicesAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetPreviousIndicesAggregates200Response
+     */
+    'results'?: Array<GetPreviousIndicesAggregates200ResponseAllOfResultsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetPreviousIndicesAggregates200ResponseAllOfResultsInner
+ */
+export interface GetPreviousIndicesAggregates200ResponseAllOfResultsInner {
+    /**
+     * The close value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200ResponseAllOfResultsInner
+     */
+    'c': number;
+    /**
+     * The highest value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200ResponseAllOfResultsInner
+     */
+    'h': number;
+    /**
+     * The lowest value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200ResponseAllOfResultsInner
+     */
+    'l': number;
+    /**
+     * The open value for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200ResponseAllOfResultsInner
+     */
+    'o': number;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetPreviousIndicesAggregates200ResponseAllOfResultsInner
+     */
+    't': number;
+}
+/**
+ * 
+ * @export
  * @interface GetRelatedCompanies200Response
  */
 export interface GetRelatedCompanies200Response {
@@ -2805,6 +4676,570 @@ export interface GetRelatedCompanies200ResponseResultsInner {
      * @memberof GetRelatedCompanies200ResponseResultsInner
      */
     'ticker': string;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksAggregates200Response
+ */
+export interface GetStocksAggregates200Response {
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetStocksAggregates200Response
+     */
+    'ticker': string;
+    /**
+     * Whether or not this response was adjusted for splits.
+     * @type {boolean}
+     * @memberof GetStocksAggregates200Response
+     */
+    'adjusted': boolean;
+    /**
+     * The number of aggregates (minute or day) used to generate the response.
+     * @type {number}
+     * @memberof GetStocksAggregates200Response
+     */
+    'queryCount': number;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetStocksAggregates200Response
+     */
+    'request_id': string;
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetStocksAggregates200Response
+     */
+    'resultsCount': number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetStocksAggregates200Response
+     */
+    'status': string;
+    /**
+     * An array of results containing the requested data.
+     * @type {Array<GetStocksAggregates200ResponseAllOfResultsInner>}
+     * @memberof GetStocksAggregates200Response
+     */
+    'results'?: Array<GetStocksAggregates200ResponseAllOfResultsInner>;
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof GetStocksAggregates200Response
+     */
+    'next_url'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksAggregates200ResponseAllOfResultsInner
+ */
+export interface GetStocksAggregates200ResponseAllOfResultsInner {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'n'?: number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'o': number;
+    /**
+     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
+     * @type {boolean}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'otc'?: boolean;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetStocksAggregates200ResponseAllOfResultsInner
+     */
+    'vw'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksSnapshotDirection200Response
+ */
+export interface GetStocksSnapshotDirection200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetStocksSnapshotDirection200Response
+     */
+    'status': string;
+    /**
+     * An array of snapshot data for the specified tickers.
+     * @type {Array<GetStocksSnapshotTickers200ResponseAllOfTickersInner>}
+     * @memberof GetStocksSnapshotDirection200Response
+     */
+    'tickers'?: Array<GetStocksSnapshotTickers200ResponseAllOfTickersInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksSnapshotTicker200Response
+ */
+export interface GetStocksSnapshotTicker200Response {
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetStocksSnapshotTicker200Response
+     */
+    'status': string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetStocksSnapshotTicker200Response
+     */
+    'request_id': string;
+    /**
+     * 
+     * @type {GetStocksSnapshotTicker200ResponseAllOfTicker}
+     * @memberof GetStocksSnapshotTicker200Response
+     */
+    'ticker'?: GetStocksSnapshotTicker200ResponseAllOfTicker;
+}
+/**
+ * Contains the requested snapshot data for the specified ticker.
+ * @export
+ * @interface GetStocksSnapshotTicker200ResponseAllOfTicker
+ */
+export interface GetStocksSnapshotTicker200ResponseAllOfTicker {
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'day'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay;
+    /**
+     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
+     * @type {number}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'fmv'?: number;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'lastQuote'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'lastTrade'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'min'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'prevDay'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'ticker'?: string;
+    /**
+     * The value of the change from the previous day.
+     * @type {number}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'todaysChange'?: number;
+    /**
+     * The percentage change since the previous day.
+     * @type {number}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'todaysChangePerc'?: number;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof GetStocksSnapshotTicker200ResponseAllOfTicker
+     */
+    'updated'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksSnapshotTickers200Response
+ */
+export interface GetStocksSnapshotTickers200Response {
+    /**
+     * The total number of results for this request.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200Response
+     */
+    'count'?: number;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetStocksSnapshotTickers200Response
+     */
+    'status': string;
+    /**
+     * An array of snapshot data for the specified tickers.
+     * @type {Array<GetStocksSnapshotTickers200ResponseAllOfTickersInner>}
+     * @memberof GetStocksSnapshotTickers200Response
+     */
+    'tickers'?: Array<GetStocksSnapshotTickers200ResponseAllOfTickersInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksSnapshotTickers200ResponseAllOfTickersInner
+ */
+export interface GetStocksSnapshotTickers200ResponseAllOfTickersInner {
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'day'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay;
+    /**
+     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'fmv'?: number;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'lastQuote'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'lastTrade'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'min'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin;
+    /**
+     * 
+     * @type {GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'prevDay'?: GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay;
+    /**
+     * The exchange symbol that this item is traded under.
+     * @type {string}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'ticker'?: string;
+    /**
+     * The value of the change from the previous day.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'todaysChange'?: number;
+    /**
+     * The percentage change since the previous day.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'todaysChangePerc'?: number;
+    /**
+     * The last updated timestamp.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInner
+     */
+    'updated'?: number;
+}
+/**
+ * The most recent daily bar for this ticker.
+ * @export
+ * @interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+ */
+export interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'l': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'o': number;
+    /**
+     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
+     * @type {boolean}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'otc'?: boolean;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerDay
+     */
+    'vw': number;
+}
+/**
+ * The most recent quote for this ticker.  This is only returned if your current plan includes quotes.
+ * @export
+ * @interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+ */
+export interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote {
+    /**
+     * The ask price.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    'P': number;
+    /**
+     * The ask size in lots.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    'S': number;
+    /**
+     * The bid price.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    'p': number;
+    /**
+     * The bid size in lots.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    's': number;
+    /**
+     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastQuote
+     */
+    't': number;
+}
+/**
+ * The most recent trade for this ticker.  This is only returned if your current plan includes trades.
+ * @export
+ * @interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+ */
+export interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade {
+    /**
+     * The trade conditions.
+     * @type {Array<number>}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'c': Array<number>;
+    /**
+     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
+     * @type {string}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'i': string;
+    /**
+     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'p': number;
+    /**
+     * The size (volume) of the trade.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    's': number;
+    /**
+     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    't': number;
+    /**
+     * The exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerLastTrade
+     */
+    'x': number;
+}
+/**
+ * The most recent minute bar for this ticker.
+ * @export
+ * @interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+ */
+export interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin {
+    /**
+     * The accumulated volume.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'av': number;
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'l': number;
+    /**
+     * The number of transactions in the aggregate window.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'n': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'o': number;
+    /**
+     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
+     * @type {boolean}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'otc'?: boolean;
+    /**
+     * The Unix millisecond timestamp for the start of the aggregate window.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    't': number;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerMin
+     */
+    'vw': number;
+}
+/**
+ * The previous day\'s bar for this ticker.
+ * @export
+ * @interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+ */
+export interface GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay {
+    /**
+     * The close price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'c': number;
+    /**
+     * The highest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'h': number;
+    /**
+     * The lowest price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'l': number;
+    /**
+     * The open price for the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'o': number;
+    /**
+     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
+     * @type {boolean}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'otc'?: boolean;
+    /**
+     * The trading volume of the symbol in the given time period.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'v': number;
+    /**
+     * The volume weighted average price.
+     * @type {number}
+     * @memberof GetStocksSnapshotTickers200ResponseAllOfTickersInnerPrevDay
+     */
+    'vw': number;
 }
 /**
  * 
@@ -3122,10 +5557,10 @@ export interface IndexAggsBase {
 export interface IndicesGroupedResults {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetPreviousIndicesAggregates200ResponseAllOfResultsInner>}
      * @memberof IndicesGroupedResults
      */
-    'results'?: Array<V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetPreviousIndicesAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -7314,10 +9749,10 @@ export interface StatusCountBase {
 export interface StocksGroupedResults {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetGroupedStocksAggregates200ResponseAllOfResultsInner>}
      * @memberof StocksGroupedResults
      */
-    'results'?: Array<V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetGroupedStocksAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -7761,10 +10196,10 @@ export interface StocksSnapshotMinuteOTC {
 export interface StocksSnapshotTicker {
     /**
      * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker}
+     * @type {GetStocksSnapshotTicker200ResponseAllOfTicker}
      * @memberof StocksSnapshotTicker
      */
-    'ticker'?: V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker;
+    'ticker'?: GetStocksSnapshotTicker200ResponseAllOfTicker;
 }
 /**
  * 
@@ -7774,10 +10209,10 @@ export interface StocksSnapshotTicker {
 export interface StocksSnapshotTickers {
     /**
      * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner>}
+     * @type {Array<GetStocksSnapshotTickers200ResponseAllOfTickersInner>}
      * @memberof StocksSnapshotTickers
      */
-    'tickers'?: Array<V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner>;
+    'tickers'?: Array<GetStocksSnapshotTickers200ResponseAllOfTickersInner>;
 }
 /**
  * 
@@ -7787,10 +10222,10 @@ export interface StocksSnapshotTickers {
 export interface StocksTickerResultsOTC {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetStocksAggregates200ResponseAllOfResultsInner>}
      * @memberof StocksTickerResultsOTC
      */
-    'results'?: Array<V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetStocksAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -7928,10 +10363,10 @@ export interface StocksV2NBBO {
 export interface StocksV2NBBOs {
     /**
      * 
-     * @type {Array<V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner>}
+     * @type {Array<DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner>}
      * @memberof StocksV2NBBOs
      */
-    'results'?: Array<V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner>;
+    'results'?: Array<DeprecatedGetHistoricStocksQuotes200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -8026,10 +10461,10 @@ export interface StocksV2Trade {
 export interface StocksV2Trades {
     /**
      * 
-     * @type {Array<V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner>}
+     * @type {Array<DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner>}
      * @memberof StocksV2Trades
      */
-    'results'?: Array<V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner>;
+    'results'?: Array<DeprecatedGetHistoricStocksTrades200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -8052,10 +10487,10 @@ export interface TickerBase {
 export interface TickerResults {
     /**
      * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>}
+     * @type {Array<GetCryptoAggregates200ResponseAllOfResultsInner>}
      * @memberof TickerResults
      */
-    'results'?: Array<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>;
+    'results'?: Array<GetCryptoAggregates200ResponseAllOfResultsInner>;
 }
 /**
  * 
@@ -8343,156 +10778,112 @@ export interface TradesOptions200ResponseResultsInner {
 /**
  * 
  * @export
- * @interface V1HistoricCryptoFromToDateGet200Response
+ * @interface TreasuryYields200Response
  */
-export interface V1HistoricCryptoFromToDateGet200Response {
+export interface TreasuryYields200Response {
     /**
-     * The date that was evaluated from the request.
+     * URL for the next page of results, if applicable.
      * @type {string}
-     * @memberof V1HistoricCryptoFromToDateGet200Response
+     * @memberof TreasuryYields200Response
      */
-    'day': string;
+    'next_url'?: string;
     /**
-     * A map for shortened result keys.
-     * @type {object}
-     * @memberof V1HistoricCryptoFromToDateGet200Response
-     */
-    'map': object;
-    /**
-     * The milliseconds of latency for the query results.
-     * @type {number}
-     * @memberof V1HistoricCryptoFromToDateGet200Response
-     */
-    'msLatency': number;
-    /**
-     * The symbol pair that was evaluated from the request.
+     * Unique identifier for this request.
      * @type {string}
-     * @memberof V1HistoricCryptoFromToDateGet200Response
+     * @memberof TreasuryYields200Response
      */
-    'symbol': string;
+    'request_id': string;
     /**
-     * 
-     * @type {Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>}
-     * @memberof V1HistoricCryptoFromToDateGet200Response
+     * Records that match the given query.
+     * @type {Array<TreasuryYields200ResponseResultsInner>}
+     * @memberof TreasuryYields200Response
      */
-    'ticks': Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>;
-}
-/**
- * 
- * @export
- * @interface V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
- */
-export interface V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner {
+    'results': Array<TreasuryYields200ResponseResultsInner>;
     /**
-     * A list of condition codes. 
-     * @type {Array<number>}
-     * @memberof V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
-     */
-    'c': Array<number>;
-    /**
-     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
+     * Status of the request. Usually \'OK\' or \'ERROR\'.
      * @type {string}
-     * @memberof V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
-     */
-    'i': string;
-    /**
-     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
-     * @type {number}
-     * @memberof V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
-     */
-    'p': number;
-    /**
-     * The size of a trade (also known as volume). 
-     * @type {number}
-     * @memberof V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
-     */
-    's': number;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
-     */
-    't': number;
-    /**
-     * The exchange that this crypto trade happened on.   See <a href=\"https://polygon.io/docs/crypto/get_v3_reference_exchanges\">Exchanges</a> for a mapping of exchanges to IDs. 
-     * @type {number}
-     * @memberof V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner
-     */
-    'x': number;
-}
-/**
- * 
- * @export
- * @interface V1HistoricForexFromToDateGet200Response
- */
-export interface V1HistoricForexFromToDateGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V1HistoricForexFromToDateGet200Response
+     * @memberof TreasuryYields200Response
      */
     'status': string;
-    /**
-     * The date that was evaluated from the request.
-     * @type {string}
-     * @memberof V1HistoricForexFromToDateGet200Response
-     */
-    'day': string;
-    /**
-     * A map for shortened result keys.
-     * @type {object}
-     * @memberof V1HistoricForexFromToDateGet200Response
-     */
-    'map': object;
-    /**
-     * The milliseconds of latency for the query results.
-     * @type {number}
-     * @memberof V1HistoricForexFromToDateGet200Response
-     */
-    'msLatency': number;
-    /**
-     * The currency pair that was evaluated from the request.
-     * @type {string}
-     * @memberof V1HistoricForexFromToDateGet200Response
-     */
-    'pair': string;
-    /**
-     * 
-     * @type {Array<V1HistoricForexFromToDateGet200ResponseAllOfTicksInner>}
-     * @memberof V1HistoricForexFromToDateGet200Response
-     */
-    'ticks': Array<V1HistoricForexFromToDateGet200ResponseAllOfTicksInner>;
 }
 /**
  * 
  * @export
- * @interface V1HistoricForexFromToDateGet200ResponseAllOfTicksInner
+ * @interface TreasuryYields200ResponseResultsInner
  */
-export interface V1HistoricForexFromToDateGet200ResponseAllOfTicksInner {
+export interface TreasuryYields200ResponseResultsInner {
     /**
-     * The ask price.
-     * @type {number}
-     * @memberof V1HistoricForexFromToDateGet200ResponseAllOfTicksInner
+     * Calendar date of the yield observation (YYYY‑MM‑DD).
+     * @type {string}
+     * @memberof TreasuryYields200ResponseResultsInner
      */
-    'a': number;
+    'date'?: string;
     /**
-     * The bid price.
+     * Market Yield on U.S. Treasury Securities at 10‑Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
-     * @memberof V1HistoricForexFromToDateGet200ResponseAllOfTicksInner
+     * @memberof TreasuryYields200ResponseResultsInner
      */
-    'b': number;
+    'yield_10_year'?: number;
     /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
+     * Market Yield on U.S. Treasury Securities at 1‑Month Constant Maturity, Quoted on an Investment Basis
      * @type {number}
-     * @memberof V1HistoricForexFromToDateGet200ResponseAllOfTicksInner
+     * @memberof TreasuryYields200ResponseResultsInner
      */
-    't': number;
+    'yield_1_month'?: number;
     /**
-     * The exchange ID. See <a href=\"https://polygon.io/docs/forex/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
+     * Market Yield on U.S. Treasury Securities at 1‑Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
-     * @memberof V1HistoricForexFromToDateGet200ResponseAllOfTicksInner
+     * @memberof TreasuryYields200ResponseResultsInner
      */
-    'x': number;
+    'yield_1_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 20‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_20_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 2‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_2_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 30‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_30_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 3‑Month Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_3_month'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 3‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_3_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 5‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_5_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 6‑Month Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_6_month'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 7‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof TreasuryYields200ResponseResultsInner
+     */
+    'yield_7_year'?: number;
 }
 /**
  * 
@@ -8518,189 +10909,6 @@ export interface V1LastBase {
      * @memberof V1LastBase
      */
     'symbol': string;
-}
-/**
- * 
- * @export
- * @interface V1OpenCloseCryptoFromToDateGet200Response
- */
-export interface V1OpenCloseCryptoFromToDateGet200Response {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'close': number;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'closingTrades': Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>;
-    /**
-     * The date requested.
-     * @type {string}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'day': string;
-    /**
-     * Whether or not the timestamps are in UTC timezone.
-     * @type {boolean}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'isUTC': boolean;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'open': number;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'openTrades': Array<V1HistoricCryptoFromToDateGet200ResponseAllOfTicksInner>;
-    /**
-     * The symbol pair that was evaluated from the request.
-     * @type {string}
-     * @memberof V1OpenCloseCryptoFromToDateGet200Response
-     */
-    'symbol': string;
-}
-/**
- * 
- * @export
- * @interface V1OpenCloseIndicesTickerDateGet200Response
- */
-export interface V1OpenCloseIndicesTickerDateGet200Response {
-    /**
-     * The close value of the ticker symbol in after hours trading.
-     * @type {number}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'afterHours'?: number;
-    /**
-     * The close value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'close': number;
-    /**
-     * The requested date.
-     * @type {string}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'from': string;
-    /**
-     * The highest value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'high': number;
-    /**
-     * The lowest value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'low': number;
-    /**
-     * The open value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'open': number;
-    /**
-     * The open value of the ticker symbol in pre-market trading.
-     * @type {number}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'preMarket'?: number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'status': string;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V1OpenCloseIndicesTickerDateGet200Response
-     */
-    'symbol': string;
-}
-/**
- * 
- * @export
- * @interface V1OpenCloseOptionsTickerDateGet200Response
- */
-export interface V1OpenCloseOptionsTickerDateGet200Response {
-    /**
-     * The close price of the ticker symbol in after hours trading.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'afterHours'?: number;
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'close': number;
-    /**
-     * The requested date.
-     * @type {string}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'from': string;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'high': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'low': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'open': number;
-    /**
-     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
-     * @type {boolean}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'otc'?: boolean;
-    /**
-     * The open price of the ticker symbol in pre-market trading.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'preMarket'?: number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'status': string;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'symbol': string;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V1OpenCloseOptionsTickerDateGet200Response
-     */
-    'volume': number;
 }
 /**
  * 
@@ -8742,679 +10950,6 @@ export interface V2AggsBase {
 /**
  * 
  * @export
- * @interface V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
- */
-export interface V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response {
-    /**
-     * Whether or not this response was adjusted for splits.
-     * @type {boolean}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
-     */
-    'adjusted': boolean;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response
-     */
-    'results'?: Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
- */
-export interface V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'T': string;
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'n'?: number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'o': number;
-    /**
-     * The Unix millisecond timestamp for the end of the aggregate window.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner
-     */
-    'vw'?: number;
-}
-/**
- * 
- * @export
- * @interface V2AggsGroupedLocaleUsMarketStocksDateGet200Response
- */
-export interface V2AggsGroupedLocaleUsMarketStocksDateGet200Response {
-    /**
-     * Whether or not this response was adjusted for splits.
-     * @type {boolean}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200Response
-     */
-    'adjusted': boolean;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200Response
-     */
-    'results'?: Array<V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
- */
-export interface V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'T': string;
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'n'?: number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'o': number;
-    /**
-     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
-     * @type {boolean}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'otc'?: boolean;
-    /**
-     * The Unix millisecond timestamp for the end of the aggregate window.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2AggsGroupedLocaleUsMarketStocksDateGet200ResponseAllOfResultsInner
-     */
-    'vw'?: number;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerCryptoTickerPrevGet200Response
- */
-export interface V2AggsTickerCryptoTickerPrevGet200Response {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'ticker': string;
-    /**
-     * Whether or not this response was adjusted for splits.
-     * @type {boolean}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'adjusted': boolean;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsTickerCryptoTickerPrevGet200Response
-     */
-    'results'?: Array<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
- */
-export interface V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'ticker': string;
-    /**
-     * Whether or not this response was adjusted for splits.
-     * @type {boolean}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'adjusted': boolean;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'results'?: Array<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
- */
-export interface V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'n'?: number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'o': number;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'vw'?: number;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerForexTickerPrevGet200Response
- */
-export interface V2AggsTickerForexTickerPrevGet200Response {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'ticker': string;
-    /**
-     * Whether or not this response was adjusted for splits.
-     * @type {boolean}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'adjusted': boolean;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsTickerForexTickerPrevGet200Response
-     */
-    'results'?: Array<V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
- */
-export interface V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'T': string;
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'n'?: number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'o': number;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2AggsTickerForexTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'vw'?: number;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerIndicesTickerPrevGet200Response
- */
-export interface V2AggsTickerIndicesTickerPrevGet200Response {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200Response
-     */
-    'ticker': string;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200Response
-     */
-    'results'?: Array<V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner
- */
-export interface V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner {
-    /**
-     * The close value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'c': number;
-    /**
-     * The highest value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'h': number;
-    /**
-     * The lowest value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'l': number;
-    /**
-     * The open value for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner
-     */
-    'o': number;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerIndicesTickerPrevGet200ResponseAllOfResultsInner
-     */
-    't': number;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
- */
-export interface V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'ticker': string;
-    /**
-     * Whether or not this response was adjusted for splits.
-     * @type {boolean}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'adjusted': boolean;
-    /**
-     * The number of aggregates (minute or day) used to generate the response.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'queryCount': number;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'request_id': string;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'resultsCount': number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'status': string;
-    /**
-     * An array of results containing the requested data.
-     * @type {Array<V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'results'?: Array<V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner>;
-    /**
-     * If present, this value can be used to fetch the next page of data.
-     * @type {string}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response
-     */
-    'next_url'?: string;
-}
-/**
- * 
- * @export
- * @interface V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
- */
-export interface V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'n'?: number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'o': number;
-    /**
-     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
-     * @type {boolean}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'otc'?: boolean;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200ResponseAllOfResultsInner
-     */
-    'vw'?: number;
-}
-/**
- * 
- * @export
  * @interface V2LastBase
  */
 export interface V2LastBase {
@@ -9430,1181 +10965,6 @@ export interface V2LastBase {
      * @memberof V2LastBase
      */
     'status': string;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoDirectionGet200Response
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoDirectionGet200Response {
-    /**
-     * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner>}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoDirectionGet200Response
-     */
-    'tickers'?: Array<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner>;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200Response
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200Response
-     */
-    'status': string;
-    /**
-     * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner>}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200Response
-     */
-    'tickers'?: Array<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner>;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner {
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'day': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay;
-    /**
-     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'fmv'?: number;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'lastTrade': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'min': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'prevDay': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'ticker': string;
-    /**
-     * The value of the change from the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'todaysChange': number;
-    /**
-     * The percentage change since the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'todaysChangePerc': number;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInner
-     */
-    'updated': number;
-}
-/**
- * The most recent daily bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'l': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'o': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'vw': number;
-}
-/**
- * The most recent trade for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade {
-    /**
-     * The trade conditions.
-     * @type {Array<number>}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'c': Array<number>;
-    /**
-     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'i': string;
-    /**
-     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'p': number;
-    /**
-     * The size (volume) of the trade.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    's': number;
-    /**
-     * The millisecond accuracy timestamp. This is the timestamp of when the trade was generated at the exchange.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    't': number;
-    /**
-     * The exchange that this crypto trade happened on.   See <a href=\"https://polygon.io/docs/crypto/get_v3_reference_exchanges\">Exchanges</a> for a mapping of exchanges to IDs. 
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'x': number;
-}
-/**
- * The most recent minute bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'n': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'o': number;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'vw': number;
-}
-/**
- * The previous day\'s bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'l': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'o': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'vw': number;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200Response
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200Response {
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200Response
-     */
-    'data'?: V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData {
-    /**
-     * The combined total number of asks in the book.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'askCount': number;
-    /**
-     * 
-     * @type {Array<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner>}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'asks': Array<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner>;
-    /**
-     * The combined total number of bids in the book.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'bidCount': number;
-    /**
-     * 
-     * @type {Array<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner>}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'bids': Array<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner>;
-    /**
-     * The difference between the best bid and the best ask price across exchanges.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'spread': number;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'ticker': string;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfData
-     */
-    'updated': number;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner {
-    /**
-     * The price of this book level.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner
-     */
-    'p': number;
-    /**
-     * A map of the exchange ID to number of shares at this price level. <br /> <br /> **Example:** <br /> `{   \"p\": 16302.94,   \"x\": {     \"1\": 0.02859424,     \"6\": 0.023455   } }` <br /> <br /> In this example, exchange ID 1 has 0.02859424 shares available at $16,302.94, and exchange ID 6 has 0.023455 shares at the same price level. 
-     * @type {object}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200ResponseAllOfDataAsksInner
-     */
-    'x': object;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response
-     */
-    'status': string;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response
-     */
-    'request_id': string;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response
-     */
-    'ticker'?: V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker;
-}
-/**
- * Contains the requested snapshot data for the specified ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
- */
-export interface V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker {
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'day': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerDay;
-    /**
-     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'fmv'?: number;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'lastTrade': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerLastTrade;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'min': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerMin;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'prevDay': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'ticker': string;
-    /**
-     * The value of the change from the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'todaysChange': number;
-    /**
-     * The percentage change since the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'todaysChangePerc': number;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200ResponseAllOfTicker
-     */
-    'updated': number;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersGet200Response
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200Response
-     */
-    'status': string;
-    /**
-     * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner>}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200Response
-     */
-    'tickers'?: Array<V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner>;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner {
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'day': V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay;
-    /**
-     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'fmv'?: number;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'lastQuote': V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'min': V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'prevDay': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'ticker': string;
-    /**
-     * The value of the change from the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'todaysChange': number;
-    /**
-     * The percentage change since the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'todaysChangePerc': number;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInner
-     */
-    'updated': number;
-}
-/**
- * The most recent daily bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'l': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'o': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'v': number;
-}
-/**
- * The most recent quote for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote {
-    /**
-     * The ask price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    'a': number;
-    /**
-     * The bid price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    'b': number;
-    /**
-     * The millisecond accuracy timestamp of the quote.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    't': number;
-    /**
-     * The exchange ID on which this quote happened.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    'x': number;
-}
-/**
- * The most recent minute bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'c'?: number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'h'?: number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'l'?: number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'n'?: number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'o'?: number;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    't'?: number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'v'?: number;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response
-     */
-    'status': string;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response
-     */
-    'request_id': string;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response
-     */
-    'ticker'?: V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker;
-}
-/**
- * Contains the requested snapshot data for the specified ticker.
- * @export
- * @interface V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
- */
-export interface V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker {
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'day': V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerDay;
-    /**
-     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'fmv'?: number;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'lastQuote': V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerLastQuote;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'min': V2SnapshotLocaleGlobalMarketsForexTickersGet200ResponseAllOfTickersInnerMin;
-    /**
-     * 
-     * @type {V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'prevDay': V2SnapshotLocaleGlobalMarketsCryptoTickersGet200ResponseAllOfTickersInnerPrevDay;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'ticker': string;
-    /**
-     * The value of the change from the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'todaysChange': number;
-    /**
-     * The percentage change since the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'todaysChangePerc': number;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200ResponseAllOfTicker
-     */
-    'updated': number;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksDirectionGet200Response
- */
-export interface V2SnapshotLocaleUsMarketsStocksDirectionGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksDirectionGet200Response
-     */
-    'status': string;
-    /**
-     * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner>}
-     * @memberof V2SnapshotLocaleUsMarketsStocksDirectionGet200Response
-     */
-    'tickers'?: Array<V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner>;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200Response
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200Response {
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200Response
-     */
-    'count'?: number;
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200Response
-     */
-    'status': string;
-    /**
-     * An array of snapshot data for the specified tickers.
-     * @type {Array<V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner>}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200Response
-     */
-    'tickers'?: Array<V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner>;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner {
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'day'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay;
-    /**
-     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'fmv'?: number;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'lastQuote'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'lastTrade'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'min'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'prevDay'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'ticker'?: string;
-    /**
-     * The value of the change from the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'todaysChange'?: number;
-    /**
-     * The percentage change since the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'todaysChangePerc'?: number;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInner
-     */
-    'updated'?: number;
-}
-/**
- * The most recent daily bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'l': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'o': number;
-    /**
-     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
-     * @type {boolean}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'otc'?: boolean;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay
-     */
-    'vw': number;
-}
-/**
- * The most recent quote for this ticker.  This is only returned if your current plan includes quotes.
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote {
-    /**
-     * The ask price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    'P': number;
-    /**
-     * The ask size in lots.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    'S': number;
-    /**
-     * The bid price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    'p': number;
-    /**
-     * The bid size in lots.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    's': number;
-    /**
-     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote
-     */
-    't': number;
-}
-/**
- * The most recent trade for this ticker.  This is only returned if your current plan includes trades.
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade {
-    /**
-     * The trade conditions.
-     * @type {Array<number>}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'c': Array<number>;
-    /**
-     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'i': string;
-    /**
-     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'p': number;
-    /**
-     * The size (volume) of the trade.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    's': number;
-    /**
-     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    't': number;
-    /**
-     * The exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade
-     */
-    'x': number;
-}
-/**
- * The most recent minute bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin {
-    /**
-     * The accumulated volume.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'av': number;
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'l': number;
-    /**
-     * The number of transactions in the aggregate window.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'n': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'o': number;
-    /**
-     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
-     * @type {boolean}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'otc'?: boolean;
-    /**
-     * The Unix millisecond timestamp for the start of the aggregate window.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    't': number;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin
-     */
-    'vw': number;
-}
-/**
- * The previous day\'s bar for this ticker.
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay {
-    /**
-     * The close price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'c': number;
-    /**
-     * The highest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'h': number;
-    /**
-     * The lowest price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'l': number;
-    /**
-     * The open price for the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'o': number;
-    /**
-     * Whether or not this aggregate is for an OTC ticker. This field will be left off if false.
-     * @type {boolean}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'otc'?: boolean;
-    /**
-     * The trading volume of the symbol in the given time period.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'v': number;
-    /**
-     * The volume weighted average price.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay
-     */
-    'vw': number;
-}
-/**
- * 
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response {
-    /**
-     * The status of this request\'s response.
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response
-     */
-    'status': string;
-    /**
-     * A request id assigned by the server.
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response
-     */
-    'request_id': string;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response
-     */
-    'ticker'?: V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker;
-}
-/**
- * Contains the requested snapshot data for the specified ticker.
- * @export
- * @interface V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
- */
-export interface V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker {
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'day'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerDay;
-    /**
-     * Fair market value is only available on Business plans. It is our proprietary algorithm to generate a real-time, accurate, fair market value of a tradable security. For more information, <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/contact\">contact us</a>.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'fmv'?: number;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'lastQuote'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastQuote;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'lastTrade'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerLastTrade;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'min'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerMin;
-    /**
-     * 
-     * @type {V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'prevDay'?: V2SnapshotLocaleUsMarketsStocksTickersGet200ResponseAllOfTickersInnerPrevDay;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'ticker'?: string;
-    /**
-     * The value of the change from the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'todaysChange'?: number;
-    /**
-     * The percentage change since the previous day.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'todaysChangePerc'?: number;
-    /**
-     * The last updated timestamp.
-     * @type {number}
-     * @memberof V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200ResponseAllOfTicker
-     */
-    'updated'?: number;
 }
 /**
  * 
@@ -10636,256 +10996,6 @@ export interface V2TicksBase {
      * @memberof V2TicksBase
      */
     'ticker'?: string;
-}
-/**
- * 
- * @export
- * @interface V2TicksStocksNbboTickerDateGet200Response
- */
-export interface V2TicksStocksNbboTickerDateGet200Response {
-    /**
-     * Latency in milliseconds for the query results from the database.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200Response
-     */
-    'db_latency'?: number;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200Response
-     */
-    'results_count'?: number;
-    /**
-     * Whether or not this query was executed successfully.
-     * @type {boolean}
-     * @memberof V2TicksStocksNbboTickerDateGet200Response
-     */
-    'success'?: boolean;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2TicksStocksNbboTickerDateGet200Response
-     */
-    'ticker'?: string;
-    /**
-     * 
-     * @type {Array<V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner>}
-     * @memberof V2TicksStocksNbboTickerDateGet200Response
-     */
-    'results'?: Array<V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
- */
-export interface V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'T': string;
-    /**
-     * The nanosecond accuracy TRF(Trade Reporting Facility) Unix Timestamp. This is the timestamp of when the trade reporting facility received this message.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'f': number;
-    /**
-     * The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11). 
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'q': number;
-    /**
-     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The nanosecond accuracy Participant/Exchange Unix Timestamp. This is the timestamp of when the quote was actually generated at the exchange.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'y': number;
-    /**
-     * The ask price.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'P': number;
-    /**
-     * The ask size. This represents the number of round lot orders at the given ask price. The normal round lot size is 100 shares. An ask size of 2 means there are 200 shares available to purchase at the given ask price.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'S': number;
-    /**
-     * The ask exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'X': number;
-    /**
-     * A list of condition codes. 
-     * @type {Array<number>}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'c': Array<number>;
-    /**
-     * The indicators. For more information, see our glossary of [Conditions and Indicators](https://polygon.io/glossary/us/stocks/conditions-indicators). 
-     * @type {Array<number>}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'i': Array<number>;
-    /**
-     * The bid price.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'p': number;
-    /**
-     * The bid size. This represents the number of round lot orders at the given bid price. The normal round lot size is 100 shares. A bid size of 2 means there are 200 shares for purchase at the given bid price.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    's': number;
-    /**
-     * The bid exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'x': number;
-    /**
-     * There are 3 tapes which define which exchange the ticker is listed on. These are integers in our objects which represent the letter of the alphabet. Eg: 1 = A, 2 = B, 3 = C. * Tape A is NYSE listed securities * Tape B is NYSE ARCA / NYSE American * Tape C is NASDAQ 
-     * @type {number}
-     * @memberof V2TicksStocksNbboTickerDateGet200ResponseAllOfResultsInner
-     */
-    'z': number;
-}
-/**
- * 
- * @export
- * @interface V2TicksStocksTradesTickerDateGet200Response
- */
-export interface V2TicksStocksTradesTickerDateGet200Response {
-    /**
-     * Latency in milliseconds for the query results from the database.
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200Response
-     */
-    'db_latency'?: number;
-    /**
-     * The total number of results for this request.
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200Response
-     */
-    'results_count'?: number;
-    /**
-     * Whether or not this query was executed successfully.
-     * @type {boolean}
-     * @memberof V2TicksStocksTradesTickerDateGet200Response
-     */
-    'success'?: boolean;
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2TicksStocksTradesTickerDateGet200Response
-     */
-    'ticker'?: string;
-    /**
-     * 
-     * @type {Array<V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner>}
-     * @memberof V2TicksStocksTradesTickerDateGet200Response
-     */
-    'results'?: Array<V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner>;
-}
-/**
- * 
- * @export
- * @interface V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
- */
-export interface V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner {
-    /**
-     * The exchange symbol that this item is traded under.
-     * @type {string}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'T': string;
-    /**
-     * The nanosecond accuracy TRF(Trade Reporting Facility) Unix Timestamp. This is the timestamp of when the trade reporting facility received this message.
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'f': number;
-    /**
-     * The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11). 
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'q': number;
-    /**
-     * The nanosecond accuracy SIP Unix Timestamp. This is the timestamp of when the SIP received this message from the exchange which produced it.
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    't': number;
-    /**
-     * The nanosecond accuracy Participant/Exchange Unix Timestamp. This is the timestamp of when the quote was actually generated at the exchange.
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'y': number;
-    /**
-     * A list of condition codes. 
-     * @type {Array<number>}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'c': Array<number>;
-    /**
-     * The trade correction indicator. 
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'e': number;
-    /**
-     * The Trade ID which uniquely identifies a trade. These are unique per combination of ticker, exchange, and TRF. For example: A trade for AAPL executed on NYSE and a trade for AAPL executed on NASDAQ could potentially have the same Trade ID. 
-     * @type {string}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'i': string;
-    /**
-     * The price of the trade. This is the actual dollar value per whole share of this trade. A trade of 100 shares with a price of $2.00 would be worth a total dollar value of $200.00. 
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'p': number;
-    /**
-     * The ID for the Trade Reporting Facility where the trade took place. 
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'r': number;
-    /**
-     * The size of a trade (also known as volume). 
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    's': number;
-    /**
-     * The exchange ID. See <a href=\"https://polygon.io/docs/stocks/get_v3_reference_exchanges\" alt=\"Exchanges\">Exchanges</a> for Polygon.io\'s mapping of exchange IDs.
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'x': number;
-    /**
-     * There are 3 tapes which define which exchange the ticker is listed on. These are integers in our objects which represent the letter of the alphabet. Eg: 1 = A, 2 = B, 3 = C. * Tape A is NYSE listed securities * Tape B is NYSE ARCA / NYSE American * Tape C is NASDAQ 
-     * @type {number}
-     * @memberof V2TicksStocksTradesTickerDateGet200ResponseAllOfResultsInner
-     */
-    'z': number;
 }
 
 /**
@@ -11667,6 +11777,275 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker Full Book (L2)
+         * @param {string} ticker The cryptocurrency ticker.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetCryptoSnapshotTickerBook: async (ticker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('deprecatedGetCryptoSnapshotTickerBook', 'ticker', ticker)
+            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get historic trade ticks for a cryptocurrency pair. 
+         * @summary Historic Crypto Trades
+         * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
+         * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
+         * @param {string} date The date/day of the historic ticks to retrieve.
+         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [limit] Limit the size of the response, max 10000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricCryptoTrades: async (from: string, to: string, date: string, offset?: number, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('deprecatedGetHistoricCryptoTrades', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('deprecatedGetHistoricCryptoTrades', 'to', to)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('deprecatedGetHistoricCryptoTrades', 'date', date)
+            const localVarPath = `/v1/historic/crypto/{from}/{to}/{date}`
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get historic ticks for a forex currency pair. 
+         * @summary Historic Forex Ticks
+         * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
+         * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
+         * @param {string} date The date/day of the historic ticks to retrieve.
+         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [limit] Limit the size of the response, max 10000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricForexQuotes: async (from: string, to: string, date: string, offset?: number, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('deprecatedGetHistoricForexQuotes', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('deprecatedGetHistoricForexQuotes', 'to', to)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('deprecatedGetHistoricForexQuotes', 'date', date)
+            const localVarPath = `/v1/historic/forex/{from}/{to}/{date}`
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get NBBO quotes for a given ticker symbol on a specified date. 
+         * @summary Quotes (NBBO)
+         * @param {string} ticker The ticker symbol we want quotes for.
+         * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
+         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+         * @param {boolean} [reverse] Reverse the order of the results. 
+         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricStocksQuotes: async (ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('deprecatedGetHistoricStocksQuotes', 'ticker', ticker)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('deprecatedGetHistoricStocksQuotes', 'date', date)
+            const localVarPath = `/v2/ticks/stocks/nbbo/{ticker}/{date}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (timestamp !== undefined) {
+                localVarQueryParameter['timestamp'] = timestamp;
+            }
+
+            if (timestampLimit !== undefined) {
+                localVarQueryParameter['timestampLimit'] = timestampLimit;
+            }
+
+            if (reverse !== undefined) {
+                localVarQueryParameter['reverse'] = reverse;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get trades for a given ticker symbol on a specified date. 
+         * @summary Trades
+         * @param {string} ticker The ticker symbol we want trades for.
+         * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
+         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+         * @param {boolean} [reverse] Reverse the order of the results. 
+         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricStocksTrades: async (ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('deprecatedGetHistoricStocksTrades', 'ticker', ticker)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('deprecatedGetHistoricStocksTrades', 'date', date)
+            const localVarPath = `/v2/ticks/stocks/trades/{ticker}/{date}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (timestamp !== undefined) {
+                localVarQueryParameter['timestamp'] = timestamp;
+            }
+
+            if (timestampLimit !== undefined) {
+                localVarQueryParameter['timestampLimit'] = timestampLimit;
+            }
+
+            if (reverse !== undefined) {
+                localVarQueryParameter['reverse'] = reverse;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get the exponential moving average (EMA) for a ticker symbol over a given time range.
          * @summary Exponential Moving Average (EMA)
          * @param {string} stockTicker Specify a case-sensitive ticker symbol for which to get exponential moving average (EMA) data. For example, AAPL represents Apple Inc.
@@ -12162,6 +12541,236 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} cryptoTicker The ticker symbol of the currency pair.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetCryptoAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetCryptoAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoAggregates: async (cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'cryptoTicker' is not null or undefined
+            assertParamExists('getCryptoAggregates', 'cryptoTicker', cryptoTicker)
+            // verify required parameter 'multiplier' is not null or undefined
+            assertParamExists('getCryptoAggregates', 'multiplier', multiplier)
+            // verify required parameter 'timespan' is not null or undefined
+            assertParamExists('getCryptoAggregates', 'timespan', timespan)
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('getCryptoAggregates', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('getCryptoAggregates', 'to', to)
+            const localVarPath = `/v2/aggs/ticker/{cryptoTicker}/range/{multiplier}/{timespan}/{from}/{to}`
+                .replace(`{${"cryptoTicker"}}`, encodeURIComponent(String(cryptoTicker)))
+                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
+                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the open, close prices of a cryptocurrency symbol on a certain day. 
+         * @summary Daily Open/Close
+         * @param {string} from The \&quot;from\&quot; symbol of the pair.
+         * @param {string} to The \&quot;to\&quot; symbol of the pair.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoOpenClose: async (from: string, to: string, date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('getCryptoOpenClose', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('getCryptoOpenClose', 'to', to)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getCryptoOpenClose', 'date', date)
+            const localVarPath = `/v1/open-close/crypto/{from}/{to}/{date}`
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetCryptoSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoSnapshotDirection: async (direction: GetCryptoSnapshotDirectionDirectionEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'direction' is not null or undefined
+            assertParamExists('getCryptoSnapshotDirection', 'direction', direction)
+            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/{direction}`
+                .replace(`{${"direction"}}`, encodeURIComponent(String(direction)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker
+         * @param {string} ticker Ticker of the snapshot
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoSnapshotTicker: async (ticker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('getCryptoSnapshotTicker', 'ticker', ticker)
+            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoSnapshotTickers: async (tickers?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/tickers`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (tickers) {
+                localVarQueryParameter['tickers'] = tickers;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get a timeline of events for the entity associated with the given ticker, CUSIP, or Composite FIGI.
          * @summary Ticker Events
          * @param {string} id Identifier of an asset. This can currently be a Ticker, CUSIP, or Composite FIGI. When given a ticker, we return events for the entity currently represented by that ticker. To find events for entities previously associated with a ticker, find the relevant identifier using the  [Ticker Details Endpoint](https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker)
@@ -12191,6 +12800,421 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             if (types !== undefined) {
                 localVarQueryParameter['types'] = types;
             }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} forexTicker The ticker symbol of the currency pair.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetForexAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetForexAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexAggregates: async (forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'forexTicker' is not null or undefined
+            assertParamExists('getForexAggregates', 'forexTicker', forexTicker)
+            // verify required parameter 'multiplier' is not null or undefined
+            assertParamExists('getForexAggregates', 'multiplier', multiplier)
+            // verify required parameter 'timespan' is not null or undefined
+            assertParamExists('getForexAggregates', 'timespan', timespan)
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('getForexAggregates', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('getForexAggregates', 'to', to)
+            const localVarPath = `/v2/aggs/ticker/{forexTicker}/range/{multiplier}/{timespan}/{from}/{to}`
+                .replace(`{${"forexTicker"}}`, encodeURIComponent(String(forexTicker)))
+                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
+                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetForexSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexSnapshotDirection: async (direction: GetForexSnapshotDirectionDirectionEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'direction' is not null or undefined
+            assertParamExists('getForexSnapshotDirection', 'direction', direction)
+            const localVarPath = `/v2/snapshot/locale/global/markets/forex/{direction}`
+                .replace(`{${"direction"}}`, encodeURIComponent(String(direction)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker
+         * @param {string} ticker The forex ticker.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexSnapshotTicker: async (ticker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('getForexSnapshotTicker', 'ticker', ticker)
+            const localVarPath = `/v2/snapshot/locale/global/markets/forex/tickers/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexSnapshotTickers: async (tickers?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v2/snapshot/locale/global/markets/forex/tickers`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (tickers) {
+                localVarQueryParameter['tickers'] = tickers;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroupedCryptoAggregates: async (date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getGroupedCryptoAggregates', 'date', date)
+            const localVarPath = `/v2/aggs/grouped/locale/global/market/crypto/{date}`
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroupedForexAggregates: async (date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getGroupedForexAggregates', 'date', date)
+            const localVarPath = `/v2/aggs/grouped/locale/global/market/fx/{date}`
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroupedStocksAggregates: async (date: string, adjusted?: boolean, includeOtc?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getGroupedStocksAggregates', 'date', date)
+            const localVarPath = `/v2/aggs/grouped/locale/us/market/stocks/{date}`
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+            if (includeOtc !== undefined) {
+                localVarQueryParameter['include_otc'] = includeOtc;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetIndicesAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {GetIndicesAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getIndicesAggregates: async (indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'indicesTicker' is not null or undefined
+            assertParamExists('getIndicesAggregates', 'indicesTicker', indicesTicker)
+            // verify required parameter 'multiplier' is not null or undefined
+            assertParamExists('getIndicesAggregates', 'multiplier', multiplier)
+            // verify required parameter 'timespan' is not null or undefined
+            assertParamExists('getIndicesAggregates', 'timespan', timespan)
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('getIndicesAggregates', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('getIndicesAggregates', 'to', to)
+            const localVarPath = `/v2/aggs/ticker/{indicesTicker}/range/{multiplier}/{timespan}/{from}/{to}`
+                .replace(`{${"indicesTicker"}}`, encodeURIComponent(String(indicesTicker)))
+                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
+                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the open, close and afterhours values of a index symbol on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getIndicesOpenClose: async (indicesTicker: string, date: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'indicesTicker' is not null or undefined
+            assertParamExists('getIndicesOpenClose', 'indicesTicker', indicesTicker)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getIndicesOpenClose', 'date', date)
+            const localVarPath = `/v1/open-close/{indicesTicker}/{date}`
+                .replace(`{${"indicesTicker"}}`, encodeURIComponent(String(indicesTicker)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
 
 
     
@@ -12270,6 +13294,74 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetOptionsAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetOptionsAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOptionsAggregates: async (optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'optionsTicker' is not null or undefined
+            assertParamExists('getOptionsAggregates', 'optionsTicker', optionsTicker)
+            // verify required parameter 'multiplier' is not null or undefined
+            assertParamExists('getOptionsAggregates', 'multiplier', multiplier)
+            // verify required parameter 'timespan' is not null or undefined
+            assertParamExists('getOptionsAggregates', 'timespan', timespan)
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('getOptionsAggregates', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('getOptionsAggregates', 'to', to)
+            const localVarPath = `/v2/aggs/ticker/{optionsTicker}/range/{multiplier}/{timespan}/{from}/{to}`
+                .replace(`{${"optionsTicker"}}`, encodeURIComponent(String(optionsTicker)))
+                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
+                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get an options contract
          * @summary Options Contract
          * @param {string} optionsTicker Query for a contract by options ticker. You can learn more about the structure of options tickers [here](https://polygon.io/blog/how-to-read-a-stock-options-ticker/).
@@ -12312,6 +13404,257 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * Get the open, close and afterhours prices of an options contract on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOptionsOpenClose: async (optionsTicker: string, date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'optionsTicker' is not null or undefined
+            assertParamExists('getOptionsOpenClose', 'optionsTicker', optionsTicker)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getOptionsOpenClose', 'date', date)
+            const localVarPath = `/v1/open-close/{optionsTicker}/{date}`
+                .replace(`{${"optionsTicker"}}`, encodeURIComponent(String(optionsTicker)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
+         * @summary Previous Close
+         * @param {string} cryptoTicker The ticker symbol of the currency pair.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousCryptoAggregates: async (cryptoTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'cryptoTicker' is not null or undefined
+            assertParamExists('getPreviousCryptoAggregates', 'cryptoTicker', cryptoTicker)
+            const localVarPath = `/v2/aggs/ticker/{cryptoTicker}/prev`
+                .replace(`{${"cryptoTicker"}}`, encodeURIComponent(String(cryptoTicker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
+         * @summary Previous Close
+         * @param {string} forexTicker The ticker symbol of the currency pair.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousForexAggregates: async (forexTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'forexTicker' is not null or undefined
+            assertParamExists('getPreviousForexAggregates', 'forexTicker', forexTicker)
+            const localVarPath = `/v2/aggs/ticker/{forexTicker}/prev`
+                .replace(`{${"forexTicker"}}`, encodeURIComponent(String(forexTicker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
+         * @summary Previous Close
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousIndicesAggregates: async (indicesTicker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'indicesTicker' is not null or undefined
+            assertParamExists('getPreviousIndicesAggregates', 'indicesTicker', indicesTicker)
+            const localVarPath = `/v2/aggs/ticker/{indicesTicker}/prev`
+                .replace(`{${"indicesTicker"}}`, encodeURIComponent(String(indicesTicker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
+         * @summary Previous Close
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousOptionsAggregates: async (optionsTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'optionsTicker' is not null or undefined
+            assertParamExists('getPreviousOptionsAggregates', 'optionsTicker', optionsTicker)
+            const localVarPath = `/v2/aggs/ticker/{optionsTicker}/prev`
+                .replace(`{${"optionsTicker"}}`, encodeURIComponent(String(optionsTicker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
+         * @summary Previous Close
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousStocksAggregates: async (stocksTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'stocksTicker' is not null or undefined
+            assertParamExists('getPreviousStocksAggregates', 'stocksTicker', stocksTicker)
+            const localVarPath = `/v2/aggs/ticker/{stocksTicker}/prev`
+                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get a list of tickers related to the queried ticker based on News and Returns data.
          * @summary Related Companies
          * @param {string} ticker The ticker symbol to search.
@@ -12336,6 +13679,242 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
             // authentication apiKey required
             await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetStocksAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetStocksAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksAggregates: async (stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'stocksTicker' is not null or undefined
+            assertParamExists('getStocksAggregates', 'stocksTicker', stocksTicker)
+            // verify required parameter 'multiplier' is not null or undefined
+            assertParamExists('getStocksAggregates', 'multiplier', multiplier)
+            // verify required parameter 'timespan' is not null or undefined
+            assertParamExists('getStocksAggregates', 'timespan', timespan)
+            // verify required parameter 'from' is not null or undefined
+            assertParamExists('getStocksAggregates', 'from', from)
+            // verify required parameter 'to' is not null or undefined
+            assertParamExists('getStocksAggregates', 'to', to)
+            const localVarPath = `/v2/aggs/ticker/{stocksTicker}/range/{multiplier}/{timespan}/{from}/{to}`
+                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)))
+                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
+                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
+                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
+                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the open, close and afterhours prices of a stock symbol on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksOpenClose: async (stocksTicker: string, date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'stocksTicker' is not null or undefined
+            assertParamExists('getStocksOpenClose', 'stocksTicker', stocksTicker)
+            // verify required parameter 'date' is not null or undefined
+            assertParamExists('getStocksOpenClose', 'date', date)
+            const localVarPath = `/v1/open-close/{stocksTicker}/{date}`
+                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)))
+                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (adjusted !== undefined) {
+                localVarQueryParameter['adjusted'] = adjusted;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetStocksSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksSnapshotDirection: async (direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'direction' is not null or undefined
+            assertParamExists('getStocksSnapshotDirection', 'direction', direction)
+            const localVarPath = `/v2/snapshot/locale/us/markets/stocks/{direction}`
+                .replace(`{${"direction"}}`, encodeURIComponent(String(direction)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (includeOtc !== undefined) {
+                localVarQueryParameter['include_otc'] = includeOtc;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary Ticker
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksSnapshotTicker: async (stocksTicker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'stocksTicker' is not null or undefined
+            assertParamExists('getStocksSnapshotTicker', 'stocksTicker', stocksTicker)
+            const localVarPath = `/v2/snapshot/locale/us/markets/stocks/tickers/{stocksTicker}`
+                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksSnapshotTickers: async (tickers?: Array<string>, includeOtc?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v2/snapshot/locale/us/markets/stocks/tickers`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (tickers) {
+                localVarQueryParameter['tickers'] = tickers;
+            }
+
+            if (includeOtc !== undefined) {
+                localVarQueryParameter['include_otc'] = includeOtc;
+            }
 
 
     
@@ -15976,27 +17555,21 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Get historic trade ticks for a cryptocurrency pair. 
-         * @summary Historic Crypto Trades
-         * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
-         * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
-         * @param {string} date The date/day of the historic ticks to retrieve.
-         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [limit] Limit the size of the response, max 10000.
+         * Retrieve treasury_yields_v1 data via API.
+         * @summary treasury_yields_v1 API
+         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * @param {string} [dateGte] Range by date.
+         * @param {string} [dateGt] Range by date.
+         * @param {string} [dateLte] Range by date.
+         * @param {string} [dateLt] Range by date.
+         * @param {TreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
+         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
+         * @param {TreasuryYieldsSortEnum} [sort] Sort field used for ordering.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1HistoricCryptoFromToDateGet: async (from: string, to: string, date: string, offset?: number, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v1HistoricCryptoFromToDateGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v1HistoricCryptoFromToDateGet', 'to', to)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v1HistoricCryptoFromToDateGet', 'date', date)
-            const localVarPath = `/v1/historic/crypto/{from}/{to}/{date}`
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+        treasuryYields: async (date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: TreasuryYieldsOrderEnum, limit?: number, sort?: TreasuryYieldsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/fed/vX/treasury-yields`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -16011,1426 +17584,36 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             // authentication apiKey required
             await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
 
-            if (offset !== undefined) {
-                localVarQueryParameter['offset'] = offset;
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (order !== undefined) {
+                localVarQueryParameter['order'] = order;
             }
 
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get historic ticks for a forex currency pair. 
-         * @summary Historic Forex Ticks
-         * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
-         * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
-         * @param {string} date The date/day of the historic ticks to retrieve.
-         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [limit] Limit the size of the response, max 10000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1HistoricForexFromToDateGet: async (from: string, to: string, date: string, offset?: number, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v1HistoricForexFromToDateGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v1HistoricForexFromToDateGet', 'to', to)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v1HistoricForexFromToDateGet', 'date', date)
-            const localVarPath = `/v1/historic/forex/{from}/{to}/{date}`
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (offset !== undefined) {
-                localVarQueryParameter['offset'] = offset;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the open, close prices of a cryptocurrency symbol on a certain day. 
-         * @summary Daily Open/Close
-         * @param {string} from The \&quot;from\&quot; symbol of the pair.
-         * @param {string} to The \&quot;to\&quot; symbol of the pair.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseCryptoFromToDateGet: async (from: string, to: string, date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v1OpenCloseCryptoFromToDateGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v1OpenCloseCryptoFromToDateGet', 'to', to)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v1OpenCloseCryptoFromToDateGet', 'date', date)
-            const localVarPath = `/v1/open-close/crypto/{from}/{to}/{date}`
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the open, close and afterhours values of a index symbol on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseIndicesTickerDateGet: async (indicesTicker: string, date: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'indicesTicker' is not null or undefined
-            assertParamExists('v1OpenCloseIndicesTickerDateGet', 'indicesTicker', indicesTicker)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v1OpenCloseIndicesTickerDateGet', 'date', date)
-            const localVarPath = `/v1/open-close/{indicesTicker}/{date}`
-                .replace(`{${"indicesTicker"}}`, encodeURIComponent(String(indicesTicker)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the open, close and afterhours prices of an options contract on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseOptionsTickerDateGet: async (optionsTicker: string, date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'optionsTicker' is not null or undefined
-            assertParamExists('v1OpenCloseOptionsTickerDateGet', 'optionsTicker', optionsTicker)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v1OpenCloseOptionsTickerDateGet', 'date', date)
-            const localVarPath = `/v1/open-close/{optionsTicker}/{date}`
-                .replace(`{${"optionsTicker"}}`, encodeURIComponent(String(optionsTicker)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the open, close and afterhours prices of a stock symbol on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseStocksTickerDateGet: async (stocksTicker: string, date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'stocksTicker' is not null or undefined
-            assertParamExists('v1OpenCloseStocksTickerDateGet', 'stocksTicker', stocksTicker)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v1OpenCloseStocksTickerDateGet', 'date', date)
-            const localVarPath = `/v1/open-close/{stocksTicker}/{date}`
-                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsGroupedLocaleGlobalMarketCryptoDateGet: async (date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v2AggsGroupedLocaleGlobalMarketCryptoDateGet', 'date', date)
-            const localVarPath = `/v2/aggs/grouped/locale/global/market/crypto/{date}`
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsGroupedLocaleGlobalMarketFxDateGet: async (date: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v2AggsGroupedLocaleGlobalMarketFxDateGet', 'date', date)
-            const localVarPath = `/v2/aggs/grouped/locale/global/market/fx/{date}`
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsGroupedLocaleUsMarketStocksDateGet: async (date: string, adjusted?: boolean, includeOtc?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v2AggsGroupedLocaleUsMarketStocksDateGet', 'date', date)
-            const localVarPath = `/v2/aggs/grouped/locale/us/market/stocks/{date}`
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-            if (includeOtc !== undefined) {
-                localVarQueryParameter['include_otc'] = includeOtc;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
-         * @summary Previous Close
-         * @param {string} cryptoTicker The ticker symbol of the currency pair.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerCryptoTickerPrevGet: async (cryptoTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'cryptoTicker' is not null or undefined
-            assertParamExists('v2AggsTickerCryptoTickerPrevGet', 'cryptoTicker', cryptoTicker)
-            const localVarPath = `/v2/aggs/ticker/{cryptoTicker}/prev`
-                .replace(`{${"cryptoTicker"}}`, encodeURIComponent(String(cryptoTicker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} cryptoTicker The ticker symbol of the currency pair.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet: async (cryptoTicker: string, multiplier: number, timespan: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'cryptoTicker' is not null or undefined
-            assertParamExists('v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet', 'cryptoTicker', cryptoTicker)
-            // verify required parameter 'multiplier' is not null or undefined
-            assertParamExists('v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet', 'multiplier', multiplier)
-            // verify required parameter 'timespan' is not null or undefined
-            assertParamExists('v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet', 'timespan', timespan)
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet', 'to', to)
-            const localVarPath = `/v2/aggs/ticker/{cryptoTicker}/range/{multiplier}/{timespan}/{from}/{to}`
-                .replace(`{${"cryptoTicker"}}`, encodeURIComponent(String(cryptoTicker)))
-                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
-                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
             }
 
             if (sort !== undefined) {
                 localVarQueryParameter['sort'] = sort;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
-         * @summary Previous Close
-         * @param {string} forexTicker The ticker symbol of the currency pair.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerForexTickerPrevGet: async (forexTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'forexTicker' is not null or undefined
-            assertParamExists('v2AggsTickerForexTickerPrevGet', 'forexTicker', forexTicker)
-            const localVarPath = `/v2/aggs/ticker/{forexTicker}/prev`
-                .replace(`{${"forexTicker"}}`, encodeURIComponent(String(forexTicker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} forexTicker The ticker symbol of the currency pair.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet: async (forexTicker: string, multiplier: number, timespan: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'forexTicker' is not null or undefined
-            assertParamExists('v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet', 'forexTicker', forexTicker)
-            // verify required parameter 'multiplier' is not null or undefined
-            assertParamExists('v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet', 'multiplier', multiplier)
-            // verify required parameter 'timespan' is not null or undefined
-            assertParamExists('v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet', 'timespan', timespan)
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet', 'to', to)
-            const localVarPath = `/v2/aggs/ticker/{forexTicker}/range/{multiplier}/{timespan}/{from}/{to}`
-                .replace(`{${"forexTicker"}}`, encodeURIComponent(String(forexTicker)))
-                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
-                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
-         * @summary Previous Close
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerIndicesTickerPrevGet: async (indicesTicker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'indicesTicker' is not null or undefined
-            assertParamExists('v2AggsTickerIndicesTickerPrevGet', 'indicesTicker', indicesTicker)
-            const localVarPath = `/v2/aggs/ticker/{indicesTicker}/prev`
-                .replace(`{${"indicesTicker"}}`, encodeURIComponent(String(indicesTicker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet: async (indicesTicker: string, multiplier: number, timespan: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, sort?: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'indicesTicker' is not null or undefined
-            assertParamExists('v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet', 'indicesTicker', indicesTicker)
-            // verify required parameter 'multiplier' is not null or undefined
-            assertParamExists('v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet', 'multiplier', multiplier)
-            // verify required parameter 'timespan' is not null or undefined
-            assertParamExists('v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet', 'timespan', timespan)
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet', 'to', to)
-            const localVarPath = `/v2/aggs/ticker/{indicesTicker}/range/{multiplier}/{timespan}/{from}/{to}`
-                .replace(`{${"indicesTicker"}}`, encodeURIComponent(String(indicesTicker)))
-                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
-                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
-         * @summary Previous Close
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerOptionsTickerPrevGet: async (optionsTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'optionsTicker' is not null or undefined
-            assertParamExists('v2AggsTickerOptionsTickerPrevGet', 'optionsTicker', optionsTicker)
-            const localVarPath = `/v2/aggs/ticker/{optionsTicker}/prev`
-                .replace(`{${"optionsTicker"}}`, encodeURIComponent(String(optionsTicker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet: async (optionsTicker: string, multiplier: number, timespan: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'optionsTicker' is not null or undefined
-            assertParamExists('v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet', 'optionsTicker', optionsTicker)
-            // verify required parameter 'multiplier' is not null or undefined
-            assertParamExists('v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet', 'multiplier', multiplier)
-            // verify required parameter 'timespan' is not null or undefined
-            assertParamExists('v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet', 'timespan', timespan)
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet', 'to', to)
-            const localVarPath = `/v2/aggs/ticker/{optionsTicker}/range/{multiplier}/{timespan}/{from}/{to}`
-                .replace(`{${"optionsTicker"}}`, encodeURIComponent(String(optionsTicker)))
-                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
-                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
-         * @summary Previous Close
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerStocksTickerPrevGet: async (stocksTicker: string, adjusted?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'stocksTicker' is not null or undefined
-            assertParamExists('v2AggsTickerStocksTickerPrevGet', 'stocksTicker', stocksTicker)
-            const localVarPath = `/v2/aggs/ticker/{stocksTicker}/prev`
-                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet: async (stocksTicker: string, multiplier: number, timespan: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'stocksTicker' is not null or undefined
-            assertParamExists('v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet', 'stocksTicker', stocksTicker)
-            // verify required parameter 'multiplier' is not null or undefined
-            assertParamExists('v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet', 'multiplier', multiplier)
-            // verify required parameter 'timespan' is not null or undefined
-            assertParamExists('v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet', 'timespan', timespan)
-            // verify required parameter 'from' is not null or undefined
-            assertParamExists('v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet', 'from', from)
-            // verify required parameter 'to' is not null or undefined
-            assertParamExists('v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet', 'to', to)
-            const localVarPath = `/v2/aggs/ticker/{stocksTicker}/range/{multiplier}/{timespan}/{from}/{to}`
-                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)))
-                .replace(`{${"multiplier"}}`, encodeURIComponent(String(multiplier)))
-                .replace(`{${"timespan"}}`, encodeURIComponent(String(timespan)))
-                .replace(`{${"from"}}`, encodeURIComponent(String(from)))
-                .replace(`{${"to"}}`, encodeURIComponent(String(to)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (adjusted !== undefined) {
-                localVarQueryParameter['adjusted'] = adjusted;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoDirectionGet: async (direction: V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'direction' is not null or undefined
-            assertParamExists('v2SnapshotLocaleGlobalMarketsCryptoDirectionGet', 'direction', direction)
-            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/{direction}`
-                .replace(`{${"direction"}}`, encodeURIComponent(String(direction)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoTickersGet: async (tickers?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/tickers`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (tickers) {
-                localVarQueryParameter['tickers'] = tickers;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker Full Book (L2)
-         * @param {string} ticker The cryptocurrency ticker.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet: async (ticker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'ticker' is not null or undefined
-            assertParamExists('v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet', 'ticker', ticker)
-            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book`
-                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker
-         * @param {string} ticker Ticker of the snapshot
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet: async (ticker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'ticker' is not null or undefined
-            assertParamExists('v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet', 'ticker', ticker)
-            const localVarPath = `/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}`
-                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsForexDirectionGet: async (direction: V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'direction' is not null or undefined
-            assertParamExists('v2SnapshotLocaleGlobalMarketsForexDirectionGet', 'direction', direction)
-            const localVarPath = `/v2/snapshot/locale/global/markets/forex/{direction}`
-                .replace(`{${"direction"}}`, encodeURIComponent(String(direction)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsForexTickersGet: async (tickers?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v2/snapshot/locale/global/markets/forex/tickers`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (tickers) {
-                localVarQueryParameter['tickers'] = tickers;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker
-         * @param {string} ticker The forex ticker.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsForexTickersTickerGet: async (ticker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'ticker' is not null or undefined
-            assertParamExists('v2SnapshotLocaleGlobalMarketsForexTickersTickerGet', 'ticker', ticker)
-            const localVarPath = `/v2/snapshot/locale/global/markets/forex/tickers/{ticker}`
-                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleUsMarketsStocksDirectionGet: async (direction: V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum, includeOtc?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'direction' is not null or undefined
-            assertParamExists('v2SnapshotLocaleUsMarketsStocksDirectionGet', 'direction', direction)
-            const localVarPath = `/v2/snapshot/locale/us/markets/stocks/{direction}`
-                .replace(`{${"direction"}}`, encodeURIComponent(String(direction)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (includeOtc !== undefined) {
-                localVarQueryParameter['include_otc'] = includeOtc;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleUsMarketsStocksTickersGet: async (tickers?: Array<string>, includeOtc?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v2/snapshot/locale/us/markets/stocks/tickers`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (tickers) {
-                localVarQueryParameter['tickers'] = tickers;
-            }
-
-            if (includeOtc !== undefined) {
-                localVarQueryParameter['include_otc'] = includeOtc;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary Ticker
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet: async (stocksTicker: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'stocksTicker' is not null or undefined
-            assertParamExists('v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet', 'stocksTicker', stocksTicker)
-            const localVarPath = `/v2/snapshot/locale/us/markets/stocks/tickers/{stocksTicker}`
-                .replace(`{${"stocksTicker"}}`, encodeURIComponent(String(stocksTicker)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get NBBO quotes for a given ticker symbol on a specified date. 
-         * @summary Quotes (NBBO)
-         * @param {string} ticker The ticker symbol we want quotes for.
-         * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
-         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-         * @param {boolean} [reverse] Reverse the order of the results. 
-         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2TicksStocksNbboTickerDateGet: async (ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'ticker' is not null or undefined
-            assertParamExists('v2TicksStocksNbboTickerDateGet', 'ticker', ticker)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v2TicksStocksNbboTickerDateGet', 'date', date)
-            const localVarPath = `/v2/ticks/stocks/nbbo/{ticker}/{date}`
-                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (timestamp !== undefined) {
-                localVarQueryParameter['timestamp'] = timestamp;
-            }
-
-            if (timestampLimit !== undefined) {
-                localVarQueryParameter['timestampLimit'] = timestampLimit;
-            }
-
-            if (reverse !== undefined) {
-                localVarQueryParameter['reverse'] = reverse;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get trades for a given ticker symbol on a specified date. 
-         * @summary Trades
-         * @param {string} ticker The ticker symbol we want trades for.
-         * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
-         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-         * @param {boolean} [reverse] Reverse the order of the results. 
-         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2TicksStocksTradesTickerDateGet: async (ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'ticker' is not null or undefined
-            assertParamExists('v2TicksStocksTradesTickerDateGet', 'ticker', ticker)
-            // verify required parameter 'date' is not null or undefined
-            assertParamExists('v2TicksStocksTradesTickerDateGet', 'date', date)
-            const localVarPath = `/v2/ticks/stocks/trades/{ticker}/{date}`
-                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)))
-                .replace(`{${"date"}}`, encodeURIComponent(String(date)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (timestamp !== undefined) {
-                localVarQueryParameter['timestamp'] = timestamp;
-            }
-
-            if (timestampLimit !== undefined) {
-                localVarQueryParameter['timestampLimit'] = timestampLimit;
-            }
-
-            if (reverse !== undefined) {
-                localVarQueryParameter['reverse'] = reverse;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
             }
 
 
@@ -17648,6 +17831,89 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker Full Book (L2)
+         * @param {string} ticker The cryptocurrency ticker.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetCryptoSnapshotTickerBook200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetCryptoSnapshotTickerBook(ticker, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetCryptoSnapshotTickerBook']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get historic trade ticks for a cryptocurrency pair. 
+         * @summary Historic Crypto Trades
+         * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
+         * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
+         * @param {string} date The date/day of the historic ticks to retrieve.
+         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [limit] Limit the size of the response, max 10000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricCryptoTrades200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricCryptoTrades(from, to, date, offset, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricCryptoTrades']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get historic ticks for a forex currency pair. 
+         * @summary Historic Forex Ticks
+         * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
+         * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
+         * @param {string} date The date/day of the historic ticks to retrieve.
+         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [limit] Limit the size of the response, max 10000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricForexQuotes200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricForexQuotes(from, to, date, offset, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricForexQuotes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get NBBO quotes for a given ticker symbol on a specified date. 
+         * @summary Quotes (NBBO)
+         * @param {string} ticker The ticker symbol we want quotes for.
+         * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
+         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+         * @param {boolean} [reverse] Reverse the order of the results. 
+         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricStocksQuotes200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricStocksQuotes(ticker, date, timestamp, timestampLimit, reverse, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricStocksQuotes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get trades for a given ticker symbol on a specified date. 
+         * @summary Trades
+         * @param {string} ticker The ticker symbol we want trades for.
+         * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
+         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+         * @param {boolean} [reverse] Reverse the order of the results. 
+         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricStocksTrades200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricStocksTrades']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get the exponential moving average (EMA) for a ticker symbol over a given time range.
          * @summary Exponential Moving Average (EMA)
          * @param {string} stockTicker Specify a case-sensitive ticker symbol for which to get exponential moving average (EMA) data. For example, AAPL represents Apple Inc.
@@ -17775,6 +18041,81 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} cryptoTicker The ticker symbol of the currency pair.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetCryptoAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetCryptoAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoAggregates(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the open, close prices of a cryptocurrency symbol on a certain day. 
+         * @summary Daily Open/Close
+         * @param {string} from The \&quot;from\&quot; symbol of the pair.
+         * @param {string} to The \&quot;to\&quot; symbol of the pair.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoOpenClose200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoOpenClose(from, to, date, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoOpenClose']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetCryptoSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSnapshotDirection200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSnapshotDirection(direction, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSnapshotDirection']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker
+         * @param {string} ticker Ticker of the snapshot
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSnapshotTicker200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSnapshotTicker(ticker, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSnapshotTicker']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSnapshotTickers200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSnapshotTickers(tickers, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSnapshotTickers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get a timeline of events for the entity associated with the given ticker, CUSIP, or Composite FIGI.
          * @summary Ticker Events
          * @param {string} id Identifier of an asset. This can currently be a Ticker, CUSIP, or Composite FIGI. When given a ticker, we return events for the entity currently represented by that ticker. To find events for entities previously associated with a ticker, find the relevant identifier using the  [Ticker Details Endpoint](https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker)
@@ -17786,6 +18127,141 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEvents(id, types, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getEvents']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} forexTicker The ticker symbol of the currency pair.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetForexAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetForexAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getForexAggregates(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetForexSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexSnapshotTickers200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotDirection(direction, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotDirection']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker
+         * @param {string} ticker The forex ticker.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexSnapshotTicker200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotTicker(ticker, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotTicker']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexSnapshotTickers200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotTickers(tickers, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotTickers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGroupedCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGroupedCryptoAggregates(date, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getGroupedCryptoAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGroupedCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGroupedForexAggregates(date, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getGroupedForexAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGroupedStocksAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGroupedStocksAggregates(date, adjusted, includeOtc, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getGroupedStocksAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetIndicesAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {GetIndicesAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousIndicesAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesAggregates(indicesTicker, multiplier, timespan, from, to, sort, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the open, close and afterhours values of a index symbol on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetIndicesOpenClose200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesOpenClose(indicesTicker, date, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesOpenClose']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -17813,6 +18289,26 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetOptionsAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetOptionsAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsAggregates(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get an options contract
          * @summary Options Contract
          * @param {string} optionsTicker Query for a contract by options ticker. You can learn more about the structure of options tickers [here](https://polygon.io/blog/how-to-read-a-stock-options-ticker/).
@@ -17827,6 +18323,90 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Get the open, close and afterhours prices of an options contract on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsOpenClose200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsOpenClose(optionsTicker, date, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsOpenClose']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
+         * @summary Previous Close
+         * @param {string} cryptoTicker The ticker symbol of the currency pair.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousCryptoAggregates(cryptoTicker, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousCryptoAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
+         * @summary Previous Close
+         * @param {string} forexTicker The ticker symbol of the currency pair.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousForexAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousForexAggregates(forexTicker, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousForexAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
+         * @summary Previous Close
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousIndicesAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousIndicesAggregates(indicesTicker, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousIndicesAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
+         * @summary Previous Close
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousOptionsAggregates(optionsTicker, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousOptionsAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
+         * @summary Previous Close
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousStocksAggregates(stocksTicker, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousStocksAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get a list of tickers related to the queried ticker based on News and Returns data.
          * @summary Related Companies
          * @param {string} ticker The ticker symbol to search.
@@ -17837,6 +18417,82 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRelatedCompanies(ticker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getRelatedCompanies']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetStocksAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetStocksAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksAggregates(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the open, close and afterhours prices of a stock symbol on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsOpenClose200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksOpenClose(stocksTicker, date, adjusted, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksOpenClose']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetStocksSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksSnapshotDirection200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSnapshotDirection(direction, includeOtc, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSnapshotDirection']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary Ticker
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksSnapshotTicker200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSnapshotTicker(stocksTicker, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSnapshotTicker']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksSnapshotTickers200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSnapshotTickers(tickers, includeOtc, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSnapshotTickers']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -18774,476 +19430,23 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Get historic trade ticks for a cryptocurrency pair. 
-         * @summary Historic Crypto Trades
-         * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
-         * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
-         * @param {string} date The date/day of the historic ticks to retrieve.
-         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [limit] Limit the size of the response, max 10000.
+         * Retrieve treasury_yields_v1 data via API.
+         * @summary treasury_yields_v1 API
+         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * @param {string} [dateGte] Range by date.
+         * @param {string} [dateGt] Range by date.
+         * @param {string} [dateLte] Range by date.
+         * @param {string} [dateLt] Range by date.
+         * @param {TreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
+         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
+         * @param {TreasuryYieldsSortEnum} [sort] Sort field used for ordering.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1HistoricCryptoFromToDateGet(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1HistoricCryptoFromToDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1HistoricCryptoFromToDateGet(from, to, date, offset, limit, options);
+        async treasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: TreasuryYieldsOrderEnum, limit?: number, sort?: TreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TreasuryYields200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.treasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v1HistoricCryptoFromToDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get historic ticks for a forex currency pair. 
-         * @summary Historic Forex Ticks
-         * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
-         * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
-         * @param {string} date The date/day of the historic ticks to retrieve.
-         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [limit] Limit the size of the response, max 10000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1HistoricForexFromToDateGet(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1HistoricForexFromToDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1HistoricForexFromToDateGet(from, to, date, offset, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v1HistoricForexFromToDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the open, close prices of a cryptocurrency symbol on a certain day. 
-         * @summary Daily Open/Close
-         * @param {string} from The \&quot;from\&quot; symbol of the pair.
-         * @param {string} to The \&quot;to\&quot; symbol of the pair.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1OpenCloseCryptoFromToDateGet(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1OpenCloseCryptoFromToDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1OpenCloseCryptoFromToDateGet(from, to, date, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v1OpenCloseCryptoFromToDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the open, close and afterhours values of a index symbol on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1OpenCloseIndicesTickerDateGet(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1OpenCloseIndicesTickerDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1OpenCloseIndicesTickerDateGet(indicesTicker, date, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v1OpenCloseIndicesTickerDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the open, close and afterhours prices of an options contract on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1OpenCloseOptionsTickerDateGet(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1OpenCloseOptionsTickerDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1OpenCloseOptionsTickerDateGet(optionsTicker, date, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v1OpenCloseOptionsTickerDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the open, close and afterhours prices of a stock symbol on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1OpenCloseStocksTickerDateGet(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1OpenCloseOptionsTickerDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1OpenCloseStocksTickerDateGet(stocksTicker, date, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v1OpenCloseStocksTickerDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsGroupedLocaleGlobalMarketCryptoDateGet(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsGroupedLocaleGlobalMarketCryptoDateGet(date, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsGroupedLocaleGlobalMarketCryptoDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsGroupedLocaleGlobalMarketFxDateGet(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsGroupedLocaleGlobalMarketFxDateGet(date, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsGroupedLocaleGlobalMarketFxDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsGroupedLocaleUsMarketStocksDateGet(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsGroupedLocaleUsMarketStocksDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsGroupedLocaleUsMarketStocksDateGet(date, adjusted, includeOtc, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsGroupedLocaleUsMarketStocksDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
-         * @summary Previous Close
-         * @param {string} cryptoTicker The ticker symbol of the currency pair.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerCryptoTickerPrevGet(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerCryptoTickerPrevGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerCryptoTickerPrevGet(cryptoTicker, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerCryptoTickerPrevGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} cryptoTicker The ticker symbol of the currency pair.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet(cryptoTicker: string, multiplier: number, timespan: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
-         * @summary Previous Close
-         * @param {string} forexTicker The ticker symbol of the currency pair.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerForexTickerPrevGet(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerForexTickerPrevGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerForexTickerPrevGet(forexTicker, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerForexTickerPrevGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} forexTicker The ticker symbol of the currency pair.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet(forexTicker: string, multiplier: number, timespan: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
-         * @summary Previous Close
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerIndicesTickerPrevGet(indicesTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerIndicesTickerPrevGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerIndicesTickerPrevGet(indicesTicker, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerIndicesTickerPrevGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet(indicesTicker: string, multiplier: number, timespan: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, sort?: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerIndicesTickerPrevGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet(indicesTicker, multiplier, timespan, from, to, sort, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
-         * @summary Previous Close
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerOptionsTickerPrevGet(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerOptionsTickerPrevGet(optionsTicker, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerOptionsTickerPrevGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet(optionsTicker: string, multiplier: number, timespan: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
-         * @summary Previous Close
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerStocksTickerPrevGet(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerStocksTickerPrevGet(stocksTicker, adjusted, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerStocksTickerPrevGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet(stocksTicker: string, multiplier: number, timespan: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsCryptoDirectionGet(direction: V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoDirectionGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsCryptoDirectionGet(direction, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsCryptoDirectionGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsCryptoTickersGet(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsCryptoTickersGet(tickers, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsCryptoTickersGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker Full Book (L2)
-         * @param {string} ticker The cryptocurrency ticker.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet(ticker, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker
-         * @param {string} ticker Ticker of the snapshot
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet(ticker, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsForexDirectionGet(direction: V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsForexTickersGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsForexDirectionGet(direction, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsForexDirectionGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsForexTickersGet(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsForexTickersGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsForexTickersGet(tickers, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsForexTickersGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker
-         * @param {string} ticker The forex ticker.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleGlobalMarketsForexTickersTickerGet(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleGlobalMarketsForexTickersTickerGet(ticker, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleGlobalMarketsForexTickersTickerGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleUsMarketsStocksDirectionGet(direction: V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleUsMarketsStocksDirectionGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleUsMarketsStocksDirectionGet(direction, includeOtc, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleUsMarketsStocksDirectionGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleUsMarketsStocksTickersGet(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleUsMarketsStocksTickersGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleUsMarketsStocksTickersGet(tickers, includeOtc, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleUsMarketsStocksTickersGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary Ticker
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet(stocksTicker, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get NBBO quotes for a given ticker symbol on a specified date. 
-         * @summary Quotes (NBBO)
-         * @param {string} ticker The ticker symbol we want quotes for.
-         * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
-         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-         * @param {boolean} [reverse] Reverse the order of the results. 
-         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2TicksStocksNbboTickerDateGet(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2TicksStocksNbboTickerDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2TicksStocksNbboTickerDateGet(ticker, date, timestamp, timestampLimit, reverse, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2TicksStocksNbboTickerDateGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get trades for a given ticker symbol on a specified date. 
-         * @summary Trades
-         * @param {string} ticker The ticker symbol we want trades for.
-         * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
-         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-         * @param {boolean} [reverse] Reverse the order of the results. 
-         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v2TicksStocksTradesTickerDateGet(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V2TicksStocksTradesTickerDateGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v2TicksStocksTradesTickerDateGet(ticker, date, timestamp, timestampLimit, reverse, limit, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.v2TicksStocksTradesTickerDateGet']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.treasuryYields']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -19429,6 +19632,74 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.cryptoSMA(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker Full Book (L2)
+         * @param {string} ticker The cryptocurrency ticker.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetCryptoSnapshotTickerBook200Response> {
+            return localVarFp.deprecatedGetCryptoSnapshotTickerBook(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get historic trade ticks for a cryptocurrency pair. 
+         * @summary Historic Crypto Trades
+         * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
+         * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
+         * @param {string} date The date/day of the historic ticks to retrieve.
+         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [limit] Limit the size of the response, max 10000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricCryptoTrades200Response> {
+            return localVarFp.deprecatedGetHistoricCryptoTrades(from, to, date, offset, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get historic ticks for a forex currency pair. 
+         * @summary Historic Forex Ticks
+         * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
+         * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
+         * @param {string} date The date/day of the historic ticks to retrieve.
+         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [limit] Limit the size of the response, max 10000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricForexQuotes200Response> {
+            return localVarFp.deprecatedGetHistoricForexQuotes(from, to, date, offset, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get NBBO quotes for a given ticker symbol on a specified date. 
+         * @summary Quotes (NBBO)
+         * @param {string} ticker The ticker symbol we want quotes for.
+         * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
+         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+         * @param {boolean} [reverse] Reverse the order of the results. 
+         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricStocksQuotes200Response> {
+            return localVarFp.deprecatedGetHistoricStocksQuotes(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get trades for a given ticker symbol on a specified date. 
+         * @summary Trades
+         * @param {string} ticker The ticker symbol we want trades for.
+         * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
+         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+         * @param {boolean} [reverse] Reverse the order of the results. 
+         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricStocksTrades200Response> {
+            return localVarFp.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the exponential moving average (EMA) for a ticker symbol over a given time range.
          * @summary Exponential Moving Average (EMA)
          * @param {string} stockTicker Specify a case-sensitive ticker symbol for which to get exponential moving average (EMA) data. For example, AAPL represents Apple Inc.
@@ -19541,6 +19812,66 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.forexSMA(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} cryptoTicker The ticker symbol of the currency pair.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetCryptoAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetCryptoAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+            return localVarFp.getCryptoAggregates(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the open, close prices of a cryptocurrency symbol on a certain day. 
+         * @summary Daily Open/Close
+         * @param {string} from The \&quot;from\&quot; symbol of the pair.
+         * @param {string} to The \&quot;to\&quot; symbol of the pair.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoOpenClose200Response> {
+            return localVarFp.getCryptoOpenClose(from, to, date, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetCryptoSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSnapshotDirection200Response> {
+            return localVarFp.getCryptoSnapshotDirection(direction, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker
+         * @param {string} ticker Ticker of the snapshot
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSnapshotTicker200Response> {
+            return localVarFp.getCryptoSnapshotTicker(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSnapshotTickers200Response> {
+            return localVarFp.getCryptoSnapshotTickers(tickers, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get a timeline of events for the entity associated with the given ticker, CUSIP, or Composite FIGI.
          * @summary Ticker Events
          * @param {string} id Identifier of an asset. This can currently be a Ticker, CUSIP, or Composite FIGI. When given a ticker, we return events for the entity currently represented by that ticker. To find events for entities previously associated with a ticker, find the relevant identifier using the  [Ticker Details Endpoint](https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker)
@@ -19550,6 +19881,114 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getEvents(id: string, types?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetEvents200Response> {
             return localVarFp.getEvents(id, types, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} forexTicker The ticker symbol of the currency pair.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetForexAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetForexAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+            return localVarFp.getForexAggregates(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetForexSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetForexSnapshotTickers200Response> {
+            return localVarFp.getForexSnapshotDirection(direction, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+         * @summary Ticker
+         * @param {string} ticker The forex ticker.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetForexSnapshotTicker200Response> {
+            return localVarFp.getForexSnapshotTicker(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<GetForexSnapshotTickers200Response> {
+            return localVarFp.getForexSnapshotTickers(tickers, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetGroupedCryptoAggregates200Response> {
+            return localVarFp.getGroupedCryptoAggregates(date, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetGroupedCryptoAggregates200Response> {
+            return localVarFp.getGroupedForexAggregates(date, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
+         * @summary Grouped Daily (Bars)
+         * @param {string} date The beginning date for the aggregate window.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetGroupedStocksAggregates200Response> {
+            return localVarFp.getGroupedStocksAggregates(date, adjusted, includeOtc, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetIndicesAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {GetIndicesAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousIndicesAggregates200Response> {
+            return localVarFp.getIndicesAggregates(indicesTicker, multiplier, timespan, from, to, sort, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the open, close and afterhours values of a index symbol on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): AxiosPromise<GetIndicesOpenClose200Response> {
+            return localVarFp.getIndicesOpenClose(indicesTicker, date, options).then((request) => request(axios, basePath));
         },
         /**
          * Get upcoming market holidays and their open/close times.
@@ -19570,6 +20009,23 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getMarketStatus(options).then((request) => request(axios, basePath));
         },
         /**
+         * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetOptionsAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetOptionsAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+            return localVarFp.getOptionsAggregates(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get an options contract
          * @summary Options Contract
          * @param {string} optionsTicker Query for a contract by options ticker. You can learn more about the structure of options tickers [here](https://polygon.io/blog/how-to-read-a-stock-options-ticker/).
@@ -19581,6 +20037,72 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getOptionsContract(optionsTicker, asOf, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get the open, close and afterhours prices of an options contract on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsOpenClose200Response> {
+            return localVarFp.getOptionsOpenClose(optionsTicker, date, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
+         * @summary Previous Close
+         * @param {string} cryptoTicker The ticker symbol of the currency pair.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousCryptoAggregates200Response> {
+            return localVarFp.getPreviousCryptoAggregates(cryptoTicker, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
+         * @summary Previous Close
+         * @param {string} forexTicker The ticker symbol of the currency pair.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousForexAggregates200Response> {
+            return localVarFp.getPreviousForexAggregates(forexTicker, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
+         * @summary Previous Close
+         * @param {string} indicesTicker The ticker symbol of Index.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousIndicesAggregates200Response> {
+            return localVarFp.getPreviousIndicesAggregates(indicesTicker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
+         * @summary Previous Close
+         * @param {string} optionsTicker The ticker symbol of the options contract.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+            return localVarFp.getPreviousOptionsAggregates(optionsTicker, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
+         * @summary Previous Close
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+            return localVarFp.getPreviousStocksAggregates(stocksTicker, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get a list of tickers related to the queried ticker based on News and Returns data.
          * @summary Related Companies
          * @param {string} ticker The ticker symbol to search.
@@ -19589,6 +20111,67 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getRelatedCompanies(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetRelatedCompanies200Response> {
             return localVarFp.getRelatedCompanies(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+         * @summary Aggregates (Bars)
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {number} multiplier The size of the timespan multiplier.
+         * @param {GetStocksAggregatesTimespanEnum} timespan The size of the time window.
+         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {GetStocksAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksAggregates200Response> {
+            return localVarFp.getStocksAggregates(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the open, close and afterhours prices of a stock symbol on a certain date. 
+         * @summary Daily Open/Close
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsOpenClose200Response> {
+            return localVarFp.getStocksOpenClose(stocksTicker, date, adjusted, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
+         * @summary Gainers/Losers
+         * @param {GetStocksSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksSnapshotDirection200Response> {
+            return localVarFp.getStocksSnapshotDirection(direction, includeOtc, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary Ticker
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksSnapshotTicker200Response> {
+            return localVarFp.getStocksSnapshotTicker(stocksTicker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+         * @summary All Tickers
+         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
+         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksSnapshotTickers200Response> {
+            return localVarFp.getStocksSnapshotTickers(tickers, includeOtc, options).then((request) => request(axios, basePath));
         },
         /**
          * Get a single ticker supported by Polygon.io. This response will have detailed information about the ticker and the company behind it.
@@ -20402,384 +20985,21 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.tradesOptions(optionsTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * Get historic trade ticks for a cryptocurrency pair. 
-         * @summary Historic Crypto Trades
-         * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
-         * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
-         * @param {string} date The date/day of the historic ticks to retrieve.
-         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [limit] Limit the size of the response, max 10000.
+         * Retrieve treasury_yields_v1 data via API.
+         * @summary treasury_yields_v1 API
+         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * @param {string} [dateGte] Range by date.
+         * @param {string} [dateGt] Range by date.
+         * @param {string} [dateLte] Range by date.
+         * @param {string} [dateLt] Range by date.
+         * @param {TreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
+         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
+         * @param {TreasuryYieldsSortEnum} [sort] Sort field used for ordering.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1HistoricCryptoFromToDateGet(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V1HistoricCryptoFromToDateGet200Response> {
-            return localVarFp.v1HistoricCryptoFromToDateGet(from, to, date, offset, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get historic ticks for a forex currency pair. 
-         * @summary Historic Forex Ticks
-         * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
-         * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
-         * @param {string} date The date/day of the historic ticks to retrieve.
-         * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [limit] Limit the size of the response, max 10000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1HistoricForexFromToDateGet(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V1HistoricForexFromToDateGet200Response> {
-            return localVarFp.v1HistoricForexFromToDateGet(from, to, date, offset, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the open, close prices of a cryptocurrency symbol on a certain day. 
-         * @summary Daily Open/Close
-         * @param {string} from The \&quot;from\&quot; symbol of the pair.
-         * @param {string} to The \&quot;to\&quot; symbol of the pair.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseCryptoFromToDateGet(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V1OpenCloseCryptoFromToDateGet200Response> {
-            return localVarFp.v1OpenCloseCryptoFromToDateGet(from, to, date, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the open, close and afterhours values of a index symbol on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseIndicesTickerDateGet(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): AxiosPromise<V1OpenCloseIndicesTickerDateGet200Response> {
-            return localVarFp.v1OpenCloseIndicesTickerDateGet(indicesTicker, date, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the open, close and afterhours prices of an options contract on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseOptionsTickerDateGet(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V1OpenCloseOptionsTickerDateGet200Response> {
-            return localVarFp.v1OpenCloseOptionsTickerDateGet(optionsTicker, date, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the open, close and afterhours prices of a stock symbol on a certain date. 
-         * @summary Daily Open/Close
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1OpenCloseStocksTickerDateGet(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V1OpenCloseOptionsTickerDateGet200Response> {
-            return localVarFp.v1OpenCloseStocksTickerDateGet(stocksTicker, date, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsGroupedLocaleGlobalMarketCryptoDateGet(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response> {
-            return localVarFp.v2AggsGroupedLocaleGlobalMarketCryptoDateGet(date, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsGroupedLocaleGlobalMarketFxDateGet(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsGroupedLocaleGlobalMarketCryptoDateGet200Response> {
-            return localVarFp.v2AggsGroupedLocaleGlobalMarketFxDateGet(date, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
-         * @summary Grouped Daily (Bars)
-         * @param {string} date The beginning date for the aggregate window.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsGroupedLocaleUsMarketStocksDateGet(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsGroupedLocaleUsMarketStocksDateGet200Response> {
-            return localVarFp.v2AggsGroupedLocaleUsMarketStocksDateGet(date, adjusted, includeOtc, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
-         * @summary Previous Close
-         * @param {string} cryptoTicker The ticker symbol of the currency pair.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerCryptoTickerPrevGet(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerCryptoTickerPrevGet200Response> {
-            return localVarFp.v2AggsTickerCryptoTickerPrevGet(cryptoTicker, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} cryptoTicker The ticker symbol of the currency pair.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet(cryptoTicker: string, multiplier: number, timespan: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response> {
-            return localVarFp.v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
-         * @summary Previous Close
-         * @param {string} forexTicker The ticker symbol of the currency pair.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerForexTickerPrevGet(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerForexTickerPrevGet200Response> {
-            return localVarFp.v2AggsTickerForexTickerPrevGet(forexTicker, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} forexTicker The ticker symbol of the currency pair.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet(forexTicker: string, multiplier: number, timespan: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response> {
-            return localVarFp.v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
-         * @summary Previous Close
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerIndicesTickerPrevGet(indicesTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerIndicesTickerPrevGet200Response> {
-            return localVarFp.v2AggsTickerIndicesTickerPrevGet(indicesTicker, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} indicesTicker The ticker symbol of Index.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet(indicesTicker: string, multiplier: number, timespan: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, sort?: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerIndicesTickerPrevGet200Response> {
-            return localVarFp.v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet(indicesTicker, multiplier, timespan, from, to, sort, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
-         * @summary Previous Close
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerOptionsTickerPrevGet(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response> {
-            return localVarFp.v2AggsTickerOptionsTickerPrevGet(optionsTicker, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} optionsTicker The ticker symbol of the options contract.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet(optionsTicker: string, multiplier: number, timespan: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response> {
-            return localVarFp.v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
-         * @summary Previous Close
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerStocksTickerPrevGet(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet200Response> {
-            return localVarFp.v2AggsTickerStocksTickerPrevGet(stocksTicker, adjusted, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-         * @summary Aggregates (Bars)
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {number} multiplier The size of the timespan multiplier.
-         * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-         * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-         * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-         * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-         * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet(stocksTicker: string, multiplier: number, timespan: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet200Response> {
-            return localVarFp.v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoDirectionGet(direction: V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoDirectionGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsCryptoDirectionGet(direction, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoTickersGet(tickers?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoTickersGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsCryptoTickersGet(tickers, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker Full Book (L2)
-         * @param {string} ticker The cryptocurrency ticker.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet(ticker, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker
-         * @param {string} ticker Ticker of the snapshot
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet(ticker, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsForexDirectionGet(direction: V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsForexTickersGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsForexDirectionGet(direction, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsForexTickersGet(tickers?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsForexTickersGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsForexTickersGet(tickers, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-         * @summary Ticker
-         * @param {string} ticker The forex ticker.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleGlobalMarketsForexTickersTickerGet(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleGlobalMarketsForexTickersTickerGet200Response> {
-            return localVarFp.v2SnapshotLocaleGlobalMarketsForexTickersTickerGet(ticker, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
-         * @summary Gainers/Losers
-         * @param {V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleUsMarketsStocksDirectionGet(direction: V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleUsMarketsStocksDirectionGet200Response> {
-            return localVarFp.v2SnapshotLocaleUsMarketsStocksDirectionGet(direction, includeOtc, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary All Tickers
-         * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
-         * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleUsMarketsStocksTickersGet(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleUsMarketsStocksTickersGet200Response> {
-            return localVarFp.v2SnapshotLocaleUsMarketsStocksTickersGet(tickers, includeOtc, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-         * @summary Ticker
-         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet(stocksTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<V2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet200Response> {
-            return localVarFp.v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet(stocksTicker, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get NBBO quotes for a given ticker symbol on a specified date. 
-         * @summary Quotes (NBBO)
-         * @param {string} ticker The ticker symbol we want quotes for.
-         * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
-         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-         * @param {boolean} [reverse] Reverse the order of the results. 
-         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2TicksStocksNbboTickerDateGet(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2TicksStocksNbboTickerDateGet200Response> {
-            return localVarFp.v2TicksStocksNbboTickerDateGet(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get trades for a given ticker symbol on a specified date. 
-         * @summary Trades
-         * @param {string} ticker The ticker symbol we want trades for.
-         * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
-         * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-         * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-         * @param {boolean} [reverse] Reverse the order of the results. 
-         * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v2TicksStocksTradesTickerDateGet(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<V2TicksStocksTradesTickerDateGet200Response> {
-            return localVarFp.v2TicksStocksTradesTickerDateGet(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
+        treasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: TreasuryYieldsOrderEnum, limit?: number, sort?: TreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<TreasuryYields200Response> {
+            return localVarFp.treasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -20978,6 +21198,84 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+     * @summary Ticker Full Book (L2)
+     * @param {string} ticker The cryptocurrency ticker.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).deprecatedGetCryptoSnapshotTickerBook(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get historic trade ticks for a cryptocurrency pair. 
+     * @summary Historic Crypto Trades
+     * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
+     * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
+     * @param {string} date The date/day of the historic ticks to retrieve.
+     * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+     * @param {number} [limit] Limit the size of the response, max 10000.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).deprecatedGetHistoricCryptoTrades(from, to, date, offset, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get historic ticks for a forex currency pair. 
+     * @summary Historic Forex Ticks
+     * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
+     * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
+     * @param {string} date The date/day of the historic ticks to retrieve.
+     * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+     * @param {number} [limit] Limit the size of the response, max 10000.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).deprecatedGetHistoricForexQuotes(from, to, date, offset, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get NBBO quotes for a given ticker symbol on a specified date. 
+     * @summary Quotes (NBBO)
+     * @param {string} ticker The ticker symbol we want quotes for.
+     * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
+     * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+     * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+     * @param {boolean} [reverse] Reverse the order of the results. 
+     * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).deprecatedGetHistoricStocksQuotes(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get trades for a given ticker symbol on a specified date. 
+     * @summary Trades
+     * @param {string} ticker The ticker symbol we want trades for.
+     * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
+     * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
+     * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
+     * @param {boolean} [reverse] Reverse the order of the results. 
+     * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get the exponential moving average (EMA) for a ticker symbol over a given time range.
      * @summary Exponential Moving Average (EMA)
      * @param {string} stockTicker Specify a case-sensitive ticker symbol for which to get exponential moving average (EMA) data. For example, AAPL represents Apple Inc.
@@ -21100,6 +21398,76 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+     * @summary Aggregates (Bars)
+     * @param {string} cryptoTicker The ticker symbol of the currency pair.
+     * @param {number} multiplier The size of the timespan multiplier.
+     * @param {GetCryptoAggregatesTimespanEnum} timespan The size of the time window.
+     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {GetCryptoAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getCryptoAggregates(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the open, close prices of a cryptocurrency symbol on a certain day. 
+     * @summary Daily Open/Close
+     * @param {string} from The \&quot;from\&quot; symbol of the pair.
+     * @param {string} to The \&quot;to\&quot; symbol of the pair.
+     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getCryptoOpenClose(from, to, date, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+     * @summary Gainers/Losers
+     * @param {GetCryptoSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getCryptoSnapshotDirection(direction, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+     * @summary Ticker
+     * @param {string} ticker Ticker of the snapshot
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getCryptoSnapshotTicker(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+     * @summary All Tickers
+     * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getCryptoSnapshotTickers(tickers, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get a timeline of events for the entity associated with the given ticker, CUSIP, or Composite FIGI.
      * @summary Ticker Events
      * @param {string} id Identifier of an asset. This can currently be a Ticker, CUSIP, or Composite FIGI. When given a ticker, we return events for the entity currently represented by that ticker. To find events for entities previously associated with a ticker, find the relevant identifier using the  [Ticker Details Endpoint](https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker)
@@ -21110,6 +21478,132 @@ export class DefaultApi extends BaseAPI {
      */
     public getEvents(id: string, types?: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getEvents(id, types, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+     * @summary Aggregates (Bars)
+     * @param {string} forexTicker The ticker symbol of the currency pair.
+     * @param {number} multiplier The size of the timespan multiplier.
+     * @param {GetForexAggregatesTimespanEnum} timespan The size of the time window.
+     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {GetForexAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getForexAggregates(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+     * @summary Gainers/Losers
+     * @param {GetForexSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getForexSnapshotDirection(direction, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
+     * @summary Ticker
+     * @param {string} ticker The forex ticker.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getForexSnapshotTicker(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+     * @summary All Tickers
+     * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getForexSnapshotTickers(tickers, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
+     * @summary Grouped Daily (Bars)
+     * @param {string} date The beginning date for the aggregate window.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getGroupedCryptoAggregates(date, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
+     * @summary Grouped Daily (Bars)
+     * @param {string} date The beginning date for the aggregate window.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getGroupedForexAggregates(date, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
+     * @summary Grouped Daily (Bars)
+     * @param {string} date The beginning date for the aggregate window.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getGroupedStocksAggregates(date, adjusted, includeOtc, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+     * @summary Aggregates (Bars)
+     * @param {string} indicesTicker The ticker symbol of Index.
+     * @param {number} multiplier The size of the timespan multiplier.
+     * @param {GetIndicesAggregatesTimespanEnum} timespan The size of the time window.
+     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {GetIndicesAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getIndicesAggregates(indicesTicker, multiplier, timespan, from, to, sort, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the open, close and afterhours values of a index symbol on a certain date. 
+     * @summary Daily Open/Close
+     * @param {string} indicesTicker The ticker symbol of Index.
+     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getIndicesOpenClose(indicesTicker, date, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -21135,6 +21629,25 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+     * @summary Aggregates (Bars)
+     * @param {string} optionsTicker The ticker symbol of the options contract.
+     * @param {number} multiplier The size of the timespan multiplier.
+     * @param {GetOptionsAggregatesTimespanEnum} timespan The size of the time window.
+     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {GetOptionsAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getOptionsAggregates(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get an options contract
      * @summary Options Contract
      * @param {string} optionsTicker Query for a contract by options ticker. You can learn more about the structure of options tickers [here](https://polygon.io/blog/how-to-read-a-stock-options-ticker/).
@@ -21148,6 +21661,84 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * Get the open, close and afterhours prices of an options contract on a certain date. 
+     * @summary Daily Open/Close
+     * @param {string} optionsTicker The ticker symbol of the options contract.
+     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getOptionsOpenClose(optionsTicker, date, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
+     * @summary Previous Close
+     * @param {string} cryptoTicker The ticker symbol of the currency pair.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getPreviousCryptoAggregates(cryptoTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
+     * @summary Previous Close
+     * @param {string} forexTicker The ticker symbol of the currency pair.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getPreviousForexAggregates(forexTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
+     * @summary Previous Close
+     * @param {string} indicesTicker The ticker symbol of Index.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getPreviousIndicesAggregates(indicesTicker, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
+     * @summary Previous Close
+     * @param {string} optionsTicker The ticker symbol of the options contract.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getPreviousOptionsAggregates(optionsTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
+     * @summary Previous Close
+     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getPreviousStocksAggregates(stocksTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get a list of tickers related to the queried ticker based on News and Returns data.
      * @summary Related Companies
      * @param {string} ticker The ticker symbol to search.
@@ -21157,6 +21748,77 @@ export class DefaultApi extends BaseAPI {
      */
     public getRelatedCompanies(ticker: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getRelatedCompanies(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
+     * @summary Aggregates (Bars)
+     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+     * @param {number} multiplier The size of the timespan multiplier.
+     * @param {GetStocksAggregatesTimespanEnum} timespan The size of the time window.
+     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {GetStocksAggregatesSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
+     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksAggregates(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the open, close and afterhours prices of a stock symbol on a certain date. 
+     * @summary Daily Open/Close
+     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
+     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksOpenClose(stocksTicker, date, adjusted, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
+     * @summary Gainers/Losers
+     * @param {GetStocksSnapshotDirectionDirectionEnum} direction The direction of the snapshot results to return. 
+     * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksSnapshotDirection(direction, includeOtc, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+     * @summary Ticker
+     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksSnapshotTicker(stocksTicker, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
+     * @summary All Tickers
+     * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
+     * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksSnapshotTickers(tickers, includeOtc, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -22053,445 +22715,22 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * Get historic trade ticks for a cryptocurrency pair. 
-     * @summary Historic Crypto Trades
-     * @param {string} from The \&quot;from\&quot; symbol of the crypto pair.
-     * @param {string} to The \&quot;to\&quot; symbol of the crypto pair.
-     * @param {string} date The date/day of the historic ticks to retrieve.
-     * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-     * @param {number} [limit] Limit the size of the response, max 10000.
+     * Retrieve treasury_yields_v1 data via API.
+     * @summary treasury_yields_v1 API
+     * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+     * @param {string} [dateGte] Range by date.
+     * @param {string} [dateGt] Range by date.
+     * @param {string} [dateLte] Range by date.
+     * @param {string} [dateLt] Range by date.
+     * @param {TreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
+     * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
+     * @param {TreasuryYieldsSortEnum} [sort] Sort field used for ordering.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public v1HistoricCryptoFromToDateGet(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v1HistoricCryptoFromToDateGet(from, to, date, offset, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get historic ticks for a forex currency pair. 
-     * @summary Historic Forex Ticks
-     * @param {string} from The \&quot;from\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;from&#x60; would be **USD**. 
-     * @param {string} to The \&quot;to\&quot; symbol of the currency pair.  Example: For **USD/JPY** the &#x60;to&#x60; would be **JPY**. 
-     * @param {string} date The date/day of the historic ticks to retrieve.
-     * @param {number} [offset] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-     * @param {number} [limit] Limit the size of the response, max 10000.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v1HistoricForexFromToDateGet(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v1HistoricForexFromToDateGet(from, to, date, offset, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the open, close prices of a cryptocurrency symbol on a certain day. 
-     * @summary Daily Open/Close
-     * @param {string} from The \&quot;from\&quot; symbol of the pair.
-     * @param {string} to The \&quot;to\&quot; symbol of the pair.
-     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v1OpenCloseCryptoFromToDateGet(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v1OpenCloseCryptoFromToDateGet(from, to, date, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the open, close and afterhours values of a index symbol on a certain date. 
-     * @summary Daily Open/Close
-     * @param {string} indicesTicker The ticker symbol of Index.
-     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v1OpenCloseIndicesTickerDateGet(indicesTicker: string, date: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v1OpenCloseIndicesTickerDateGet(indicesTicker, date, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the open, close and afterhours prices of an options contract on a certain date. 
-     * @summary Daily Open/Close
-     * @param {string} optionsTicker The ticker symbol of the options contract.
-     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v1OpenCloseOptionsTickerDateGet(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v1OpenCloseOptionsTickerDateGet(optionsTicker, date, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the open, close and afterhours prices of a stock symbol on a certain date. 
-     * @summary Daily Open/Close
-     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-     * @param {string} date The date of the requested open/close in the format YYYY-MM-DD.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v1OpenCloseStocksTickerDateGet(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v1OpenCloseStocksTickerDateGet(stocksTicker, date, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
-     * @summary Grouped Daily (Bars)
-     * @param {string} date The beginning date for the aggregate window.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsGroupedLocaleGlobalMarketCryptoDateGet(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsGroupedLocaleGlobalMarketCryptoDateGet(date, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the daily open, high, low, and close (OHLC) for the entire forex markets. 
-     * @summary Grouped Daily (Bars)
-     * @param {string} date The beginning date for the aggregate window.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsGroupedLocaleGlobalMarketFxDateGet(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsGroupedLocaleGlobalMarketFxDateGet(date, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets. 
-     * @summary Grouped Daily (Bars)
-     * @param {string} date The beginning date for the aggregate window.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsGroupedLocaleUsMarketStocksDateGet(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsGroupedLocaleUsMarketStocksDateGet(date, adjusted, includeOtc, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the previous day\'s open, high, low, and close (OHLC) for the specified cryptocurrency pair. 
-     * @summary Previous Close
-     * @param {string} cryptoTicker The ticker symbol of the currency pair.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerCryptoTickerPrevGet(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerCryptoTickerPrevGet(cryptoTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-     * @summary Aggregates (Bars)
-     * @param {string} cryptoTicker The ticker symbol of the currency pair.
-     * @param {number} multiplier The size of the timespan multiplier.
-     * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet(cryptoTicker: string, multiplier: number, timespan: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGet(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the previous day\'s open, high, low, and close (OHLC) for the specified forex pair. 
-     * @summary Previous Close
-     * @param {string} forexTicker The ticker symbol of the currency pair.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerForexTickerPrevGet(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerForexTickerPrevGet(forexTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-     * @summary Aggregates (Bars)
-     * @param {string} forexTicker The ticker symbol of the currency pair.
-     * @param {number} multiplier The size of the timespan multiplier.
-     * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet(forexTicker: string, multiplier: number, timespan: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerForexTickerRangeMultiplierTimespanFromToGet(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the previous day\'s open, high, low, and close (OHLC) for the specified index. 
-     * @summary Previous Close
-     * @param {string} indicesTicker The ticker symbol of Index.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerIndicesTickerPrevGet(indicesTicker: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerIndicesTickerPrevGet(indicesTicker, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get aggregate bars for an index over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-     * @summary Aggregates (Bars)
-     * @param {string} indicesTicker The ticker symbol of Index.
-     * @param {number} multiplier The size of the timespan multiplier.
-     * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet(indicesTicker: string, multiplier: number, timespan: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, sort?: V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGet(indicesTicker, multiplier, timespan, from, to, sort, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the previous day\'s open, high, low, and close (OHLC) for the specified option contract. 
-     * @summary Previous Close
-     * @param {string} optionsTicker The ticker symbol of the options contract.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerOptionsTickerPrevGet(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerOptionsTickerPrevGet(optionsTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get aggregate bars for an option contract over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-     * @summary Aggregates (Bars)
-     * @param {string} optionsTicker The ticker symbol of the options contract.
-     * @param {number} multiplier The size of the timespan multiplier.
-     * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet(optionsTicker: string, multiplier: number, timespan: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGet(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the previous day\'s open, high, low, and close (OHLC) for the specified stock ticker. 
-     * @summary Previous Close
-     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerStocksTickerPrevGet(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerStocksTickerPrevGet(stocksTicker, adjusted, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get aggregate bars for a stock over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
-     * @summary Aggregates (Bars)
-     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-     * @param {number} multiplier The size of the timespan multiplier.
-     * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum} timespan The size of the time window.
-     * @param {string} from The start of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {string} to The end of the aggregate time window. Either a date with the format YYYY-MM-DD or a millisecond timestamp.
-     * @param {boolean} [adjusted] Whether or not the results are adjusted for splits.  By default, results are adjusted. Set this to false to get results that are NOT adjusted for splits. 
-     * @param {V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum} [sort] Sort the results by timestamp. &#x60;asc&#x60; will return results in ascending order (oldest at the top), &#x60;desc&#x60; will return results in descending order (newest at the top). 
-     * @param {number} [limit] Limits the number of base aggregates queried to create the aggregate results. Max 50000 and Default 5000. Read more about how limit is used to calculate aggregate results in our article on &lt;a href&#x3D;\&quot;https://polygon.io/blog/aggs-api-updates/\&quot; target&#x3D;\&quot;_blank\&quot; alt&#x3D;\&quot;Aggregate Data API Improvements\&quot;&gt;Aggregate Data API Improvements&lt;/a&gt;. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet(stocksTicker: string, multiplier: number, timespan: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2AggsTickerStocksTickerRangeMultiplierTimespanFromToGet(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current top 20 gainers or losers of the day in cryptocurrency markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-     * @summary Gainers/Losers
-     * @param {V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsCryptoDirectionGet(direction: V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsCryptoDirectionGet(direction, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-     * @summary All Tickers
-     * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsCryptoTickersGet(tickers?: Array<string>, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsCryptoTickersGet(tickers, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-     * @summary Ticker Full Book (L2)
-     * @param {string} ticker The cryptocurrency ticker.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet(ticker: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsCryptoTickersTickerBookGet(ticker, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-     * @summary Ticker
-     * @param {string} ticker Ticker of the snapshot
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet(ticker: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsCryptoTickersTickerGet(ticker, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current top 20 gainers or losers of the day in forex markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-     * @summary Gainers/Losers
-     * @param {V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsForexDirectionGet(direction: V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsForexDirectionGet(direction, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-     * @summary All Tickers
-     * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsForexTickersGet(tickers?: Array<string>, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsForexTickersGet(tickers, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
-     * @summary Ticker
-     * @param {string} ticker The forex ticker.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleGlobalMarketsForexTickersTickerGet(ticker: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleGlobalMarketsForexTickersTickerGet(ticker, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets. <br /> <br /> Top gainers are those tickers whose price has increased by the highest percentage since the previous day\'s close. Top losers are those tickers whose price has decreased by the highest percentage since the previous day\'s close. This output will only include tickers with a trading volume of 10,000 or more. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. 
-     * @summary Gainers/Losers
-     * @param {V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum} direction The direction of the snapshot results to return. 
-     * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleUsMarketsStocksDirectionGet(direction: V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleUsMarketsStocksDirectionGet(direction, includeOtc, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the most up-to-date market data for all traded stock symbols. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-     * @summary All Tickers
-     * @param {Array<string>} [tickers] A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.
-     * @param {boolean} [includeOtc] Include OTC securities in the response. Default is false (don\&#39;t include OTC securities). 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleUsMarketsStocksTickersGet(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleUsMarketsStocksTickersGet(tickers, includeOtc, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the most up-to-date market data for a single traded stock ticker. <br /> <br /> Note: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST. 
-     * @summary Ticker
-     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet(stocksTicker: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2SnapshotLocaleUsMarketsStocksTickersStocksTickerGet(stocksTicker, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get NBBO quotes for a given ticker symbol on a specified date. 
-     * @summary Quotes (NBBO)
-     * @param {string} ticker The ticker symbol we want quotes for.
-     * @param {string} date The date/day of the quotes to retrieve in the format YYYY-MM-DD.
-     * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-     * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-     * @param {boolean} [reverse] Reverse the order of the results. 
-     * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2TicksStocksNbboTickerDateGet(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2TicksStocksNbboTickerDateGet(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get trades for a given ticker symbol on a specified date. 
-     * @summary Trades
-     * @param {string} ticker The ticker symbol we want trades for.
-     * @param {string} date The date/day of the trades to retrieve in the format YYYY-MM-DD.
-     * @param {number} [timestamp] The timestamp offset, used for pagination. This is the offset at which to start the results. Using the &#x60;timestamp&#x60; of the last result as the offset will give you the next page of results. 
-     * @param {number} [timestampLimit] The maximum timestamp allowed in the results. 
-     * @param {boolean} [reverse] Reverse the order of the results. 
-     * @param {number} [limit] Limit the size of the response, max 50000 and default 5000.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public v2TicksStocksTradesTickerDateGet(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).v2TicksStocksTradesTickerDateGet(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(this.axios, this.basePath));
+    public treasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: TreasuryYieldsOrderEnum, limit?: number, sort?: TreasuryYieldsSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).treasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -22820,6 +23059,140 @@ export enum ForexSMASeriesTypeEnum {
 export enum ForexSMAOrderEnum {
     Asc = 'asc',
     Desc = 'desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetCryptoAggregatesTimespanEnum {
+    Second = 'second',
+    Minute = 'minute',
+    Hour = 'hour',
+    Day = 'day',
+    Week = 'week',
+    Month = 'month',
+    Quarter = 'quarter',
+    Year = 'year'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetCryptoAggregatesSortEnum {
+    Asc = 'asc',
+    Desc = 'desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetCryptoSnapshotDirectionDirectionEnum {
+    Gainers = 'gainers',
+    Losers = 'losers'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetForexAggregatesTimespanEnum {
+    Second = 'second',
+    Minute = 'minute',
+    Hour = 'hour',
+    Day = 'day',
+    Week = 'week',
+    Month = 'month',
+    Quarter = 'quarter',
+    Year = 'year'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetForexAggregatesSortEnum {
+    Asc = 'asc',
+    Desc = 'desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetForexSnapshotDirectionDirectionEnum {
+    Gainers = 'gainers',
+    Losers = 'losers'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetIndicesAggregatesTimespanEnum {
+    Second = 'second',
+    Minute = 'minute',
+    Hour = 'hour',
+    Day = 'day',
+    Week = 'week',
+    Month = 'month',
+    Quarter = 'quarter',
+    Year = 'year'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetIndicesAggregatesSortEnum {
+    Asc = 'asc',
+    Desc = 'desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetOptionsAggregatesTimespanEnum {
+    Second = 'second',
+    Minute = 'minute',
+    Hour = 'hour',
+    Day = 'day',
+    Week = 'week',
+    Month = 'month',
+    Quarter = 'quarter',
+    Year = 'year'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetOptionsAggregatesSortEnum {
+    Asc = 'asc',
+    Desc = 'desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetStocksAggregatesTimespanEnum {
+    Second = 'second',
+    Minute = 'minute',
+    Hour = 'hour',
+    Day = 'day',
+    Week = 'week',
+    Month = 'month',
+    Quarter = 'quarter',
+    Year = 'year'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetStocksAggregatesSortEnum {
+    Asc = 'asc',
+    Desc = 'desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetStocksSnapshotDirectionDirectionEnum {
+    Gainers = 'gainers',
+    Losers = 'losers'
 }
 /**
   * @export
@@ -23695,21 +24068,7 @@ export enum TradesOptionsSortEnum {
   * @export
   * @enum {string}
   */
-export enum V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetTimespanEnum {
-    Second = 'second',
-    Minute = 'minute',
-    Hour = 'hour',
-    Day = 'day',
-    Week = 'week',
-    Month = 'month',
-    Quarter = 'quarter',
-    Year = 'year'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum {
+export enum TreasuryYieldsOrderEnum {
     Asc = 'asc',
     Desc = 'desc'
 }
@@ -23717,113 +24076,8 @@ export enum V2AggsTickerCryptoTickerRangeMultiplierTimespanFromToGetSortEnum {
   * @export
   * @enum {string}
   */
-export enum V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetTimespanEnum {
-    Second = 'second',
-    Minute = 'minute',
-    Hour = 'hour',
-    Day = 'day',
-    Week = 'week',
-    Month = 'month',
-    Quarter = 'quarter',
-    Year = 'year'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerForexTickerRangeMultiplierTimespanFromToGetSortEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetTimespanEnum {
-    Second = 'second',
-    Minute = 'minute',
-    Hour = 'hour',
-    Day = 'day',
-    Week = 'week',
-    Month = 'month',
-    Quarter = 'quarter',
-    Year = 'year'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerIndicesTickerRangeMultiplierTimespanFromToGetSortEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetTimespanEnum {
-    Second = 'second',
-    Minute = 'minute',
-    Hour = 'hour',
-    Day = 'day',
-    Week = 'week',
-    Month = 'month',
-    Quarter = 'quarter',
-    Year = 'year'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerOptionsTickerRangeMultiplierTimespanFromToGetSortEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetTimespanEnum {
-    Second = 'second',
-    Minute = 'minute',
-    Hour = 'hour',
-    Day = 'day',
-    Week = 'week',
-    Month = 'month',
-    Quarter = 'quarter',
-    Year = 'year'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2AggsTickerStocksTickerRangeMultiplierTimespanFromToGetSortEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2SnapshotLocaleGlobalMarketsCryptoDirectionGetDirectionEnum {
-    Gainers = 'gainers',
-    Losers = 'losers'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2SnapshotLocaleGlobalMarketsForexDirectionGetDirectionEnum {
-    Gainers = 'gainers',
-    Losers = 'losers'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum V2SnapshotLocaleUsMarketsStocksDirectionGetDirectionEnum {
-    Gainers = 'gainers',
-    Losers = 'losers'
+export enum TreasuryYieldsSortEnum {
+    Date = 'date'
 }
 
 

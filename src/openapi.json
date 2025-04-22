@@ -6218,6 +6218,220 @@
         }
       }
     },
+    "/fed/vX/treasury-yields": {
+      "get": {
+        "description": "Retrieve treasury_yields_v1 data via API.",
+        "operationId": "TreasuryYields",
+        "parameters": [
+          {
+            "description": "Calendar date of the yield observation (YYYY‑MM‑DD).",
+            "in": "query",
+            "name": "date",
+            "schema": {
+              "type": "string"
+            },
+            "x-polygon-filter-field": {
+              "range": true,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Range by date.",
+            "in": "query",
+            "name": "date.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Range by date.",
+            "in": "query",
+            "name": "date.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Range by date.",
+            "in": "query",
+            "name": "date.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Range by date.",
+            "in": "query",
+            "name": "date.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Order results based on the `sort` field.",
+            "in": "query",
+            "name": "order",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "example": "asc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit the number of results returned, default is 100 and max is 50000.",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "default": 100,
+              "example": 100,
+              "maximum": 50000,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Sort field used for ordering.",
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "default": "date",
+              "enum": [
+                "date"
+              ],
+              "example": "date",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "next_url": "https://api.polygon.io/fed/vX/treasury-yields?cursor=a1b2c3",
+                  "request_id": "e70013d92930de90e089dc8fa098888e",
+                  "results": [
+                    {
+                      "date": "1962-01-02",
+                      "yield_10_year": 4.06,
+                      "yield_1_year": 3.22,
+                      "yield_5_year": 3.88
+                    }
+                  ],
+                  "status": "OK"
+                },
+                "schema": {
+                  "properties": {
+                    "next_url": {
+                      "description": "URL for the next page of results, if applicable.",
+                      "type": "string"
+                    },
+                    "request_id": {
+                      "description": "Unique identifier for this request.",
+                      "type": "string"
+                    },
+                    "results": {
+                      "description": "Records that match the given query.",
+                      "items": {
+                        "properties": {
+                          "date": {
+                            "description": "Calendar date of the yield observation (YYYY‑MM‑DD).",
+                            "type": "string"
+                          },
+                          "yield_10_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 10‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_1_month": {
+                            "description": "Market Yield on U.S. Treasury Securities at 1‑Month Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_1_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 1‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_20_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 20‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_2_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 2‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_30_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 30‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_3_month": {
+                            "description": "Market Yield on U.S. Treasury Securities at 3‑Month Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_3_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 3‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_5_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 5‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_6_month": {
+                            "description": "Market Yield on U.S. Treasury Securities at 6‑Month Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          },
+                          "yield_7_year": {
+                            "description": "Market Yield on U.S. Treasury Securities at 7‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "status": {
+                      "description": "Status of the request. Usually 'OK' or 'ERROR'.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "request_id",
+                    "results"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "A list of results."
+          }
+        },
+        "summary": "treasury_yields_v1 API",
+        "tags": [
+          "default"
+        ],
+        "x-polygon-entitlement-data-type": {
+          "description": "Reference data",
+          "name": "reference"
+        },
+        "x-polygon-experimental": {
+          "experimental": true
+        },
+        "x-polygon-paginate": {
+          "limit": {
+            "default": 100,
+            "max": 50000
+          },
+          "sort": {
+            "default": "date",
+            "enum": [
+              "date"
+            ]
+          }
+        }
+      }
+    },
     "/stocks/vX/short-interest": {
       "get": {
         "description": "Retrieve finra_short_interest_v1 data via API.",
@@ -7105,6 +7319,7 @@
     "/v1/historic/crypto/{from}/{to}/{date}": {
       "get": {
         "description": "Get historic trade ticks for a cryptocurrency pair.\n",
+        "operationId": "DeprecatedGetHistoricCryptoTrades",
         "parameters": [
           {
             "description": "The \"from\" symbol of the crypto pair.",
@@ -7308,6 +7523,7 @@
     "/v1/historic/forex/{from}/{to}/{date}": {
       "get": {
         "description": "Get historic ticks for a forex currency pair.\n",
+        "operationId": "DeprecatedGetHistoricForexQuotes",
         "parameters": [
           {
             "description": "The \"from\" symbol of the currency pair.\n\nExample: For **USD/JPY** the `from` would be **USD**.\n",
@@ -14624,6 +14840,7 @@
     "/v1/open-close/crypto/{from}/{to}/{date}": {
       "get": {
         "description": "Get the open, close prices of a cryptocurrency symbol on a certain day.\n",
+        "operationId": "GetCryptoOpenClose",
         "parameters": [
           {
             "description": "The \"from\" symbol of the pair.",
@@ -14883,6 +15100,7 @@
     "/v1/open-close/{indicesTicker}/{date}": {
       "get": {
         "description": "Get the open, close and afterhours values of a index symbol on a certain date.\n",
+        "operationId": "GetIndicesOpenClose",
         "parameters": [
           {
             "description": "The ticker symbol of Index.",
@@ -15008,6 +15226,7 @@
     "/v1/open-close/{optionsTicker}/{date}": {
       "get": {
         "description": "Get the open, close and afterhours prices of an options contract on a certain date.\n",
+        "operationId": "GetOptionsOpenClose",
         "parameters": [
           {
             "description": "The ticker symbol of the options contract.",
@@ -15153,6 +15372,7 @@
     "/v1/open-close/{stocksTicker}/{date}": {
       "get": {
         "description": "Get the open, close and afterhours prices of a stock symbol on a certain date.\n",
+        "operationId": "GetStocksOpenClose",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.",
@@ -15792,6 +16012,7 @@
     "/v2/aggs/grouped/locale/global/market/crypto/{date}": {
       "get": {
         "description": "Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets.\n",
+        "operationId": "GetGroupedCryptoAggregates",
         "parameters": [
           {
             "description": "The beginning date for the aggregate window.",
@@ -15994,6 +16215,7 @@
     "/v2/aggs/grouped/locale/global/market/fx/{date}": {
       "get": {
         "description": "Get the daily open, high, low, and close (OHLC) for the entire forex markets.\n",
+        "operationId": "GetGroupedForexAggregates",
         "parameters": [
           {
             "description": "The beginning date for the aggregate window.",
@@ -16196,6 +16418,7 @@
     "/v2/aggs/grouped/locale/us/market/stocks/{date}": {
       "get": {
         "description": "Get the daily open, high, low, and close (OHLC) for the entire stocks/equities markets.\n",
+        "operationId": "GetGroupedStocksAggregates",
         "parameters": [
           {
             "description": "The beginning date for the aggregate window.",
@@ -16410,6 +16633,7 @@
     "/v2/aggs/ticker/{cryptoTicker}/prev": {
       "get": {
         "description": "Get the previous day's open, high, low, and close (OHLC) for the specified cryptocurrency pair.\n",
+        "operationId": "GetPreviousCryptoAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of the currency pair.",
@@ -16599,6 +16823,7 @@
     "/v2/aggs/ticker/{cryptoTicker}/range/{multiplier}/{timespan}/{from}/{to}": {
       "get": {
         "description": "Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes.\n<br />\n<br />\nFor example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned.\n",
+        "operationId": "GetCryptoAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of the currency pair.",
@@ -16864,6 +17089,7 @@
     "/v2/aggs/ticker/{forexTicker}/prev": {
       "get": {
         "description": "Get the previous day's open, high, low, and close (OHLC) for the specified forex pair.\n",
+        "operationId": "GetPreviousForexAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of the currency pair.",
@@ -17054,6 +17280,7 @@
     "/v2/aggs/ticker/{forexTicker}/range/{multiplier}/{timespan}/{from}/{to}": {
       "get": {
         "description": "Get aggregate bars for a forex pair over a given date range in custom time window sizes.\n<br />\n<br />\nFor example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned.\n",
+        "operationId": "GetForexAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of the currency pair.",
@@ -17309,6 +17536,7 @@
     "/v2/aggs/ticker/{indicesTicker}/prev": {
       "get": {
         "description": "Get the previous day's open, high, low, and close (OHLC) for the specified index.\n",
+        "operationId": "GetPreviousIndicesAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of Index.",
@@ -17462,6 +17690,7 @@
     "/v2/aggs/ticker/{indicesTicker}/range/{multiplier}/{timespan}/{from}/{to}": {
       "get": {
         "description": "Get aggregate bars for an index over a given date range in custom time window sizes.\n<br />\n<br />\nFor example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned.\n",
+        "operationId": "GetIndicesAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of Index.",
@@ -17692,6 +17921,7 @@
     "/v2/aggs/ticker/{optionsTicker}/prev": {
       "get": {
         "description": "Get the previous day's open, high, low, and close (OHLC) for the specified option contract.\n",
+        "operationId": "GetPreviousOptionsAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of the options contract.",
@@ -17877,6 +18107,7 @@
     "/v2/aggs/ticker/{optionsTicker}/range/{multiplier}/{timespan}/{from}/{to}": {
       "get": {
         "description": "Get aggregate bars for an option contract over a given date range in custom time window sizes.\n<br />\n<br />\nFor example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned.\n",
+        "operationId": "GetOptionsAggregates",
         "parameters": [
           {
             "description": "The ticker symbol of the options contract.",
@@ -18143,6 +18374,7 @@
     "/v2/aggs/ticker/{stocksTicker}/prev": {
       "get": {
         "description": "Get the previous day's open, high, low, and close (OHLC) for the specified stock ticker.\n",
+        "operationId": "GetPreviousStocksAggregates",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.",
@@ -18327,6 +18559,7 @@
     "/v2/aggs/ticker/{stocksTicker}/range/{multiplier}/{timespan}/{from}/{to}": {
       "get": {
         "description": "Get aggregate bars for a stock over a given date range in custom time window sizes.\n<br />\n<br />\nFor example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned.\n",
+        "operationId": "GetStocksAggregates",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.",
@@ -19566,6 +19799,7 @@
     "/v2/snapshot/locale/global/markets/crypto/tickers": {
       "get": {
         "description": "Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded cryptocurrency symbols.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST.\n",
+        "operationId": "GetCryptoSnapshotTickers",
         "parameters": [
           {
             "description": "A case-sensitive comma separated list of tickers to get snapshots for. For example, X:BTCUSD, X:ETHBTC, and X:BOBAUSD. Empty string defaults to querying all tickers.",
@@ -19918,6 +20152,7 @@
     "/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}": {
       "get": {
         "description": "Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded cryptocurrency symbol.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges.\n",
+        "operationId": "GetCryptoSnapshotTicker",
         "parameters": [
           {
             "description": "Ticker of the snapshot",
@@ -20277,6 +20512,7 @@
     "/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book": {
       "get": {
         "description": "Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges.\n",
+        "operationId": "DeprecatedGetCryptoSnapshotTickerBook",
         "parameters": [
           {
             "description": "The cryptocurrency ticker.",
@@ -20468,6 +20704,7 @@
     "/v2/snapshot/locale/global/markets/crypto/{direction}": {
       "get": {
         "description": "Get the current top 20 gainers or losers of the day in cryptocurrency markets.\n<br />\n<br />\nTop gainers are those tickers whose price has increased by the highest percentage since the previous day's close.\nTop losers are those tickers whose price has decreased by the highest percentage since the previous day's close.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges.\n",
+        "operationId": "GetCryptoSnapshotDirection",
         "parameters": [
           {
             "description": "The direction of the snapshot results to return.\n",
@@ -20815,6 +21052,7 @@
     "/v2/snapshot/locale/global/markets/forex/tickers": {
       "get": {
         "description": "Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for all traded forex symbols.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST.\n",
+        "operationId": "GetForexSnapshotTickers",
         "parameters": [
           {
             "description": "A case-sensitive comma separated list of tickers to get snapshots for. For example, C:EURUSD, C:GBPCAD, and C:AUDINR. Empty string defaults to querying all tickers.",
@@ -21128,6 +21366,7 @@
     "/v2/snapshot/locale/global/markets/forex/tickers/{ticker}": {
       "get": {
         "description": "Get the current minute, day, and previous day’s aggregate, as well as the last trade and quote for a single traded currency symbol.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges.\n",
+        "operationId": "GetForexSnapshotTicker",
         "parameters": [
           {
             "description": "The forex ticker.",
@@ -21449,6 +21688,7 @@
     "/v2/snapshot/locale/global/markets/forex/{direction}": {
       "get": {
         "description": "Get the current top 20 gainers or losers of the day in forex markets.\n<br />\n<br />\nTop gainers are those tickers whose price has increased by the highest percentage since the previous day's close.\nTop losers are those tickers whose price has decreased by the highest percentage since the previous day's close.\n<br />\n<br />\nNote: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges.\n",
+        "operationId": "GetForexSnapshotDirection",
         "parameters": [
           {
             "description": "The direction of the snapshot results to return.\n",
@@ -21767,6 +22007,7 @@
     "/v2/snapshot/locale/us/markets/stocks/tickers": {
       "get": {
         "description": "Get the most up-to-date market data for all traded stock symbols.\n<br />\n<br />\nNote: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST.\n",
+        "operationId": "GetStocksSnapshotTickers",
         "parameters": [
           {
             "description": "A case-sensitive comma separated list of tickers to get snapshots for. For example, AAPL,TSLA,GOOG. Empty string defaults to querying all tickers.",
@@ -22183,6 +22424,7 @@
     "/v2/snapshot/locale/us/markets/stocks/tickers/{stocksTicker}": {
       "get": {
         "description": "Get the most up-to-date market data for a single traded stock ticker.\n<br />\n<br />\nNote: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges. This can happen as early as 4am EST.\n",
+        "operationId": "GetStocksSnapshotTicker",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.",
@@ -22593,6 +22835,7 @@
     "/v2/snapshot/locale/us/markets/stocks/{direction}": {
       "get": {
         "description": "Get the most up-to-date market data for the current top 20 gainers or losers of the day in the stocks/equities markets.\n<br />\n<br />\nTop gainers are those tickers whose price has increased by the highest percentage since the previous day's close.\nTop losers are those tickers whose price has decreased by the highest percentage since the previous day's close.\nThis output will only include tickers with a trading volume of 10,000 or more.\n<br />\n<br />\nNote: Snapshot data is cleared at 3:30am EST and gets populated as data is received from the exchanges.\n",
+        "operationId": "GetStocksSnapshotDirection",
         "parameters": [
           {
             "description": "The direction of the snapshot results to return.\n",
@@ -23006,6 +23249,7 @@
     "/v2/ticks/stocks/nbbo/{ticker}/{date}": {
       "get": {
         "description": "Get NBBO quotes for a given ticker symbol on a specified date.\n",
+        "operationId": "DeprecatedGetHistoricStocksQuotes",
         "parameters": [
           {
             "description": "The ticker symbol we want quotes for.",
@@ -23323,6 +23567,7 @@
     "/v2/ticks/stocks/trades/{ticker}/{date}": {
       "get": {
         "description": "Get trades for a given ticker symbol on a specified date.\n",
+        "operationId": "DeprecatedGetHistoricStocksTrades",
         "parameters": [
           {
             "description": "The ticker symbol we want trades for.",
@@ -32536,9 +32781,9 @@
         },
         {
           "paths": [
-            "/vX/reference/stocks/listings",
-            "/vX/reference/stocks/listing/{identifier_type}/{identifier}",
-            "/vX/reference/stocks/listings/updates"
+            "stocks/vX/listings",
+            "stocks/vX/listing/{identifier_type}/{identifier}",
+            "stocks/vX/listings/updates"
           ]
         }
       ]

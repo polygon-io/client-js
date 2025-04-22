@@ -26,7 +26,7 @@ const rest = restClient(process.env.POLY_API_KEY);
 After creating the client, making calls to the Polygon API is easy. For example, here's how to get aggregates (bars):
 
 ```javascript
-rest.stocks.aggregates("AAPL", 1, "day", "2023-01-01", "2023-04-14").then((data) => {
+rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14")).then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -37,14 +37,14 @@ Or, maybe you want to get the last trades or quotes for a ticker:
 
 ```javascript
 // last trade
-rest.stocks.lastTrade("AAPL").then((data) => {
+rest.lastTrade("AAPL").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
 
 // last quote (NBBO)
-rest.stocks.lastQuote("AAPL").then((data) => {
+rest.lastQuote("AAPL").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -54,7 +54,7 @@ rest.stocks.lastQuote("AAPL").then((data) => {
 Finally, maybe you want a market-wide snapshot of all tickers:
 
 ```javascript
-rest.stocks.snapshotAllTickers().then((data) => {
+rest.stocks.snapshots().then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -64,7 +64,7 @@ rest.stocks.snapshotAllTickers().then((data) => {
 See [full examples](./examples/rest/) for more details on how to use this client effectively. 
 To run these examples from the command line, first check out this project and run ```npm i``` in the root directory to install dependencies, then run ```POLY_API_KEY=yourAPIKey node examples/rest/crypto-aggregates_bars.js```, replacing yourAPIKey with your Polygon API Key. 
 
-## Pagination
+## Pagination (In Flight)
 
 The client can handle pagination for you through the `globalFetchOptions` by turning on the `pagination: true` option. The feature will automatically fetch all `next_url` pages of data when the API response indicates more data is available.
 
@@ -85,7 +85,7 @@ import('@polygon.io/client-js').then(({ restClient }) => {
 
 If there is a `next_url` field in the API response, the client will recursively fetch the next page for you, and then pass along the accumulated data.
 
-## Debugging
+## Debugging (In Flight)
 
 Sometimes you may find it useful to see the actual request and response details while working with the API. The client allows for this through the `globalFetchOptions` by turning on the `trace: true` option.
 
