@@ -26,7 +26,7 @@ const rest = restClient(process.env.POLY_API_KEY);
 After creating the client, making calls to the Polygon API is easy. For example, here's how to get aggregates (bars):
 
 ```javascript
-rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14")).then((data) => {
+rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
