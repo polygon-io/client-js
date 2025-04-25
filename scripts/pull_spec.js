@@ -1,8 +1,8 @@
 import path from 'path';
 import fs from 'fs';
+import mappings from './operation-mappings.js'; // Import the operationId mappings
 
-
-const fetchSpec = async (url) => { 
+const fetchSpec = async (url) => {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to fetch spec: ${response.statusText}`);
@@ -18,22 +18,41 @@ const saveSpec = (spec, filename) => {
   fs.writeFileSync(filename, JSON.stringify(spec, null, 2));
 };
 
-const main = async () => { 
+const main = async () => {
   const specUrl = 'https://api.polygon.io/openapi';
   const specFilename = path.join('./', 'src', 'openapi.json');
 
   try {
     const spec = await fetchSpec(specUrl);
-    const cleanedSpec = { ...spec, paths: Object.fromEntries(Object.entries(spec.paths).filter(
-        ([,{ "x-polygon-draft": xPolygonDraft }]) => {
-            return !xPolygonDraft;
-        }).map(([paths,item]) => ([paths,{ ...item, get: { ...item.get, tags: [ "default" ] }}])) 
-    )};
+
+    const paths = {};
+    for (const [path, pathObj] of Object.entries(spec.paths)) {
+
+      // Skip paths marked as drafts
+      if (pathObj["x-polygon-draft"]) continue;
+
+      // Since all endpoints use GET, process the 'get' method
+      const operation = pathObj.get;
+      const key = `${path}+${operation.operationId}`; // e.g., "/fed/vX/treasury-yields+TreasuryYields"
+      const newOperationId = mappings[key] || operation.operationId; // Rename if mapping exists
+
+      paths[path] = {
+        ...pathObj,
+        get: {
+          ...operation,
+          tags: ["default"], // Add default tag
+          operationId: newOperationId, // Update operationId
+        },
+      };
+    }
+
+    // Create the cleaned spec with updated paths
+    const cleanedSpec = { ...spec, paths };
     saveSpec(cleanedSpec, specFilename);
     console.log(`Spec saved to ${specFilename}`);
   } catch (error) {
     console.error(`Error: ${error.message}`);
   }
-}
+};
 
 main();
