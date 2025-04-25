@@ -5158,7 +5158,7 @@
     "/benzinga/vX/earnings": {
       "get": {
         "description": "Retrieve earnings_v1 data via API.",
-        "operationId": "BenzingaEarnings",
+        "operationId": "ListBenzingaEarnings",
         "parameters": [
           {
             "description": "The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.",
@@ -5479,7 +5479,7 @@
     "/benzinga/vX/news": {
       "get": {
         "description": "Retrieve news_v1 data via API.",
-        "operationId": "BenzingaNews",
+        "operationId": "ListBenzingaNews",
         "parameters": [
           {
             "description": "The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.",
@@ -5743,7 +5743,7 @@
     "/benzinga/vX/ratings": {
       "get": {
         "description": "Retrieve ratings_v1 data via API.",
-        "operationId": "BenzingaRatings",
+        "operationId": "ListBenzingaRatings",
         "parameters": [
           {
             "description": "The calendar date (formatted as YYYY-MM-DD) when the rating was issued.",
@@ -6221,7 +6221,7 @@
     "/fed/vX/treasury-yields": {
       "get": {
         "description": "Retrieve treasury_yields_v1 data via API.",
-        "operationId": "TreasuryYields",
+        "operationId": "ListTreasuryYields",
         "parameters": [
           {
             "description": "Calendar date of the yield observation (YYYY‑MM‑DD).",
@@ -6435,7 +6435,7 @@
     "/stocks/vX/short-interest": {
       "get": {
         "description": "Retrieve finra_short_interest_v1 data via API.",
-        "operationId": "StocksShortInterest",
+        "operationId": "ListStocksShortInterest",
         "parameters": [
           {
             "description": "The primary ticker symbol for the stock.",
@@ -6760,7 +6760,7 @@
     "/stocks/vX/short-volume": {
       "get": {
         "description": "Retrieve finra_short_volume_v1 data via API.",
-        "operationId": "StocksShortVolume",
+        "operationId": "ListStocksShortVolume",
         "parameters": [
           {
             "description": "The primary ticker symbol for the stock.",
@@ -7135,7 +7135,7 @@
     "/v1/conversion/{from}/{to}": {
       "get": {
         "description": "Get currency conversions using the latest market conversion rates. Note than you can convert in both directions. For example USD to CAD or CAD to USD.",
-        "operationId": "RealTimeCurrencyConversion",
+        "operationId": "GetCurrencyConversion",
         "parameters": [
           {
             "description": "The \"from\" symbol of the pair.",
@@ -7719,7 +7719,7 @@
     "/v1/indicators/ema/{cryptoTicker}": {
       "get": {
         "description": "Get the exponential moving average (EMA) for a ticker symbol over a given time range.",
-        "operationId": "CryptoEMA",
+        "operationId": "GetCryptoEMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get exponential moving average (EMA) data.",
@@ -8027,7 +8027,7 @@
     "/v1/indicators/ema/{fxTicker}": {
       "get": {
         "description": "Get the exponential moving average (EMA) for a ticker symbol over a given time range.",
-        "operationId": "ForexEMA",
+        "operationId": "GetForexEMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get exponential moving average (EMA) data.",
@@ -8345,7 +8345,7 @@
     "/v1/indicators/ema/{indicesTicker}": {
       "get": {
         "description": "Get the exponential moving average (EMA) for a ticker symbol over a given time range.",
-        "operationId": "IndicesEMA",
+        "operationId": "GetIndicesEMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get exponential moving average (EMA) data.",
@@ -8658,7 +8658,7 @@
     "/v1/indicators/ema/{optionsTicker}": {
       "get": {
         "description": "Get the exponential moving average (EMA) for a ticker symbol over a given time range.",
-        "operationId": "OptionsEMA",
+        "operationId": "GetOptionsEMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get exponential moving average (EMA) data.",
@@ -8976,7 +8976,7 @@
     "/v1/indicators/ema/{stockTicker}": {
       "get": {
         "description": "Get the exponential moving average (EMA) for a ticker symbol over a given time range.",
-        "operationId": "EMA",
+        "operationId": "GetStocksEMA",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol for which to get exponential moving average (EMA) data. For example, AAPL represents Apple Inc.",
@@ -9293,7 +9293,7 @@
     "/v1/indicators/macd/{cryptoTicker}": {
       "get": {
         "description": "Get moving average convergence/divergence (MACD) data for a ticker symbol over a given time range.",
-        "operationId": "CryptoMACD",
+        "operationId": "GetCryptoMACD",
         "parameters": [
           {
             "description": "The ticker symbol for which to get MACD data.",
@@ -9645,7 +9645,7 @@
     "/v1/indicators/macd/{fxTicker}": {
       "get": {
         "description": "Get moving average convergence/divergence (MACD) data for a ticker symbol over a given time range.",
-        "operationId": "ForexMACD",
+        "operationId": "GetForexMACD",
         "parameters": [
           {
             "description": "The ticker symbol for which to get MACD data.",
@@ -10007,7 +10007,7 @@
     "/v1/indicators/macd/{indicesTicker}": {
       "get": {
         "description": "Get moving average convergence/divergence (MACD) for a ticker symbol over a given time range.",
-        "operationId": "IndicesMACD",
+        "operationId": "GetIndicesMACD",
         "parameters": [
           {
             "description": "The ticker symbol for which to get MACD data.",
@@ -10364,7 +10364,7 @@
     "/v1/indicators/macd/{optionsTicker}": {
       "get": {
         "description": "Get moving average convergence/divergence (MACD) for a ticker symbol over a given time range.",
-        "operationId": "OptionsMACD",
+        "operationId": "GetOptionsMACD",
         "parameters": [
           {
             "description": "The ticker symbol for which to get MACD data.",
@@ -10726,7 +10726,7 @@
     "/v1/indicators/macd/{stockTicker}": {
       "get": {
         "description": "Get moving average convergence/divergence (MACD) data for a ticker symbol over a given time range.",
-        "operationId": "MACD",
+        "operationId": "GetStocksMACD",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol for which to get moving average convergence/divergence (MACD) data. For example, AAPL represents Apple Inc.",
@@ -11087,7 +11087,7 @@
     "/v1/indicators/rsi/{cryptoTicker}": {
       "get": {
         "description": "Get the relative strength index (RSI) for a ticker symbol over a given time range.",
-        "operationId": "CryptoRSI",
+        "operationId": "GetCryptoRSI",
         "parameters": [
           {
             "description": "The ticker symbol for which to get relative strength index (RSI) data.",
@@ -11395,7 +11395,7 @@
     "/v1/indicators/rsi/{fxTicker}": {
       "get": {
         "description": "Get the relative strength index (RSI) for a ticker symbol over a given time range.",
-        "operationId": "ForexRSI",
+        "operationId": "GetForexRSI",
         "parameters": [
           {
             "description": "The ticker symbol for which to get relative strength index (RSI) data.",
@@ -11713,7 +11713,7 @@
     "/v1/indicators/rsi/{indicesTicker}": {
       "get": {
         "description": "Get the relative strength index (RSI) for a ticker symbol over a given time range.",
-        "operationId": "IndicesRSI",
+        "operationId": "GetIndicesRSI",
         "parameters": [
           {
             "description": "The ticker symbol for which to get relative strength index (RSI) data.",
@@ -12026,7 +12026,7 @@
     "/v1/indicators/rsi/{optionsTicker}": {
       "get": {
         "description": "Get the relative strength index (RSI) for a ticker symbol over a given time range.",
-        "operationId": "OptionsRSI",
+        "operationId": "GetOptionsRSI",
         "parameters": [
           {
             "description": "The ticker symbol for which to get relative strength index (RSI) data.",
@@ -12344,7 +12344,7 @@
     "/v1/indicators/rsi/{stockTicker}": {
       "get": {
         "description": "Get the relative strength index (RSI) for a ticker symbol over a given time range.",
-        "operationId": "RSI",
+        "operationId": "GetStocksRSI",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol for which to get relative strength index (RSI) data. For example, AAPL represents Apple Inc.",
@@ -12661,7 +12661,7 @@
     "/v1/indicators/sma/{cryptoTicker}": {
       "get": {
         "description": "Get the simple moving average (SMA) for a ticker symbol over a given time range.",
-        "operationId": "CryptoSMA",
+        "operationId": "GetCryptoSMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get simple moving average (SMA) data.",
@@ -12991,7 +12991,7 @@
     "/v1/indicators/sma/{fxTicker}": {
       "get": {
         "description": "Get the simple moving average (SMA) for a ticker symbol over a given time range.",
-        "operationId": "ForexSMA",
+        "operationId": "GetForexSMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get simple moving average (SMA) data.",
@@ -13331,7 +13331,7 @@
     "/v1/indicators/sma/{indicesTicker}": {
       "get": {
         "description": "Get the simple moving average (SMA) for a ticker symbol over a given time range.",
-        "operationId": "IndicesSMA",
+        "operationId": "GetIndicesSMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get simple moving average (SMA) data.",
@@ -13644,7 +13644,7 @@
     "/v1/indicators/sma/{optionsTicker}": {
       "get": {
         "description": "Get the simple moving average (SMA) for a ticker symbol over a given time range.",
-        "operationId": "OptionsSMA",
+        "operationId": "GetOptionsSMA",
         "parameters": [
           {
             "description": "The ticker symbol for which to get simple moving average (SMA) data.",
@@ -13984,7 +13984,7 @@
     "/v1/indicators/sma/{stockTicker}": {
       "get": {
         "description": "Get the simple moving average (SMA) for a ticker symbol over a given time range.",
-        "operationId": "SMA",
+        "operationId": "GetStocksSMA",
         "parameters": [
           {
             "description": "Specify a case-sensitive ticker symbol for which to get simple moving average (SMA) data. For example, AAPL represents Apple Inc.",
@@ -14323,7 +14323,7 @@
     "/v1/last/crypto/{from}/{to}": {
       "get": {
         "description": "Get the last trade tick for a cryptocurrency pair.",
-        "operationId": "LastTradeCrypto",
+        "operationId": "GetLastCryptoTrade",
         "parameters": [
           {
             "description": "The \"from\" symbol of the pair.",
@@ -14466,7 +14466,7 @@
     "/v1/last_quote/currencies/{from}/{to}": {
       "get": {
         "description": "Get the last quote tick for a forex currency pair.",
-        "operationId": "LastQuoteCurrencies",
+        "operationId": "GetLastCurrencyQuote",
         "parameters": [
           {
             "description": "The \"from\" symbol of the pair.",
@@ -15627,7 +15627,7 @@
     "/v1/summaries": {
       "get": {
         "description": "Get everything needed to visualize the tick-by-tick movement of a list of tickers.",
-        "operationId": "SnapshotSummary",
+        "operationId": "GetSnapshotSummary",
         "parameters": [
           {
             "description": "Comma separated list of tickers. This API currently supports Stocks/Equities, Crypto, Options, and Forex. See <a rel=\"nofollow\" target=\"_blank\" href=\"https://polygon.io/docs/stocks/get_v3_reference_tickers\">the tickers endpoint</a> for more details on supported tickers. If no tickers are passed then no results will be returned.\n\nWarning: The maximum number of characters allowed in a URL are subject to your technology stack.",
@@ -18839,7 +18839,7 @@
     "/v2/last/nbbo/{stocksTicker}": {
       "get": {
         "description": "Get the most recent NBBO (Quote) tick for a given stock.",
-        "operationId": "LastQuote",
+        "operationId": "GetLastStocksQuote",
         "parameters": [
           {
             "description": "The ticker symbol of the stock/equity.",
@@ -19024,7 +19024,7 @@
     "/v2/last/trade/{optionsTicker}": {
       "get": {
         "description": "Get the most recent trade for a given options contract.",
-        "operationId": "LastTradeOptions",
+        "operationId": "GetLastOptionsTrade",
         "parameters": [
           {
             "description": "The ticker symbol of the options contract.",
@@ -19202,7 +19202,7 @@
     "/v2/last/trade/{stocksTicker}": {
       "get": {
         "description": "Get the most recent trade for a given stock.",
-        "operationId": "LastTrade",
+        "operationId": "GetLastStocksTrade",
         "parameters": [
           {
             "description": "The ticker symbol of the stock/equity.",
@@ -23874,7 +23874,7 @@
     "/v3/quotes/{fxTicker}": {
       "get": {
         "description": "Get BBO quotes for a ticker symbol in a given time range.",
-        "operationId": "QuotesFx",
+        "operationId": "GetForexQuotes",
         "parameters": [
           {
             "description": "The ticker symbol to get quotes for.",
@@ -24105,7 +24105,7 @@
     "/v3/quotes/{optionsTicker}": {
       "get": {
         "description": "Get quotes for an options ticker symbol in a given time range.",
-        "operationId": "QuotesOptions",
+        "operationId": "GetOptionsQuotes",
         "parameters": [
           {
             "description": "The ticker symbol to get quotes for.",
@@ -24352,7 +24352,7 @@
     "/v3/quotes/{stockTicker}": {
       "get": {
         "description": "Get NBBO quotes for a ticker symbol in a given time range.",
-        "operationId": "Quotes",
+        "operationId": "GetStocksQuotes",
         "parameters": [
           {
             "description": "The ticker symbol to get quotes for.",
@@ -27852,7 +27852,7 @@
     "/v3/snapshot": {
       "get": {
         "description": "Get snapshots for assets of all types",
-        "operationId": "Snapshots",
+        "operationId": "GetSnapshots",
         "parameters": [
           {
             "description": "Search a range of tickers lexicographically.",
@@ -28597,7 +28597,7 @@
     "/v3/snapshot/indices": {
       "get": {
         "description": "Get a Snapshot of indices data for said tickers",
-        "operationId": "IndicesSnapshot",
+        "operationId": "GetIndicesSnapshot",
         "parameters": [
           {
             "description": "Comma separated list of tickers, up to a maximum of 250. If no tickers are passed then all results will be returned in a paginated manner.\n\nWarning: The maximum number of characters allowed in a URL are subject to your technology stack.",
@@ -28901,7 +28901,7 @@
     "/v3/snapshot/options/{underlyingAsset}": {
       "get": {
         "description": "Get the snapshot of all options contracts for an underlying ticker.",
-        "operationId": "OptionsChain",
+        "operationId": "GetOptionsChain",
         "parameters": [
           {
             "description": "The underlying ticker symbol of the option contract.",
@@ -29563,7 +29563,7 @@
     "/v3/snapshot/options/{underlyingAsset}/{optionContract}": {
       "get": {
         "description": "Get the snapshot of an option contract for a stock equity.",
-        "operationId": "OptionContract",
+        "operationId": "GetOptionContract",
         "parameters": [
           {
             "description": "The underlying ticker symbol of the option contract.",
@@ -30084,7 +30084,7 @@
     "/v3/trades/{cryptoTicker}": {
       "get": {
         "description": "Get trades for a crypto ticker symbol in a given time range.",
-        "operationId": "TradesCrypto",
+        "operationId": "GetCryptoTrades",
         "parameters": [
           {
             "description": "The ticker symbol to get trades for.",
@@ -30336,7 +30336,7 @@
     "/v3/trades/{optionsTicker}": {
       "get": {
         "description": "Get trades for an options ticker symbol in a given time range.",
-        "operationId": "TradesOptions",
+        "operationId": "GetOptionsTrades",
         "parameters": [
           {
             "description": "The options ticker symbol to get trades for.",
@@ -30588,7 +30588,7 @@
     "/v3/trades/{stockTicker}": {
       "get": {
         "description": "Get trades for a ticker symbol in a given time range.",
-        "operationId": "Trades",
+        "operationId": "GetStocksTrades",
         "parameters": [
           {
             "description": "The ticker symbol to get trades for.",
