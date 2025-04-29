@@ -11,7 +11,7 @@ For upgrade instructions please see the [Release Notes](./CHANGELOG.md).
 To get started, you'll need to install the client library:
 
 ```bash
-npm install --save `@polygon.io/client-js`
+npm install --save '@polygon.io/client-js'
 ```
 
 Next, create a new client with your [API key](https://polygon.io/dashboard/signup).
@@ -61,8 +61,8 @@ rest.stocks.snapshotAllTickers().then((data) => {
 });
 ```
 
-See [full examples](./examples/rest/) for more details on how to use this client effectively. 
-To run these examples from the command line, first check out this project and run ```npm i``` in the root directory to install dependencies, then run ```POLY_API_KEY=yourAPIKey node examples/rest/crypto-aggregates_bars.js```, replacing yourAPIKey with your Polygon API Key. 
+See [full examples](./examples/rest/) for more details on how to use this client effectively.
+To run these examples from the command line, first check out this project and run ```npm i``` in the root directory to install dependencies, then run ```POLY_API_KEY=yourAPIKey node examples/rest/crypto-aggregates_bars.js```, replacing yourAPIKey with your Polygon API Key.
 
 ## Pagination
 
