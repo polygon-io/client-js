@@ -25989,6 +25989,7 @@
                       "type": "string"
                     },
                     "results": {
+                      "description": "An array of results containing the requested data.",
                       "items": {
                         "description": "An entity that reports trades.",
                         "properties": {

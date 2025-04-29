@@ -8301,7 +8301,7 @@ export interface ListExchanges200Response {
      */
     'request_id': string;
     /**
-     * 
+     * An array of results containing the requested data.
      * @type {Array<ListExchanges200ResponseResultsInner>}
      * @memberof ListExchanges200Response
      */

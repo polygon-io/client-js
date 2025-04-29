@@ -1,3 +1,4 @@
+export * from "./rest/index.js";
 export * from "./websockets/index.js";
 
 import axios from 'axios';
