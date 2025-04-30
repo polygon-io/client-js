@@ -136,10 +136,6 @@ Response Headers:  Headers {
 
 This can be an invaluable tool for debugging issues or understanding how the client interacts with the API.
 
-## Launchpad Usage
-
-Users of the Launchpad product will need to pass in certain headers in order to make API requests. Example can be found [here](./examples/rest/launchpad/README.md).
-
 ## WebSocket Client
 
 Import the [Websocket](https://polygon.io/docs/stocks/ws_getting-started) client and models packages to get started. You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
