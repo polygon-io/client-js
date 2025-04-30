@@ -17644,7 +17644,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetCryptoSnapshotTickerBook200Response>> {
+        async deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<DeprecatedGetCryptoSnapshotTickerBook200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetCryptoSnapshotTickerBook(ticker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetCryptoSnapshotTickerBook']?.[localVarOperationServerIndex]?.url;
@@ -17661,7 +17661,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricCryptoTrades200Response>> {
+        async deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<DeprecatedGetHistoricCryptoTrades200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricCryptoTrades(from, to, date, offset, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricCryptoTrades']?.[localVarOperationServerIndex]?.url;
@@ -17678,7 +17678,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricForexQuotes200Response>> {
+        async deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<DeprecatedGetHistoricForexQuotes200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricForexQuotes(from, to, date, offset, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricForexQuotes']?.[localVarOperationServerIndex]?.url;
@@ -17696,7 +17696,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricStocksQuotes200Response>> {
+        async deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<DeprecatedGetHistoricStocksQuotes200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricStocksQuotes(ticker, date, timestamp, timestampLimit, reverse, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricStocksQuotes']?.[localVarOperationServerIndex]?.url;
@@ -17714,7 +17714,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeprecatedGetHistoricStocksTrades200Response>> {
+        async deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<DeprecatedGetHistoricStocksTrades200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricStocksTrades']?.[localVarOperationServerIndex]?.url;
@@ -17734,7 +17734,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+        async getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoAggregates(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoAggregates']?.[localVarOperationServerIndex]?.url;
@@ -17758,7 +17758,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoEMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoEMATimespanEnum, window?: number, seriesType?: GetCryptoEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoEMA200Response>> {
+        async getCryptoEMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoEMATimespanEnum, window?: number, seriesType?: GetCryptoEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoEMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoEMA(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoEMA']?.[localVarOperationServerIndex]?.url;
@@ -17784,7 +17784,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoMACD(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoMACDTimespanEnum, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetCryptoMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoMACD200Response>> {
+        async getCryptoMACD(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoMACDTimespanEnum, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetCryptoMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoMACD200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoMACD(cryptoTicker, timestamp, timespan, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoMACD']?.[localVarOperationServerIndex]?.url;
@@ -17800,7 +17800,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoOpenClose200Response>> {
+        async getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoOpenClose200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoOpenClose(from, to, date, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoOpenClose']?.[localVarOperationServerIndex]?.url;
@@ -17824,7 +17824,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoRSI(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoRSITimespanEnum, window?: number, seriesType?: GetCryptoRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoRSI200Response>> {
+        async getCryptoRSI(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoRSITimespanEnum, window?: number, seriesType?: GetCryptoRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoRSI200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoRSI(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoRSI']?.[localVarOperationServerIndex]?.url;
@@ -17848,7 +17848,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoSMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoSMATimespanEnum, window?: number, seriesType?: GetCryptoSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSMA200Response>> {
+        async getCryptoSMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoSMATimespanEnum, window?: number, seriesType?: GetCryptoSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSMA(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSMA']?.[localVarOperationServerIndex]?.url;
@@ -17861,7 +17861,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSnapshotDirection200Response>> {
+        async getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSnapshotDirection200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSnapshotDirection(direction, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSnapshotDirection']?.[localVarOperationServerIndex]?.url;
@@ -17874,7 +17874,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSnapshotTicker200Response>> {
+        async getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSnapshotTicker200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSnapshotTicker(ticker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSnapshotTicker']?.[localVarOperationServerIndex]?.url;
@@ -17887,7 +17887,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSnapshotTickers200Response>> {
+        async getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSnapshotTickers200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoSnapshotTickers(tickers, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoSnapshotTickers']?.[localVarOperationServerIndex]?.url;
@@ -17908,7 +17908,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCryptoTrades(cryptoTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetCryptoTradesOrderEnum, limit?: number, sort?: GetCryptoTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoTrades200Response>> {
+        async getCryptoTrades(cryptoTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetCryptoTradesOrderEnum, limit?: number, sort?: GetCryptoTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoTrades200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCryptoTrades(cryptoTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCryptoTrades']?.[localVarOperationServerIndex]?.url;
@@ -17924,7 +17924,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrencyConversion(from: string, to: string, amount?: number, precision?: GetCurrencyConversionPrecisionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCurrencyConversion200Response>> {
+        async getCurrencyConversion(from: string, to: string, amount?: number, precision?: GetCurrencyConversionPrecisionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCurrencyConversion200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrencyConversion(from, to, amount, precision, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getCurrencyConversion']?.[localVarOperationServerIndex]?.url;
@@ -17938,7 +17938,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getEvents(id: string, types?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEvents200Response>> {
+        async getEvents(id: string, types?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetEvents200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEvents(id, types, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getEvents']?.[localVarOperationServerIndex]?.url;
@@ -17958,7 +17958,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+        async getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexAggregates(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexAggregates']?.[localVarOperationServerIndex]?.url;
@@ -17983,7 +17983,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexEMA(fxTicker: string, timestamp?: string, timespan?: GetForexEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoEMA200Response>> {
+        async getForexEMA(fxTicker: string, timestamp?: string, timespan?: GetForexEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoEMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexEMA(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexEMA']?.[localVarOperationServerIndex]?.url;
@@ -18010,7 +18010,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexMACD(fxTicker: string, timestamp?: string, timespan?: GetForexMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetForexMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoMACD200Response>> {
+        async getForexMACD(fxTicker: string, timestamp?: string, timespan?: GetForexMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetForexMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoMACD200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexMACD(fxTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexMACD']?.[localVarOperationServerIndex]?.url;
@@ -18031,7 +18031,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexQuotes(fxTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetForexQuotesOrderEnum, limit?: number, sort?: GetForexQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexQuotes200Response>> {
+        async getForexQuotes(fxTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetForexQuotesOrderEnum, limit?: number, sort?: GetForexQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetForexQuotes200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexQuotes(fxTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexQuotes']?.[localVarOperationServerIndex]?.url;
@@ -18056,7 +18056,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexRSI(fxTicker: string, timestamp?: string, timespan?: GetForexRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoRSI200Response>> {
+        async getForexRSI(fxTicker: string, timestamp?: string, timespan?: GetForexRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoRSI200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexRSI(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexRSI']?.[localVarOperationServerIndex]?.url;
@@ -18081,7 +18081,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexSMA(fxTicker: string, timestamp?: string, timespan?: GetForexSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSMA200Response>> {
+        async getForexSMA(fxTicker: string, timestamp?: string, timespan?: GetForexSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSMA(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSMA']?.[localVarOperationServerIndex]?.url;
@@ -18094,7 +18094,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexSnapshotTickers200Response>> {
+        async getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetForexSnapshotTickers200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotDirection(direction, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotDirection']?.[localVarOperationServerIndex]?.url;
@@ -18107,7 +18107,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexSnapshotTicker200Response>> {
+        async getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetForexSnapshotTicker200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotTicker(ticker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotTicker']?.[localVarOperationServerIndex]?.url;
@@ -18120,7 +18120,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetForexSnapshotTickers200Response>> {
+        async getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetForexSnapshotTickers200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotTickers(tickers, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotTickers']?.[localVarOperationServerIndex]?.url;
@@ -18134,7 +18134,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGroupedCryptoAggregates200Response>> {
+        async getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetGroupedCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getGroupedCryptoAggregates(date, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getGroupedCryptoAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18148,7 +18148,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGroupedCryptoAggregates200Response>> {
+        async getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetGroupedCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getGroupedForexAggregates(date, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getGroupedForexAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18163,7 +18163,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGroupedStocksAggregates200Response>> {
+        async getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetGroupedStocksAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getGroupedStocksAggregates(date, adjusted, includeOtc, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getGroupedStocksAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18182,7 +18182,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousIndicesAggregates200Response>> {
+        async getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetPreviousIndicesAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesAggregates(indicesTicker, multiplier, timespan, from, to, sort, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18207,7 +18207,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesEMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoEMA200Response>> {
+        async getIndicesEMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoEMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesEMA(indicesTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesEMA']?.[localVarOperationServerIndex]?.url;
@@ -18234,7 +18234,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesMACD(indicesTicker: string, timestamp?: string, timespan?: GetIndicesMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetIndicesMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoMACD200Response>> {
+        async getIndicesMACD(indicesTicker: string, timestamp?: string, timespan?: GetIndicesMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetIndicesMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoMACD200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesMACD(indicesTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesMACD']?.[localVarOperationServerIndex]?.url;
@@ -18248,7 +18248,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetIndicesOpenClose200Response>> {
+        async getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetIndicesOpenClose200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesOpenClose(indicesTicker, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesOpenClose']?.[localVarOperationServerIndex]?.url;
@@ -18273,7 +18273,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesRSI(indicesTicker: string, timestamp?: string, timespan?: GetIndicesRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoRSI200Response>> {
+        async getIndicesRSI(indicesTicker: string, timestamp?: string, timespan?: GetIndicesRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoRSI200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesRSI(indicesTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesRSI']?.[localVarOperationServerIndex]?.url;
@@ -18298,7 +18298,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesSMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSMA200Response>> {
+        async getIndicesSMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesSMA(indicesTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesSMA']?.[localVarOperationServerIndex]?.url;
@@ -18319,7 +18319,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndicesSnapshot(tickerAnyOf?: string, ticker?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: GetIndicesSnapshotOrderEnum, limit?: number, sort?: GetIndicesSnapshotSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetIndicesSnapshot200Response>> {
+        async getIndicesSnapshot(tickerAnyOf?: string, ticker?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: GetIndicesSnapshotOrderEnum, limit?: number, sort?: GetIndicesSnapshotSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetIndicesSnapshot200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndicesSnapshot(tickerAnyOf, ticker, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getIndicesSnapshot']?.[localVarOperationServerIndex]?.url;
@@ -18333,7 +18333,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLastCryptoTrade(from: string, to: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLastCryptoTrade200Response>> {
+        async getLastCryptoTrade(from: string, to: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetLastCryptoTrade200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLastCryptoTrade(from, to, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getLastCryptoTrade']?.[localVarOperationServerIndex]?.url;
@@ -18347,7 +18347,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLastCurrencyQuote(from: string, to: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLastCurrencyQuote200Response>> {
+        async getLastCurrencyQuote(from: string, to: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetLastCurrencyQuote200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLastCurrencyQuote(from, to, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getLastCurrencyQuote']?.[localVarOperationServerIndex]?.url;
@@ -18360,7 +18360,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLastOptionsTrade(optionsTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLastOptionsTrade200Response>> {
+        async getLastOptionsTrade(optionsTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetLastOptionsTrade200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLastOptionsTrade(optionsTicker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getLastOptionsTrade']?.[localVarOperationServerIndex]?.url;
@@ -18373,7 +18373,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLastStocksQuote(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLastStocksQuote200Response>> {
+        async getLastStocksQuote(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetLastStocksQuote200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLastStocksQuote(stocksTicker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getLastStocksQuote']?.[localVarOperationServerIndex]?.url;
@@ -18386,7 +18386,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLastStocksTrade(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLastOptionsTrade200Response>> {
+        async getLastStocksTrade(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetLastOptionsTrade200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLastStocksTrade(stocksTicker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getLastStocksTrade']?.[localVarOperationServerIndex]?.url;
@@ -18398,7 +18398,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMarketHolidays(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GetMarketHolidays200ResponseInner>>> {
+        async getMarketHolidays(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<Array<GetMarketHolidays200ResponseInner>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketHolidays(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getMarketHolidays']?.[localVarOperationServerIndex]?.url;
@@ -18410,7 +18410,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMarketStatus(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketStatus200Response>> {
+        async getMarketStatus(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetMarketStatus200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketStatus(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getMarketStatus']?.[localVarOperationServerIndex]?.url;
@@ -18424,7 +18424,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionContract(underlyingAsset: string, optionContract: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionContract200Response>> {
+        async getOptionContract(underlyingAsset: string, optionContract: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionContract200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionContract(underlyingAsset, optionContract, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionContract']?.[localVarOperationServerIndex]?.url;
@@ -18444,7 +18444,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+        async getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsAggregates(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18471,7 +18471,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsChain(underlyingAsset: string, strikePrice?: number, expirationDate?: string, contractType?: GetOptionsChainContractTypeEnum, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, order?: GetOptionsChainOrderEnum, limit?: number, sort?: GetOptionsChainSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsChain200Response>> {
+        async getOptionsChain(underlyingAsset: string, strikePrice?: number, expirationDate?: string, contractType?: GetOptionsChainContractTypeEnum, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, order?: GetOptionsChainOrderEnum, limit?: number, sort?: GetOptionsChainSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionsChain200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsChain(underlyingAsset, strikePrice, expirationDate, contractType, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsChain']?.[localVarOperationServerIndex]?.url;
@@ -18485,7 +18485,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsContract(optionsTicker: string, asOf?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsContract200Response>> {
+        async getOptionsContract(optionsTicker: string, asOf?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionsContract200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsContract(optionsTicker, asOf, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsContract']?.[localVarOperationServerIndex]?.url;
@@ -18510,7 +18510,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsEMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoEMA200Response>> {
+        async getOptionsEMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoEMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsEMA(optionsTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsEMA']?.[localVarOperationServerIndex]?.url;
@@ -18537,7 +18537,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsMACD(optionsTicker: string, timestamp?: string, timespan?: GetOptionsMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetOptionsMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoMACD200Response>> {
+        async getOptionsMACD(optionsTicker: string, timestamp?: string, timespan?: GetOptionsMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetOptionsMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoMACD200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsMACD(optionsTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsMACD']?.[localVarOperationServerIndex]?.url;
@@ -18552,7 +18552,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsOpenClose200Response>> {
+        async getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionsOpenClose200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsOpenClose(optionsTicker, date, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsOpenClose']?.[localVarOperationServerIndex]?.url;
@@ -18573,7 +18573,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsQuotes(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsQuotesOrderEnum, limit?: number, sort?: GetOptionsQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsQuotes200Response>> {
+        async getOptionsQuotes(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsQuotesOrderEnum, limit?: number, sort?: GetOptionsQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionsQuotes200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsQuotes(optionsTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsQuotes']?.[localVarOperationServerIndex]?.url;
@@ -18598,7 +18598,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsRSI(optionsTicker: string, timestamp?: string, timespan?: GetOptionsRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoRSI200Response>> {
+        async getOptionsRSI(optionsTicker: string, timestamp?: string, timespan?: GetOptionsRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoRSI200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsRSI(optionsTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsRSI']?.[localVarOperationServerIndex]?.url;
@@ -18623,7 +18623,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsSMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSMA200Response>> {
+        async getOptionsSMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsSMA(optionsTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsSMA']?.[localVarOperationServerIndex]?.url;
@@ -18644,7 +18644,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOptionsTrades(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsTradesOrderEnum, limit?: number, sort?: GetOptionsTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsTrades200Response>> {
+        async getOptionsTrades(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsTradesOrderEnum, limit?: number, sort?: GetOptionsTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionsTrades200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsTrades(optionsTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getOptionsTrades']?.[localVarOperationServerIndex]?.url;
@@ -18658,7 +18658,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousCryptoAggregates200Response>> {
+        async getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetPreviousCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousCryptoAggregates(cryptoTicker, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousCryptoAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18672,7 +18672,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousForexAggregates200Response>> {
+        async getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetPreviousForexAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousForexAggregates(forexTicker, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousForexAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18685,7 +18685,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreviousIndicesAggregates200Response>> {
+        async getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetPreviousIndicesAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousIndicesAggregates(indicesTicker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousIndicesAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18699,7 +18699,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+        async getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousOptionsAggregates(optionsTicker, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousOptionsAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18713,7 +18713,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoAggregates200Response>> {
+        async getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPreviousStocksAggregates(stocksTicker, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getPreviousStocksAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18726,7 +18726,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRelatedCompanies(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRelatedCompanies200Response>> {
+        async getRelatedCompanies(ticker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetRelatedCompanies200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRelatedCompanies(ticker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getRelatedCompanies']?.[localVarOperationServerIndex]?.url;
@@ -18739,7 +18739,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSnapshotSummary(tickerAnyOf?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSnapshotSummary200Response>> {
+        async getSnapshotSummary(tickerAnyOf?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetSnapshotSummary200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSnapshotSummary(tickerAnyOf, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getSnapshotSummary']?.[localVarOperationServerIndex]?.url;
@@ -18761,7 +18761,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSnapshots(ticker?: string, type?: GetSnapshotsTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, tickerAnyOf?: string, order?: GetSnapshotsOrderEnum, limit?: number, sort?: GetSnapshotsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSnapshots200Response>> {
+        async getSnapshots(ticker?: string, type?: GetSnapshotsTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, tickerAnyOf?: string, order?: GetSnapshotsOrderEnum, limit?: number, sort?: GetSnapshotsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetSnapshots200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSnapshots(ticker, type, tickerGte, tickerGt, tickerLte, tickerLt, tickerAnyOf, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getSnapshots']?.[localVarOperationServerIndex]?.url;
@@ -18781,7 +18781,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksAggregates200Response>> {
+        async getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksAggregates(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksAggregates']?.[localVarOperationServerIndex]?.url;
@@ -18806,7 +18806,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksEMA(stockTicker: string, timestamp?: string, timespan?: GetStocksEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoEMA200Response>> {
+        async getStocksEMA(stockTicker: string, timestamp?: string, timespan?: GetStocksEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoEMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksEMA(stockTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksEMA']?.[localVarOperationServerIndex]?.url;
@@ -18833,7 +18833,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksMACD(stockTicker: string, timestamp?: string, timespan?: GetStocksMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetStocksMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoMACD200Response>> {
+        async getStocksMACD(stockTicker: string, timestamp?: string, timespan?: GetStocksMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetStocksMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoMACD200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksMACD(stockTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksMACD']?.[localVarOperationServerIndex]?.url;
@@ -18848,7 +18848,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOptionsOpenClose200Response>> {
+        async getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetOptionsOpenClose200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksOpenClose(stocksTicker, date, adjusted, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksOpenClose']?.[localVarOperationServerIndex]?.url;
@@ -18869,7 +18869,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksQuotes(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksQuotesOrderEnum, limit?: number, sort?: GetStocksQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksQuotes200Response>> {
+        async getStocksQuotes(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksQuotesOrderEnum, limit?: number, sort?: GetStocksQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksQuotes200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksQuotes(stockTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksQuotes']?.[localVarOperationServerIndex]?.url;
@@ -18894,7 +18894,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksRSI(stockTicker: string, timestamp?: string, timespan?: GetStocksRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoRSI200Response>> {
+        async getStocksRSI(stockTicker: string, timestamp?: string, timespan?: GetStocksRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoRSI200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksRSI(stockTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksRSI']?.[localVarOperationServerIndex]?.url;
@@ -18919,7 +18919,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksSMA(stockTicker: string, timestamp?: string, timespan?: GetStocksSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCryptoSMA200Response>> {
+        async getStocksSMA(stockTicker: string, timestamp?: string, timespan?: GetStocksSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetCryptoSMA200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSMA(stockTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSMA']?.[localVarOperationServerIndex]?.url;
@@ -18933,7 +18933,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksSnapshotDirection200Response>> {
+        async getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksSnapshotDirection200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSnapshotDirection(direction, includeOtc, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSnapshotDirection']?.[localVarOperationServerIndex]?.url;
@@ -18946,7 +18946,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksSnapshotTicker200Response>> {
+        async getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksSnapshotTicker200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSnapshotTicker(stocksTicker, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSnapshotTicker']?.[localVarOperationServerIndex]?.url;
@@ -18960,7 +18960,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksSnapshotTickers200Response>> {
+        async getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksSnapshotTickers200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksSnapshotTickers(tickers, includeOtc, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksSnapshotTickers']?.[localVarOperationServerIndex]?.url;
@@ -18981,7 +18981,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStocksTrades(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksTradesOrderEnum, limit?: number, sort?: GetStocksTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStocksTrades200Response>> {
+        async getStocksTrades(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksTradesOrderEnum, limit?: number, sort?: GetStocksTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksTrades200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksTrades(stockTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksTrades']?.[localVarOperationServerIndex]?.url;
@@ -18995,7 +18995,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTicker200Response>> {
+        async getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetTicker200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTicker(ticker, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getTicker']?.[localVarOperationServerIndex]?.url;
@@ -19020,7 +19020,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListBenzingaEarnings200Response>> {
+        async listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListBenzingaEarnings200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBenzingaEarnings(date, ticker, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listBenzingaEarnings']?.[localVarOperationServerIndex]?.url;
@@ -19045,7 +19045,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListBenzingaNews200Response>> {
+        async listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListBenzingaNews200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBenzingaNews(created, tickers, createdGte, createdGt, createdLte, createdLt, tickersGte, tickersGt, tickersLte, tickersLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listBenzingaNews']?.[localVarOperationServerIndex]?.url;
@@ -19090,7 +19090,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListBenzingaRatings200Response>> {
+        async listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListBenzingaRatings200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBenzingaRatings(date, ticker, ratingAction, priceTargetAction, rating, firm, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, ratingActionGte, ratingActionGt, ratingActionLte, ratingActionLt, priceTargetActionGte, priceTargetActionGt, priceTargetActionLte, priceTargetActionLt, ratingGte, ratingGt, ratingLte, ratingLt, firmGte, firmGt, firmLte, firmLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listBenzingaRatings']?.[localVarOperationServerIndex]?.url;
@@ -19109,7 +19109,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listConditions(assetClass?: ListConditionsAssetClassEnum, dataType?: ListConditionsDataTypeEnum, id?: number, sip?: ListConditionsSipEnum, order?: ListConditionsOrderEnum, limit?: number, sort?: ListConditionsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListConditions200Response>> {
+        async listConditions(assetClass?: ListConditionsAssetClassEnum, dataType?: ListConditionsDataTypeEnum, id?: number, sip?: ListConditionsSipEnum, order?: ListConditionsOrderEnum, limit?: number, sort?: ListConditionsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListConditions200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listConditions(assetClass, dataType, id, sip, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listConditions']?.[localVarOperationServerIndex]?.url;
@@ -19156,7 +19156,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listDividends(ticker?: string, exDividendDate?: string, recordDate?: string, declarationDate?: string, payDate?: string, frequency?: ListDividendsFrequencyEnum, cashAmount?: number, dividendType?: ListDividendsDividendTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, exDividendDateGte?: string, exDividendDateGt?: string, exDividendDateLte?: string, exDividendDateLt?: string, recordDateGte?: string, recordDateGt?: string, recordDateLte?: string, recordDateLt?: string, declarationDateGte?: string, declarationDateGt?: string, declarationDateLte?: string, declarationDateLt?: string, payDateGte?: string, payDateGt?: string, payDateLte?: string, payDateLt?: string, cashAmountGte?: number, cashAmountGt?: number, cashAmountLte?: number, cashAmountLt?: number, order?: ListDividendsOrderEnum, limit?: number, sort?: ListDividendsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListDividends200Response>> {
+        async listDividends(ticker?: string, exDividendDate?: string, recordDate?: string, declarationDate?: string, payDate?: string, frequency?: ListDividendsFrequencyEnum, cashAmount?: number, dividendType?: ListDividendsDividendTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, exDividendDateGte?: string, exDividendDateGt?: string, exDividendDateLte?: string, exDividendDateLt?: string, recordDateGte?: string, recordDateGt?: string, recordDateLte?: string, recordDateLt?: string, declarationDateGte?: string, declarationDateGt?: string, declarationDateLte?: string, declarationDateLt?: string, payDateGte?: string, payDateGt?: string, payDateLte?: string, payDateLt?: string, cashAmountGte?: number, cashAmountGt?: number, cashAmountLte?: number, cashAmountLt?: number, order?: ListDividendsOrderEnum, limit?: number, sort?: ListDividendsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListDividends200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listDividends(ticker, exDividendDate, recordDate, declarationDate, payDate, frequency, cashAmount, dividendType, tickerGte, tickerGt, tickerLte, tickerLt, exDividendDateGte, exDividendDateGt, exDividendDateLte, exDividendDateLt, recordDateGte, recordDateGt, recordDateLte, recordDateLt, declarationDateGte, declarationDateGt, declarationDateLte, declarationDateLt, payDateGte, payDateGt, payDateLte, payDateLt, cashAmountGte, cashAmountGt, cashAmountLte, cashAmountLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listDividends']?.[localVarOperationServerIndex]?.url;
@@ -19170,7 +19170,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listExchanges(assetClass?: ListExchangesAssetClassEnum, locale?: ListExchangesLocaleEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListExchanges200Response>> {
+        async listExchanges(assetClass?: ListExchangesAssetClassEnum, locale?: ListExchangesLocaleEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListExchanges200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listExchanges(assetClass, locale, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listExchanges']?.[localVarOperationServerIndex]?.url;
@@ -19202,7 +19202,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancials(ticker?: string, cik?: string, companyName?: string, sic?: string, filingDate?: string, periodOfReportDate?: string, timeframe?: ListFinancialsTimeframeEnum, includeSources?: boolean, companyNameSearch?: string, filingDateGte?: string, filingDateGt?: string, filingDateLte?: string, filingDateLt?: string, periodOfReportDateGte?: string, periodOfReportDateGt?: string, periodOfReportDateLte?: string, periodOfReportDateLt?: string, order?: ListFinancialsOrderEnum, limit?: number, sort?: ListFinancialsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancials200Response>> {
+        async listFinancials(ticker?: string, cik?: string, companyName?: string, sic?: string, filingDate?: string, periodOfReportDate?: string, timeframe?: ListFinancialsTimeframeEnum, includeSources?: boolean, companyNameSearch?: string, filingDateGte?: string, filingDateGt?: string, filingDateLte?: string, filingDateLt?: string, periodOfReportDateGte?: string, periodOfReportDateGt?: string, periodOfReportDateLte?: string, periodOfReportDateLt?: string, order?: ListFinancialsOrderEnum, limit?: number, sort?: ListFinancialsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListFinancials200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancials(ticker, cik, companyName, sic, filingDate, periodOfReportDate, timeframe, includeSources, companyNameSearch, filingDateGte, filingDateGt, filingDateLte, filingDateLt, periodOfReportDateGte, periodOfReportDateGt, periodOfReportDateLte, periodOfReportDateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listFinancials']?.[localVarOperationServerIndex]?.url;
@@ -19226,7 +19226,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listIPOs(ticker?: string, usCode?: string, isin?: string, listingDate?: string, ipoStatus?: ListIPOsIpoStatusEnum, listingDateGte?: string, listingDateGt?: string, listingDateLte?: string, listingDateLt?: string, order?: ListIPOsOrderEnum, limit?: number, sort?: ListIPOsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListIPOs200Response>> {
+        async listIPOs(ticker?: string, usCode?: string, isin?: string, listingDate?: string, ipoStatus?: ListIPOsIpoStatusEnum, listingDateGte?: string, listingDateGt?: string, listingDateLte?: string, listingDateLt?: string, order?: ListIPOsOrderEnum, limit?: number, sort?: ListIPOsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListIPOs200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listIPOs(ticker, usCode, isin, listingDate, ipoStatus, listingDateGte, listingDateGt, listingDateLte, listingDateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listIPOs']?.[localVarOperationServerIndex]?.url;
@@ -19251,7 +19251,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listNews(ticker?: string, publishedUtc?: ListNewsPublishedUtcParameter, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, publishedUtcGte?: ListNewsPublishedUtcParameter, publishedUtcGt?: ListNewsPublishedUtcParameter, publishedUtcLte?: ListNewsPublishedUtcParameter, publishedUtcLt?: ListNewsPublishedUtcParameter, order?: ListNewsOrderEnum, limit?: number, sort?: ListNewsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListNews200Response>> {
+        async listNews(ticker?: string, publishedUtc?: ListNewsPublishedUtcParameter, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, publishedUtcGte?: ListNewsPublishedUtcParameter, publishedUtcGt?: ListNewsPublishedUtcParameter, publishedUtcLte?: ListNewsPublishedUtcParameter, publishedUtcLt?: ListNewsPublishedUtcParameter, order?: ListNewsOrderEnum, limit?: number, sort?: ListNewsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListNews200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listNews(ticker, publishedUtc, tickerGte, tickerGt, tickerLte, tickerLt, publishedUtcGte, publishedUtcGt, publishedUtcLte, publishedUtcLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listNews']?.[localVarOperationServerIndex]?.url;
@@ -19285,7 +19285,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListOptionsContracts200Response>> {
+        async listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListOptionsContracts200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listOptionsContracts(ticker, underlyingTicker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listOptionsContracts']?.[localVarOperationServerIndex]?.url;
@@ -19311,7 +19311,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listStockSplits(ticker?: string, executionDate?: string, reverseSplit?: boolean | null, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, executionDateGte?: string, executionDateGt?: string, executionDateLte?: string, executionDateLt?: string, order?: ListStockSplitsOrderEnum, limit?: number, sort?: ListStockSplitsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListStockSplits200Response>> {
+        async listStockSplits(ticker?: string, executionDate?: string, reverseSplit?: boolean | null, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, executionDateGte?: string, executionDateGt?: string, executionDateLte?: string, executionDateLt?: string, order?: ListStockSplitsOrderEnum, limit?: number, sort?: ListStockSplitsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListStockSplits200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listStockSplits(ticker, executionDate, reverseSplit, tickerGte, tickerGt, tickerLte, tickerLt, executionDateGte, executionDateGt, executionDateLte, executionDateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listStockSplits']?.[localVarOperationServerIndex]?.url;
@@ -19346,7 +19346,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListStocksShortInterest200Response>> {
+        async listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListStocksShortInterest200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listStocksShortInterest(ticker, daysToCover, settlementDate, avgDailyVolume, tickerGte, tickerGt, tickerLte, tickerLt, daysToCoverGte, daysToCoverGt, daysToCoverLte, daysToCoverLt, settlementDateGte, settlementDateGt, settlementDateLte, settlementDateLt, avgDailyVolumeGte, avgDailyVolumeGt, avgDailyVolumeLte, avgDailyVolumeLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listStocksShortInterest']?.[localVarOperationServerIndex]?.url;
@@ -19381,7 +19381,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListStocksShortVolume200Response>> {
+        async listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListStocksShortVolume200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listStocksShortVolume(ticker, date, shortVolumeRatio, totalVolume, tickerGte, tickerGt, tickerLte, tickerLt, dateGte, dateGt, dateLte, dateLt, shortVolumeRatioGte, shortVolumeRatioGt, shortVolumeRatioLte, shortVolumeRatioLt, totalVolumeGte, totalVolumeGt, totalVolumeLte, totalVolumeLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listStocksShortVolume']?.[localVarOperationServerIndex]?.url;
@@ -19395,7 +19395,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTickerTypes(assetClass?: ListTickerTypesAssetClassEnum, locale?: ListTickerTypesLocaleEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTickerTypes200Response>> {
+        async listTickerTypes(assetClass?: ListTickerTypesAssetClassEnum, locale?: ListTickerTypesLocaleEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListTickerTypes200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTickerTypes(assetClass, locale, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTickerTypes']?.[localVarOperationServerIndex]?.url;
@@ -19423,7 +19423,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTickers200Response>> {
+        async listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListTickers200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTickers']?.[localVarOperationServerIndex]?.url;
@@ -19443,7 +19443,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTreasuryYields200Response>> {
+        async listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListTreasuryYields200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTreasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTreasuryYields']?.[localVarOperationServerIndex]?.url;
@@ -19466,7 +19466,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetCryptoSnapshotTickerBook200Response> {
+        deprecatedGetCryptoSnapshotTickerBook(ticker: string, options?: RawAxiosRequestConfig): Promise<DeprecatedGetCryptoSnapshotTickerBook200Response> {
             return localVarFp.deprecatedGetCryptoSnapshotTickerBook(ticker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19480,7 +19480,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricCryptoTrades200Response> {
+        deprecatedGetHistoricCryptoTrades(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<DeprecatedGetHistoricCryptoTrades200Response> {
             return localVarFp.deprecatedGetHistoricCryptoTrades(from, to, date, offset, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19494,7 +19494,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricForexQuotes200Response> {
+        deprecatedGetHistoricForexQuotes(from: string, to: string, date: string, offset?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<DeprecatedGetHistoricForexQuotes200Response> {
             return localVarFp.deprecatedGetHistoricForexQuotes(from, to, date, offset, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19509,7 +19509,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricStocksQuotes200Response> {
+        deprecatedGetHistoricStocksQuotes(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<DeprecatedGetHistoricStocksQuotes200Response> {
             return localVarFp.deprecatedGetHistoricStocksQuotes(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19524,7 +19524,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<DeprecatedGetHistoricStocksTrades200Response> {
+        deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<DeprecatedGetHistoricStocksTrades200Response> {
             return localVarFp.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19541,7 +19541,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+        getCryptoAggregates(cryptoTicker: string, multiplier: number, timespan: GetCryptoAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetCryptoAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<GetCryptoAggregates200Response> {
             return localVarFp.getCryptoAggregates(cryptoTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19562,7 +19562,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoEMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoEMATimespanEnum, window?: number, seriesType?: GetCryptoEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoEMA200Response> {
+        getCryptoEMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoEMATimespanEnum, window?: number, seriesType?: GetCryptoEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoEMA200Response> {
             return localVarFp.getCryptoEMA(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19585,7 +19585,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoMACD(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoMACDTimespanEnum, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetCryptoMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoMACD200Response> {
+        getCryptoMACD(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoMACDTimespanEnum, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetCryptoMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoMACD200Response> {
             return localVarFp.getCryptoMACD(cryptoTicker, timestamp, timespan, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19598,7 +19598,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoOpenClose200Response> {
+        getCryptoOpenClose(from: string, to: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetCryptoOpenClose200Response> {
             return localVarFp.getCryptoOpenClose(from, to, date, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19619,7 +19619,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoRSI(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoRSITimespanEnum, window?: number, seriesType?: GetCryptoRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoRSI200Response> {
+        getCryptoRSI(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoRSITimespanEnum, window?: number, seriesType?: GetCryptoRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoRSI200Response> {
             return localVarFp.getCryptoRSI(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19640,7 +19640,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoSMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoSMATimespanEnum, window?: number, seriesType?: GetCryptoSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSMA200Response> {
+        getCryptoSMA(cryptoTicker: string, timestamp?: string, timespan?: GetCryptoSMATimespanEnum, window?: number, seriesType?: GetCryptoSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetCryptoSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoSMA200Response> {
             return localVarFp.getCryptoSMA(cryptoTicker, timestamp, timespan, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19650,7 +19650,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSnapshotDirection200Response> {
+        getCryptoSnapshotDirection(direction: GetCryptoSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<GetCryptoSnapshotDirection200Response> {
             return localVarFp.getCryptoSnapshotDirection(direction, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19660,7 +19660,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSnapshotTicker200Response> {
+        getCryptoSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<GetCryptoSnapshotTicker200Response> {
             return localVarFp.getCryptoSnapshotTicker(ticker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19670,7 +19670,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSnapshotTickers200Response> {
+        getCryptoSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<GetCryptoSnapshotTickers200Response> {
             return localVarFp.getCryptoSnapshotTickers(tickers, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19688,7 +19688,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCryptoTrades(cryptoTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetCryptoTradesOrderEnum, limit?: number, sort?: GetCryptoTradesSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoTrades200Response> {
+        getCryptoTrades(cryptoTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetCryptoTradesOrderEnum, limit?: number, sort?: GetCryptoTradesSortEnum, options?: RawAxiosRequestConfig): Promise<GetCryptoTrades200Response> {
             return localVarFp.getCryptoTrades(cryptoTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19701,7 +19701,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrencyConversion(from: string, to: string, amount?: number, precision?: GetCurrencyConversionPrecisionEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetCurrencyConversion200Response> {
+        getCurrencyConversion(from: string, to: string, amount?: number, precision?: GetCurrencyConversionPrecisionEnum, options?: RawAxiosRequestConfig): Promise<GetCurrencyConversion200Response> {
             return localVarFp.getCurrencyConversion(from, to, amount, precision, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19712,7 +19712,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEvents(id: string, types?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetEvents200Response> {
+        getEvents(id: string, types?: string, options?: RawAxiosRequestConfig): Promise<GetEvents200Response> {
             return localVarFp.getEvents(id, types, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19729,7 +19729,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+        getForexAggregates(forexTicker: string, multiplier: number, timespan: GetForexAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetForexAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<GetCryptoAggregates200Response> {
             return localVarFp.getForexAggregates(forexTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19751,7 +19751,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexEMA(fxTicker: string, timestamp?: string, timespan?: GetForexEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoEMA200Response> {
+        getForexEMA(fxTicker: string, timestamp?: string, timespan?: GetForexEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoEMA200Response> {
             return localVarFp.getForexEMA(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19775,7 +19775,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexMACD(fxTicker: string, timestamp?: string, timespan?: GetForexMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetForexMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoMACD200Response> {
+        getForexMACD(fxTicker: string, timestamp?: string, timespan?: GetForexMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetForexMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoMACD200Response> {
             return localVarFp.getForexMACD(fxTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19793,7 +19793,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexQuotes(fxTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetForexQuotesOrderEnum, limit?: number, sort?: GetForexQuotesSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetForexQuotes200Response> {
+        getForexQuotes(fxTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetForexQuotesOrderEnum, limit?: number, sort?: GetForexQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<GetForexQuotes200Response> {
             return localVarFp.getForexQuotes(fxTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19815,7 +19815,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexRSI(fxTicker: string, timestamp?: string, timespan?: GetForexRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoRSI200Response> {
+        getForexRSI(fxTicker: string, timestamp?: string, timespan?: GetForexRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoRSI200Response> {
             return localVarFp.getForexRSI(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19837,7 +19837,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexSMA(fxTicker: string, timestamp?: string, timespan?: GetForexSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSMA200Response> {
+        getForexSMA(fxTicker: string, timestamp?: string, timespan?: GetForexSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetForexSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetForexSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoSMA200Response> {
             return localVarFp.getForexSMA(fxTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19847,7 +19847,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetForexSnapshotTickers200Response> {
+        getForexSnapshotDirection(direction: GetForexSnapshotDirectionDirectionEnum, options?: RawAxiosRequestConfig): Promise<GetForexSnapshotTickers200Response> {
             return localVarFp.getForexSnapshotDirection(direction, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19857,7 +19857,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetForexSnapshotTicker200Response> {
+        getForexSnapshotTicker(ticker: string, options?: RawAxiosRequestConfig): Promise<GetForexSnapshotTicker200Response> {
             return localVarFp.getForexSnapshotTicker(ticker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19867,7 +19867,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<GetForexSnapshotTickers200Response> {
+        getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<GetForexSnapshotTickers200Response> {
             return localVarFp.getForexSnapshotTickers(tickers, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19878,7 +19878,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetGroupedCryptoAggregates200Response> {
+        getGroupedCryptoAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetGroupedCryptoAggregates200Response> {
             return localVarFp.getGroupedCryptoAggregates(date, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19889,7 +19889,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetGroupedCryptoAggregates200Response> {
+        getGroupedForexAggregates(date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetGroupedCryptoAggregates200Response> {
             return localVarFp.getGroupedForexAggregates(date, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19901,7 +19901,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetGroupedStocksAggregates200Response> {
+        getGroupedStocksAggregates(date: string, adjusted?: boolean, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<GetGroupedStocksAggregates200Response> {
             return localVarFp.getGroupedStocksAggregates(date, adjusted, includeOtc, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19917,7 +19917,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousIndicesAggregates200Response> {
+        getIndicesAggregates(indicesTicker: string, multiplier: number, timespan: GetIndicesAggregatesTimespanEnum, from: string, to: string, sort?: GetIndicesAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<GetPreviousIndicesAggregates200Response> {
             return localVarFp.getIndicesAggregates(indicesTicker, multiplier, timespan, from, to, sort, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19939,7 +19939,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesEMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoEMA200Response> {
+        getIndicesEMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoEMA200Response> {
             return localVarFp.getIndicesEMA(indicesTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19963,7 +19963,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesMACD(indicesTicker: string, timestamp?: string, timespan?: GetIndicesMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetIndicesMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoMACD200Response> {
+        getIndicesMACD(indicesTicker: string, timestamp?: string, timespan?: GetIndicesMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetIndicesMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoMACD200Response> {
             return localVarFp.getIndicesMACD(indicesTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19974,7 +19974,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): AxiosPromise<GetIndicesOpenClose200Response> {
+        getIndicesOpenClose(indicesTicker: string, date: string, options?: RawAxiosRequestConfig): Promise<GetIndicesOpenClose200Response> {
             return localVarFp.getIndicesOpenClose(indicesTicker, date, options).then((request) => request(axios, basePath));
         },
         /**
@@ -19996,7 +19996,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesRSI(indicesTicker: string, timestamp?: string, timespan?: GetIndicesRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoRSI200Response> {
+        getIndicesRSI(indicesTicker: string, timestamp?: string, timespan?: GetIndicesRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoRSI200Response> {
             return localVarFp.getIndicesRSI(indicesTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20018,7 +20018,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesSMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSMA200Response> {
+        getIndicesSMA(indicesTicker: string, timestamp?: string, timespan?: GetIndicesSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetIndicesSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetIndicesSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoSMA200Response> {
             return localVarFp.getIndicesSMA(indicesTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20036,7 +20036,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndicesSnapshot(tickerAnyOf?: string, ticker?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: GetIndicesSnapshotOrderEnum, limit?: number, sort?: GetIndicesSnapshotSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetIndicesSnapshot200Response> {
+        getIndicesSnapshot(tickerAnyOf?: string, ticker?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: GetIndicesSnapshotOrderEnum, limit?: number, sort?: GetIndicesSnapshotSortEnum, options?: RawAxiosRequestConfig): Promise<GetIndicesSnapshot200Response> {
             return localVarFp.getIndicesSnapshot(tickerAnyOf, ticker, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20047,7 +20047,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLastCryptoTrade(from: string, to: string, options?: RawAxiosRequestConfig): AxiosPromise<GetLastCryptoTrade200Response> {
+        getLastCryptoTrade(from: string, to: string, options?: RawAxiosRequestConfig): Promise<GetLastCryptoTrade200Response> {
             return localVarFp.getLastCryptoTrade(from, to, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20058,7 +20058,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLastCurrencyQuote(from: string, to: string, options?: RawAxiosRequestConfig): AxiosPromise<GetLastCurrencyQuote200Response> {
+        getLastCurrencyQuote(from: string, to: string, options?: RawAxiosRequestConfig): Promise<GetLastCurrencyQuote200Response> {
             return localVarFp.getLastCurrencyQuote(from, to, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20068,7 +20068,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLastOptionsTrade(optionsTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetLastOptionsTrade200Response> {
+        getLastOptionsTrade(optionsTicker: string, options?: RawAxiosRequestConfig): Promise<GetLastOptionsTrade200Response> {
             return localVarFp.getLastOptionsTrade(optionsTicker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20078,7 +20078,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLastStocksQuote(stocksTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetLastStocksQuote200Response> {
+        getLastStocksQuote(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<GetLastStocksQuote200Response> {
             return localVarFp.getLastStocksQuote(stocksTicker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20088,7 +20088,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLastStocksTrade(stocksTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetLastOptionsTrade200Response> {
+        getLastStocksTrade(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<GetLastOptionsTrade200Response> {
             return localVarFp.getLastStocksTrade(stocksTicker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20097,7 +20097,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMarketHolidays(options?: RawAxiosRequestConfig): AxiosPromise<Array<GetMarketHolidays200ResponseInner>> {
+        getMarketHolidays(options?: RawAxiosRequestConfig): Promise<Array<GetMarketHolidays200ResponseInner>> {
             return localVarFp.getMarketHolidays(options).then((request) => request(axios, basePath));
         },
         /**
@@ -20106,7 +20106,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMarketStatus(options?: RawAxiosRequestConfig): AxiosPromise<GetMarketStatus200Response> {
+        getMarketStatus(options?: RawAxiosRequestConfig): Promise<GetMarketStatus200Response> {
             return localVarFp.getMarketStatus(options).then((request) => request(axios, basePath));
         },
         /**
@@ -20117,7 +20117,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionContract(underlyingAsset: string, optionContract: string, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionContract200Response> {
+        getOptionContract(underlyingAsset: string, optionContract: string, options?: RawAxiosRequestConfig): Promise<GetOptionContract200Response> {
             return localVarFp.getOptionContract(underlyingAsset, optionContract, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20134,7 +20134,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+        getOptionsAggregates(optionsTicker: string, multiplier: number, timespan: GetOptionsAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetOptionsAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<GetCryptoAggregates200Response> {
             return localVarFp.getOptionsAggregates(optionsTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20158,7 +20158,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsChain(underlyingAsset: string, strikePrice?: number, expirationDate?: string, contractType?: GetOptionsChainContractTypeEnum, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, order?: GetOptionsChainOrderEnum, limit?: number, sort?: GetOptionsChainSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsChain200Response> {
+        getOptionsChain(underlyingAsset: string, strikePrice?: number, expirationDate?: string, contractType?: GetOptionsChainContractTypeEnum, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, order?: GetOptionsChainOrderEnum, limit?: number, sort?: GetOptionsChainSortEnum, options?: RawAxiosRequestConfig): Promise<GetOptionsChain200Response> {
             return localVarFp.getOptionsChain(underlyingAsset, strikePrice, expirationDate, contractType, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20169,7 +20169,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsContract(optionsTicker: string, asOf?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsContract200Response> {
+        getOptionsContract(optionsTicker: string, asOf?: string, options?: RawAxiosRequestConfig): Promise<GetOptionsContract200Response> {
             return localVarFp.getOptionsContract(optionsTicker, asOf, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20191,7 +20191,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsEMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoEMA200Response> {
+        getOptionsEMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoEMA200Response> {
             return localVarFp.getOptionsEMA(optionsTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20215,7 +20215,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsMACD(optionsTicker: string, timestamp?: string, timespan?: GetOptionsMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetOptionsMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoMACD200Response> {
+        getOptionsMACD(optionsTicker: string, timestamp?: string, timespan?: GetOptionsMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetOptionsMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoMACD200Response> {
             return localVarFp.getOptionsMACD(optionsTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20227,7 +20227,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsOpenClose200Response> {
+        getOptionsOpenClose(optionsTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetOptionsOpenClose200Response> {
             return localVarFp.getOptionsOpenClose(optionsTicker, date, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20245,7 +20245,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsQuotes(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsQuotesOrderEnum, limit?: number, sort?: GetOptionsQuotesSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsQuotes200Response> {
+        getOptionsQuotes(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsQuotesOrderEnum, limit?: number, sort?: GetOptionsQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<GetOptionsQuotes200Response> {
             return localVarFp.getOptionsQuotes(optionsTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20267,7 +20267,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsRSI(optionsTicker: string, timestamp?: string, timespan?: GetOptionsRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoRSI200Response> {
+        getOptionsRSI(optionsTicker: string, timestamp?: string, timespan?: GetOptionsRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoRSI200Response> {
             return localVarFp.getOptionsRSI(optionsTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20289,7 +20289,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsSMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSMA200Response> {
+        getOptionsSMA(optionsTicker: string, timestamp?: string, timespan?: GetOptionsSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetOptionsSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetOptionsSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoSMA200Response> {
             return localVarFp.getOptionsSMA(optionsTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20307,7 +20307,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsTrades(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsTradesOrderEnum, limit?: number, sort?: GetOptionsTradesSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsTrades200Response> {
+        getOptionsTrades(optionsTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetOptionsTradesOrderEnum, limit?: number, sort?: GetOptionsTradesSortEnum, options?: RawAxiosRequestConfig): Promise<GetOptionsTrades200Response> {
             return localVarFp.getOptionsTrades(optionsTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20318,7 +20318,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousCryptoAggregates200Response> {
+        getPreviousCryptoAggregates(cryptoTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetPreviousCryptoAggregates200Response> {
             return localVarFp.getPreviousCryptoAggregates(cryptoTicker, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20329,7 +20329,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousForexAggregates200Response> {
+        getPreviousForexAggregates(forexTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetPreviousForexAggregates200Response> {
             return localVarFp.getPreviousForexAggregates(forexTicker, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20339,7 +20339,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetPreviousIndicesAggregates200Response> {
+        getPreviousIndicesAggregates(indicesTicker: string, options?: RawAxiosRequestConfig): Promise<GetPreviousIndicesAggregates200Response> {
             return localVarFp.getPreviousIndicesAggregates(indicesTicker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20350,7 +20350,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+        getPreviousOptionsAggregates(optionsTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetCryptoAggregates200Response> {
             return localVarFp.getPreviousOptionsAggregates(optionsTicker, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20361,7 +20361,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoAggregates200Response> {
+        getPreviousStocksAggregates(stocksTicker: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetCryptoAggregates200Response> {
             return localVarFp.getPreviousStocksAggregates(stocksTicker, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20371,7 +20371,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRelatedCompanies(ticker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetRelatedCompanies200Response> {
+        getRelatedCompanies(ticker: string, options?: RawAxiosRequestConfig): Promise<GetRelatedCompanies200Response> {
             return localVarFp.getRelatedCompanies(ticker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20381,7 +20381,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSnapshotSummary(tickerAnyOf?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetSnapshotSummary200Response> {
+        getSnapshotSummary(tickerAnyOf?: string, options?: RawAxiosRequestConfig): Promise<GetSnapshotSummary200Response> {
             return localVarFp.getSnapshotSummary(tickerAnyOf, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20400,7 +20400,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSnapshots(ticker?: string, type?: GetSnapshotsTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, tickerAnyOf?: string, order?: GetSnapshotsOrderEnum, limit?: number, sort?: GetSnapshotsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetSnapshots200Response> {
+        getSnapshots(ticker?: string, type?: GetSnapshotsTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, tickerAnyOf?: string, order?: GetSnapshotsOrderEnum, limit?: number, sort?: GetSnapshotsSortEnum, options?: RawAxiosRequestConfig): Promise<GetSnapshots200Response> {
             return localVarFp.getSnapshots(ticker, type, tickerGte, tickerGt, tickerLte, tickerLt, tickerAnyOf, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20417,7 +20417,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksAggregates200Response> {
+        getStocksAggregates(stocksTicker: string, multiplier: number, timespan: GetStocksAggregatesTimespanEnum, from: string, to: string, adjusted?: boolean, sort?: GetStocksAggregatesSortEnum, limit?: number, options?: RawAxiosRequestConfig): Promise<GetStocksAggregates200Response> {
             return localVarFp.getStocksAggregates(stocksTicker, multiplier, timespan, from, to, adjusted, sort, limit, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20439,7 +20439,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksEMA(stockTicker: string, timestamp?: string, timespan?: GetStocksEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoEMA200Response> {
+        getStocksEMA(stockTicker: string, timestamp?: string, timespan?: GetStocksEMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksEMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksEMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoEMA200Response> {
             return localVarFp.getStocksEMA(stockTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20463,7 +20463,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksMACD(stockTicker: string, timestamp?: string, timespan?: GetStocksMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetStocksMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoMACD200Response> {
+        getStocksMACD(stockTicker: string, timestamp?: string, timespan?: GetStocksMACDTimespanEnum, adjusted?: boolean, shortWindow?: number, longWindow?: number, signalWindow?: number, seriesType?: GetStocksMACDSeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksMACDOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoMACD200Response> {
             return localVarFp.getStocksMACD(stockTicker, timestamp, timespan, adjusted, shortWindow, longWindow, signalWindow, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20475,7 +20475,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetOptionsOpenClose200Response> {
+        getStocksOpenClose(stocksTicker: string, date: string, adjusted?: boolean, options?: RawAxiosRequestConfig): Promise<GetOptionsOpenClose200Response> {
             return localVarFp.getStocksOpenClose(stocksTicker, date, adjusted, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20493,7 +20493,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksQuotes(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksQuotesOrderEnum, limit?: number, sort?: GetStocksQuotesSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksQuotes200Response> {
+        getStocksQuotes(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksQuotesOrderEnum, limit?: number, sort?: GetStocksQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<GetStocksQuotes200Response> {
             return localVarFp.getStocksQuotes(stockTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20515,7 +20515,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksRSI(stockTicker: string, timestamp?: string, timespan?: GetStocksRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoRSI200Response> {
+        getStocksRSI(stockTicker: string, timestamp?: string, timespan?: GetStocksRSITimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksRSISeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksRSIOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoRSI200Response> {
             return localVarFp.getStocksRSI(stockTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20537,7 +20537,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksSMA(stockTicker: string, timestamp?: string, timespan?: GetStocksSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetCryptoSMA200Response> {
+        getStocksSMA(stockTicker: string, timestamp?: string, timespan?: GetStocksSMATimespanEnum, adjusted?: boolean, window?: number, seriesType?: GetStocksSMASeriesTypeEnum, expandUnderlying?: boolean, order?: GetStocksSMAOrderEnum, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, options?: RawAxiosRequestConfig): Promise<GetCryptoSMA200Response> {
             return localVarFp.getStocksSMA(stockTicker, timestamp, timespan, adjusted, window, seriesType, expandUnderlying, order, limit, timestampGte, timestampGt, timestampLte, timestampLt, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20548,7 +20548,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksSnapshotDirection200Response> {
+        getStocksSnapshotDirection(direction: GetStocksSnapshotDirectionDirectionEnum, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<GetStocksSnapshotDirection200Response> {
             return localVarFp.getStocksSnapshotDirection(direction, includeOtc, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20558,7 +20558,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksSnapshotTicker200Response> {
+        getStocksSnapshotTicker(stocksTicker: string, options?: RawAxiosRequestConfig): Promise<GetStocksSnapshotTicker200Response> {
             return localVarFp.getStocksSnapshotTicker(stocksTicker, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20569,7 +20569,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksSnapshotTickers200Response> {
+        getStocksSnapshotTickers(tickers?: Array<string>, includeOtc?: boolean, options?: RawAxiosRequestConfig): Promise<GetStocksSnapshotTickers200Response> {
             return localVarFp.getStocksSnapshotTickers(tickers, includeOtc, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20587,7 +20587,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStocksTrades(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksTradesOrderEnum, limit?: number, sort?: GetStocksTradesSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<GetStocksTrades200Response> {
+        getStocksTrades(stockTicker: string, timestamp?: string, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, order?: GetStocksTradesOrderEnum, limit?: number, sort?: GetStocksTradesSortEnum, options?: RawAxiosRequestConfig): Promise<GetStocksTrades200Response> {
             return localVarFp.getStocksTrades(stockTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20598,7 +20598,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetTicker200Response> {
+        getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig): Promise<GetTicker200Response> {
             return localVarFp.getTicker(ticker, date, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20620,7 +20620,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListBenzingaEarnings200Response> {
+        listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig): Promise<ListBenzingaEarnings200Response> {
             return localVarFp.listBenzingaEarnings(date, ticker, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20642,7 +20642,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListBenzingaNews200Response> {
+        listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig): Promise<ListBenzingaNews200Response> {
             return localVarFp.listBenzingaNews(created, tickers, createdGte, createdGt, createdLte, createdLt, tickersGte, tickersGt, tickersLte, tickersLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20684,7 +20684,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListBenzingaRatings200Response> {
+        listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig): Promise<ListBenzingaRatings200Response> {
             return localVarFp.listBenzingaRatings(date, ticker, ratingAction, priceTargetAction, rating, firm, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, ratingActionGte, ratingActionGt, ratingActionLte, ratingActionLt, priceTargetActionGte, priceTargetActionGt, priceTargetActionLte, priceTargetActionLt, ratingGte, ratingGt, ratingLte, ratingLt, firmGte, firmGt, firmLte, firmLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20700,7 +20700,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listConditions(assetClass?: ListConditionsAssetClassEnum, dataType?: ListConditionsDataTypeEnum, id?: number, sip?: ListConditionsSipEnum, order?: ListConditionsOrderEnum, limit?: number, sort?: ListConditionsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListConditions200Response> {
+        listConditions(assetClass?: ListConditionsAssetClassEnum, dataType?: ListConditionsDataTypeEnum, id?: number, sip?: ListConditionsSipEnum, order?: ListConditionsOrderEnum, limit?: number, sort?: ListConditionsSortEnum, options?: RawAxiosRequestConfig): Promise<ListConditions200Response> {
             return localVarFp.listConditions(assetClass, dataType, id, sip, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20744,7 +20744,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listDividends(ticker?: string, exDividendDate?: string, recordDate?: string, declarationDate?: string, payDate?: string, frequency?: ListDividendsFrequencyEnum, cashAmount?: number, dividendType?: ListDividendsDividendTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, exDividendDateGte?: string, exDividendDateGt?: string, exDividendDateLte?: string, exDividendDateLt?: string, recordDateGte?: string, recordDateGt?: string, recordDateLte?: string, recordDateLt?: string, declarationDateGte?: string, declarationDateGt?: string, declarationDateLte?: string, declarationDateLt?: string, payDateGte?: string, payDateGt?: string, payDateLte?: string, payDateLt?: string, cashAmountGte?: number, cashAmountGt?: number, cashAmountLte?: number, cashAmountLt?: number, order?: ListDividendsOrderEnum, limit?: number, sort?: ListDividendsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListDividends200Response> {
+        listDividends(ticker?: string, exDividendDate?: string, recordDate?: string, declarationDate?: string, payDate?: string, frequency?: ListDividendsFrequencyEnum, cashAmount?: number, dividendType?: ListDividendsDividendTypeEnum, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, exDividendDateGte?: string, exDividendDateGt?: string, exDividendDateLte?: string, exDividendDateLt?: string, recordDateGte?: string, recordDateGt?: string, recordDateLte?: string, recordDateLt?: string, declarationDateGte?: string, declarationDateGt?: string, declarationDateLte?: string, declarationDateLt?: string, payDateGte?: string, payDateGt?: string, payDateLte?: string, payDateLt?: string, cashAmountGte?: number, cashAmountGt?: number, cashAmountLte?: number, cashAmountLt?: number, order?: ListDividendsOrderEnum, limit?: number, sort?: ListDividendsSortEnum, options?: RawAxiosRequestConfig): Promise<ListDividends200Response> {
             return localVarFp.listDividends(ticker, exDividendDate, recordDate, declarationDate, payDate, frequency, cashAmount, dividendType, tickerGte, tickerGt, tickerLte, tickerLt, exDividendDateGte, exDividendDateGt, exDividendDateLte, exDividendDateLt, recordDateGte, recordDateGt, recordDateLte, recordDateLt, declarationDateGte, declarationDateGt, declarationDateLte, declarationDateLt, payDateGte, payDateGt, payDateLte, payDateLt, cashAmountGte, cashAmountGt, cashAmountLte, cashAmountLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20755,7 +20755,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listExchanges(assetClass?: ListExchangesAssetClassEnum, locale?: ListExchangesLocaleEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListExchanges200Response> {
+        listExchanges(assetClass?: ListExchangesAssetClassEnum, locale?: ListExchangesLocaleEnum, options?: RawAxiosRequestConfig): Promise<ListExchanges200Response> {
             return localVarFp.listExchanges(assetClass, locale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20784,7 +20784,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancials(ticker?: string, cik?: string, companyName?: string, sic?: string, filingDate?: string, periodOfReportDate?: string, timeframe?: ListFinancialsTimeframeEnum, includeSources?: boolean, companyNameSearch?: string, filingDateGte?: string, filingDateGt?: string, filingDateLte?: string, filingDateLt?: string, periodOfReportDateGte?: string, periodOfReportDateGt?: string, periodOfReportDateLte?: string, periodOfReportDateLt?: string, order?: ListFinancialsOrderEnum, limit?: number, sort?: ListFinancialsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListFinancials200Response> {
+        listFinancials(ticker?: string, cik?: string, companyName?: string, sic?: string, filingDate?: string, periodOfReportDate?: string, timeframe?: ListFinancialsTimeframeEnum, includeSources?: boolean, companyNameSearch?: string, filingDateGte?: string, filingDateGt?: string, filingDateLte?: string, filingDateLt?: string, periodOfReportDateGte?: string, periodOfReportDateGt?: string, periodOfReportDateLte?: string, periodOfReportDateLt?: string, order?: ListFinancialsOrderEnum, limit?: number, sort?: ListFinancialsSortEnum, options?: RawAxiosRequestConfig): Promise<ListFinancials200Response> {
             return localVarFp.listFinancials(ticker, cik, companyName, sic, filingDate, periodOfReportDate, timeframe, includeSources, companyNameSearch, filingDateGte, filingDateGt, filingDateLte, filingDateLt, periodOfReportDateGte, periodOfReportDateGt, periodOfReportDateLte, periodOfReportDateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20805,7 +20805,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listIPOs(ticker?: string, usCode?: string, isin?: string, listingDate?: string, ipoStatus?: ListIPOsIpoStatusEnum, listingDateGte?: string, listingDateGt?: string, listingDateLte?: string, listingDateLt?: string, order?: ListIPOsOrderEnum, limit?: number, sort?: ListIPOsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListIPOs200Response> {
+        listIPOs(ticker?: string, usCode?: string, isin?: string, listingDate?: string, ipoStatus?: ListIPOsIpoStatusEnum, listingDateGte?: string, listingDateGt?: string, listingDateLte?: string, listingDateLt?: string, order?: ListIPOsOrderEnum, limit?: number, sort?: ListIPOsSortEnum, options?: RawAxiosRequestConfig): Promise<ListIPOs200Response> {
             return localVarFp.listIPOs(ticker, usCode, isin, listingDate, ipoStatus, listingDateGte, listingDateGt, listingDateLte, listingDateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20827,7 +20827,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listNews(ticker?: string, publishedUtc?: ListNewsPublishedUtcParameter, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, publishedUtcGte?: ListNewsPublishedUtcParameter, publishedUtcGt?: ListNewsPublishedUtcParameter, publishedUtcLte?: ListNewsPublishedUtcParameter, publishedUtcLt?: ListNewsPublishedUtcParameter, order?: ListNewsOrderEnum, limit?: number, sort?: ListNewsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListNews200Response> {
+        listNews(ticker?: string, publishedUtc?: ListNewsPublishedUtcParameter, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, publishedUtcGte?: ListNewsPublishedUtcParameter, publishedUtcGt?: ListNewsPublishedUtcParameter, publishedUtcLte?: ListNewsPublishedUtcParameter, publishedUtcLt?: ListNewsPublishedUtcParameter, order?: ListNewsOrderEnum, limit?: number, sort?: ListNewsSortEnum, options?: RawAxiosRequestConfig): Promise<ListNews200Response> {
             return localVarFp.listNews(ticker, publishedUtc, tickerGte, tickerGt, tickerLte, tickerLt, publishedUtcGte, publishedUtcGt, publishedUtcLte, publishedUtcLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20858,7 +20858,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListOptionsContracts200Response> {
+        listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<ListOptionsContracts200Response> {
             return localVarFp.listOptionsContracts(ticker, underlyingTicker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20881,7 +20881,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listStockSplits(ticker?: string, executionDate?: string, reverseSplit?: boolean | null, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, executionDateGte?: string, executionDateGt?: string, executionDateLte?: string, executionDateLt?: string, order?: ListStockSplitsOrderEnum, limit?: number, sort?: ListStockSplitsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListStockSplits200Response> {
+        listStockSplits(ticker?: string, executionDate?: string, reverseSplit?: boolean | null, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, executionDateGte?: string, executionDateGt?: string, executionDateLte?: string, executionDateLt?: string, order?: ListStockSplitsOrderEnum, limit?: number, sort?: ListStockSplitsSortEnum, options?: RawAxiosRequestConfig): Promise<ListStockSplits200Response> {
             return localVarFp.listStockSplits(ticker, executionDate, reverseSplit, tickerGte, tickerGt, tickerLte, tickerLt, executionDateGte, executionDateGt, executionDateLte, executionDateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20913,7 +20913,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListStocksShortInterest200Response> {
+        listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig): Promise<ListStocksShortInterest200Response> {
             return localVarFp.listStocksShortInterest(ticker, daysToCover, settlementDate, avgDailyVolume, tickerGte, tickerGt, tickerLte, tickerLt, daysToCoverGte, daysToCoverGt, daysToCoverLte, daysToCoverLt, settlementDateGte, settlementDateGt, settlementDateLte, settlementDateLt, avgDailyVolumeGte, avgDailyVolumeGt, avgDailyVolumeLte, avgDailyVolumeLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20945,7 +20945,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListStocksShortVolume200Response> {
+        listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig): Promise<ListStocksShortVolume200Response> {
             return localVarFp.listStocksShortVolume(ticker, date, shortVolumeRatio, totalVolume, tickerGte, tickerGt, tickerLte, tickerLt, dateGte, dateGt, dateLte, dateLt, shortVolumeRatioGte, shortVolumeRatioGt, shortVolumeRatioLte, shortVolumeRatioLt, totalVolumeGte, totalVolumeGt, totalVolumeLte, totalVolumeLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20956,7 +20956,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTickerTypes(assetClass?: ListTickerTypesAssetClassEnum, locale?: ListTickerTypesLocaleEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListTickerTypes200Response> {
+        listTickerTypes(assetClass?: ListTickerTypesAssetClassEnum, locale?: ListTickerTypesLocaleEnum, options?: RawAxiosRequestConfig): Promise<ListTickerTypes200Response> {
             return localVarFp.listTickerTypes(assetClass, locale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20981,7 +20981,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListTickers200Response> {
+        listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig): Promise<ListTickers200Response> {
             return localVarFp.listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -20998,7 +20998,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): AxiosPromise<ListTreasuryYields200Response> {
+        listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): Promise<ListTreasuryYields200Response> {
             return localVarFp.listTreasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
     };
