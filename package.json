@@ -30,16 +30,8 @@
   ],
   "contributors": [
     {
-      "name": "Julien Prugne",
-      "email": "julien@webeleon.dev"
-    },
-    {
-      "name": "Katie Adams",
-      "email": "katie@polygon.io"
-    },
-    {
-      "name": "Andrew Bailey",
-      "email": "andrew.bailey@polygon.io"
+      "name": "Polygon Support",
+      "email": "support@polygon.io"
     }
   ],
   "license": "MIT",
