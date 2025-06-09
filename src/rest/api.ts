@@ -2160,6 +2160,1166 @@ export interface ForexTickerResults {
 /**
  * 
  * @export
+ * @interface GetBenzingaV1AnalystInsights200Response
+ */
+export interface GetBenzingaV1AnalystInsights200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1AnalystInsights200ResponseResultsInner>}
+     * @memberof GetBenzingaV1AnalystInsights200Response
+     */
+    'results': Array<GetBenzingaV1AnalystInsights200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200Response
+     */
+    'status': GetBenzingaV1AnalystInsights200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1AnalystInsights200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1AnalystInsights200ResponseResultsInner
+ */
+export interface GetBenzingaV1AnalystInsights200ResponseResultsInner {
+    /**
+     * The identifer used by Benzinga for the firm record.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'benzinga_firm_id'?: string;
+    /**
+     * The identifer used by Benzinga for this record.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'benzinga_id'?: string;
+    /**
+     * The identifier used by Benzinga for the rating record.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'benzinga_rating_id'?: string;
+    /**
+     * The name of the company being rated.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'company_name'?: string;
+    /**
+     * The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * The name of the research firm or investment bank issuing the rating.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'firm'?: string;
+    /**
+     * Narrative commentary or reasoning provided by the analyst or firm to explain the rating or price target.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'insight'?: string;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * The current price target set by the analyst.
+     * @type {number}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'price_target'?: number;
+    /**
+     * The current rating set by the analyst.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'rating'?: string;
+    /**
+     * The description of the change in rating from the firm\'s last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'rating_action'?: string;
+    /**
+     * The stock symbol of the company being rated.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights200ResponseResultsInner
+     */
+    'ticker'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1AnalystInsights400Response
+ */
+export interface GetBenzingaV1AnalystInsights400Response {
+    /**
+     * A message describing the source of the error.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights400Response
+     */
+    'error': string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights400Response
+     */
+    'request_id': string;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1AnalystInsights400Response
+     */
+    'status': GetBenzingaV1AnalystInsights400ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1AnalystInsights400ResponseStatusEnum {
+    Error = 'ERROR'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Analysts200Response
+ */
+export interface GetBenzingaV1Analysts200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1Analysts200ResponseResultsInner>}
+     * @memberof GetBenzingaV1Analysts200Response
+     */
+    'results': Array<GetBenzingaV1Analysts200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200Response
+     */
+    'status': GetBenzingaV1Analysts200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1Analysts200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Analysts200ResponseResultsInner
+ */
+export interface GetBenzingaV1Analysts200ResponseResultsInner {
+    /**
+     * The unique identifier assigned by Benzinga to the research firm or investment bank.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'benzinga_firm_id'?: string;
+    /**
+     * The identifier used by Benzinga for this record.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'benzinga_id'?: string;
+    /**
+     * The name of the research firm or investment bank issuing the ratings.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'firm_name'?: string;
+    /**
+     * The full name of the analyst associated with the ratings.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'full_name'?: string;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the analyst record was last updated in the system.
+     * @type {string}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * The average percent price difference per rating since the date of recommendation.
+     * @type {number}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'overall_avg_return'?: number;
+    /**
+     * The analyst\'s percentile rank based on average return, relative to other analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'overall_avg_return_percentile'?: number;
+    /**
+     * The percentage of gain/loss ratings that resulted in a gain overall.
+     * @type {number}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'overall_success_rate'?: number;
+    /**
+     * A weighted average of the total_ratings_percentile, overall_avg_return_percentile, and overall_success_rate.
+     * @type {number}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'smart_score'?: number;
+    /**
+     * The total number of ratings issued by the analyst included in the performance calculation.
+     * @type {number}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'total_ratings'?: number;
+    /**
+     * The analyst\'s percentile rank based on the total number of ratings issued, relative to other analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1Analysts200ResponseResultsInner
+     */
+    'total_ratings_percentile'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1ConsensusRatings200Response
+ */
+export interface GetBenzingaV1ConsensusRatings200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1ConsensusRatings200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1ConsensusRatings200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1ConsensusRatings200ResponseResultsInner>}
+     * @memberof GetBenzingaV1ConsensusRatings200Response
+     */
+    'results': Array<GetBenzingaV1ConsensusRatings200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1ConsensusRatings200Response
+     */
+    'status': GetBenzingaV1ConsensusRatings200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1ConsensusRatings200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1ConsensusRatings200ResponseResultsInner
+ */
+export interface GetBenzingaV1ConsensusRatings200ResponseResultsInner {
+    /**
+     * The count of \'Buy\' ratings from contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'buy_ratings': number;
+    /**
+     * The average price target across all analysts, rounded to 2 decimal places.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'consensus_price_target'?: number;
+    /**
+     * The overall rating category determined by the average consensus weight. Possible values: \'strong_buy\', \'buy\', \'hold\', \'sell\', \'strong_sell\'.
+     * @type {string}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'consensus_rating'?: string;
+    /**
+     * The numerical average of all consensus weights, rounded to 2 decimal places. Scale ranges from 1 (Strong Sell) to 5 (Strong Buy).
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'consensus_rating_value'?: number;
+    /**
+     * The highest price target among all contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'high_price_target'?: number;
+    /**
+     * The count of \'Hold\' ratings from contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'hold_ratings': number;
+    /**
+     * The lowest price target among all contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'low_price_target'?: number;
+    /**
+     * The number of unique analysts contributing price targets.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'price_target_contributors': number;
+    /**
+     * The number of unique analysts contributing to the overall ratings consensus.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'ratings_contributors': number;
+    /**
+     * The count of \'Sell\' ratings from contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'sell_ratings': number;
+    /**
+     * The count of \'Strong Buy\' ratings from contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'strong_buy_ratings': number;
+    /**
+     * The count of \'Strong Sell\' ratings from contributing analysts.
+     * @type {number}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'strong_sell_ratings': number;
+    /**
+     * The requested ticker.
+     * @type {string}
+     * @memberof GetBenzingaV1ConsensusRatings200ResponseResultsInner
+     */
+    'ticker'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Earnings200Response
+ */
+export interface GetBenzingaV1Earnings200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1Earnings200ResponseResultsInner>}
+     * @memberof GetBenzingaV1Earnings200Response
+     */
+    'results': Array<GetBenzingaV1Earnings200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200Response
+     */
+    'status': GetBenzingaV1Earnings200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1Earnings200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Earnings200ResponseResultsInner
+ */
+export interface GetBenzingaV1Earnings200ResponseResultsInner {
+    /**
+     * The actual earnings per share (EPS) reported by the company for the given period.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'actual_eps'?: number;
+    /**
+     * The actual revenue reported by the company for the given fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'actual_revenue'?: number;
+    /**
+     * The identifer used by Benzinga for this record.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'benzinga_id'?: string;
+    /**
+     * The name of the company releasing earnings.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'company_name'?: string;
+    /**
+     * The ISO 4217 currency code indicating the denomination in which the figures are reported.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'currency'?: string;
+    /**
+     * The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * Indicates whether the date of the earnings report has been confirmed. Possible values include: projected, confirmed.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'date_status'?: string;
+    /**
+     * The methodology of the EPS figure. Possible values are gaap (standardized financials under Generally Accepted Accounting Principles), ffo (Funds From Operations, a non-GAAP metric commonly used to assess the operating performance of REITs), and adj (adjusted, non-GAAP).
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'eps_method'?: string;
+    /**
+     * The difference between the actual and estimated EPS.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'eps_surprise'?: number;
+    /**
+     * The percentage difference between the actual and estimated EPS.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'eps_surprise_percent'?: number;
+    /**
+     * The analyst consensus estimate for earnings per share (EPS) for the given period.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'estimated_eps'?: number;
+    /**
+     * The analyst consensus estimate for the company\'s revenue in the given period.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'estimated_revenue'?: number;
+    /**
+     * The fiscal period for which the earnings are reported. Examples include: Q1, Q2, H1, FY.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'fiscal_period'?: string;
+    /**
+     * The fiscal year in which the earnings period falls.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'fiscal_year'?: number;
+    /**
+     * A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest).
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'importance'?: number;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * Additional context, commentary, or clarifying notes related to the earnings event.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'notes'?: string;
+    /**
+     * The company\'s reported earnings per share (EPS) for the previous comparable period.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'previous_eps'?: number;
+    /**
+     * The company\'s revenue for the previous comparable fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'previous_revenue'?: number;
+    /**
+     * The methodology of the revenue figure. Possible values are gaap (standardized financials under Generally Accepted Accounting Principles), adj (adjusted, non-GAAP figures that exclude certain items like one-time charges or divestitures), and rental (revenue specifically derived from rental operations, typically used by REITs, leasing companies, or businesses with a rental-based model).
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'revenue_method'?: string;
+    /**
+     * The difference between the actual and estimated revenue.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'revenue_surprise'?: number;
+    /**
+     * The percentage difference between the actual and estimated revenue.
+     * @type {number}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'revenue_surprise_percent'?: number;
+    /**
+     * The stock symbol of the company reporting earnings.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * The time (formatted as 24-hour HH:MM:SS UTC) when the earnings are scheduled or were reported.
+     * @type {string}
+     * @memberof GetBenzingaV1Earnings200ResponseResultsInner
+     */
+    'time'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Firms200Response
+ */
+export interface GetBenzingaV1Firms200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1Firms200ResponseResultsInner>}
+     * @memberof GetBenzingaV1Firms200Response
+     */
+    'results': Array<GetBenzingaV1Firms200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200Response
+     */
+    'status': GetBenzingaV1Firms200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1Firms200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Firms200ResponseResultsInner
+ */
+export interface GetBenzingaV1Firms200ResponseResultsInner {
+    /**
+     * The identifer used by Benzinga for this record.
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200ResponseResultsInner
+     */
+    'benzinga_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200ResponseResultsInner
+     */
+    'currency'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * The name of a research firm or investment bank which issues ratings.
+     * @type {string}
+     * @memberof GetBenzingaV1Firms200ResponseResultsInner
+     */
+    'name'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Guidance200Response
+ */
+export interface GetBenzingaV1Guidance200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1Guidance200ResponseResultsInner>}
+     * @memberof GetBenzingaV1Guidance200Response
+     */
+    'results': Array<GetBenzingaV1Guidance200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200Response
+     */
+    'status': GetBenzingaV1Guidance200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1Guidance200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Guidance200ResponseResultsInner
+ */
+export interface GetBenzingaV1Guidance200ResponseResultsInner {
+    /**
+     * A unique identifier assigned by Benzinga to the guidance record.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'benzinga_id'?: string;
+    /**
+     * The name of the company issuing guidance.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'company_name'?: string;
+    /**
+     * The ISO 4217 code representing the currency in which the company issued its guidance figures.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'currency'?: string;
+    /**
+     * The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * The methodology of the EPS figure. Possible values are gaap (standardized financials under Generally Accepted Accounting Principles), ffo (Funds From Operations, a non-GAAP metric commonly used to assess the operating performance of REITs), and adj (adjusted, non-GAAP).
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'eps_method'?: string;
+    /**
+     * The midpoint or central earnings per share (EPS) value the company expects for the given fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'estimated_eps_guidance'?: number;
+    /**
+     * The midpoint or central revenue figure the company expects for the given fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'estimated_revenue_guidance'?: number;
+    /**
+     * The fiscal quarter to which the guidance applies, such as Q1, Q2, Q3, or Q4.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'fiscal_period'?: string;
+    /**
+     * The fiscal year corresponding to the period for which the guidance is issued.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'fiscal_year'?: number;
+    /**
+     * A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest).
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'importance'?: number;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * The highest EPS value the company expects for the fiscal period if a range was provided.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'max_eps_guidance'?: number;
+    /**
+     * The highest revenue figure the company expects for the fiscal period if a range was provided.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'max_revenue_guidance'?: number;
+    /**
+     * The lowest EPS value the company expects for the fiscal period if a range was provided.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'min_eps_guidance'?: number;
+    /**
+     * The lowest revenue figure the company expects for the fiscal period if a range was provided.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'min_revenue_guidance'?: number;
+    /**
+     * Additional descriptive text or commentary provided about the guidance record.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'notes'?: string;
+    /**
+     * Indicates how a particular guidance value is presented relative to other figures disclosed by the company. Possible values are \'primary\' (the emphasized figure) and \'secondary\' (a supporting or alternate figure)
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'positioning'?: string;
+    /**
+     * The highest EPS value issued in a previous guidance record for the same fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'previous_max_eps_guidance'?: number;
+    /**
+     * The highest revenue value issued in a previous guidance record for the same fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'previous_max_revenue_guidance'?: number;
+    /**
+     * The lowest EPS value issued in a previous guidance record for the same fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'previous_min_eps_guidance'?: number;
+    /**
+     * The lowest revenue value issued in a previous guidance record for the same fiscal period.
+     * @type {number}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'previous_min_revenue_guidance'?: number;
+    /**
+     * Indicates whether the guidance was issued as part of a scheduled earnings release (\'official\') or as an unscheduled update (\'preliminary\').
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'release_type'?: string;
+    /**
+     * The methodology of the revenue figure. Possible values are gaap (standardized financials under Generally Accepted Accounting Principles) and adj (adjusted, non-GAAP).
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'revenue_method'?: string;
+    /**
+     * The stock symbol of the company issuing guidance.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * The time of day the guidance was announced, in HH:mm:ss format.
+     * @type {string}
+     * @memberof GetBenzingaV1Guidance200ResponseResultsInner
+     */
+    'time'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1News200Response
+ */
+export interface GetBenzingaV1News200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1News200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1News200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1News200ResponseResultsInner>}
+     * @memberof GetBenzingaV1News200Response
+     */
+    'results': Array<GetBenzingaV1News200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1News200Response
+     */
+    'status': GetBenzingaV1News200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1News200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1News200ResponseResultsInner
+ */
+export interface GetBenzingaV1News200ResponseResultsInner {
+    /**
+     * The name of the journalist or entity that authored the news article.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'author'?: string;
+    /**
+     * The identifer used by Benzinga for this record.
+     * @type {number}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'benzinga_id'?: number;
+    /**
+     * The full text content of the news article.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'body'?: string;
+    /**
+     * A list of categories or topics that the article belongs to (e.g., \'News\', \'Price Target\').
+     * @type {Array<string>}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'channels'?: Array<string>;
+    /**
+     * A list of images associated with the article.
+     * @type {Array<string>}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'images'?: Array<string>;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the news article was last updated in the system.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'published'?: string;
+    /**
+     * A list of tags that describe the themes or content of the article.
+     * @type {Array<string>}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'tags'?: Array<string>;
+    /**
+     * A short summary or lead-in to the news article\'s content.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'teaser'?: string;
+    /**
+     * A list of stock or crypto tickers mentioned in the article.
+     * @type {Array<string>}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'tickers'?: Array<string>;
+    /**
+     * The headline of the news article.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'title'?: string;
+    /**
+     * The direct link to the source of the news article.
+     * @type {string}
+     * @memberof GetBenzingaV1News200ResponseResultsInner
+     */
+    'url'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Ratings200Response
+ */
+export interface GetBenzingaV1Ratings200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetBenzingaV1Ratings200ResponseResultsInner>}
+     * @memberof GetBenzingaV1Ratings200Response
+     */
+    'results': Array<GetBenzingaV1Ratings200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200Response
+     */
+    'status': GetBenzingaV1Ratings200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetBenzingaV1Ratings200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetBenzingaV1Ratings200ResponseResultsInner
+ */
+export interface GetBenzingaV1Ratings200ResponseResultsInner {
+    /**
+     * The current price target adjusted for stock splits and dividends.
+     * @type {number}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'adjusted_price_target'?: number;
+    /**
+     * The name of the individual analyst who issued the rating.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'analyst'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'benzinga_analyst_id'?: string;
+    /**
+     * A link to the Benzinga calendar page for this ticker
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'benzinga_calendar_url'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'benzinga_firm_id'?: string;
+    /**
+     * The identifer used by Benzinga for this record.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'benzinga_id'?: string;
+    /**
+     * A link to the Benzinga articles page for this ticker
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'benzinga_news_url'?: string;
+    /**
+     * The name of the company being rated.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'company_name'?: string;
+    /**
+     * The ISO 4217 currency code in which the price target is denominated.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'currency'?: string;
+    /**
+     * The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * The name of the research firm or investment bank issuing the rating.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'firm'?: string;
+    /**
+     * A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest).
+     * @type {number}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'importance'?: number;
+    /**
+     * The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * Additional context or commentary.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'notes'?: string;
+    /**
+     * The previous price target adjusted for stock splits and dividends.
+     * @type {number}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'previous_adjusted_price_target'?: number;
+    /**
+     * The previous price target set by the analyst.
+     * @type {number}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'previous_price_target'?: number;
+    /**
+     * The previous rating set by the analyst.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'previous_rating'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'price_percent_change'?: number;
+    /**
+     * The current price target set by the analyst.
+     * @type {number}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'price_target'?: number;
+    /**
+     * The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'price_target_action'?: string;
+    /**
+     * The current rating set by the analyst.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'rating'?: string;
+    /**
+     * The description of the change in rating from the firm\'s last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'rating_action'?: string;
+    /**
+     * The stock symbol of the company being rated.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * The time (formatted as 24-hour HH:MM:SS UTC) when the rating was issued.
+     * @type {string}
+     * @memberof GetBenzingaV1Ratings200ResponseResultsInner
+     */
+    'time'?: string;
+}
+/**
+ * 
+ * @export
  * @interface GetCryptoAggregates200Response
  */
 export interface GetCryptoAggregates200Response {
@@ -3057,7 +4217,7 @@ export interface GetCryptoTrades200ResponseResultsInner {
      * @type {string}
      * @memberof GetCryptoTrades200ResponseResultsInner
      */
-    'id': string;
+    'id'?: string;
     /**
      * The nanosecond Exchange Unix Timestamp. This is the timestamp of when the trade was generated at the exchange.
      * @type {number}
@@ -3250,6 +4410,125 @@ export interface GetEvents200ResponseResultsEventsInnerOneOfTickerChange {
      * @memberof GetEvents200ResponseResultsEventsInnerOneOfTickerChange
      */
     'ticker'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetFedV1TreasuryYields200Response
+ */
+export interface GetFedV1TreasuryYields200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetFedV1TreasuryYields200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetFedV1TreasuryYields200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetFedV1TreasuryYields200ResponseResultsInner>}
+     * @memberof GetFedV1TreasuryYields200Response
+     */
+    'results': Array<GetFedV1TreasuryYields200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetFedV1TreasuryYields200Response
+     */
+    'status': GetFedV1TreasuryYields200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetFedV1TreasuryYields200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetFedV1TreasuryYields200ResponseResultsInner
+ */
+export interface GetFedV1TreasuryYields200ResponseResultsInner {
+    /**
+     * Calendar date of the yield observation (YYYY‑MM‑DD).
+     * @type {string}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * Market Yield on U.S. Treasury Securities at 10‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_10_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 1‑Month Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_1_month'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 1‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_1_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 20‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_20_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 2‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_2_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 30‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_30_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 3‑Month Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_3_month'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 3‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_3_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 5‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_5_year'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 6‑Month Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_6_month'?: number;
+    /**
+     * Market Yield on U.S. Treasury Securities at 7‑Year Constant Maturity, Quoted on an Investment Basis
+     * @type {number}
+     * @memberof GetFedV1TreasuryYields200ResponseResultsInner
+     */
+    'yield_7_year'?: number;
 }
 /**
  * 
@@ -4959,7 +6238,7 @@ export enum GetOptionsChain200ResponseResultsInnerLastTradeTimeframeEnum {
  */
 export interface GetOptionsContract200Response {
     /**
-     * 
+     * A request id assigned by the server.
      * @type {string}
      * @memberof GetOptionsContract200Response
      */
@@ -4971,7 +6250,7 @@ export interface GetOptionsContract200Response {
      */
     'results'?: ListOptionsContracts200ResponseResultsInner;
     /**
-     * 
+     * The status of this request\'s response.
      * @type {string}
      * @memberof GetOptionsContract200Response
      */
@@ -7017,6 +8296,220 @@ export interface GetStocksTrades200ResponseResultsInner {
 /**
  * 
  * @export
+ * @interface GetStocksV1ShortInterest200Response
+ */
+export interface GetStocksV1ShortInterest200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetStocksV1ShortInterest200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetStocksV1ShortInterest200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetStocksV1ShortInterest200ResponseResultsInner>}
+     * @memberof GetStocksV1ShortInterest200Response
+     */
+    'results': Array<GetStocksV1ShortInterest200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetStocksV1ShortInterest200Response
+     */
+    'status': GetStocksV1ShortInterest200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetStocksV1ShortInterest200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetStocksV1ShortInterest200ResponseResultsInner
+ */
+export interface GetStocksV1ShortInterest200ResponseResultsInner {
+    /**
+     * The average daily trading volume for the stock over a specified period, typically used to contextualize short interest.
+     * @type {number}
+     * @memberof GetStocksV1ShortInterest200ResponseResultsInner
+     */
+    'avg_daily_volume': number;
+    /**
+     * Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume.
+     * @type {number}
+     * @memberof GetStocksV1ShortInterest200ResponseResultsInner
+     */
+    'days_to_cover': number;
+    /**
+     * The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
+     * @type {string}
+     * @memberof GetStocksV1ShortInterest200ResponseResultsInner
+     */
+    'settlement_date': string;
+    /**
+     * The total number of shares that have been sold short but have not yet been covered or closed out.
+     * @type {number}
+     * @memberof GetStocksV1ShortInterest200ResponseResultsInner
+     */
+    'short_interest'?: number;
+    /**
+     * The primary ticker symbol for the stock.
+     * @type {string}
+     * @memberof GetStocksV1ShortInterest200ResponseResultsInner
+     */
+    'ticker'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetStocksV1ShortVolume200Response
+ */
+export interface GetStocksV1ShortVolume200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetStocksV1ShortVolume200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetStocksV1ShortVolume200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetStocksV1ShortVolume200ResponseResultsInner>}
+     * @memberof GetStocksV1ShortVolume200Response
+     */
+    'results': Array<GetStocksV1ShortVolume200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetStocksV1ShortVolume200Response
+     */
+    'status': GetStocksV1ShortVolume200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetStocksV1ShortVolume200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetStocksV1ShortVolume200ResponseResultsInner
+ */
+export interface GetStocksV1ShortVolume200ResponseResultsInner {
+    /**
+     * Short volume reported via the Alternative Display Facility (ADF), excluding exempt volume.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'adf_short_volume'?: number;
+    /**
+     * Short volume reported via ADF that was marked as exempt.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'adf_short_volume_exempt'?: number;
+    /**
+     * The date of trade activity reported in the format YYYY-MM-DD
+     * @type {string}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'date': string;
+    /**
+     * Portion of short volume that was marked as exempt from regulation SHO.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'exempt_volume'?: number;
+    /**
+     * Short volume reported from Nasdaq\'s Carteret facility, excluding exempt volume.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'nasdaq_carteret_short_volume'?: number;
+    /**
+     * Short volume from Nasdaq Carteret that was marked as exempt.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'nasdaq_carteret_short_volume_exempt'?: number;
+    /**
+     * Short volume reported from Nasdaq\'s Chicago facility, excluding exempt volume.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'nasdaq_chicago_short_volume'?: number;
+    /**
+     * Short volume from Nasdaq Chicago that was marked as exempt.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'nasdaq_chicago_short_volume_exempt'?: number;
+    /**
+     * Portion of short volume that was not exempt from regulation SHO (i.e., short_volume - exempt_volume).
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'non_exempt_volume'?: number;
+    /**
+     * Short volume reported from NYSE facilities, excluding exempt volume.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'nyse_short_volume'?: number;
+    /**
+     * Short volume from NYSE facilities that was marked as exempt.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'nyse_short_volume_exempt'?: number;
+    /**
+     * Total number of shares sold short across all venues for the ticker on the given date.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'short_volume'?: number;
+    /**
+     * The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'short_volume_ratio'?: number;
+    /**
+     * The primary ticker symbol for the stock.
+     * @type {string}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * Total reported volume across all venues for the ticker on the given date.
+     * @type {number}
+     * @memberof GetStocksV1ShortVolume200ResponseResultsInner
+     */
+    'total_volume'?: number;
+}
+/**
+ * 
+ * @export
  * @interface GetTicker200Response
  */
 export interface GetTicker200Response {
@@ -7451,450 +8944,6 @@ export interface IndicesTickerResultsResultsInner {
      * @memberof IndicesTickerResultsResultsInner
      */
     't': number;
-}
-/**
- * 
- * @export
- * @interface ListBenzingaEarnings200Response
- */
-export interface ListBenzingaEarnings200Response {
-    /**
-     * URL for the next page of results, if applicable.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200Response
-     */
-    'next_url'?: string;
-    /**
-     * Unique identifier for this request.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200Response
-     */
-    'request_id': string;
-    /**
-     * Records that match the given query.
-     * @type {Array<ListBenzingaEarnings200ResponseResultsInner>}
-     * @memberof ListBenzingaEarnings200Response
-     */
-    'results': Array<ListBenzingaEarnings200ResponseResultsInner>;
-    /**
-     * Status of the request. Usually \'OK\' or \'ERROR\'.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200Response
-     */
-    'status': string;
-}
-/**
- * 
- * @export
- * @interface ListBenzingaEarnings200ResponseResultsInner
- */
-export interface ListBenzingaEarnings200ResponseResultsInner {
-    /**
-     * The actual earnings per share (EPS) reported by the company for the given period.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'actual_eps'?: number;
-    /**
-     * The actual revenue reported by the company for the given fiscal period.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'actual_revenue'?: number;
-    /**
-     * The identifer used by Benzinga for this record.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'benzinga_id'?: string;
-    /**
-     * The name of the company releasing earnings.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'company_name'?: string;
-    /**
-     * The currency in which the earnings and revenue figures are reported.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'currency'?: string;
-    /**
-     * The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'date'?: string;
-    /**
-     * Indicates whether the date of the earnings report has been confirmed. Possible values include: projected, confirmed.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'date_status'?: string;
-    /**
-     * The accounting standard used to calculate EPS.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'earnings_method'?: string;
-    /**
-     * The difference between the actual and estimated EPS.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'eps_surprise'?: string;
-    /**
-     * The percentage difference between the actual and estimated EPS.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'eps_surprise_percent'?: string;
-    /**
-     * The analyst consensus estimate for earnings per share (EPS) for the given period.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'estimated_eps'?: number;
-    /**
-     * The analyst consensus estimate for the company\'s revenue in the given period.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'estimated_revenue'?: number;
-    /**
-     * The fiscal period for which the earnings are reported. Examples include: Q1, Q2, H1, FY.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'fiscal_period'?: string;
-    /**
-     * The fiscal year in which the earnings period falls.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'fiscal_year'?: number;
-    /**
-     * A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest).
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'importance'?: number;
-    /**
-     * The timestamp (formatted as an ISO 8601 timestamp) when the earnings record was last updated in the system.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'last_updated'?: string;
-    /**
-     * Additional context, commentary, or clarifying notes related to the earnings event.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'notes'?: string;
-    /**
-     * The company\'s reported earnings per share (EPS) for the previous comparable period.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'previous_eps'?: number;
-    /**
-     * The company\'s revenue for the previous comparable fiscal period.
-     * @type {number}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'previous_revenue'?: number;
-    /**
-     * The accounting standard used for the revenue figure.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'revenue_method'?: string;
-    /**
-     * The difference between the actual and estimated revenue.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'revenue_surprise'?: string;
-    /**
-     * The percentage difference between the actual and estimated revenue.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'revenue_surprise_percent'?: string;
-    /**
-     * The stock symbol of the company reporting earnings.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'ticker'?: string;
-    /**
-     * The time (formatted as 24-hour HH:MM:SS UTC) when the earnings are scheduled or were reported.
-     * @type {string}
-     * @memberof ListBenzingaEarnings200ResponseResultsInner
-     */
-    'time'?: string;
-}
-/**
- * 
- * @export
- * @interface ListBenzingaNews200Response
- */
-export interface ListBenzingaNews200Response {
-    /**
-     * URL for the next page of results, if applicable.
-     * @type {string}
-     * @memberof ListBenzingaNews200Response
-     */
-    'next_url'?: string;
-    /**
-     * Unique identifier for this request.
-     * @type {string}
-     * @memberof ListBenzingaNews200Response
-     */
-    'request_id': string;
-    /**
-     * Records that match the given query.
-     * @type {Array<ListBenzingaNews200ResponseResultsInner>}
-     * @memberof ListBenzingaNews200Response
-     */
-    'results': Array<ListBenzingaNews200ResponseResultsInner>;
-    /**
-     * Status of the request. Usually \'OK\' or \'ERROR\'.
-     * @type {string}
-     * @memberof ListBenzingaNews200Response
-     */
-    'status': string;
-}
-/**
- * 
- * @export
- * @interface ListBenzingaNews200ResponseResultsInner
- */
-export interface ListBenzingaNews200ResponseResultsInner {
-    /**
-     * The name of the journalist or entity that authored the news article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'author'?: string;
-    /**
-     * The identifer used by Benzinga for this record.
-     * @type {number}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'benzinga_id'?: number;
-    /**
-     * The full text content of the news article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'body'?: string;
-    /**
-     * A list of categories or topics that the article belongs to (e.g., \'News\', \'Price Target\').
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'channels'?: string;
-    /**
-     * The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'created'?: string;
-    /**
-     * A list of images associated with the article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'images'?: string;
-    /**
-     * The timestamp (formatted as an ISO 8601 timestamp) when the news article was last updated in the system.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'last_updated'?: string;
-    /**
-     * A list of tags that describe the themes or content of the article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'tags'?: string;
-    /**
-     * A short summary or lead-in to the news article\'s content.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'teaser'?: string;
-    /**
-     * A list of stock or crypto tickers mentioned in the article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'tickers'?: string;
-    /**
-     * The headline of the news article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'title'?: string;
-    /**
-     * The direct link to the source of the news article.
-     * @type {string}
-     * @memberof ListBenzingaNews200ResponseResultsInner
-     */
-    'url'?: string;
-}
-/**
- * 
- * @export
- * @interface ListBenzingaRatings200Response
- */
-export interface ListBenzingaRatings200Response {
-    /**
-     * URL for the next page of results, if applicable.
-     * @type {string}
-     * @memberof ListBenzingaRatings200Response
-     */
-    'next_url'?: string;
-    /**
-     * Unique identifier for this request.
-     * @type {string}
-     * @memberof ListBenzingaRatings200Response
-     */
-    'request_id': string;
-    /**
-     * Records that match the given query.
-     * @type {Array<ListBenzingaRatings200ResponseResultsInner>}
-     * @memberof ListBenzingaRatings200Response
-     */
-    'results': Array<ListBenzingaRatings200ResponseResultsInner>;
-    /**
-     * Status of the request. Usually \'OK\' or \'ERROR\'.
-     * @type {string}
-     * @memberof ListBenzingaRatings200Response
-     */
-    'status': string;
-}
-/**
- * 
- * @export
- * @interface ListBenzingaRatings200ResponseResultsInner
- */
-export interface ListBenzingaRatings200ResponseResultsInner {
-    /**
-     * The current price target adjusted for stock splits and dividends.
-     * @type {number}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'adjusted_price_target'?: number;
-    /**
-     * The name of the individual analyst who issued the rating.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'analyst'?: string;
-    /**
-     * The identifer used by Benzinga for this record.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'benzinga_id'?: string;
-    /**
-     * The name of the company being rated.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'company_name'?: string;
-    /**
-     * The currency in which the price target is denominated.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'currency'?: string;
-    /**
-     * The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'date'?: string;
-    /**
-     * The name of the research firm or investment bank issuing the rating.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'firm'?: string;
-    /**
-     * A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest).
-     * @type {number}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'importance'?: number;
-    /**
-     * The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'last_updated'?: string;
-    /**
-     * Additional context or commentary.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'notes'?: string;
-    /**
-     * The previous price target adjusted for stock splits and dividends.
-     * @type {number}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'previous_adjusted_price_target'?: number;
-    /**
-     * The previous price target set by the analyst.
-     * @type {number}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'previous_price_target'?: number;
-    /**
-     * The previous rating set by the analyst.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'previous_rating'?: string;
-    /**
-     * The current price target set by the analyst.
-     * @type {number}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'price_target'?: number;
-    /**
-     * The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'price_target_action'?: string;
-    /**
-     * The current rating set by the analyst.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'rating'?: string;
-    /**
-     * The description of the change in rating from the firm\'s last rating. Possible values include: downgrade, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'rating_action'?: string;
-    /**
-     * The stock symbol of the company being rated.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'ticker'?: string;
-    /**
-     * The time (formatted as 24-hour HH:MM:SS UTC) when the rating was issued.
-     * @type {string}
-     * @memberof ListBenzingaRatings200ResponseResultsInner
-     */
-    'time'?: string;
 }
 /**
  * 
@@ -8981,26 +10030,26 @@ export interface ListOptionsContracts200Response {
      */
     'next_url'?: string;
     /**
-     * 
+     * A request id assigned by the server.
      * @type {string}
      * @memberof ListOptionsContracts200Response
      */
     'request_id'?: string;
     /**
-     * 
+     * An array of results containing the requested data.
      * @type {Array<ListOptionsContracts200ResponseResultsInner>}
      * @memberof ListOptionsContracts200Response
      */
     'results'?: Array<ListOptionsContracts200ResponseResultsInner>;
     /**
-     * 
+     * The status of this request\'s response.
      * @type {string}
      * @memberof ListOptionsContracts200Response
      */
     'status'?: string;
 }
 /**
- * 
+ * Contains the requested data for the specified options contract.
  * @export
  * @interface ListOptionsContracts200ResponseResultsInner
  */
@@ -9175,202 +10224,6 @@ export interface ListStockSplits200ResponseResultsInner {
      * @memberof ListStockSplits200ResponseResultsInner
      */
     'ticker': string;
-}
-/**
- * 
- * @export
- * @interface ListStocksShortInterest200Response
- */
-export interface ListStocksShortInterest200Response {
-    /**
-     * URL for the next page of results, if applicable.
-     * @type {string}
-     * @memberof ListStocksShortInterest200Response
-     */
-    'next_url'?: string;
-    /**
-     * Unique identifier for this request.
-     * @type {string}
-     * @memberof ListStocksShortInterest200Response
-     */
-    'request_id': string;
-    /**
-     * Records that match the given query.
-     * @type {Array<ListStocksShortInterest200ResponseResultsInner>}
-     * @memberof ListStocksShortInterest200Response
-     */
-    'results': Array<ListStocksShortInterest200ResponseResultsInner>;
-    /**
-     * Status of the request. Usually \'OK\' or \'ERROR\'.
-     * @type {string}
-     * @memberof ListStocksShortInterest200Response
-     */
-    'status': string;
-}
-/**
- * 
- * @export
- * @interface ListStocksShortInterest200ResponseResultsInner
- */
-export interface ListStocksShortInterest200ResponseResultsInner {
-    /**
-     * The average daily trading volume for the stock over a specified period, typically used to contextualize short interest.
-     * @type {number}
-     * @memberof ListStocksShortInterest200ResponseResultsInner
-     */
-    'avg_daily_volume'?: number;
-    /**
-     * Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume.
-     * @type {number}
-     * @memberof ListStocksShortInterest200ResponseResultsInner
-     */
-    'days_to_cover'?: number;
-    /**
-     * The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
-     * @type {string}
-     * @memberof ListStocksShortInterest200ResponseResultsInner
-     */
-    'settlement_date'?: string;
-    /**
-     * The total number of shares that have been sold short but have not yet been covered or closed out.
-     * @type {number}
-     * @memberof ListStocksShortInterest200ResponseResultsInner
-     */
-    'short_interest'?: number;
-    /**
-     * The primary ticker symbol for the stock.
-     * @type {string}
-     * @memberof ListStocksShortInterest200ResponseResultsInner
-     */
-    'ticker'?: string;
-}
-/**
- * 
- * @export
- * @interface ListStocksShortVolume200Response
- */
-export interface ListStocksShortVolume200Response {
-    /**
-     * URL for the next page of results, if applicable.
-     * @type {string}
-     * @memberof ListStocksShortVolume200Response
-     */
-    'next_url'?: string;
-    /**
-     * Unique identifier for this request.
-     * @type {string}
-     * @memberof ListStocksShortVolume200Response
-     */
-    'request_id': string;
-    /**
-     * Records that match the given query.
-     * @type {Array<ListStocksShortVolume200ResponseResultsInner>}
-     * @memberof ListStocksShortVolume200Response
-     */
-    'results': Array<ListStocksShortVolume200ResponseResultsInner>;
-    /**
-     * Status of the request. Usually \'OK\' or \'ERROR\'.
-     * @type {string}
-     * @memberof ListStocksShortVolume200Response
-     */
-    'status': string;
-}
-/**
- * 
- * @export
- * @interface ListStocksShortVolume200ResponseResultsInner
- */
-export interface ListStocksShortVolume200ResponseResultsInner {
-    /**
-     * Short volume reported via the Alternative Display Facility (ADF), excluding exempt volume.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'adf_short_volume'?: number;
-    /**
-     * Short volume reported via ADF that was marked as exempt.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'adf_short_volume_exempt'?: number;
-    /**
-     * The date of trade activity reported in the format YYYY-MM-DD
-     * @type {string}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'date'?: string;
-    /**
-     * Portion of short volume that was marked as exempt from regulation SHO.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'exempt_volume'?: number;
-    /**
-     * Short volume reported from Nasdaq\'s Carteret facility, excluding exempt volume.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'nasdaq_carteret_short_volume'?: number;
-    /**
-     * Short volume from Nasdaq Carteret that was marked as exempt.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'nasdaq_carteret_short_volume_exempt'?: number;
-    /**
-     * Short volume reported from Nasdaq\'s Chicago facility, excluding exempt volume.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'nasdaq_chicago_short_volume'?: number;
-    /**
-     * Short volume from Nasdaq Chicago that was marked as exempt.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'nasdaq_chicago_short_volume_exempt'?: number;
-    /**
-     * Portion of short volume that was not exempt from regulation SHO (i.e., short_volume - exempt_volume).
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'non_exempt_volume'?: number;
-    /**
-     * Short volume reported from NYSE facilities, excluding exempt volume.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'nyse_short_volume'?: number;
-    /**
-     * Short volume from NYSE facilities that was marked as exempt.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'nyse_short_volume_exempt'?: number;
-    /**
-     * Total number of shares sold short across all venues for the ticker on the given date.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'short_volume'?: number;
-    /**
-     * The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'short_volume_ratio'?: number;
-    /**
-     * The primary ticker symbol for the stock.
-     * @type {string}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'ticker'?: string;
-    /**
-     * Total reported volume across all venues for the ticker on the given date.
-     * @type {number}
-     * @memberof ListStocksShortVolume200ResponseResultsInner
-     */
-    'total_volume'?: number;
 }
 /**
  * 
@@ -9598,116 +10451,6 @@ export enum ListTickers200ResponseResultsInnerMarketEnum {
     Indices = 'indices'
 }
 
-/**
- * 
- * @export
- * @interface ListTreasuryYields200Response
- */
-export interface ListTreasuryYields200Response {
-    /**
-     * URL for the next page of results, if applicable.
-     * @type {string}
-     * @memberof ListTreasuryYields200Response
-     */
-    'next_url'?: string;
-    /**
-     * Unique identifier for this request.
-     * @type {string}
-     * @memberof ListTreasuryYields200Response
-     */
-    'request_id': string;
-    /**
-     * Records that match the given query.
-     * @type {Array<ListTreasuryYields200ResponseResultsInner>}
-     * @memberof ListTreasuryYields200Response
-     */
-    'results': Array<ListTreasuryYields200ResponseResultsInner>;
-    /**
-     * Status of the request. Usually \'OK\' or \'ERROR\'.
-     * @type {string}
-     * @memberof ListTreasuryYields200Response
-     */
-    'status': string;
-}
-/**
- * 
- * @export
- * @interface ListTreasuryYields200ResponseResultsInner
- */
-export interface ListTreasuryYields200ResponseResultsInner {
-    /**
-     * Calendar date of the yield observation (YYYY‑MM‑DD).
-     * @type {string}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'date'?: string;
-    /**
-     * Market Yield on U.S. Treasury Securities at 10‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_10_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 1‑Month Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_1_month'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 1‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_1_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 20‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_20_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 2‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_2_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 30‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_30_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 3‑Month Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_3_month'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 3‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_3_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 5‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_5_year'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 6‑Month Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_6_month'?: number;
-    /**
-     * Market Yield on U.S. Treasury Securities at 7‑Year Constant Maturity, Quoted on an Investment Basis
-     * @type {number}
-     * @memberof ListTreasuryYields200ResponseResultsInner
-     */
-    'yield_7_year'?: number;
-}
 /**
  * 
  * @export
@@ -11274,6 +12017,1581 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company being rated.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
+         * @param {string} [firmAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [firmGt] Filter greater than the value.
+         * @param {string} [firmGte] Filter greater than or equal to the value.
+         * @param {string} [firmLt] Filter less than the value.
+         * @param {string} [firmLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] The identifer used by Benzinga for the firm record.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaRatingId] The identifier used by Benzinga for the rating record.
+         * @param {string} [benzingaRatingIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaRatingIdGt] Filter greater than the value.
+         * @param {string} [benzingaRatingIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaRatingIdLt] Filter less than the value.
+         * @param {string} [benzingaRatingIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1AnalystInsights: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, firm?: string, firmAnyOf?: string, firmGt?: string, firmGte?: string, firmLt?: string, firmLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, benzingaRatingId?: string, benzingaRatingIdAnyOf?: string, benzingaRatingIdGt?: string, benzingaRatingIdGte?: string, benzingaRatingIdLt?: string, benzingaRatingIdLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/analyst-insights`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (lastUpdated !== undefined) {
+                localVarQueryParameter['last_updated'] = lastUpdated;
+            }
+
+            if (lastUpdatedAnyOf !== undefined) {
+                localVarQueryParameter['last_updated.any_of'] = lastUpdatedAnyOf;
+            }
+
+            if (lastUpdatedGt !== undefined) {
+                localVarQueryParameter['last_updated.gt'] = lastUpdatedGt;
+            }
+
+            if (lastUpdatedGte !== undefined) {
+                localVarQueryParameter['last_updated.gte'] = lastUpdatedGte;
+            }
+
+            if (lastUpdatedLt !== undefined) {
+                localVarQueryParameter['last_updated.lt'] = lastUpdatedLt;
+            }
+
+            if (lastUpdatedLte !== undefined) {
+                localVarQueryParameter['last_updated.lte'] = lastUpdatedLte;
+            }
+
+            if (firm !== undefined) {
+                localVarQueryParameter['firm'] = firm;
+            }
+
+            if (firmAnyOf !== undefined) {
+                localVarQueryParameter['firm.any_of'] = firmAnyOf;
+            }
+
+            if (firmGt !== undefined) {
+                localVarQueryParameter['firm.gt'] = firmGt;
+            }
+
+            if (firmGte !== undefined) {
+                localVarQueryParameter['firm.gte'] = firmGte;
+            }
+
+            if (firmLt !== undefined) {
+                localVarQueryParameter['firm.lt'] = firmLt;
+            }
+
+            if (firmLte !== undefined) {
+                localVarQueryParameter['firm.lte'] = firmLte;
+            }
+
+            if (benzingaFirmId !== undefined) {
+                localVarQueryParameter['benzinga_firm_id'] = benzingaFirmId;
+            }
+
+            if (benzingaFirmIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.any_of'] = benzingaFirmIdAnyOf;
+            }
+
+            if (benzingaFirmIdGt !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.gt'] = benzingaFirmIdGt;
+            }
+
+            if (benzingaFirmIdGte !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.gte'] = benzingaFirmIdGte;
+            }
+
+            if (benzingaFirmIdLt !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.lt'] = benzingaFirmIdLt;
+            }
+
+            if (benzingaFirmIdLte !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.lte'] = benzingaFirmIdLte;
+            }
+
+            if (benzingaRatingId !== undefined) {
+                localVarQueryParameter['benzinga_rating_id'] = benzingaRatingId;
+            }
+
+            if (benzingaRatingIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_rating_id.any_of'] = benzingaRatingIdAnyOf;
+            }
+
+            if (benzingaRatingIdGt !== undefined) {
+                localVarQueryParameter['benzinga_rating_id.gt'] = benzingaRatingIdGt;
+            }
+
+            if (benzingaRatingIdGte !== undefined) {
+                localVarQueryParameter['benzinga_rating_id.gte'] = benzingaRatingIdGte;
+            }
+
+            if (benzingaRatingIdLt !== undefined) {
+                localVarQueryParameter['benzinga_rating_id.lt'] = benzingaRatingIdLt;
+            }
+
+            if (benzingaRatingIdLte !== undefined) {
+                localVarQueryParameter['benzinga_rating_id.lte'] = benzingaRatingIdLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [benzingaId] The identifier used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] The unique identifier assigned by Benzinga to the research firm or investment bank.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {string} [firmName] The name of the research firm or investment bank issuing the ratings.
+         * @param {string} [firmNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [firmNameGt] Filter greater than the value.
+         * @param {string} [firmNameGte] Filter greater than or equal to the value.
+         * @param {string} [firmNameLt] Filter less than the value.
+         * @param {string} [firmNameLte] Filter less than or equal to the value.
+         * @param {string} [fullName] The full name of the analyst associated with the ratings.
+         * @param {string} [fullNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fullNameGt] Filter greater than the value.
+         * @param {string} [fullNameGte] Filter greater than or equal to the value.
+         * @param {string} [fullNameLt] Filter less than the value.
+         * @param {string} [fullNameLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;full_name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Analysts: async (benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, firmName?: string, firmNameAnyOf?: string, firmNameGt?: string, firmNameGte?: string, firmNameLt?: string, firmNameLte?: string, fullName?: string, fullNameAnyOf?: string, fullNameGt?: string, fullNameGte?: string, fullNameLt?: string, fullNameLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/analysts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (benzingaId !== undefined) {
+                localVarQueryParameter['benzinga_id'] = benzingaId;
+            }
+
+            if (benzingaIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_id.any_of'] = benzingaIdAnyOf;
+            }
+
+            if (benzingaIdGt !== undefined) {
+                localVarQueryParameter['benzinga_id.gt'] = benzingaIdGt;
+            }
+
+            if (benzingaIdGte !== undefined) {
+                localVarQueryParameter['benzinga_id.gte'] = benzingaIdGte;
+            }
+
+            if (benzingaIdLt !== undefined) {
+                localVarQueryParameter['benzinga_id.lt'] = benzingaIdLt;
+            }
+
+            if (benzingaIdLte !== undefined) {
+                localVarQueryParameter['benzinga_id.lte'] = benzingaIdLte;
+            }
+
+            if (benzingaFirmId !== undefined) {
+                localVarQueryParameter['benzinga_firm_id'] = benzingaFirmId;
+            }
+
+            if (benzingaFirmIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.any_of'] = benzingaFirmIdAnyOf;
+            }
+
+            if (benzingaFirmIdGt !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.gt'] = benzingaFirmIdGt;
+            }
+
+            if (benzingaFirmIdGte !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.gte'] = benzingaFirmIdGte;
+            }
+
+            if (benzingaFirmIdLt !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.lt'] = benzingaFirmIdLt;
+            }
+
+            if (benzingaFirmIdLte !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.lte'] = benzingaFirmIdLte;
+            }
+
+            if (firmName !== undefined) {
+                localVarQueryParameter['firm_name'] = firmName;
+            }
+
+            if (firmNameAnyOf !== undefined) {
+                localVarQueryParameter['firm_name.any_of'] = firmNameAnyOf;
+            }
+
+            if (firmNameGt !== undefined) {
+                localVarQueryParameter['firm_name.gt'] = firmNameGt;
+            }
+
+            if (firmNameGte !== undefined) {
+                localVarQueryParameter['firm_name.gte'] = firmNameGte;
+            }
+
+            if (firmNameLt !== undefined) {
+                localVarQueryParameter['firm_name.lt'] = firmNameLt;
+            }
+
+            if (firmNameLte !== undefined) {
+                localVarQueryParameter['firm_name.lte'] = firmNameLte;
+            }
+
+            if (fullName !== undefined) {
+                localVarQueryParameter['full_name'] = fullName;
+            }
+
+            if (fullNameAnyOf !== undefined) {
+                localVarQueryParameter['full_name.any_of'] = fullNameAnyOf;
+            }
+
+            if (fullNameGt !== undefined) {
+                localVarQueryParameter['full_name.gt'] = fullNameGt;
+            }
+
+            if (fullNameGte !== undefined) {
+                localVarQueryParameter['full_name.gte'] = fullNameGte;
+            }
+
+            if (fullNameLt !== undefined) {
+                localVarQueryParameter['full_name.lt'] = fullNameLt;
+            }
+
+            if (fullNameLte !== undefined) {
+                localVarQueryParameter['full_name.lte'] = fullNameLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} ticker The requested ticker.
+         * @param {string} [date] Filter equal to the value.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1ConsensusRatings: async (ticker: string, date?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('getBenzingaV1ConsensusRatings', 'ticker', ticker)
+            const localVarPath = `/benzinga/v1/consensus-ratings/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company reporting earnings.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [dateStatus] Indicates whether the date of the earnings report has been confirmed. Possible values include: projected, confirmed.
+         * @param {string} [dateStatusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateStatusGt] Filter greater than the value.
+         * @param {string} [dateStatusGte] Filter greater than or equal to the value.
+         * @param {string} [dateStatusLt] Filter less than the value.
+         * @param {string} [dateStatusLte] Filter less than or equal to the value.
+         * @param {number} [epsSurprisePercent] The percentage difference between the actual and estimated EPS. Value must be a floating point number.
+         * @param {string} [epsSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercent] The percentage difference between the actual and estimated revenue. Value must be a floating point number.
+         * @param {string} [revenueSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [fiscalYear] The fiscal year in which the earnings period falls. Value must be an integer.
+         * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+         * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [fiscalPeriod] The fiscal period for which the earnings are reported. Examples include: Q1, Q2, H1, FY.
+         * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fiscalPeriodGt] Filter greater than the value.
+         * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+         * @param {string} [fiscalPeriodLt] Filter less than the value.
+         * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Earnings: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, dateStatus?: string, dateStatusAnyOf?: string, dateStatusGt?: string, dateStatusGte?: string, dateStatusLt?: string, dateStatusLte?: string, epsSurprisePercent?: number, epsSurprisePercentAnyOf?: string, epsSurprisePercentGt?: number, epsSurprisePercentGte?: number, epsSurprisePercentLt?: number, epsSurprisePercentLte?: number, revenueSurprisePercent?: number, revenueSurprisePercentAnyOf?: string, revenueSurprisePercentGt?: number, revenueSurprisePercentGte?: number, revenueSurprisePercentLt?: number, revenueSurprisePercentLte?: number, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/earnings`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (importance !== undefined) {
+                localVarQueryParameter['importance'] = importance;
+            }
+
+            if (importanceAnyOf !== undefined) {
+                localVarQueryParameter['importance.any_of'] = importanceAnyOf;
+            }
+
+            if (importanceGt !== undefined) {
+                localVarQueryParameter['importance.gt'] = importanceGt;
+            }
+
+            if (importanceGte !== undefined) {
+                localVarQueryParameter['importance.gte'] = importanceGte;
+            }
+
+            if (importanceLt !== undefined) {
+                localVarQueryParameter['importance.lt'] = importanceLt;
+            }
+
+            if (importanceLte !== undefined) {
+                localVarQueryParameter['importance.lte'] = importanceLte;
+            }
+
+            if (lastUpdated !== undefined) {
+                localVarQueryParameter['last_updated'] = lastUpdated;
+            }
+
+            if (lastUpdatedAnyOf !== undefined) {
+                localVarQueryParameter['last_updated.any_of'] = lastUpdatedAnyOf;
+            }
+
+            if (lastUpdatedGt !== undefined) {
+                localVarQueryParameter['last_updated.gt'] = lastUpdatedGt;
+            }
+
+            if (lastUpdatedGte !== undefined) {
+                localVarQueryParameter['last_updated.gte'] = lastUpdatedGte;
+            }
+
+            if (lastUpdatedLt !== undefined) {
+                localVarQueryParameter['last_updated.lt'] = lastUpdatedLt;
+            }
+
+            if (lastUpdatedLte !== undefined) {
+                localVarQueryParameter['last_updated.lte'] = lastUpdatedLte;
+            }
+
+            if (dateStatus !== undefined) {
+                localVarQueryParameter['date_status'] = dateStatus;
+            }
+
+            if (dateStatusAnyOf !== undefined) {
+                localVarQueryParameter['date_status.any_of'] = dateStatusAnyOf;
+            }
+
+            if (dateStatusGt !== undefined) {
+                localVarQueryParameter['date_status.gt'] = dateStatusGt;
+            }
+
+            if (dateStatusGte !== undefined) {
+                localVarQueryParameter['date_status.gte'] = dateStatusGte;
+            }
+
+            if (dateStatusLt !== undefined) {
+                localVarQueryParameter['date_status.lt'] = dateStatusLt;
+            }
+
+            if (dateStatusLte !== undefined) {
+                localVarQueryParameter['date_status.lte'] = dateStatusLte;
+            }
+
+            if (epsSurprisePercent !== undefined) {
+                localVarQueryParameter['eps_surprise_percent'] = epsSurprisePercent;
+            }
+
+            if (epsSurprisePercentAnyOf !== undefined) {
+                localVarQueryParameter['eps_surprise_percent.any_of'] = epsSurprisePercentAnyOf;
+            }
+
+            if (epsSurprisePercentGt !== undefined) {
+                localVarQueryParameter['eps_surprise_percent.gt'] = epsSurprisePercentGt;
+            }
+
+            if (epsSurprisePercentGte !== undefined) {
+                localVarQueryParameter['eps_surprise_percent.gte'] = epsSurprisePercentGte;
+            }
+
+            if (epsSurprisePercentLt !== undefined) {
+                localVarQueryParameter['eps_surprise_percent.lt'] = epsSurprisePercentLt;
+            }
+
+            if (epsSurprisePercentLte !== undefined) {
+                localVarQueryParameter['eps_surprise_percent.lte'] = epsSurprisePercentLte;
+            }
+
+            if (revenueSurprisePercent !== undefined) {
+                localVarQueryParameter['revenue_surprise_percent'] = revenueSurprisePercent;
+            }
+
+            if (revenueSurprisePercentAnyOf !== undefined) {
+                localVarQueryParameter['revenue_surprise_percent.any_of'] = revenueSurprisePercentAnyOf;
+            }
+
+            if (revenueSurprisePercentGt !== undefined) {
+                localVarQueryParameter['revenue_surprise_percent.gt'] = revenueSurprisePercentGt;
+            }
+
+            if (revenueSurprisePercentGte !== undefined) {
+                localVarQueryParameter['revenue_surprise_percent.gte'] = revenueSurprisePercentGte;
+            }
+
+            if (revenueSurprisePercentLt !== undefined) {
+                localVarQueryParameter['revenue_surprise_percent.lt'] = revenueSurprisePercentLt;
+            }
+
+            if (revenueSurprisePercentLte !== undefined) {
+                localVarQueryParameter['revenue_surprise_percent.lte'] = revenueSurprisePercentLte;
+            }
+
+            if (fiscalYear !== undefined) {
+                localVarQueryParameter['fiscal_year'] = fiscalYear;
+            }
+
+            if (fiscalYearAnyOf !== undefined) {
+                localVarQueryParameter['fiscal_year.any_of'] = fiscalYearAnyOf;
+            }
+
+            if (fiscalYearGt !== undefined) {
+                localVarQueryParameter['fiscal_year.gt'] = fiscalYearGt;
+            }
+
+            if (fiscalYearGte !== undefined) {
+                localVarQueryParameter['fiscal_year.gte'] = fiscalYearGte;
+            }
+
+            if (fiscalYearLt !== undefined) {
+                localVarQueryParameter['fiscal_year.lt'] = fiscalYearLt;
+            }
+
+            if (fiscalYearLte !== undefined) {
+                localVarQueryParameter['fiscal_year.lte'] = fiscalYearLte;
+            }
+
+            if (fiscalPeriod !== undefined) {
+                localVarQueryParameter['fiscal_period'] = fiscalPeriod;
+            }
+
+            if (fiscalPeriodAnyOf !== undefined) {
+                localVarQueryParameter['fiscal_period.any_of'] = fiscalPeriodAnyOf;
+            }
+
+            if (fiscalPeriodGt !== undefined) {
+                localVarQueryParameter['fiscal_period.gt'] = fiscalPeriodGt;
+            }
+
+            if (fiscalPeriodGte !== undefined) {
+                localVarQueryParameter['fiscal_period.gte'] = fiscalPeriodGte;
+            }
+
+            if (fiscalPeriodLt !== undefined) {
+                localVarQueryParameter['fiscal_period.lt'] = fiscalPeriodLt;
+            }
+
+            if (fiscalPeriodLte !== undefined) {
+                localVarQueryParameter['fiscal_period.lte'] = fiscalPeriodLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Firms: async (benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/firms`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (benzingaId !== undefined) {
+                localVarQueryParameter['benzinga_id'] = benzingaId;
+            }
+
+            if (benzingaIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_id.any_of'] = benzingaIdAnyOf;
+            }
+
+            if (benzingaIdGt !== undefined) {
+                localVarQueryParameter['benzinga_id.gt'] = benzingaIdGt;
+            }
+
+            if (benzingaIdGte !== undefined) {
+                localVarQueryParameter['benzinga_id.gte'] = benzingaIdGte;
+            }
+
+            if (benzingaIdLt !== undefined) {
+                localVarQueryParameter['benzinga_id.lt'] = benzingaIdLt;
+            }
+
+            if (benzingaIdLte !== undefined) {
+                localVarQueryParameter['benzinga_id.lte'] = benzingaIdLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company issuing guidance.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [positioning] Indicates how a particular guidance value is presented relative to other figures disclosed by the company. Possible values are \&#39;primary\&#39; (the emphasized figure) and \&#39;secondary\&#39; (a supporting or alternate figure)
+         * @param {string} [positioningAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [positioningGt] Filter greater than the value.
+         * @param {string} [positioningGte] Filter greater than or equal to the value.
+         * @param {string} [positioningLt] Filter less than the value.
+         * @param {string} [positioningLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {number} [fiscalYear] The fiscal year corresponding to the period for which the guidance is issued. Value must be an integer.
+         * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+         * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [fiscalPeriod] The fiscal quarter to which the guidance applies, such as Q1, Q2, Q3, or Q4.
+         * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fiscalPeriodGt] Filter greater than the value.
+         * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+         * @param {string} [fiscalPeriodLt] Filter less than the value.
+         * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Guidance: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, positioning?: string, positioningAnyOf?: string, positioningGt?: string, positioningGte?: string, positioningLt?: string, positioningLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/guidance`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (positioning !== undefined) {
+                localVarQueryParameter['positioning'] = positioning;
+            }
+
+            if (positioningAnyOf !== undefined) {
+                localVarQueryParameter['positioning.any_of'] = positioningAnyOf;
+            }
+
+            if (positioningGt !== undefined) {
+                localVarQueryParameter['positioning.gt'] = positioningGt;
+            }
+
+            if (positioningGte !== undefined) {
+                localVarQueryParameter['positioning.gte'] = positioningGte;
+            }
+
+            if (positioningLt !== undefined) {
+                localVarQueryParameter['positioning.lt'] = positioningLt;
+            }
+
+            if (positioningLte !== undefined) {
+                localVarQueryParameter['positioning.lte'] = positioningLte;
+            }
+
+            if (importance !== undefined) {
+                localVarQueryParameter['importance'] = importance;
+            }
+
+            if (importanceAnyOf !== undefined) {
+                localVarQueryParameter['importance.any_of'] = importanceAnyOf;
+            }
+
+            if (importanceGt !== undefined) {
+                localVarQueryParameter['importance.gt'] = importanceGt;
+            }
+
+            if (importanceGte !== undefined) {
+                localVarQueryParameter['importance.gte'] = importanceGte;
+            }
+
+            if (importanceLt !== undefined) {
+                localVarQueryParameter['importance.lt'] = importanceLt;
+            }
+
+            if (importanceLte !== undefined) {
+                localVarQueryParameter['importance.lte'] = importanceLte;
+            }
+
+            if (lastUpdated !== undefined) {
+                localVarQueryParameter['last_updated'] = lastUpdated;
+            }
+
+            if (lastUpdatedAnyOf !== undefined) {
+                localVarQueryParameter['last_updated.any_of'] = lastUpdatedAnyOf;
+            }
+
+            if (lastUpdatedGt !== undefined) {
+                localVarQueryParameter['last_updated.gt'] = lastUpdatedGt;
+            }
+
+            if (lastUpdatedGte !== undefined) {
+                localVarQueryParameter['last_updated.gte'] = lastUpdatedGte;
+            }
+
+            if (lastUpdatedLt !== undefined) {
+                localVarQueryParameter['last_updated.lt'] = lastUpdatedLt;
+            }
+
+            if (lastUpdatedLte !== undefined) {
+                localVarQueryParameter['last_updated.lte'] = lastUpdatedLte;
+            }
+
+            if (fiscalYear !== undefined) {
+                localVarQueryParameter['fiscal_year'] = fiscalYear;
+            }
+
+            if (fiscalYearAnyOf !== undefined) {
+                localVarQueryParameter['fiscal_year.any_of'] = fiscalYearAnyOf;
+            }
+
+            if (fiscalYearGt !== undefined) {
+                localVarQueryParameter['fiscal_year.gt'] = fiscalYearGt;
+            }
+
+            if (fiscalYearGte !== undefined) {
+                localVarQueryParameter['fiscal_year.gte'] = fiscalYearGte;
+            }
+
+            if (fiscalYearLt !== undefined) {
+                localVarQueryParameter['fiscal_year.lt'] = fiscalYearLt;
+            }
+
+            if (fiscalYearLte !== undefined) {
+                localVarQueryParameter['fiscal_year.lte'] = fiscalYearLte;
+            }
+
+            if (fiscalPeriod !== undefined) {
+                localVarQueryParameter['fiscal_period'] = fiscalPeriod;
+            }
+
+            if (fiscalPeriodAnyOf !== undefined) {
+                localVarQueryParameter['fiscal_period.any_of'] = fiscalPeriodAnyOf;
+            }
+
+            if (fiscalPeriodGt !== undefined) {
+                localVarQueryParameter['fiscal_period.gt'] = fiscalPeriodGt;
+            }
+
+            if (fiscalPeriodGte !== undefined) {
+                localVarQueryParameter['fiscal_period.gte'] = fiscalPeriodGte;
+            }
+
+            if (fiscalPeriodLt !== undefined) {
+                localVarQueryParameter['fiscal_period.lt'] = fiscalPeriodLt;
+            }
+
+            if (fiscalPeriodLte !== undefined) {
+                localVarQueryParameter['fiscal_period.lte'] = fiscalPeriodLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
+         * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [publishedGt] Filter greater than the value.
+         * @param {string} [publishedGte] Filter greater than or equal to the value.
+         * @param {string} [publishedLt] Filter less than the value.
+         * @param {string} [publishedLte] Filter less than or equal to the value.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the news article was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [tickers] Filter for arrays that contain the value.
+         * @param {string} [tickersAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickersAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [channels] Filter for arrays that contain the value.
+         * @param {string} [channelsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [channelsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tags] Filter for arrays that contain the value.
+         * @param {string} [tagsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tagsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [author] The name of the journalist or entity that authored the news article.
+         * @param {string} [authorAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [authorGt] Filter greater than the value.
+         * @param {string} [authorGte] Filter greater than or equal to the value.
+         * @param {string} [authorLt] Filter less than the value.
+         * @param {string} [authorLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;published\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1News: async (published?: string, publishedAnyOf?: string, publishedGt?: string, publishedGte?: string, publishedLt?: string, publishedLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, tickers?: string, tickersAllOf?: string, tickersAnyOf?: string, channels?: string, channelsAllOf?: string, channelsAnyOf?: string, tags?: string, tagsAllOf?: string, tagsAnyOf?: string, author?: string, authorAnyOf?: string, authorGt?: string, authorGte?: string, authorLt?: string, authorLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/news`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (published !== undefined) {
+                localVarQueryParameter['published'] = published;
+            }
+
+            if (publishedAnyOf !== undefined) {
+                localVarQueryParameter['published.any_of'] = publishedAnyOf;
+            }
+
+            if (publishedGt !== undefined) {
+                localVarQueryParameter['published.gt'] = publishedGt;
+            }
+
+            if (publishedGte !== undefined) {
+                localVarQueryParameter['published.gte'] = publishedGte;
+            }
+
+            if (publishedLt !== undefined) {
+                localVarQueryParameter['published.lt'] = publishedLt;
+            }
+
+            if (publishedLte !== undefined) {
+                localVarQueryParameter['published.lte'] = publishedLte;
+            }
+
+            if (lastUpdated !== undefined) {
+                localVarQueryParameter['last_updated'] = lastUpdated;
+            }
+
+            if (lastUpdatedAnyOf !== undefined) {
+                localVarQueryParameter['last_updated.any_of'] = lastUpdatedAnyOf;
+            }
+
+            if (lastUpdatedGt !== undefined) {
+                localVarQueryParameter['last_updated.gt'] = lastUpdatedGt;
+            }
+
+            if (lastUpdatedGte !== undefined) {
+                localVarQueryParameter['last_updated.gte'] = lastUpdatedGte;
+            }
+
+            if (lastUpdatedLt !== undefined) {
+                localVarQueryParameter['last_updated.lt'] = lastUpdatedLt;
+            }
+
+            if (lastUpdatedLte !== undefined) {
+                localVarQueryParameter['last_updated.lte'] = lastUpdatedLte;
+            }
+
+            if (tickers !== undefined) {
+                localVarQueryParameter['tickers'] = tickers;
+            }
+
+            if (tickersAllOf !== undefined) {
+                localVarQueryParameter['tickers.all_of'] = tickersAllOf;
+            }
+
+            if (tickersAnyOf !== undefined) {
+                localVarQueryParameter['tickers.any_of'] = tickersAnyOf;
+            }
+
+            if (channels !== undefined) {
+                localVarQueryParameter['channels'] = channels;
+            }
+
+            if (channelsAllOf !== undefined) {
+                localVarQueryParameter['channels.all_of'] = channelsAllOf;
+            }
+
+            if (channelsAnyOf !== undefined) {
+                localVarQueryParameter['channels.any_of'] = channelsAnyOf;
+            }
+
+            if (tags !== undefined) {
+                localVarQueryParameter['tags'] = tags;
+            }
+
+            if (tagsAllOf !== undefined) {
+                localVarQueryParameter['tags.all_of'] = tagsAllOf;
+            }
+
+            if (tagsAnyOf !== undefined) {
+                localVarQueryParameter['tags.any_of'] = tagsAnyOf;
+            }
+
+            if (author !== undefined) {
+                localVarQueryParameter['author'] = author;
+            }
+
+            if (authorAnyOf !== undefined) {
+                localVarQueryParameter['author.any_of'] = authorAnyOf;
+            }
+
+            if (authorGt !== undefined) {
+                localVarQueryParameter['author.gt'] = authorGt;
+            }
+
+            if (authorGte !== undefined) {
+                localVarQueryParameter['author.gte'] = authorGte;
+            }
+
+            if (authorLt !== undefined) {
+                localVarQueryParameter['author.lt'] = authorLt;
+            }
+
+            if (authorLte !== undefined) {
+                localVarQueryParameter['author.lte'] = authorLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company being rated.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
+         * @param {string} [ratingActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [ratingActionGt] Filter greater than the value.
+         * @param {string} [ratingActionGte] Filter greater than or equal to the value.
+         * @param {string} [ratingActionLt] Filter less than the value.
+         * @param {string} [ratingActionLte] Filter less than or equal to the value.
+         * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
+         * @param {string} [priceTargetActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [priceTargetActionGt] Filter greater than the value.
+         * @param {string} [priceTargetActionGte] Filter greater than or equal to the value.
+         * @param {string} [priceTargetActionLt] Filter less than the value.
+         * @param {string} [priceTargetActionLte] Filter less than or equal to the value.
+         * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaAnalystId] Filter equal to the value.
+         * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
+         * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaAnalystIdLt] Filter less than the value.
+         * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] Filter equal to the value.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Ratings: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, ratingAction?: string, ratingActionAnyOf?: string, ratingActionGt?: string, ratingActionGte?: string, ratingActionLt?: string, ratingActionLte?: string, priceTargetAction?: string, priceTargetActionAnyOf?: string, priceTargetActionGt?: string, priceTargetActionGte?: string, priceTargetActionLt?: string, priceTargetActionLte?: string, benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaAnalystId?: string, benzingaAnalystIdAnyOf?: string, benzingaAnalystIdGt?: string, benzingaAnalystIdGte?: string, benzingaAnalystIdLt?: string, benzingaAnalystIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/benzinga/v1/ratings`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (importance !== undefined) {
+                localVarQueryParameter['importance'] = importance;
+            }
+
+            if (importanceAnyOf !== undefined) {
+                localVarQueryParameter['importance.any_of'] = importanceAnyOf;
+            }
+
+            if (importanceGt !== undefined) {
+                localVarQueryParameter['importance.gt'] = importanceGt;
+            }
+
+            if (importanceGte !== undefined) {
+                localVarQueryParameter['importance.gte'] = importanceGte;
+            }
+
+            if (importanceLt !== undefined) {
+                localVarQueryParameter['importance.lt'] = importanceLt;
+            }
+
+            if (importanceLte !== undefined) {
+                localVarQueryParameter['importance.lte'] = importanceLte;
+            }
+
+            if (lastUpdated !== undefined) {
+                localVarQueryParameter['last_updated'] = lastUpdated;
+            }
+
+            if (lastUpdatedAnyOf !== undefined) {
+                localVarQueryParameter['last_updated.any_of'] = lastUpdatedAnyOf;
+            }
+
+            if (lastUpdatedGt !== undefined) {
+                localVarQueryParameter['last_updated.gt'] = lastUpdatedGt;
+            }
+
+            if (lastUpdatedGte !== undefined) {
+                localVarQueryParameter['last_updated.gte'] = lastUpdatedGte;
+            }
+
+            if (lastUpdatedLt !== undefined) {
+                localVarQueryParameter['last_updated.lt'] = lastUpdatedLt;
+            }
+
+            if (lastUpdatedLte !== undefined) {
+                localVarQueryParameter['last_updated.lte'] = lastUpdatedLte;
+            }
+
+            if (ratingAction !== undefined) {
+                localVarQueryParameter['rating_action'] = ratingAction;
+            }
+
+            if (ratingActionAnyOf !== undefined) {
+                localVarQueryParameter['rating_action.any_of'] = ratingActionAnyOf;
+            }
+
+            if (ratingActionGt !== undefined) {
+                localVarQueryParameter['rating_action.gt'] = ratingActionGt;
+            }
+
+            if (ratingActionGte !== undefined) {
+                localVarQueryParameter['rating_action.gte'] = ratingActionGte;
+            }
+
+            if (ratingActionLt !== undefined) {
+                localVarQueryParameter['rating_action.lt'] = ratingActionLt;
+            }
+
+            if (ratingActionLte !== undefined) {
+                localVarQueryParameter['rating_action.lte'] = ratingActionLte;
+            }
+
+            if (priceTargetAction !== undefined) {
+                localVarQueryParameter['price_target_action'] = priceTargetAction;
+            }
+
+            if (priceTargetActionAnyOf !== undefined) {
+                localVarQueryParameter['price_target_action.any_of'] = priceTargetActionAnyOf;
+            }
+
+            if (priceTargetActionGt !== undefined) {
+                localVarQueryParameter['price_target_action.gt'] = priceTargetActionGt;
+            }
+
+            if (priceTargetActionGte !== undefined) {
+                localVarQueryParameter['price_target_action.gte'] = priceTargetActionGte;
+            }
+
+            if (priceTargetActionLt !== undefined) {
+                localVarQueryParameter['price_target_action.lt'] = priceTargetActionLt;
+            }
+
+            if (priceTargetActionLte !== undefined) {
+                localVarQueryParameter['price_target_action.lte'] = priceTargetActionLte;
+            }
+
+            if (benzingaId !== undefined) {
+                localVarQueryParameter['benzinga_id'] = benzingaId;
+            }
+
+            if (benzingaIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_id.any_of'] = benzingaIdAnyOf;
+            }
+
+            if (benzingaIdGt !== undefined) {
+                localVarQueryParameter['benzinga_id.gt'] = benzingaIdGt;
+            }
+
+            if (benzingaIdGte !== undefined) {
+                localVarQueryParameter['benzinga_id.gte'] = benzingaIdGte;
+            }
+
+            if (benzingaIdLt !== undefined) {
+                localVarQueryParameter['benzinga_id.lt'] = benzingaIdLt;
+            }
+
+            if (benzingaIdLte !== undefined) {
+                localVarQueryParameter['benzinga_id.lte'] = benzingaIdLte;
+            }
+
+            if (benzingaAnalystId !== undefined) {
+                localVarQueryParameter['benzinga_analyst_id'] = benzingaAnalystId;
+            }
+
+            if (benzingaAnalystIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_analyst_id.any_of'] = benzingaAnalystIdAnyOf;
+            }
+
+            if (benzingaAnalystIdGt !== undefined) {
+                localVarQueryParameter['benzinga_analyst_id.gt'] = benzingaAnalystIdGt;
+            }
+
+            if (benzingaAnalystIdGte !== undefined) {
+                localVarQueryParameter['benzinga_analyst_id.gte'] = benzingaAnalystIdGte;
+            }
+
+            if (benzingaAnalystIdLt !== undefined) {
+                localVarQueryParameter['benzinga_analyst_id.lt'] = benzingaAnalystIdLt;
+            }
+
+            if (benzingaAnalystIdLte !== undefined) {
+                localVarQueryParameter['benzinga_analyst_id.lte'] = benzingaAnalystIdLte;
+            }
+
+            if (benzingaFirmId !== undefined) {
+                localVarQueryParameter['benzinga_firm_id'] = benzingaFirmId;
+            }
+
+            if (benzingaFirmIdAnyOf !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.any_of'] = benzingaFirmIdAnyOf;
+            }
+
+            if (benzingaFirmIdGt !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.gt'] = benzingaFirmIdGt;
+            }
+
+            if (benzingaFirmIdGte !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.gte'] = benzingaFirmIdGte;
+            }
+
+            if (benzingaFirmIdLt !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.lt'] = benzingaFirmIdLt;
+            }
+
+            if (benzingaFirmIdLte !== undefined) {
+                localVarQueryParameter['benzinga_firm_id.lte'] = benzingaFirmIdLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
          * @summary Aggregates (Bars)
          * @param {string} cryptoTicker The ticker symbol of the currency pair.
@@ -12038,6 +14356,78 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
             if (types !== undefined) {
                 localVarQueryParameter['types'] = types;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFedV1TreasuryYields: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/fed/v1/treasury-yields`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
             }
 
 
@@ -13539,7 +15929,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Get the most recent NBBO (Quote) tick for a given stock.
          * @summary Last Quote
-         * @param {string} stocksTicker The ticker symbol of the stock/equity.
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -13576,7 +15966,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Get the most recent trade for a given stock.
          * @summary Last Trade
-         * @param {string} stocksTicker The ticker symbol of the stock/equity.
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -15216,7 +17606,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Get NBBO quotes for a ticker symbol in a given time range.
          * @summary Quotes (NBBO)
-         * @param {string} stockTicker The ticker symbol to get quotes for.
+         * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {string} [timestamp] Query by timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -15609,7 +17999,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Get trades for a ticker symbol in a given time range.
          * @summary Trades
-         * @param {string} stockTicker The ticker symbol to get trades for.
+         * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -15684,6 +18074,330 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * 
+         * @param {string} [ticker] The primary ticker symbol for the stock.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume. Value must be a floating point number.
+         * @param {string} [daysToCoverAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [daysToCoverGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [daysToCoverGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [daysToCoverLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [daysToCoverLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
+         * @param {string} [settlementDateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [settlementDateGt] Filter greater than the value.
+         * @param {string} [settlementDateGte] Filter greater than or equal to the value.
+         * @param {string} [settlementDateLt] Filter less than the value.
+         * @param {string} [settlementDateLte] Filter less than or equal to the value.
+         * @param {number} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest. Value must be an integer.
+         * @param {string} [avgDailyVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [avgDailyVolumeGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeLt] Filter less than the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksV1ShortInterest: async (ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, daysToCover?: number, daysToCoverAnyOf?: string, daysToCoverGt?: number, daysToCoverGte?: number, daysToCoverLt?: number, daysToCoverLte?: number, settlementDate?: string, settlementDateAnyOf?: string, settlementDateGt?: string, settlementDateGte?: string, settlementDateLt?: string, settlementDateLte?: string, avgDailyVolume?: number, avgDailyVolumeAnyOf?: string, avgDailyVolumeGt?: number, avgDailyVolumeGte?: number, avgDailyVolumeLt?: number, avgDailyVolumeLte?: number, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/stocks/v1/short-interest`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (daysToCover !== undefined) {
+                localVarQueryParameter['days_to_cover'] = daysToCover;
+            }
+
+            if (daysToCoverAnyOf !== undefined) {
+                localVarQueryParameter['days_to_cover.any_of'] = daysToCoverAnyOf;
+            }
+
+            if (daysToCoverGt !== undefined) {
+                localVarQueryParameter['days_to_cover.gt'] = daysToCoverGt;
+            }
+
+            if (daysToCoverGte !== undefined) {
+                localVarQueryParameter['days_to_cover.gte'] = daysToCoverGte;
+            }
+
+            if (daysToCoverLt !== undefined) {
+                localVarQueryParameter['days_to_cover.lt'] = daysToCoverLt;
+            }
+
+            if (daysToCoverLte !== undefined) {
+                localVarQueryParameter['days_to_cover.lte'] = daysToCoverLte;
+            }
+
+            if (settlementDate !== undefined) {
+                localVarQueryParameter['settlement_date'] = settlementDate;
+            }
+
+            if (settlementDateAnyOf !== undefined) {
+                localVarQueryParameter['settlement_date.any_of'] = settlementDateAnyOf;
+            }
+
+            if (settlementDateGt !== undefined) {
+                localVarQueryParameter['settlement_date.gt'] = settlementDateGt;
+            }
+
+            if (settlementDateGte !== undefined) {
+                localVarQueryParameter['settlement_date.gte'] = settlementDateGte;
+            }
+
+            if (settlementDateLt !== undefined) {
+                localVarQueryParameter['settlement_date.lt'] = settlementDateLt;
+            }
+
+            if (settlementDateLte !== undefined) {
+                localVarQueryParameter['settlement_date.lte'] = settlementDateLte;
+            }
+
+            if (avgDailyVolume !== undefined) {
+                localVarQueryParameter['avg_daily_volume'] = avgDailyVolume;
+            }
+
+            if (avgDailyVolumeAnyOf !== undefined) {
+                localVarQueryParameter['avg_daily_volume.any_of'] = avgDailyVolumeAnyOf;
+            }
+
+            if (avgDailyVolumeGt !== undefined) {
+                localVarQueryParameter['avg_daily_volume.gt'] = avgDailyVolumeGt;
+            }
+
+            if (avgDailyVolumeGte !== undefined) {
+                localVarQueryParameter['avg_daily_volume.gte'] = avgDailyVolumeGte;
+            }
+
+            if (avgDailyVolumeLt !== undefined) {
+                localVarQueryParameter['avg_daily_volume.lt'] = avgDailyVolumeLt;
+            }
+
+            if (avgDailyVolumeLte !== undefined) {
+                localVarQueryParameter['avg_daily_volume.lte'] = avgDailyVolumeLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [ticker] The primary ticker symbol for the stock.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100. Value must be a floating point number.
+         * @param {string} [shortVolumeRatioAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [totalVolume] Total reported volume across all venues for the ticker on the given date. Value must be an integer.
+         * @param {string} [totalVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [totalVolumeGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [totalVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [totalVolumeLt] Filter less than the value. Value must be an integer.
+         * @param {number} [totalVolumeLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksV1ShortVolume: async (ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, shortVolumeRatio?: number, shortVolumeRatioAnyOf?: string, shortVolumeRatioGt?: number, shortVolumeRatioGte?: number, shortVolumeRatioLt?: number, shortVolumeRatioLte?: number, totalVolume?: number, totalVolumeAnyOf?: string, totalVolumeGt?: number, totalVolumeGte?: number, totalVolumeLt?: number, totalVolumeLte?: number, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/stocks/v1/short-volume`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (shortVolumeRatio !== undefined) {
+                localVarQueryParameter['short_volume_ratio'] = shortVolumeRatio;
+            }
+
+            if (shortVolumeRatioAnyOf !== undefined) {
+                localVarQueryParameter['short_volume_ratio.any_of'] = shortVolumeRatioAnyOf;
+            }
+
+            if (shortVolumeRatioGt !== undefined) {
+                localVarQueryParameter['short_volume_ratio.gt'] = shortVolumeRatioGt;
+            }
+
+            if (shortVolumeRatioGte !== undefined) {
+                localVarQueryParameter['short_volume_ratio.gte'] = shortVolumeRatioGte;
+            }
+
+            if (shortVolumeRatioLt !== undefined) {
+                localVarQueryParameter['short_volume_ratio.lt'] = shortVolumeRatioLt;
+            }
+
+            if (shortVolumeRatioLte !== undefined) {
+                localVarQueryParameter['short_volume_ratio.lte'] = shortVolumeRatioLte;
+            }
+
+            if (totalVolume !== undefined) {
+                localVarQueryParameter['total_volume'] = totalVolume;
+            }
+
+            if (totalVolumeAnyOf !== undefined) {
+                localVarQueryParameter['total_volume.any_of'] = totalVolumeAnyOf;
+            }
+
+            if (totalVolumeGt !== undefined) {
+                localVarQueryParameter['total_volume.gt'] = totalVolumeGt;
+            }
+
+            if (totalVolumeGte !== undefined) {
+                localVarQueryParameter['total_volume.gte'] = totalVolumeGte;
+            }
+
+            if (totalVolumeLt !== undefined) {
+                localVarQueryParameter['total_volume.lt'] = totalVolumeLt;
+            }
+
+            if (totalVolumeLte !== undefined) {
+                localVarQueryParameter['total_volume.lte'] = totalVolumeLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get a single ticker supported by Polygon.io. This response will have detailed information about the ticker and the company behind it.
          * @summary Ticker Details v3
          * @param {string} ticker The ticker symbol of the asset.
@@ -15714,400 +18428,6 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['date'] = (date as any instanceof Date) ?
                     (date as any).toISOString().substring(0,10) :
                     date;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Retrieve earnings_v1 data via API.
-         * @summary earnings_v1 API
-         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
-         * @param {string} [ticker] The stock symbol of the company reporting earnings.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {ListBenzingaEarningsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaEarningsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listBenzingaEarnings: async (date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/benzinga/vX/earnings`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (date !== undefined) {
-                localVarQueryParameter['date'] = date;
-            }
-
-            if (ticker !== undefined) {
-                localVarQueryParameter['ticker'] = ticker;
-            }
-
-            if (dateGte !== undefined) {
-                localVarQueryParameter['date.gte'] = dateGte;
-            }
-
-            if (dateGt !== undefined) {
-                localVarQueryParameter['date.gt'] = dateGt;
-            }
-
-            if (dateLte !== undefined) {
-                localVarQueryParameter['date.lte'] = dateLte;
-            }
-
-            if (dateLt !== undefined) {
-                localVarQueryParameter['date.lt'] = dateLt;
-            }
-
-            if (tickerGte !== undefined) {
-                localVarQueryParameter['ticker.gte'] = tickerGte;
-            }
-
-            if (tickerGt !== undefined) {
-                localVarQueryParameter['ticker.gt'] = tickerGt;
-            }
-
-            if (tickerLte !== undefined) {
-                localVarQueryParameter['ticker.lte'] = tickerLte;
-            }
-
-            if (tickerLt !== undefined) {
-                localVarQueryParameter['ticker.lt'] = tickerLt;
-            }
-
-            if (order !== undefined) {
-                localVarQueryParameter['order'] = order;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Retrieve news_v1 data via API.
-         * @summary news_v1 API
-         * @param {string} [created] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
-         * @param {string} [tickers] A list of stock or crypto tickers mentioned in the article.
-         * @param {string} [createdGte] Range by created.
-         * @param {string} [createdGt] Range by created.
-         * @param {string} [createdLte] Range by created.
-         * @param {string} [createdLt] Range by created.
-         * @param {string} [tickersGte] Range by tickers.
-         * @param {string} [tickersGt] Range by tickers.
-         * @param {string} [tickersLte] Range by tickers.
-         * @param {string} [tickersLt] Range by tickers.
-         * @param {ListBenzingaNewsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaNewsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listBenzingaNews: async (created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/benzinga/vX/news`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (created !== undefined) {
-                localVarQueryParameter['created'] = created;
-            }
-
-            if (tickers !== undefined) {
-                localVarQueryParameter['tickers'] = tickers;
-            }
-
-            if (createdGte !== undefined) {
-                localVarQueryParameter['created.gte'] = createdGte;
-            }
-
-            if (createdGt !== undefined) {
-                localVarQueryParameter['created.gt'] = createdGt;
-            }
-
-            if (createdLte !== undefined) {
-                localVarQueryParameter['created.lte'] = createdLte;
-            }
-
-            if (createdLt !== undefined) {
-                localVarQueryParameter['created.lt'] = createdLt;
-            }
-
-            if (tickersGte !== undefined) {
-                localVarQueryParameter['tickers.gte'] = tickersGte;
-            }
-
-            if (tickersGt !== undefined) {
-                localVarQueryParameter['tickers.gt'] = tickersGt;
-            }
-
-            if (tickersLte !== undefined) {
-                localVarQueryParameter['tickers.lte'] = tickersLte;
-            }
-
-            if (tickersLt !== undefined) {
-                localVarQueryParameter['tickers.lt'] = tickersLt;
-            }
-
-            if (order !== undefined) {
-                localVarQueryParameter['order'] = order;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Retrieve ratings_v1 data via API.
-         * @summary ratings_v1 API
-         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
-         * @param {string} [ticker] The stock symbol of the company being rated.
-         * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrade, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
-         * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
-         * @param {string} [rating] The current rating set by the analyst.
-         * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [ratingActionGte] Range by rating_action.
-         * @param {string} [ratingActionGt] Range by rating_action.
-         * @param {string} [ratingActionLte] Range by rating_action.
-         * @param {string} [ratingActionLt] Range by rating_action.
-         * @param {string} [priceTargetActionGte] Range by price_target_action.
-         * @param {string} [priceTargetActionGt] Range by price_target_action.
-         * @param {string} [priceTargetActionLte] Range by price_target_action.
-         * @param {string} [priceTargetActionLt] Range by price_target_action.
-         * @param {string} [ratingGte] Range by rating.
-         * @param {string} [ratingGt] Range by rating.
-         * @param {string} [ratingLte] Range by rating.
-         * @param {string} [ratingLt] Range by rating.
-         * @param {string} [firmGte] Range by firm.
-         * @param {string} [firmGt] Range by firm.
-         * @param {string} [firmLte] Range by firm.
-         * @param {string} [firmLt] Range by firm.
-         * @param {ListBenzingaRatingsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaRatingsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listBenzingaRatings: async (date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/benzinga/vX/ratings`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (date !== undefined) {
-                localVarQueryParameter['date'] = date;
-            }
-
-            if (ticker !== undefined) {
-                localVarQueryParameter['ticker'] = ticker;
-            }
-
-            if (ratingAction !== undefined) {
-                localVarQueryParameter['rating_action'] = ratingAction;
-            }
-
-            if (priceTargetAction !== undefined) {
-                localVarQueryParameter['price_target_action'] = priceTargetAction;
-            }
-
-            if (rating !== undefined) {
-                localVarQueryParameter['rating'] = rating;
-            }
-
-            if (firm !== undefined) {
-                localVarQueryParameter['firm'] = firm;
-            }
-
-            if (dateGte !== undefined) {
-                localVarQueryParameter['date.gte'] = dateGte;
-            }
-
-            if (dateGt !== undefined) {
-                localVarQueryParameter['date.gt'] = dateGt;
-            }
-
-            if (dateLte !== undefined) {
-                localVarQueryParameter['date.lte'] = dateLte;
-            }
-
-            if (dateLt !== undefined) {
-                localVarQueryParameter['date.lt'] = dateLt;
-            }
-
-            if (tickerGte !== undefined) {
-                localVarQueryParameter['ticker.gte'] = tickerGte;
-            }
-
-            if (tickerGt !== undefined) {
-                localVarQueryParameter['ticker.gt'] = tickerGt;
-            }
-
-            if (tickerLte !== undefined) {
-                localVarQueryParameter['ticker.lte'] = tickerLte;
-            }
-
-            if (tickerLt !== undefined) {
-                localVarQueryParameter['ticker.lt'] = tickerLt;
-            }
-
-            if (ratingActionGte !== undefined) {
-                localVarQueryParameter['rating_action.gte'] = ratingActionGte;
-            }
-
-            if (ratingActionGt !== undefined) {
-                localVarQueryParameter['rating_action.gt'] = ratingActionGt;
-            }
-
-            if (ratingActionLte !== undefined) {
-                localVarQueryParameter['rating_action.lte'] = ratingActionLte;
-            }
-
-            if (ratingActionLt !== undefined) {
-                localVarQueryParameter['rating_action.lt'] = ratingActionLt;
-            }
-
-            if (priceTargetActionGte !== undefined) {
-                localVarQueryParameter['price_target_action.gte'] = priceTargetActionGte;
-            }
-
-            if (priceTargetActionGt !== undefined) {
-                localVarQueryParameter['price_target_action.gt'] = priceTargetActionGt;
-            }
-
-            if (priceTargetActionLte !== undefined) {
-                localVarQueryParameter['price_target_action.lte'] = priceTargetActionLte;
-            }
-
-            if (priceTargetActionLt !== undefined) {
-                localVarQueryParameter['price_target_action.lt'] = priceTargetActionLt;
-            }
-
-            if (ratingGte !== undefined) {
-                localVarQueryParameter['rating.gte'] = ratingGte;
-            }
-
-            if (ratingGt !== undefined) {
-                localVarQueryParameter['rating.gt'] = ratingGt;
-            }
-
-            if (ratingLte !== undefined) {
-                localVarQueryParameter['rating.lte'] = ratingLte;
-            }
-
-            if (ratingLt !== undefined) {
-                localVarQueryParameter['rating.lt'] = ratingLt;
-            }
-
-            if (firmGte !== undefined) {
-                localVarQueryParameter['firm.gte'] = firmGte;
-            }
-
-            if (firmGt !== undefined) {
-                localVarQueryParameter['firm.gt'] = firmGt;
-            }
-
-            if (firmLte !== undefined) {
-                localVarQueryParameter['firm.lte'] = firmLte;
-            }
-
-            if (firmLt !== undefined) {
-                localVarQueryParameter['firm.lt'] = firmLt;
-            }
-
-            if (order !== undefined) {
-                localVarQueryParameter['order'] = order;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
             }
 
 
@@ -16636,7 +18956,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * The IPOs API provides access to detailed information about Initial Public Offerings (IPOs), including both upcoming and historical events. With this API, you can query for a comprehensive list of IPOs, along with key details such as the issuer name, ticker symbol, ISIN, IPO date, number of shares offered, expected price range, and final offering price. You can filter the results by status to focus on new, rumors, pending, historical, and more.
          * @summary IPOs
-         * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, TSLA represents Tesla Inc.
          * @param {string} [usCode] Specify a us_code. This is a unique nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades.
          * @param {string} [isin] Specify an International Securities Identification Number (ISIN). This is a unique twelve-digit code that is assigned to every security issuance in the world.
          * @param {string} [listingDate] Specify a listing date. This is the first trading date for the newly listed entity.
@@ -16847,8 +19167,8 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Query for historical options contracts. This provides both active and expired options contracts.
          * @summary Options Contracts
-         * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
          * @param {string} [underlyingTicker] Query for contracts relating to an underlying stock ticker.
+         * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
          * @param {ListOptionsContractsContractTypeEnum} [contractType] Query by the type of contract.
          * @param {string} [expirationDate] Query by contract expiration with date format YYYY-MM-DD.
          * @param {string} [asOf] Specify a point in time for contracts as of this date with format YYYY-MM-DD. Defaults to today\&#39;s date.
@@ -16872,7 +19192,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOptionsContracts: async (ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listOptionsContracts: async (underlyingTicker?: string, ticker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v3/reference/options/contracts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -16888,12 +19208,12 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             // authentication apiKey required
             await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
 
-            if (ticker !== undefined) {
-                localVarQueryParameter['ticker'] = ticker;
-            }
-
             if (underlyingTicker !== undefined) {
                 localVarQueryParameter['underlying_ticker'] = underlyingTicker;
+            }
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
             }
 
             if (contractType !== undefined) {
@@ -17101,302 +19421,6 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Retrieve finra_short_interest_v1 data via API.
-         * @summary finra_short_interest_v1 API
-         * @param {string} [ticker] The primary ticker symbol for the stock.
-         * @param {string} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume.
-         * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
-         * @param {string} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [daysToCoverGte] Range by days_to_cover.
-         * @param {string} [daysToCoverGt] Range by days_to_cover.
-         * @param {string} [daysToCoverLte] Range by days_to_cover.
-         * @param {string} [daysToCoverLt] Range by days_to_cover.
-         * @param {string} [settlementDateGte] Range by settlement_date.
-         * @param {string} [settlementDateGt] Range by settlement_date.
-         * @param {string} [settlementDateLte] Range by settlement_date.
-         * @param {string} [settlementDateLt] Range by settlement_date.
-         * @param {string} [avgDailyVolumeGte] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeGt] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeLte] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeLt] Range by avg_daily_volume.
-         * @param {ListStocksShortInterestOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-         * @param {ListStocksShortInterestSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listStocksShortInterest: async (ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/stocks/vX/short-interest`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (ticker !== undefined) {
-                localVarQueryParameter['ticker'] = ticker;
-            }
-
-            if (daysToCover !== undefined) {
-                localVarQueryParameter['days_to_cover'] = daysToCover;
-            }
-
-            if (settlementDate !== undefined) {
-                localVarQueryParameter['settlement_date'] = settlementDate;
-            }
-
-            if (avgDailyVolume !== undefined) {
-                localVarQueryParameter['avg_daily_volume'] = avgDailyVolume;
-            }
-
-            if (tickerGte !== undefined) {
-                localVarQueryParameter['ticker.gte'] = tickerGte;
-            }
-
-            if (tickerGt !== undefined) {
-                localVarQueryParameter['ticker.gt'] = tickerGt;
-            }
-
-            if (tickerLte !== undefined) {
-                localVarQueryParameter['ticker.lte'] = tickerLte;
-            }
-
-            if (tickerLt !== undefined) {
-                localVarQueryParameter['ticker.lt'] = tickerLt;
-            }
-
-            if (daysToCoverGte !== undefined) {
-                localVarQueryParameter['days_to_cover.gte'] = daysToCoverGte;
-            }
-
-            if (daysToCoverGt !== undefined) {
-                localVarQueryParameter['days_to_cover.gt'] = daysToCoverGt;
-            }
-
-            if (daysToCoverLte !== undefined) {
-                localVarQueryParameter['days_to_cover.lte'] = daysToCoverLte;
-            }
-
-            if (daysToCoverLt !== undefined) {
-                localVarQueryParameter['days_to_cover.lt'] = daysToCoverLt;
-            }
-
-            if (settlementDateGte !== undefined) {
-                localVarQueryParameter['settlement_date.gte'] = settlementDateGte;
-            }
-
-            if (settlementDateGt !== undefined) {
-                localVarQueryParameter['settlement_date.gt'] = settlementDateGt;
-            }
-
-            if (settlementDateLte !== undefined) {
-                localVarQueryParameter['settlement_date.lte'] = settlementDateLte;
-            }
-
-            if (settlementDateLt !== undefined) {
-                localVarQueryParameter['settlement_date.lt'] = settlementDateLt;
-            }
-
-            if (avgDailyVolumeGte !== undefined) {
-                localVarQueryParameter['avg_daily_volume.gte'] = avgDailyVolumeGte;
-            }
-
-            if (avgDailyVolumeGt !== undefined) {
-                localVarQueryParameter['avg_daily_volume.gt'] = avgDailyVolumeGt;
-            }
-
-            if (avgDailyVolumeLte !== undefined) {
-                localVarQueryParameter['avg_daily_volume.lte'] = avgDailyVolumeLte;
-            }
-
-            if (avgDailyVolumeLt !== undefined) {
-                localVarQueryParameter['avg_daily_volume.lt'] = avgDailyVolumeLt;
-            }
-
-            if (order !== undefined) {
-                localVarQueryParameter['order'] = order;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Retrieve finra_short_volume_v1 data via API.
-         * @summary finra_short_volume_v1 API
-         * @param {string} [ticker] The primary ticker symbol for the stock.
-         * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
-         * @param {string} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100.
-         * @param {string} [totalVolume] Total reported volume across all venues for the ticker on the given date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [shortVolumeRatioGte] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioGt] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioLte] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioLt] Range by short_volume_ratio.
-         * @param {string} [totalVolumeGte] Range by total_volume.
-         * @param {string} [totalVolumeGt] Range by total_volume.
-         * @param {string} [totalVolumeLte] Range by total_volume.
-         * @param {string} [totalVolumeLt] Range by total_volume.
-         * @param {ListStocksShortVolumeOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-         * @param {ListStocksShortVolumeSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listStocksShortVolume: async (ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/stocks/vX/short-volume`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (ticker !== undefined) {
-                localVarQueryParameter['ticker'] = ticker;
-            }
-
-            if (date !== undefined) {
-                localVarQueryParameter['date'] = date;
-            }
-
-            if (shortVolumeRatio !== undefined) {
-                localVarQueryParameter['short_volume_ratio'] = shortVolumeRatio;
-            }
-
-            if (totalVolume !== undefined) {
-                localVarQueryParameter['total_volume'] = totalVolume;
-            }
-
-            if (tickerGte !== undefined) {
-                localVarQueryParameter['ticker.gte'] = tickerGte;
-            }
-
-            if (tickerGt !== undefined) {
-                localVarQueryParameter['ticker.gt'] = tickerGt;
-            }
-
-            if (tickerLte !== undefined) {
-                localVarQueryParameter['ticker.lte'] = tickerLte;
-            }
-
-            if (tickerLt !== undefined) {
-                localVarQueryParameter['ticker.lt'] = tickerLt;
-            }
-
-            if (dateGte !== undefined) {
-                localVarQueryParameter['date.gte'] = dateGte;
-            }
-
-            if (dateGt !== undefined) {
-                localVarQueryParameter['date.gt'] = dateGt;
-            }
-
-            if (dateLte !== undefined) {
-                localVarQueryParameter['date.lte'] = dateLte;
-            }
-
-            if (dateLt !== undefined) {
-                localVarQueryParameter['date.lt'] = dateLt;
-            }
-
-            if (shortVolumeRatioGte !== undefined) {
-                localVarQueryParameter['short_volume_ratio.gte'] = shortVolumeRatioGte;
-            }
-
-            if (shortVolumeRatioGt !== undefined) {
-                localVarQueryParameter['short_volume_ratio.gt'] = shortVolumeRatioGt;
-            }
-
-            if (shortVolumeRatioLte !== undefined) {
-                localVarQueryParameter['short_volume_ratio.lte'] = shortVolumeRatioLte;
-            }
-
-            if (shortVolumeRatioLt !== undefined) {
-                localVarQueryParameter['short_volume_ratio.lt'] = shortVolumeRatioLt;
-            }
-
-            if (totalVolumeGte !== undefined) {
-                localVarQueryParameter['total_volume.gte'] = totalVolumeGte;
-            }
-
-            if (totalVolumeGt !== undefined) {
-                localVarQueryParameter['total_volume.gt'] = totalVolumeGt;
-            }
-
-            if (totalVolumeLte !== undefined) {
-                localVarQueryParameter['total_volume.lte'] = totalVolumeLte;
-            }
-
-            if (totalVolumeLt !== undefined) {
-                localVarQueryParameter['total_volume.lt'] = totalVolumeLt;
-            }
-
-            if (order !== undefined) {
-                localVarQueryParameter['order'] = order;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * List all ticker types that Polygon.io has.
          * @summary Ticker Types
          * @param {ListTickerTypesAssetClassEnum} [assetClass] Filter by asset class.
@@ -17554,79 +19578,6 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * Retrieve treasury_yields_v1 data via API.
-         * @summary treasury_yields_v1 API
-         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {ListTreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListTreasuryYieldsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listTreasuryYields: async (date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/fed/vX/treasury-yields`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication apiKey required
-            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
-
-            if (date !== undefined) {
-                localVarQueryParameter['date'] = date;
-            }
-
-            if (dateGte !== undefined) {
-                localVarQueryParameter['date.gte'] = dateGte;
-            }
-
-            if (dateGt !== undefined) {
-                localVarQueryParameter['date.gt'] = dateGt;
-            }
-
-            if (dateLte !== undefined) {
-                localVarQueryParameter['date.lte'] = dateLte;
-            }
-
-            if (dateLt !== undefined) {
-                localVarQueryParameter['date.lt'] = dateLt;
-            }
-
-            if (order !== undefined) {
-                localVarQueryParameter['order'] = order;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -17718,6 +19669,358 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.deprecatedGetHistoricStocksTrades']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company being rated.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
+         * @param {string} [firmAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [firmGt] Filter greater than the value.
+         * @param {string} [firmGte] Filter greater than or equal to the value.
+         * @param {string} [firmLt] Filter less than the value.
+         * @param {string} [firmLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] The identifer used by Benzinga for the firm record.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaRatingId] The identifier used by Benzinga for the rating record.
+         * @param {string} [benzingaRatingIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaRatingIdGt] Filter greater than the value.
+         * @param {string} [benzingaRatingIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaRatingIdLt] Filter less than the value.
+         * @param {string} [benzingaRatingIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1AnalystInsights(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, firm?: string, firmAnyOf?: string, firmGt?: string, firmGte?: string, firmLt?: string, firmLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, benzingaRatingId?: string, benzingaRatingIdAnyOf?: string, benzingaRatingIdGt?: string, benzingaRatingIdGte?: string, benzingaRatingIdLt?: string, benzingaRatingIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1AnalystInsights200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1AnalystInsights(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, firm, firmAnyOf, firmGt, firmGte, firmLt, firmLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, benzingaRatingId, benzingaRatingIdAnyOf, benzingaRatingIdGt, benzingaRatingIdGte, benzingaRatingIdLt, benzingaRatingIdLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1AnalystInsights']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [benzingaId] The identifier used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] The unique identifier assigned by Benzinga to the research firm or investment bank.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {string} [firmName] The name of the research firm or investment bank issuing the ratings.
+         * @param {string} [firmNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [firmNameGt] Filter greater than the value.
+         * @param {string} [firmNameGte] Filter greater than or equal to the value.
+         * @param {string} [firmNameLt] Filter less than the value.
+         * @param {string} [firmNameLte] Filter less than or equal to the value.
+         * @param {string} [fullName] The full name of the analyst associated with the ratings.
+         * @param {string} [fullNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fullNameGt] Filter greater than the value.
+         * @param {string} [fullNameGte] Filter greater than or equal to the value.
+         * @param {string} [fullNameLt] Filter less than the value.
+         * @param {string} [fullNameLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;full_name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1Analysts(benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, firmName?: string, firmNameAnyOf?: string, firmNameGt?: string, firmNameGte?: string, firmNameLt?: string, firmNameLte?: string, fullName?: string, fullNameAnyOf?: string, fullNameGt?: string, fullNameGte?: string, fullNameLt?: string, fullNameLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1Analysts200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1Analysts(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, firmName, firmNameAnyOf, firmNameGt, firmNameGte, firmNameLt, firmNameLte, fullName, fullNameAnyOf, fullNameGt, fullNameGte, fullNameLt, fullNameLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1Analysts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} ticker The requested ticker.
+         * @param {string} [date] Filter equal to the value.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1ConsensusRatings(ticker: string, date?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1ConsensusRatings200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1ConsensusRatings(ticker, date, dateGt, dateGte, dateLt, dateLte, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1ConsensusRatings']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company reporting earnings.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [dateStatus] Indicates whether the date of the earnings report has been confirmed. Possible values include: projected, confirmed.
+         * @param {string} [dateStatusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateStatusGt] Filter greater than the value.
+         * @param {string} [dateStatusGte] Filter greater than or equal to the value.
+         * @param {string} [dateStatusLt] Filter less than the value.
+         * @param {string} [dateStatusLte] Filter less than or equal to the value.
+         * @param {number} [epsSurprisePercent] The percentage difference between the actual and estimated EPS. Value must be a floating point number.
+         * @param {string} [epsSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercent] The percentage difference between the actual and estimated revenue. Value must be a floating point number.
+         * @param {string} [revenueSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [fiscalYear] The fiscal year in which the earnings period falls. Value must be an integer.
+         * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+         * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [fiscalPeriod] The fiscal period for which the earnings are reported. Examples include: Q1, Q2, H1, FY.
+         * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fiscalPeriodGt] Filter greater than the value.
+         * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+         * @param {string} [fiscalPeriodLt] Filter less than the value.
+         * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1Earnings(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, dateStatus?: string, dateStatusAnyOf?: string, dateStatusGt?: string, dateStatusGte?: string, dateStatusLt?: string, dateStatusLte?: string, epsSurprisePercent?: number, epsSurprisePercentAnyOf?: string, epsSurprisePercentGt?: number, epsSurprisePercentGte?: number, epsSurprisePercentLt?: number, epsSurprisePercentLte?: number, revenueSurprisePercent?: number, revenueSurprisePercentAnyOf?: string, revenueSurprisePercentGt?: number, revenueSurprisePercentGte?: number, revenueSurprisePercentLt?: number, revenueSurprisePercentLte?: number, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1Earnings200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1Earnings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, dateStatus, dateStatusAnyOf, dateStatusGt, dateStatusGte, dateStatusLt, dateStatusLte, epsSurprisePercent, epsSurprisePercentAnyOf, epsSurprisePercentGt, epsSurprisePercentGte, epsSurprisePercentLt, epsSurprisePercentLte, revenueSurprisePercent, revenueSurprisePercentAnyOf, revenueSurprisePercentGt, revenueSurprisePercentGte, revenueSurprisePercentLt, revenueSurprisePercentLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1Earnings']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1Firms(benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1Firms200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1Firms(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1Firms']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company issuing guidance.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [positioning] Indicates how a particular guidance value is presented relative to other figures disclosed by the company. Possible values are \&#39;primary\&#39; (the emphasized figure) and \&#39;secondary\&#39; (a supporting or alternate figure)
+         * @param {string} [positioningAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [positioningGt] Filter greater than the value.
+         * @param {string} [positioningGte] Filter greater than or equal to the value.
+         * @param {string} [positioningLt] Filter less than the value.
+         * @param {string} [positioningLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {number} [fiscalYear] The fiscal year corresponding to the period for which the guidance is issued. Value must be an integer.
+         * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+         * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [fiscalPeriod] The fiscal quarter to which the guidance applies, such as Q1, Q2, Q3, or Q4.
+         * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fiscalPeriodGt] Filter greater than the value.
+         * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+         * @param {string} [fiscalPeriodLt] Filter less than the value.
+         * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1Guidance(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, positioning?: string, positioningAnyOf?: string, positioningGt?: string, positioningGte?: string, positioningLt?: string, positioningLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1Guidance200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1Guidance(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, positioning, positioningAnyOf, positioningGt, positioningGte, positioningLt, positioningLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1Guidance']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
+         * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [publishedGt] Filter greater than the value.
+         * @param {string} [publishedGte] Filter greater than or equal to the value.
+         * @param {string} [publishedLt] Filter less than the value.
+         * @param {string} [publishedLte] Filter less than or equal to the value.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the news article was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [tickers] Filter for arrays that contain the value.
+         * @param {string} [tickersAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickersAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [channels] Filter for arrays that contain the value.
+         * @param {string} [channelsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [channelsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tags] Filter for arrays that contain the value.
+         * @param {string} [tagsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tagsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [author] The name of the journalist or entity that authored the news article.
+         * @param {string} [authorAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [authorGt] Filter greater than the value.
+         * @param {string} [authorGte] Filter greater than or equal to the value.
+         * @param {string} [authorLt] Filter less than the value.
+         * @param {string} [authorLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;published\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1News(published?: string, publishedAnyOf?: string, publishedGt?: string, publishedGte?: string, publishedLt?: string, publishedLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, tickers?: string, tickersAllOf?: string, tickersAnyOf?: string, channels?: string, channelsAllOf?: string, channelsAnyOf?: string, tags?: string, tagsAllOf?: string, tagsAnyOf?: string, author?: string, authorAnyOf?: string, authorGt?: string, authorGte?: string, authorLt?: string, authorLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1News200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1News(published, publishedAnyOf, publishedGt, publishedGte, publishedLt, publishedLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, tickers, tickersAllOf, tickersAnyOf, channels, channelsAllOf, channelsAnyOf, tags, tagsAllOf, tagsAnyOf, author, authorAnyOf, authorGt, authorGte, authorLt, authorLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1News']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company being rated.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
+         * @param {string} [ratingActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [ratingActionGt] Filter greater than the value.
+         * @param {string} [ratingActionGte] Filter greater than or equal to the value.
+         * @param {string} [ratingActionLt] Filter less than the value.
+         * @param {string} [ratingActionLte] Filter less than or equal to the value.
+         * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
+         * @param {string} [priceTargetActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [priceTargetActionGt] Filter greater than the value.
+         * @param {string} [priceTargetActionGte] Filter greater than or equal to the value.
+         * @param {string} [priceTargetActionLt] Filter less than the value.
+         * @param {string} [priceTargetActionLte] Filter less than or equal to the value.
+         * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaAnalystId] Filter equal to the value.
+         * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
+         * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaAnalystIdLt] Filter less than the value.
+         * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] Filter equal to the value.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getBenzingaV1Ratings(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, ratingAction?: string, ratingActionAnyOf?: string, ratingActionGt?: string, ratingActionGte?: string, ratingActionLt?: string, ratingActionLte?: string, priceTargetAction?: string, priceTargetActionAnyOf?: string, priceTargetActionGt?: string, priceTargetActionGte?: string, priceTargetActionLt?: string, priceTargetActionLte?: string, benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaAnalystId?: string, benzingaAnalystIdAnyOf?: string, benzingaAnalystIdGt?: string, benzingaAnalystIdGte?: string, benzingaAnalystIdLt?: string, benzingaAnalystIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetBenzingaV1Ratings200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBenzingaV1Ratings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, ratingAction, ratingActionAnyOf, ratingActionGt, ratingActionGte, ratingActionLt, ratingActionLte, priceTargetAction, priceTargetActionAnyOf, priceTargetActionGt, priceTargetActionGte, priceTargetActionLt, priceTargetActionLte, benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaAnalystId, benzingaAnalystIdAnyOf, benzingaAnalystIdGt, benzingaAnalystIdGte, benzingaAnalystIdLt, benzingaAnalystIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getBenzingaV1Ratings']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -17942,6 +20245,25 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEvents(id, types, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getEvents']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFedV1TreasuryYields(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFedV1TreasuryYields200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFedV1TreasuryYields(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFedV1TreasuryYields']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -18369,7 +20691,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Get the most recent NBBO (Quote) tick for a given stock.
          * @summary Last Quote
-         * @param {string} stocksTicker The ticker symbol of the stock/equity.
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -18382,7 +20704,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Get the most recent trade for a given stock.
          * @summary Last Trade
-         * @param {string} stocksTicker The ticker symbol of the stock/equity.
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -18857,7 +21179,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Get NBBO quotes for a ticker symbol in a given time range.
          * @summary Quotes (NBBO)
-         * @param {string} stockTicker The ticker symbol to get quotes for.
+         * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {string} [timestamp] Query by timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -18969,7 +21291,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Get trades for a ticker symbol in a given time range.
          * @summary Trades
-         * @param {string} stockTicker The ticker symbol to get trades for.
+         * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -18988,6 +21310,80 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @param {string} [ticker] The primary ticker symbol for the stock.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume. Value must be a floating point number.
+         * @param {string} [daysToCoverAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [daysToCoverGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [daysToCoverGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [daysToCoverLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [daysToCoverLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
+         * @param {string} [settlementDateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [settlementDateGt] Filter greater than the value.
+         * @param {string} [settlementDateGte] Filter greater than or equal to the value.
+         * @param {string} [settlementDateLt] Filter less than the value.
+         * @param {string} [settlementDateLte] Filter less than or equal to the value.
+         * @param {number} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest. Value must be an integer.
+         * @param {string} [avgDailyVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [avgDailyVolumeGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeLt] Filter less than the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksV1ShortInterest(ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, daysToCover?: number, daysToCoverAnyOf?: string, daysToCoverGt?: number, daysToCoverGte?: number, daysToCoverLt?: number, daysToCoverLte?: number, settlementDate?: string, settlementDateAnyOf?: string, settlementDateGt?: string, settlementDateGte?: string, settlementDateLt?: string, settlementDateLte?: string, avgDailyVolume?: number, avgDailyVolumeAnyOf?: string, avgDailyVolumeGt?: number, avgDailyVolumeGte?: number, avgDailyVolumeLt?: number, avgDailyVolumeLte?: number, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksV1ShortInterest200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksV1ShortInterest(ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, daysToCover, daysToCoverAnyOf, daysToCoverGt, daysToCoverGte, daysToCoverLt, daysToCoverLte, settlementDate, settlementDateAnyOf, settlementDateGt, settlementDateGte, settlementDateLt, settlementDateLte, avgDailyVolume, avgDailyVolumeAnyOf, avgDailyVolumeGt, avgDailyVolumeGte, avgDailyVolumeLt, avgDailyVolumeLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksV1ShortInterest']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [ticker] The primary ticker symbol for the stock.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100. Value must be a floating point number.
+         * @param {string} [shortVolumeRatioAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [totalVolume] Total reported volume across all venues for the ticker on the given date. Value must be an integer.
+         * @param {string} [totalVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [totalVolumeGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [totalVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [totalVolumeLt] Filter less than the value. Value must be an integer.
+         * @param {number} [totalVolumeLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStocksV1ShortVolume(ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, shortVolumeRatio?: number, shortVolumeRatioAnyOf?: string, shortVolumeRatioGt?: number, shortVolumeRatioGte?: number, shortVolumeRatioLt?: number, shortVolumeRatioLte?: number, totalVolume?: number, totalVolumeAnyOf?: string, totalVolumeGt?: number, totalVolumeGte?: number, totalVolumeLt?: number, totalVolumeLte?: number, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetStocksV1ShortVolume200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStocksV1ShortVolume(ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, shortVolumeRatio, shortVolumeRatioAnyOf, shortVolumeRatioGt, shortVolumeRatioGte, shortVolumeRatioLt, shortVolumeRatioLte, totalVolume, totalVolumeAnyOf, totalVolumeGt, totalVolumeGte, totalVolumeLt, totalVolumeLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getStocksV1ShortVolume']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get a single ticker supported by Polygon.io. This response will have detailed information about the ticker and the company behind it.
          * @summary Ticker Details v3
          * @param {string} ticker The ticker symbol of the asset.
@@ -18999,101 +21395,6 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTicker(ticker, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getTicker']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Retrieve earnings_v1 data via API.
-         * @summary earnings_v1 API
-         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
-         * @param {string} [ticker] The stock symbol of the company reporting earnings.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {ListBenzingaEarningsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaEarningsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListBenzingaEarnings200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listBenzingaEarnings(date, ticker, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listBenzingaEarnings']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Retrieve news_v1 data via API.
-         * @summary news_v1 API
-         * @param {string} [created] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
-         * @param {string} [tickers] A list of stock or crypto tickers mentioned in the article.
-         * @param {string} [createdGte] Range by created.
-         * @param {string} [createdGt] Range by created.
-         * @param {string} [createdLte] Range by created.
-         * @param {string} [createdLt] Range by created.
-         * @param {string} [tickersGte] Range by tickers.
-         * @param {string} [tickersGt] Range by tickers.
-         * @param {string} [tickersLte] Range by tickers.
-         * @param {string} [tickersLt] Range by tickers.
-         * @param {ListBenzingaNewsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaNewsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListBenzingaNews200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listBenzingaNews(created, tickers, createdGte, createdGt, createdLte, createdLt, tickersGte, tickersGt, tickersLte, tickersLt, order, limit, sort, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listBenzingaNews']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Retrieve ratings_v1 data via API.
-         * @summary ratings_v1 API
-         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
-         * @param {string} [ticker] The stock symbol of the company being rated.
-         * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrade, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
-         * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
-         * @param {string} [rating] The current rating set by the analyst.
-         * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [ratingActionGte] Range by rating_action.
-         * @param {string} [ratingActionGt] Range by rating_action.
-         * @param {string} [ratingActionLte] Range by rating_action.
-         * @param {string} [ratingActionLt] Range by rating_action.
-         * @param {string} [priceTargetActionGte] Range by price_target_action.
-         * @param {string} [priceTargetActionGt] Range by price_target_action.
-         * @param {string} [priceTargetActionLte] Range by price_target_action.
-         * @param {string} [priceTargetActionLt] Range by price_target_action.
-         * @param {string} [ratingGte] Range by rating.
-         * @param {string} [ratingGt] Range by rating.
-         * @param {string} [ratingLte] Range by rating.
-         * @param {string} [ratingLt] Range by rating.
-         * @param {string} [firmGte] Range by firm.
-         * @param {string} [firmGt] Range by firm.
-         * @param {string} [firmLte] Range by firm.
-         * @param {string} [firmLt] Range by firm.
-         * @param {ListBenzingaRatingsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaRatingsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListBenzingaRatings200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listBenzingaRatings(date, ticker, ratingAction, priceTargetAction, rating, firm, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, ratingActionGte, ratingActionGt, ratingActionLte, ratingActionLt, priceTargetActionGte, priceTargetActionGt, priceTargetActionLte, priceTargetActionLt, ratingGte, ratingGt, ratingLte, ratingLt, firmGte, firmGt, firmLte, firmLt, order, limit, sort, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listBenzingaRatings']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -19211,7 +21512,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * The IPOs API provides access to detailed information about Initial Public Offerings (IPOs), including both upcoming and historical events. With this API, you can query for a comprehensive list of IPOs, along with key details such as the issuer name, ticker symbol, ISIN, IPO date, number of shares offered, expected price range, and final offering price. You can filter the results by status to focus on new, rumors, pending, historical, and more.
          * @summary IPOs
-         * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, TSLA represents Tesla Inc.
          * @param {string} [usCode] Specify a us_code. This is a unique nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades.
          * @param {string} [isin] Specify an International Securities Identification Number (ISIN). This is a unique twelve-digit code that is assigned to every security issuance in the world.
          * @param {string} [listingDate] Specify a listing date. This is the first trading date for the newly listed entity.
@@ -19260,8 +21561,8 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Query for historical options contracts. This provides both active and expired options contracts.
          * @summary Options Contracts
-         * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
          * @param {string} [underlyingTicker] Query for contracts relating to an underlying stock ticker.
+         * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
          * @param {ListOptionsContractsContractTypeEnum} [contractType] Query by the type of contract.
          * @param {string} [expirationDate] Query by contract expiration with date format YYYY-MM-DD.
          * @param {string} [asOf] Specify a point in time for contracts as of this date with format YYYY-MM-DD. Defaults to today\&#39;s date.
@@ -19285,8 +21586,8 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListOptionsContracts200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listOptionsContracts(ticker, underlyingTicker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options);
+        async listOptionsContracts(underlyingTicker?: string, ticker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListOptionsContracts200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listOptionsContracts(underlyingTicker, ticker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listOptionsContracts']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -19315,76 +21616,6 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listStockSplits(ticker, executionDate, reverseSplit, tickerGte, tickerGt, tickerLte, tickerLt, executionDateGte, executionDateGt, executionDateLte, executionDateLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listStockSplits']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Retrieve finra_short_interest_v1 data via API.
-         * @summary finra_short_interest_v1 API
-         * @param {string} [ticker] The primary ticker symbol for the stock.
-         * @param {string} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume.
-         * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
-         * @param {string} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [daysToCoverGte] Range by days_to_cover.
-         * @param {string} [daysToCoverGt] Range by days_to_cover.
-         * @param {string} [daysToCoverLte] Range by days_to_cover.
-         * @param {string} [daysToCoverLt] Range by days_to_cover.
-         * @param {string} [settlementDateGte] Range by settlement_date.
-         * @param {string} [settlementDateGt] Range by settlement_date.
-         * @param {string} [settlementDateLte] Range by settlement_date.
-         * @param {string} [settlementDateLt] Range by settlement_date.
-         * @param {string} [avgDailyVolumeGte] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeGt] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeLte] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeLt] Range by avg_daily_volume.
-         * @param {ListStocksShortInterestOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-         * @param {ListStocksShortInterestSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListStocksShortInterest200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listStocksShortInterest(ticker, daysToCover, settlementDate, avgDailyVolume, tickerGte, tickerGt, tickerLte, tickerLt, daysToCoverGte, daysToCoverGt, daysToCoverLte, daysToCoverLt, settlementDateGte, settlementDateGt, settlementDateLte, settlementDateLt, avgDailyVolumeGte, avgDailyVolumeGt, avgDailyVolumeLte, avgDailyVolumeLt, order, limit, sort, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listStocksShortInterest']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Retrieve finra_short_volume_v1 data via API.
-         * @summary finra_short_volume_v1 API
-         * @param {string} [ticker] The primary ticker symbol for the stock.
-         * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
-         * @param {string} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100.
-         * @param {string} [totalVolume] Total reported volume across all venues for the ticker on the given date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [shortVolumeRatioGte] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioGt] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioLte] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioLt] Range by short_volume_ratio.
-         * @param {string} [totalVolumeGte] Range by total_volume.
-         * @param {string} [totalVolumeGt] Range by total_volume.
-         * @param {string} [totalVolumeLte] Range by total_volume.
-         * @param {string} [totalVolumeLt] Range by total_volume.
-         * @param {ListStocksShortVolumeOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-         * @param {ListStocksShortVolumeSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListStocksShortVolume200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listStocksShortVolume(ticker, date, shortVolumeRatio, totalVolume, tickerGte, tickerGt, tickerLte, tickerLt, dateGte, dateGt, dateLte, dateLt, shortVolumeRatioGte, shortVolumeRatioGt, shortVolumeRatioLte, shortVolumeRatioLt, totalVolumeGte, totalVolumeGt, totalVolumeLte, totalVolumeLt, order, limit, sort, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listStocksShortVolume']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -19427,26 +21658,6 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTickers']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Retrieve treasury_yields_v1 data via API.
-         * @summary treasury_yields_v1 API
-         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {ListTreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListTreasuryYieldsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListTreasuryYields200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listTreasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTreasuryYields']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -19526,6 +21737,334 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig): Promise<DeprecatedGetHistoricStocksTrades200Response> {
             return localVarFp.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company being rated.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
+         * @param {string} [firmAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [firmGt] Filter greater than the value.
+         * @param {string} [firmGte] Filter greater than or equal to the value.
+         * @param {string} [firmLt] Filter less than the value.
+         * @param {string} [firmLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] The identifer used by Benzinga for the firm record.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaRatingId] The identifier used by Benzinga for the rating record.
+         * @param {string} [benzingaRatingIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaRatingIdGt] Filter greater than the value.
+         * @param {string} [benzingaRatingIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaRatingIdLt] Filter less than the value.
+         * @param {string} [benzingaRatingIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1AnalystInsights(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, firm?: string, firmAnyOf?: string, firmGt?: string, firmGte?: string, firmLt?: string, firmLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, benzingaRatingId?: string, benzingaRatingIdAnyOf?: string, benzingaRatingIdGt?: string, benzingaRatingIdGte?: string, benzingaRatingIdLt?: string, benzingaRatingIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1AnalystInsights200Response> {
+            return localVarFp.getBenzingaV1AnalystInsights(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, firm, firmAnyOf, firmGt, firmGte, firmLt, firmLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, benzingaRatingId, benzingaRatingIdAnyOf, benzingaRatingIdGt, benzingaRatingIdGte, benzingaRatingIdLt, benzingaRatingIdLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [benzingaId] The identifier used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] The unique identifier assigned by Benzinga to the research firm or investment bank.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {string} [firmName] The name of the research firm or investment bank issuing the ratings.
+         * @param {string} [firmNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [firmNameGt] Filter greater than the value.
+         * @param {string} [firmNameGte] Filter greater than or equal to the value.
+         * @param {string} [firmNameLt] Filter less than the value.
+         * @param {string} [firmNameLte] Filter less than or equal to the value.
+         * @param {string} [fullName] The full name of the analyst associated with the ratings.
+         * @param {string} [fullNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fullNameGt] Filter greater than the value.
+         * @param {string} [fullNameGte] Filter greater than or equal to the value.
+         * @param {string} [fullNameLt] Filter less than the value.
+         * @param {string} [fullNameLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;full_name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Analysts(benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, firmName?: string, firmNameAnyOf?: string, firmNameGt?: string, firmNameGte?: string, firmNameLt?: string, firmNameLte?: string, fullName?: string, fullNameAnyOf?: string, fullNameGt?: string, fullNameGte?: string, fullNameLt?: string, fullNameLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1Analysts200Response> {
+            return localVarFp.getBenzingaV1Analysts(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, firmName, firmNameAnyOf, firmNameGt, firmNameGte, firmNameLt, firmNameLte, fullName, fullNameAnyOf, fullNameGt, fullNameGte, fullNameLt, fullNameLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} ticker The requested ticker.
+         * @param {string} [date] Filter equal to the value.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1ConsensusRatings(ticker: string, date?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1ConsensusRatings200Response> {
+            return localVarFp.getBenzingaV1ConsensusRatings(ticker, date, dateGt, dateGte, dateLt, dateLte, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company reporting earnings.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [dateStatus] Indicates whether the date of the earnings report has been confirmed. Possible values include: projected, confirmed.
+         * @param {string} [dateStatusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateStatusGt] Filter greater than the value.
+         * @param {string} [dateStatusGte] Filter greater than or equal to the value.
+         * @param {string} [dateStatusLt] Filter less than the value.
+         * @param {string} [dateStatusLte] Filter less than or equal to the value.
+         * @param {number} [epsSurprisePercent] The percentage difference between the actual and estimated EPS. Value must be a floating point number.
+         * @param {string} [epsSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [epsSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercent] The percentage difference between the actual and estimated revenue. Value must be a floating point number.
+         * @param {string} [revenueSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [revenueSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [fiscalYear] The fiscal year in which the earnings period falls. Value must be an integer.
+         * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+         * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [fiscalPeriod] The fiscal period for which the earnings are reported. Examples include: Q1, Q2, H1, FY.
+         * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fiscalPeriodGt] Filter greater than the value.
+         * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+         * @param {string} [fiscalPeriodLt] Filter less than the value.
+         * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Earnings(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, dateStatus?: string, dateStatusAnyOf?: string, dateStatusGt?: string, dateStatusGte?: string, dateStatusLt?: string, dateStatusLte?: string, epsSurprisePercent?: number, epsSurprisePercentAnyOf?: string, epsSurprisePercentGt?: number, epsSurprisePercentGte?: number, epsSurprisePercentLt?: number, epsSurprisePercentLte?: number, revenueSurprisePercent?: number, revenueSurprisePercentAnyOf?: string, revenueSurprisePercentGt?: number, revenueSurprisePercentGte?: number, revenueSurprisePercentLt?: number, revenueSurprisePercentLte?: number, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1Earnings200Response> {
+            return localVarFp.getBenzingaV1Earnings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, dateStatus, dateStatusAnyOf, dateStatusGt, dateStatusGte, dateStatusLt, dateStatusLte, epsSurprisePercent, epsSurprisePercentAnyOf, epsSurprisePercentGt, epsSurprisePercentGte, epsSurprisePercentLt, epsSurprisePercentLte, revenueSurprisePercent, revenueSurprisePercentAnyOf, revenueSurprisePercentGt, revenueSurprisePercentGte, revenueSurprisePercentLt, revenueSurprisePercentLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Firms(benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1Firms200Response> {
+            return localVarFp.getBenzingaV1Firms(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company issuing guidance.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [positioning] Indicates how a particular guidance value is presented relative to other figures disclosed by the company. Possible values are \&#39;primary\&#39; (the emphasized figure) and \&#39;secondary\&#39; (a supporting or alternate figure)
+         * @param {string} [positioningAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [positioningGt] Filter greater than the value.
+         * @param {string} [positioningGte] Filter greater than or equal to the value.
+         * @param {string} [positioningLt] Filter less than the value.
+         * @param {string} [positioningLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {number} [fiscalYear] The fiscal year corresponding to the period for which the guidance is issued. Value must be an integer.
+         * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+         * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [fiscalPeriod] The fiscal quarter to which the guidance applies, such as Q1, Q2, Q3, or Q4.
+         * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [fiscalPeriodGt] Filter greater than the value.
+         * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+         * @param {string} [fiscalPeriodLt] Filter less than the value.
+         * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Guidance(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, positioning?: string, positioningAnyOf?: string, positioningGt?: string, positioningGte?: string, positioningLt?: string, positioningLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1Guidance200Response> {
+            return localVarFp.getBenzingaV1Guidance(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, positioning, positioningAnyOf, positioningGt, positioningGte, positioningLt, positioningLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
+         * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [publishedGt] Filter greater than the value.
+         * @param {string} [publishedGte] Filter greater than or equal to the value.
+         * @param {string} [publishedLt] Filter less than the value.
+         * @param {string} [publishedLte] Filter less than or equal to the value.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the news article was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [tickers] Filter for arrays that contain the value.
+         * @param {string} [tickersAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickersAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [channels] Filter for arrays that contain the value.
+         * @param {string} [channelsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [channelsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tags] Filter for arrays that contain the value.
+         * @param {string} [tagsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tagsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [author] The name of the journalist or entity that authored the news article.
+         * @param {string} [authorAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [authorGt] Filter greater than the value.
+         * @param {string} [authorGte] Filter greater than or equal to the value.
+         * @param {string} [authorLt] Filter less than the value.
+         * @param {string} [authorLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;published\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1News(published?: string, publishedAnyOf?: string, publishedGt?: string, publishedGte?: string, publishedLt?: string, publishedLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, tickers?: string, tickersAllOf?: string, tickersAnyOf?: string, channels?: string, channelsAllOf?: string, channelsAnyOf?: string, tags?: string, tagsAllOf?: string, tagsAnyOf?: string, author?: string, authorAnyOf?: string, authorGt?: string, authorGte?: string, authorLt?: string, authorLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1News200Response> {
+            return localVarFp.getBenzingaV1News(published, publishedAnyOf, publishedGt, publishedGte, publishedLt, publishedLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, tickers, tickersAllOf, tickersAnyOf, channels, channelsAllOf, channelsAnyOf, tags, tagsAllOf, tagsAnyOf, author, authorAnyOf, authorGt, authorGte, authorLt, authorLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The stock symbol of the company being rated.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [importance] A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+         * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+         * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+         * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [lastUpdatedGt] Filter greater than the value.
+         * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+         * @param {string} [lastUpdatedLt] Filter less than the value.
+         * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+         * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
+         * @param {string} [ratingActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [ratingActionGt] Filter greater than the value.
+         * @param {string} [ratingActionGte] Filter greater than or equal to the value.
+         * @param {string} [ratingActionLt] Filter less than the value.
+         * @param {string} [ratingActionLte] Filter less than or equal to the value.
+         * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
+         * @param {string} [priceTargetActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [priceTargetActionGt] Filter greater than the value.
+         * @param {string} [priceTargetActionGte] Filter greater than or equal to the value.
+         * @param {string} [priceTargetActionLt] Filter less than the value.
+         * @param {string} [priceTargetActionLte] Filter less than or equal to the value.
+         * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+         * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaIdGt] Filter greater than the value.
+         * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaIdLt] Filter less than the value.
+         * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaAnalystId] Filter equal to the value.
+         * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
+         * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaAnalystIdLt] Filter less than the value.
+         * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
+         * @param {string} [benzingaFirmId] Filter equal to the value.
+         * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+         * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+         * @param {string} [benzingaFirmIdLt] Filter less than the value.
+         * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBenzingaV1Ratings(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, ratingAction?: string, ratingActionAnyOf?: string, ratingActionGt?: string, ratingActionGte?: string, ratingActionLt?: string, ratingActionLte?: string, priceTargetAction?: string, priceTargetActionAnyOf?: string, priceTargetActionGt?: string, priceTargetActionGte?: string, priceTargetActionLt?: string, priceTargetActionLte?: string, benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaAnalystId?: string, benzingaAnalystIdAnyOf?: string, benzingaAnalystIdGt?: string, benzingaAnalystIdGte?: string, benzingaAnalystIdLt?: string, benzingaAnalystIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetBenzingaV1Ratings200Response> {
+            return localVarFp.getBenzingaV1Ratings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, ratingAction, ratingActionAnyOf, ratingActionGt, ratingActionGte, ratingActionLt, ratingActionLte, priceTargetAction, priceTargetActionAnyOf, priceTargetActionGt, priceTargetActionGte, priceTargetActionLt, priceTargetActionLte, benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaAnalystId, benzingaAnalystIdAnyOf, benzingaAnalystIdGt, benzingaAnalystIdGte, benzingaAnalystIdLt, benzingaAnalystIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * Get aggregate bars for a cryptocurrency pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
@@ -19714,6 +22253,22 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getEvents(id: string, types?: string, options?: RawAxiosRequestConfig): Promise<GetEvents200Response> {
             return localVarFp.getEvents(id, types, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFedV1TreasuryYields(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetFedV1TreasuryYields200Response> {
+            return localVarFp.getFedV1TreasuryYields(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * Get aggregate bars for a forex pair over a given date range in custom time window sizes. <br /> <br /> For example, if timespan = ‘minute’ and multiplier = ‘5’ then 5-minute bars will be returned. 
@@ -20074,7 +22629,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Get the most recent NBBO (Quote) tick for a given stock.
          * @summary Last Quote
-         * @param {string} stocksTicker The ticker symbol of the stock/equity.
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -20084,7 +22639,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Get the most recent trade for a given stock.
          * @summary Last Trade
-         * @param {string} stocksTicker The ticker symbol of the stock/equity.
+         * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -20481,7 +23036,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Get NBBO quotes for a ticker symbol in a given time range.
          * @summary Quotes (NBBO)
-         * @param {string} stockTicker The ticker symbol to get quotes for.
+         * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {string} [timestamp] Query by timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -20575,7 +23130,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Get trades for a ticker symbol in a given time range.
          * @summary Trades
-         * @param {string} stockTicker The ticker symbol to get trades for.
+         * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -20591,6 +23146,74 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getStocksTrades(stockTicker, timestamp, timestampGte, timestampGt, timestampLte, timestampLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @param {string} [ticker] The primary ticker symbol for the stock.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {number} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume. Value must be a floating point number.
+         * @param {string} [daysToCoverAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [daysToCoverGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [daysToCoverGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [daysToCoverLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [daysToCoverLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
+         * @param {string} [settlementDateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [settlementDateGt] Filter greater than the value.
+         * @param {string} [settlementDateGte] Filter greater than or equal to the value.
+         * @param {string} [settlementDateLt] Filter less than the value.
+         * @param {string} [settlementDateLte] Filter less than or equal to the value.
+         * @param {number} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest. Value must be an integer.
+         * @param {string} [avgDailyVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [avgDailyVolumeGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeLt] Filter less than the value. Value must be an integer.
+         * @param {number} [avgDailyVolumeLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksV1ShortInterest(ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, daysToCover?: number, daysToCoverAnyOf?: string, daysToCoverGt?: number, daysToCoverGte?: number, daysToCoverLt?: number, daysToCoverLte?: number, settlementDate?: string, settlementDateAnyOf?: string, settlementDateGt?: string, settlementDateGte?: string, settlementDateLt?: string, settlementDateLte?: string, avgDailyVolume?: number, avgDailyVolumeAnyOf?: string, avgDailyVolumeGt?: number, avgDailyVolumeGte?: number, avgDailyVolumeLt?: number, avgDailyVolumeLte?: number, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetStocksV1ShortInterest200Response> {
+            return localVarFp.getStocksV1ShortInterest(ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, daysToCover, daysToCoverAnyOf, daysToCoverGt, daysToCoverGte, daysToCoverLt, daysToCoverLte, settlementDate, settlementDateAnyOf, settlementDateGt, settlementDateGte, settlementDateLt, settlementDateLte, avgDailyVolume, avgDailyVolumeAnyOf, avgDailyVolumeGt, avgDailyVolumeGte, avgDailyVolumeLt, avgDailyVolumeLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} [ticker] The primary ticker symbol for the stock.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100. Value must be a floating point number.
+         * @param {string} [shortVolumeRatioAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioGt] Filter greater than the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioGte] Filter greater than or equal to the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioLt] Filter less than the value. Value must be a floating point number.
+         * @param {number} [shortVolumeRatioLte] Filter less than or equal to the value. Value must be a floating point number.
+         * @param {number} [totalVolume] Total reported volume across all venues for the ticker on the given date. Value must be an integer.
+         * @param {string} [totalVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [totalVolumeGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [totalVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [totalVolumeLt] Filter less than the value. Value must be an integer.
+         * @param {number} [totalVolumeLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStocksV1ShortVolume(ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, shortVolumeRatio?: number, shortVolumeRatioAnyOf?: string, shortVolumeRatioGt?: number, shortVolumeRatioGte?: number, shortVolumeRatioLt?: number, shortVolumeRatioLte?: number, totalVolume?: number, totalVolumeAnyOf?: string, totalVolumeGt?: number, totalVolumeGte?: number, totalVolumeLt?: number, totalVolumeLte?: number, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetStocksV1ShortVolume200Response> {
+            return localVarFp.getStocksV1ShortVolume(ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, shortVolumeRatio, shortVolumeRatioAnyOf, shortVolumeRatioGt, shortVolumeRatioGte, shortVolumeRatioLt, shortVolumeRatioLte, totalVolume, totalVolumeAnyOf, totalVolumeGt, totalVolumeGte, totalVolumeLt, totalVolumeLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get a single ticker supported by Polygon.io. This response will have detailed information about the ticker and the company behind it.
          * @summary Ticker Details v3
          * @param {string} ticker The ticker symbol of the asset.
@@ -20600,92 +23223,6 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig): Promise<GetTicker200Response> {
             return localVarFp.getTicker(ticker, date, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve earnings_v1 data via API.
-         * @summary earnings_v1 API
-         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
-         * @param {string} [ticker] The stock symbol of the company reporting earnings.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {ListBenzingaEarningsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaEarningsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig): Promise<ListBenzingaEarnings200Response> {
-            return localVarFp.listBenzingaEarnings(date, ticker, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve news_v1 data via API.
-         * @summary news_v1 API
-         * @param {string} [created] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
-         * @param {string} [tickers] A list of stock or crypto tickers mentioned in the article.
-         * @param {string} [createdGte] Range by created.
-         * @param {string} [createdGt] Range by created.
-         * @param {string} [createdLte] Range by created.
-         * @param {string} [createdLt] Range by created.
-         * @param {string} [tickersGte] Range by tickers.
-         * @param {string} [tickersGt] Range by tickers.
-         * @param {string} [tickersLte] Range by tickers.
-         * @param {string} [tickersLt] Range by tickers.
-         * @param {ListBenzingaNewsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaNewsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig): Promise<ListBenzingaNews200Response> {
-            return localVarFp.listBenzingaNews(created, tickers, createdGte, createdGt, createdLte, createdLt, tickersGte, tickersGt, tickersLte, tickersLt, order, limit, sort, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve ratings_v1 data via API.
-         * @summary ratings_v1 API
-         * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
-         * @param {string} [ticker] The stock symbol of the company being rated.
-         * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrade, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
-         * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
-         * @param {string} [rating] The current rating set by the analyst.
-         * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [ratingActionGte] Range by rating_action.
-         * @param {string} [ratingActionGt] Range by rating_action.
-         * @param {string} [ratingActionLte] Range by rating_action.
-         * @param {string} [ratingActionLt] Range by rating_action.
-         * @param {string} [priceTargetActionGte] Range by price_target_action.
-         * @param {string} [priceTargetActionGt] Range by price_target_action.
-         * @param {string} [priceTargetActionLte] Range by price_target_action.
-         * @param {string} [priceTargetActionLt] Range by price_target_action.
-         * @param {string} [ratingGte] Range by rating.
-         * @param {string} [ratingGt] Range by rating.
-         * @param {string} [ratingLte] Range by rating.
-         * @param {string} [ratingLt] Range by rating.
-         * @param {string} [firmGte] Range by firm.
-         * @param {string} [firmGt] Range by firm.
-         * @param {string} [firmLte] Range by firm.
-         * @param {string} [firmLt] Range by firm.
-         * @param {ListBenzingaRatingsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListBenzingaRatingsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig): Promise<ListBenzingaRatings200Response> {
-            return localVarFp.listBenzingaRatings(date, ticker, ratingAction, priceTargetAction, rating, firm, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, ratingActionGte, ratingActionGt, ratingActionLte, ratingActionLt, priceTargetActionGte, priceTargetActionGt, priceTargetActionLte, priceTargetActionLt, ratingGte, ratingGt, ratingLte, ratingLt, firmGte, firmGt, firmLte, firmLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * List all conditions that Polygon.io uses.
@@ -20790,7 +23327,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * The IPOs API provides access to detailed information about Initial Public Offerings (IPOs), including both upcoming and historical events. With this API, you can query for a comprehensive list of IPOs, along with key details such as the issuer name, ticker symbol, ISIN, IPO date, number of shares offered, expected price range, and final offering price. You can filter the results by status to focus on new, rumors, pending, historical, and more.
          * @summary IPOs
-         * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+         * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, TSLA represents Tesla Inc.
          * @param {string} [usCode] Specify a us_code. This is a unique nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades.
          * @param {string} [isin] Specify an International Securities Identification Number (ISIN). This is a unique twelve-digit code that is assigned to every security issuance in the world.
          * @param {string} [listingDate] Specify a listing date. This is the first trading date for the newly listed entity.
@@ -20833,8 +23370,8 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Query for historical options contracts. This provides both active and expired options contracts.
          * @summary Options Contracts
-         * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
          * @param {string} [underlyingTicker] Query for contracts relating to an underlying stock ticker.
+         * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
          * @param {ListOptionsContractsContractTypeEnum} [contractType] Query by the type of contract.
          * @param {string} [expirationDate] Query by contract expiration with date format YYYY-MM-DD.
          * @param {string} [asOf] Specify a point in time for contracts as of this date with format YYYY-MM-DD. Defaults to today\&#39;s date.
@@ -20858,8 +23395,8 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<ListOptionsContracts200Response> {
-            return localVarFp.listOptionsContracts(ticker, underlyingTicker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(axios, basePath));
+        listOptionsContracts(underlyingTicker?: string, ticker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<ListOptionsContracts200Response> {
+            return localVarFp.listOptionsContracts(underlyingTicker, ticker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * Get a list of historical stock splits, including the ticker symbol, the execution date, and the factors of the split ratio.
@@ -20883,70 +23420,6 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         listStockSplits(ticker?: string, executionDate?: string, reverseSplit?: boolean | null, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, executionDateGte?: string, executionDateGt?: string, executionDateLte?: string, executionDateLt?: string, order?: ListStockSplitsOrderEnum, limit?: number, sort?: ListStockSplitsSortEnum, options?: RawAxiosRequestConfig): Promise<ListStockSplits200Response> {
             return localVarFp.listStockSplits(ticker, executionDate, reverseSplit, tickerGte, tickerGt, tickerLte, tickerLt, executionDateGte, executionDateGt, executionDateLte, executionDateLt, order, limit, sort, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve finra_short_interest_v1 data via API.
-         * @summary finra_short_interest_v1 API
-         * @param {string} [ticker] The primary ticker symbol for the stock.
-         * @param {string} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume.
-         * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
-         * @param {string} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [daysToCoverGte] Range by days_to_cover.
-         * @param {string} [daysToCoverGt] Range by days_to_cover.
-         * @param {string} [daysToCoverLte] Range by days_to_cover.
-         * @param {string} [daysToCoverLt] Range by days_to_cover.
-         * @param {string} [settlementDateGte] Range by settlement_date.
-         * @param {string} [settlementDateGt] Range by settlement_date.
-         * @param {string} [settlementDateLte] Range by settlement_date.
-         * @param {string} [settlementDateLt] Range by settlement_date.
-         * @param {string} [avgDailyVolumeGte] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeGt] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeLte] Range by avg_daily_volume.
-         * @param {string} [avgDailyVolumeLt] Range by avg_daily_volume.
-         * @param {ListStocksShortInterestOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-         * @param {ListStocksShortInterestSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig): Promise<ListStocksShortInterest200Response> {
-            return localVarFp.listStocksShortInterest(ticker, daysToCover, settlementDate, avgDailyVolume, tickerGte, tickerGt, tickerLte, tickerLt, daysToCoverGte, daysToCoverGt, daysToCoverLte, daysToCoverLt, settlementDateGte, settlementDateGt, settlementDateLte, settlementDateLt, avgDailyVolumeGte, avgDailyVolumeGt, avgDailyVolumeLte, avgDailyVolumeLt, order, limit, sort, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve finra_short_volume_v1 data via API.
-         * @summary finra_short_volume_v1 API
-         * @param {string} [ticker] The primary ticker symbol for the stock.
-         * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
-         * @param {string} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100.
-         * @param {string} [totalVolume] Total reported volume across all venues for the ticker on the given date.
-         * @param {string} [tickerGte] Range by ticker.
-         * @param {string} [tickerGt] Range by ticker.
-         * @param {string} [tickerLte] Range by ticker.
-         * @param {string} [tickerLt] Range by ticker.
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {string} [shortVolumeRatioGte] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioGt] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioLte] Range by short_volume_ratio.
-         * @param {string} [shortVolumeRatioLt] Range by short_volume_ratio.
-         * @param {string} [totalVolumeGte] Range by total_volume.
-         * @param {string} [totalVolumeGt] Range by total_volume.
-         * @param {string} [totalVolumeLte] Range by total_volume.
-         * @param {string} [totalVolumeLt] Range by total_volume.
-         * @param {ListStocksShortVolumeOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-         * @param {ListStocksShortVolumeSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig): Promise<ListStocksShortVolume200Response> {
-            return localVarFp.listStocksShortVolume(ticker, date, shortVolumeRatio, totalVolume, tickerGte, tickerGt, tickerLte, tickerLt, dateGte, dateGt, dateLte, dateLt, shortVolumeRatioGte, shortVolumeRatioGt, shortVolumeRatioLte, shortVolumeRatioLt, totalVolumeGte, totalVolumeGt, totalVolumeLte, totalVolumeLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * List all ticker types that Polygon.io has.
@@ -20983,23 +23456,6 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig): Promise<ListTickers200Response> {
             return localVarFp.listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve treasury_yields_v1 data via API.
-         * @summary treasury_yields_v1 API
-         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
-         * @param {string} [dateGte] Range by date.
-         * @param {string} [dateGt] Range by date.
-         * @param {string} [dateLte] Range by date.
-         * @param {string} [dateLt] Range by date.
-         * @param {ListTreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-         * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-         * @param {ListTreasuryYieldsSortEnum} [sort] Sort field used for ordering.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig): Promise<ListTreasuryYields200Response> {
-            return localVarFp.listTreasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -21087,6 +23543,350 @@ export class DefaultApi extends BaseAPI {
      */
     public deprecatedGetHistoricStocksTrades(ticker: string, date: string, timestamp?: number, timestampLimit?: number, reverse?: boolean, limit?: number, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {string} [ticker] The stock symbol of the company being rated.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+     * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [lastUpdatedGt] Filter greater than the value.
+     * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+     * @param {string} [lastUpdatedLt] Filter less than the value.
+     * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+     * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
+     * @param {string} [firmAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [firmGt] Filter greater than the value.
+     * @param {string} [firmGte] Filter greater than or equal to the value.
+     * @param {string} [firmLt] Filter less than the value.
+     * @param {string} [firmLte] Filter less than or equal to the value.
+     * @param {string} [benzingaFirmId] The identifer used by Benzinga for the firm record.
+     * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+     * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaFirmIdLt] Filter less than the value.
+     * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+     * @param {string} [benzingaRatingId] The identifier used by Benzinga for the rating record.
+     * @param {string} [benzingaRatingIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaRatingIdGt] Filter greater than the value.
+     * @param {string} [benzingaRatingIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaRatingIdLt] Filter less than the value.
+     * @param {string} [benzingaRatingIdLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1AnalystInsights(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, firm?: string, firmAnyOf?: string, firmGt?: string, firmGte?: string, firmLt?: string, firmLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, benzingaRatingId?: string, benzingaRatingIdAnyOf?: string, benzingaRatingIdGt?: string, benzingaRatingIdGte?: string, benzingaRatingIdLt?: string, benzingaRatingIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1AnalystInsights(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, firm, firmAnyOf, firmGt, firmGte, firmLt, firmLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, benzingaRatingId, benzingaRatingIdAnyOf, benzingaRatingIdGt, benzingaRatingIdGte, benzingaRatingIdLt, benzingaRatingIdLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [benzingaId] The identifier used by Benzinga for this record.
+     * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaIdGt] Filter greater than the value.
+     * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaIdLt] Filter less than the value.
+     * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+     * @param {string} [benzingaFirmId] The unique identifier assigned by Benzinga to the research firm or investment bank.
+     * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+     * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaFirmIdLt] Filter less than the value.
+     * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+     * @param {string} [firmName] The name of the research firm or investment bank issuing the ratings.
+     * @param {string} [firmNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [firmNameGt] Filter greater than the value.
+     * @param {string} [firmNameGte] Filter greater than or equal to the value.
+     * @param {string} [firmNameLt] Filter less than the value.
+     * @param {string} [firmNameLte] Filter less than or equal to the value.
+     * @param {string} [fullName] The full name of the analyst associated with the ratings.
+     * @param {string} [fullNameAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [fullNameGt] Filter greater than the value.
+     * @param {string} [fullNameGte] Filter greater than or equal to the value.
+     * @param {string} [fullNameLt] Filter less than the value.
+     * @param {string} [fullNameLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;full_name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1Analysts(benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, firmName?: string, firmNameAnyOf?: string, firmNameGt?: string, firmNameGte?: string, firmNameLt?: string, firmNameLte?: string, fullName?: string, fullNameAnyOf?: string, fullNameGt?: string, fullNameGte?: string, fullNameLt?: string, fullNameLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1Analysts(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, firmName, firmNameAnyOf, firmNameGt, firmNameGte, firmNameLt, firmNameLte, fullName, fullNameAnyOf, fullNameGt, fullNameGte, fullNameLt, fullNameLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} ticker The requested ticker.
+     * @param {string} [date] Filter equal to the value.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1ConsensusRatings(ticker: string, date?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1ConsensusRatings(ticker, date, dateGt, dateGte, dateLt, dateLte, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {string} [ticker] The stock symbol of the company reporting earnings.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+     * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+     * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+     * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [lastUpdatedGt] Filter greater than the value.
+     * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+     * @param {string} [lastUpdatedLt] Filter less than the value.
+     * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+     * @param {string} [dateStatus] Indicates whether the date of the earnings report has been confirmed. Possible values include: projected, confirmed.
+     * @param {string} [dateStatusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateStatusGt] Filter greater than the value.
+     * @param {string} [dateStatusGte] Filter greater than or equal to the value.
+     * @param {string} [dateStatusLt] Filter less than the value.
+     * @param {string} [dateStatusLte] Filter less than or equal to the value.
+     * @param {number} [epsSurprisePercent] The percentage difference between the actual and estimated EPS. Value must be a floating point number.
+     * @param {string} [epsSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+     * @param {number} [epsSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+     * @param {number} [epsSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+     * @param {number} [epsSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+     * @param {number} [epsSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+     * @param {number} [revenueSurprisePercent] The percentage difference between the actual and estimated revenue. Value must be a floating point number.
+     * @param {string} [revenueSurprisePercentAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+     * @param {number} [revenueSurprisePercentGt] Filter greater than the value. Value must be a floating point number.
+     * @param {number} [revenueSurprisePercentGte] Filter greater than or equal to the value. Value must be a floating point number.
+     * @param {number} [revenueSurprisePercentLt] Filter less than the value. Value must be a floating point number.
+     * @param {number} [revenueSurprisePercentLte] Filter less than or equal to the value. Value must be a floating point number.
+     * @param {number} [fiscalYear] The fiscal year in which the earnings period falls. Value must be an integer.
+     * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+     * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {string} [fiscalPeriod] The fiscal period for which the earnings are reported. Examples include: Q1, Q2, H1, FY.
+     * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [fiscalPeriodGt] Filter greater than the value.
+     * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+     * @param {string} [fiscalPeriodLt] Filter less than the value.
+     * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1Earnings(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, dateStatus?: string, dateStatusAnyOf?: string, dateStatusGt?: string, dateStatusGte?: string, dateStatusLt?: string, dateStatusLte?: string, epsSurprisePercent?: number, epsSurprisePercentAnyOf?: string, epsSurprisePercentGt?: number, epsSurprisePercentGte?: number, epsSurprisePercentLt?: number, epsSurprisePercentLte?: number, revenueSurprisePercent?: number, revenueSurprisePercentAnyOf?: string, revenueSurprisePercentGt?: number, revenueSurprisePercentGte?: number, revenueSurprisePercentLt?: number, revenueSurprisePercentLte?: number, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1Earnings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, dateStatus, dateStatusAnyOf, dateStatusGt, dateStatusGte, dateStatusLt, dateStatusLte, epsSurprisePercent, epsSurprisePercentAnyOf, epsSurprisePercentGt, epsSurprisePercentGte, epsSurprisePercentLt, epsSurprisePercentLte, revenueSurprisePercent, revenueSurprisePercentAnyOf, revenueSurprisePercentGt, revenueSurprisePercentGte, revenueSurprisePercentLt, revenueSurprisePercentLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+     * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaIdGt] Filter greater than the value.
+     * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaIdLt] Filter less than the value.
+     * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;name\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1Firms(benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1Firms(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {string} [ticker] The stock symbol of the company issuing guidance.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {string} [positioning] Indicates how a particular guidance value is presented relative to other figures disclosed by the company. Possible values are \&#39;primary\&#39; (the emphasized figure) and \&#39;secondary\&#39; (a supporting or alternate figure)
+     * @param {string} [positioningAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [positioningGt] Filter greater than the value.
+     * @param {string} [positioningGte] Filter greater than or equal to the value.
+     * @param {string} [positioningLt] Filter less than the value.
+     * @param {string} [positioningLte] Filter less than or equal to the value.
+     * @param {number} [importance] A subjective indicator of the importance of the event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+     * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+     * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the record was last updated in the system.
+     * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [lastUpdatedGt] Filter greater than the value.
+     * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+     * @param {string} [lastUpdatedLt] Filter less than the value.
+     * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+     * @param {number} [fiscalYear] The fiscal year corresponding to the period for which the guidance is issued. Value must be an integer.
+     * @param {string} [fiscalYearAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [fiscalYearGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [fiscalYearGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [fiscalYearLt] Filter less than the value. Value must be an integer.
+     * @param {number} [fiscalYearLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {string} [fiscalPeriod] The fiscal quarter to which the guidance applies, such as Q1, Q2, Q3, or Q4.
+     * @param {string} [fiscalPeriodAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [fiscalPeriodGt] Filter greater than the value.
+     * @param {string} [fiscalPeriodGte] Filter greater than or equal to the value.
+     * @param {string} [fiscalPeriodLt] Filter less than the value.
+     * @param {string} [fiscalPeriodLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1Guidance(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, positioning?: string, positioningAnyOf?: string, positioningGt?: string, positioningGte?: string, positioningLt?: string, positioningLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, fiscalYear?: number, fiscalYearAnyOf?: string, fiscalYearGt?: number, fiscalYearGte?: number, fiscalYearLt?: number, fiscalYearLte?: number, fiscalPeriod?: string, fiscalPeriodAnyOf?: string, fiscalPeriodGt?: string, fiscalPeriodGte?: string, fiscalPeriodLt?: string, fiscalPeriodLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1Guidance(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, positioning, positioningAnyOf, positioningGt, positioningGte, positioningLt, positioningLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
+     * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [publishedGt] Filter greater than the value.
+     * @param {string} [publishedGte] Filter greater than or equal to the value.
+     * @param {string} [publishedLt] Filter less than the value.
+     * @param {string} [publishedLte] Filter less than or equal to the value.
+     * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the news article was last updated in the system.
+     * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [lastUpdatedGt] Filter greater than the value.
+     * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+     * @param {string} [lastUpdatedLt] Filter less than the value.
+     * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+     * @param {string} [tickers] Filter for arrays that contain the value.
+     * @param {string} [tickersAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickersAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [channels] Filter for arrays that contain the value.
+     * @param {string} [channelsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [channelsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tags] Filter for arrays that contain the value.
+     * @param {string} [tagsAllOf] Filter for arrays that contain all of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tagsAnyOf] Filter for arrays that contain any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [author] The name of the journalist or entity that authored the news article.
+     * @param {string} [authorAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [authorGt] Filter greater than the value.
+     * @param {string} [authorGte] Filter greater than or equal to the value.
+     * @param {string} [authorLt] Filter less than the value.
+     * @param {string} [authorLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;published\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1News(published?: string, publishedAnyOf?: string, publishedGt?: string, publishedGte?: string, publishedLt?: string, publishedLte?: string, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, tickers?: string, tickersAllOf?: string, tickersAnyOf?: string, channels?: string, channelsAllOf?: string, channelsAnyOf?: string, tags?: string, tagsAllOf?: string, tagsAnyOf?: string, author?: string, authorAnyOf?: string, authorGt?: string, authorGte?: string, authorLt?: string, authorLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1News(published, publishedAnyOf, publishedGt, publishedGte, publishedLt, publishedLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, tickers, tickersAllOf, tickersAnyOf, channels, channelsAllOf, channelsAnyOf, tags, tagsAllOf, tagsAnyOf, author, authorAnyOf, authorGt, authorGte, authorLt, authorLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {string} [ticker] The stock symbol of the company being rated.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {number} [importance] A subjective indicator of the importance of the earnings event, on a scale from 0 (lowest) to 5 (highest). Value must be an integer.
+     * @param {string} [importanceAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [importanceGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [importanceGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [importanceLt] Filter less than the value. Value must be an integer.
+     * @param {number} [importanceLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {string} [lastUpdated] The timestamp (formatted as an ISO 8601 timestamp) when the rating was last updated in the system.
+     * @param {string} [lastUpdatedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [lastUpdatedGt] Filter greater than the value.
+     * @param {string} [lastUpdatedGte] Filter greater than or equal to the value.
+     * @param {string} [lastUpdatedLt] Filter less than the value.
+     * @param {string} [lastUpdatedLte] Filter less than or equal to the value.
+     * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
+     * @param {string} [ratingActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [ratingActionGt] Filter greater than the value.
+     * @param {string} [ratingActionGte] Filter greater than or equal to the value.
+     * @param {string} [ratingActionLt] Filter less than the value.
+     * @param {string} [ratingActionLte] Filter less than or equal to the value.
+     * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
+     * @param {string} [priceTargetActionAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [priceTargetActionGt] Filter greater than the value.
+     * @param {string} [priceTargetActionGte] Filter greater than or equal to the value.
+     * @param {string} [priceTargetActionLt] Filter less than the value.
+     * @param {string} [priceTargetActionLte] Filter less than or equal to the value.
+     * @param {string} [benzingaId] The identifer used by Benzinga for this record.
+     * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaIdGt] Filter greater than the value.
+     * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaIdLt] Filter less than the value.
+     * @param {string} [benzingaIdLte] Filter less than or equal to the value.
+     * @param {string} [benzingaAnalystId] Filter equal to the value.
+     * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
+     * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaAnalystIdLt] Filter less than the value.
+     * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
+     * @param {string} [benzingaFirmId] Filter equal to the value.
+     * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [benzingaFirmIdGt] Filter greater than the value.
+     * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
+     * @param {string} [benzingaFirmIdLt] Filter less than the value.
+     * @param {string} [benzingaFirmIdLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getBenzingaV1Ratings(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, importance?: number, importanceAnyOf?: string, importanceGt?: number, importanceGte?: number, importanceLt?: number, importanceLte?: number, lastUpdated?: string, lastUpdatedAnyOf?: string, lastUpdatedGt?: string, lastUpdatedGte?: string, lastUpdatedLt?: string, lastUpdatedLte?: string, ratingAction?: string, ratingActionAnyOf?: string, ratingActionGt?: string, ratingActionGte?: string, ratingActionLt?: string, ratingActionLte?: string, priceTargetAction?: string, priceTargetActionAnyOf?: string, priceTargetActionGt?: string, priceTargetActionGte?: string, priceTargetActionLt?: string, priceTargetActionLte?: string, benzingaId?: string, benzingaIdAnyOf?: string, benzingaIdGt?: string, benzingaIdGte?: string, benzingaIdLt?: string, benzingaIdLte?: string, benzingaAnalystId?: string, benzingaAnalystIdAnyOf?: string, benzingaAnalystIdGt?: string, benzingaAnalystIdGte?: string, benzingaAnalystIdLt?: string, benzingaAnalystIdLte?: string, benzingaFirmId?: string, benzingaFirmIdAnyOf?: string, benzingaFirmIdGt?: string, benzingaFirmIdGte?: string, benzingaFirmIdLt?: string, benzingaFirmIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getBenzingaV1Ratings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, ratingAction, ratingActionAnyOf, ratingActionGt, ratingActionGte, ratingActionLt, ratingActionLte, priceTargetAction, priceTargetActionAnyOf, priceTargetActionGt, priceTargetActionGte, priceTargetActionLt, priceTargetActionLte, benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaAnalystId, benzingaAnalystIdAnyOf, benzingaAnalystIdGt, benzingaAnalystIdGte, benzingaAnalystIdLt, benzingaAnalystIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -21299,6 +24099,24 @@ export class DefaultApi extends BaseAPI {
      */
     public getEvents(id: string, types?: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getEvents(id, types, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getFedV1TreasuryYields(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getFedV1TreasuryYields(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -21704,7 +24522,7 @@ export class DefaultApi extends BaseAPI {
     /**
      * Get the most recent NBBO (Quote) tick for a given stock.
      * @summary Last Quote
-     * @param {string} stocksTicker The ticker symbol of the stock/equity.
+     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
@@ -21716,7 +24534,7 @@ export class DefaultApi extends BaseAPI {
     /**
      * Get the most recent trade for a given stock.
      * @summary Last Trade
-     * @param {string} stocksTicker The ticker symbol of the stock/equity.
+     * @param {string} stocksTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
@@ -22165,7 +24983,7 @@ export class DefaultApi extends BaseAPI {
     /**
      * Get NBBO quotes for a ticker symbol in a given time range.
      * @summary Quotes (NBBO)
-     * @param {string} stockTicker The ticker symbol to get quotes for.
+     * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
      * @param {string} [timestamp] Query by timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
      * @param {string} [timestampGte] Range by timestamp.
      * @param {string} [timestampGt] Range by timestamp.
@@ -22271,7 +25089,7 @@ export class DefaultApi extends BaseAPI {
     /**
      * Get trades for a ticker symbol in a given time range.
      * @summary Trades
-     * @param {string} stockTicker The ticker symbol to get trades for.
+     * @param {string} stockTicker Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
      * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
      * @param {string} [timestampGte] Range by timestamp.
      * @param {string} [timestampGt] Range by timestamp.
@@ -22289,6 +25107,78 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * 
+     * @param {string} [ticker] The primary ticker symbol for the stock.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {number} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume. Value must be a floating point number.
+     * @param {string} [daysToCoverAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+     * @param {number} [daysToCoverGt] Filter greater than the value. Value must be a floating point number.
+     * @param {number} [daysToCoverGte] Filter greater than or equal to the value. Value must be a floating point number.
+     * @param {number} [daysToCoverLt] Filter less than the value. Value must be a floating point number.
+     * @param {number} [daysToCoverLte] Filter less than or equal to the value. Value must be a floating point number.
+     * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
+     * @param {string} [settlementDateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [settlementDateGt] Filter greater than the value.
+     * @param {string} [settlementDateGte] Filter greater than or equal to the value.
+     * @param {string} [settlementDateLt] Filter less than the value.
+     * @param {string} [settlementDateLte] Filter less than or equal to the value.
+     * @param {number} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest. Value must be an integer.
+     * @param {string} [avgDailyVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [avgDailyVolumeGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [avgDailyVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [avgDailyVolumeLt] Filter less than the value. Value must be an integer.
+     * @param {number} [avgDailyVolumeLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksV1ShortInterest(ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, daysToCover?: number, daysToCoverAnyOf?: string, daysToCoverGt?: number, daysToCoverGte?: number, daysToCoverLt?: number, daysToCoverLte?: number, settlementDate?: string, settlementDateAnyOf?: string, settlementDateGt?: string, settlementDateGte?: string, settlementDateLt?: string, settlementDateLte?: string, avgDailyVolume?: number, avgDailyVolumeAnyOf?: string, avgDailyVolumeGt?: number, avgDailyVolumeGte?: number, avgDailyVolumeLt?: number, avgDailyVolumeLte?: number, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksV1ShortInterest(ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, daysToCover, daysToCoverAnyOf, daysToCoverGt, daysToCoverGte, daysToCoverLt, daysToCoverLte, settlementDate, settlementDateAnyOf, settlementDateGt, settlementDateGte, settlementDateLt, settlementDateLte, avgDailyVolume, avgDailyVolumeAnyOf, avgDailyVolumeGt, avgDailyVolumeGte, avgDailyVolumeLt, avgDailyVolumeLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [ticker] The primary ticker symbol for the stock.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {number} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100. Value must be a floating point number.
+     * @param {string} [shortVolumeRatioAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be a floating point number.
+     * @param {number} [shortVolumeRatioGt] Filter greater than the value. Value must be a floating point number.
+     * @param {number} [shortVolumeRatioGte] Filter greater than or equal to the value. Value must be a floating point number.
+     * @param {number} [shortVolumeRatioLt] Filter less than the value. Value must be a floating point number.
+     * @param {number} [shortVolumeRatioLte] Filter less than or equal to the value. Value must be a floating point number.
+     * @param {number} [totalVolume] Total reported volume across all venues for the ticker on the given date. Value must be an integer.
+     * @param {string} [totalVolumeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [totalVolumeGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [totalVolumeGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [totalVolumeLt] Filter less than the value. Value must be an integer.
+     * @param {number} [totalVolumeLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;10\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;ticker\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getStocksV1ShortVolume(ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, shortVolumeRatio?: number, shortVolumeRatioAnyOf?: string, shortVolumeRatioGt?: number, shortVolumeRatioGte?: number, shortVolumeRatioLt?: number, shortVolumeRatioLte?: number, totalVolume?: number, totalVolumeAnyOf?: string, totalVolumeGt?: number, totalVolumeGte?: number, totalVolumeLt?: number, totalVolumeLte?: number, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getStocksV1ShortVolume(ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, shortVolumeRatio, shortVolumeRatioAnyOf, shortVolumeRatioGt, shortVolumeRatioGte, shortVolumeRatioLt, shortVolumeRatioLte, totalVolume, totalVolumeAnyOf, totalVolumeGt, totalVolumeGte, totalVolumeLt, totalVolumeLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get a single ticker supported by Polygon.io. This response will have detailed information about the ticker and the company behind it.
      * @summary Ticker Details v3
      * @param {string} ticker The ticker symbol of the asset.
@@ -22299,98 +25189,6 @@ export class DefaultApi extends BaseAPI {
      */
     public getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getTicker(ticker, date, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve earnings_v1 data via API.
-     * @summary earnings_v1 API
-     * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
-     * @param {string} [ticker] The stock symbol of the company reporting earnings.
-     * @param {string} [dateGte] Range by date.
-     * @param {string} [dateGt] Range by date.
-     * @param {string} [dateLte] Range by date.
-     * @param {string} [dateLt] Range by date.
-     * @param {string} [tickerGte] Range by ticker.
-     * @param {string} [tickerGt] Range by ticker.
-     * @param {string} [tickerLte] Range by ticker.
-     * @param {string} [tickerLt] Range by ticker.
-     * @param {ListBenzingaEarningsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-     * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-     * @param {ListBenzingaEarningsSortEnum} [sort] Sort field used for ordering.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public listBenzingaEarnings(date?: string, ticker?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListBenzingaEarningsOrderEnum, limit?: number, sort?: ListBenzingaEarningsSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listBenzingaEarnings(date, ticker, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve news_v1 data via API.
-     * @summary news_v1 API
-     * @param {string} [created] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
-     * @param {string} [tickers] A list of stock or crypto tickers mentioned in the article.
-     * @param {string} [createdGte] Range by created.
-     * @param {string} [createdGt] Range by created.
-     * @param {string} [createdLte] Range by created.
-     * @param {string} [createdLt] Range by created.
-     * @param {string} [tickersGte] Range by tickers.
-     * @param {string} [tickersGt] Range by tickers.
-     * @param {string} [tickersLte] Range by tickers.
-     * @param {string} [tickersLt] Range by tickers.
-     * @param {ListBenzingaNewsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-     * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-     * @param {ListBenzingaNewsSortEnum} [sort] Sort field used for ordering.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public listBenzingaNews(created?: string, tickers?: string, createdGte?: string, createdGt?: string, createdLte?: string, createdLt?: string, tickersGte?: string, tickersGt?: string, tickersLte?: string, tickersLt?: string, order?: ListBenzingaNewsOrderEnum, limit?: number, sort?: ListBenzingaNewsSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listBenzingaNews(created, tickers, createdGte, createdGt, createdLte, createdLt, tickersGte, tickersGt, tickersLte, tickersLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve ratings_v1 data via API.
-     * @summary ratings_v1 API
-     * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
-     * @param {string} [ticker] The stock symbol of the company being rated.
-     * @param {string} [ratingAction] The description of the change in rating from the firm\&#39;s last rating. Possible values include: downgrade, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.
-     * @param {string} [priceTargetAction] The description of the directional change in price target. Possible values include: raises, lowers, maintains, announces, sets.
-     * @param {string} [rating] The current rating set by the analyst.
-     * @param {string} [firm] The name of the research firm or investment bank issuing the rating.
-     * @param {string} [dateGte] Range by date.
-     * @param {string} [dateGt] Range by date.
-     * @param {string} [dateLte] Range by date.
-     * @param {string} [dateLt] Range by date.
-     * @param {string} [tickerGte] Range by ticker.
-     * @param {string} [tickerGt] Range by ticker.
-     * @param {string} [tickerLte] Range by ticker.
-     * @param {string} [tickerLt] Range by ticker.
-     * @param {string} [ratingActionGte] Range by rating_action.
-     * @param {string} [ratingActionGt] Range by rating_action.
-     * @param {string} [ratingActionLte] Range by rating_action.
-     * @param {string} [ratingActionLt] Range by rating_action.
-     * @param {string} [priceTargetActionGte] Range by price_target_action.
-     * @param {string} [priceTargetActionGt] Range by price_target_action.
-     * @param {string} [priceTargetActionLte] Range by price_target_action.
-     * @param {string} [priceTargetActionLt] Range by price_target_action.
-     * @param {string} [ratingGte] Range by rating.
-     * @param {string} [ratingGt] Range by rating.
-     * @param {string} [ratingLte] Range by rating.
-     * @param {string} [ratingLt] Range by rating.
-     * @param {string} [firmGte] Range by firm.
-     * @param {string} [firmGt] Range by firm.
-     * @param {string} [firmLte] Range by firm.
-     * @param {string} [firmLt] Range by firm.
-     * @param {ListBenzingaRatingsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-     * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-     * @param {ListBenzingaRatingsSortEnum} [sort] Sort field used for ordering.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public listBenzingaRatings(date?: string, ticker?: string, ratingAction?: string, priceTargetAction?: string, rating?: string, firm?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, ratingActionGte?: string, ratingActionGt?: string, ratingActionLte?: string, ratingActionLt?: string, priceTargetActionGte?: string, priceTargetActionGt?: string, priceTargetActionLte?: string, priceTargetActionLt?: string, ratingGte?: string, ratingGt?: string, ratingLte?: string, ratingLt?: string, firmGte?: string, firmGt?: string, firmLte?: string, firmLt?: string, order?: ListBenzingaRatingsOrderEnum, limit?: number, sort?: ListBenzingaRatingsSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listBenzingaRatings(date, ticker, ratingAction, priceTargetAction, rating, firm, dateGte, dateGt, dateLte, dateLt, tickerGte, tickerGt, tickerLte, tickerLt, ratingActionGte, ratingActionGt, ratingActionLte, ratingActionLt, priceTargetActionGte, priceTargetActionGt, priceTargetActionLte, priceTargetActionLt, ratingGte, ratingGt, ratingLte, ratingLt, firmGte, firmGt, firmLte, firmLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -22504,7 +25302,7 @@ export class DefaultApi extends BaseAPI {
     /**
      * The IPOs API provides access to detailed information about Initial Public Offerings (IPOs), including both upcoming and historical events. With this API, you can query for a comprehensive list of IPOs, along with key details such as the issuer name, ticker symbol, ISIN, IPO date, number of shares offered, expected price range, and final offering price. You can filter the results by status to focus on new, rumors, pending, historical, and more.
      * @summary IPOs
-     * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
+     * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, TSLA represents Tesla Inc.
      * @param {string} [usCode] Specify a us_code. This is a unique nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades.
      * @param {string} [isin] Specify an International Securities Identification Number (ISIN). This is a unique twelve-digit code that is assigned to every security issuance in the world.
      * @param {string} [listingDate] Specify a listing date. This is the first trading date for the newly listed entity.
@@ -22551,8 +25349,8 @@ export class DefaultApi extends BaseAPI {
     /**
      * Query for historical options contracts. This provides both active and expired options contracts.
      * @summary Options Contracts
-     * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
      * @param {string} [underlyingTicker] Query for contracts relating to an underlying stock ticker.
+     * @param {string} [ticker] This parameter has been deprecated. To search by specific options ticker, use the Options Contract endpoint [here](https://polygon.io/docs/options/get_v3_reference_options_contracts__options_ticker).
      * @param {ListOptionsContractsContractTypeEnum} [contractType] Query by the type of contract.
      * @param {string} [expirationDate] Query by contract expiration with date format YYYY-MM-DD.
      * @param {string} [asOf] Specify a point in time for contracts as of this date with format YYYY-MM-DD. Defaults to today\&#39;s date.
@@ -22577,8 +25375,8 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listOptionsContracts(ticker?: string, underlyingTicker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listOptionsContracts(ticker, underlyingTicker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    public listOptionsContracts(underlyingTicker?: string, ticker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listOptionsContracts(underlyingTicker, ticker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -22604,74 +25402,6 @@ export class DefaultApi extends BaseAPI {
      */
     public listStockSplits(ticker?: string, executionDate?: string, reverseSplit?: boolean | null, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, executionDateGte?: string, executionDateGt?: string, executionDateLte?: string, executionDateLt?: string, order?: ListStockSplitsOrderEnum, limit?: number, sort?: ListStockSplitsSortEnum, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listStockSplits(ticker, executionDate, reverseSplit, tickerGte, tickerGt, tickerLte, tickerLt, executionDateGte, executionDateGt, executionDateLte, executionDateLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve finra_short_interest_v1 data via API.
-     * @summary finra_short_interest_v1 API
-     * @param {string} [ticker] The primary ticker symbol for the stock.
-     * @param {string} [daysToCover] Calculated as short_interest divided by avg_daily_volume, representing the estimated number of days it would take to cover all short positions based on average trading volume.
-     * @param {string} [settlementDate] The date (formatted as YYYY-MM-DD) on which the short interest data is considered settled, typically based on exchange reporting schedules.
-     * @param {string} [avgDailyVolume] The average daily trading volume for the stock over a specified period, typically used to contextualize short interest.
-     * @param {string} [tickerGte] Range by ticker.
-     * @param {string} [tickerGt] Range by ticker.
-     * @param {string} [tickerLte] Range by ticker.
-     * @param {string} [tickerLt] Range by ticker.
-     * @param {string} [daysToCoverGte] Range by days_to_cover.
-     * @param {string} [daysToCoverGt] Range by days_to_cover.
-     * @param {string} [daysToCoverLte] Range by days_to_cover.
-     * @param {string} [daysToCoverLt] Range by days_to_cover.
-     * @param {string} [settlementDateGte] Range by settlement_date.
-     * @param {string} [settlementDateGt] Range by settlement_date.
-     * @param {string} [settlementDateLte] Range by settlement_date.
-     * @param {string} [settlementDateLt] Range by settlement_date.
-     * @param {string} [avgDailyVolumeGte] Range by avg_daily_volume.
-     * @param {string} [avgDailyVolumeGt] Range by avg_daily_volume.
-     * @param {string} [avgDailyVolumeLte] Range by avg_daily_volume.
-     * @param {string} [avgDailyVolumeLt] Range by avg_daily_volume.
-     * @param {ListStocksShortInterestOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-     * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-     * @param {ListStocksShortInterestSortEnum} [sort] Sort field used for ordering.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public listStocksShortInterest(ticker?: string, daysToCover?: string, settlementDate?: string, avgDailyVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, daysToCoverGte?: string, daysToCoverGt?: string, daysToCoverLte?: string, daysToCoverLt?: string, settlementDateGte?: string, settlementDateGt?: string, settlementDateLte?: string, settlementDateLt?: string, avgDailyVolumeGte?: string, avgDailyVolumeGt?: string, avgDailyVolumeLte?: string, avgDailyVolumeLt?: string, order?: ListStocksShortInterestOrderEnum, limit?: number, sort?: ListStocksShortInterestSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listStocksShortInterest(ticker, daysToCover, settlementDate, avgDailyVolume, tickerGte, tickerGt, tickerLte, tickerLt, daysToCoverGte, daysToCoverGt, daysToCoverLte, daysToCoverLt, settlementDateGte, settlementDateGt, settlementDateLte, settlementDateLt, avgDailyVolumeGte, avgDailyVolumeGt, avgDailyVolumeLte, avgDailyVolumeLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve finra_short_volume_v1 data via API.
-     * @summary finra_short_volume_v1 API
-     * @param {string} [ticker] The primary ticker symbol for the stock.
-     * @param {string} [date] The date of trade activity reported in the format YYYY-MM-DD
-     * @param {string} [shortVolumeRatio] The percentage of total volume that was sold short. Calculated as (short_volume / total_volume) * 100.
-     * @param {string} [totalVolume] Total reported volume across all venues for the ticker on the given date.
-     * @param {string} [tickerGte] Range by ticker.
-     * @param {string} [tickerGt] Range by ticker.
-     * @param {string} [tickerLte] Range by ticker.
-     * @param {string} [tickerLt] Range by ticker.
-     * @param {string} [dateGte] Range by date.
-     * @param {string} [dateGt] Range by date.
-     * @param {string} [dateLte] Range by date.
-     * @param {string} [dateLt] Range by date.
-     * @param {string} [shortVolumeRatioGte] Range by short_volume_ratio.
-     * @param {string} [shortVolumeRatioGt] Range by short_volume_ratio.
-     * @param {string} [shortVolumeRatioLte] Range by short_volume_ratio.
-     * @param {string} [shortVolumeRatioLt] Range by short_volume_ratio.
-     * @param {string} [totalVolumeGte] Range by total_volume.
-     * @param {string} [totalVolumeGt] Range by total_volume.
-     * @param {string} [totalVolumeLte] Range by total_volume.
-     * @param {string} [totalVolumeLt] Range by total_volume.
-     * @param {ListStocksShortVolumeOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-     * @param {number} [limit] Limit the number of results returned, default is 10 and max is 50000.
-     * @param {ListStocksShortVolumeSortEnum} [sort] Sort field used for ordering.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public listStocksShortVolume(ticker?: string, date?: string, shortVolumeRatio?: string, totalVolume?: string, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, shortVolumeRatioGte?: string, shortVolumeRatioGt?: string, shortVolumeRatioLte?: string, shortVolumeRatioLt?: string, totalVolumeGte?: string, totalVolumeGt?: string, totalVolumeLte?: string, totalVolumeLt?: string, order?: ListStocksShortVolumeOrderEnum, limit?: number, sort?: ListStocksShortVolumeSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listStocksShortVolume(ticker, date, shortVolumeRatio, totalVolume, tickerGte, tickerGt, tickerLte, tickerLt, dateGte, dateGt, dateLte, dateLt, shortVolumeRatioGte, shortVolumeRatioGt, shortVolumeRatioLte, shortVolumeRatioLt, totalVolumeGte, totalVolumeGt, totalVolumeLte, totalVolumeLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -22712,25 +25442,6 @@ export class DefaultApi extends BaseAPI {
      */
     public listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve treasury_yields_v1 data via API.
-     * @summary treasury_yields_v1 API
-     * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
-     * @param {string} [dateGte] Range by date.
-     * @param {string} [dateGt] Range by date.
-     * @param {string} [dateLte] Range by date.
-     * @param {string} [dateLt] Range by date.
-     * @param {ListTreasuryYieldsOrderEnum} [order] Order results based on the &#x60;sort&#x60; field.
-     * @param {number} [limit] Limit the number of results returned, default is 100 and max is 50000.
-     * @param {ListTreasuryYieldsSortEnum} [sort] Sort field used for ordering.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public listTreasuryYields(date?: string, dateGte?: string, dateGt?: string, dateLte?: string, dateLt?: string, order?: ListTreasuryYieldsOrderEnum, limit?: number, sort?: ListTreasuryYieldsSortEnum, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listTreasuryYields(date, dateGte, dateGt, dateLte, dateLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -23659,53 +26370,6 @@ export enum GetStocksTradesSortEnum {
   * @export
   * @enum {string}
   */
-export enum ListBenzingaEarningsOrderEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListBenzingaEarningsSortEnum {
-    Date = 'date',
-    Ticker = 'ticker'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListBenzingaNewsOrderEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListBenzingaNewsSortEnum {
-    Created = 'created'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListBenzingaRatingsOrderEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListBenzingaRatingsSortEnum {
-    Date = 'date',
-    Ticker = 'ticker'
-}
-/**
-  * @export
-  * @enum {string}
-  */
 export enum ListConditionsAssetClassEnum {
     Stocks = 'stocks',
     Options = 'options',
@@ -23944,42 +26608,6 @@ export enum ListStockSplitsSortEnum {
   * @export
   * @enum {string}
   */
-export enum ListStocksShortInterestOrderEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListStocksShortInterestSortEnum {
-    Ticker = 'ticker',
-    SettlementDate = 'settlement_date',
-    DaysToCover = 'days_to_cover',
-    AvgDailyVolume = 'avg_daily_volume'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListStocksShortVolumeOrderEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListStocksShortVolumeSortEnum {
-    Ticker = 'ticker',
-    Date = 'date',
-    ShortVolumeRatio = 'short_volume_ratio',
-    TotalVolume = 'total_volume'
-}
-/**
-  * @export
-  * @enum {string}
-  */
 export enum ListTickerTypesAssetClassEnum {
     Stocks = 'stocks',
     Options = 'options',
@@ -24063,21 +26691,6 @@ export enum ListTickersSortEnum {
     ShareClassFigi = 'share_class_figi',
     LastUpdatedUtc = 'last_updated_utc',
     DelistedUtc = 'delisted_utc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListTreasuryYieldsOrderEnum {
-    Asc = 'asc',
-    Desc = 'desc'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ListTreasuryYieldsSortEnum {
-    Date = 'date'
 }
 
 
