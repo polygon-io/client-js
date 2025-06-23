@@ -1,8 +1,7 @@
 name: Release
 on:
-  push:
-    branches:
-      - master # or main
+  repository_dispatch:
+    types: [released]
 
 permissions:
   contents: read # for checkout
@@ -27,8 +26,8 @@ jobs:
           node-version: "lts/*"
       - name: Install dependencies
         run: npm clean-install
-      - name: Generate Rest Client
-        run: npm run generate
+      - name: Build package
+        run: npm run build
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Release
