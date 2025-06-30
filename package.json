@@ -16,7 +16,8 @@
     "generate": "sh ./scripts/generate.sh",
     "pull-spec": "node ./scripts/pull_spec.js",
     "build": "rm -rf ./dist && npm run pull-spec && npm run generate && tsup src/main.ts --dts --format esm --minify",
-    "generate-doc": "typedoc src/main.ts"
+    "generate-doc": "typedoc src/main.ts",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -60,7 +61,7 @@
     "lodash": "^4.17.21",
     "mocha": "^9.1.3",
     "prettier": "^2.5.1",
-    "semantic-release": "^24.2.3",
+    "release-it": "^19.0.3",
     "sinon": "^12.0.1",
     "ts-node": "^10.9.1",
     "tsup": "^6.7.0",
