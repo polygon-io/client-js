@@ -8,8 +8,5 @@
     "esModuleInterop": true,
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     "outDir": "dist" /* Redirect output structure to the directory. */,
-    "typeRoots": [
-      "node_modules/@types"
-    ] /* List of folders to include type definitions from. */
   }
 }

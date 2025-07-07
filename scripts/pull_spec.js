@@ -31,6 +31,9 @@ const main = async () => {
       // Skip paths marked as drafts
       if (pathObj["x-polygon-draft"]) continue;
 
+      // Skip incomplete futures endpoints
+      if (path.startsWith('/futures/vX/')) continue;
+
       // Since all endpoints use GET, process the 'get' method
       const operation = pathObj.get;
       const key = `${path}+${operation.operationId}`; // e.g., "/fed/vX/treasury-yields+TreasuryYields"

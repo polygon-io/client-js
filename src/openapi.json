@@ -5157,6 +5157,7 @@
   "paths": {
     "/benzinga/v1/analyst-insights": {
       "get": {
+        "description": "A comprehensive database of financial analyst insights and ratings for various publicly traded companies, capturing detailed information about analyst recommendations and price targets.",
         "operationId": "get_benzinga_v1_analyst-insights",
         "parameters": [
           {
@@ -5618,6 +5619,7 @@
     },
     "/benzinga/v1/analysts": {
       "get": {
+        "description": "A comprehensive database of financial analysts, containing detailed performance metrics and identification information for individual analysts across various financial firms.",
         "operationId": "get_benzinga_v1_analysts",
         "parameters": [
           {
@@ -5985,6 +5987,7 @@
     },
     "/benzinga/v1/consensus-ratings/{ticker}": {
       "get": {
+        "description": "A comprehensive financial consensus ratings table that aggregates analyst recommendations and price targets for individual stock tickers, capturing detailed rating breakdowns and statistical insights.",
         "operationId": "get_benzinga_v1_consensus-ratings",
         "parameters": [
           {
@@ -6224,6 +6227,7 @@
     },
     "/benzinga/v1/earnings": {
       "get": {
+        "description": "This table contains earnings data from Benzinga, tracking both actual and estimated financial metrics for publicly traded companies. It includes EPS and revenue figures with surprise calculations, along with metadata like fiscal periods, company identifiers, and reporting timestamps.",
         "operationId": "get_benzinga_v1_earnings",
         "parameters": [
           {
@@ -6915,6 +6919,7 @@
     },
     "/benzinga/v1/firms": {
       "get": {
+        "description": "A comprehensive database of financial firms, tracking unique identifiers, names, and basic metadata for various financial institutions and research firms.",
         "operationId": "get_benzinga_v1_firms",
         "parameters": [
           {
@@ -7022,9 +7027,11 @@
                             "type": "string"
                           },
                           "currency": {
+                            "description": "Primary currency used by the financial firm, with some entries having null values.",
                             "type": "string"
                           },
                           "last_updated": {
+                            "description": "Timestamp indicating when the firm's information was last modified or verified in the database.",
                             "type": "string"
                           },
                           "name": {
@@ -7095,6 +7102,7 @@
     },
     "/benzinga/v1/guidance": {
       "get": {
+        "description": "A comprehensive database of financial guidance and earnings estimates for various companies, capturing key metrics related to earnings per share (EPS) and revenue projections across different fiscal periods.",
         "operationId": "get_benzinga_v1_guidance",
         "parameters": [
           {
@@ -7692,6 +7700,7 @@
     },
     "/benzinga/v1/news": {
       "get": {
+        "description": "A comprehensive news article database from Benzinga, containing detailed information about financial news articles including metadata, content, and associated financial information.",
         "operationId": "get_benzinga_v1_news",
         "parameters": [
           {
@@ -8109,6 +8118,7 @@
     },
     "/benzinga/v1/ratings": {
       "get": {
+        "description": "This table contains analyst ratings and price target data from investment firms, tracking rating changes (upgrades, downgrades, initiates coverage, etc.) and price target adjustments for publicly traded companies. Each record includes the analyst details, company information, current and previous ratings/targets, and metadata like timestamps and Benzinga identifiers.",
         "operationId": "get_benzinga_v1_ratings",
         "parameters": [
           {
@@ -8453,7 +8463,7 @@
             }
           },
           {
-            "description": "Filter equal to the value.",
+            "description": "The identifer used by Benzinga for this analyst.",
             "in": "query",
             "name": "benzinga_analyst_id",
             "schema": {
@@ -8501,7 +8511,7 @@
             }
           },
           {
-            "description": "Filter equal to the value.",
+            "description": "The identifer used by Benzinga for this firm.",
             "in": "query",
             "name": "benzinga_firm_id",
             "schema": {
@@ -8629,6 +8639,7 @@
                             "type": "string"
                           },
                           "benzinga_analyst_id": {
+                            "description": "The identifer used by Benzinga for this analyst.",
                             "type": "string"
                           },
                           "benzinga_calendar_url": {
@@ -8636,6 +8647,7 @@
                             "type": "string"
                           },
                           "benzinga_firm_id": {
+                            "description": "The identifer used by Benzinga for this firm.",
                             "type": "string"
                           },
                           "benzinga_id": {
@@ -8690,6 +8702,7 @@
                             "type": "string"
                           },
                           "price_percent_change": {
+                            "description": "The percentage change in price target if price target and previous price target exists",
                             "format": "float",
                             "type": "number"
                           },
@@ -8782,10 +8795,11 @@
     },
     "/fed/v1/treasury-yields": {
       "get": {
+        "description": "A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.",
         "operationId": "get_fed_v1_treasury-yields",
         "parameters": [
           {
-            "description": "Calendar date of the yield observation (YYYY‑MM‑DD).",
+            "description": "Calendar date of the yield observation (YYYY-MM-DD).",
             "in": "query",
             "name": "date",
             "schema": {
@@ -8885,61 +8899,61 @@
                       "items": {
                         "properties": {
                           "date": {
-                            "description": "Calendar date of the yield observation (YYYY‑MM‑DD).",
+                            "description": "Calendar date of the yield observation (YYYY-MM-DD).",
                             "type": "string"
                           },
                           "yield_10_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 10‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_1_month": {
-                            "description": "Market Yield on U.S. Treasury Securities at 1‑Month Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 1-Month Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_1_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 1‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 1-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_20_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 20‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 20-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_2_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 2‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 2-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_30_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 30‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 30-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_3_month": {
-                            "description": "Market Yield on U.S. Treasury Securities at 3‑Month Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 3-Month Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_3_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 3‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 3-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_5_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 5‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 5-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_6_month": {
-                            "description": "Market Yield on U.S. Treasury Securities at 6‑Month Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 6-Month Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           },
                           "yield_7_year": {
-                            "description": "Market Yield on U.S. Treasury Securities at 7‑Year Constant Maturity, Quoted on an Investment Basis",
+                            "description": "Market Yield on U.S. Treasury Securities at 7-Year Constant Maturity, Quoted on an Investment Basis",
                             "format": "float",
                             "type": "number"
                           }
@@ -9700,6 +9714,564 @@
                         "required": [
                           "date"
                         ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "status": {
+                      "description": "The status of this request's response.",
+                      "enum": [
+                        "OK"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "request_id",
+                    "results"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "A list of results."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "A message describing the source of the error.",
+                      "type": "string"
+                    },
+                    "request_id": {
+                      "description": "A request id assigned by the server.",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "The status of this request's response.",
+                      "enum": [
+                        "ERROR"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "request_id",
+                    "error"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "An error message."
+          }
+        },
+        "tags": [
+          "default"
+        ]
+      }
+    },
+    "/tmx/v1/corporate-events": {
+      "get": {
+        "operationId": "get_tmx_v1_corporate-events",
+        "parameters": [
+          {
+            "description": "Scheduled date of the corporate event, formatted as YYYY-MM-DD.",
+            "in": "query",
+            "name": "date",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "date.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "date.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "date.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "date.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "date.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.",
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "type.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "type.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "type.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "type.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "type.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.",
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "status.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "status.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "status.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "status.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "status.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The company's stock symbol.",
+            "in": "query",
+            "name": "ticker",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "ticker.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "ticker.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "ticker.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "ticker.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "ticker.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Standard international identifier for the company's common stock.",
+            "in": "query",
+            "name": "isin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "isin.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "isin.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "isin.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "isin.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "isin.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "MIC (Market Identifier Code) of the exchange where the company's stock is listed.",
+            "in": "query",
+            "name": "trading_venue",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "trading_venue.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "trading_venue.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "trading_venue.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "trading_venue.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "trading_venue.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Unique numeric identifier for the company used by TMX. Value must be an integer.",
+            "in": "query",
+            "name": "tmx_company_id",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.",
+            "in": "query",
+            "name": "tmx_company_id.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value. Value must be an integer.",
+            "in": "query",
+            "name": "tmx_company_id.gt",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value. Value must be an integer.",
+            "in": "query",
+            "name": "tmx_company_id.gte",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter less than the value. Value must be an integer.",
+            "in": "query",
+            "name": "tmx_company_id.lt",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value. Value must be an integer.",
+            "in": "query",
+            "name": "tmx_company_id.lte",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "The unique alphanumeric identifier for the event record used by TMX.",
+            "in": "query",
+            "name": "tmx_record_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "tmx_record_id.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "tmx_record_id.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "tmx_record_id.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "tmx_record_id.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "tmx_record_id.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit the maximum number of results returned. Defaults to '100' if not specified. The maximum allowed limit is '50000'.",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "default": 100,
+              "maximum": 50001,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "A comma separated list of sort columns. For each column, append '.asc' or '.desc' to specify the sort direction. The sort column defaults to 'date' if not specified. The sort order defaults to 'desc' if not specified.",
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "default": "date.desc",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "count": 1,
+                  "request_id": 1,
+                  "results": [
+                    {
+                      "company_name": "Rollins Inc.",
+                      "date": "2025-07-23",
+                      "isin": "US7757111049",
+                      "name": "Q2 2025 Earnings Announcement-After Mkt",
+                      "status": "unconfirmed",
+                      "ticker": "ROL",
+                      "tmx_company_id": "2208",
+                      "tmx_record_id": "4XMW4E9G",
+                      "trading_venue": "XNYS",
+                      "type": "earnings_announcement_date"
+                    }
+                  ],
+                  "status": "OK"
+                },
+                "schema": {
+                  "properties": {
+                    "next_url": {
+                      "description": "If present, this value can be used to fetch the next page.",
+                      "type": "string"
+                    },
+                    "request_id": {
+                      "description": "A request id assigned by the server.",
+                      "type": "string"
+                    },
+                    "results": {
+                      "description": "The results for this request.",
+                      "items": {
+                        "properties": {
+                          "company_name": {
+                            "description": "Full name of the company.",
+                            "type": "string"
+                          },
+                          "date": {
+                            "description": "Scheduled date of the corporate event, formatted as YYYY-MM-DD.",
+                            "type": "string"
+                          },
+                          "isin": {
+                            "description": "Standard international identifier for the company's common stock.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "Name or title of the event.",
+                            "type": "string"
+                          },
+                          "status": {
+                            "description": "The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.",
+                            "type": "string"
+                          },
+                          "ticker": {
+                            "description": "The company's stock symbol.",
+                            "type": "string"
+                          },
+                          "tmx_company_id": {
+                            "description": "Unique numeric identifier for the company used by TMX.",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "tmx_record_id": {
+                            "description": "The unique alphanumeric identifier for the event record used by TMX.",
+                            "type": "string"
+                          },
+                          "trading_venue": {
+                            "description": "MIC (Market Identifier Code) of the exchange where the company's stock is listed.",
+                            "type": "string"
+                          },
+                          "type": {
+                            "description": "The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.",
+                            "type": "string"
+                          },
+                          "url": {
+                            "description": "URL linking to the primary public source of the event announcement, if available.",
+                            "type": "string"
+                          }
+                        },
                         "type": "object"
                       },
                       "type": "array"

@@ -2792,13 +2792,13 @@ export interface GetBenzingaV1Firms200ResponseResultsInner {
      */
     'benzinga_id'?: string;
     /**
-     * 
+     * Primary currency used by the financial firm, with some entries having null values.
      * @type {string}
      * @memberof GetBenzingaV1Firms200ResponseResultsInner
      */
     'currency'?: string;
     /**
-     * 
+     * Timestamp indicating when the firm\'s information was last modified or verified in the database.
      * @type {string}
      * @memberof GetBenzingaV1Firms200ResponseResultsInner
      */
@@ -3185,7 +3185,7 @@ export interface GetBenzingaV1Ratings200ResponseResultsInner {
      */
     'analyst'?: string;
     /**
-     * 
+     * The identifer used by Benzinga for this analyst.
      * @type {string}
      * @memberof GetBenzingaV1Ratings200ResponseResultsInner
      */
@@ -3197,7 +3197,7 @@ export interface GetBenzingaV1Ratings200ResponseResultsInner {
      */
     'benzinga_calendar_url'?: string;
     /**
-     * 
+     * The identifer used by Benzinga for this firm.
      * @type {string}
      * @memberof GetBenzingaV1Ratings200ResponseResultsInner
      */
@@ -3275,7 +3275,7 @@ export interface GetBenzingaV1Ratings200ResponseResultsInner {
      */
     'previous_rating'?: string;
     /**
-     * 
+     * The percentage change in price target if price target and previous price target exists
      * @type {number}
      * @memberof GetBenzingaV1Ratings200ResponseResultsInner
      */
@@ -4458,73 +4458,73 @@ export enum GetFedV1TreasuryYields200ResponseStatusEnum {
  */
 export interface GetFedV1TreasuryYields200ResponseResultsInner {
     /**
-     * Calendar date of the yield observation (YYYY‑MM‑DD).
+     * Calendar date of the yield observation (YYYY-MM-DD).
      * @type {string}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'date'?: string;
     /**
-     * Market Yield on U.S. Treasury Securities at 10‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_10_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 1‑Month Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 1-Month Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_1_month'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 1‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 1-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_1_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 20‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 20-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_20_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 2‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 2-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_2_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 30‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 30-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_30_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 3‑Month Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 3-Month Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_3_month'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 3‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 3-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_3_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 5‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 5-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_5_year'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 6‑Month Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 6-Month Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
     'yield_6_month'?: number;
     /**
-     * Market Yield on U.S. Treasury Securities at 7‑Year Constant Maturity, Quoted on an Investment Basis
+     * Market Yield on U.S. Treasury Securities at 7-Year Constant Maturity, Quoted on an Investment Basis
      * @type {number}
      * @memberof GetFedV1TreasuryYields200ResponseResultsInner
      */
@@ -8787,6 +8787,119 @@ export interface GetTicker200ResponseResultsBranding {
 /**
  * 
  * @export
+ * @interface GetTmxV1CorporateEvents200Response
+ */
+export interface GetTmxV1CorporateEvents200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetTmxV1CorporateEvents200ResponseResultsInner>}
+     * @memberof GetTmxV1CorporateEvents200Response
+     */
+    'results': Array<GetTmxV1CorporateEvents200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200Response
+     */
+    'status': GetTmxV1CorporateEvents200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetTmxV1CorporateEvents200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetTmxV1CorporateEvents200ResponseResultsInner
+ */
+export interface GetTmxV1CorporateEvents200ResponseResultsInner {
+    /**
+     * Full name of the company.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'company_name'?: string;
+    /**
+     * Scheduled date of the corporate event, formatted as YYYY-MM-DD.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * Standard international identifier for the company\'s common stock.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'isin'?: string;
+    /**
+     * Name or title of the event.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'name'?: string;
+    /**
+     * The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'status'?: string;
+    /**
+     * The company\'s stock symbol.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * Unique numeric identifier for the company used by TMX.
+     * @type {number}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'tmx_company_id'?: number;
+    /**
+     * The unique alphanumeric identifier for the event record used by TMX.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'tmx_record_id'?: string;
+    /**
+     * MIC (Market Identifier Code) of the exchange where the company\'s stock is listed.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'trading_venue'?: string;
+    /**
+     * The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'type'?: string;
+    /**
+     * URL linking to the primary public source of the event announcement, if available.
+     * @type {string}
+     * @memberof GetTmxV1CorporateEvents200ResponseResultsInner
+     */
+    'url'?: string;
+}
+/**
+ * 
+ * @export
  * @interface IndexAggsBase
  */
 export interface IndexAggsBase {
@@ -12017,7 +12130,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * A comprehensive database of financial analyst insights and ratings for various publicly traded companies, capturing detailed information about analyst recommendations and price targets.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -12239,7 +12352,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * A comprehensive database of financial analysts, containing detailed performance metrics and identification information for individual analysts across various financial firms.
          * @param {string} [benzingaId] The identifier used by Benzinga for this record.
          * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -12401,7 +12514,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * A comprehensive financial consensus ratings table that aggregates analyst recommendations and price targets for individual stock tickers, capturing detailed rating breakdowns and statistical insights.
          * @param {string} ticker The requested ticker.
          * @param {string} [date] Filter equal to the value.
          * @param {string} [dateGt] Filter greater than the value.
@@ -12467,7 +12580,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * This table contains earnings data from Benzinga, tracking both actual and estimated financial metrics for publicly traded companies. It includes EPS and revenue figures with surprise calculations, along with metadata like fiscal periods, company identifiers, and reporting timestamps.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -12779,7 +12892,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * A comprehensive database of financial firms, tracking unique identifiers, names, and basic metadata for various financial institutions and research firms.
          * @param {string} [benzingaId] The identifer used by Benzinga for this record.
          * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -12851,7 +12964,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * A comprehensive database of financial guidance and earnings estimates for various companies, capturing key metrics related to earnings per share (EPS) and revenue projections across different fiscal periods.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -13103,7 +13216,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * A comprehensive news article database from Benzinga, containing detailed information about financial news articles including metadata, content, and associated financial information.
          * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
          * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [publishedGt] Filter greater than the value.
@@ -13280,7 +13393,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * This table contains analyst ratings and price target data from investment firms, tracking rating changes (upgrades, downgrades, initiates coverage, etc.) and price target adjustments for publicly traded companies. Each record includes the analyst details, company information, current and previous ratings/targets, and metadata like timestamps and Benzinga identifiers.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -13323,13 +13436,13 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
          * @param {string} [benzingaIdLt] Filter less than the value.
          * @param {string} [benzingaIdLte] Filter less than or equal to the value.
-         * @param {string} [benzingaAnalystId] Filter equal to the value.
+         * @param {string} [benzingaAnalystId] The identifer used by Benzinga for this analyst.
          * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
          * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
          * @param {string} [benzingaAnalystIdLt] Filter less than the value.
          * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
-         * @param {string} [benzingaFirmId] Filter equal to the value.
+         * @param {string} [benzingaFirmId] The identifer used by Benzinga for this firm.
          * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaFirmIdGt] Filter greater than the value.
          * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
@@ -14370,8 +14483,8 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
-         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
+         * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
          * @param {string} [dateGte] Filter greater than or equal to the value.
@@ -18442,6 +18555,288 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * 
+         * @param {string} [date] Scheduled date of the corporate event, formatted as YYYY-MM-DD.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [type] The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.
+         * @param {string} [typeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [typeGt] Filter greater than the value.
+         * @param {string} [typeGte] Filter greater than or equal to the value.
+         * @param {string} [typeLt] Filter less than the value.
+         * @param {string} [typeLte] Filter less than or equal to the value.
+         * @param {string} [status] The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.
+         * @param {string} [statusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [statusGt] Filter greater than the value.
+         * @param {string} [statusGte] Filter greater than or equal to the value.
+         * @param {string} [statusLt] Filter less than the value.
+         * @param {string} [statusLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The company\&#39;s stock symbol.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [isin] Standard international identifier for the company\&#39;s common stock.
+         * @param {string} [isinAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [isinGt] Filter greater than the value.
+         * @param {string} [isinGte] Filter greater than or equal to the value.
+         * @param {string} [isinLt] Filter less than the value.
+         * @param {string} [isinLte] Filter less than or equal to the value.
+         * @param {string} [tradingVenue] MIC (Market Identifier Code) of the exchange where the company\&#39;s stock is listed.
+         * @param {string} [tradingVenueAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tradingVenueGt] Filter greater than the value.
+         * @param {string} [tradingVenueGte] Filter greater than or equal to the value.
+         * @param {string} [tradingVenueLt] Filter less than the value.
+         * @param {string} [tradingVenueLte] Filter less than or equal to the value.
+         * @param {number} [tmxCompanyId] Unique numeric identifier for the company used by TMX. Value must be an integer.
+         * @param {string} [tmxCompanyIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [tmxCompanyIdGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdLt] Filter less than the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [tmxRecordId] The unique alphanumeric identifier for the event record used by TMX.
+         * @param {string} [tmxRecordIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tmxRecordIdGt] Filter greater than the value.
+         * @param {string} [tmxRecordIdGte] Filter greater than or equal to the value.
+         * @param {string} [tmxRecordIdLt] Filter less than the value.
+         * @param {string} [tmxRecordIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTmxV1CorporateEvents: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, type?: string, typeAnyOf?: string, typeGt?: string, typeGte?: string, typeLt?: string, typeLte?: string, status?: string, statusAnyOf?: string, statusGt?: string, statusGte?: string, statusLt?: string, statusLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, isin?: string, isinAnyOf?: string, isinGt?: string, isinGte?: string, isinLt?: string, isinLte?: string, tradingVenue?: string, tradingVenueAnyOf?: string, tradingVenueGt?: string, tradingVenueGte?: string, tradingVenueLt?: string, tradingVenueLte?: string, tmxCompanyId?: number, tmxCompanyIdAnyOf?: string, tmxCompanyIdGt?: number, tmxCompanyIdGte?: number, tmxCompanyIdLt?: number, tmxCompanyIdLte?: number, tmxRecordId?: string, tmxRecordIdAnyOf?: string, tmxRecordIdGt?: string, tmxRecordIdGte?: string, tmxRecordIdLt?: string, tmxRecordIdLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/tmx/v1/corporate-events`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+
+            if (typeAnyOf !== undefined) {
+                localVarQueryParameter['type.any_of'] = typeAnyOf;
+            }
+
+            if (typeGt !== undefined) {
+                localVarQueryParameter['type.gt'] = typeGt;
+            }
+
+            if (typeGte !== undefined) {
+                localVarQueryParameter['type.gte'] = typeGte;
+            }
+
+            if (typeLt !== undefined) {
+                localVarQueryParameter['type.lt'] = typeLt;
+            }
+
+            if (typeLte !== undefined) {
+                localVarQueryParameter['type.lte'] = typeLte;
+            }
+
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (statusAnyOf !== undefined) {
+                localVarQueryParameter['status.any_of'] = statusAnyOf;
+            }
+
+            if (statusGt !== undefined) {
+                localVarQueryParameter['status.gt'] = statusGt;
+            }
+
+            if (statusGte !== undefined) {
+                localVarQueryParameter['status.gte'] = statusGte;
+            }
+
+            if (statusLt !== undefined) {
+                localVarQueryParameter['status.lt'] = statusLt;
+            }
+
+            if (statusLte !== undefined) {
+                localVarQueryParameter['status.lte'] = statusLte;
+            }
+
+            if (ticker !== undefined) {
+                localVarQueryParameter['ticker'] = ticker;
+            }
+
+            if (tickerAnyOf !== undefined) {
+                localVarQueryParameter['ticker.any_of'] = tickerAnyOf;
+            }
+
+            if (tickerGt !== undefined) {
+                localVarQueryParameter['ticker.gt'] = tickerGt;
+            }
+
+            if (tickerGte !== undefined) {
+                localVarQueryParameter['ticker.gte'] = tickerGte;
+            }
+
+            if (tickerLt !== undefined) {
+                localVarQueryParameter['ticker.lt'] = tickerLt;
+            }
+
+            if (tickerLte !== undefined) {
+                localVarQueryParameter['ticker.lte'] = tickerLte;
+            }
+
+            if (isin !== undefined) {
+                localVarQueryParameter['isin'] = isin;
+            }
+
+            if (isinAnyOf !== undefined) {
+                localVarQueryParameter['isin.any_of'] = isinAnyOf;
+            }
+
+            if (isinGt !== undefined) {
+                localVarQueryParameter['isin.gt'] = isinGt;
+            }
+
+            if (isinGte !== undefined) {
+                localVarQueryParameter['isin.gte'] = isinGte;
+            }
+
+            if (isinLt !== undefined) {
+                localVarQueryParameter['isin.lt'] = isinLt;
+            }
+
+            if (isinLte !== undefined) {
+                localVarQueryParameter['isin.lte'] = isinLte;
+            }
+
+            if (tradingVenue !== undefined) {
+                localVarQueryParameter['trading_venue'] = tradingVenue;
+            }
+
+            if (tradingVenueAnyOf !== undefined) {
+                localVarQueryParameter['trading_venue.any_of'] = tradingVenueAnyOf;
+            }
+
+            if (tradingVenueGt !== undefined) {
+                localVarQueryParameter['trading_venue.gt'] = tradingVenueGt;
+            }
+
+            if (tradingVenueGte !== undefined) {
+                localVarQueryParameter['trading_venue.gte'] = tradingVenueGte;
+            }
+
+            if (tradingVenueLt !== undefined) {
+                localVarQueryParameter['trading_venue.lt'] = tradingVenueLt;
+            }
+
+            if (tradingVenueLte !== undefined) {
+                localVarQueryParameter['trading_venue.lte'] = tradingVenueLte;
+            }
+
+            if (tmxCompanyId !== undefined) {
+                localVarQueryParameter['tmx_company_id'] = tmxCompanyId;
+            }
+
+            if (tmxCompanyIdAnyOf !== undefined) {
+                localVarQueryParameter['tmx_company_id.any_of'] = tmxCompanyIdAnyOf;
+            }
+
+            if (tmxCompanyIdGt !== undefined) {
+                localVarQueryParameter['tmx_company_id.gt'] = tmxCompanyIdGt;
+            }
+
+            if (tmxCompanyIdGte !== undefined) {
+                localVarQueryParameter['tmx_company_id.gte'] = tmxCompanyIdGte;
+            }
+
+            if (tmxCompanyIdLt !== undefined) {
+                localVarQueryParameter['tmx_company_id.lt'] = tmxCompanyIdLt;
+            }
+
+            if (tmxCompanyIdLte !== undefined) {
+                localVarQueryParameter['tmx_company_id.lte'] = tmxCompanyIdLte;
+            }
+
+            if (tmxRecordId !== undefined) {
+                localVarQueryParameter['tmx_record_id'] = tmxRecordId;
+            }
+
+            if (tmxRecordIdAnyOf !== undefined) {
+                localVarQueryParameter['tmx_record_id.any_of'] = tmxRecordIdAnyOf;
+            }
+
+            if (tmxRecordIdGt !== undefined) {
+                localVarQueryParameter['tmx_record_id.gt'] = tmxRecordIdGt;
+            }
+
+            if (tmxRecordIdGte !== undefined) {
+                localVarQueryParameter['tmx_record_id.gte'] = tmxRecordIdGte;
+            }
+
+            if (tmxRecordIdLt !== undefined) {
+                localVarQueryParameter['tmx_record_id.lt'] = tmxRecordIdLt;
+            }
+
+            if (tmxRecordIdLte !== undefined) {
+                localVarQueryParameter['tmx_record_id.lte'] = tmxRecordIdLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List all conditions that Polygon.io uses.
          * @summary Conditions
          * @param {ListConditionsAssetClassEnum} [assetClass] Filter for conditions within a given asset class.
@@ -19672,7 +20067,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * A comprehensive database of financial analyst insights and ratings for various publicly traded companies, capturing detailed information about analyst recommendations and price targets.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -19721,7 +20116,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * A comprehensive database of financial analysts, containing detailed performance metrics and identification information for individual analysts across various financial firms.
          * @param {string} [benzingaId] The identifier used by Benzinga for this record.
          * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -19758,7 +20153,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * A comprehensive financial consensus ratings table that aggregates analyst recommendations and price targets for individual stock tickers, capturing detailed rating breakdowns and statistical insights.
          * @param {string} ticker The requested ticker.
          * @param {string} [date] Filter equal to the value.
          * @param {string} [dateGt] Filter greater than the value.
@@ -19776,7 +20171,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * This table contains earnings data from Benzinga, tracking both actual and estimated financial metrics for publicly traded companies. It includes EPS and revenue figures with surprise calculations, along with metadata like fiscal periods, company identifiers, and reporting timestamps.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -19843,7 +20238,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * A comprehensive database of financial firms, tracking unique identifiers, names, and basic metadata for various financial institutions and research firms.
          * @param {string} [benzingaId] The identifer used by Benzinga for this record.
          * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -19862,7 +20257,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * A comprehensive database of financial guidance and earnings estimates for various companies, capturing key metrics related to earnings per share (EPS) and revenue projections across different fiscal periods.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -19917,7 +20312,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * A comprehensive news article database from Benzinga, containing detailed information about financial news articles including metadata, content, and associated financial information.
          * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
          * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [publishedGt] Filter greater than the value.
@@ -19957,7 +20352,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
+         * This table contains analyst ratings and price target data from investment firms, tracking rating changes (upgrades, downgrades, initiates coverage, etc.) and price target adjustments for publicly traded companies. Each record includes the analyst details, company information, current and previous ratings/targets, and metadata like timestamps and Benzinga identifiers.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -20000,13 +20395,13 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
          * @param {string} [benzingaIdLt] Filter less than the value.
          * @param {string} [benzingaIdLte] Filter less than or equal to the value.
-         * @param {string} [benzingaAnalystId] Filter equal to the value.
+         * @param {string} [benzingaAnalystId] The identifer used by Benzinga for this analyst.
          * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
          * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
          * @param {string} [benzingaAnalystIdLt] Filter less than the value.
          * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
-         * @param {string} [benzingaFirmId] Filter equal to the value.
+         * @param {string} [benzingaFirmId] The identifer used by Benzinga for this firm.
          * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaFirmIdGt] Filter greater than the value.
          * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
@@ -20248,8 +20643,8 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
-         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
+         * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
          * @param {string} [dateGte] Filter greater than or equal to the value.
@@ -21398,6 +21793,67 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @param {string} [date] Scheduled date of the corporate event, formatted as YYYY-MM-DD.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [type] The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.
+         * @param {string} [typeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [typeGt] Filter greater than the value.
+         * @param {string} [typeGte] Filter greater than or equal to the value.
+         * @param {string} [typeLt] Filter less than the value.
+         * @param {string} [typeLte] Filter less than or equal to the value.
+         * @param {string} [status] The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.
+         * @param {string} [statusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [statusGt] Filter greater than the value.
+         * @param {string} [statusGte] Filter greater than or equal to the value.
+         * @param {string} [statusLt] Filter less than the value.
+         * @param {string} [statusLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The company\&#39;s stock symbol.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [isin] Standard international identifier for the company\&#39;s common stock.
+         * @param {string} [isinAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [isinGt] Filter greater than the value.
+         * @param {string} [isinGte] Filter greater than or equal to the value.
+         * @param {string} [isinLt] Filter less than the value.
+         * @param {string} [isinLte] Filter less than or equal to the value.
+         * @param {string} [tradingVenue] MIC (Market Identifier Code) of the exchange where the company\&#39;s stock is listed.
+         * @param {string} [tradingVenueAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tradingVenueGt] Filter greater than the value.
+         * @param {string} [tradingVenueGte] Filter greater than or equal to the value.
+         * @param {string} [tradingVenueLt] Filter less than the value.
+         * @param {string} [tradingVenueLte] Filter less than or equal to the value.
+         * @param {number} [tmxCompanyId] Unique numeric identifier for the company used by TMX. Value must be an integer.
+         * @param {string} [tmxCompanyIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [tmxCompanyIdGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdLt] Filter less than the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [tmxRecordId] The unique alphanumeric identifier for the event record used by TMX.
+         * @param {string} [tmxRecordIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tmxRecordIdGt] Filter greater than the value.
+         * @param {string} [tmxRecordIdGte] Filter greater than or equal to the value.
+         * @param {string} [tmxRecordIdLt] Filter less than the value.
+         * @param {string} [tmxRecordIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getTmxV1CorporateEvents(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, type?: string, typeAnyOf?: string, typeGt?: string, typeGte?: string, typeLt?: string, typeLte?: string, status?: string, statusAnyOf?: string, statusGt?: string, statusGte?: string, statusLt?: string, statusLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, isin?: string, isinAnyOf?: string, isinGt?: string, isinGte?: string, isinLt?: string, isinLte?: string, tradingVenue?: string, tradingVenueAnyOf?: string, tradingVenueGt?: string, tradingVenueGte?: string, tradingVenueLt?: string, tradingVenueLte?: string, tmxCompanyId?: number, tmxCompanyIdAnyOf?: string, tmxCompanyIdGt?: number, tmxCompanyIdGte?: number, tmxCompanyIdLt?: number, tmxCompanyIdLte?: number, tmxRecordId?: string, tmxRecordIdAnyOf?: string, tmxRecordIdGt?: string, tmxRecordIdGte?: string, tmxRecordIdLt?: string, tmxRecordIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetTmxV1CorporateEvents200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTmxV1CorporateEvents(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, type, typeAnyOf, typeGt, typeGte, typeLt, typeLte, status, statusAnyOf, statusGt, statusGte, statusLt, statusLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, isin, isinAnyOf, isinGt, isinGte, isinLt, isinLte, tradingVenue, tradingVenueAnyOf, tradingVenueGt, tradingVenueGte, tradingVenueLt, tradingVenueLte, tmxCompanyId, tmxCompanyIdAnyOf, tmxCompanyIdGt, tmxCompanyIdGte, tmxCompanyIdLt, tmxCompanyIdLte, tmxRecordId, tmxRecordIdAnyOf, tmxRecordIdGt, tmxRecordIdGte, tmxRecordIdLt, tmxRecordIdLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getTmxV1CorporateEvents']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * List all conditions that Polygon.io uses.
          * @summary Conditions
          * @param {ListConditionsAssetClassEnum} [assetClass] Filter for conditions within a given asset class.
@@ -21739,7 +22195,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.deprecatedGetHistoricStocksTrades(ticker, date, timestamp, timestampLimit, reverse, limit, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * A comprehensive database of financial analyst insights and ratings for various publicly traded companies, capturing detailed information about analyst recommendations and price targets.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -21785,7 +22241,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1AnalystInsights(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, firm, firmAnyOf, firmGt, firmGte, firmLt, firmLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, benzingaRatingId, benzingaRatingIdAnyOf, benzingaRatingIdGt, benzingaRatingIdGte, benzingaRatingIdLt, benzingaRatingIdLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * A comprehensive database of financial analysts, containing detailed performance metrics and identification information for individual analysts across various financial firms.
          * @param {string} [benzingaId] The identifier used by Benzinga for this record.
          * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -21819,7 +22275,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1Analysts(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, benzingaFirmId, benzingaFirmIdAnyOf, benzingaFirmIdGt, benzingaFirmIdGte, benzingaFirmIdLt, benzingaFirmIdLte, firmName, firmNameAnyOf, firmNameGt, firmNameGte, firmNameLt, firmNameLte, fullName, fullNameAnyOf, fullNameGt, fullNameGte, fullNameLt, fullNameLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * A comprehensive financial consensus ratings table that aggregates analyst recommendations and price targets for individual stock tickers, capturing detailed rating breakdowns and statistical insights.
          * @param {string} ticker The requested ticker.
          * @param {string} [date] Filter equal to the value.
          * @param {string} [dateGt] Filter greater than the value.
@@ -21834,7 +22290,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1ConsensusRatings(ticker, date, dateGt, dateGte, dateLt, dateLte, limit, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * This table contains earnings data from Benzinga, tracking both actual and estimated financial metrics for publicly traded companies. It includes EPS and revenue figures with surprise calculations, along with metadata like fiscal periods, company identifiers, and reporting timestamps.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -21898,7 +22354,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1Earnings(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, dateStatus, dateStatusAnyOf, dateStatusGt, dateStatusGte, dateStatusLt, dateStatusLte, epsSurprisePercent, epsSurprisePercentAnyOf, epsSurprisePercentGt, epsSurprisePercentGte, epsSurprisePercentLt, epsSurprisePercentLte, revenueSurprisePercent, revenueSurprisePercentAnyOf, revenueSurprisePercentGt, revenueSurprisePercentGte, revenueSurprisePercentLt, revenueSurprisePercentLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * A comprehensive database of financial firms, tracking unique identifiers, names, and basic metadata for various financial institutions and research firms.
          * @param {string} [benzingaId] The identifer used by Benzinga for this record.
          * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -21914,7 +22370,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1Firms(benzingaId, benzingaIdAnyOf, benzingaIdGt, benzingaIdGte, benzingaIdLt, benzingaIdLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * A comprehensive database of financial guidance and earnings estimates for various companies, capturing key metrics related to earnings per share (EPS) and revenue projections across different fiscal periods.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -21966,7 +22422,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1Guidance(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, positioning, positioningAnyOf, positioningGt, positioningGte, positioningLt, positioningLte, importance, importanceAnyOf, importanceGt, importanceGte, importanceLt, importanceLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, fiscalYear, fiscalYearAnyOf, fiscalYearGt, fiscalYearGte, fiscalYearLt, fiscalYearLte, fiscalPeriod, fiscalPeriodAnyOf, fiscalPeriodGt, fiscalPeriodGte, fiscalPeriodLt, fiscalPeriodLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * A comprehensive news article database from Benzinga, containing detailed information about financial news articles including metadata, content, and associated financial information.
          * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
          * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [publishedGt] Filter greater than the value.
@@ -22003,7 +22459,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getBenzingaV1News(published, publishedAnyOf, publishedGt, publishedGte, publishedLt, publishedLte, lastUpdated, lastUpdatedAnyOf, lastUpdatedGt, lastUpdatedGte, lastUpdatedLt, lastUpdatedLte, tickers, tickersAllOf, tickersAnyOf, channels, channelsAllOf, channelsAnyOf, tags, tagsAllOf, tagsAnyOf, author, authorAnyOf, authorGt, authorGte, authorLt, authorLte, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * This table contains analyst ratings and price target data from investment firms, tracking rating changes (upgrades, downgrades, initiates coverage, etc.) and price target adjustments for publicly traded companies. Each record includes the analyst details, company information, current and previous ratings/targets, and metadata like timestamps and Benzinga identifiers.
          * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
@@ -22046,13 +22502,13 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
          * @param {string} [benzingaIdLt] Filter less than the value.
          * @param {string} [benzingaIdLte] Filter less than or equal to the value.
-         * @param {string} [benzingaAnalystId] Filter equal to the value.
+         * @param {string} [benzingaAnalystId] The identifer used by Benzinga for this analyst.
          * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
          * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
          * @param {string} [benzingaAnalystIdLt] Filter less than the value.
          * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
-         * @param {string} [benzingaFirmId] Filter equal to the value.
+         * @param {string} [benzingaFirmId] The identifer used by Benzinga for this firm.
          * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [benzingaFirmIdGt] Filter greater than the value.
          * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
@@ -22255,8 +22711,8 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getEvents(id, types, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+         * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
+         * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
          * @param {string} [dateGt] Filter greater than the value.
          * @param {string} [dateGte] Filter greater than or equal to the value.
@@ -23225,6 +23681,64 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getTicker(ticker, date, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @param {string} [date] Scheduled date of the corporate event, formatted as YYYY-MM-DD.
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {string} [type] The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.
+         * @param {string} [typeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [typeGt] Filter greater than the value.
+         * @param {string} [typeGte] Filter greater than or equal to the value.
+         * @param {string} [typeLt] Filter less than the value.
+         * @param {string} [typeLte] Filter less than or equal to the value.
+         * @param {string} [status] The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.
+         * @param {string} [statusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [statusGt] Filter greater than the value.
+         * @param {string} [statusGte] Filter greater than or equal to the value.
+         * @param {string} [statusLt] Filter less than the value.
+         * @param {string} [statusLte] Filter less than or equal to the value.
+         * @param {string} [ticker] The company\&#39;s stock symbol.
+         * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tickerGt] Filter greater than the value.
+         * @param {string} [tickerGte] Filter greater than or equal to the value.
+         * @param {string} [tickerLt] Filter less than the value.
+         * @param {string} [tickerLte] Filter less than or equal to the value.
+         * @param {string} [isin] Standard international identifier for the company\&#39;s common stock.
+         * @param {string} [isinAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [isinGt] Filter greater than the value.
+         * @param {string} [isinGte] Filter greater than or equal to the value.
+         * @param {string} [isinLt] Filter less than the value.
+         * @param {string} [isinLte] Filter less than or equal to the value.
+         * @param {string} [tradingVenue] MIC (Market Identifier Code) of the exchange where the company\&#39;s stock is listed.
+         * @param {string} [tradingVenueAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tradingVenueGt] Filter greater than the value.
+         * @param {string} [tradingVenueGte] Filter greater than or equal to the value.
+         * @param {string} [tradingVenueLt] Filter less than the value.
+         * @param {string} [tradingVenueLte] Filter less than or equal to the value.
+         * @param {number} [tmxCompanyId] Unique numeric identifier for the company used by TMX. Value must be an integer.
+         * @param {string} [tmxCompanyIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+         * @param {number} [tmxCompanyIdGt] Filter greater than the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdGte] Filter greater than or equal to the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdLt] Filter less than the value. Value must be an integer.
+         * @param {number} [tmxCompanyIdLte] Filter less than or equal to the value. Value must be an integer.
+         * @param {string} [tmxRecordId] The unique alphanumeric identifier for the event record used by TMX.
+         * @param {string} [tmxRecordIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [tmxRecordIdGt] Filter greater than the value.
+         * @param {string} [tmxRecordIdGte] Filter greater than or equal to the value.
+         * @param {string} [tmxRecordIdLt] Filter less than the value.
+         * @param {string} [tmxRecordIdLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTmxV1CorporateEvents(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, type?: string, typeAnyOf?: string, typeGt?: string, typeGte?: string, typeLt?: string, typeLte?: string, status?: string, statusAnyOf?: string, statusGt?: string, statusGte?: string, statusLt?: string, statusLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, isin?: string, isinAnyOf?: string, isinGt?: string, isinGte?: string, isinLt?: string, isinLte?: string, tradingVenue?: string, tradingVenueAnyOf?: string, tradingVenueGt?: string, tradingVenueGte?: string, tradingVenueLt?: string, tradingVenueLte?: string, tmxCompanyId?: number, tmxCompanyIdAnyOf?: string, tmxCompanyIdGt?: number, tmxCompanyIdGte?: number, tmxCompanyIdLt?: number, tmxCompanyIdLte?: number, tmxRecordId?: string, tmxRecordIdAnyOf?: string, tmxRecordIdGt?: string, tmxRecordIdGte?: string, tmxRecordIdLt?: string, tmxRecordIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetTmxV1CorporateEvents200Response> {
+            return localVarFp.getTmxV1CorporateEvents(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, type, typeAnyOf, typeGt, typeGte, typeLt, typeLte, status, statusAnyOf, statusGt, statusGte, statusLt, statusLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, isin, isinAnyOf, isinGt, isinGte, isinLt, isinLte, tradingVenue, tradingVenueAnyOf, tradingVenueGt, tradingVenueGte, tradingVenueLt, tradingVenueLte, tmxCompanyId, tmxCompanyIdAnyOf, tmxCompanyIdGt, tmxCompanyIdGte, tmxCompanyIdLt, tmxCompanyIdLte, tmxRecordId, tmxRecordIdAnyOf, tmxRecordIdGt, tmxRecordIdGte, tmxRecordIdLt, tmxRecordIdLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
          * List all conditions that Polygon.io uses.
          * @summary Conditions
          * @param {ListConditionsAssetClassEnum} [assetClass] Filter for conditions within a given asset class.
@@ -23546,7 +24060,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * A comprehensive database of financial analyst insights and ratings for various publicly traded companies, capturing detailed information about analyst recommendations and price targets.
      * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
      * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [dateGt] Filter greater than the value.
@@ -23594,7 +24108,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * A comprehensive database of financial analysts, containing detailed performance metrics and identification information for individual analysts across various financial firms.
      * @param {string} [benzingaId] The identifier used by Benzinga for this record.
      * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -23630,7 +24144,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * A comprehensive financial consensus ratings table that aggregates analyst recommendations and price targets for individual stock tickers, capturing detailed rating breakdowns and statistical insights.
      * @param {string} ticker The requested ticker.
      * @param {string} [date] Filter equal to the value.
      * @param {string} [dateGt] Filter greater than the value.
@@ -23647,7 +24161,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * This table contains earnings data from Benzinga, tracking both actual and estimated financial metrics for publicly traded companies. It includes EPS and revenue figures with surprise calculations, along with metadata like fiscal periods, company identifiers, and reporting timestamps.
      * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the earnings are scheduled or were reported.
      * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [dateGt] Filter greater than the value.
@@ -23713,7 +24227,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * A comprehensive database of financial firms, tracking unique identifiers, names, and basic metadata for various financial institutions and research firms.
      * @param {string} [benzingaId] The identifer used by Benzinga for this record.
      * @param {string} [benzingaIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [benzingaIdGt] Filter greater than the value.
@@ -23731,7 +24245,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * A comprehensive database of financial guidance and earnings estimates for various companies, capturing key metrics related to earnings per share (EPS) and revenue projections across different fiscal periods.
      * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the guidance was issued.
      * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [dateGt] Filter greater than the value.
@@ -23785,7 +24299,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * A comprehensive news article database from Benzinga, containing detailed information about financial news articles including metadata, content, and associated financial information.
      * @param {string} [published] The timestamp (formatted as an ISO 8601 timestamp) when the news article was originally published.
      * @param {string} [publishedAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [publishedGt] Filter greater than the value.
@@ -23824,7 +24338,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
+     * This table contains analyst ratings and price target data from investment firms, tracking rating changes (upgrades, downgrades, initiates coverage, etc.) and price target adjustments for publicly traded companies. Each record includes the analyst details, company information, current and previous ratings/targets, and metadata like timestamps and Benzinga identifiers.
      * @param {string} [date] The calendar date (formatted as YYYY-MM-DD) when the rating was issued.
      * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [dateGt] Filter greater than the value.
@@ -23867,13 +24381,13 @@ export class DefaultApi extends BaseAPI {
      * @param {string} [benzingaIdGte] Filter greater than or equal to the value.
      * @param {string} [benzingaIdLt] Filter less than the value.
      * @param {string} [benzingaIdLte] Filter less than or equal to the value.
-     * @param {string} [benzingaAnalystId] Filter equal to the value.
+     * @param {string} [benzingaAnalystId] The identifer used by Benzinga for this analyst.
      * @param {string} [benzingaAnalystIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [benzingaAnalystIdGt] Filter greater than the value.
      * @param {string} [benzingaAnalystIdGte] Filter greater than or equal to the value.
      * @param {string} [benzingaAnalystIdLt] Filter less than the value.
      * @param {string} [benzingaAnalystIdLte] Filter less than or equal to the value.
-     * @param {string} [benzingaFirmId] Filter equal to the value.
+     * @param {string} [benzingaFirmId] The identifer used by Benzinga for this firm.
      * @param {string} [benzingaFirmIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [benzingaFirmIdGt] Filter greater than the value.
      * @param {string} [benzingaFirmIdGte] Filter greater than or equal to the value.
@@ -24102,8 +24616,8 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @param {string} [date] Calendar date of the yield observation (YYYY‑MM‑DD).
+     * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
+     * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
      * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
      * @param {string} [dateGt] Filter greater than the value.
      * @param {string} [dateGte] Filter greater than or equal to the value.
@@ -25189,6 +25703,66 @@ export class DefaultApi extends BaseAPI {
      */
     public getTicker(ticker: string, date?: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getTicker(ticker, date, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} [date] Scheduled date of the corporate event, formatted as YYYY-MM-DD.
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {string} [type] The normalized type of corporate event. Possible values include: analyst_day, business_update, capital_markets_day, conference, dividend, earnings_announcement_date, earnings_conference_call, earnings_results_announcement, forum, interim_statement, other_interim_announcement, production_update, research_and_development_day, seminar, shareholder_meeting, sales_update, stock_split, summit, service_level_update, tradeshow, company_travel, and workshop.
+     * @param {string} [typeAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [typeGt] Filter greater than the value.
+     * @param {string} [typeGte] Filter greater than or equal to the value.
+     * @param {string} [typeLt] Filter less than the value.
+     * @param {string} [typeLte] Filter less than or equal to the value.
+     * @param {string} [status] The current status of the event. Possible values include: approved, canceled, confirmed, historical, pending_approval, postponed, and unconfirmed.
+     * @param {string} [statusAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [statusGt] Filter greater than the value.
+     * @param {string} [statusGte] Filter greater than or equal to the value.
+     * @param {string} [statusLt] Filter less than the value.
+     * @param {string} [statusLte] Filter less than or equal to the value.
+     * @param {string} [ticker] The company\&#39;s stock symbol.
+     * @param {string} [tickerAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tickerGt] Filter greater than the value.
+     * @param {string} [tickerGte] Filter greater than or equal to the value.
+     * @param {string} [tickerLt] Filter less than the value.
+     * @param {string} [tickerLte] Filter less than or equal to the value.
+     * @param {string} [isin] Standard international identifier for the company\&#39;s common stock.
+     * @param {string} [isinAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [isinGt] Filter greater than the value.
+     * @param {string} [isinGte] Filter greater than or equal to the value.
+     * @param {string} [isinLt] Filter less than the value.
+     * @param {string} [isinLte] Filter less than or equal to the value.
+     * @param {string} [tradingVenue] MIC (Market Identifier Code) of the exchange where the company\&#39;s stock is listed.
+     * @param {string} [tradingVenueAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tradingVenueGt] Filter greater than the value.
+     * @param {string} [tradingVenueGte] Filter greater than or equal to the value.
+     * @param {string} [tradingVenueLt] Filter less than the value.
+     * @param {string} [tradingVenueLte] Filter less than or equal to the value.
+     * @param {number} [tmxCompanyId] Unique numeric identifier for the company used by TMX. Value must be an integer.
+     * @param {string} [tmxCompanyIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list. Value must be an integer.
+     * @param {number} [tmxCompanyIdGt] Filter greater than the value. Value must be an integer.
+     * @param {number} [tmxCompanyIdGte] Filter greater than or equal to the value. Value must be an integer.
+     * @param {number} [tmxCompanyIdLt] Filter less than the value. Value must be an integer.
+     * @param {number} [tmxCompanyIdLte] Filter less than or equal to the value. Value must be an integer.
+     * @param {string} [tmxRecordId] The unique alphanumeric identifier for the event record used by TMX.
+     * @param {string} [tmxRecordIdAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [tmxRecordIdGt] Filter greater than the value.
+     * @param {string} [tmxRecordIdGte] Filter greater than or equal to the value.
+     * @param {string} [tmxRecordIdLt] Filter less than the value.
+     * @param {string} [tmxRecordIdLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;desc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getTmxV1CorporateEvents(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, type?: string, typeAnyOf?: string, typeGt?: string, typeGte?: string, typeLt?: string, typeLte?: string, status?: string, statusAnyOf?: string, statusGt?: string, statusGte?: string, statusLt?: string, statusLte?: string, ticker?: string, tickerAnyOf?: string, tickerGt?: string, tickerGte?: string, tickerLt?: string, tickerLte?: string, isin?: string, isinAnyOf?: string, isinGt?: string, isinGte?: string, isinLt?: string, isinLte?: string, tradingVenue?: string, tradingVenueAnyOf?: string, tradingVenueGt?: string, tradingVenueGte?: string, tradingVenueLt?: string, tradingVenueLte?: string, tmxCompanyId?: number, tmxCompanyIdAnyOf?: string, tmxCompanyIdGt?: number, tmxCompanyIdGte?: number, tmxCompanyIdLt?: number, tmxCompanyIdLte?: number, tmxRecordId?: string, tmxRecordIdAnyOf?: string, tmxRecordIdGt?: string, tmxRecordIdGte?: string, tmxRecordIdLt?: string, tmxRecordIdLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getTmxV1CorporateEvents(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, type, typeAnyOf, typeGt, typeGte, typeLt, typeLte, status, statusAnyOf, statusGt, statusGte, statusLt, statusLte, ticker, tickerAnyOf, tickerGt, tickerGte, tickerLt, tickerLte, isin, isinAnyOf, isinGt, isinGte, isinLt, isinLte, tradingVenue, tradingVenueAnyOf, tradingVenueGt, tradingVenueGte, tradingVenueLt, tradingVenueLte, tmxCompanyId, tmxCompanyIdAnyOf, tmxCompanyIdGt, tmxCompanyIdGte, tmxCompanyIdLt, tmxCompanyIdLte, tmxRecordId, tmxRecordIdAnyOf, tmxRecordIdGt, tmxRecordIdGte, tmxRecordIdLt, tmxRecordIdLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
