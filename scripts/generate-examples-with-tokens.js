@@ -85,10 +85,7 @@ Object.entries(spec.paths).forEach(([route, methods]) => {
 
         const paramObjectStr = JSON.stringify(merged, null, 2)
           .replace(/^/gm, '      ')
-          .replace(/"([^"]+)":/g, (match, key) => {
-            // Only remove quotes from keys that are valid JS identifiers
-            return /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? `${key}:` : `"${key}":`;
-          });
+          .replace(/"([^"]+)":/g, '$1:'); // Remove quotes from keys
 
         callLine = `    const response = await rest.${funcName}(\n${paramObjectStr}\n    );`;
       }
