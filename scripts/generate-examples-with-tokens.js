@@ -1,12 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const spec = require('./openapi.json');
+import path from 'path';
+import fs from 'fs';
+import spec from '../src/openapi.json' assert { type: 'json' }; // Adjust the path to your OpenAPI spec file
 
-const examplesDir = path.join(__dirname, 'examples');
-const tokenizedDir = path.join(__dirname, 'examples-tokenized');
+const examplesDir = path.join('./examples', 'rest');
 
 if (!fs.existsSync(examplesDir)) fs.mkdirSync(examplesDir);
-if (!fs.existsSync(tokenizedDir)) fs.mkdirSync(tokenizedDir);
 
 // Converts snake_case or kebab-case or path-based names to camelCase
 const toCamelCase = (str) =>
@@ -108,6 +106,5 @@ Object.entries(spec.paths).forEach(([route, methods]) => {
     };
 
     generateSnippet(examplesDir, false);
-    generateSnippet(tokenizedDir, true);
   });
 });
