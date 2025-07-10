@@ -7,6 +7,7 @@ common.ts
 configuration.ts
 docs/Company.md
 docs/ConditionTypeMap.md
+docs/ContractDetails200Response.md
 docs/CryptoExchangeInner.md
 docs/CryptoGroupedResults.md
 docs/CryptoHistoricTrades.md
@@ -18,6 +19,7 @@ docs/CryptoSnapshotTicker.md
 docs/CryptoSnapshotTickerFullBook.md
 docs/CryptoSnapshotTickers.md
 docs/CryptoTick.md
+docs/DailySchedules200Response.md
 docs/Date.md
 docs/DefaultApi.md
 docs/DeprecatedGetCryptoSnapshotTickerBook200Response.md
@@ -95,6 +97,10 @@ docs/GetEvents200ResponseResults.md
 docs/GetEvents200ResponseResultsEventsInner.md
 docs/GetEvents200ResponseResultsEventsInnerOneOf.md
 docs/GetEvents200ResponseResultsEventsInnerOneOfTickerChange.md
+docs/GetFedV1Inflation200Response.md
+docs/GetFedV1Inflation200ResponseResultsInner.md
+docs/GetFedV1InflationExpectations200Response.md
+docs/GetFedV1InflationExpectations200ResponseResultsInner.md
 docs/GetFedV1TreasuryYields200Response.md
 docs/GetFedV1TreasuryYields200ResponseResultsInner.md
 docs/GetForexQuotes200Response.md
@@ -106,6 +112,12 @@ docs/GetForexSnapshotTickers200ResponseAllOfTickersInner.md
 docs/GetForexSnapshotTickers200ResponseAllOfTickersInnerDay.md
 docs/GetForexSnapshotTickers200ResponseAllOfTickersInnerLastQuote.md
 docs/GetForexSnapshotTickers200ResponseAllOfTickersInnerMin.md
+docs/GetFuturesAggregates200Response.md
+docs/GetFuturesAggregates200ResponseResultsInner.md
+docs/GetFuturesQuotes200Response.md
+docs/GetFuturesQuotes200ResponseResultsInner.md
+docs/GetFuturesTrades200Response.md
+docs/GetFuturesTrades200ResponseResultsInner.md
 docs/GetGroupedCryptoAggregates200Response.md
 docs/GetGroupedCryptoAggregates200ResponseAllOfResultsInner.md
 docs/GetGroupedStocksAggregates200Response.md
@@ -196,6 +208,8 @@ docs/ListConditions200ResponseResultsInnerUpdateRules.md
 docs/ListConditions200ResponseResultsInnerUpdateRulesConsolidated.md
 docs/ListConditions200ResponseResultsInnerUpdateRulesMarketCenter.md
 docs/ListConditions400Response.md
+docs/ListContracts200Response.md
+docs/ListContracts200ResponseResultsInner.md
 docs/ListDividends200Response.md
 docs/ListDividends200ResponseResultsInner.md
 docs/ListExchanges200Response.md
@@ -207,6 +221,8 @@ docs/ListFinancials200ResponseResultsInnerFinancials.md
 docs/ListFinancials200ResponseResultsInnerFinancialsBalanceSheet.md
 docs/ListIPOs200Response.md
 docs/ListIPOs200ResponseResultsInner.md
+docs/ListMarketStatuses200Response.md
+docs/ListMarketStatuses200ResponseResultsInner.md
 docs/ListNews200Response.md
 docs/ListNews200ResponseResultsInner.md
 docs/ListNews200ResponseResultsInnerInsightsInner.md
@@ -215,6 +231,8 @@ docs/ListNewsPublishedUtcParameter.md
 docs/ListOptionsContracts200Response.md
 docs/ListOptionsContracts200ResponseResultsInner.md
 docs/ListOptionsContracts200ResponseResultsInnerAdditionalUnderlyingsInner.md
+docs/ListProducts200Response.md
+docs/ListProducts200ResponseResultsInner.md
 docs/ListStockSplits200Response.md
 docs/ListStockSplits200ResponseResultsInner.md
 docs/ListTickerTypes200Response.md
@@ -233,6 +251,10 @@ docs/Markets.md
 docs/MarketsResultsInner.md
 docs/NewsInner.md
 docs/PaginationHooksBase.md
+docs/ProductDetails200Response.md
+docs/ProductSchedules200Response.md
+docs/ProductSchedules200ResponseResultsInner.md
+docs/ProductSchedules200ResponseResultsInnerScheduleInner.md
 docs/RatingSection.md
 docs/RequestIdBase.md
 docs/SnapshotMinOHLCV.md

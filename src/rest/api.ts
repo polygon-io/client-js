@@ -214,6 +214,31 @@ export interface ConditionTypeMap {
 /**
  * 
  * @export
+ * @interface ContractDetails200Response
+ */
+export interface ContractDetails200Response {
+    /**
+     * A unique identifier for this request.
+     * @type {string}
+     * @memberof ContractDetails200Response
+     */
+    'request_id'?: string;
+    /**
+     * 
+     * @type {ListContracts200ResponseResultsInner}
+     * @memberof ContractDetails200Response
+     */
+    'results'?: ListContracts200ResponseResultsInner;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof ContractDetails200Response
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
  * @interface CryptoExchangeInner
  */
 export interface CryptoExchangeInner {
@@ -539,6 +564,37 @@ export interface CryptoTick {
      * @memberof CryptoTick
      */
     'x': number;
+}
+/**
+ * 
+ * @export
+ * @interface DailySchedules200Response
+ */
+export interface DailySchedules200Response {
+    /**
+     * The URL for the next page of results.
+     * @type {string}
+     * @memberof DailySchedules200Response
+     */
+    'next_url'?: string;
+    /**
+     * The unique identifier for this request.
+     * @type {string}
+     * @memberof DailySchedules200Response
+     */
+    'request_id'?: string;
+    /**
+     * A list of schedules for each product.
+     * @type {Array<ProductSchedules200ResponseResultsInner>}
+     * @memberof DailySchedules200Response
+     */
+    'results'?: Array<ProductSchedules200ResponseResultsInner>;
+    /**
+     * The status of the response.
+     * @type {string}
+     * @memberof DailySchedules200Response
+     */
+    'status'?: string;
 }
 /**
  * 
@@ -4414,6 +4470,190 @@ export interface GetEvents200ResponseResultsEventsInnerOneOfTickerChange {
 /**
  * 
  * @export
+ * @interface GetFedV1Inflation200Response
+ */
+export interface GetFedV1Inflation200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetFedV1Inflation200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetFedV1Inflation200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetFedV1Inflation200ResponseResultsInner>}
+     * @memberof GetFedV1Inflation200Response
+     */
+    'results': Array<GetFedV1Inflation200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetFedV1Inflation200Response
+     */
+    'status': GetFedV1Inflation200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetFedV1Inflation200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetFedV1Inflation200ResponseResultsInner
+ */
+export interface GetFedV1Inflation200ResponseResultsInner {
+    /**
+     * Consumer Price Index (CPI) for All Urban Consumers — a standard measure of headline inflation based on a fixed basket of goods and services, not seasonally adjusted.
+     * @type {number}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'cpi'?: number;
+    /**
+     * Core Consumer Price Index — the CPI excluding food and energy, used to understand underlying inflation trends without short-term volatility.
+     * @type {number}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'cpi_core'?: number;
+    /**
+     * Year-over-year percentage change in the headline CPI — the most commonly cited inflation rate in public discourse and economic policy.
+     * @type {number}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'cpi_year_over_year'?: number;
+    /**
+     * Calendar date of the observation (YYYY‑MM‑DD).
+     * @type {string}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * Personal Consumption Expenditures (PCE) Price Index — a broader measure of inflation used by the Federal Reserve, reflecting actual consumer spending patterns and updated basket weights.
+     * @type {number}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'pce'?: number;
+    /**
+     * Core PCE Price Index — excludes food and energy prices from the PCE index, and is the Fed\'s preferred measure of underlying inflation.
+     * @type {number}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'pce_core'?: number;
+    /**
+     * Nominal Personal Consumption Expenditures — total dollar value of consumer spending in the U.S. economy, reported in billions of dollars and not adjusted for inflation.
+     * @type {number}
+     * @memberof GetFedV1Inflation200ResponseResultsInner
+     */
+    'pce_spending'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetFedV1InflationExpectations200Response
+ */
+export interface GetFedV1InflationExpectations200Response {
+    /**
+     * If present, this value can be used to fetch the next page.
+     * @type {string}
+     * @memberof GetFedV1InflationExpectations200Response
+     */
+    'next_url'?: string;
+    /**
+     * A request id assigned by the server.
+     * @type {string}
+     * @memberof GetFedV1InflationExpectations200Response
+     */
+    'request_id': string;
+    /**
+     * The results for this request.
+     * @type {Array<GetFedV1InflationExpectations200ResponseResultsInner>}
+     * @memberof GetFedV1InflationExpectations200Response
+     */
+    'results': Array<GetFedV1InflationExpectations200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetFedV1InflationExpectations200Response
+     */
+    'status': GetFedV1InflationExpectations200ResponseStatusEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetFedV1InflationExpectations200ResponseStatusEnum {
+    Ok = 'OK'
+}
+
+/**
+ * 
+ * @export
+ * @interface GetFedV1InflationExpectations200ResponseResultsInner
+ */
+export interface GetFedV1InflationExpectations200ResponseResultsInner {
+    /**
+     * Calendar date of the observation (YYYY‑MM‑DD).
+     * @type {string}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'date'?: string;
+    /**
+     * 5-Year, 5-Year Forward Inflation Expectation Rate — the market\'s expectation of average annual inflation for the 5-year period beginning 5 years from now, based on the spread between forward nominal and real yields.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'forward_years_5_to_10'?: number;
+    /**
+     * 10-Year Breakeven Inflation Rate — the market\'s expectation of average annual inflation over the next 10 years, based on the spread between 10-year nominal Treasury yields and 10-year TIPS yields.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'market_10_year'?: number;
+    /**
+     * 5-Year Breakeven Inflation Rate — the market\'s expectation of average annual inflation over the next 5 years, based on the spread between 5-year nominal Treasury yields and 5-year TIPS yields.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'market_5_year'?: number;
+    /**
+     * The Cleveland Fed’s 10-year inflation expectations data estimated expected inflation, risk premiums, and the real interest rate using a model based on Treasury yields, inflation data, swaps, and surveys.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'model_10_year'?: number;
+    /**
+     * The Cleveland Fed’s 1-year inflation expectations data estimated expected inflation, risk premiums, and the real interest rate using a model based on Treasury yields, inflation data, swaps, and surveys.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'model_1_year'?: number;
+    /**
+     * The Cleveland Fed’s 30-year inflation expectations data estimated expected inflation, risk premiums, and the real interest rate using a model based on Treasury yields, inflation data, swaps, and surveys.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'model_30_year'?: number;
+    /**
+     * The Cleveland Fed’s 5-year inflation expectations data estimated expected inflation, risk premiums, and the real interest rate using a model based on Treasury yields, inflation data, swaps, and surveys.
+     * @type {number}
+     * @memberof GetFedV1InflationExpectations200ResponseResultsInner
+     */
+    'model_5_year'?: number;
+}
+/**
+ * 
+ * @export
  * @interface GetFedV1TreasuryYields200Response
  */
 export interface GetFedV1TreasuryYields200Response {
@@ -4880,6 +5120,252 @@ export interface GetForexSnapshotTickers200ResponseAllOfTickersInnerMin {
      * @memberof GetForexSnapshotTickers200ResponseAllOfTickersInnerMin
      */
     'v'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetFuturesAggregates200Response
+ */
+export interface GetFuturesAggregates200Response {
+    /**
+     * If present, the URL to the next page of results.
+     * @type {string}
+     * @memberof GetFuturesAggregates200Response
+     */
+    'next_url'?: string;
+    /**
+     * 
+     * @type {Array<GetFuturesAggregates200ResponseResultsInner>}
+     * @memberof GetFuturesAggregates200Response
+     */
+    'results'?: Array<GetFuturesAggregates200ResponseResultsInner>;
+    /**
+     * The status of the response.
+     * @type {string}
+     * @memberof GetFuturesAggregates200Response
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetFuturesAggregates200ResponseResultsInner
+ */
+export interface GetFuturesAggregates200ResponseResultsInner {
+    /**
+     * The last price within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'close'?: number;
+    /**
+     * The total dollar volume of the transactions that occurred within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'dollar_volume'?: number;
+    /**
+     * The highest price within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'high'?: number;
+    /**
+     * The lowest price within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'low'?: number;
+    /**
+     * The opening price within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'open'?: number;
+    /**
+     * The session end date for this aggregate.
+     * @type {string}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'session_end_date'?: string;
+    /**
+     * The price the contract would have cost to settle for this session.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'settlement_price'?: number;
+    /**
+     * The ticker for the contract.
+     * @type {string}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * The number of transactions that occurred within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'transaction_count'?: number;
+    /**
+     * The number of contracts that traded within the timeframe.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'volume'?: number;
+    /**
+     * The start of the window for this aggregate.
+     * @type {number}
+     * @memberof GetFuturesAggregates200ResponseResultsInner
+     */
+    'window_start'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetFuturesQuotes200Response
+ */
+export interface GetFuturesQuotes200Response {
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof GetFuturesQuotes200Response
+     */
+    'next_url'?: string;
+    /**
+     * 
+     * @type {Array<GetFuturesQuotes200ResponseResultsInner>}
+     * @memberof GetFuturesQuotes200Response
+     */
+    'results'?: Array<GetFuturesQuotes200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetFuturesQuotes200Response
+     */
+    'status': string;
+}
+/**
+ * 
+ * @export
+ * @interface GetFuturesQuotes200ResponseResultsInner
+ */
+export interface GetFuturesQuotes200ResponseResultsInner {
+    /**
+     * The ask price is expressed per unit of the underlying asset, and you apply the contract multiplier to get the full contract value.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'ask_price'?: number;
+    /**
+     * The quote size represents the number of futures contracts available at the given ask price.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'ask_size'?: number;
+    /**
+     * The Unix millisecond timestamp.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'ask_timestamp'?: number;
+    /**
+     * The bid price is expressed per unit of the underlying asset, and you apply the contract multiplier to get the full contract value.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'bid_price'?: number;
+    /**
+     * The quote size represents the number of futures contracts available at the given bid price.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'bid_size'?: number;
+    /**
+     * The Unix millisecond timestamp.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'bid_timestamp'?: number;
+    /**
+     * Session end date
+     * @type {string}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'session_end_date'?: string;
+    /**
+     * ticker of the quote
+     * @type {string}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * The Unix millisecond timestamp.
+     * @type {number}
+     * @memberof GetFuturesQuotes200ResponseResultsInner
+     */
+    'timestamp'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetFuturesTrades200Response
+ */
+export interface GetFuturesTrades200Response {
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof GetFuturesTrades200Response
+     */
+    'next_url'?: string;
+    /**
+     * 
+     * @type {Array<GetFuturesTrades200ResponseResultsInner>}
+     * @memberof GetFuturesTrades200Response
+     */
+    'results'?: Array<GetFuturesTrades200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof GetFuturesTrades200Response
+     */
+    'status': string;
+}
+/**
+ * 
+ * @export
+ * @interface GetFuturesTrades200ResponseResultsInner
+ */
+export interface GetFuturesTrades200ResponseResultsInner {
+    /**
+     * The trade price is quoted per unit of the underlying asset, with the total contract value determined by multiplying by the contract’s specific multiplier.
+     * @type {number}
+     * @memberof GetFuturesTrades200ResponseResultsInner
+     */
+    'price': number;
+    /**
+     * the session end date
+     * @type {string}
+     * @memberof GetFuturesTrades200ResponseResultsInner
+     */
+    'session_end_date'?: string;
+    /**
+     * The trade size shows the number of futures contracts actually exchanged.
+     * @type {number}
+     * @memberof GetFuturesTrades200ResponseResultsInner
+     */
+    'size': number;
+    /**
+     * ticker of the trade
+     * @type {string}
+     * @memberof GetFuturesTrades200ResponseResultsInner
+     */
+    'ticker'?: string;
+    /**
+     * The Unix millisecond timestamp.
+     * @type {number}
+     * @memberof GetFuturesTrades200ResponseResultsInner
+     */
+    'timestamp'?: number;
 }
 /**
  * 
@@ -9335,6 +9821,146 @@ export interface ListConditions400Response {
     'status': string;
 }
 /**
+ * 
+ * @export
+ * @interface ListContracts200Response
+ */
+export interface ListContracts200Response {
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof ListContracts200Response
+     */
+    'next_url'?: string;
+    /**
+     * A unique identifier for this request.
+     * @type {string}
+     * @memberof ListContracts200Response
+     */
+    'request_id'?: string;
+    /**
+     * 
+     * @type {Array<ListContracts200ResponseResultsInner>}
+     * @memberof ListContracts200Response
+     */
+    'results'?: Array<ListContracts200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof ListContracts200Response
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ListContracts200ResponseResultsInner
+ */
+export interface ListContracts200ResponseResultsInner {
+    /**
+     * Whether or not this contract was tradeable at the given point-in-time specified in the \'as_of\' attribute (a contract was active if the given day was after the \'first_trade_date\' and before the \'last_trade_date\').
+     * @type {boolean}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'active'?: boolean;
+    /**
+     * The point-in-time date for the given contract - e.g. if \'as_of\' is set to 2021-04-25, then the data retrieved describes the contract(s) as of 2021-04-25.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'as_of'?: string;
+    /**
+     * The number of days until this contract matures (since the point-in-time date). Note that the absence of this field means there are 0 days until maturity.
+     * @type {number}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'days_to_maturity'?: number;
+    /**
+     * The date on which this contract first became tradeable.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'first_trade_date'?: string;
+    /**
+     * The date on which this contract last became tradeable.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'last_trade_date'?: string;
+    /**
+     * This field provides the calendar month reflected in the instrument symbol. For futures spreads and options spreads, this field contains the first leg\'s calendar month reflected in the instrument symbol. For daily products, this tag contains the full calendar date (YYYYMMDD) as reflected in the instrument symbol.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'maturity'?: string;
+    /**
+     * The maximum order quantity for this contract.
+     * @type {number}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'max_order_quantity'?: number;
+    /**
+     * The minimum order quantity for this contract.
+     * @type {number}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'min_order_quantity'?: number;
+    /**
+     * The name of the contract.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'name'?: string;
+    /**
+     * The unique identifier for the product to which this contract belongs.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'product_code': string;
+    /**
+     * The final settlement date for the contract.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'settlement_date'?: string;
+    /**
+     * The settlement tick size for this contract.
+     * @type {number}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'settlement_tick_size'?: number;
+    /**
+     * The spread tick size for this contract.
+     * @type {number}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'spread_tick_size'?: number;
+    /**
+     * The unique identifier for the contract, typically consisting of the product code and expiration date.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'ticker': string;
+    /**
+     * The tick size for this contract.
+     * @type {number}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'trade_tick_size'?: number;
+    /**
+     * The trading venue (MIC) for the exchange on which this contract trades.
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'trading_venue': string;
+    /**
+     * The type of contract, one of \"single\" or \"combo\".
+     * @type {string}
+     * @memberof ListContracts200ResponseResultsInner
+     */
+    'type': string;
+}
+/**
  * A list of dividends.
  * @export
  * @interface ListDividends200Response
@@ -9944,6 +10570,81 @@ export enum ListIPOs200ResponseResultsInnerIpoStatusEnum {
 /**
  * 
  * @export
+ * @interface ListMarketStatuses200Response
+ */
+export interface ListMarketStatuses200Response {
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof ListMarketStatuses200Response
+     */
+    'next_url'?: string;
+    /**
+     * A unique identifier for this request.
+     * @type {string}
+     * @memberof ListMarketStatuses200Response
+     */
+    'request_id'?: string;
+    /**
+     * 
+     * @type {Array<ListMarketStatuses200ResponseResultsInner>}
+     * @memberof ListMarketStatuses200Response
+     */
+    'results'?: Array<ListMarketStatuses200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof ListMarketStatuses200Response
+     */
+    'status'?: string;
+    /**
+     * An RFC3339 timestamp representing the moment at which the market statuses were evaluated.
+     * @type {string}
+     * @memberof ListMarketStatuses200Response
+     */
+    'timestamp'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ListMarketStatuses200ResponseResultsInner
+ */
+export interface ListMarketStatuses200ResponseResultsInner {
+    /**
+     * The current status of the market.
+     * @type {string}
+     * @memberof ListMarketStatuses200ResponseResultsInner
+     */
+    'market_status': ListMarketStatuses200ResponseResultsInnerMarketStatusEnum;
+    /**
+     * The product code for the product.
+     * @type {string}
+     * @memberof ListMarketStatuses200ResponseResultsInner
+     */
+    'product_code': string;
+    /**
+     * The trading venue (MIC) for the exchange on which the corresponding product trades.
+     * @type {string}
+     * @memberof ListMarketStatuses200ResponseResultsInner
+     */
+    'trading_venue'?: string;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ListMarketStatuses200ResponseResultsInnerMarketStatusEnum {
+    PreOpen = 'pre_open',
+    Open = 'open',
+    Close = 'close',
+    Pause = 'pause',
+    PostClosePreOpen = 'post_close_pre_open'
+}
+
+/**
+ * 
+ * @export
  * @interface ListNews200Response
  */
 export interface ListNews200Response {
@@ -10270,6 +10971,162 @@ export interface ListOptionsContracts200ResponseResultsInnerAdditionalUnderlying
      */
     'underlying'?: string;
 }
+/**
+ * 
+ * @export
+ * @interface ListProducts200Response
+ */
+export interface ListProducts200Response {
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof ListProducts200Response
+     */
+    'next_url'?: string;
+    /**
+     * A unique identifier for this request.
+     * @type {string}
+     * @memberof ListProducts200Response
+     */
+    'request_id'?: string;
+    /**
+     * 
+     * @type {Array<ListProducts200ResponseResultsInner>}
+     * @memberof ListProducts200Response
+     */
+    'results'?: Array<ListProducts200ResponseResultsInner>;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof ListProducts200Response
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ListProducts200ResponseResultsInner
+ */
+export interface ListProducts200ResponseResultsInner {
+    /**
+     * The point-in-time date for the given product - e.g. if \'as_of\' is set to 2024-11-05, then these were the details for this product on that day.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'as_of'?: string;
+    /**
+     * The asset class to which the product belongs.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'asset_class'?: string;
+    /**
+     * The asset sub-class to which the product belongs.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'asset_sub_class'?: string;
+    /**
+     * The clearing channel for this product. Indicates whether the product can be cleared only through exchanges or through both exchanges and over-the-counter.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'clearing_channel'?: ListProducts200ResponseResultsInnerClearingChannelEnum;
+    /**
+     * The date and time at which this product was last updated.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'last_updated'?: string;
+    /**
+     * The full name of the product.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'name'?: string;
+    /**
+     * The quoted price for this product.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'price_quotation'?: string;
+    /**
+     * The unique identifier for the product.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'product_code': string;
+    /**
+     * The sector to which the product belongs.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'sector'?: string;
+    /**
+     * The currency in which this product settles.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'settlement_currency_code'?: string;
+    /**
+     * The method of settlement for this product (Financially Settled or Deliverable).
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'settlement_method'?: string;
+    /**
+     * The type of settlement for this product.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'settlement_type'?: string;
+    /**
+     * The sub-sector to which the product belongs.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'sub_sector'?: string;
+    /**
+     * The currency in which this product trades.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'trade_currency_code'?: string;
+    /**
+     * The trading venue (MIC) for the exchange on which this contract trades.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'trading_venue'?: string;
+    /**
+     * The type of product, one of \"single\" or \"combo\".
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'type'?: string;
+    /**
+     * The unit of measure for this product.
+     * @type {string}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'unit_of_measure'?: string;
+    /**
+     * The quantity of the unit of measure for this product.
+     * @type {number}
+     * @memberof ListProducts200ResponseResultsInner
+     */
+    'unit_of_measure_quantity'?: number;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ListProducts200ResponseResultsInnerClearingChannelEnum {
+    ExchangeOnly = 'exchange_only',
+    ExchangeAndOtc = 'exchange_and_otc'
+}
+
 /**
  * 
  * @export
@@ -10876,6 +11733,137 @@ export interface PaginationHooksBase {
      */
     'next_url'?: string;
 }
+/**
+ * 
+ * @export
+ * @interface ProductDetails200Response
+ */
+export interface ProductDetails200Response {
+    /**
+     * A unique identifier for this request.
+     * @type {string}
+     * @memberof ProductDetails200Response
+     */
+    'request_id'?: string;
+    /**
+     * 
+     * @type {ListProducts200ResponseResultsInner}
+     * @memberof ProductDetails200Response
+     */
+    'results'?: ListProducts200ResponseResultsInner;
+    /**
+     * The status of this request\'s response.
+     * @type {string}
+     * @memberof ProductDetails200Response
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProductSchedules200Response
+ */
+export interface ProductSchedules200Response {
+    /**
+     * An optional error message for failed requests when available.
+     * @type {string}
+     * @memberof ProductSchedules200Response
+     */
+    'error'?: string;
+    /**
+     * If present, this value can be used to fetch the next page of data.
+     * @type {string}
+     * @memberof ProductSchedules200Response
+     */
+    'next_url'?: string;
+    /**
+     * The unique identifier for the request.
+     * @type {string}
+     * @memberof ProductSchedules200Response
+     */
+    'request_id'?: string;
+    /**
+     * The list of schedules for the specified product.
+     * @type {Array<ProductSchedules200ResponseResultsInner>}
+     * @memberof ProductSchedules200Response
+     */
+    'results'?: Array<ProductSchedules200ResponseResultsInner>;
+    /**
+     * The status of the response.
+     * @type {string}
+     * @memberof ProductSchedules200Response
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProductSchedules200ResponseResultsInner
+ */
+export interface ProductSchedules200ResponseResultsInner {
+    /**
+     * The product code for the futures product to which this schedule applies.
+     * @type {string}
+     * @memberof ProductSchedules200ResponseResultsInner
+     */
+    'product_code'?: string;
+    /**
+     * The name of the futures product to which this schedule applies.
+     * @type {string}
+     * @memberof ProductSchedules200ResponseResultsInner
+     */
+    'product_name'?: string;
+    /**
+     * 
+     * @type {Array<ProductSchedules200ResponseResultsInnerScheduleInner>}
+     * @memberof ProductSchedules200ResponseResultsInner
+     */
+    'schedule'?: Array<ProductSchedules200ResponseResultsInnerScheduleInner>;
+    /**
+     * The date on which the schedule\'s trading day ended (sometimes referred to as trading date) formatted as `YYYY-MM-DD`. Note that although there is no time component on this attribute, the day refers to Central Time.
+     * @type {string}
+     * @memberof ProductSchedules200ResponseResultsInner
+     */
+    'session_end_date'?: string;
+    /**
+     * The trading venue (MIC) for the exchange on which this schedule\'s product trades.
+     * @type {string}
+     * @memberof ProductSchedules200ResponseResultsInner
+     */
+    'trading_venue'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProductSchedules200ResponseResultsInnerScheduleInner
+ */
+export interface ProductSchedules200ResponseResultsInnerScheduleInner {
+    /**
+     * The market event for this schedule.
+     * @type {string}
+     * @memberof ProductSchedules200ResponseResultsInnerScheduleInner
+     */
+    'event'?: ProductSchedules200ResponseResultsInnerScheduleInnerEventEnum;
+    /**
+     * The timestamp for this market event in Central Time.
+     * @type {string}
+     * @memberof ProductSchedules200ResponseResultsInnerScheduleInner
+     */
+    'timestamp'?: string;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ProductSchedules200ResponseResultsInnerScheduleInnerEventEnum {
+    PreOpen = 'pre_open',
+    Open = 'open',
+    Close = 'close',
+    Pause = 'pause',
+    PostClosePreOpen = 'post_close_pre_open'
+}
+
 /**
  * 
  * @export
@@ -11860,6 +12848,105 @@ export interface V2TicksBase {
  */
 export const DefaultApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * The Contract Details endpoint returns the details for a single contract at a specific point in time.
+         * @summary Contract Details
+         * @param {string} ticker The ticker symbol of the contract to retrieve.
+         * @param {string} [asOf] The point-in-time of the data to be retrieved. Note that the contract data returned for a given date represents the state of that contract on that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        contractDetails: async (ticker: string, asOf?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('contractDetails', 'ticker', ticker)
+            const localVarPath = `/futures/vX/contracts/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (asOf !== undefined) {
+                localVarQueryParameter['as_of'] = (asOf as any instanceof Date) ?
+                    (asOf as any).toISOString().substring(0,10) :
+                    asOf;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The Trading-Date Based Futures Schedules API provides detailed trading schedules for all products on a specific day. This API allows you to retrieve detailed information about trading sessions, including market events like preopen, open, and closed, along with their precise timestamps.
+         * @summary Daily Schedules
+         * @param {string} [sessionEndDate] The session end date for the schedules (also known as the trading date). This is the day in CT for which the user wants to retrieve data. If left blank, this value defaults to \&#39;today\&#39; in Central Time. e.g. If a request is made from Pacific Time on \&#39;2025-01-01\&#39; at 11:00 pm with no \&#39;session_end_date\&#39; a default value of &#x60;2025-01-02&#x60; will be used.
+         * @param {string} [tradingVenue] The trading venue (MIC) of the exchange for the schedules.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {DailySchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        dailySchedules: async (sessionEndDate?: string, tradingVenue?: string, limit?: number, sort?: DailySchedulesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/futures/vX/schedules`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (sessionEndDate !== undefined) {
+                localVarQueryParameter['session_end_date'] = (sessionEndDate as any instanceof Date) ?
+                    (sessionEndDate as any).toISOString().substring(0,10) :
+                    sessionEndDate;
+            }
+
+            if (tradingVenue !== undefined) {
+                localVarQueryParameter['trading_venue'] = tradingVenue;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
          * @summary Ticker Full Book (L2)
@@ -14483,6 +15570,150 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * A table tracking inflation and price indices, including Consumer Price Index (CPI) and Personal Consumption Expenditures (PCE) metrics over time.
+         * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFedV1Inflation: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/fed/v1/inflation`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * A table tracking inflation expectations from both market-based and economic model perspectives across different time horizons.
+         * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFedV1InflationExpectations: async (date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/fed/v1/inflation-expectations`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (dateAnyOf !== undefined) {
+                localVarQueryParameter['date.any_of'] = dateAnyOf;
+            }
+
+            if (dateGt !== undefined) {
+                localVarQueryParameter['date.gt'] = dateGt;
+            }
+
+            if (dateGte !== undefined) {
+                localVarQueryParameter['date.gte'] = dateGte;
+            }
+
+            if (dateLt !== undefined) {
+                localVarQueryParameter['date.lt'] = dateLt;
+            }
+
+            if (dateLte !== undefined) {
+                localVarQueryParameter['date.lte'] = dateLte;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
          * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
@@ -15196,6 +16427,279 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
             if (tickers) {
                 localVarQueryParameter['tickers'] = tickers;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get aggregates for a contract in a given time range.
+         * @summary Aggregates
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
+         * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [windowStartGte] Range by window_start.
+         * @param {string} [windowStartGt] Range by window_start.
+         * @param {string} [windowStartLte] Range by window_start.
+         * @param {string} [windowStartLt] Range by window_start.
+         * @param {GetFuturesAggregatesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFuturesAggregates: async (ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('getFuturesAggregates', 'ticker', ticker)
+            // verify required parameter 'resolution' is not null or undefined
+            assertParamExists('getFuturesAggregates', 'resolution', resolution)
+            const localVarPath = `/futures/vX/aggs/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (resolution !== undefined) {
+                localVarQueryParameter['resolution'] = resolution;
+            }
+
+            if (windowStart !== undefined) {
+                localVarQueryParameter['window_start'] = windowStart;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (windowStartGte !== undefined) {
+                localVarQueryParameter['window_start.gte'] = windowStartGte;
+            }
+
+            if (windowStartGt !== undefined) {
+                localVarQueryParameter['window_start.gt'] = windowStartGt;
+            }
+
+            if (windowStartLte !== undefined) {
+                localVarQueryParameter['window_start.lte'] = windowStartLte;
+            }
+
+            if (windowStartLt !== undefined) {
+                localVarQueryParameter['window_start.lt'] = windowStartLt;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get quotes for a contract in a given time range.
+         * @summary Quotes
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [sessionEndDate] Query by session end date
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [timestampGte] Range by timestamp.
+         * @param {string} [timestampGt] Range by timestamp.
+         * @param {string} [timestampLte] Range by timestamp.
+         * @param {string} [timestampLt] Range by timestamp.
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {GetFuturesQuotesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFuturesQuotes: async (ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesQuotesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('getFuturesQuotes', 'ticker', ticker)
+            const localVarPath = `/futures/vX/quotes/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (timestamp !== undefined) {
+                localVarQueryParameter['timestamp'] = timestamp;
+            }
+
+            if (sessionEndDate !== undefined) {
+                localVarQueryParameter['session_end_date'] = sessionEndDate;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (timestampGte !== undefined) {
+                localVarQueryParameter['timestamp.gte'] = timestampGte;
+            }
+
+            if (timestampGt !== undefined) {
+                localVarQueryParameter['timestamp.gt'] = timestampGt;
+            }
+
+            if (timestampLte !== undefined) {
+                localVarQueryParameter['timestamp.lte'] = timestampLte;
+            }
+
+            if (timestampLt !== undefined) {
+                localVarQueryParameter['timestamp.lt'] = timestampLt;
+            }
+
+            if (sessionEndDateGte !== undefined) {
+                localVarQueryParameter['session_end_date.gte'] = sessionEndDateGte;
+            }
+
+            if (sessionEndDateGt !== undefined) {
+                localVarQueryParameter['session_end_date.gt'] = sessionEndDateGt;
+            }
+
+            if (sessionEndDateLte !== undefined) {
+                localVarQueryParameter['session_end_date.lte'] = sessionEndDateLte;
+            }
+
+            if (sessionEndDateLt !== undefined) {
+                localVarQueryParameter['session_end_date.lt'] = sessionEndDateLt;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get trades for a contract in a given time range.
+         * @summary Trades
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [sessionEndDate] Query by session end date
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [timestampGte] Range by timestamp.
+         * @param {string} [timestampGt] Range by timestamp.
+         * @param {string} [timestampLte] Range by timestamp.
+         * @param {string} [timestampLt] Range by timestamp.
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {GetFuturesTradesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFuturesTrades: async (ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesTradesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ticker' is not null or undefined
+            assertParamExists('getFuturesTrades', 'ticker', ticker)
+            const localVarPath = `/futures/vX/trades/{ticker}`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (timestamp !== undefined) {
+                localVarQueryParameter['timestamp'] = timestamp;
+            }
+
+            if (sessionEndDate !== undefined) {
+                localVarQueryParameter['session_end_date'] = sessionEndDate;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (timestampGte !== undefined) {
+                localVarQueryParameter['timestamp.gte'] = timestampGte;
+            }
+
+            if (timestampGt !== undefined) {
+                localVarQueryParameter['timestamp.gt'] = timestampGt;
+            }
+
+            if (timestampLte !== undefined) {
+                localVarQueryParameter['timestamp.lte'] = timestampLte;
+            }
+
+            if (timestampLt !== undefined) {
+                localVarQueryParameter['timestamp.lt'] = timestampLt;
+            }
+
+            if (sessionEndDateGte !== undefined) {
+                localVarQueryParameter['session_end_date.gte'] = sessionEndDateGte;
+            }
+
+            if (sessionEndDateGt !== undefined) {
+                localVarQueryParameter['session_end_date.gt'] = sessionEndDateGt;
+            }
+
+            if (sessionEndDateLte !== undefined) {
+                localVarQueryParameter['session_end_date.lte'] = sessionEndDateLte;
+            }
+
+            if (sessionEndDateLt !== undefined) {
+                localVarQueryParameter['session_end_date.lt'] = sessionEndDateLt;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
             }
 
 
@@ -18905,6 +20409,85 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * The Contracts endpoint returns a list of futures contracts. This endpoint can be used to query for contracts based on a variety of parameters, including the contract\'s ticker, product code, first trade date, last trade date, and whether or not the contract was active on a given date.
+         * @summary Contracts
+         * @param {string} [productCode] A unique identifier for the Product a Contract belongs to. Note that multiple contracts can belong to the same product.
+         * @param {string} [firstTradeDate] The first day that a contract was tradeable. A date with the format YYYY-MM-DD.
+         * @param {string} [lastTradeDate] The last day that the contract was tradeable. A date with the format YYYY-MM-DD.
+         * @param {string} [asOf] Specify the point-in-time for which you want to retrieve information. Note that the contract data returned for a given date is the state of that contract as of that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+         * @param {ListContractsActiveEnum} [active] Filter for contracts based on whether or not they were tradeable at the given point in time. For example, if the date queried is greater-than or equal-to a contract\&#39;s \&#39;first_trade_date\&#39; and less-than-or-equal-to its \&#39;last_trade_date\&#39;, then the contract was active. If the date queried is greater-than-or-equal-to the contract\&#39;s \&#39;last_trade_date\&#39; or less-than-or-equal-to its \&#39;first_trade_date\&#39;, then the contract was inactive.
+         * @param {ListContractsTypeEnum} [type] The type of contract, one of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {ListContractsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listContracts: async (productCode?: string, firstTradeDate?: string, lastTradeDate?: string, asOf?: string, active?: ListContractsActiveEnum, type?: ListContractsTypeEnum, limit?: number, sort?: ListContractsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/futures/vX/contracts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (productCode !== undefined) {
+                localVarQueryParameter['product_code'] = productCode;
+            }
+
+            if (firstTradeDate !== undefined) {
+                localVarQueryParameter['first_trade_date'] = (firstTradeDate as any instanceof Date) ?
+                    (firstTradeDate as any).toISOString().substring(0,10) :
+                    firstTradeDate;
+            }
+
+            if (lastTradeDate !== undefined) {
+                localVarQueryParameter['last_trade_date'] = (lastTradeDate as any instanceof Date) ?
+                    (lastTradeDate as any).toISOString().substring(0,10) :
+                    lastTradeDate;
+            }
+
+            if (asOf !== undefined) {
+                localVarQueryParameter['as_of'] = (asOf as any instanceof Date) ?
+                    (asOf as any).toISOString().substring(0,10) :
+                    asOf;
+            }
+
+            if (active !== undefined) {
+                localVarQueryParameter['active'] = active;
+            }
+
+            if (type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get a list of historical cash dividends, including the ticker symbol, declaration date, ex-dividend date, record date, pay date, frequency, and amount.
          * @summary Dividends v3
          * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -19452,6 +21035,59 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * The market status endpoint returns the current status of the futures market for the given product code(s).
+         * @summary Market Status
+         * @param {string} [productCodeAnyOf] The product code(s) to return market statuses for.  Multiple product codes can be specified by separating them with a comma. Currently, the limit is 250 product codes.
+         * @param {string} [productCode] The product code to return market statuses for.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {ListMarketStatusesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listMarketStatuses: async (productCodeAnyOf?: string, productCode?: string, limit?: number, sort?: ListMarketStatusesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/futures/vX/market-status`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (productCodeAnyOf !== undefined) {
+                localVarQueryParameter['product_code.any_of'] = productCodeAnyOf;
+            }
+
+            if (productCode !== undefined) {
+                localVarQueryParameter['product_code'] = productCode;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get the most recent news articles relating to a stock ticker symbol, including a summary of the article and a link to the original source.
          * @summary Ticker News
          * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -19685,6 +21321,96 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The Products endpoint returns a list of futures products. This endpoint can be used to query for products based on a variety of parameters, including by the product\'s name, exchange, sector, sub-sector, asset class, asset sub-class, and type.
+         * @summary Products
+         * @param {string} [name] Search for products by Product Name. This parameter supports an exact match, while a name-contains search can be performed using the &#x60;name.search&#x60; parameter. Note that the search is case-sensitive.
+         * @param {string} [asOf] A date string in the format YYYY-MM-DD. This parameter will return point-in-time information about products for the specified day (default&#x3D;today).
+         * @param {string} [tradingVenue] The trading venue (MIC) for the exchange on which the products trades.
+         * @param {ListProductsSectorEnum} [sector] The sector to which the products belong.
+         * @param {ListProductsSubSectorEnum} [subSector] The sub-sector to which the products belong.
+         * @param {ListProductsAssetClassEnum} [assetClass] The asset class to which the products belong.
+         * @param {ListProductsAssetSubClassEnum} [assetSubClass] The asset sub-class to which the products belong.
+         * @param {ListProductsTypeEnum} [type] The type of products to return. One of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, maximum&#x3D;1000, minimum&#x3D;1).
+         * @param {string} [nameSearch] Search by name.
+         * @param {ListProductsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProducts: async (name?: string, asOf?: string, tradingVenue?: string, sector?: ListProductsSectorEnum, subSector?: ListProductsSubSectorEnum, assetClass?: ListProductsAssetClassEnum, assetSubClass?: ListProductsAssetSubClassEnum, type?: ListProductsTypeEnum, limit?: number, nameSearch?: string, sort?: ListProductsSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/futures/vX/products`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            if (asOf !== undefined) {
+                localVarQueryParameter['as_of'] = (asOf as any instanceof Date) ?
+                    (asOf as any).toISOString().substring(0,10) :
+                    asOf;
+            }
+
+            if (tradingVenue !== undefined) {
+                localVarQueryParameter['trading_venue'] = tradingVenue;
+            }
+
+            if (sector !== undefined) {
+                localVarQueryParameter['sector'] = sector;
+            }
+
+            if (subSector !== undefined) {
+                localVarQueryParameter['sub_sector'] = subSector;
+            }
+
+            if (assetClass !== undefined) {
+                localVarQueryParameter['asset_class'] = assetClass;
+            }
+
+            if (assetSubClass !== undefined) {
+                localVarQueryParameter['asset_sub_class'] = assetSubClass;
+            }
+
+            if (type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (nameSearch !== undefined) {
+                localVarQueryParameter['name.search'] = nameSearch;
             }
 
             if (sort !== undefined) {
@@ -19973,6 +21699,137 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * The Product Details endpoint returns the details for a single product as of a specific day.
+         * @summary Product Details
+         * @param {string} productCode The unique identifier for a product.
+         * @param {ProductDetailsTypeEnum} [type] The type of product to return. One of \&quot;single\&quot; or \&quot;combo\&quot; (default&#x3D;single).
+         * @param {string} [asOf] A date string in the format YYYY-MM-DD. Note that the data returned is the state of this product\&#39;s data at that point-in-time.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        productDetails: async (productCode: string, type?: ProductDetailsTypeEnum, asOf?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'productCode' is not null or undefined
+            assertParamExists('productDetails', 'productCode', productCode)
+            const localVarPath = `/futures/vX/products/{product_code}`
+                .replace(`{${"product_code"}}`, encodeURIComponent(String(productCode)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+
+            if (asOf !== undefined) {
+                localVarQueryParameter['as_of'] = (asOf as any instanceof Date) ?
+                    (asOf as any).toISOString().substring(0,10) :
+                    asOf;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The Product-Specific Futures Schedules API provides detailed trading schedules for a specific futures product. This API allows you to query schedules for a single product across a range of dates. Users can access comprehensive information about trading sessions, including market events such as preopen, open, and closed, along with their precise timestamps.
+         * @summary Product Schedules
+         * @param {string} productCode The product code for the futures product.
+         * @param {string} [sessionEndDate] The date on which the schedule\&#39;s trading day ended (sometimes referred to as trading date). Defaults to today. Formatted as &#x60;YYYY-MM-DD&#x60;. Note that although there is no time component the day is assumed to be that day in Central Time.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {ProductSchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        productSchedules: async (productCode: string, sessionEndDate?: string, limit?: number, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: ProductSchedulesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'productCode' is not null or undefined
+            assertParamExists('productSchedules', 'productCode', productCode)
+            const localVarPath = `/futures/vX/products/{product_code}/schedules`
+                .replace(`{${"product_code"}}`, encodeURIComponent(String(productCode)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication apiKey required
+            await setApiKeyToObject(localVarQueryParameter, "apiKey", configuration)
+
+            if (sessionEndDate !== undefined) {
+                localVarQueryParameter['session_end_date'] = (sessionEndDate as any instanceof Date) ?
+                    (sessionEndDate as any).toISOString().substring(0,10) :
+                    sessionEndDate;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sessionEndDateGte !== undefined) {
+                localVarQueryParameter['session_end_date.gte'] = (sessionEndDateGte as any instanceof Date) ?
+                    (sessionEndDateGte as any).toISOString().substring(0,10) :
+                    sessionEndDateGte;
+            }
+
+            if (sessionEndDateGt !== undefined) {
+                localVarQueryParameter['session_end_date.gt'] = (sessionEndDateGt as any instanceof Date) ?
+                    (sessionEndDateGt as any).toISOString().substring(0,10) :
+                    sessionEndDateGt;
+            }
+
+            if (sessionEndDateLte !== undefined) {
+                localVarQueryParameter['session_end_date.lte'] = (sessionEndDateLte as any instanceof Date) ?
+                    (sessionEndDateLte as any).toISOString().substring(0,10) :
+                    sessionEndDateLte;
+            }
+
+            if (sessionEndDateLt !== undefined) {
+                localVarQueryParameter['session_end_date.lt'] = (sessionEndDateLt as any instanceof Date) ?
+                    (sessionEndDateLt as any).toISOString().substring(0,10) :
+                    sessionEndDateLt;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -19983,6 +21840,36 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 export const DefaultApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = DefaultApiAxiosParamCreator(configuration)
     return {
+        /**
+         * The Contract Details endpoint returns the details for a single contract at a specific point in time.
+         * @summary Contract Details
+         * @param {string} ticker The ticker symbol of the contract to retrieve.
+         * @param {string} [asOf] The point-in-time of the data to be retrieved. Note that the contract data returned for a given date represents the state of that contract on that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async contractDetails(ticker: string, asOf?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ContractDetails200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.contractDetails(ticker, asOf, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.contractDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * The Trading-Date Based Futures Schedules API provides detailed trading schedules for all products on a specific day. This API allows you to retrieve detailed information about trading sessions, including market events like preopen, open, and closed, along with their precise timestamps.
+         * @summary Daily Schedules
+         * @param {string} [sessionEndDate] The session end date for the schedules (also known as the trading date). This is the day in CT for which the user wants to retrieve data. If left blank, this value defaults to \&#39;today\&#39; in Central Time. e.g. If a request is made from Pacific Time on \&#39;2025-01-01\&#39; at 11:00 pm with no \&#39;session_end_date\&#39; a default value of &#x60;2025-01-02&#x60; will be used.
+         * @param {string} [tradingVenue] The trading venue (MIC) of the exchange for the schedules.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {DailySchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async dailySchedules(sessionEndDate?: string, tradingVenue?: string, limit?: number, sort?: DailySchedulesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<DailySchedules200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.dailySchedules(sessionEndDate, tradingVenue, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.dailySchedules']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
          * @summary Ticker Full Book (L2)
@@ -20643,6 +22530,44 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * A table tracking inflation and price indices, including Consumer Price Index (CPI) and Personal Consumption Expenditures (PCE) metrics over time.
+         * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFedV1Inflation(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFedV1Inflation200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFedV1Inflation(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFedV1Inflation']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * A table tracking inflation expectations from both market-based and economic model perspectives across different time horizons.
+         * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFedV1InflationExpectations(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFedV1InflationExpectations200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFedV1InflationExpectations(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFedV1InflationExpectations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
          * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
@@ -20841,6 +22766,77 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getForexSnapshotTickers(tickers, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getForexSnapshotTickers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get aggregates for a contract in a given time range.
+         * @summary Aggregates
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
+         * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [windowStartGte] Range by window_start.
+         * @param {string} [windowStartGt] Range by window_start.
+         * @param {string} [windowStartLte] Range by window_start.
+         * @param {string} [windowStartLt] Range by window_start.
+         * @param {GetFuturesAggregatesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFuturesAggregates(ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFuturesAggregates200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFuturesAggregates(ticker, resolution, windowStart, limit, windowStartGte, windowStartGt, windowStartLte, windowStartLt, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFuturesAggregates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get quotes for a contract in a given time range.
+         * @summary Quotes
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [sessionEndDate] Query by session end date
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [timestampGte] Range by timestamp.
+         * @param {string} [timestampGt] Range by timestamp.
+         * @param {string} [timestampLte] Range by timestamp.
+         * @param {string} [timestampLt] Range by timestamp.
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {GetFuturesQuotesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFuturesQuotes(ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFuturesQuotes200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFuturesQuotes(ticker, timestamp, sessionEndDate, limit, timestampGte, timestampGt, timestampLte, timestampLt, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFuturesQuotes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get trades for a contract in a given time range.
+         * @summary Trades
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [sessionEndDate] Query by session end date
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [timestampGte] Range by timestamp.
+         * @param {string} [timestampGt] Range by timestamp.
+         * @param {string} [timestampLte] Range by timestamp.
+         * @param {string} [timestampLt] Range by timestamp.
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {GetFuturesTradesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFuturesTrades(ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesTradesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFuturesTrades200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFuturesTrades(ticker, timestamp, sessionEndDate, limit, timestampGte, timestampGt, timestampLte, timestampLt, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFuturesTrades']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -21873,6 +23869,26 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * The Contracts endpoint returns a list of futures contracts. This endpoint can be used to query for contracts based on a variety of parameters, including the contract\'s ticker, product code, first trade date, last trade date, and whether or not the contract was active on a given date.
+         * @summary Contracts
+         * @param {string} [productCode] A unique identifier for the Product a Contract belongs to. Note that multiple contracts can belong to the same product.
+         * @param {string} [firstTradeDate] The first day that a contract was tradeable. A date with the format YYYY-MM-DD.
+         * @param {string} [lastTradeDate] The last day that the contract was tradeable. A date with the format YYYY-MM-DD.
+         * @param {string} [asOf] Specify the point-in-time for which you want to retrieve information. Note that the contract data returned for a given date is the state of that contract as of that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+         * @param {ListContractsActiveEnum} [active] Filter for contracts based on whether or not they were tradeable at the given point in time. For example, if the date queried is greater-than or equal-to a contract\&#39;s \&#39;first_trade_date\&#39; and less-than-or-equal-to its \&#39;last_trade_date\&#39;, then the contract was active. If the date queried is greater-than-or-equal-to the contract\&#39;s \&#39;last_trade_date\&#39; or less-than-or-equal-to its \&#39;first_trade_date\&#39;, then the contract was inactive.
+         * @param {ListContractsTypeEnum} [type] The type of contract, one of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {ListContractsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listContracts(productCode?: string, firstTradeDate?: string, lastTradeDate?: string, asOf?: string, active?: ListContractsActiveEnum, type?: ListContractsTypeEnum, limit?: number, sort?: ListContractsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListContracts200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listContracts(productCode, firstTradeDate, lastTradeDate, asOf, active, type, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listContracts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get a list of historical cash dividends, including the ticker symbol, declaration date, ex-dividend date, record date, pay date, frequency, and amount.
          * @summary Dividends v3
          * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -21990,6 +24006,22 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * The market status endpoint returns the current status of the futures market for the given product code(s).
+         * @summary Market Status
+         * @param {string} [productCodeAnyOf] The product code(s) to return market statuses for.  Multiple product codes can be specified by separating them with a comma. Currently, the limit is 250 product codes.
+         * @param {string} [productCode] The product code to return market statuses for.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {ListMarketStatusesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listMarketStatuses(productCodeAnyOf?: string, productCode?: string, limit?: number, sort?: ListMarketStatusesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListMarketStatuses200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listMarketStatuses(productCodeAnyOf, productCode, limit, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listMarketStatuses']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get the most recent news articles relating to a stock ticker symbol, including a summary of the article and a link to the original source.
          * @summary Ticker News
          * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -22046,6 +24078,29 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listOptionsContracts(underlyingTicker, ticker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listOptionsContracts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * The Products endpoint returns a list of futures products. This endpoint can be used to query for products based on a variety of parameters, including by the product\'s name, exchange, sector, sub-sector, asset class, asset sub-class, and type.
+         * @summary Products
+         * @param {string} [name] Search for products by Product Name. This parameter supports an exact match, while a name-contains search can be performed using the &#x60;name.search&#x60; parameter. Note that the search is case-sensitive.
+         * @param {string} [asOf] A date string in the format YYYY-MM-DD. This parameter will return point-in-time information about products for the specified day (default&#x3D;today).
+         * @param {string} [tradingVenue] The trading venue (MIC) for the exchange on which the products trades.
+         * @param {ListProductsSectorEnum} [sector] The sector to which the products belong.
+         * @param {ListProductsSubSectorEnum} [subSector] The sub-sector to which the products belong.
+         * @param {ListProductsAssetClassEnum} [assetClass] The asset class to which the products belong.
+         * @param {ListProductsAssetSubClassEnum} [assetSubClass] The asset sub-class to which the products belong.
+         * @param {ListProductsTypeEnum} [type] The type of products to return. One of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, maximum&#x3D;1000, minimum&#x3D;1).
+         * @param {string} [nameSearch] Search by name.
+         * @param {ListProductsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listProducts(name?: string, asOf?: string, tradingVenue?: string, sector?: ListProductsSectorEnum, subSector?: ListProductsSubSectorEnum, assetClass?: ListProductsAssetClassEnum, assetSubClass?: ListProductsAssetSubClassEnum, type?: ListProductsTypeEnum, limit?: number, nameSearch?: string, sort?: ListProductsSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ListProducts200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listProducts(name, asOf, tradingVenue, sector, subSector, assetClass, assetSubClass, type, limit, nameSearch, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listProducts']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -22116,6 +24171,41 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTickers']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * The Product Details endpoint returns the details for a single product as of a specific day.
+         * @summary Product Details
+         * @param {string} productCode The unique identifier for a product.
+         * @param {ProductDetailsTypeEnum} [type] The type of product to return. One of \&quot;single\&quot; or \&quot;combo\&quot; (default&#x3D;single).
+         * @param {string} [asOf] A date string in the format YYYY-MM-DD. Note that the data returned is the state of this product\&#39;s data at that point-in-time.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async productDetails(productCode: string, type?: ProductDetailsTypeEnum, asOf?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ProductDetails200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.productDetails(productCode, type, asOf, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.productDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * The Product-Specific Futures Schedules API provides detailed trading schedules for a specific futures product. This API allows you to query schedules for a single product across a range of dates. Users can access comprehensive information about trading sessions, including market events such as preopen, open, and closed, along with their precise timestamps.
+         * @summary Product Schedules
+         * @param {string} productCode The product code for the futures product.
+         * @param {string} [sessionEndDate] The date on which the schedule\&#39;s trading day ended (sometimes referred to as trading date). Defaults to today. Formatted as &#x60;YYYY-MM-DD&#x60;. Note that although there is no time component the day is assumed to be that day in Central Time.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {ProductSchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async productSchedules(productCode: string, sessionEndDate?: string, limit?: number, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: ProductSchedulesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<ProductSchedules200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.productSchedules(productCode, sessionEndDate, limit, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.productSchedules']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -22126,6 +24216,30 @@ export const DefaultApiFp = function(configuration?: Configuration) {
 export const DefaultApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = DefaultApiFp(configuration)
     return {
+        /**
+         * The Contract Details endpoint returns the details for a single contract at a specific point in time.
+         * @summary Contract Details
+         * @param {string} ticker The ticker symbol of the contract to retrieve.
+         * @param {string} [asOf] The point-in-time of the data to be retrieved. Note that the contract data returned for a given date represents the state of that contract on that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        contractDetails(ticker: string, asOf?: string, options?: RawAxiosRequestConfig): Promise<ContractDetails200Response> {
+            return localVarFp.contractDetails(ticker, asOf, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The Trading-Date Based Futures Schedules API provides detailed trading schedules for all products on a specific day. This API allows you to retrieve detailed information about trading sessions, including market events like preopen, open, and closed, along with their precise timestamps.
+         * @summary Daily Schedules
+         * @param {string} [sessionEndDate] The session end date for the schedules (also known as the trading date). This is the day in CT for which the user wants to retrieve data. If left blank, this value defaults to \&#39;today\&#39; in Central Time. e.g. If a request is made from Pacific Time on \&#39;2025-01-01\&#39; at 11:00 pm with no \&#39;session_end_date\&#39; a default value of &#x60;2025-01-02&#x60; will be used.
+         * @param {string} [tradingVenue] The trading venue (MIC) of the exchange for the schedules.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {DailySchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        dailySchedules(sessionEndDate?: string, tradingVenue?: string, limit?: number, sort?: DailySchedulesSortEnum, options?: RawAxiosRequestConfig): Promise<DailySchedules200Response> {
+            return localVarFp.dailySchedules(sessionEndDate, tradingVenue, limit, sort, options).then((request) => request(axios, basePath));
+        },
         /**
          * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
          * @summary Ticker Full Book (L2)
@@ -22711,6 +24825,38 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getEvents(id, types, options).then((request) => request(axios, basePath));
         },
         /**
+         * A table tracking inflation and price indices, including Consumer Price Index (CPI) and Personal Consumption Expenditures (PCE) metrics over time.
+         * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFedV1Inflation(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetFedV1Inflation200Response> {
+            return localVarFp.getFedV1Inflation(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * A table tracking inflation expectations from both market-based and economic model perspectives across different time horizons.
+         * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+         * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+         * @param {string} [dateGt] Filter greater than the value.
+         * @param {string} [dateGte] Filter greater than or equal to the value.
+         * @param {string} [dateLt] Filter less than the value.
+         * @param {string} [dateLte] Filter less than or equal to the value.
+         * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+         * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFedV1InflationExpectations(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig): Promise<GetFedV1InflationExpectations200Response> {
+            return localVarFp.getFedV1InflationExpectations(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
          * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
          * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
          * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
@@ -22880,6 +25026,68 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig): Promise<GetForexSnapshotTickers200Response> {
             return localVarFp.getForexSnapshotTickers(tickers, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get aggregates for a contract in a given time range.
+         * @summary Aggregates
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
+         * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [windowStartGte] Range by window_start.
+         * @param {string} [windowStartGt] Range by window_start.
+         * @param {string} [windowStartLte] Range by window_start.
+         * @param {string} [windowStartLt] Range by window_start.
+         * @param {GetFuturesAggregatesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFuturesAggregates(ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig): Promise<GetFuturesAggregates200Response> {
+            return localVarFp.getFuturesAggregates(ticker, resolution, windowStart, limit, windowStartGte, windowStartGt, windowStartLte, windowStartLt, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get quotes for a contract in a given time range.
+         * @summary Quotes
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [sessionEndDate] Query by session end date
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [timestampGte] Range by timestamp.
+         * @param {string} [timestampGt] Range by timestamp.
+         * @param {string} [timestampLte] Range by timestamp.
+         * @param {string} [timestampLt] Range by timestamp.
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {GetFuturesQuotesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFuturesQuotes(ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesQuotesSortEnum, options?: RawAxiosRequestConfig): Promise<GetFuturesQuotes200Response> {
+            return localVarFp.getFuturesQuotes(ticker, timestamp, sessionEndDate, limit, timestampGte, timestampGt, timestampLte, timestampLt, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get trades for a contract in a given time range.
+         * @summary Trades
+         * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+         * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [sessionEndDate] Query by session end date
+         * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+         * @param {string} [timestampGte] Range by timestamp.
+         * @param {string} [timestampGt] Range by timestamp.
+         * @param {string} [timestampLte] Range by timestamp.
+         * @param {string} [timestampLt] Range by timestamp.
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {GetFuturesTradesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFuturesTrades(ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesTradesSortEnum, options?: RawAxiosRequestConfig): Promise<GetFuturesTrades200Response> {
+            return localVarFp.getFuturesTrades(ticker, timestamp, sessionEndDate, limit, timestampGte, timestampGt, timestampLte, timestampLt, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * Get the daily open, high, low, and close (OHLC) for the entire cryptocurrency markets. 
@@ -23755,6 +25963,23 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.listConditions(assetClass, dataType, id, sip, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
+         * The Contracts endpoint returns a list of futures contracts. This endpoint can be used to query for contracts based on a variety of parameters, including the contract\'s ticker, product code, first trade date, last trade date, and whether or not the contract was active on a given date.
+         * @summary Contracts
+         * @param {string} [productCode] A unique identifier for the Product a Contract belongs to. Note that multiple contracts can belong to the same product.
+         * @param {string} [firstTradeDate] The first day that a contract was tradeable. A date with the format YYYY-MM-DD.
+         * @param {string} [lastTradeDate] The last day that the contract was tradeable. A date with the format YYYY-MM-DD.
+         * @param {string} [asOf] Specify the point-in-time for which you want to retrieve information. Note that the contract data returned for a given date is the state of that contract as of that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+         * @param {ListContractsActiveEnum} [active] Filter for contracts based on whether or not they were tradeable at the given point in time. For example, if the date queried is greater-than or equal-to a contract\&#39;s \&#39;first_trade_date\&#39; and less-than-or-equal-to its \&#39;last_trade_date\&#39;, then the contract was active. If the date queried is greater-than-or-equal-to the contract\&#39;s \&#39;last_trade_date\&#39; or less-than-or-equal-to its \&#39;first_trade_date\&#39;, then the contract was inactive.
+         * @param {ListContractsTypeEnum} [type] The type of contract, one of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {ListContractsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listContracts(productCode?: string, firstTradeDate?: string, lastTradeDate?: string, asOf?: string, active?: ListContractsActiveEnum, type?: ListContractsTypeEnum, limit?: number, sort?: ListContractsSortEnum, options?: RawAxiosRequestConfig): Promise<ListContracts200Response> {
+            return localVarFp.listContracts(productCode, firstTradeDate, lastTradeDate, asOf, active, type, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get a list of historical cash dividends, including the ticker symbol, declaration date, ex-dividend date, record date, pay date, frequency, and amount.
          * @summary Dividends v3
          * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -23860,6 +26085,19 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.listIPOs(ticker, usCode, isin, listingDate, ipoStatus, listingDateGte, listingDateGt, listingDateLte, listingDateLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
         /**
+         * The market status endpoint returns the current status of the futures market for the given product code(s).
+         * @summary Market Status
+         * @param {string} [productCodeAnyOf] The product code(s) to return market statuses for.  Multiple product codes can be specified by separating them with a comma. Currently, the limit is 250 product codes.
+         * @param {string} [productCode] The product code to return market statuses for.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {ListMarketStatusesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listMarketStatuses(productCodeAnyOf?: string, productCode?: string, limit?: number, sort?: ListMarketStatusesSortEnum, options?: RawAxiosRequestConfig): Promise<ListMarketStatuses200Response> {
+            return localVarFp.listMarketStatuses(productCodeAnyOf, productCode, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the most recent news articles relating to a stock ticker symbol, including a summary of the article and a link to the original source.
          * @summary Ticker News
          * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -23911,6 +26149,26 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         listOptionsContracts(underlyingTicker?: string, ticker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig): Promise<ListOptionsContracts200Response> {
             return localVarFp.listOptionsContracts(underlyingTicker, ticker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The Products endpoint returns a list of futures products. This endpoint can be used to query for products based on a variety of parameters, including by the product\'s name, exchange, sector, sub-sector, asset class, asset sub-class, and type.
+         * @summary Products
+         * @param {string} [name] Search for products by Product Name. This parameter supports an exact match, while a name-contains search can be performed using the &#x60;name.search&#x60; parameter. Note that the search is case-sensitive.
+         * @param {string} [asOf] A date string in the format YYYY-MM-DD. This parameter will return point-in-time information about products for the specified day (default&#x3D;today).
+         * @param {string} [tradingVenue] The trading venue (MIC) for the exchange on which the products trades.
+         * @param {ListProductsSectorEnum} [sector] The sector to which the products belong.
+         * @param {ListProductsSubSectorEnum} [subSector] The sub-sector to which the products belong.
+         * @param {ListProductsAssetClassEnum} [assetClass] The asset class to which the products belong.
+         * @param {ListProductsAssetSubClassEnum} [assetSubClass] The asset sub-class to which the products belong.
+         * @param {ListProductsTypeEnum} [type] The type of products to return. One of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, maximum&#x3D;1000, minimum&#x3D;1).
+         * @param {string} [nameSearch] Search by name.
+         * @param {ListProductsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProducts(name?: string, asOf?: string, tradingVenue?: string, sector?: ListProductsSectorEnum, subSector?: ListProductsSubSectorEnum, assetClass?: ListProductsAssetClassEnum, assetSubClass?: ListProductsAssetSubClassEnum, type?: ListProductsTypeEnum, limit?: number, nameSearch?: string, sort?: ListProductsSortEnum, options?: RawAxiosRequestConfig): Promise<ListProducts200Response> {
+            return localVarFp.listProducts(name, asOf, tradingVenue, sector, subSector, assetClass, assetSubClass, type, limit, nameSearch, sort, options).then((request) => request(axios, basePath));
         },
         /**
          * Get a list of historical stock splits, including the ticker symbol, the execution date, and the factors of the split ratio.
@@ -23971,6 +26229,35 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig): Promise<ListTickers200Response> {
             return localVarFp.listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(axios, basePath));
         },
+        /**
+         * The Product Details endpoint returns the details for a single product as of a specific day.
+         * @summary Product Details
+         * @param {string} productCode The unique identifier for a product.
+         * @param {ProductDetailsTypeEnum} [type] The type of product to return. One of \&quot;single\&quot; or \&quot;combo\&quot; (default&#x3D;single).
+         * @param {string} [asOf] A date string in the format YYYY-MM-DD. Note that the data returned is the state of this product\&#39;s data at that point-in-time.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        productDetails(productCode: string, type?: ProductDetailsTypeEnum, asOf?: string, options?: RawAxiosRequestConfig): Promise<ProductDetails200Response> {
+            return localVarFp.productDetails(productCode, type, asOf, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The Product-Specific Futures Schedules API provides detailed trading schedules for a specific futures product. This API allows you to query schedules for a single product across a range of dates. Users can access comprehensive information about trading sessions, including market events such as preopen, open, and closed, along with their precise timestamps.
+         * @summary Product Schedules
+         * @param {string} productCode The product code for the futures product.
+         * @param {string} [sessionEndDate] The date on which the schedule\&#39;s trading day ended (sometimes referred to as trading date). Defaults to today. Formatted as &#x60;YYYY-MM-DD&#x60;. Note that although there is no time component the day is assumed to be that day in Central Time.
+         * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+         * @param {string} [sessionEndDateGte] Range by session_end_date.
+         * @param {string} [sessionEndDateGt] Range by session_end_date.
+         * @param {string} [sessionEndDateLte] Range by session_end_date.
+         * @param {string} [sessionEndDateLt] Range by session_end_date.
+         * @param {ProductSchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        productSchedules(productCode: string, sessionEndDate?: string, limit?: number, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: ProductSchedulesSortEnum, options?: RawAxiosRequestConfig): Promise<ProductSchedules200Response> {
+            return localVarFp.productSchedules(productCode, sessionEndDate, limit, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -23981,6 +26268,34 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
  * @extends {BaseAPI}
  */
 export class DefaultApi extends BaseAPI {
+    /**
+     * The Contract Details endpoint returns the details for a single contract at a specific point in time.
+     * @summary Contract Details
+     * @param {string} ticker The ticker symbol of the contract to retrieve.
+     * @param {string} [asOf] The point-in-time of the data to be retrieved. Note that the contract data returned for a given date represents the state of that contract on that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public contractDetails(ticker: string, asOf?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).contractDetails(ticker, asOf, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The Trading-Date Based Futures Schedules API provides detailed trading schedules for all products on a specific day. This API allows you to retrieve detailed information about trading sessions, including market events like preopen, open, and closed, along with their precise timestamps.
+     * @summary Daily Schedules
+     * @param {string} [sessionEndDate] The session end date for the schedules (also known as the trading date). This is the day in CT for which the user wants to retrieve data. If left blank, this value defaults to \&#39;today\&#39; in Central Time. e.g. If a request is made from Pacific Time on \&#39;2025-01-01\&#39; at 11:00 pm with no \&#39;session_end_date\&#39; a default value of &#x60;2025-01-02&#x60; will be used.
+     * @param {string} [tradingVenue] The trading venue (MIC) of the exchange for the schedules.
+     * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+     * @param {DailySchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public dailySchedules(sessionEndDate?: string, tradingVenue?: string, limit?: number, sort?: DailySchedulesSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).dailySchedules(sessionEndDate, tradingVenue, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Get the current level 2 book of a single ticker. This is the combined book from all of the exchanges. <br /> <br /> Note: Snapshot data is cleared at 12am EST and gets populated as data is received from the exchanges. 
      * @summary Ticker Full Book (L2)
@@ -24616,6 +26931,42 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * A table tracking inflation and price indices, including Consumer Price Index (CPI) and Personal Consumption Expenditures (PCE) metrics over time.
+     * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getFedV1Inflation(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getFedV1Inflation(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * A table tracking inflation expectations from both market-based and economic model perspectives across different time horizons.
+     * @param {string} [date] Calendar date of the observation (YYYY‑MM‑DD).
+     * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
+     * @param {string} [dateGt] Filter greater than the value.
+     * @param {string} [dateGte] Filter greater than or equal to the value.
+     * @param {string} [dateLt] Filter less than the value.
+     * @param {string} [dateLte] Filter less than or equal to the value.
+     * @param {number} [limit] Limit the maximum number of results returned. Defaults to \&#39;100\&#39; if not specified. The maximum allowed limit is \&#39;50000\&#39;.
+     * @param {string} [sort] A comma separated list of sort columns. For each column, append \&#39;.asc\&#39; or \&#39;.desc\&#39; to specify the sort direction. The sort column defaults to \&#39;date\&#39; if not specified. The sort order defaults to \&#39;asc\&#39; if not specified.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getFedV1InflationExpectations(date?: string, dateAnyOf?: string, dateGt?: string, dateGte?: string, dateLt?: string, dateLte?: string, limit?: number, sort?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getFedV1InflationExpectations(date, dateAnyOf, dateGt, dateGte, dateLt, dateLte, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * A record of U.S. Treasury bond yields across various maturity periods, tracking historical interest rates from short-term to long-term government securities.
      * @param {string} [date] Calendar date of the yield observation (YYYY-MM-DD).
      * @param {string} [dateAnyOf] Filter equal to any of the values. Multiple values can be specified by using a comma separated list.
@@ -24804,6 +27155,74 @@ export class DefaultApi extends BaseAPI {
      */
     public getForexSnapshotTickers(tickers?: Array<string>, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getForexSnapshotTickers(tickers, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get aggregates for a contract in a given time range.
+     * @summary Aggregates
+     * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+     * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
+     * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+     * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+     * @param {string} [windowStartGte] Range by window_start.
+     * @param {string} [windowStartGt] Range by window_start.
+     * @param {string} [windowStartLte] Range by window_start.
+     * @param {string} [windowStartLt] Range by window_start.
+     * @param {GetFuturesAggregatesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getFuturesAggregates(ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getFuturesAggregates(ticker, resolution, windowStart, limit, windowStartGte, windowStartGt, windowStartLte, windowStartLt, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get quotes for a contract in a given time range.
+     * @summary Quotes
+     * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+     * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+     * @param {string} [sessionEndDate] Query by session end date
+     * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+     * @param {string} [timestampGte] Range by timestamp.
+     * @param {string} [timestampGt] Range by timestamp.
+     * @param {string} [timestampLte] Range by timestamp.
+     * @param {string} [timestampLt] Range by timestamp.
+     * @param {string} [sessionEndDateGte] Range by session_end_date.
+     * @param {string} [sessionEndDateGt] Range by session_end_date.
+     * @param {string} [sessionEndDateLte] Range by session_end_date.
+     * @param {string} [sessionEndDateLt] Range by session_end_date.
+     * @param {GetFuturesQuotesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getFuturesQuotes(ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesQuotesSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getFuturesQuotes(ticker, timestamp, sessionEndDate, limit, timestampGte, timestampGt, timestampLte, timestampLt, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get trades for a contract in a given time range.
+     * @summary Trades
+     * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
+     * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+     * @param {string} [sessionEndDate] Query by session end date
+     * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
+     * @param {string} [timestampGte] Range by timestamp.
+     * @param {string} [timestampGt] Range by timestamp.
+     * @param {string} [timestampLte] Range by timestamp.
+     * @param {string} [timestampLt] Range by timestamp.
+     * @param {string} [sessionEndDateGte] Range by session_end_date.
+     * @param {string} [sessionEndDateGt] Range by session_end_date.
+     * @param {string} [sessionEndDateLte] Range by session_end_date.
+     * @param {string} [sessionEndDateLt] Range by session_end_date.
+     * @param {GetFuturesTradesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getFuturesTrades(ticker: string, timestamp?: string, sessionEndDate?: string, limit?: number, timestampGte?: string, timestampGt?: string, timestampLte?: string, timestampLt?: string, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: GetFuturesTradesSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getFuturesTrades(ticker, timestamp, sessionEndDate, limit, timestampGte, timestampGt, timestampLte, timestampLt, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -25784,6 +28203,25 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * The Contracts endpoint returns a list of futures contracts. This endpoint can be used to query for contracts based on a variety of parameters, including the contract\'s ticker, product code, first trade date, last trade date, and whether or not the contract was active on a given date.
+     * @summary Contracts
+     * @param {string} [productCode] A unique identifier for the Product a Contract belongs to. Note that multiple contracts can belong to the same product.
+     * @param {string} [firstTradeDate] The first day that a contract was tradeable. A date with the format YYYY-MM-DD.
+     * @param {string} [lastTradeDate] The last day that the contract was tradeable. A date with the format YYYY-MM-DD.
+     * @param {string} [asOf] Specify the point-in-time for which you want to retrieve information. Note that the contract data returned for a given date is the state of that contract as of that day. A date in the format YYYY-MM-DD (default&#x3D;today).
+     * @param {ListContractsActiveEnum} [active] Filter for contracts based on whether or not they were tradeable at the given point in time. For example, if the date queried is greater-than or equal-to a contract\&#39;s \&#39;first_trade_date\&#39; and less-than-or-equal-to its \&#39;last_trade_date\&#39;, then the contract was active. If the date queried is greater-than-or-equal-to the contract\&#39;s \&#39;last_trade_date\&#39; or less-than-or-equal-to its \&#39;first_trade_date\&#39;, then the contract was inactive.
+     * @param {ListContractsTypeEnum} [type] The type of contract, one of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+     * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+     * @param {ListContractsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listContracts(productCode?: string, firstTradeDate?: string, lastTradeDate?: string, asOf?: string, active?: ListContractsActiveEnum, type?: ListContractsTypeEnum, limit?: number, sort?: ListContractsSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listContracts(productCode, firstTradeDate, lastTradeDate, asOf, active, type, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get a list of historical cash dividends, including the ticker symbol, declaration date, ex-dividend date, record date, pay date, frequency, and amount.
      * @summary Dividends v3
      * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -25897,6 +28335,21 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * The market status endpoint returns the current status of the futures market for the given product code(s).
+     * @summary Market Status
+     * @param {string} [productCodeAnyOf] The product code(s) to return market statuses for.  Multiple product codes can be specified by separating them with a comma. Currently, the limit is 250 product codes.
+     * @param {string} [productCode] The product code to return market statuses for.
+     * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+     * @param {ListMarketStatusesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listMarketStatuses(productCodeAnyOf?: string, productCode?: string, limit?: number, sort?: ListMarketStatusesSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listMarketStatuses(productCodeAnyOf, productCode, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get the most recent news articles relating to a stock ticker symbol, including a summary of the article and a link to the original source.
      * @summary Ticker News
      * @param {string} [ticker] Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.
@@ -25951,6 +28404,28 @@ export class DefaultApi extends BaseAPI {
      */
     public listOptionsContracts(underlyingTicker?: string, ticker?: string, contractType?: ListOptionsContractsContractTypeEnum, expirationDate?: string, asOf?: string, strikePrice?: number, expired?: boolean, underlyingTickerGte?: string, underlyingTickerGt?: string, underlyingTickerLte?: string, underlyingTickerLt?: string, expirationDateGte?: string, expirationDateGt?: string, expirationDateLte?: string, expirationDateLt?: string, strikePriceGte?: number, strikePriceGt?: number, strikePriceLte?: number, strikePriceLt?: number, order?: ListOptionsContractsOrderEnum, limit?: number, sort?: ListOptionsContractsSortEnum, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listOptionsContracts(underlyingTicker, ticker, contractType, expirationDate, asOf, strikePrice, expired, underlyingTickerGte, underlyingTickerGt, underlyingTickerLte, underlyingTickerLt, expirationDateGte, expirationDateGt, expirationDateLte, expirationDateLt, strikePriceGte, strikePriceGt, strikePriceLte, strikePriceLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The Products endpoint returns a list of futures products. This endpoint can be used to query for products based on a variety of parameters, including by the product\'s name, exchange, sector, sub-sector, asset class, asset sub-class, and type.
+     * @summary Products
+     * @param {string} [name] Search for products by Product Name. This parameter supports an exact match, while a name-contains search can be performed using the &#x60;name.search&#x60; parameter. Note that the search is case-sensitive.
+     * @param {string} [asOf] A date string in the format YYYY-MM-DD. This parameter will return point-in-time information about products for the specified day (default&#x3D;today).
+     * @param {string} [tradingVenue] The trading venue (MIC) for the exchange on which the products trades.
+     * @param {ListProductsSectorEnum} [sector] The sector to which the products belong.
+     * @param {ListProductsSubSectorEnum} [subSector] The sub-sector to which the products belong.
+     * @param {ListProductsAssetClassEnum} [assetClass] The asset class to which the products belong.
+     * @param {ListProductsAssetSubClassEnum} [assetSubClass] The asset sub-class to which the products belong.
+     * @param {ListProductsTypeEnum} [type] The type of products to return. One of \&quot;all\&quot;, \&quot;single\&quot;, or \&quot;combo\&quot; (default&#x3D;all).
+     * @param {number} [limit] The number of results to return per page (default&#x3D;100, maximum&#x3D;1000, minimum&#x3D;1).
+     * @param {string} [nameSearch] Search by name.
+     * @param {ListProductsSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listProducts(name?: string, asOf?: string, tradingVenue?: string, sector?: ListProductsSectorEnum, subSector?: ListProductsSubSectorEnum, assetClass?: ListProductsAssetClassEnum, assetSubClass?: ListProductsAssetSubClassEnum, type?: ListProductsTypeEnum, limit?: number, nameSearch?: string, sort?: ListProductsSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listProducts(name, asOf, tradingVenue, sector, subSector, assetClass, assetSubClass, type, limit, nameSearch, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -26017,8 +28492,49 @@ export class DefaultApi extends BaseAPI {
     public listTickers(ticker?: string, type?: ListTickersTypeEnum, market?: ListTickersMarketEnum, exchange?: string, cusip?: string, cik?: string, date?: string, search?: string, active?: boolean, tickerGte?: string, tickerGt?: string, tickerLte?: string, tickerLt?: string, order?: ListTickersOrderEnum, limit?: number, sort?: ListTickersSortEnum, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listTickers(ticker, type, market, exchange, cusip, cik, date, search, active, tickerGte, tickerGt, tickerLte, tickerLt, order, limit, sort, options).then((request) => request(this.axios, this.basePath));
     }
+
+    /**
+     * The Product Details endpoint returns the details for a single product as of a specific day.
+     * @summary Product Details
+     * @param {string} productCode The unique identifier for a product.
+     * @param {ProductDetailsTypeEnum} [type] The type of product to return. One of \&quot;single\&quot; or \&quot;combo\&quot; (default&#x3D;single).
+     * @param {string} [asOf] A date string in the format YYYY-MM-DD. Note that the data returned is the state of this product\&#39;s data at that point-in-time.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public productDetails(productCode: string, type?: ProductDetailsTypeEnum, asOf?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).productDetails(productCode, type, asOf, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The Product-Specific Futures Schedules API provides detailed trading schedules for a specific futures product. This API allows you to query schedules for a single product across a range of dates. Users can access comprehensive information about trading sessions, including market events such as preopen, open, and closed, along with their precise timestamps.
+     * @summary Product Schedules
+     * @param {string} productCode The product code for the futures product.
+     * @param {string} [sessionEndDate] The date on which the schedule\&#39;s trading day ended (sometimes referred to as trading date). Defaults to today. Formatted as &#x60;YYYY-MM-DD&#x60;. Note that although there is no time component the day is assumed to be that day in Central Time.
+     * @param {number} [limit] The number of results to return per page (default&#x3D;100, max&#x3D;1000, min&#x3D;1).
+     * @param {string} [sessionEndDateGte] Range by session_end_date.
+     * @param {string} [sessionEndDateGt] Range by session_end_date.
+     * @param {string} [sessionEndDateLte] Range by session_end_date.
+     * @param {string} [sessionEndDateLt] Range by session_end_date.
+     * @param {ProductSchedulesSortEnum} [sort] Sort results by field and direction using dotted notation (e.g., \&#39;ticker.asc\&#39;, \&#39;name.desc\&#39;).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public productSchedules(productCode: string, sessionEndDate?: string, limit?: number, sessionEndDateGte?: string, sessionEndDateGt?: string, sessionEndDateLte?: string, sessionEndDateLt?: string, sort?: ProductSchedulesSortEnum, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).productSchedules(productCode, sessionEndDate, limit, sessionEndDateGte, sessionEndDateGt, sessionEndDateLte, sessionEndDateLt, sort, options).then((request) => request(this.axios, this.basePath));
+    }
 }
 
+/**
+  * @export
+  * @enum {string}
+  */
+export enum DailySchedulesSortEnum {
+    TradingVenueAsc = 'trading_venue.asc',
+    TradingVenueDesc = 'trading_venue.desc'
+}
 /**
   * @export
   * @enum {string}
@@ -26367,6 +28883,30 @@ export enum GetForexSMAOrderEnum {
 export enum GetForexSnapshotDirectionDirectionEnum {
     Gainers = 'gainers',
     Losers = 'losers'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetFuturesAggregatesSortEnum {
+    WindowStartAsc = 'window_start.asc',
+    WindowStartDesc = 'window_start.desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetFuturesQuotesSortEnum {
+    TimestampAsc = 'timestamp.asc',
+    TimestampDesc = 'timestamp.desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum GetFuturesTradesSortEnum {
+    TimestampAsc = 'timestamp.asc',
+    TimestampDesc = 'timestamp.desc'
 }
 /**
   * @export
@@ -26992,6 +29532,36 @@ export enum ListConditionsSortEnum {
   * @export
   * @enum {string}
   */
+export enum ListContractsActiveEnum {
+    All = 'all',
+    True = 'true',
+    False = 'false'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListContractsTypeEnum {
+    All = 'all',
+    Single = 'single',
+    Combo = 'combo'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListContractsSortEnum {
+    ProductCodeAsc = 'product_code.asc',
+    ProductCodeDesc = 'product_code.desc',
+    FirstTradeDateAsc = 'first_trade_date.asc',
+    FirstTradeDateDesc = 'first_trade_date.desc',
+    LastTradeDateAsc = 'last_trade_date.asc',
+    LastTradeDateDesc = 'last_trade_date.desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
 export enum ListDividendsFrequencyEnum {
     NUMBER_0 = 0,
     NUMBER_1 = 1,
@@ -27125,6 +29695,14 @@ export enum ListIPOsSortEnum {
   * @export
   * @enum {string}
   */
+export enum ListMarketStatusesSortEnum {
+    ProductCodeAsc = 'product_code.asc',
+    ProductCodeDesc = 'product_code.desc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
 export enum ListNewsOrderEnum {
     Asc = 'asc',
     Desc = 'desc'
@@ -27161,6 +29739,124 @@ export enum ListOptionsContractsSortEnum {
     UnderlyingTicker = 'underlying_ticker',
     ExpirationDate = 'expiration_date',
     StrikePrice = 'strike_price'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListProductsSectorEnum {
+    Asia = 'asia',
+    Base = 'base',
+    Biofuels = 'biofuels',
+    Coal = 'coal',
+    CrossRates = 'cross_rates',
+    CrudeOil = 'crude_oil',
+    CustomIndex = 'custom_index',
+    Dairy = 'dairy',
+    DjUbsCi = 'dj_ubs_ci',
+    Electricity = 'electricity',
+    Emissions = 'emissions',
+    Europe = 'europe',
+    Fertilizer = 'fertilizer',
+    Forestry = 'forestry',
+    GrainsAndOilseeds = 'grains_and_oilseeds',
+    IntlIndex = 'intl_index',
+    LiqNatGasLng = 'liq_nat_gas_lng',
+    Livestock = 'livestock',
+    LongTermGov = 'long_term_gov',
+    LongTermNonGov = 'long_term_non_gov',
+    Majors = 'majors',
+    Minors = 'minors',
+    NatGas = 'nat_gas',
+    NatGasLiqPetro = 'nat_gas_liq_petro',
+    Precious = 'precious',
+    RefinedProducts = 'refined_products',
+    SAndPGsci = 's_and_p_gsci',
+    SelSectorIndex = 'sel_sector_index',
+    ShortTermGov = 'short_term_gov',
+    ShortTermNonGov = 'short_term_non_gov',
+    Softs = 'softs',
+    Us = 'us',
+    UsIndex = 'us_index',
+    WetBulk = 'wet_bulk'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListProductsSubSectorEnum {
+    Asian = 'asian',
+    Canadian = 'canadian',
+    Cat = 'cat',
+    CoolingDegreeDays = 'cooling_degree_days',
+    Ercot = 'ercot',
+    European = 'european',
+    Gulf = 'gulf',
+    HeatingDegreeDays = 'heating_degree_days',
+    IsoNe = 'iso_ne',
+    LargeCapIndex = 'large_cap_index',
+    MidCapIndex = 'mid_cap_index',
+    Miso = 'miso',
+    NorthAmerican = 'north_american',
+    Nyiso = 'nyiso',
+    Pjm = 'pjm',
+    SmallCapIndex = 'small_cap_index',
+    West = 'west',
+    WesternPower = 'western_power'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListProductsAssetClassEnum {
+    AltInvestment = 'alt_investment',
+    Commodity = 'commodity',
+    Financials = 'financials'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListProductsAssetSubClassEnum {
+    Agricultural = 'agricultural',
+    CommodityIndex = 'commodity_index',
+    Energy = 'energy',
+    Equity = 'equity',
+    ForeignExchange = 'foreign_exchange',
+    Freight = 'freight',
+    Housing = 'housing',
+    InterestRate = 'interest_rate',
+    Metals = 'metals',
+    Weather = 'weather'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListProductsTypeEnum {
+    All = 'all',
+    Single = 'single',
+    Combo = 'combo'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ListProductsSortEnum {
+    NameAsc = 'name.asc',
+    NameDesc = 'name.desc',
+    TradingVenueAsc = 'trading_venue.asc',
+    TradingVenueDesc = 'trading_venue.desc',
+    SectorAsc = 'sector.asc',
+    SectorDesc = 'sector.desc',
+    SubSectorAsc = 'sub_sector.asc',
+    SubSectorDesc = 'sub_sector.desc',
+    AssetClassAsc = 'asset_class.asc',
+    AssetClassDesc = 'asset_class.desc',
+    AssetSubClassAsc = 'asset_sub_class.asc',
+    AssetSubClassDesc = 'asset_sub_class.desc',
+    TypeAsc = 'type.asc',
+    TypeDesc = 'type.desc'
 }
 /**
   * @export
@@ -27265,6 +29961,22 @@ export enum ListTickersSortEnum {
     ShareClassFigi = 'share_class_figi',
     LastUpdatedUtc = 'last_updated_utc',
     DelistedUtc = 'delisted_utc'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ProductDetailsTypeEnum {
+    Single = 'single',
+    Combo = 'combo'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum ProductSchedulesSortEnum {
+    SessionEndDateAsc = 'session_end_date.asc',
+    SessionEndDateDesc = 'session_end_date.desc'
 }
 
 
