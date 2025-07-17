@@ -11,7 +11,7 @@ For upgrade instructions please see the [Release Notes](./CHANGELOG.md).
 To get started, you'll need to install the client library:
 
 ```bash
-npm install --save `@polygon.io/client-js@next`
+npm install --save '@polygon.io/client-js'
 ```
 
 Next, create a new client with your [API key](https://polygon.io/dashboard/signup).
@@ -84,6 +84,33 @@ rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-0
 ```
 
 If there is a `next_url` field in the API response, the client will recursively fetch the next page for you, and then pass along the accumulated data.
+
+## WebSocket Client
+
+Import the [Websocket](https://polygon.io/docs/stocks/ws_getting-started) client and models packages to get started. You can get preauthenticated [websocket clients](https://www.npmjs.com/package/websocket) for the 3 topics.
+
+```javascript
+import { websocketClient } from "@polygon.io/client-js";
+const stocksWS = websocketClient(process.env.POLY_API_KEY).stocks();
+
+stocksWS.onmessage = ({data}) => {
+  const [message] = JSON.parse(data);
+
+  stocksWS.send('{"action":"subscribe", "params":"AM.MSFT,A.MSFT"}');
+
+  switch (message.ev) {
+    case "AM":
+      // your trade message handler
+      break;
+    case "A":
+      // your trade message handler
+      break;
+  }
+};
+
+stocksWS.send({ action: "subscribe", params: "T.MSFT" });
+```
+See [full examples](./examples/websocket/) for more details on how to use this client effectively.
 
 ## Contributing
 
