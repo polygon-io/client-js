@@ -5353,6 +5353,54 @@
             }
           },
           {
+            "description": "The description of the change in rating from the firm's last rating. Possible values include: downgrades, maintains, reinstates, reiterates, upgrades, assumes, initiates_coverage_on, terminates_coverage_on, removes, suspends, firm_dissolved.",
+            "in": "query",
+            "name": "rating_action",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter equal to any of the values. Multiple values can be specified by using a comma separated list.",
+            "in": "query",
+            "name": "rating_action.any_of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than the value.",
+            "in": "query",
+            "name": "rating_action.gt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter greater than or equal to the value.",
+            "in": "query",
+            "name": "rating_action.gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than the value.",
+            "in": "query",
+            "name": "rating_action.lt",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter less than or equal to the value.",
+            "in": "query",
+            "name": "rating_action.lte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "description": "The identifer used by Benzinga for the firm record.",
             "in": "query",
             "name": "benzinga_firm_id",
@@ -5991,7 +6039,7 @@
         "operationId": "get_benzinga_v1_consensus-ratings",
         "parameters": [
           {
-            "description": "Filter equal to the value.",
+            "description": "The publication date of the news article.",
             "in": "query",
             "name": "date",
             "schema": {
@@ -9664,7 +9712,7 @@
     "/futures/vX/contracts": {
       "get": {
         "description": "The Contracts endpoint returns a list of futures contracts. This endpoint can be used to query for contracts based on a variety of parameters, including the contract's ticker, product code, first trade date, last trade date, and whether or not the contract was active on a given date.",
-        "operationId": "ListContracts",
+        "operationId": "GetFuturesContracts",
         "parameters": [
           {
             "description": "A unique identifier for the Product a Contract belongs to. Note that multiple contracts can belong to the same product.",
@@ -9929,7 +9977,7 @@
     "/futures/vX/contracts/{ticker}": {
       "get": {
         "description": "The Contract Details endpoint returns the details for a single contract at a specific point in time.",
-        "operationId": "ContractDetails",
+        "operationId": "GetFuturesContractDetails",
         "parameters": [
           {
             "description": "The ticker symbol of the contract to retrieve.",
@@ -10094,7 +10142,7 @@
     "/futures/vX/market-status": {
       "get": {
         "description": "The market status endpoint returns the current status of the futures market for the given product code(s).",
-        "operationId": "ListMarketStatuses",
+        "operationId": "GetFuturesMarketStatuses",
         "parameters": [
           {
             "description": "The product code(s) to return market statuses for.\n\nMultiple product codes can be specified by separating them with a comma. Currently, the limit is 250 product codes.",
@@ -10225,7 +10273,7 @@
     "/futures/vX/products": {
       "get": {
         "description": "The Products endpoint returns a list of futures products. This endpoint can be used to query for products based on a variety of parameters, including by the product's name, exchange, sector, sub-sector, asset class, asset sub-class, and type.",
-        "operationId": "ListProducts",
+        "operationId": "GetFuturesProducts",
         "parameters": [
           {
             "description": "Search for products by Product Name. This parameter supports an exact match, while a name-contains search can be performed using the `name.search` parameter. Note that the search is case-sensitive.",
@@ -10600,7 +10648,7 @@
     "/futures/vX/products/{product_code}": {
       "get": {
         "description": "The Product Details endpoint returns the details for a single product as of a specific day.",
-        "operationId": "ProductDetails",
+        "operationId": "GetFuturesProductDetails",
         "parameters": [
           {
             "description": "The unique identifier for a product.",
@@ -10784,7 +10832,7 @@
     "/futures/vX/products/{product_code}/schedules": {
       "get": {
         "description": "The Product-Specific Futures Schedules API provides detailed trading schedules for a specific futures product. This API allows you to query schedules for a single product across a range of dates. Users can access comprehensive information about trading sessions, including market events such as preopen, open, and closed, along with their precise timestamps.",
-        "operationId": "ProductSchedules",
+        "operationId": "GetFuturesProductSchedules",
         "parameters": [
           {
             "description": "The product code for the futures product.",
@@ -11283,7 +11331,7 @@
     "/futures/vX/schedules": {
       "get": {
         "description": "The Trading-Date Based Futures Schedules API provides detailed trading schedules for all products on a specific day. This API allows you to retrieve detailed information about trading sessions, including market events like preopen, open, and closed, along with their precise timestamps.",
-        "operationId": "DailySchedules",
+        "operationId": "GetFuturesDailySchedules",
         "parameters": [
           {
             "description": "The session end date for the schedules (also known as the trading date). This is the day in CT for which the user wants to retrieve data. If left blank, this value defaults to 'today' in Central Time. e.g. If a request is made from Pacific Time on '2025-01-01' at 11:00 pm with no 'session_end_date' a default value of `2025-01-02` will be used.",
@@ -31839,7 +31887,8 @@
                 "stocks",
                 "options",
                 "crypto",
-                "fx"
+                "fx",
+                "futures"
               ],
               "example": "stocks",
               "type": "string"
@@ -31892,7 +31941,8 @@
                               "stocks",
                               "options",
                               "crypto",
-                              "fx"
+                              "fx",
+                              "futures"
                             ],
                             "example": "stocks",
                             "type": "string"
@@ -32953,7 +33003,7 @@
             }
           },
           {
-            "description": "Specify the primary exchange of the asset in the ISO code format. Find more information about the ISO codes [at the ISO org website](https://www.iso20022.org/market-identifier-codes).\nDefaults to empty string which queries all exchanges.",
+            "description": "Specify the asset's primary exchange Market Identifier Code (MIC) according to [ISO 10383](https://www.iso20022.org/market-identifier-codes).\nDefaults to empty string which queries all exchanges.",
             "in": "query",
             "name": "exchange",
             "schema": {
@@ -33181,7 +33231,7 @@
                             "type": "string"
                           },
                           "primary_exchange": {
-                            "description": "The ISO code of the primary listing exchange for this asset.",
+                            "description": "The Market Identifier Code (MIC) of the primary listing exchange for this asset (see [ISO 10383](https://www.iso20022.org/market-identifier-codes)).",
                             "type": "string"
                           },
                           "share_class_figi": {
@@ -33468,7 +33518,7 @@
         "operationId": "GetTicker",
         "parameters": [
           {
-            "description": "The ticker symbol of the asset.",
+            "description": "Specify a case-sensitive ticker symbol. For example, AAPL represents Apple Inc.",
             "example": "AAPL",
             "in": "path",
             "name": "ticker",
@@ -33649,7 +33699,7 @@
                           "type": "string"
                         },
                         "primary_exchange": {
-                          "description": "The ISO code of the primary listing exchange for this asset.",
+                          "description": "The Market Identifier Code (MIC) of the primary listing exchange for this asset (see [ISO 10383](https://www.iso20022.org/market-identifier-codes)).",
                           "type": "string"
                         },
                         "round_lot": {
@@ -37877,7 +37927,7 @@
         "operationId": "GetEvents",
         "parameters": [
           {
-            "description": "Identifier of an asset. This can currently be a Ticker, CUSIP, or Composite FIGI.\nWhen given a ticker, we return events for the entity currently represented by that ticker.\nTo find events for entities previously associated with a ticker, find the relevant identifier using the \n[Ticker Details Endpoint](https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker)",
+            "description": "Identifier of an asset, which can be a Ticker, CUSIP, or Composite FIGI. Specify a case-sensitive\nticker symbol (e.g. AAPL for Apple Inc). When provided a ticker, events for the entity currently\nrepresented by that ticker are returned. To find events for entities previously associated with a\nticker, obtain the relevant identifier using the [Ticker Details Endpoint](https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker).",
             "example": "META",
             "in": "path",
             "name": "id",
