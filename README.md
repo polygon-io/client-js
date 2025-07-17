@@ -26,7 +26,7 @@ const rest = restClient(process.env.POLY_API_KEY);
 After creating the client, making calls to the Polygon API is easy. For example, here's how to get aggregates (bars):
 
 ```javascript
-rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
+rest.get_stocks_aggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -37,14 +37,14 @@ Or, maybe you want to get the last trades or quotes for a ticker:
 
 ```javascript
 // last trade
-rest.lastTrade("AAPL").then((data) => {
+rest.get_stocks_trades("AAPL").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
 
 // last quote (NBBO)
-rest.lastQuote("AAPL").then((data) => {
+rest.get_stocks_quotes("AAPL").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -54,7 +54,7 @@ rest.lastQuote("AAPL").then((data) => {
 Finally, maybe you want a market-wide snapshot of all tickers:
 
 ```javascript
-rest.stocks.snapshots().then((data) => {
+rest.get_snapshots().then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -62,7 +62,6 @@ rest.stocks.snapshots().then((data) => {
 ```
 
 See [full examples](./examples/rest/) for more details on how to use this client effectively. 
-To run these examples from the command line, first check out this project and run ```npm i``` in the root directory to install dependencies, then run ```POLY_API_KEY=yourAPIKey node examples/rest/crypto-aggregates_bars.js```, replacing yourAPIKey with your Polygon API Key. 
 
 ## Pagination
 
