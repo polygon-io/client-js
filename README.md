@@ -75,7 +75,7 @@ const globalFetchOptions = {
 	pagination: true,
 };
 const rest = restClient("XXXX", "https://api.polygon.io", globalFetchOptions);
-rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
+rest.get_stocks_aggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
 	const resultCount = data.length;
 	console.log("Result count:", resultCount);
 }).catch(e => {
