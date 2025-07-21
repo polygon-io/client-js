@@ -26,7 +26,7 @@ const rest = restClient(process.env.POLY_API_KEY);
 After creating the client, making calls to the Polygon API is easy. For example, here's how to get aggregates (bars):
 
 ```javascript
-rest.stocks.aggregates("AAPL", 1, "day", "2023-01-01", "2023-04-14").then((data) => {
+rest.get_stocks_aggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -37,14 +37,14 @@ Or, maybe you want to get the last trades or quotes for a ticker:
 
 ```javascript
 // last trade
-rest.stocks.lastTrade("AAPL").then((data) => {
+rest.get_stocks_trades("AAPL").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
 
 // last quote (NBBO)
-rest.stocks.lastQuote("AAPL").then((data) => {
+rest.get_stocks_quotes("AAPL").then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -54,87 +54,36 @@ rest.stocks.lastQuote("AAPL").then((data) => {
 Finally, maybe you want a market-wide snapshot of all tickers:
 
 ```javascript
-rest.stocks.snapshotAllTickers().then((data) => {
+rest.get_snapshots().then((data) => {
 	console.log(data);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
 ```
 
-See [full examples](./examples/rest/) for more details on how to use this client effectively.
-To run these examples from the command line, first check out this project and run ```npm i``` in the root directory to install dependencies, then run ```POLY_API_KEY=yourAPIKey node examples/rest/crypto-aggregates_bars.js```, replacing yourAPIKey with your Polygon API Key.
+See [full examples](./examples/rest/) for more details on how to use this client effectively. 
 
 ## Pagination
 
 The client can handle pagination for you through the `globalFetchOptions` by turning on the `pagination: true` option. The feature will automatically fetch all `next_url` pages of data when the API response indicates more data is available.
 
 ```javascript
-import('@polygon.io/client-js').then(({ restClient }) => {
-	const globalFetchOptions = {
-		pagination: true,
-	};
-	const rest = restClient("XXXX", "https://api.polygon.io", globalFetchOptions);
-	rest.stocks.aggregates("TSLA", 1, "minute", "2022-01-01", "2023-08-31", { limit: 50000 }).then((data) => {
-	    const resultCount = data.length;
-	    console.log("Result count:", resultCount);
-	}).catch(e => {
-		console.error('An error happened:', e);
-	});
+import { restClient } from '@polygon.io/client-js';
+const rest = restClient(process.env.POLY_API_KEY);
+
+const globalFetchOptions = {
+	pagination: true,
+};
+const rest = restClient("XXXX", "https://api.polygon.io", globalFetchOptions);
+rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
+	const resultCount = data.length;
+	console.log("Result count:", resultCount);
+}).catch(e => {
+	console.error('An error happened:', e);
 });
 ```
 
 If there is a `next_url` field in the API response, the client will recursively fetch the next page for you, and then pass along the accumulated data.
-
-## Debugging
-
-Sometimes you may find it useful to see the actual request and response details while working with the API. The client allows for this through the `globalFetchOptions` by turning on the `trace: true` option.
-
-### How to Enable Debug Mode
-
-You can activate the debug mode as follows:
-
-```javascript
-import('@polygon.io/client-js').then(({ restClient }) => {
-	const globalFetchOptions = {
-		trace: true,
-	};
-	const rest = restClient("XXXX", "https://api.polygon.io", globalFetchOptions);
-	rest.stocks.aggregates("TSLA", 1, "minute", "2023-08-01", "2023-08-01", { limit: 50000 }).then((data) => {
-	    const resultCount = data.length;
-	    console.log("Result count:", resultCount);
-	}).catch(e => {
-		console.error('An error happened:', e);
-	});
-});
-```
-
-### What Does Debug Mode Do?
-
-When debug mode is enabled, the client will print out useful debugging information for each API request. This includes: the request URL, the headers sent in the request, and the headers received in the response.
-
-### Example Output
-
-For instance, if you made a request for `TSLA` data for the date `2023-08-01`, you would see debug output similar to the following:
-
-```
-Request URL:  https://api.polygon.io/v2/aggs/ticker/TSLA/range/1/minute/2023-08-01/2023-08-01?limit=50000
-Request Headers:  { Authorization: 'Bearer REDACTED' }
-Response Headers:  Headers {
-  [Symbol(map)]: [Object: null prototype] {
-    server: [ 'nginx/1.19.2' ],
-    date: [ 'Thu, 06 Jul 2023 18:34:27 GMT' ],
-    'content-type': [ 'application/json' ],
-    'transfer-encoding': [ 'chunked' ],
-    connection: [ 'close' ],
-    'content-encoding': [ 'gzip' ],
-    vary: [ 'Accept-Encoding' ],
-    'x-request-id': [ '06dc97920681d8335c0451894aa1f79f' ],
-    'strict-transport-security': [ 'max-age=15724800; includeSubDomains' ]
-  }
-}
-```
-
-This can be an invaluable tool for debugging issues or understanding how the client interacts with the API.
 
 ## WebSocket Client
 

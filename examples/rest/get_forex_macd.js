@@ -1,0 +1,33 @@
+import { restClient } from '@polygon.io/client-js';
+
+const apiKey = "GLOBAL_POLYGON_API_KEY";
+const rest = restClient(apiKey, 'https://api.polygon.io');
+
+async function example_getForexMACD() {
+  try {
+    const response = await rest.getForexMACD(
+      {
+        fxTicker: "C:EURUSD",
+        timestamp: "<timestamp>",
+        timespan: "day",
+        adjusted: true,
+        short_window: 12,
+        long_window: 26,
+        signal_window: 9,
+        series_type: "close",
+        expand_underlying: "<expand_underlying>",
+        order: "desc",
+        limit: "<limit>",
+        "timestamp.gte": "<timestamp.gte>",
+        "timestamp.gt": "<timestamp.gt>",
+        "timestamp.lte": "<timestamp.lte>",
+        "timestamp.lt": "<timestamp.lt>"
+      }
+    );
+    console.log('Response:', response);
+  } catch (e) {
+    console.error('An error happened:', e);
+  }
+}
+
+example_getForexMACD();
