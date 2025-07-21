@@ -8,3 +8,4 @@ tsconfig.json
 /templates
 .mocharc.json
 /.github
+/.release-it.json
