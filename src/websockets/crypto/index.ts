@@ -1,7 +1,7 @@
 import * as websocket from "websocket";
 import { getWsClient } from "../transport/index.js";
 
-// Crypto AGGREGATE:
+// Crypto Aggregate:
 export interface IAggregateCryptoEvent {
   ev: string; // Event Type
   pair: string; // Crypto Pair
@@ -14,7 +14,7 @@ export interface IAggregateCryptoEvent {
   e: number; // Tick End Timestamp
 }
 
-// Crypto TRADE:
+// Crypto Trade:
 export interface ITradeCryptoEvent {
   ev: string; // Event Type
   pair: string; // Crypto Pair
@@ -40,15 +40,12 @@ export interface IQuoteCryptoEvent {
   r: number; // Received @ Polygon Timestamp
 }
 
-// Crypto LEVEL2:
-export interface ILevel2CryptoEvent {
+// Crypto FMV:
+export interface IFMVCryptoEvent {
   ev: string; // Event Type
-  pair: string; // Crypto Pair
-  b: any[];
-  a: any[];
-  t: number; // Timestamp Unix ( ms )
-  x: number; // Exchange ID
-  r: number; // Tick Received @ Polygon Timestamp
+  fmv: string; // Fair Market Value
+  sym: string; // Symbol Ticker
+  t: number; // Quote Timestamp ( Nanoseconds )
 }
 
 export const getCryptoWebsocket = (

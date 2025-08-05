@@ -19,6 +19,7 @@ export interface IAggregateOptionsEvent {
   e: number; // Tick End Timestamp ( Unix MS )
 }
 
+// Options Trade:
 export interface ITradeOptionsEvent {
   ev: string; // Event Type
   sym: string; // Symbol Ticker
@@ -30,6 +31,7 @@ export interface ITradeOptionsEvent {
   q: number; // Sequence Number ( The sequence in which events ocurred )
 }
 
+// Options Quote:
 export type IQuoteOptionsEvent = {
   ev: string; // Event Type
   sym: string; // Symbol Ticker
@@ -42,6 +44,14 @@ export type IQuoteOptionsEvent = {
   t: number; // Quote Timestamp ( Unix MS )
   q: number; // Sequence Number ( The sequence in which events ocurred )
 };
+
+// Options FMV:
+export interface IFMVOptionsEvent {
+  ev: string; // Event Type
+  fmv: string; // Fair Market Value
+  sym: string; // Symbol Ticker
+  t: number; // Quote Timestamp ( Nanoseconds )
+}
 
 export const getOptionsWebsocket = (
   apiKey: string,
