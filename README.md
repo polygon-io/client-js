@@ -26,8 +26,8 @@ const rest = restClient(process.env.POLY_API_KEY);
 After creating the client, making calls to the Polygon API is easy. For example, here's how to get aggregates (bars):
 
 ```javascript
-rest.get_stocks_aggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
-	console.log(data);
+rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((response) => {
+	console.log(response);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
@@ -37,15 +37,15 @@ Or, maybe you want to get the last trades or quotes for a ticker:
 
 ```javascript
 // last trade
-rest.get_stocks_trades("AAPL").then((data) => {
-	console.log(data);
+rest.getLastStocksTrade("AAPL").then((response) => {
+	console.log(response);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
 
 // last quote (NBBO)
-rest.get_stocks_quotes("AAPL").then((data) => {
-	console.log(data);
+rest.getLastStocksQuote("AAPL").then((response) => {
+	console.log(response);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
@@ -54,8 +54,8 @@ rest.get_stocks_quotes("AAPL").then((data) => {
 Finally, maybe you want a market-wide snapshot of all tickers:
 
 ```javascript
-rest.get_snapshots().then((data) => {
-	console.log(data);
+rest.getSnapshots().then((response) => {
+	console.log(response);
 }).catch(e => {
 	console.error('An error happened:', e);
 });
@@ -69,14 +69,15 @@ The client can handle pagination for you through the `globalFetchOptions` by tur
 
 ```javascript
 import { restClient } from '@polygon.io/client-js';
-const rest = restClient(process.env.POLY_API_KEY);
 
 const globalFetchOptions = {
 	pagination: true,
 };
-const rest = restClient("XXXX", "https://api.polygon.io", globalFetchOptions);
-rest.get_stocks_aggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((data) => {
-	const resultCount = data.length;
+const rest = restClient(process.env.POLY_API_KEY, "https://api.polygon.io", globalFetchOptions);
+
+rest.getStocksAggregates("AAPL", 1, GetStocksAggregatesTimespanEnum.Day, "2023-01-01", "2023-04-14").then((response) => {
+	const data = response.data; // convert axios-wrapped response
+	const resultCount = data.resultsCount;
 	console.log("Result count:", resultCount);
 }).catch(e => {
 	console.error('An error happened:', e);
@@ -91,10 +92,10 @@ Import the [Websocket](https://polygon.io/docs/stocks/ws_getting-started) client
 
 ```javascript
 import { websocketClient } from "@polygon.io/client-js";
-const stocksWS = websocketClient(process.env.POLY_API_KEY).stocks();
+const stocksWS = websocketClient(process.env.POLY_API_KEY, 'wss://delayed.polygon.io').stocks();
 
-stocksWS.onmessage = ({data}) => {
-  const [message] = JSON.parse(data);
+stocksWS.onmessage = ({response}) => {
+  const [message] = JSON.parse(response);
 
   stocksWS.send('{"action":"subscribe", "params":"AM.MSFT,A.MSFT"}');
 
