@@ -14,6 +14,7 @@ export interface IAggegateForexEvent {
   e: number; // End time ( Unix MS )
 }
 
+// Forex Quote:
 export interface IQuoteForexEvent {
   ev: string; // Event Type
   p: string; // Currency Pair
@@ -21,6 +22,14 @@ export interface IQuoteForexEvent {
   a: number; // Ask Price
   b: number; // Bid Price
   t: number; // Quote Timestamp ( Unix MS )
+}
+
+// Forex FMV:
+export interface IFMVForexEvent {
+  ev: string; // Event Type
+  fmv: string; // Fair Market Value
+  sym: string; // Symbol Ticker
+  t: number; // Quote Timestamp ( Nanoseconds )
 }
 
 export const getForexWebsocket = (

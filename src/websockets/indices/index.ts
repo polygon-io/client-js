@@ -1,6 +1,7 @@
 import { getWsClient } from "../transport/index.js";
 import * as websocket from "websocket";
 
+// Indices Aggregate:
 export interface IAggregateIndexEvent {
   ev: string; // Event Type ( A = Second Agg, AM = Minute Agg )
   sym: string; // Symbol Ticker
@@ -13,6 +14,7 @@ export interface IAggregateIndexEvent {
   e: number; // Tick End Timestamp ( Unix MS )
 }
 
+// Indices Value:
 export interface IIndexValueEvent {
   ev: string; // Event Type
   val: string; // Value of the Index

@@ -19,6 +19,7 @@ export interface IAggregateStockEvent {
   e: number; // Tick End Timestamp ( Unix MS )
 }
 
+// Stocks Trade:
 export interface ITradeStockEvent {
   ev: string; // Event Type
   sym: string; // Symbol Ticker
@@ -31,7 +32,7 @@ export interface ITradeStockEvent {
   t: number; // Trade Timestamp ( Unix MS )
 }
 
-// Stocks QUOTE:
+// Stocks Quote:
 export interface IQuoteStockEvent {
   ev: string; // Event Type
   sym: string; // Symbol Ticker
@@ -44,6 +45,26 @@ export interface IQuoteStockEvent {
   c: number; // Quote Condition
   t: number; // Quote Timestamp ( Unix MS )
   z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
+}
+
+// Stocks LULD:
+export interface ILULDStockEvent {
+  ev: string; // Event Type
+  T: string; // Symbol Ticker
+  h: number; // Tick High Price
+  l: number; // Tick Low Price
+  i: number; // Tick Indicators
+  z: number; // The tape (1 = NYSE, 2 = AMEX, 3 = Nasdaq)
+  t: number; // Quote Timestamp ( Unix MS )
+  q: number; // Sequence Number ( The sequence in which events ocurred )
+}
+
+// Stocks FMV:
+export interface IFMVStockEvent {
+  ev: string; // Event Type
+  fmv: string; // Fair Market Value
+  sym: string; // Symbol Ticker
+  t: number; // Quote Timestamp ( Nanoseconds )
 }
 
 export const getStocksWebsocket = (
