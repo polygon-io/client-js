@@ -5127,7 +5127,7 @@ export interface GetFuturesAggregates200ResponseResultsInner {
      */
     'open'?: number;
     /**
-     * The session end date for this aggregate.
+     * Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
      * @type {string}
      * @memberof GetFuturesAggregates200ResponseResultsInner
      */
@@ -5157,7 +5157,7 @@ export interface GetFuturesAggregates200ResponseResultsInner {
      */
     'volume'?: number;
     /**
-     * The start of the window for this aggregate.
+     * The timestamp of the beginning of the candlestick’s aggregation window.
      * @type {number}
      * @memberof GetFuturesAggregates200ResponseResultsInner
      */
@@ -5765,7 +5765,7 @@ export interface GetFuturesQuotes200ResponseResultsInner {
      */
     'ask_size'?: number;
     /**
-     * The Unix millisecond timestamp.
+     * The time when the ask price was submitted to the exchange.
      * @type {number}
      * @memberof GetFuturesQuotes200ResponseResultsInner
      */
@@ -5783,25 +5783,25 @@ export interface GetFuturesQuotes200ResponseResultsInner {
      */
     'bid_size'?: number;
     /**
-     * The Unix millisecond timestamp.
+     * The time when the bid price was submitted to the exchange.
      * @type {number}
      * @memberof GetFuturesQuotes200ResponseResultsInner
      */
     'bid_timestamp'?: number;
     /**
-     * Session end date
+     * Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
      * @type {string}
      * @memberof GetFuturesQuotes200ResponseResultsInner
      */
     'session_end_date'?: string;
     /**
-     * ticker of the quote
+     * The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
      * @type {string}
      * @memberof GetFuturesQuotes200ResponseResultsInner
      */
     'ticker'?: string;
     /**
-     * The Unix millisecond timestamp.
+     * The time when the quote was generated at the exchange to nanosecond precision.
      * @type {number}
      * @memberof GetFuturesQuotes200ResponseResultsInner
      */
@@ -5839,19 +5839,19 @@ export interface GetFuturesTrades200Response {
  */
 export interface GetFuturesTrades200ResponseResultsInner {
     /**
-     * The trade price is quoted per unit of the underlying asset, with the total contract value determined by multiplying by the contract’s specific multiplier.
+     * The price of the trade. This is the actual dollar value per whole contract of this trade. A trade of 100 contracts with a price of $2.00 would be worth a total dollar value of $200.00.
      * @type {number}
      * @memberof GetFuturesTrades200ResponseResultsInner
      */
     'price': number;
     /**
-     * the session end date
+     * Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
      * @type {string}
      * @memberof GetFuturesTrades200ResponseResultsInner
      */
     'session_end_date'?: string;
     /**
-     * The trade size shows the number of futures contracts actually exchanged.
+     * The total number of contracts exchanged between buyers and sellers on a given trade.
      * @type {number}
      * @memberof GetFuturesTrades200ResponseResultsInner
      */
@@ -5863,7 +5863,7 @@ export interface GetFuturesTrades200ResponseResultsInner {
      */
     'ticker'?: string;
     /**
-     * The Unix millisecond timestamp.
+     * The time when the trade was generated at the exchange to nanosecond precision.
      * @type {number}
      * @memberof GetFuturesTrades200ResponseResultsInner
      */
@@ -8130,6 +8130,12 @@ export interface GetSnapshots200ResponseResultsInner {
     'implied_volatility'?: number;
     /**
      * 
+     * @type {GetSnapshots200ResponseResultsInnerLastMinute}
+     * @memberof GetSnapshots200ResponseResultsInner
+     */
+    'last_minute'?: GetSnapshots200ResponseResultsInnerLastMinute;
+    /**
+     * 
      * @type {GetSnapshots200ResponseResultsInnerLastQuote}
      * @memberof GetSnapshots200ResponseResultsInner
      */
@@ -8140,6 +8146,12 @@ export interface GetSnapshots200ResponseResultsInner {
      * @memberof GetSnapshots200ResponseResultsInner
      */
     'last_trade'?: GetSnapshots200ResponseResultsInnerLastTrade;
+    /**
+     * The nanosecond timestamp of when this information was updated.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInner
+     */
+    'last_updated'?: number;
     /**
      * The market status for the market that trades this ticker. Possible values for stocks, options, crypto, and forex snapshots are open, closed, early_trading, or late_trading. Possible values for indices snapshots are regular_trading, closed, early_trading, and late_trading.
      * @type {string}
@@ -8177,6 +8189,12 @@ export interface GetSnapshots200ResponseResultsInner {
      */
     'ticker': string;
     /**
+     * The time relevance of the data.
+     * @type {string}
+     * @memberof GetSnapshots200ResponseResultsInner
+     */
+    'timeframe'?: GetSnapshots200ResponseResultsInnerTimeframeEnum;
+    /**
      * The asset class for this ticker.
      * @type {string}
      * @memberof GetSnapshots200ResponseResultsInner
@@ -8196,6 +8214,14 @@ export interface GetSnapshots200ResponseResultsInner {
     'value'?: number;
 }
 
+/**
+    * @export
+    * @enum {string}
+    */
+export enum GetSnapshots200ResponseResultsInnerTimeframeEnum {
+    Delayed = 'DELAYED',
+    RealTime = 'REAL-TIME'
+}
 /**
     * @export
     * @enum {string}
@@ -8295,6 +8321,55 @@ export interface GetSnapshots200ResponseResultsInnerGreeks {
      * @memberof GetSnapshots200ResponseResultsInnerGreeks
      */
     'vega': number;
+}
+/**
+ * The most recent minute aggregate for this stock.
+ * @export
+ * @interface GetSnapshots200ResponseResultsInnerLastMinute
+ */
+export interface GetSnapshots200ResponseResultsInnerLastMinute {
+    /**
+     * The closing value for the minute aggreate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'close': number;
+    /**
+     * The highest value for the minute aggregate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'high': number;
+    /**
+     * The lowest value for the minute aggregate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'low': number;
+    /**
+     * The open value for the minute aggregate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'open': number;
+    /**
+     * The number of transactions that took place within the minute aggregate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'transactions': number;
+    /**
+     * The trading volume for the minute aggregate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'volume': number;
+    /**
+     * The trading volume weighted average price for the minute aggregate.
+     * @type {number}
+     * @memberof GetSnapshots200ResponseResultsInnerLastMinute
+     */
+    'vwap': number;
 }
 /**
  * The most recent quote for this contract. This is only returned if your current plan includes quotes.
@@ -16376,8 +16451,8 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * Get aggregates for a contract in a given time range.
          * @summary Aggregates
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
-         * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
-         * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [resolution] This sets the size of the aggregate windows. It accepts custom values that specify the granularity and the duration of the window. For example: 15mins, 30secs, 12hours, or 7days. There are maximum allowable candle sizes. For example, you can request \&quot;1min\&quot; to \&quot;59mins\&quot;, but after that you will need to use \&quot;1hr\&quot;. If you make a request for a candle size that is not supported, we will return a 400 \&quot;Bad Request - resolution value is not allowed.\&quot;
+         * @param {string} [windowStart] This sets the range of time for your results. The window_start timestamp you choose specifies the starting edge of the candle or candles you want returned. If no value is set, you will get the oldest or newest available candles, depending on your sort order. You can combine window_start to form a time range, for example: window_start.gte&#x3D;2024-01-01&amp;window_start.lte&#x3D;2024-01-31
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [windowStartGte] Range by window_start.
          * @param {string} [windowStartGt] Range by window_start.
@@ -16387,11 +16462,9 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFuturesAggregates: async (ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFuturesAggregates: async (ticker: string, resolution?: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ticker' is not null or undefined
             assertParamExists('getFuturesAggregates', 'ticker', ticker)
-            // verify required parameter 'resolution' is not null or undefined
-            assertParamExists('getFuturesAggregates', 'resolution', resolution)
             const localVarPath = `/futures/vX/aggs/{ticker}`
                 .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -16908,7 +16981,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Quotes
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-         * @param {string} [sessionEndDate] Query by session end date
+         * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -17005,7 +17078,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Trades
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-         * @param {string} [sessionEndDate] Query by session end date
+         * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -22779,8 +22852,8 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * Get aggregates for a contract in a given time range.
          * @summary Aggregates
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
-         * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
-         * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [resolution] This sets the size of the aggregate windows. It accepts custom values that specify the granularity and the duration of the window. For example: 15mins, 30secs, 12hours, or 7days. There are maximum allowable candle sizes. For example, you can request \&quot;1min\&quot; to \&quot;59mins\&quot;, but after that you will need to use \&quot;1hr\&quot;. If you make a request for a candle size that is not supported, we will return a 400 \&quot;Bad Request - resolution value is not allowed.\&quot;
+         * @param {string} [windowStart] This sets the range of time for your results. The window_start timestamp you choose specifies the starting edge of the candle or candles you want returned. If no value is set, you will get the oldest or newest available candles, depending on your sort order. You can combine window_start to form a time range, for example: window_start.gte&#x3D;2024-01-01&amp;window_start.lte&#x3D;2024-01-31
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [windowStartGte] Range by window_start.
          * @param {string} [windowStartGt] Range by window_start.
@@ -22790,7 +22863,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFuturesAggregates(ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFuturesAggregates200Response>> {
+        async getFuturesAggregates(ticker: string, resolution?: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<GetFuturesAggregates200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFuturesAggregates(ticker, resolution, windowStart, limit, windowStartGte, windowStartGt, windowStartLte, windowStartLt, sort, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getFuturesAggregates']?.[localVarOperationServerIndex]?.url;
@@ -22925,7 +22998,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @summary Quotes
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-         * @param {string} [sessionEndDate] Query by session end date
+         * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -22950,7 +23023,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @summary Trades
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-         * @param {string} [sessionEndDate] Query by session end date
+         * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -25050,8 +25123,8 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * Get aggregates for a contract in a given time range.
          * @summary Aggregates
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
-         * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
-         * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+         * @param {string} [resolution] This sets the size of the aggregate windows. It accepts custom values that specify the granularity and the duration of the window. For example: 15mins, 30secs, 12hours, or 7days. There are maximum allowable candle sizes. For example, you can request \&quot;1min\&quot; to \&quot;59mins\&quot;, but after that you will need to use \&quot;1hr\&quot;. If you make a request for a candle size that is not supported, we will return a 400 \&quot;Bad Request - resolution value is not allowed.\&quot;
+         * @param {string} [windowStart] This sets the range of time for your results. The window_start timestamp you choose specifies the starting edge of the candle or candles you want returned. If no value is set, you will get the oldest or newest available candles, depending on your sort order. You can combine window_start to form a time range, for example: window_start.gte&#x3D;2024-01-01&amp;window_start.lte&#x3D;2024-01-31
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [windowStartGte] Range by window_start.
          * @param {string} [windowStartGt] Range by window_start.
@@ -25061,7 +25134,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFuturesAggregates(ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig): Promise<GetFuturesAggregates200Response> {
+        getFuturesAggregates(ticker: string, resolution?: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig): Promise<GetFuturesAggregates200Response> {
             return localVarFp.getFuturesAggregates(ticker, resolution, windowStart, limit, windowStartGte, windowStartGt, windowStartLte, windowStartLt, sort, options).then((request) => request(axios, basePath));
         },
         /**
@@ -25172,7 +25245,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @summary Quotes
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-         * @param {string} [sessionEndDate] Query by session end date
+         * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -25194,7 +25267,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @summary Trades
          * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
          * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-         * @param {string} [sessionEndDate] Query by session end date
+         * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
          * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
          * @param {string} [timestampGte] Range by timestamp.
          * @param {string} [timestampGt] Range by timestamp.
@@ -27182,8 +27255,8 @@ export class DefaultApi extends BaseAPI {
      * Get aggregates for a contract in a given time range.
      * @summary Aggregates
      * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
-     * @param {string} resolution The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).
-     * @param {string} [windowStart] Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
+     * @param {string} [resolution] This sets the size of the aggregate windows. It accepts custom values that specify the granularity and the duration of the window. For example: 15mins, 30secs, 12hours, or 7days. There are maximum allowable candle sizes. For example, you can request \&quot;1min\&quot; to \&quot;59mins\&quot;, but after that you will need to use \&quot;1hr\&quot;. If you make a request for a candle size that is not supported, we will return a 400 \&quot;Bad Request - resolution value is not allowed.\&quot;
+     * @param {string} [windowStart] This sets the range of time for your results. The window_start timestamp you choose specifies the starting edge of the candle or candles you want returned. If no value is set, you will get the oldest or newest available candles, depending on your sort order. You can combine window_start to form a time range, for example: window_start.gte&#x3D;2024-01-01&amp;window_start.lte&#x3D;2024-01-31
      * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
      * @param {string} [windowStartGte] Range by window_start.
      * @param {string} [windowStartGt] Range by window_start.
@@ -27194,7 +27267,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public getFuturesAggregates(ticker: string, resolution: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig) {
+    public getFuturesAggregates(ticker: string, resolution?: string, windowStart?: string, limit?: number, windowStartGte?: string, windowStartGt?: string, windowStartLte?: string, windowStartLt?: string, sort?: GetFuturesAggregatesSortEnum, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getFuturesAggregates(ticker, resolution, windowStart, limit, windowStartGte, windowStartGt, windowStartLte, windowStartLt, sort, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -27320,7 +27393,7 @@ export class DefaultApi extends BaseAPI {
      * @summary Quotes
      * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
      * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-     * @param {string} [sessionEndDate] Query by session end date
+     * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
      * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
      * @param {string} [timestampGte] Range by timestamp.
      * @param {string} [timestampGt] Range by timestamp.
@@ -27344,7 +27417,7 @@ export class DefaultApi extends BaseAPI {
      * @summary Trades
      * @param {string} ticker The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).
      * @param {string} [timestamp] Query by trade timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.
-     * @param {string} [sessionEndDate] Query by session end date
+     * @param {string} [sessionEndDate] Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.
      * @param {number} [limit] The number of results to return per page (default&#x3D;1000, maximum&#x3D;50000, minimum&#x3D;1).
      * @param {string} [timestampGte] Range by timestamp.
      * @param {string} [timestampGt] Range by timestamp.
