@@ -9498,17 +9498,17 @@
             "x-polygon-go-id": "Ticker"
           },
           {
-            "description": "The range and resolution of an aggregate. The range is any positive whole number. Possible resolutions are sec, min, hour, day, week, month, quarter and year. (e.g., 1min, 30min, 12hour).",
+            "description": "This sets the size of the aggregate windows. It accepts custom values that specify the granularity and the duration of the window.\nFor example: 15mins, 30secs, 12hours, or 7days.\nThere are maximum allowable candle sizes. For example, you can request \"1min\" to \"59mins\", but after that you will need to use \"1hr\". If you make a request for a candle size that is not supported, we will return a 400 \"Bad Request - resolution value is not allowed.\"",
             "example": "1min",
             "in": "query",
             "name": "resolution",
-            "required": true,
             "schema": {
+              "default": "1day",
               "type": "string"
             }
           },
           {
-            "description": "Query by window start timestamp. Either a date with the format YYYY-MM-DD or a nanosecond timestamp.",
+            "description": "This sets the range of time for your results. The window_start timestamp you choose specifies the starting edge of the candle or candles you want returned. If no value is set, you will get the oldest or newest available candles, depending on your sort order.\nYou can combine window_start to form a time range, for example: window_start.gte=2024-01-01&window_start.lte=2024-01-31",
             "in": "query",
             "name": "window_start",
             "schema": {
@@ -9591,7 +9591,7 @@
                       "open": 2849.8,
                       "session_end_date": "2025-02-04",
                       "settlement_price": 2875.8,
-                      "ticker:": "GCJ5",
+                      "ticker": "GCJ5",
                       "transactions": 74223,
                       "volume": 133072,
                       "window_start": 1738627200000000000
@@ -9604,7 +9604,7 @@
                       "open": 2873.7,
                       "session_end_date": "2025-02-05",
                       "settlement_price": 2893,
-                      "ticker:": "GCJ5",
+                      "ticker": "GCJ5",
                       "transactions": 83673,
                       "volume": 155170,
                       "window_start": 1738713600000000000
@@ -9647,7 +9647,7 @@
                             "type": "number"
                           },
                           "session_end_date": {
-                            "description": "The session end date for this aggregate.",
+                            "description": "Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.",
                             "type": "string"
                           },
                           "settlement_price": {
@@ -9670,7 +9670,7 @@
                             "type": "integer"
                           },
                           "window_start": {
-                            "description": "The start of the window for this aggregate.",
+                            "description": "The timestamp of the beginning of the candlestick’s aggregation window.",
                             "format": "int64",
                             "type": "integer",
                             "x-polygon-go-type": {
@@ -11087,7 +11087,7 @@
             }
           },
           {
-            "description": "Query by session end date",
+            "description": "Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.",
             "in": "query",
             "name": "session_end_date",
             "schema": {
@@ -11239,7 +11239,7 @@
                             "type": "number"
                           },
                           "ask_timestamp": {
-                            "description": "The Unix millisecond timestamp.",
+                            "description": "The time when the ask price was submitted to the exchange.",
                             "type": "integer",
                             "x-polygon-go-type": {
                               "name": "IMilliseconds",
@@ -11257,7 +11257,7 @@
                             "type": "number"
                           },
                           "bid_timestamp": {
-                            "description": "The Unix millisecond timestamp.",
+                            "description": "The time when the bid price was submitted to the exchange.",
                             "type": "integer",
                             "x-polygon-go-type": {
                               "name": "IMilliseconds",
@@ -11265,15 +11265,15 @@
                             }
                           },
                           "session_end_date": {
-                            "description": "Session end date",
+                            "description": "Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.",
                             "type": "string"
                           },
                           "ticker": {
-                            "description": "ticker of the quote",
+                            "description": "The futures contract identifier, including the base symbol and contract expiration (e.g., GCJ5 for the April 2025 gold contract).",
                             "type": "string"
                           },
                           "timestamp": {
-                            "description": "The Unix millisecond timestamp.",
+                            "description": "The time when the quote was generated at the exchange to nanosecond precision.",
                             "type": "integer",
                             "x-polygon-go-type": {
                               "name": "IMilliseconds",
@@ -11540,7 +11540,7 @@
             }
           },
           {
-            "description": "Query by session end date",
+            "description": "Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.",
             "in": "query",
             "name": "session_end_date",
             "schema": {
@@ -11681,16 +11681,16 @@
                       "items": {
                         "properties": {
                           "price": {
-                            "description": "The trade price is quoted per unit of the underlying asset, with the total contract value determined by multiplying by the contract’s specific multiplier.",
+                            "description": "The price of the trade. This is the actual dollar value per whole contract of this trade. A trade of 100 contracts with a price of $2.00 would be worth a total dollar value of $200.00.",
                             "format": "double",
                             "type": "number"
                           },
                           "session_end_date": {
-                            "description": "the session end date",
+                            "description": "Also known as the trading date, the date of the end of the trading session, in YYYY-MM-DD format.",
                             "type": "string"
                           },
                           "size": {
-                            "description": "The trade size shows the number of futures contracts actually exchanged.",
+                            "description": "The total number of contracts exchanged between buyers and sellers on a given trade.",
                             "format": "double",
                             "type": "number"
                           },
@@ -11699,7 +11699,7 @@
                             "type": "string"
                           },
                           "timestamp": {
-                            "description": "The Unix millisecond timestamp.",
+                            "description": "The time when the trade was generated at the exchange to nanosecond precision.",
                             "type": "integer",
                             "x-polygon-go-type": {
                               "name": "IMilliseconds",
@@ -34162,6 +34162,60 @@
                             "format": "double",
                             "type": "number"
                           },
+                          "last_minute": {
+                            "description": "The most recent minute aggregate for this stock.",
+                            "properties": {
+                              "close": {
+                                "description": "The closing value for the minute aggreate.",
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "high": {
+                                "description": "The highest value for the minute aggregate.",
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "low": {
+                                "description": "The lowest value for the minute aggregate.",
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "open": {
+                                "description": "The open value for the minute aggregate.",
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "transactions": {
+                                "description": "The number of transactions that took place within the minute aggregate.",
+                                "format": "int32",
+                                "type": "integer"
+                              },
+                              "volume": {
+                                "description": "The trading volume for the minute aggregate.",
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "vwap": {
+                                "description": "The trading volume weighted average price for the minute aggregate.",
+                                "format": "double",
+                                "type": "number",
+                                "x-polygon-go-id": "VWAP"
+                              }
+                            },
+                            "required": [
+                              "close",
+                              "high",
+                              "low",
+                              "open",
+                              "volume",
+                              "transactions",
+                              "vwap"
+                            ],
+                            "type": "object",
+                            "x-polygon-go-type": {
+                              "name": "StocksLastMinute"
+                            }
+                          },
                           "last_quote": {
                             "description": "The most recent quote for this contract. This is only returned if your current plan includes quotes.",
                             "properties": {
@@ -34298,6 +34352,11 @@
                               "name": "SnapshotLastTrade"
                             }
                           },
+                          "last_updated": {
+                            "description": "The nanosecond timestamp of when this information was updated.",
+                            "format": "int64",
+                            "type": "integer"
+                          },
                           "market_status": {
                             "description": "The market status for the market that trades this ticker. Possible values for stocks, options, crypto, and forex snapshots are open, closed, early_trading, or late_trading.\nPossible values for indices snapshots are regular_trading, closed, early_trading, and late_trading.",
                             "type": "string"
@@ -34410,6 +34469,14 @@
                           },
                           "ticker": {
                             "description": "The ticker symbol for the asset.",
+                            "type": "string"
+                          },
+                          "timeframe": {
+                            "description": "The time relevance of the data.",
+                            "enum": [
+                              "DELAYED",
+                              "REAL-TIME"
+                            ],
                             "type": "string"
                           },
                           "type": {

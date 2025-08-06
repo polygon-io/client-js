@@ -177,6 +177,7 @@ docs/GetSnapshots200Response.md
 docs/GetSnapshots200ResponseResultsInner.md
 docs/GetSnapshots200ResponseResultsInnerDetails.md
 docs/GetSnapshots200ResponseResultsInnerGreeks.md
+docs/GetSnapshots200ResponseResultsInnerLastMinute.md
 docs/GetSnapshots200ResponseResultsInnerLastQuote.md
 docs/GetSnapshots200ResponseResultsInnerLastTrade.md
 docs/GetSnapshots200ResponseResultsInnerUnderlyingAsset.md
